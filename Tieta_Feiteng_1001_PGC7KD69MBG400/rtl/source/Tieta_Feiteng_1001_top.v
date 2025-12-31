@@ -349,136 +349,138 @@ parameter PEAVEY_SUPPORT = 1'b1;
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 SYS_CLK: input 25MHz, output 100MHz/50MHz/25MHz
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire                                clk_50m                     ;
-wire                                sys_clk                     ;
-wire                                pll_lock                    ;
+wire                                        clk_50m                     ; // 不使用
+wire                                        sys_clk                     ; // 系统时钟
+wire                                        pll_lock                    ;
 
 pll_i25M_o50M_o25M pll_inst (
-    .clkin1                         (i_CLK_PAL_IN_25M           ), // input 25.0000MHz
-    .rst                            (~i_PAL_P3V3_STBY_PGD       ), // input
-    .clkout0                        (clk_50m                    ), // output 50.00000000MHz
-    .clkout1                        (sys_clk                    ), // output 25.00000000MHz
-    .lock                           (pll_lock                   )  // output
+    .clkin1                                 (i_CLK_PAL_IN_25M           ), // input 25.0000MHz
+    .rst                                    (~i_PAL_P3V3_STBY_PGD       ), // input
+    .clkout0                                (clk_50m                    ), // output 50.00000000MHz
+    .clkout1                                (sys_clk                    ), // output 25.00000000MHz
+    .lock                                   (pll_lock                   )  // output
 
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 全局复位 
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire                                pgd_aux_bmc                 ; // 不使用, BMC_PDG, 来自BMC, 默认写1
-wire                                done_booting_delayed        ; // 不使用, 系统booting_done, 来自BMC, 默认写1
-wire                                pon_reset_n                 ; // 使用  , 全局复位
-wire                                pon_reset_db_n              ; // 不使用, 复位
-wire                                pgd_aux_system              ; // 不使用, 复位
-wire                                pgd_aux_system_sasd         ; // 不使用, 复位
-wire                                cpld_ready                  ; // 不使用, 复位
+wire                                        pgd_aux_bmc                 ; // 不使用, BMC_PDG, 来自BMC, 默认写1
+wire                                        done_booting_delayed        ; // 不使用, 系统booting_done, 来自BMC, 默认写1
+wire                                        pon_reset_n                 ; // 使用  , 全局复位
+wire                                        pon_reset_db_n              ; // 不使用, 复位
+wire                                        pgd_aux_system              ; // 不使用, 复位
+wire                                        pgd_aux_system_sasd         ; // 不使用, 复位
+wire                                        cpld_ready                  ; // 不使用, 复位
 
-assign                              pgd_aux_bmc          = 1'b1 ; 
-assign                              done_booting_delayed = 1'b1 ; 
+assign                                      pgd_aux_bmc          = 1'b1 ; // 不使用, BMC_PDG, 来自BMC, 默认写1
+assign                                      done_booting_delayed = 1'b1 ; // 不使用, 系统booting_done, 来自BMC, 默认写1
 
 pon_reset pon_reset_inst( 
-    .clk                            (sys_clk                    ),// input:  复位/PGD 同步时钟源（25MHz）
-    .pll_lock                       (pll_lock                   ),// input:  仅在 PLL 锁定后才允许释放复位
-    .pgd_p3v3_stby                  (i_PAL_P3V3_STBY_PGD        ),// input:  待机 3.3V 电源良好指示（PGD）
-    .pgd_aux_gmt                    (pgd_aux_bmc                ),// input:  来自 BMC 的 AUX PGD 原始输入
-    .done_booting                   (1'b1                       ),// input:  系统就绪输入：此处常置 1，表示无需等待外部就绪
-    .done_booting_delayed           (done_booting_delayed       ),// output: 系统就绪延迟版，供时序控制/监控
-    .pon_reset_n                    (pon_reset_n                ),// output: 全局复位（低有效，不考虑pdg_aux_bmc）
-    .pon_reset_db_n                 (pon_reset_db_n             ),// output: 全局复位（低有效, 考虑pdg_aux_bmc）
-    .pgd_aux_system                 (pgd_aux_system             ),// output: 系统域 AUX PGD（稳定）
-    .pgd_aux_system_sasd            (pgd_aux_system_sasd        ),// output: 系统域 AUX PGD（稳定）
-    .cpld_ready                     (cpld_ready                 ) // output：CPLD 就绪指示（低有效）
+    .clk                                    (sys_clk                    ),// input:  复位/PGD 同步时钟源（25MHz）
+    .pll_lock                               (pll_lock                   ),// input:  仅在 PLL 锁定后才允许释放复位
+    .pgd_p3v3_stby                          (i_PAL_P3V3_STBY_PGD        ),// input:  待机 3.3V 电源良好指示（PGD）
+    .pgd_aux_gmt                            (pgd_aux_bmc                ),// input:  来自 BMC 的 AUX PGD 原始输入
+    .done_booting                           (1'b1                       ),// input:  系统就绪输入：此处常置 1，表示无需等待外部就绪
+    .done_booting_delayed                   (done_booting_delayed       ),// output: 系统就绪延迟版，供时序控制/监控
+    .pon_reset_n                            (pon_reset_n                ),// output: 全局复位（低有效，不考虑pdg_aux_bmc）
+    .pon_reset_db_n                         (pon_reset_db_n             ),// output: 全局复位（低有效, 考虑pdg_aux_bmc）
+    .pgd_aux_system                         (pgd_aux_system             ),// output: 系统域 AUX PGD（稳定）
+    .pgd_aux_system_sasd                    (pgd_aux_system_sasd        ),// output: 系统域 AUX PGD（稳定）
+    .cpld_ready                             (cpld_ready                 ) // output：CPLD 就绪指示（低有效）
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 时钟树
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire                                t40ns_tick                  ;
-wire                                t80ns_tick                  ;
-wire                                t160ns_tick                 ;
-wire                                t1us_tick                   ;
-wire                                t2us_tick                   ;  
-wire                                t8us_tick                   ;
-wire                                t16us_tick                  ;
-wire                                t32us_tick                  ;
-wire                                t128us_tick                 ;
-wire                                t512us_tick                 ;
-wire                                t1ms_tick                   ;
-wire                                t2ms_tick                   ;
-wire                                t16ms_tick                  ;
-wire                                t32ms_tick                  ;
-wire                                t64ms_tick                  ;
-wire                                t128ms_tick                 ;
-wire                                t256ms_tick                 ;
-wire                                t512ms_tick                 ;
-wire                                t1s_tick                    ;
-wire                                t8s_tick                    ;
-wire                                t0p5hz_clk                  ;
-wire                                t1hz_clk                    ;
-wire                                t2p5hz_clk                  ;
-wire                                t4hz_clk                    ;
-wire                                t16khz_clk                  ;
-wire                                t6m25_clk                   ;
+// tick 定时脉冲; clk 频率时钟
+wire                                        t40ns_tick                  ;
+wire                                        t80ns_tick                  ;
+wire                                        t160ns_tick                 ;
+wire                                        t1us_tick                   ;
+wire                                        t2us_tick                   ;  
+wire                                        t8us_tick                   ;
+wire                                        t16us_tick                  ;
+wire                                        t32us_tick                  ;
+wire                                        t128us_tick                 ;
+wire                                        t512us_tick                 ;
+wire                                        t1ms_tick                   ;
+wire                                        t2ms_tick                   ;
+wire                                        t16ms_tick                  ;
+wire                                        t32ms_tick                  ;
+wire                                        t64ms_tick                  ;
+wire                                        t128ms_tick                 ;
+wire                                        t256ms_tick                 ;
+wire                                        t512ms_tick                 ;
+wire                                        t1s_tick                    ;
+wire                                        t8s_tick                    ;
+wire                                        t0p5hz_clk                  ;
+wire                                        t1hz_clk                    ;
+wire                                        t2p5hz_clk                  ;
+wire                                        t4hz_clk                    ;
+wire                                        t16khz_clk                  ;
+wire                                        t6m25_clk                   ;
 
 timer_gen timer_gen_inst(
-    .clk                            (sys_clk                    ),
-    .reset                          (~pon_reset_n               ),
-    .t40ns                          (t40ns_tick                 ),
-    .t80ns                          (t80ns_tick                 ),
-    .t160ns                         (t160ns_tick                ),
-    .t1us                           (t1us_tick                  ),
-    .t2us                           (t2us_tick                  ),
-    .t8us                           (t8us_tick                  ),
-    .t16us                          (t16us_tick                 ),
-    .t32us                          (t32us_tick                 ),
-    .t128us                         (t128us_tick                ),
-    .t512us                         (t512us_tick                ),
-    .t1ms                           (t1ms_tick                  ),
-    .t2ms                           (t2ms_tick                  ),
-    .t16ms                          (t16ms_tick                 ),
-    .t32ms                          (t32ms_tick                 ),
-    .t64ms                          (t64ms_tick                 ),
-    .t128ms                         (t128ms_tick                ),
-    .t256ms                         (t256ms_tick                ),
-    .t512ms                         (t512ms_tick                ),
-    .t1s                            (t1s_tick                   ),
-    .t8s                            (t8s_tick                   ),
-    .clk_0p5hz                      (t0p5hz_clk	                ),
-    .clk_1hz                        (t1hz_clk                   ),
-    .clk_2p5hz                      (t2p5hz_clk                 ),
-    .clk_4hz                        (t4hz_clk                   ),
-    .clk_16khz                      (t16khz_clk                 ),
-    .clk_6m25                       (t6m25_clk                  )
+    .clk                                    (sys_clk                    ),
+    .reset                                  (~pon_reset_n               ),
+    .t40ns                                  (t40ns_tick                 ),
+    .t80ns                                  (t80ns_tick                 ),
+    .t160ns                                 (t160ns_tick                ),
+    .t1us                                   (t1us_tick                  ),
+    .t2us                                   (t2us_tick                  ),
+    .t8us                                   (t8us_tick                  ),
+    .t16us                                  (t16us_tick                 ),
+    .t32us                                  (t32us_tick                 ),
+    .t128us                                 (t128us_tick                ),
+    .t512us                                 (t512us_tick                ),
+    .t1ms                                   (t1ms_tick                  ),
+    .t2ms                                   (t2ms_tick                  ),
+    .t16ms                                  (t16ms_tick                 ),
+    .t32ms                                  (t32ms_tick                 ),
+    .t64ms                                  (t64ms_tick                 ),
+    .t128ms                                 (t128ms_tick                ),
+    .t256ms                                 (t256ms_tick                ),
+    .t512ms                                 (t512ms_tick                ),
+    .t1s                                    (t1s_tick                   ),
+    .t8s                                    (t8s_tick                   ),
+    .clk_0p5hz                              (t0p5hz_clk	                ),
+    .clk_1hz                                (t1hz_clk                   ),
+    .clk_2p5hz                              (t2p5hz_clk                 ),
+    .clk_4hz                                (t4hz_clk                   ),
+    .clk_16khz                              (t16khz_clk                 ),
+    .clk_6m25                               (t6m25_clk                  )
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 上下电模块
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire                                db_sys_sw_in_n              ;
-wire                                pch_pwrbtn                  ;      
+wire                                        db_sys_sw_in_n              ;
+wire                                        pch_pwrbtn                  ;   
+wire                                           
 
 pwrseq_master #(
-    .LIM_RECOV_MAX_RETRY_ATTEMPT           (2                         ),
-    .WDT_NBITS                             (10                        ),
-    .DSW_PWROK_TIMEOUT_VAL                 (75                        ),
-    .PCH_WATCHDOG_TIMEOUT_VAL              (256                       ),
-    .PON_WATCHDOG_TIMEOUT_VAL              (256                       ),
-    .PSU_WATCHDOG_TIMEOUT_VAL              (10                        ),
-    .EFUSE_WATCHDOG_TIMEOUT_VAL            (137                       ),
-    .VCORE_WATCHDOG_TIMEOUT_VAL            (PON_WATCHDOG_TIMEOUT_VAL  ),
-    .PDN_WATCHDOG_TIMEOUT_VAL              (2                         ),
-    .PDN_WATCHDOG_TIMEOUT_FAULT_VAL        (PDN_WATCHDOG_TIMEOUT_VAL  ),
-    .DISABLE_INTEL_VCCIN_TIMEOUT_VAL       (PDN_WATCHDOG_TIMEOUT_VAL  ),
-    .DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL (PDN_WATCHDOG_TIMEOUT_VAL  ),
-    .DISABLE_3V3_TIMEOUT_VAL               (34                        ),
-    .DISABLE_3V3_TIMEOUT_FAULT_VAL         (17                        ),
-    .PON_65MS_WATCHDOG_TIMEOUT_VAL         (2                         ),
-    .DC_ON_WAIT_COMPLETE_NOFLT_VAL         (33                        ),
-    .DC_ON_WAIT_COMPLETE_FAULT_VAL         (1                         ),
-    .PF_ON_WAIT_COMPLETE_VAL               (4                         ),
-    .PO_ON_WAIT_COMPLETE_VAL               (0                         ),
-    .S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL (75                        ),
-    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL (6                         )
+    .LIM_RECOV_MAX_RETRY_ATTEMPT            (2                          ),
+    .WDT_NBITS                              (10                         ),
+    .DSW_PWROK_TIMEOUT_VAL                  (75                         ),
+    .PCH_WATCHDOG_TIMEOUT_VAL               (256                        ),
+    .PON_WATCHDOG_TIMEOUT_VAL               (256                        ),
+    .PSU_WATCHDOG_TIMEOUT_VAL               (10                         ),
+    .EFUSE_WATCHDOG_TIMEOUT_VAL             (137                        ),
+    .VCORE_WATCHDOG_TIMEOUT_VAL             (PON_WATCHDOG_TIMEOUT_VAL   ),
+    .PDN_WATCHDOG_TIMEOUT_VAL               (2                          ),
+    .PDN_WATCHDOG_TIMEOUT_FAULT_VAL         (PDN_WATCHDOG_TIMEOUT_VAL   ),
+    .DISABLE_INTEL_VCCIN_TIMEOUT_VAL        (PDN_WATCHDOG_TIMEOUT_VAL   ),
+    .DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL  (PDN_WATCHDOG_TIMEOUT_VAL   ),
+    .DISABLE_3V3_TIMEOUT_VAL                (34                         ),
+    .DISABLE_3V3_TIMEOUT_FAULT_VAL          (17                         ),
+    .PON_65MS_WATCHDOG_TIMEOUT_VAL          (2                          ),
+    .DC_ON_WAIT_COMPLETE_NOFLT_VAL          (33                         ),
+    .DC_ON_WAIT_COMPLETE_FAULT_VAL          (1                          ),
+    .PF_ON_WAIT_COMPLETE_VAL                (4                          ),
+    .PO_ON_WAIT_COMPLETE_VAL                (0                          ),
+    .S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL  (75                         ),
+    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL  (6                          )
 ) pwrseq_master_inst (
     // -----------------------------------------------------------
     // 1. 时钟与复位接口（模块时序基准与初始化）
@@ -497,41 +499,70 @@ pwrseq_master #(
     .sequence_tick                  (t2ms_tick                  ),
     .psu_on_tick                    (t32ms_tick                 ), 
 
-
-    .sys_sw_in_n                    (db_sys_sw_in_n             ),//in
-    .pch_pwrbtn_n                   (~pch_pwrbtn                ),//yhy(1'b1),//���Ե�ʱ��������(~pch_pwrbtn),//in,power down//ʵ�ʹ�����03�Ĵ�����bit6 BMC����ǿ�ƹػ������bit������δ���¹ػ�����Ҫȷ�ϡ�
+    // -----------------------------------------------------------
+    // 3. 外部控制信号接口（接收用户/硬件操作指令）
+    // -----------------------------------------------------------
+    .sys_sw_in_n                    (db_sys_sw_in_n             ),
+    .pch_pwrbtn_n                   (~pch_pwrbtn                ),
     .pch_pwrbtn_s                   (pch_pwrbtn_s               ),
-    .pch_thermtrip_n                (~pch_thrmtrip              ),//yhy (1'b1),//���Ե�ʱ�������� (~pch_thrmtrip),                           //in,power down    //ʵ�ʹ�����03�Ĵ�����bit4 BMC����ǿ�ƹػ��� ����PAL_PWR_BTN_NҲ�ᵼ�¹ػ�
-    .force_pwrbtn_n                 (force_pwrbtn_n             ),//out,TO PSU ʵ��δʹ��
-    .xr_ps_en                       (1'b1                       ),//in   δ���� |xr_ps_enable     
-    .cpu_reboot                     (cpu_reboot_S               ),//YHY  ADD  
-    .cpu_reboot_x                   (cpu_reboot_x               ),//YHY  ADD   
-    .cpu_power_off                  (cpu_power_off              ),//YHY  ADD  
-    .pch_sys_reset_n                (pch_sys_reset_n            ),//YHY  ADD //force_reb & pch_sys_reset_n
-    .pch_thermtrip_FLAG             (pch_thermtrip_flag         ),//YHY  ADD 
-    .CPU_OFF_FLAG                   (cpu_off_flag               ),//YHY  ADD 
-    .REBOOT_FLAG                    (reboot_flag                ),//YHY  ADD 
-    .allow_recovery                 (1'b0                       ),
-    .keep_alive_on_fault            (keep_alive_on_fault        ),
-    .pgd_raw                        (pgd_raw                    ),//out,TO PWRBTN_LEDS
-    .s5dev_pwren_request            (1'b0                       ),//(1'b0),//���Ե�ʱ���Ȳ����й��ϸ澯(s5dev_aux_pwren_request ),//in,FROM SLAVE//δ����
-    .s5dev_pwrdis_request           (1'b0                       ),//(1'b0), //���Ե�ʱ���Ȳ����й��ϸ澯(s5dev_aux_pwrdis_request),//in,FROM SLAVE//δ����
-    .pgd_so_far                     (pgd_so_far                 ),//YHY(1'b1),//���Ե�ʱ���Ȳ����й��ϸ澯//δ���� pgd_so_far   
-    .any_pwr_fault_det              (any_pwr_fault_det          ),//YHY(1'b0), //���Ե�ʱ���Ȳ����й��ϸ澯 //δ����  any_pwr_fault_det  
-    .any_lim_recov_fault            (any_lim_recov_fault        ),//YHY(1'b0), //���Ե�ʱ���Ȳ����й��ϸ澯 //δ���� any_lim_recov_fault   
-    .any_non_recov_fault            (any_non_recov_fault        ),//YHY(1'b0), //���Ե�ʱ���Ȳ����й��ϸ澯//δ����  any_non_recov_fault    
-    .Power_WAKE_R_N                 (power_wake_r_n             ),//in,�����ӿ���wake�źţ����ڻ������壬����Ч
-    .turn_system_on                 (turn_system_on             ),//out,TO SLAVE
-    .dc_on_wait_complete            (dc_on_wait_complete        ),//out,TO SLAVE
-    .rt_critical_fail_store         (rt_critical_fail_store     ),//out,TO SLAVE/ADR/SYSTEM_RESET
-    .fault_clear                    (fault_clear                ),//out,TO SLAVE/PSU/THERMAL
-    .power_seq_sm                   (power_seq_sm               ),//out
-    .power_fault                    (power_fault                ),//out,TO PF/XREG/PWRBTN_LED/HEALTH_LEDS/UID/POST_LEDS/NIC_LEDS
-    .stby_failure_detected          (stby_failure_detected      ),//out,TO PF/XREG
-    .po_failure_detected            (dc_failure_detected        ),//out,TO PF/XREG
-    .rt_failure_detected            (rt_failure_detected        ),//out,TO PF/XREG
-    .cpld_latch_sys_off             (cpld_latch_sys_off         ),//out,TO XREG
-    .turn_on_wait                   (turn_on_wait               ) //out,TO PWRBTN_LEDS
+    
+    // -----------------------------------------------------------
+    // 4. 电源与故障检测接口（接收硬件状态信号）
+    // -----------------------------------------------------------
+    .pch_thermtrip_n                (~pch_thrmtrip              ), // 输入：PCH 热跳闸信号（低电平有效，1=无过热，0=CPU 过热触发下电）
+    .force_pwrbtn_n                 (force_pwrbtn_n             ), // 输出：强制电源按钮信号（低电平有效，送至 PSU，当前未使用）
+                                                                   // 备用功能：故障下电后，强制 PCH 切换到 S5 状态，确保彻底断电
+    .xr_ps_en                       (1'b1                       ), // 输入：XR 电源使能信号（1=使能，0=禁用）
+    .cpu_reboot                     (cpu_reboot_S               ), // YHY  ADD  
+    .cpu_reboot_x                   (cpu_reboot_x               ), // YHY  ADD   
+    .cpu_power_off                  (cpu_power_off              ), // YHY  ADD  
+    .pch_sys_reset_n                (pch_sys_reset_n            ), // YHY  ADD //force_reb & pch_sys_reset_n
+    .pch_thermtrip_FLAG             (pch_thermtrip_flag         ), // YHY  ADD 
+    .CPU_OFF_FLAG                   (cpu_off_flag               ), // YHY  ADD 
+    .REBOOT_FLAG                    (reboot_flag                ), // YHY  ADD 
+
+
+    .allow_recovery                 (1'b0                       ),// 输入：允许故障恢复信号（1=允许自动恢复，0=禁止）
+                                                                  // 此处固定为 0：故障后不自动重试，需人工或 BMC 干预，避免反复故障
+    .keep_alive_on_fault            (keep_alive_on_fault        ),// 输入：故障时保持上电信号（来自前文定义，控制故障后是否下电）
+    
+    .pgd_raw                        (pgd_raw                    ),// 输出：原始电源好信号（送至电源按钮指示灯，当前未使用）
+                                                                  // 备用功能：指示灯显示电源好状态，方便现场排查
+    .s5dev_pwren_request            (1'b0                       ),// 输入：S5 状态设备上电请求信号（来自电源请求从模块 pwrweq_slave）
+                                                                  // 功能：S5 休眠状态下，外部设备（如 BMC）请求上电时触发该信号
+    .s5dev_pwrdis_request           (1'b0                       ),// 输入：S5 状态设备断电请求信号（来自 pwrweq_slave）
+                                                                  // 功能：S5 状态下，外部设备请求断电时触发该信号
+    .pgd_so_far                     (pgd_so_far                 ),// 输入：电源好（PGD）累积信号（来自 pwrweq_slave）
+                                                                  // 功能：汇总所有子模块的电源好信号，用于判断整体电源是否稳定  
+    .any_pwr_fault_det              (any_pwr_fault_det          ),// 输入：任意电源故障检测信号（来自 pwrweq_slave）
+                                                                  // 功能：检测到任一子模块电源故障时为 1，触发主模块故障处理 
+    .any_lim_recov_fault            (any_lim_recov_fault        ),// 输入：任意有限恢复故障信号（来自 pwrweq_slave）
+                                                                  // 功能：轻微故障（如电压波动），可通过重试恢复   
+    .any_non_recov_fault            (any_non_recov_fault        ),// 输入：任意非恢复故障信号（来自 pwrweq_slave）
+                                                                  // 功能：严重故障（如电源短路），无法恢复，需立即下电  
+    .Power_WAKE_R_N                 (power_wake_r_n             ),// 
+    .turn_system_on                 (turn_system_on             ),// 输出：系统开机信号（送至电源序列从模块 slave）
+                                                                  // 功能：触发从模块执行系统开机序列
+    .dc_on_wait_complete            (dc_on_wait_complete        ),// 输出：DC 电源上电等待完成信号（送至电源序列从模块 slave）
+                                                                  // 功能：告知从模块“主模块已完成 DC 上电等待，可执行后续步骤”
+    .rt_critical_fail_store         (rt_critical_fail_store     ),// 输出：RT 关键故障存储信号（送至从模块/复位模块）
+                                                                  // 功能：存储关键故障信息，用于故障复位后追溯原因
+    .fault_clear                    (fault_clear                ),// 输出：故障清除信号（送至从模块/PSU/热管理模块）
+                                                                  // 功能：BMC 或人工清除故障后，该信号触发下游模块清除故障标志
+    .power_seq_sm                   (power_seq_sm               ),// 输出：电源序列状态机信号（核心输出，告知所有模块当前电源阶段）
+                                                                  // 常见状态：上电初始化、电源升压、电源稳定、下电等
+    .power_fault                    (power_fault                ),// 输出：电源故障信号（送至故障处理模块/指示灯/网卡）
+                                                                  // 功能：触发故障指示灯亮、网卡上报故障，告知外部系统电源异常
+    .stby_failure_detected          (stby_failure_detected      ),// 输出：待机故障检测信号（送至故障处理模块）
+                                                                  // 功能：检测到待机电源（如 5V_STB）故障时输出 1
+    .po_failure_detected            (dc_failure_detected        ),// 输出：DC 电源故障检测信号（送至故障处理模块）
+                                                                  // 功能：检测到 DC 主电源（如 12V/5V）故障时输出 1
+    .rt_failure_detected            (rt_failure_detected        ),// 输出：RT 电源故障检测信号（送至故障处理模块）
+                                                                  // 功能：检测到 RT 电源（如 CPU 核心供电）故障时输出 1
+    .cpld_latch_sys_off             (cpld_latch_sys_off         ),// 输出：CPLD 锁存系统关闭信号（送至扩展寄存器 XREG）
+                                                                  // 功能：锁存“系统关闭”状态，避免故障恢复时误上电
+    .turn_on_wait                   (turn_on_wait               ) // 输出：开机等待信号（送至电源按钮指示灯）
+                                                                  // 功能：开机过程中点亮指示灯，告知用户“系统正在上电，请勿操作”
 );
 
 endmodule

@@ -24,9 +24,9 @@
 //     Default: 8 (max of 255 for any timeout values)
 //     For the parameters below, it is assumed that the sequence_tick rate is 2ms while psu_on_tick
 //     rate is 32ms. Platform can use a different tick as needed.
-//   DSW_PWROK_TIMEOUT_VAL: ¸øcpuÉÏµçÊ¹ÓÃ£¬ÉèÖÃ³É20ms
+//   DSW_PWROK_TIMEOUT_VAL: ï¿½ï¿½cpuï¿½Ïµï¿½Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ã³ï¿½20ms
 //     Default: 10 (sequence_tick=2ms * 10 = 20ms)
-//   PCH_WATCHDOG_TIMEOUT_VAL: ¿ØÖÆp3v3ÉÏµç£¬ºóÃæµçÔ´µÄÉÏµçÊ±¼ä¼ä¸ô
+//   PCH_WATCHDOG_TIMEOUT_VAL: ï¿½ï¿½ï¿½ï¿½p3v3ï¿½Ïµç£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ïµï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 //     Default: 1000 (sequence_tick=2ms * 1000 = 2s)
 //   PON_WATCHDOG_TIMEOUT_VAL: Wait time for VRM turn on before considering it faulted.
 //     Default: 112 (sequence_tick=2ms * 112 = 224ms)
@@ -67,32 +67,30 @@
 //   Date      By          Revision  Change Description
 //   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
-
-//`include "wpspo_g5_define.vh"
 `include "rs35m2c16s_g5_define.vh"
 module pwrseq_master #(
-  parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2,
-  parameter WDT_NBITS                             = 10,
-  parameter DSW_PWROK_TIMEOUT_VAL                 = 10,//Õâ¸öÊ±¼äÊÇ¸øcpuÄÚ²¿Ê¹ÓÃµÄ£¬intel¶¨ÒåµÄÊ±¼ä¶¼ÊÇ200ms£¬cpuµÄÉÏµçÊ±¼ä¼ä¸ôÉèÖÃ³É20ms
-  parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000,//P3V3ÉÏµçºóÑÓÊ±2s£¬ÔÙcpuÏà¹ØµçÔ´ÉÏµç£¬pchµÄÃû×ÖÑØÓÃ£¬²»µ¥¶ÀĞŞ¸Ä
-  parameter PON_WATCHDOG_TIMEOUT_VAL              = 112,
-  parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10,
-  parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 137,
-  parameter VCORE_WATCHDOG_TIMEOUT_VAL            = PON_WATCHDOG_TIMEOUT_VAL,
-  parameter PDN_WATCHDOG_TIMEOUT_VAL              = 2,
-  parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = PDN_WATCHDOG_TIMEOUT_VAL,
-  parameter DISABLE_INTEL_VCCIN_TIMEOUT_VAL       = PDN_WATCHDOG_TIMEOUT_VAL,
-  parameter DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL = PDN_WATCHDOG_TIMEOUT_VAL,
-  parameter DISABLE_3V3_TIMEOUT_VAL               = PDN_WATCHDOG_TIMEOUT_VAL,
-  parameter DISABLE_3V3_TIMEOUT_FAULT_VAL         = PDN_WATCHDOG_TIMEOUT_VAL,
-  parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34,
-  parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17,
-  parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2,
-  parameter PF_ON_WAIT_COMPLETE_VAL               = 33,
-  parameter PO_ON_WAIT_COMPLETE_VAL               = 1,
-  parameter S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL = 0,
-  parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0) (
-
+  parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         , // æœ€å¤§æ¢å¤é‡è¯•æ¬¡æ•°
+  parameter WDT_NBITS                             = 10                        , // çœ‹é—¨ç‹—è®¡æ•°å™¨ä½å®½
+  parameter DSW_PWROK_TIMEOUT_VAL                 = 10                        , // 
+  parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000                      , // 
+  parameter PON_WATCHDOG_TIMEOUT_VAL              = 112                       , // ä¸Šç”µçœ‹é—¨ç‹—è¶…æ—¶æ—¶é—´
+  parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10                        , // 
+  parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 137                       , // 
+  parameter VCORE_WATCHDOG_TIMEOUT_VAL            = PON_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter PDN_WATCHDOG_TIMEOUT_VAL              = 2                         , // 
+  parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = PDN_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter DISABLE_INTEL_VCCIN_TIMEOUT_VAL       = PDN_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL = PDN_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter DISABLE_3V3_TIMEOUT_VAL               = PDN_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter DISABLE_3V3_TIMEOUT_FAULT_VAL         = PDN_WATCHDOG_TIMEOUT_VAL  , // 
+  parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34                        , // ä¸Šç”µ65msçœ‹é—¨ç‹—è¶…æ—¶æ—¶é—´
+  parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17                        , // æ— æ•…éšœæ—¶DC ONç­‰å¾…å®Œæˆæ—¶é—´ 
+  parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2                         , // æœ‰æ•…éšœæ—¶DC ONç­‰å¾…å®Œæˆæ—¶é—´ 
+  parameter PF_ON_WAIT_COMPLETE_VAL               = 33                        , // ç”µæºæ•…éšœç­‰å¾…å®Œæˆæ—¶é—´
+  parameter PO_ON_WAIT_COMPLETE_VAL               = 1                         , // ç”µæºå¼€å¯ç­‰å¾…å®Œæˆæ—¶é—´
+  parameter S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL = 0                         , // æ— æ•…éšœæ—¶S5è®¾å¤‡å¼€å¯ç­‰å¾…æ—¶é—´                       
+  parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0                           // æœ‰æ•…éšœæ—¶S5è®¾å¤‡å¼€å¯ç­‰å¾…æ—¶é—´
+)(                      
   input            clk,                     // clock
   input            reset,                   // reset
   input            t1us,                    // 10ns pulse every 1us
@@ -111,13 +109,13 @@ module pwrseq_master #(
   input            pch_thermtrip_n,          // SB bound thermtrip signal (same signal driven to SB THERMTRIP)
   output reg       force_pwrbtn_n,          // forces SB to switch to S5 after power shutdown due to fault
 
-  input            cpu_reboot,                // cpuËÍ³öµÄÖØÆôÃüÁî£¬1ÉúĞ§,¼ä¸ô5sËÍ³ö
-  input            cpu_reboot_x,             // cpuËÍ³öµÄÖØÆôÃüÁî£¬1ÉúĞ§,¼ä¸ô3sËÍ³ö
-  input            cpu_power_off,                // CPU ËÍ³öµÄÏÂµçÃüÁî£¬0ÉúĞ§
+  input            cpu_reboot,                // cpuï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬1ï¿½ï¿½Ğ§,ï¿½ï¿½ï¿½5sï¿½Í³ï¿½
+  input            cpu_reboot_x,             // cpuï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬1ï¿½ï¿½Ğ§,ï¿½ï¿½ï¿½3sï¿½Í³ï¿½
+  input            cpu_power_off,                // CPU ï¿½Í³ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½î£¬0ï¿½ï¿½Ğ§
 
 
-  input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)  //¼Ä´æÆ÷51.Ä¬ÈÏÊäÈë0,±íÊ¾¿ªÆôPSUµÄÖ÷µçÊä³ö(PSON
-//YHY  input            pwron_override_n,        // power-on override    Ä¬ÈÏÊäÈë1
+  input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)  //ï¿½Ä´ï¿½ï¿½ï¿½51.Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0,ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½PSUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(PSON
+//YHY  input            pwron_override_n,        // power-on override    Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1
 //YHY  input            interlock_broken,        // interlock broken indicator
   input            allow_recovery,          // allow power button press to recover from HALT_POWER_CYCLE
 //YHY  input            aux_video_holdoff,       // allow AUX video to hold turning on of system
@@ -163,50 +161,414 @@ output reg  REBOOT_FLAG,
 
 `include "pwrseq_define.vh"
 
-// Derive number of bits needed for counter
-// - This may generate one more than required number of FFs
+// â€œæœ‰é™æ¢å¤æœ€å¤§é‡è¯•æ¬¡æ•°â€ï¼Œè‡ªåŠ¨è®¡ç®—é‡è¯•è®¡æ•°å™¨çš„ä½å®½ï¼Œé¿å…æ‰‹åŠ¨å®šä¹‰ä½å®½å¯¼è‡´çš„èµ„æºæµªè´¹æˆ–è®¡æ•°æº¢å‡ºã€‚
 function integer clogb2 (input [31:0] value);
-reg [31:0] tmp;
-begin
-  tmp = (value <= 2) ? 2 : (value - 1);
-  for (clogb2 = 0; tmp > 0; clogb2 = clogb2 + 1)
-    tmp = tmp >> 1;
-end
+    reg [31:0] tmp;
+    begin
+        tmp = (value <= 2) ? 2 : (value - 1); // å¤„ç†è¾¹ç•Œï¼švalueâ‰¤2æ—¶å¼ºåˆ¶tmp=2ï¼Œé¿å…ä½å®½ä¸è¶³
+        for (clogb2 = 0; tmp > 0; clogb2 = clogb2 + 1)
+            tmp = tmp >> 1;
+    end
 endfunction
-
-// Limited recovery retry counter
 localparam LIM_RECOV_RETRY_NBITS = clogb2(LIM_RECOV_MAX_RETRY_ATTEMPT);
 
 
-// FSM
-reg  [5:0] state;
-reg  [5:0] state_ns;
+// FSM 
+reg    [5:0]                                  state                             ; // å½“å‰çŠ¶æ€
+reg    [5:0]                                  state_ns                          ; // ä¸‹ä¸€çŠ¶æ€
+reg    [5:0]                                  power_seq_sm_last                 ; // ä¸Šä¸€ä¸ªçŠ¶æ€
 
-wire st_off_standby;
-wire st_ps_on;
-wire st_steady_pwrok;
-wire st_critical_fail;
-wire st_halt_power_cycle;
-wire st_disable_main_efuse;
+wire                                          st_off_standby                    ; //çŠ¶æ€æœº SM_OFF_STANDBY çŠ¶æ€
+wire                                          st_ps_on                          ; //çŠ¶æ€æœº SM_PS_ON çŠ¶æ€
+wire                                          st_steady_pwrok                   ; //çŠ¶æ€æœº SM_STEADY_PWROK çŠ¶æ€
+wire                                          st_critical_fail                  ; //çŠ¶æ€æœº SM_CRITICAL_FAIL çŠ¶æ€
+wire                                          st_halt_power_cycle               ; //çŠ¶æ€æœº SM_HALT_POWER_CYCLE çŠ¶æ€
+wire                                          st_disable_main_efuse             ; //çŠ¶æ€æœº SM_DISABLE_MAIN_EFUSE çŠ¶æ€
 
-// Watchdog logic
-reg  [WDT_NBITS-1:0] wdt_counter;
-wire wdt_tick;
-reg  [5:0] power_seq_sm_last;
-wire wdt_counter_clr;
- reg  dsw_pwrok_timeout;
- reg  pch_watchdog_timeout;
- reg  pon_watchdog_timeout;
-reg  psu_watchdog_timeout;
-reg  efuse_watchdog_timeout;
-reg  vcore_watchdog_timeout;
-reg  pdn_watchdog_timeout;
-reg  disable_intel_vccin_timeout;
-reg  disable_3v3_timeout;
-reg  pon_65ms_watchdog_timeout;
-reg  pf_on_wait_complete;
-reg  po_on_wait_complete;
-reg  s5_devices_on_wait_complete;
+// ä¸Šä¸‹ç”µçœ‹é—¨ç‹—è®¡æ•°å™¨
+reg     [WDT_NBITS-1:0]                       wdt_counter                       ; // çœ‹é—¨ç‹—è®¡æ•°å™¨
+wire                                          wdt_tick                          ; // çœ‹é—¨ç‹—è®¡æ•°å™¨çš„æ—¶é’Ÿä¿¡å·
+wire                                          wdt_counter_clr                   ; // çœ‹é—¨ç‹—è®¡æ•°å™¨æ¸…é›¶ä¿¡å·
+
+// å„é˜¶æ®µè¶…æ—¶æ ‡å¿—ï¼šç”µæºç»„A/Bå°±ç»ªè¶…æ—¶ã€ä¸Šç”µè¶…æ—¶ã€PSUè¶…æ—¶ã€eFuseè¶…æ—¶ã€Vcoreè¶…æ—¶ã€æ–­ç”µè¶…æ—¶ç­‰
+reg                                           dsw_pwrok_timeout                 ;
+reg                                           pch_watchdog_timeout              ;
+reg                                           pon_watchdog_timeout              ;
+reg                                           psu_watchdog_timeout              ;
+reg                                           efuse_watchdog_timeout            ;
+reg                                           vcore_watchdog_timeout            ;
+reg                                           pdn_watchdog_timeout              ;
+reg                                           disable_intel_vccin_timeout       ;
+reg                                           disable_3v3_timeout               ;
+reg                                           pon_65ms_watchdog_timeout         ;
+reg                                           pf_on_wait_complete               ;
+reg                                           po_on_wait_complete               ;
+reg                                           s5_devices_on_wait_complete       ;
+
+/* ------------------------------------------------------------------------------------------------------------
+ä¸»æ¿ä¸Šä¸‹ç”µçŠ¶æ€æœº
+---------------------------------------------------------------------------------------------------------------*/
+// FSM 1
+always @(posedge clk or posedge reset) begin
+    if (reset)
+        state <= `SM_RESET_STATE ; // åˆå§‹å¤ä½çŠ¶æ€
+    else if(t1us)
+        state <= state_ns        ; // çŠ¶æ€åˆ‡æ¢, æ¯1usæ›´æ–°ä¸€æ¬¡
+end
+
+// FSM 2
+always @(*) begin
+    // é»˜è®¤å€¼ï¼Œé˜²æ­¢é”å­˜
+    state_ns = state;
+
+    case (state)
+        SM_RESET_STATE: begin
+            state_ns = SM_EN_P3V3_VCC;
+        end
+
+        SM_EN_P3V3_VCC: begin
+            if(critical_fail_en_sm_en_p3v3_vcc)                       
+                state_ns = SM_CRITICAL_FAIL;
+            else if(trans_en_sm_en_p3v3_vcc)                          
+                state_ns = SM_OFF_STANDBY  ;
+        end
+
+        SM_ENABLE_S5_DEVICES: begin
+            if(pwron_critical_fail_en)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pwrup_state_trans_en)                             
+                state_ns = SM_OFF_STANDBY  ;
+        end
+
+        SM_OFF_STANDBY: begin
+            if(any_pwr_fault_det)                                     
+                state_ns = SM_CRITICAL_FAIL;
+            else if(s5dev_pwrdis_request)                             
+                state_ns = SM_DISABLE_S5_DEVICES;
+            else if(s5dev_pwren_request && s5_devices_on_wait_complete) 
+                state_ns = SM_ENABLE_S5_DEVICES;
+            else if(turn_system_on && 
+                    dc_on_wait_complete &&
+                    ((~pch_pwrbtn_n) | (~pch_pwrbtn_s) | (~Power_WAKE_R_N) | (~cpu_reboot))
+                    )
+                state_ns = SM_PS_ON;
+        end
+
+        SM_PS_ON: begin
+            if(psu_critical_fail_en)                                  
+                state_ns = SM_CRITICAL_FAIL;
+            else if(psu_watchdog_timeout && pgd_so_far)               
+                state_ns = SM_EN_5V_STBY;
+        end
+
+        SM_EN_5V_STBY: begin
+            if(pwron_critical_fail_en)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pwrup_state_trans_en)                             
+                state_ns = SM_EN_TELEM;
+        end
+
+        SM_EN_TELEM: begin
+            if(pwron_critical_fail_en)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pwrup_state_trans_en)                             
+                state_ns = SM_EN_MAIN_EFUSE;
+        end
+
+        SM_EN_MAIN_EFUSE: begin
+            if(efuse_critical_fail_en)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(efuse_watchdog_timeout && pgd_so_far)             
+                state_ns = SM_EN_5V;
+        end
+
+        SM_EN_5V: begin
+            if(pwron_critical_fail_en)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pwrup_state_trans_en)                             
+                state_ns = SM_EN_3V3;
+        end
+
+        SM_EN_3V3: begin
+            if(pch_critical_fail_en)                                  
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pch_state_trans_en)                               
+                state_ns = SM_EN_P1V8;
+        end
+
+        SM_EN_P1V8: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = SM_EN_P2V5_VPP;
+        end
+
+        SM_EN_P2V5_VPP: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if (pchdsw_state_trans_en)                            
+                state_ns = SM_EN_VP;
+        end
+
+        SM_EN_VP: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = SM_EN_P0V8;
+        end
+
+        SM_EN_P0V8: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = SM_EN_VDD;
+        end
+
+        SM_EN_VDD: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = PEX_RESET;
+        end
+
+        PEX_RESET: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = SM_CPU_RESET;
+        end
+
+        SM_CPU_RESET: begin
+            if(pchdsw_critical_fail_en)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pchdsw_state_trans_en)                            
+                state_ns = SM_WAIT_POWEROK;
+        end
+
+        SM_WAIT_POWEROK: begin
+            if(wait_steady_pwrok_fail_en)                             
+                state_ns = SM_CRITICAL_FAIL;
+            else if(pon_65ms_watchdog_timeout && pgd_so_far)          
+                state_ns = SM_STEADY_PWROK;
+        end
+
+        SM_STEADY_PWROK: begin
+            if(rt_critical_fail_store)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(rt_normal_pwr_down)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if (~cpu_power_off)                                   
+                state_ns = SM_CRITICAL_FAIL;
+            else if (~pch_sys_reset_n)                                 
+                state_ns = SM_CRITICAL_FAIL;
+            else 
+                state_ns = SM_STEADY_PWROK ;
+        end
+
+        SM_CRITICAL_FAIL: begin
+            state_ns = SM_DISABLE_VDD;
+        end
+
+        // ä¸‹ç”µçŠ¶æ€è·³è½¬
+        SM_DISABLE_VDD:         if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_P0V8;
+        SM_DISABLE_P0V8:        if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_VP;
+        SM_DISABLE_VP:          if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_P2V5_VPP;
+        SM_DISABLE_P2V5_VPP:    if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_P1V8;
+        SM_DISABLE_P1V8:        if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_3V3;
+        SM_DISABLE_3V3:         if (disable_3v3_timeout)             state_ns = SM_DISABLE_5V;
+        SM_DISABLE_5V:          if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_MAIN_EFUSE;
+        SM_DISABLE_MAIN_EFUSE:  if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_TELEM;
+        SM_DISABLE_TELEM:       if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_PS_ON;
+
+
+        SM_DISABLE_PS_ON: begin
+            if (pdn_watchdog_timeout)
+                state_ns = (any_pwr_fault_det) ? SM_DISABLE_S5_DEVICES : SM_OFF_STANDBY;
+        end
+
+        SM_DISABLE_S5_DEVICES: begin
+            if (pdn_watchdog_timeout) begin
+                if (any_pwr_fault_det)                                    
+                    state_ns = SM_HALT_POWER_CYCLE;
+                else                                                      
+                    state_ns = SM_OFF_STANDBY;
+            end
+        end
+
+        SM_HALT_POWER_CYCLE: begin
+            if(ready_for_recov && !any_non_recov_fault && !lim_recov_retry_max) begin
+                if((assert_power_button && (allow_recovery || ~any_lim_recov_fault)) ||
+                   (assert_physical_button && !allow_recovery && any_lim_recov_fault))
+                    state_ns = SM_AUX_FAIL_RECOVERY;
+            end
+        end
+
+        SM_AUX_FAIL_RECOVERY: begin
+            state_ns = SM_EN_P3V3_VCC;
+        end
+
+        default: state_ns = SM_RESET_STATE;
+    endcase
+end
+
+// FSM 3
+reg                                           assert_button_clr                 ; // æ¸…é™¤æŒ‰é’®ä¿¡å·
+
+// 
+reg                                           stby_failure_detected_clr         ;
+reg                                           stby_failure_detected_set         ;
+reg                                           po_failure_detected_clr           ;
+reg                                           po_failure_detected_set           ;
+reg                                           rt_failure_detected_clr           ;
+reg                                           rt_failure_detected_set           ;
+
+always @(*) begin
+    // é»˜è®¤å€¼ï¼Œé˜²æ­¢é”å­˜
+    assert_button_clr           = 1'b0;
+    stby_failure_detected_clr   = 1'b0;
+    stby_failure_detected_set   = 1'b0;
+    po_failure_detected_clr     = 1'b0;
+    po_failure_detected_set     = 1'b0;
+    rt_failure_detected_clr     = 1'b0;
+    rt_failure_detected_set     = 1'b0;
+    ready_for_recov_clr         = 1'b0;
+    ready_for_recov_set         = 1'b0;
+    lim_recov_retry_clr         = 1'b0;
+    lim_recov_retry_incr        = 1'b0;
+    off_state                   = 1'b0;
+    fault_clear_ns              = 1'b0;
+
+    POWER_DOWN_FLAG_clr         = 1'b0;
+    pch_thermtrip_FLAG_SET      = 1'b0;
+    CPU_OFF_FLAG_SET            = 1'b0;
+    REBOOT_FLAG_SET             = 1'b0;
+
+    case (state)
+        SM_RESET_STATE: begin
+            stby_failure_detected_clr = 1'b1;
+            po_failure_detected_clr   = 1'b1;
+            rt_failure_detected_clr   = 1'b1;
+            POWER_DOWN_FLAG_clr       = 1'b1;
+        end
+
+        SM_EN_P3V3_VCC: begin
+            if(critical_fail_en_sm_en_p3v3_vcc)  
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_ENABLE_S5_DEVICES: begin
+            if(pwron_critical_fail_en)           
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_OFF_STANDBY: begin
+            if(any_pwr_fault_det)                
+                stby_failure_detected_set = 1'b1;
+            else if(turn_system_on && 
+                    dc_on_wait_complete &&
+                    ((~pch_pwrbtn_n) | (~pch_pwrbtn_s) | (~Power_WAKE_R_N) | (~cpu_reboot))
+                  ) begin
+                assert_button_clr = 1'b1;
+                fault_clear_ns    = 1'b1;
+            end
+            off_state = 1'b1;
+        end
+
+        SM_PS_ON: begin
+            if(psu_critical_fail_en)             
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_5V_STBY: begin
+            if(pwron_critical_fail_en)           
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_TELEM: begin
+            if(pwron_critical_fail_en)           
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_MAIN_EFUSE: begin
+            if(efuse_critical_fail_en)           
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_5V: begin
+            if(pwron_critical_fail_en)           
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_3V3: begin
+            if(pch_critical_fail_en)             
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_EN_P1V8    ,
+        SM_EN_P2V5_VPP,
+        SM_EN_VP      ,
+        SM_EN_P0V8    ,
+        SM_EN_VDD     ,
+        PEX_RESET     ,
+        SM_CPU_RESET: begin
+            if (pchdsw_critical_fail_en)          
+                po_failure_detected_set = 1'b1;
+        end
+
+        SM_WAIT_POWEROK: begin
+            if (wait_steady_pwrok_fail_en)        
+                po_failure_detected_set = 1'b1;
+            else if (pon_65ms_watchdog_timeout && pgd_so_far)
+                POWER_DOWN_FLAG_clr = 1'b1;
+        end
+
+        SM_STEADY_PWROK: begin
+            if (rt_critical_fail_store)           
+                rt_failure_detected_set = 1'b1;
+            else if (rt_normal_pwr_down)          
+                pch_thermtrip_FLAG_SET  = 1'b1;
+            else if (~cpu_power_off)              
+                CPU_OFF_FLAG_SET        = 1'b1;
+            else if (~pch_sys_reset_n)            
+                REBOOT_FLAG_SET         = 1'b1;
+
+            // æ­£å¸¸ç¨³æ€æœŸé—´æ¸…ç©ºâ€œé™å®šæ¢å¤â€é‡è¯•è®¡æ•°
+            lim_recov_retry_clr = 1'b1;
+        end
+
+        SM_CRITICAL_FAIL: begin
+            assert_button_clr = 1'b1;
+        end
+
+        SM_DISABLE_MAIN_EFUSE: begin
+            off_state = 1'b0; // ä¸åŸé€»è¾‘ä¿æŒä¸€è‡´
+        end
+
+        SM_HALT_POWER_CYCLE: begin
+            // ç­‰å¾…çª—å£å®Œæˆåå…è®¸æ¢å¤
+            ready_for_recov_set = pf_on_wait_complete ;
+            off_state           = 1'b1                ;
+
+            if(ready_for_recov && !any_non_recov_fault && !lim_recov_retry_max) begin
+                if((assert_power_button && (allow_recovery || ~any_lim_recov_fault)) ||
+                  (assert_physical_button && !allow_recovery && any_lim_recov_fault))
+                  lim_recov_retry_incr = 1'b1;
+            end
+        end
+
+        SM_AUX_FAIL_RECOVERY: begin
+            stby_failure_detected_clr = 1'b1;
+            po_failure_detected_clr   = 1'b1;
+            rt_failure_detected_clr   = 1'b1;
+            ready_for_recov_clr       = 1'b1;
+            fault_clear_ns            = 1'b1;
+            off_state                 = 1'b1;
+        end
+
+        default: ;
+    endcase
+end
+
 
 // Button logic
 wire Power_WAKE_R_N_ne;
@@ -412,9 +774,9 @@ always @(posedge clk or posedge reset) begin
 //YHY                      ~interlock_broken                                 &  // nothing is broken
 //YHY                      ~aux_video_holdoff;
 
-//YHYLINSHI  turn_system_on <= (xr_ps_en  | turn_system_on) & pch_pwrbtn_n & cpu_power_off;         //¼Ä´æÆ÷51.Ä¬ÈÏÊäÈë0,±íÊ¾¿ªÆôPSUµÄÖ÷µçÊä³ö(PSON             
+//YHYLINSHI  turn_system_on <= (xr_ps_en  | turn_system_on) & pch_pwrbtn_n & cpu_power_off;         //ï¿½Ä´ï¿½ï¿½ï¿½51.Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0,ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½PSUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(PSON             
                       
-  turn_system_on <= (xr_ps_en  | turn_system_on)  ;         //¼Ä´æÆ÷51.Ä¬ÈÏÊäÈë0,±íÊ¾¿ªÆôPSUµÄÖ÷µçÊä³ö(PSON             
+  turn_system_on <= (xr_ps_en  | turn_system_on)  ;         //ï¿½Ä´ï¿½ï¿½ï¿½51.Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0,ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½PSUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(PSON             
                       
 end
 
@@ -1112,10 +1474,10 @@ always @(*) begin
     
     
     //YHY        else if (rt_normal_pwr_down) begin
-    //YHY    else if (rt_normal_pwr_down |  ( ~pch_pwrbtn_n)) begin  //ºóĞøÉ¾³ı|  ( ~pch_pwrbtn_n)£¬µ±Ç°ÎªÁË·½±ã²»Ö±½Ó°´3sÏÂµç
-        	else if (rt_normal_pwr_down ) begin  //ºóĞøÉ¾³ı|  ( ~pch_pwrbtn_n)£¬µ±Ç°ÎªÁË·½±ã²»Ö±½Ó°´3sÏÂµç
+    //YHY    else if (rt_normal_pwr_down |  ( ~pch_pwrbtn_n)) begin  //ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½|  ( ~pch_pwrbtn_n)ï¿½ï¿½ï¿½ï¿½Ç°Îªï¿½Ë·ï¿½ï¿½ã²»Ö±ï¿½Ó°ï¿½3sï¿½Âµï¿½
+        	else if (rt_normal_pwr_down ) begin  //ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½|  ( ~pch_pwrbtn_n)ï¿½ï¿½ï¿½ï¿½Ç°Îªï¿½Ë·ï¿½ï¿½ã²»Ö±ï¿½Ó°ï¿½3sï¿½Âµï¿½
 
-//YHY         else if (rt_normal_pwr_down |  ( ~pch_pwrbtn_n) | ( ~cpu_power_off)|( ~pch_sys_reset_n)) begin  //pch_pwrbtn_nÊÇ¶Ì°´¼ü£¬²»´¥·¢ÏÂµç
+//YHY         else if (rt_normal_pwr_down |  ( ~pch_pwrbtn_n) | ( ~cpu_power_off)|( ~pch_sys_reset_n)) begin  //pch_pwrbtn_nï¿½Ç¶Ì°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½
       	
            pch_thermtrip_FLAG_SET = 1'b1;
        	
@@ -1324,7 +1686,7 @@ always @(*) begin
       //   - No recovery possible with any_non_recov_fault set.
       if (ready_for_recov && !any_non_recov_fault) begin
           if (!lim_recov_retry_max)
-            if ((assert_power_button && (allow_recovery || ~any_lim_recov_fault)) ||         //yhy  any_lim_recov_faultÈÎºÎÒ»Â·µçÔ´¹ÊÕÏµÄÊ±ºòÎª1£¬½â³ı¹ÊÕÏµÄÊ±ºòÎª0
+            if ((assert_power_button && (allow_recovery || ~any_lim_recov_fault)) ||         //yhy  any_lim_recov_faultï¿½Îºï¿½Ò»Â·ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ïµï¿½Ê±ï¿½ï¿½Îª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Ê±ï¿½ï¿½Îª0
                 (assert_physical_button && !allow_recovery && any_lim_recov_fault)) begin    //yhy  .allow_recovery         (1'b0)   
               state_ns = SM_AUX_FAIL_RECOVERY;
               lim_recov_retry_incr = 1'b1;
