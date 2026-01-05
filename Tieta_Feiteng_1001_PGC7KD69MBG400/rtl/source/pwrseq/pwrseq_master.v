@@ -99,71 +99,71 @@ module pwrseq_master #(
     parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17                        , // 无故障时DC ON等待完成时间 
     parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2                           // 有故障时DC ON等待完成时间 
 )(                      
-    input            clk,                     // clock
-    input            reset,                   // reset
-    input            t1us,                    // 10ns pulse every 1us
-    input            t512us,                  // 10ns pulse every 512us
-    input            t256ms,                  // 10ns pulse every 256ms
-    input            t512ms,                  // 10ns pulse every 500ms
-    input            sequence_tick,           // tick used for wdt timeout during power-up/down states
-    input            psu_on_tick,             // tick used for wdt timeout during PS on state
+    input            clk                        , // clock
+    input            reset                      , // reset
+
+    input            t1us                       , // 10ns pulse every 1us
+    input            t512us                     , // 10ns pulse every 512us
+    input            t256ms                     , // 10ns pulse every 256ms
+    input            t512ms                     , // 10ns pulse every 500ms
+    input            sequence_tick              , // tick used for wdt timeout during power-up/down states
+    input            psu_on_tick                , // tick used for wdt timeout during PS on state
 
     // Physical power button and south bridge status/control
-    input            sys_sw_in_n,             // system's power button switch
-    // input            pch_slp4_n,              // SB (south bridge) system sleep state
-    input            pch_pwrbtn_n,            // SB power button input (same signal driven to SB PWRBTN)
-    input            pch_pwrbtn_s,            // SB power button input (same signal driven to SB PWRBTN) delay 1s
+    input            sys_sw_in_n                , // system's power button switch
+    // input            pch_slp4_n                , // SB (south bridge) system sleep state
+    input            pch_pwrbtn_n               , // SB power button input (same signal driven to SB PWRBTN)
+    input            pch_pwrbtn_s               , // SB power button input (same signal driven to SB PWRBTN) delay 1s
   
-    input            pch_thermtrip_n,          // SB bound thermtrip signal (same signal driven to SB THERMTRIP)
-    output reg       force_pwrbtn_n,          // forces SB to switch to S5 after power shutdown due to fault
+    input            pch_thermtrip_n            , // SB bound thermtrip signal (same signal driven to SB THERMTRIP)
+    output reg       force_pwrbtn_n             , // forces SB to switch to S5 after power shutdown due to fault
 
-    input            cpu_reboot,                // cpu�ͳ����������1��Ч,���5s�ͳ�
-    input            cpu_reboot_x,             // cpu�ͳ����������1��Ч,���3s�ͳ�
-    input            cpu_power_off,                // CPU �ͳ����µ����0��Ч
+    input            cpu_reboot                 , // cpu�ͳ����������1��Ч,���5s�ͳ�
+    input            cpu_reboot_x               , // cpu�ͳ����������1��Ч,���3s�ͳ�
+    input            cpu_power_off              , // CPU �ͳ����µ����0��Ч
 
-    input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)  //�Ĵ���51.Ĭ������0,��ʾ����PSU���������(PSON
-    //YHY  input            pwron_override_n,        // power-on override    Ĭ������1
-    //YHY  input            interlock_broken,        // interlock broken indicator
-    input            allow_recovery,          // allow power button press to recover from HALT_POWER_CYCLE
-    //YHY  input            aux_video_holdoff,       // allow AUX video to hold turning on of system
-    //YHY  input            pgood_rst_mask,          // from ADR module to mask shutdown events
-    //YHY  input            cpu_mcp_en,              // any CPU is MCP enabled which enables P1V0_CPU and PVMCP_CPU rails
-    input            keep_alive_on_fault,     // prevent transition to critical fail on power up
-    //yhy  input            no_vppen,                // set to 1'b1 if platform does not have an explicity EN for VPP rails
-    //yhy  input            hold_pch_rsmrst,         // set to 1'b1 to stall power sequencer in state before RSMRST# is released
-    output reg       pgd_raw,                 // de-asserts on SM_STEADY_OK on fault condition
+    input            xr_ps_en                   , // system allowed to power on (Xreg's ps_enable)  //�Ĵ���51.Ĭ������0,��ʾ����PSU���������(PSON
+    //YHY  input            pwron_override_n,      // power-on override    Ĭ������1
+    //YHY  input            interlock_broken,      // interlock broken indicator
+    input            allow_recovery             , // allow power button press to recover from HALT_POWER_CYCLE
+    //YHY  input            aux_video_holdoff,     // allow AUX video to hold turning on of system
+    //YHY  input            pgood_rst_mask,        // from ADR module to mask shutdown events
+    //YHY  input            cpu_mcp_en,            // any CPU is MCP enabled which enables P1V0_CPU and PVMCP_CPU rails
+    input            keep_alive_on_fault        , // prevent transition to critical fail on power up
+    //yhy  input            no_vppen,              // set to 1'b1 if platform does not have an explicity EN for VPP rails
+    //yhy  input            hold_pch_rsmrst,       // set to 1'b1 to stall power sequencer in state before RSMRST# is released
+    output reg       pgd_raw                    , // de-asserts on SM_STEADY_OK on fault condition
 
     // S5 powered device control
-    input            s5dev_pwren_request,     // S5 powered device enable request
-    input            s5dev_pwrdis_request,    // S5 powered device disable request
+    input            s5dev_pwren_request        , // S5 powered device enable request
+    input            s5dev_pwrdis_request       , // S5 powered device disable request
 
     // Slave sequencer interface
-    input            pgd_so_far,              // current overall power status
-    input            any_pwr_fault_det,       // any type of power fault
-    input            any_lim_recov_fault,     // any limited recovery fault
-    input            any_non_recov_fault,     // any non-recoverable fault
-    output reg       dc_on_wait_complete,     // 4s flag - used by slave for stuck on check
-    output reg       rt_critical_fail_store,  // asserts when during runtime when critical failure detected
-    output reg       fault_clear,             // clear fault flags
-    output     [5:0] power_seq_sm,            // copy of the state variable
+    input            pgd_so_far                 , // current overall power status
+    input            any_pwr_fault_det          , // any type of power fault
+    input            any_lim_recov_fault        , // any limited recovery fault
+    input            any_non_recov_fault        , // any non-recoverable fault
+    output reg       dc_on_wait_complete        , // 4s flag - used by slave for stuck on check
+    output reg       rt_critical_fail_store     , // asserts when during runtime when critical failure detected
+    output reg       fault_clear                , // clear fault flags
+    output [5:0]     power_seq_sm               , // copy of the state variable
 
     //POWER_OFF_FLAG
-    output reg  pch_thermtrip_FLAG, 
-    output reg  CPU_OFF_FLAG,
-    output reg  REBOOT_FLAG, 
+    output reg       pch_thermtrip_FLAG         , 
+    output reg       CPU_OFF_FLAG               ,
+    output reg       REBOOT_FLAG                , 
 
+    input            Power_WAKE_R_N             ,
+    input            pch_sys_reset_n            ,
+    output reg       turn_system_on             ,
 
-    input  Power_WAKE_R_N,
-    input  pch_sys_reset_n,
-    output  reg turn_system_on,
-
-    // Status
-    output reg       power_fault,             // power fault is active
-    output reg       stby_failure_detected,   // standby failure detected (goes to Xreg byte07[4]
-    output reg       po_failure_detected,     // poweron failure detected (goes to Xreg byte07[2])
-    output reg       rt_failure_detected,     // runtime failure detected (goes to Xreg byte07[5])
-    output reg       cpld_latch_sys_off,      // system in non-recovery state (goes to Xreg byte08[6])
-    output reg       turn_on_wait             // system waiting to turn on
+    // 状态监控
+    output reg       power_fault                , // power fault is active
+    output reg       stby_failure_detected      , // standby failure detected (goes to Xreg byte07[4]
+    output reg       po_failure_detected        , // poweron failure detected (goes to Xreg byte07[2])
+    output reg       rt_failure_detected        , // runtime failure detected (goes to Xreg byte07[5])
+    output reg       cpld_latch_sys_off         , // system in non-recovery state (goes to Xreg byte08[6])
+    output reg       turn_on_wait                 // system waiting to turn on
 );
 
 // “有限恢复最大重试次数”，自动计算重试计数器的位宽，避免手动定义位宽导致的资源浪费或计数溢出。
@@ -1020,33 +1020,32 @@ wire rt_critical_fail_check;
 assign rt_critical_fail_check = any_pwr_fault_det ;
 
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    rt_critical_fail_store <= 1'b0;
-  else
-    rt_critical_fail_store <= ( st_steady_pwrok  & rt_critical_fail_check) |
-                              (~st_critical_fail & rt_critical_fail_store);
+    if (reset)
+        rt_critical_fail_store <= 1'b0;
+    else
+        rt_critical_fail_store <= ( st_steady_pwrok  & rt_critical_fail_check) |
+                                  (~st_critical_fail & rt_critical_fail_store);
 end
 
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    pgd_raw <= 1'b0;
-  else if (t1us)
-    pgd_raw <= pgd_so_far & st_steady_pwrok & ~rt_critical_fail_check;
-  else
-    pgd_raw <= pgd_so_far & pgd_raw & ~rt_critical_fail_check;
+    if (reset)
+        pgd_raw <= 1'b0;
+    else if (t1us)
+        pgd_raw <= pgd_so_far & st_steady_pwrok & ~rt_critical_fail_check;
+    else
+        pgd_raw <= pgd_so_far & pgd_raw & ~rt_critical_fail_check;
 end
                 
 //------------------------------------------------------------------------------
-// cpld_latch_sys_off
-// - Asserts when in SM_HALT_POWER_CYCLE and we've reached the max number of
-//   retry attempt. Aux power cycle is required.
+// 锁存“系统关闭”状态，避免故障恢复时误上电
 //------------------------------------------------------------------------------
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    cpld_latch_sys_off <= 1'b0;
-  else
-    cpld_latch_sys_off <= st_halt_power_cycle & lim_recov_retry_max;
+    if (reset)
+        cpld_latch_sys_off <= 1'b0;
+    else
+        cpld_latch_sys_off <= st_halt_power_cycle & lim_recov_retry_max;
 end
+
 endmodule
 
 

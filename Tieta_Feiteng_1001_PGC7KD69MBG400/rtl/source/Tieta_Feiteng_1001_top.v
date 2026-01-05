@@ -85,7 +85,7 @@ input  i_CPLD_M_S_SGPIO1_MISO                 /* synthesis LOC = "F17"*/,// from
 /* end: SGPIO 信号, CPLD_S -> CPLD_M, CPLD_M -> CPLD_S */
 
 
-/* begin: CPU0/1 D0/D1相关信号 */
+/* begin: GPIO CPU0/1 D0/D1相关信号 */
 // CPU0 D0 区域信号
 input  i_CPU0_D0_CRU_RST_OK                   /* synthesis LOC = "Y13"*/,// form  CPU0_GPIO1/D0_CRU_RST_OK                      to  CPLD_M                                       default 0  // CPU0 D0 区域CRU复位完成信号
 input  i_CPU0_D0_BIOS_OVER                    /* synthesis LOC = "U10"*/,// from  CPU0_GPIO1/D0_UART2_RXD                       to  CPLD_M                                       default 0  // CPU0 D0 区域BIOS超时信号
@@ -160,7 +160,7 @@ input  i_PAL_CPU0_VR_PMALT_R                  /* synthesis LOC = "P8"*/, // from
 input  i_PAL_CPU0_VR_SELECT_N_R               /* synthesis LOC = "C16"*/,// from  CPU_I2C_LEVEL_TRAN/U32_PAL_CPU0_VR_SELECT_N   to  CPLD_M                                       default 0  // CPU0 电压调节器选择信号输入（反向）
 
 input  i_PAL_CPU1_TMP_ALERT_N                 /* synthesis LOC = "N3"*/ ,// from  CPU1_TMP/U188_EMC1413_A_AIA_TR                to  CPLD_M                                       default 0  // CPU1温度告警信号输入              
-/* end: CPU0/1 D0/D1相关信号 */
+/* end: GPIO CPU0/1 D0/D1相关信号 */
 
 
 // 风扇 控制信号
@@ -191,8 +191,6 @@ input  i_PAL_88SE9230_WAKE_N                  /* synthesis LOC = "K4"*/ ,// from
 
 
 
-
-
 /* begin: 电源上下电管理信号 */
 // 主模块 电源良好信号
 input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K7"*/ ,// from  RISER_AUX/J16                                 to  CPLD_M                                       default 1  // 主模块电源良好信号输入
@@ -201,7 +199,7 @@ input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K7"*/ ,// from
 input  i_PAL_P12V_CPU0_VIN_FLTB               /* synthesis LOC = "N2"*/ ,// from  CURRENT_DET0/P12V_CPU0_FLTB                   to  CPLD_M                                       default 1  // 12V CPU0输入电源滤波信号输入                   新增
 input  i_PAL_P12V_CPU0_VIN_PG                 /* synthesis LOC = "N1"*/ ,// from  CURRENT_DET0/P12V_CPU0_VIN                    to  CPLD_M                                       default 1  // 12V CPU0输入电源良好信号输入                   新增
 input  i_PAL_P12V_CPU1_VIN_FLTB               /* synthesis LOC = "P2"*/ ,// from  CURRENT_DET0/P12V_CPU1_FLTB                   to  CPLD_M                                       default 1  // 12V CPU1输入电源滤波信号输入                   新增
-input  i_PAL_P12V_CPU1_VIN_PG                 /* synthesis LOC = "P1"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                    to  CPLD_M                                       default 1  // 12V CPU1输入电源良好信号输入                      // 新增
+input  i_PAL_P12V_CPU1_VIN_PG                 /* synthesis LOC = "P1"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                    to  CPLD_M                                       default 1  // 12V CPU1输入电源良好信号输入                   新增
 // 12V PGD压降信号输入
 input  i_PAL_PGD_P12V_DROOP                   /* synthesis LOC = "B14"*/,// from  P12V_DROOP                                     to  CPLD_M                                       default 1  // 12V PGD压降信号输入
 // 12V 待机PGD压降信号输入
@@ -217,17 +215,25 @@ input  i_PAL_P12V_FAN2_FLTB                   /* synthesis LOC = "E1"*/ ,// from
 input  i_PAL_P12V_FAN3_PG                     /* synthesis LOC = "F2"*/ ,// from  FAN_PWR/PAL_P12V_FAN3_PG                       to  CPLD_M                                       default 1  // 12V风扇3电源良好信号输入                         // 新增
 input  i_PAL_P12V_FAN3_FLTB                   /* synthesis LOC = "F1"*/ ,// from  FAN_PWR/PAL_P12V_FAN3_FLTB                     to  CPLD_M                                       default 1  // 12V风扇3故障信号输入                             // 新增
 
+// 5.0V 主供电模块 电源良好信号
+input  i_PAL_P5V_STBY_PGD                     /* synthesis LOC = "B11"*/,// from  PWR_P5V_STBY                                   to  CPLD_M                                       default 1  // 5V待机PGD信号输入
+
 // 3.3V 主供电模块 电源良好信号
 input  i_PAL_P3V3_STBY_PGD                    /* synthesis LOC = "L16"*/,// from  PWR_P3V3_STBY/PAL_P3V3_STBY_PGD                to  CPLD_M                                       default 1  // 3v3待机电源良好信号输入
 
-// 5.0V 主供电模块 电源良好信号
-input  i_PAL_P5V_STBY_PGD                     /* synthesis LOC = "B11"*/,// from  PWR_P5V_STBY                                   to  CPLD_M                                       default 1  // 5V待机PGD信号输入
+// 3.3V CPU0 DIMM 电源良好信号
+input  i_PAL_CPU0_DIMM_PWRGD_F                /* synthesis LOC = "M16"*/,// from  CPU0_DIMM0_WHITE/J1001/CPU0_DDR0_PWRGD         to  CPLD_M                                       default 1  // CPU0 DIMM槽位                 3.3V 电源良好信号输入
+// 3.3V CPU1 DIMM 电源良好信号
+input  i_PAL_CPU1_DIMM_PWRGD_F                /* synthesis LOC = "D15"*/,// from  CPU1_DIMM3_WHITE/J1001/CPU0_DDR0_PWRGD         to  CPLD_M                                       default 1  // CPU1 DIMM槽位                 3.3V 电源良好信号输入
+// 3.3V 机箱后部面向背板的辅助供电模块 电源良好信号
+input  i_PAL_REAT_BP_EFUSE_OC                 /* synthesis LOC = "L3"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE过流信号输入                     // 新增
+input  i_PAL_REAT_BP_EFUSE_PG                 /* synthesis LOC = "M2"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE电源良好信号输入                 // 新增
 
 // 1.8V CPLD供电模块 电源良好信号
 input  i_P1V8_STBY_CPLD_PG                    /* synthesis LOC = "K16"*/,// from  PSU/RS31386/RS53317/3.3STBY/TPL910ADJ          to  CPLD_M                                       default 1  // CPLD_M的1V8_STBY_PG信号输入
 
 // 1.8V 88SE9230 PCIE转SATA芯片 电源良好信号
-input  i_PAL_PGD_88SE9230_P1V8_R              /* synthesis LOC = "B16"*/,// from  PEX_88SE9230/U93_XSAT2204LACGR                 to  CPLD_M                                       default 1  // 88SE9230 1.8V PGD信号输入                    新增
+input  i_PAL_PGD_88SE9230_P1V8                /* synthesis LOC = "B16"*/,// from  PEX_88SE9230/U93_XSAT2204LACGR                 to  CPLD_M                                       default 1  // 88SE9230 1.8V PGD信号输入                    新增
 
 // 1.1V 88SE9230 PCIE转SATA芯片 电源良好信号
 input  i_PAL_PGD_88SE9230_VDD1V0              /* synthesis LOC = "D19"*/,// from  3V3M2/SMG61030_3V3to1v1                        to  CPLD_M                                       default 1  // 88SE9230 VDD1V0电源良好信号输入
@@ -252,8 +258,6 @@ input  i_PAL_PS2_SMB_ALERT_TO_FPGA            /* synthesis LOC = "F9"*/ ,// from
 input  i_PAL_CPU0_P1V8_PG                     /* synthesis LOC = "M7"*/ ,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU0 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号输入
 // CPU0 PLL 区域 1.8V 电源良好信号
 input  i_PAL_CPU0_PLL_P1V8_PG                 /* synthesis LOC = "U2"*/ ,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU0 PLL区域                  1.8V 电源良好信号输入    
-// CPU0 DIMM 3.3V 电源良好信号
-input  i_PAL_CPU0_DIMM_PWRGD_F                /* synthesis LOC = "M16"*/,// from  CPU0_DIMM0_WHITE/J1001/CPU0_DDR0_PWRGD         to  CPLD_M                                       default 1  // CPU0 DIMM槽位                 3.3V 电源良好信号输入
 // CPU0 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
 input  i_PAL_CPU0_D0_VPH_1V8_PG               /* synthesis LOC = "T5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D0 区域 VPH              1.8V 电源良好信号输入       新增
 input  i_PAL_CPU0_D1_VPH_1V8_PG               /* synthesis LOC = "R5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D1 区域 VPH              1.8V 电源良好信号输入       新增
@@ -272,8 +276,6 @@ input  i_PAL_CPU0_VDD_VCORE_P0V8_PG           /* synthesis LOC = "M18"*/,// from
 input  i_PAL_CPU1_P1V8_PG                     /* synthesis LOC = "C15"*/,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU1 PLL 1.8V电源良好信号输入
 // CPU1 PLL 区域 1.8V 电源良好信号
 input  i_PAL_CPU1_PLL_P1V8_PG                 /* synthesis LOC = "B18"*/,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU1 PLL 1.8V电源良好信号输入
-// CPU1 DIMM 3.3V 电源良好信号
-input  i_PAL_CPU1_DIMM_PWRGD_F                /* synthesis LOC = "D15"*/,// from  CPU1_DIMM3_WHITE/J1001/CPU0_DDR0_PWRGD         to  CPLD_M                                       default 1  // CPU1 DIMM槽位                 3.3V 电源良好信号输入
 // CPU1 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
 input  i_PAL_CPU1_D0_VPH_1V8_PG               /* synthesis LOC = "P5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D0 区域 VPH              1.8V 电源良好信号输入       新增
 input  i_PAL_CPU1_D1_VPH_1V8_PG               /* synthesis LOC = "V4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VPH              1.8V 电源良好信号输入       新增
@@ -291,13 +293,10 @@ input  i_PAL_CPU1_VDD_VCORE_P0V8_PG           /* synthesis LOC = "A10"*/,// from
 
 
 /* begin: DEBUG 信号 */
-// 机箱后部面向背板的辅助供电模块 电源良好信号
 input  i_PAL_BP1_CPU_1P2P                     /* synthesis LOC = "B3"*/ ,// from  BP_AUX_PWR/J84                                 to  CPLD_M                                       default 1  // BP1 CPU 配置检测与模式控制, 告知 CPLD 当前系统处于 1P（单 CPU）或 2P（双 CPU）配置，并据此切换平台的供电、内存映射与 I/O 拓扑规则
 input  i_PAL_BP2_CPU_1P2P                     /* synthesis LOC = "A4"*/ ,// from  BP_AUX_PWR/J86                                 to  CPLD_M                                       default 1  // BP1 CPU 配置检测与模式控制, 告知 CPLD 当前系统处于 1P（单 CPU）或 2P（双 CPU）配置，并据此切换平台的供电、内存映射与 I/O 拓扑规则
 input  i_PAL_BP1_PRSNT_N                      /* synthesis LOC = "A9"*/ ,// from  BP_AUX_PER/J84                                 to  CPLD_M                                       default 1  // BP1 存在信号输入（低电平有效）                  新增
 input  i_PAL_BP2_PRSNT_N                      /* synthesis LOC = "C6"*/ ,// from  BP_AUX_PWR/J86                                 to  CPLD_M                                       default 1  // BP2 存在信号输入（低电平有效）                  新增
-input  i_PAL_REAT_BP_EFUSE_OC                 /* synthesis LOC = "L3"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE过流信号输入                     // 新增
-input  i_PAL_REAT_BP_EFUSE_PG                 /* synthesis LOC = "M2"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE电源良好信号输入                 // 新增
 
 input  i_PAL_DB_GPIO0_R                       /* synthesis LOC = "G4"*/ ,// from  DB_MODULE/J33_1338_201_8Q_N/DB_GPIO0           to  CPLD_M                                       default 1  // DEBUG GPIO0信号输入                              // 新增
 input  i_PAL_DB_GPIO1_R                       /* synthesis LOC = "G3"*/ ,// from  DB_MODULE/J33_1338_201_8Q_N/DB_GPIO1           to  CPLD_M                                       default 1  // DEBUG GPIO1信号输入                              // 新增
@@ -343,11 +342,13 @@ input  i_TPM_MODULE_PRSNT_N                   /* synthesis LOC = "N17"*/,// from
 output o_CPU0_BOARD_TEMP_OVER_R               /* synthesis LOC = "P13"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/BOARD_TEMP_OVER   default 1  // CPU0    主板区域温度过高告警信号输出
 /* end: DEBUG 信号 */
 );
-
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+全局参数
+------------------------------------------------------------------------------------------------------------------------------------------------*/
 parameter PEAVEY_SUPPORT = 1'b1;  
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
-SYS_CLK: input 25MHz, output 100MHz/50MHz/25MHz
+系统时钟: input 25MHz, output 100MHz/50MHz/25MHz
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 wire                                        clk_50m                     ; // 不使用
 wire                                        sys_clk                     ; // 系统时钟
@@ -453,20 +454,150 @@ timer_gen timer_gen_inst(
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
+输入信号消抖
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+// PG信号
+PGM_DEBOUNCE #(
+    .SIGCNT                                 (34                         ), 
+    .NBITS                                  (2'b11                      ), 
+    .ENABLE                                 (1'b1                       )
+) db_inst_cpu_rail (
+    .clk                                    (clk_100m                   ),
+    .rst                                    (~pon_reset_n               ),
+    .timer_tick                             (1'b1                       ),
+    .din                                    (
+                                            {
+                                             // i_PAL_FRONT_BP_EFUSE_PG             ,//1                                
+                                             i_PAL_CPU1_VDD_VCORE_P0V8_PG        ,//23                            
+                                             i_PAL_CPU0_PLL_P1V8_PG              ,//22                            
+                                             i_PAL_CPU0_VDDQ_P1V1_PG 		     ,//21 	                        
+                                             i_PAL_CPU0_P1V8_PG   			     ,//20          
+                                             i_PAL_CPU0_DDR_VDD_PG   			 ,//19         
+                                             i_PAL_REAT_BP_EFUSE_PG   			 ,//18         
+                                             // i_PAL_CPU0_PCIE_P1V8_PG   			 ,//         
+                                             // i_PAL_CPU1_PCIE_P1V8_PG              ,//          
+                                             // i_PAL_CPU0_PCIE_P0V9_PG   		     ,//          
+                                             // i_PAL_CPU1_PCIE_P0V9_PG              ,//
+    	                                     // i_PAL_FAN_EFUSE_PG                   ,//
+    	                                     i_PAL_CPU1_DDR_VDD_PG               ,//17
+    	                                     i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,//16
+    	                                     i_PAL_CPU1_VDDQ_P1V1_PG             ,//15
+    	                                     i_PAL_CPU1_P1V8_PG                  ,//14
+    	                                     i_PAL_CPU1_PLL_P1V8_PG              ,//13
+    	                                     i_PAL_P5V_STBY_PGD                  ,//12
+    	                                     // i_PAL_OCP1_PWRGD                    ,//
+    	                                     // i_PAL_DIMM_EFUSE_PG                 ,//
+    	                                     // i_PAL_P5V_PGD                       ,//
+    	                                     i_PAL_PGD_P12V_STBY_DROOP           ,//11
+    	                                     i_PAL_PGD_P12V_DROOP                ,//10
+
+    	                                     i_PAL_PS1_ACFAIL & i_PAL_PS1_PRSNT  ,//09
+    	                                     i_PAL_PS2_ACFAIL & i_PAL_PS2_PRSNT  ,//08
+    	                                     ~i_PAL_PS1_DCOK  & i_PAL_PS1_PRSNT  ,//07
+    	                                     ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,//06
+
+    	                                     i_PAL_CPU1_DIMM_PWRGD_F             ,//05
+    	                                     // i_PAL_P3V3_STBY_BP_PGD           ,// 
+    	                                     i_PAL_PGD_88SE9230_VDD1V0           ,// 04 
+    	                                     i_PAL_PGD_88SE9230_P1V8             ,// 03 
+                                             i_P1V8_STBY_CPLD_PG                 ,// 02 
+    	                                     i_PAL_CPU0_DIMM_PWRGD_F             ,// 01            
+    	                                     i_PAL_P3V3_STBY_PGD                  // 00 
+                                            }
+
+                                            ),
+    .dout                                   (
+                                            {db_i_pal_front_bp_efuse_pg         ,//1 
+                                             db_i_pal_cpu1_vdd_core_pg          ,//2 
+                                             db_i_pal_cpu0_pll_p1v8_pg			,//3                                                            
+                                             db_i_pal_cpu0_vddq_pg			    ,//4    
+                                             db_i_pal_cpu0_p1v8_pg  		    ,//5    //CPU P1V8   //pwr                     			
+                                             db_i_pal_cpu0_ddr_vdd_pg  		    ,//6    //CPU P1V8   //pwr 
+                                             db_i_pal_reat_bp_efuse_pg  		,//7    //CPU P1V8   //pwr  
+                                             db_i_pal_cpu0_pcie_p1v8_pg  		,//8    //CPU P1V8   //pwr     	
+                                             db_i_pal_cpu1_pcie_p1v8_pg 	    ,//9    //CPU VDD   //pwr          			
+                                             db_i_pal_cpu0_pcie_p0v9_pg         ,//10
+                                             db_i_pal_cpu1_pcie_p0v9_pg         ,//11
+                                             db_i_pal_fan_efuse_pg              ,//12
+		                                     db_i_pal_cpu1_ddr_vdd_pg           ,//13
+		                                     db_i_pal_cpu0_vdd_core_pg          ,//14
+		                                     db_i_pal_cpu1_vddq_pg              ,//15
+		                                     db_i_pal_cpu1_p1v8_pg              ,//16
+		                                     db_i_pal_cpu1_pll_p1v8_pg          ,//17
+		                                     db_i_pal_p5v_stby_pgd              ,//18
+		                                     db_i_pal_ocp1_pwrgd                ,//19
+		                                     db_i_pal_dimm_efuse_pg             ,//20
+		                                     db_i_pal_p5v_pgd                   ,//21
+		                                     db_i_pal_pgd_p12v_stby_droop       ,//22
+		                                     db_i_pal_pgd_p12v_droop            ,//23
+		                                     db_ps_acok[0]                      ,//24
+		                                     db_ps_acok[1]                      ,//25
+		                                     db_ps_dcok[0]                      ,//26
+		                                     db_ps_dcok[1]                      ,//27
+		                                     db_i_pal_cpu1_dimm_pwrgd_f         ,//28
+		                                     db_i_pal_p3v3_stby_bp_pgd          ,//29
+		                                     db_i_pal_pgd_88se9230_vdd1v0       ,//30
+		                                     db_i_pal_pgd_88se9230_p1v8         ,//31
+		                                     db_i_pal_cpu0_dimm_pwrgd_f         ,//32
+		                                     db_i_p1v8_stby_cpld_pg             ,//33
+		                                     db_i_pal_p3v3_stby_pgd              //34 
+		})		 
+ );
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
 上下电模块
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 wire                                        db_sys_sw_in_n              ;
 wire                                        pch_pwrbtn                  ;   
-wire                                           
+wire                                        pch_pwrbtn_s                ;
 
+wire                                        pch_thrmtrip                ;
+wire                                        force_pwrbtn_n              ;
+
+wire                                        cpu_reboot_S                ; 
+wire                                        cpu_reboot_x                ; 
+wire                                        cpu_power_off               ; 
+
+wire                                        keep_alive_on_fault         ;
+wire                                        pgd_raw                     ;
+
+wire                                        pgd_so_far                  ;     
+wire                                        any_pwr_fault_det           ;     
+wire                                        any_lim_recov_fault         ;     
+wire                                        any_non_recov_fault         ;     
+wire                                        dc_on_wait_complete         ;    
+wire                                        rt_critical_fail_store      ;     
+wire                                        fault_clear                 ;     
+wire                                        power_seq_sm                ; 
+
+wire                                        pch_thermtrip_flag          ;
+wire                                        cpu_off_flag                ;
+wire                                        reboot_flag                 ;
+wire                                        power_wake_r_n              ;
+wire                                        pch_sys_reset_n             ;
+wire                                        turn_system_on              ;
+
+wire                                        power_fault                 ; 
+wire                                        stby_failure_detected       ; 
+wire                                        dc_failure_detected         ; 
+wire                                        rt_failure_detected         ; 
+wire                                        cpld_latch_sys_off          ; 
+wire                                        turn_on_wait                ; 
+
+// 上下电 master
 pwrseq_master #(
     .LIM_RECOV_MAX_RETRY_ATTEMPT            (2                          ),
     .WDT_NBITS                              (10                         ),
-    .DSW_PWROK_TIMEOUT_VAL                  (75                         ),
-    .PCH_WATCHDOG_TIMEOUT_VAL               (256                        ),
+
+    .P3V3_VCC_WATCHDOG_TIOMEOUT_VAL         (2                          ),
     .PON_WATCHDOG_TIMEOUT_VAL               (256                        ),
     .PSU_WATCHDOG_TIMEOUT_VAL               (10                         ),
     .EFUSE_WATCHDOG_TIMEOUT_VAL             (137                        ),
+    .PCH_WATCHDOG_TIMEOUT_VAL               (256                        ),
+    .DSW_PWROK_TIMEOUT_VAL                  (75                         ),
+    .PON_65MS_WATCHDOG_TIMEOUT_VAL          (2                          ),
+    
     .VCORE_WATCHDOG_TIMEOUT_VAL             (PON_WATCHDOG_TIMEOUT_VAL   ),
     .PDN_WATCHDOG_TIMEOUT_VAL               (2                          ),
     .PDN_WATCHDOG_TIMEOUT_FAULT_VAL         (PDN_WATCHDOG_TIMEOUT_VAL   ),
@@ -474,95 +605,277 @@ pwrseq_master #(
     .DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL  (PDN_WATCHDOG_TIMEOUT_VAL   ),
     .DISABLE_3V3_TIMEOUT_VAL                (34                         ),
     .DISABLE_3V3_TIMEOUT_FAULT_VAL          (17                         ),
-    .PON_65MS_WATCHDOG_TIMEOUT_VAL          (2                          ),
-    .DC_ON_WAIT_COMPLETE_NOFLT_VAL          (33                         ),
-    .DC_ON_WAIT_COMPLETE_FAULT_VAL          (1                          ),
+
     .PF_ON_WAIT_COMPLETE_VAL                (4                          ),
     .PO_ON_WAIT_COMPLETE_VAL                (0                          ),
+
     .S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL  (75                         ),
-    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL  (6                          )
+    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL  (6                          ),
+    
+    .DC_ON_WAIT_COMPLETE_NOFLT_VAL          (33                         ),
+    .DC_ON_WAIT_COMPLETE_FAULT_VAL          (1                          )
 ) pwrseq_master_inst (
     // -----------------------------------------------------------
     // 1. 时钟与复位接口（模块时序基准与初始化）
     // -----------------------------------------------------------
-    .clk                            (sys_clk                    ), // 输入：50MHz 工作时钟（模块内部时序逻辑的基准，如状态机跳转、计数器计时）
-    .reset                          (~pon_reset_n               ), // 输入：模块复位信号（高电平有效）
-    // .cmu_fault_clear_rst		        (~pon_reset_n               ), // 输入：CMU（电源管理芯片）故障清除复位信号
+    .clk                                    (sys_clk                    ), // 输入：50MHz 工作时钟（模块内部时序逻辑的基准，如状态机跳转、计数器计时）
+    .reset                                  (~pon_reset_n               ), // 输入：模块复位信号（高电平有效）
+    // .cmu_fault_clear_rst		            (~pon_reset_n               ), // 输入：CMU（电源管理芯片）故障清除复位信号
 
     // -----------------------------------------------------------
     // 2. 定时脉冲接口（模块内部时序控制与计时基准）
     // -----------------------------------------------------------
-    .t1us                           (t1us_tick                  ),
-    .t512us                         (t512us_tick                ),
-    .t256ms                         (t256ms_tick                ),
-    .t512ms                         (t512ms_tick                ),
-    .sequence_tick                  (t2ms_tick                  ),
-    .psu_on_tick                    (t32ms_tick                 ), 
+    .t1us                                   (t1us_tick                  ),
+    .t512us                                 (t512us_tick                ),
+    .t256ms                                 (t256ms_tick                ),
+    .t512ms                                 (t512ms_tick                ),
+    .sequence_tick                          (t2ms_tick                  ),
+    .psu_on_tick                            (t32ms_tick                 ), 
 
     // -----------------------------------------------------------
-    // 3. 外部控制信号接口（接收用户/硬件操作指令）
+    // 3. 物理按键信号; 南桥状态和控制信息; 
     // -----------------------------------------------------------
-    .sys_sw_in_n                    (db_sys_sw_in_n             ),
-    .pch_pwrbtn_n                   (~pch_pwrbtn                ),
-    .pch_pwrbtn_s                   (pch_pwrbtn_s               ),
+    .sys_sw_in_n                            (db_sys_sw_in_n             ),
+    // .pch_slp4_n                             (pch_slp4_n                 ),
+    .pch_pwrbtn_n                           (~pch_pwrbtn                ),
+    .pch_pwrbtn_s                           (pch_pwrbtn_s               ),
+    
+    .pch_thermtrip_n                        (~pch_thrmtrip              ), // 输入：PCH 热跳闸信号（低电平有效，1=无过热，0=CPU 过热触发下电）
+    .force_pwrbtn_n                         (force_pwrbtn_n             ), // 输出：强制电源按钮信号（低电平有效，送至 PSU，当前未使用）
+                                                                           // 备用功能：故障下电后，强制 PCH 切换到 S5 状态，确保彻底断电
+
+    .cpu_reboot                             (cpu_reboot_S               ), // 输入：CPU重启 YHY  ADD  
+    .cpu_reboot_x                           (cpu_reboot_x               ), // 输入：CPU重启 YHY  ADD   
+    .cpu_power_off                          (cpu_power_off              ), // 输入：CPU下电 YHY  ADD  
+    
+    .xr_ps_en                               (1'b1                       ), // 输入：XR 电源使能信号（1=使能，0=禁用）
+
+    .allow_recovery                         (1'b0                       ), // 输入：允许故障恢复信号（1=允许自动恢复，0=禁止）
+                                                                           // 功能：此处固定为 0：故障后不自动重试，需人工或 BMC 干预，避免反复故障
+    .keep_alive_on_fault                    (keep_alive_on_fault        ), // 输入：故障时保持上电信号（来自前文定义，控制故障后是否下电）
+
+    .pgd_raw                                (pgd_raw                    ), // 输出：原始电源好信号（送至电源按钮指示灯，当前未使用）
+                                                                           // 备用功能：指示灯显示电源好状态，方便现场排查
+
+    // -----------------------------------------------------------
+    // 4. 电源S5上电控制 来自? BMC or PWR_SEQ_SLAVE ?
+    // -----------------------------------------------------------                                                              
+    .s5dev_pwren_request                    (1'b0                       ), // 输入：S5 状态设备上电请求信号（来自电源请求从模块 pwrseq_slave）
+                                                                           // 功能：S5 休眠状态下，外部设备（如 BMC）请求上电时触发该信号
+    .s5dev_pwrdis_request                   (1'b0                       ), // 输入：S5 状态设备断电请求信号（来自 pwrweq_slave）
+                                                                           // 功能：S5 状态下，外部设备请求断电时触发该信号
+
+    // -----------------------------------------------------------
+    // 5. pwrseq_slave模块接口
+    // -----------------------------------------------------------  
+    .pgd_so_far                             (pgd_so_far                 ),// 输入：电源好（PGD）累积信号（来自 pwrweq_slave）
+                                                                          // 功能：汇总所有子模块的电源好信号，用于判断整体电源是否稳定  
+    .any_pwr_fault_det                      (any_pwr_fault_det          ),// 输入：任意电源故障检测信号（来自 pwrweq_slave）
+                                                                          // 功能：检测到任一子模块电源故障时为 1，触发主模块故障处理 
+    .any_lim_recov_fault                    (any_lim_recov_fault        ),// 输入：任意有限恢复故障信号（来自 pwrweq_slave）
+                                                                          // 功能：轻微故障（如电压波动），可通过重试恢复   
+    .any_non_recov_fault                    (any_non_recov_fault        ),// 输入：任意非恢复故障信号（来自 pwrweq_slave）
+                                                                          // 功能：严重故障（如电源短路），无法恢复，需立即下电 
+    .dc_on_wait_complete                    (dc_on_wait_complete        ),// 输出：DC 电源上电等待完成信号（送至电源序列从模块 slave）
+                                                                          // 功能：告知从模块“主模块已完成 DC 上电等待，可执行后续步骤”
+    .rt_critical_fail_store                 (rt_critical_fail_store     ),// 输出：RT 关键故障存储信号（送至从模块/复位模块）
+                                                                          // 功能：存储关键故障信息，用于故障复位后追溯原因
+    .fault_clear                            (fault_clear                ),// 输出：故障清除信号（送至从模块/PSU/热管理模块）
+                                                                          // 功能：BMC 或人工清除故障后，该信号触发下游模块清除故障标志
+    .power_seq_sm                           (power_seq_sm               ),// 输出：电源序列状态机信号（核心输出，告知所有模块当前电源阶段）
+                                                                          // 常见状态：上电初始化、电源升压、电源稳定、下电等
+
+    // -----------------------------------------------------------
+    // 6. 电源上下电接口
+    // ----------------------------------------------------------- 
+    // POWER_OFF_FLAG
+    .pch_thermtrip_FLAG                     (pch_thermtrip_flag         ), // 输出：南桥过热
+                                                                           // 功能：过热下电
+    .CPU_OFF_FLAG                           (cpu_off_flag               ), // 输出：CPU下电
+                                                                           // 功能：CPU下电
+    .REBOOT_FLAG                            (reboot_flag                ), // 输出：CPU重启
+                                                                           // 功能：CPU重启 
+    .Power_WAKE_R_N                         (power_wake_r_n             ), // 输入：CPU输入的wake信号
+                                                                           // 功能：上电退出s5
+    .pch_sys_reset_n                        (pch_sys_reset_n            ), // 输入：南桥复位       YHY  ADD //force_reb & pch_sys_reset_n
+                                                                           // 功能：复位下电
+    .turn_system_on                         (turn_system_on             ), // 输出：系统开机信号（送至电源序列从模块 slave）
+                                                                           // 功能：触发从模块执行系统开机序列
     
     // -----------------------------------------------------------
-    // 4. 电源与故障检测接口（接收硬件状态信号）
-    // -----------------------------------------------------------
-    .pch_thermtrip_n                (~pch_thrmtrip              ), // 输入：PCH 热跳闸信号（低电平有效，1=无过热，0=CPU 过热触发下电）
-    .force_pwrbtn_n                 (force_pwrbtn_n             ), // 输出：强制电源按钮信号（低电平有效，送至 PSU，当前未使用）
-                                                                   // 备用功能：故障下电后，强制 PCH 切换到 S5 状态，确保彻底断电
-    .xr_ps_en                       (1'b1                       ), // 输入：XR 电源使能信号（1=使能，0=禁用）
-    .cpu_reboot                     (cpu_reboot_S               ), // YHY  ADD  
-    .cpu_reboot_x                   (cpu_reboot_x               ), // YHY  ADD   
-    .cpu_power_off                  (cpu_power_off              ), // YHY  ADD  
-    .pch_sys_reset_n                (pch_sys_reset_n            ), // YHY  ADD //force_reb & pch_sys_reset_n
-    .pch_thermtrip_FLAG             (pch_thermtrip_flag         ), // YHY  ADD 
-    .CPU_OFF_FLAG                   (cpu_off_flag               ), // YHY  ADD 
-    .REBOOT_FLAG                    (reboot_flag                ), // YHY  ADD 
+    // 7. 状态监控
+    // ----------------------------------------------------------- 
+    .power_fault                            (power_fault                ),// 输出：电源故障信号（送至故障处理模块/指示灯/网卡）
+                                                                          // 功能：触发故障指示灯亮、网卡上报故障，告知外部系统电源异常
+    .stby_failure_detected                  (stby_failure_detected      ),// 输出：待机故障检测信号（送至故障处理模块）
+                                                                          // 功能：检测到待机电源（如 5V_STB）故障时输出 1
+    .po_failure_detected                    (dc_failure_detected        ),// 输出：DC 电源故障检测信号（送至故障处理模块）
+                                                                          // 功能：检测到 DC 主电源（如 12V/5V）故障时输出 1
+    .rt_failure_detected                    (rt_failure_detected        ),// 输出：RT 电源故障检测信号（送至故障处理模块）
+                                                                          // 功能：检测到 RT 电源（如 CPU 核心供电）故障时输出 1
+    .cpld_latch_sys_off                     (cpld_latch_sys_off         ),// 输出：CPLD 锁存系统关闭信号（送至扩展寄存器 XREG）
+                                                                          // 功能：锁存“系统关闭”状态，避免故障恢复时误上电
+    .turn_on_wait                           (turn_on_wait               ) // 输出：开机等待信号（送至电源按钮指示灯）
+                                                                          // 功能：开机过程中点亮指示灯，告知用户“系统正在上电，请勿操作”
+);
 
+// 上下电 slave
+pwrseq_slave #(
+    .SHARED_P5V_STBY_HPMOS                  (1'b1                       ),
+    .S5DEV_STUCKON_FAULT_CHK                (1'b0                       ),
+    //.BOUND_SYS_PWROK(1'b1),       
+    .NUM_CPU                                (`NUM_CPU                   ),
+    .NUM_OPT_AUX                            (0                          ),
+    .NUM_S5DEV                              (`NUM_S5DEV                 ),
+    .NUM_SAS                                (1                          ),
+    .NUM_HD_BP                              (8                          ),        //change in 20191212
+    .NUM_M2_BP                              (1                          ),
+    .NUM_RISER                              (`NUM_RISER                 )
+    //YHY  .NUM_MEZZ(1)
+    //.HPMOS_TYPE(2'b10),
+    //.HPMOS_OWNER(4'b0000),
+    //.FAULT_VEC_SIZE(40),
+    //.RECOV_FAULT_MASK    (40'b0000_1111_1111_0000_0000_0000_0000_0000_0000_0000),
+    //.LIM_RECOV_FAULT_MASK(40'b0011_0000_0000_1111_1111_1111_1111_1111_1111_1111),
+    //.NON_RECOV_FAULT_MASK(40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000)
+) pwrseq_slave_inst (
+    .clk                                    (sys_clk                    ),
+    .reset                                  (~pon_reset_n               ),
+    .t1us                                   (t1us_tick                  ),
+    .t512us                                 (t512us_tick                ),
+    .t1ms                                   (t1ms_tick                  ),
+    .t2ms                                   (t2ms_tick                  ),
+    .t64ms                                  (t64ms_tick                 ),
+    .t1s                                    (t1s_tick                   ),
+  
+    // 
+    .keep_alive_on_fault                    (keep_alive_on_fault        ),
 
-    .allow_recovery                 (1'b0                       ),// 输入：允许故障恢复信号（1=允许自动恢复，0=禁止）
-                                                                  // 此处固定为 0：故障后不自动重试，需人工或 BMC 干预，避免反复故障
-    .keep_alive_on_fault            (keep_alive_on_fault        ),// 输入：故障时保持上电信号（来自前文定义，控制故障后是否下电）
+    // from Power Controller PG signal 
+    .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg ),
+    .cpu1_vdd_core_pg		                (db_i_pal_cpu1_vdd_core_pg  ),
+    .cpu0_pll_p1v8_pg		                (db_i_pal_cpu0_pll_p1v8_pg  ),
+    .cpu0_vddq_pg		                    (db_i_pal_cpu0_vddq_pg	    ),
+    .cpu0_p1v8_pg		                    (db_i_pal_cpu0_p1v8_pg	    ),
+    .cpu0_ddr_vdd_pg                        (db_i_pal_cpu0_ddr_vdd_pg   ),
+    .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg  ),
+    .cpu0_pcie_p1v8_pg		                (db_i_pal_cpu0_pcie_p1v8_pg ),  
+    .cpu1_pcie_p1v8_pg		                (db_i_pal_cpu1_pcie_p1v8_pg ),    
+    .cpu0_pcie_p0v9_pg		                (db_i_pal_cpu0_pcie_p0v9_pg ),
+    .cpu1_pcie_p0v9_pg		                (db_i_pal_cpu1_pcie_p0v9_pg ),  
+    .fan_efuse_pg			                (db_i_pal_fan_efuse_pg	    ),
+    .cpu1_ddr_vdd_pg	                    (db_i_pal_cpu1_ddr_vdd_pg	),
+    .cpu0_vdd_core_pg			            (db_i_pal_cpu0_vdd_core_pg  ),
+    .cpu1_vddq_pg				            (db_i_pal_cpu1_vddq_pg	    ),  
+    .cpu1_p1v8_pg		                    (db_i_pal_cpu1_p1v8_pg	    ),
+    .cpu1_pll_p1v8_pg		                (db_i_pal_cpu1_pll_p1v8_pg  ),
+    .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	    ),
+    .dimm_efuse_pg			                (db_i_pal_dimm_efuse_pg	    ),  
+    .p5v_pgd                                (db_i_pal_p5v_pgd            ),
+    .pgd_main_efuse                         (1'b1                        ),  //in
+    .pgd_p12v                               (db_i_pal_pgd_p12v_droop     ),  //in
+    .pgd_p12v_stby_droop                    (db_i_pal_pgd_p12v_stby_droop),  //in
+    .p3v3_stby_bp_pg                        (db_i_pal_p3v3_stby_bp_pgd   ),  //in
+    .p3v3_stby_pg                           (db_i_pal_p3v3_stby_pgd      ),  //in
+
+     //to Power Controller Enable Pin 
+    .pvcc_hpmos_cpu_en_r                    (pvcc_hpmos_cpu_en_r        ),  //out
+    .cpu0_p1v8_en_r                         (cpu0_p1v8_en_r             ),  //out
+    .cpu1_p1v8_en_r                         (cpu1_p1v8_en_r             ),  //out
+    .cpu0_pll_p1v8_en_r                     (cpu0_pll_p1v8_en_r         ),  //out
+    .cpu1_pll_p1v8_en_r                     (cpu1_pll_p1v8_en_r         ),  //out
+    .cpu0_ddr_vdd_en_r                      (cpu0_ddr_vdd_en_r          ),  //out
+    .cpu1_ddr_vdd_en_r                      (cpu1_ddr_vdd_en_r          ),  //out
+    .cpu0_pcie_p0v9_en_r                    (cpu0_pcie_p0v9_en_r        ),  //out
+    .cpu1_pcie_p0v9_en_r                    (cpu1_pcie_p0v9_en_r        ),  //out
+    .cpu0_pcie_p1v8_en_r                    (cpu0_pcie_p1v8_en_r        ),  //out
+    .cpu1_pcie_p1v8_en_r                    (cpu1_pcie_p1v8_en_r        ),  //out
+    .cpu0_vddq_en_r                         (cpu0_vddq_en_r             ),  //out
+    .cpu1_vddq_en_r                         (cpu1_vddq_en_r             ),  //out
+    .cpu0_vdd_core_en_r                     (cpu0_vdd_core_en_r         ),  //out
+    .cpu1_vdd_core_en_r                     (cpu1_vdd_core_en_r         ),  //out
+    .p5v_stby_en_r                          (p5v_stby_en_r              ),  //out
+    .p5v_en_r                               (p5v_en_r                   ),  //out
+    .power_supply_on                        (power_supply_on            ),  //out
+    .p12v_bp_front_en                       (p12v_bp_front_en           ),  //out
+    .p12v_bp_rear_en                        (p12v_bp_rear_en            ),  //out
+    .usb_ponrst_r_n                         (usb_ponrst_r_n             ),  //out
+    .cpu_por_n                              (cpu_por_n                  ),  //out
+    .pex_reset_r_n                          (pex_reset_n                ),  //out
+    //to OCP
+    .ocp_aux_en				                (ocp_aux_en			        ),  //out
+    .ocp_main_en				            (ocp_main_en			    ),  //out
+    .pal_main_efuse_en                      (pal_main_efuse_en          ),  //out
+ 
+    .pwrseq_sm_fault_det		            (pwrseq_sm_fault_det	        ),
+    .cpu0_p1v8_fault_det		            (cpu0_p1v8_fault_det	        ),
+    .cpu1_p1v8_fault_det		            (cpu1_p1v8_fault_det	        ),
+    .cpu0_pll_p1v8_fault_det	            (cpu0_pll_p1v8_fault_det        ),
+    .cpu1_pll_p1v8_fault_det	            (cpu1_pll_p1v8_fault_det        ),
+    .cpu0_ddr_vdd_fault_det	                (cpu0_ddr_vdd_fault_det	        ),
+    .cpu1_ddr_vdd_fault_det	                (cpu1_ddr_vdd_fault_det	        ),
+    .cpu0_pcie_p0v9_fault_det	            (cpu0_pcie_p0v9_fault_det	    ),
+    .cpu1_pcie_p0v9_fault_det	            (cpu1_pcie_p0v9_fault_det	    ),
+    .cpu0_pcie_p1v8_fault_det	            (cpu0_pcie_p1v8_fault_det	    ),
+    .cpu1_pcie_p1v8_fault_det	            (cpu1_pcie_p1v8_fault_det	    ),
+    .cpu0_vddq_fault_det		            (cpu0_vddq_fault_det	        ),
+    .cpu1_vddq_fault_det		            (cpu1_vddq_fault_det	        ),
+    .cpu0_vdd_core_fault_det	            (cpu0_vdd_core_fault_det	    ),
+    .cpu1_vdd_core_fault_det	            (cpu1_vdd_core_fault_det	    ),
+    .p5v_stby_fault_det		                (p5v_stby_fault_det	            ),
+    .p5v_fault_det		                    (p5v_fault_det	                ),
+    .p12v_front_bp_efuse_fault_det          (p12v_front_bp_efuse_fault_det  ),
+    .p12v_reat_bp_efuse_fault_det	        (p12v_reat_bp_efuse_fault_det	),
+    .p12v_fan_efuse_fault_det		        (p12v_fan_efuse_fault_det	    ),
+    .p12v_dimm_efuse_fault_det              (p12v_dimm_efuse_fault_det	    ),
+    .p12v_fault_det                         (p12v_fault_det                 ),//out
+    .p12v_stby_droop_fault_det              (p12v_stby_droop_fault_det      ),//out
+    .p3v3_stby_bp_fault_det                 (p3v3_stby_bp_fault_det         ),//out  
+    .main_efuse_fault_det                   (main_efuse_fault_det           ),//out
+    .p3v3_stby_fault_det                    (p3v3_stby_fault_det            ),//out
+    .cpu_thermtrip_fault_det                (cpu_thermtrip_fault_det        ),
+    //.pwm_ctrl_vdd_en                      (pwm_ctrl_vdd_en      ),  //out     
+    //.USB_HUB_P1V2_EN_R                    (  USB_HUB_P1V2_EN_R  ),  //out    
+    //.USB_HUB_P3V3_EN_R                    (  USB_HUB_P3V3_EN_R  ),  //out    
+    //.USB5744_VBUS_DET_R                   (  USB5744_VBUS_DET_R ),  //out    
+    //.UPD_SMIB_N                           (  UPD_SMIB_N         ),  //out    
     
-    .pgd_raw                        (pgd_raw                    ),// 输出：原始电源好信号（送至电源按钮指示灯，当前未使用）
-                                                                  // 备用功能：指示灯显示电源好状态，方便现场排查
-    .s5dev_pwren_request            (1'b0                       ),// 输入：S5 状态设备上电请求信号（来自电源请求从模块 pwrweq_slave）
-                                                                  // 功能：S5 休眠状态下，外部设备（如 BMC）请求上电时触发该信号
-    .s5dev_pwrdis_request           (1'b0                       ),// 输入：S5 状态设备断电请求信号（来自 pwrweq_slave）
-                                                                  // 功能：S5 状态下，外部设备请求断电时触发该信号
-    .pgd_so_far                     (pgd_so_far                 ),// 输入：电源好（PGD）累积信号（来自 pwrweq_slave）
-                                                                  // 功能：汇总所有子模块的电源好信号，用于判断整体电源是否稳定  
-    .any_pwr_fault_det              (any_pwr_fault_det          ),// 输入：任意电源故障检测信号（来自 pwrweq_slave）
-                                                                  // 功能：检测到任一子模块电源故障时为 1，触发主模块故障处理 
-    .any_lim_recov_fault            (any_lim_recov_fault        ),// 输入：任意有限恢复故障信号（来自 pwrweq_slave）
-                                                                  // 功能：轻微故障（如电压波动），可通过重试恢复   
-    .any_non_recov_fault            (any_non_recov_fault        ),// 输入：任意非恢复故障信号（来自 pwrweq_slave）
-                                                                  // 功能：严重故障（如电源短路），无法恢复，需立即下电  
-    .Power_WAKE_R_N                 (power_wake_r_n             ),// 
-    .turn_system_on                 (turn_system_on             ),// 输出：系统开机信号（送至电源序列从模块 slave）
-                                                                  // 功能：触发从模块执行系统开机序列
-    .dc_on_wait_complete            (dc_on_wait_complete        ),// 输出：DC 电源上电等待完成信号（送至电源序列从模块 slave）
-                                                                  // 功能：告知从模块“主模块已完成 DC 上电等待，可执行后续步骤”
-    .rt_critical_fail_store         (rt_critical_fail_store     ),// 输出：RT 关键故障存储信号（送至从模块/复位模块）
-                                                                  // 功能：存储关键故障信息，用于故障复位后追溯原因
-    .fault_clear                    (fault_clear                ),// 输出：故障清除信号（送至从模块/PSU/热管理模块）
-                                                                  // 功能：BMC 或人工清除故障后，该信号触发下游模块清除故障标志
-    .power_seq_sm                   (power_seq_sm               ),// 输出：电源序列状态机信号（核心输出，告知所有模块当前电源阶段）
-                                                                  // 常见状态：上电初始化、电源升压、电源稳定、下电等
-    .power_fault                    (power_fault                ),// 输出：电源故障信号（送至故障处理模块/指示灯/网卡）
-                                                                  // 功能：触发故障指示灯亮、网卡上报故障，告知外部系统电源异常
-    .stby_failure_detected          (stby_failure_detected      ),// 输出：待机故障检测信号（送至故障处理模块）
-                                                                  // 功能：检测到待机电源（如 5V_STB）故障时输出 1
-    .po_failure_detected            (dc_failure_detected        ),// 输出：DC 电源故障检测信号（送至故障处理模块）
-                                                                  // 功能：检测到 DC 主电源（如 12V/5V）故障时输出 1
-    .rt_failure_detected            (rt_failure_detected        ),// 输出：RT 电源故障检测信号（送至故障处理模块）
-                                                                  // 功能：检测到 RT 电源（如 CPU 核心供电）故障时输出 1
-    .cpld_latch_sys_off             (cpld_latch_sys_off         ),// 输出：CPLD 锁存系统关闭信号（送至扩展寄存器 XREG）
-                                                                  // 功能：锁存“系统关闭”状态，避免故障恢复时误上电
-    .turn_on_wait                   (turn_on_wait               ) // 输出：开机等待信号（送至电源按钮指示灯）
-                                                                  // 功能：开机过程中点亮指示灯，告知用户“系统正在上电，请勿操作”
+    //.P_CPU0_POR_N	                        ( P_CPU0_POR_N	     ),  //out    
+    //.P_CPU0_RESET_N                       ( P_CPU0_RESET_N      ),  //out    
+    //.P_CPU1_POR_N                         ( P_CPU1_POR_N        ),  //out    
+    //.P_CPU1_RESET_N                       ( P_CPU1_RESET_N      ),  //out     
+    //.reg_ocp_en                           ( reg_ocp_en          ),  //out          
+    //.CPU_BIOS_RESET                       ( CPU_BIOS_RESET      ),  //out     
+    //.BIOS_CS_ON                           ( BIOS_CS_ON          ),  //out     
+    .brownout_warning                       (brownout_warning              ),//FROM PSU
+    //Therm status 
+    .i_cpu_thermtrip                        (cpu_thermtrip_event           ),// CPU THERMTRIP indicator
+    .o_cpu_thermtrip_fault                  (cpu_thermtrip_fault           ),//out ��δʹ�� 
+    .cpu_bios_en                            (cpu_bios_en                   ),//out
+    .pal_efuse_pcycle                       (efuse_power_cycle             ),//out 04�Ĵ�����bit4 ����3.3vstby������
+    //BP            
+    .hd_bp_prsnt_n                          (bp_prsnt                      ),//drive backplane presence
+    .hd_bp_pgd                              (db_bp_aux_pg                  ),//drive backplane pgood
+    .hd_bp_fault_det                        (hd_bp_fault_det               ),//drive backplane power fault
+    // Riser card
+    .riser_prsnt_n                          ({riser4_2_prsnt_n,riser4_1_prsnt_n,riser3_2_prsnt_n,riser3_1_prsnt_n,db_pal_riser2_prsnt_n,db_pal_riser1_prsnt_n}),//in
+    .riser_pgd                              ({4'b1111, pal_riser2_pwrgd & riser2_pwr_alert_n, pal_riser1_pwrgd & riser1_pwr_alert_n}),//in
+    .riser_fault_det                        ({riser4_2_pwr_fault_det,riser4_1_pwr_fault_det,riser3_2_pwr_fault_det,riser3_1_pwr_fault_det,riser2_pwr_fault_det,riser1_pwr_fault_det}),//in
+    .pal_riser_en                           ({riser4_2_pwr_en,riser4_1_pwr_en,riser3_2_pwr_en,riser3_1_pwr_en,riser2_pwr_en,riser1_pwr_en}),//out
+
+    .power_seq_sm                           (power_seq_sm                  ),//in FROM MASTER
+    .reached_sm_wait_powerok                (reached_sm_wait_powerok       ),//TO SYSTEM_RESET
+   
+    .pgd_so_far                             (pgd_so_far                    ),//out,TO MASTER
+    .any_pwr_fault_det                      (any_pwr_fault_det             ),//out,TO MASTER
+    .any_aux_vrm_fault                      (any_aux_vrm_fault             ),//out
+    .any_recov_fault                        (),
+    .any_lim_recov_fault                    (any_lim_recov_fault           ),//out,TO MASTER
+    .any_non_recov_fault                    (any_non_recov_fault           ),//out,TO MASTER
+    .dc_on_wait_complete                    (dc_on_wait_complete           ),//in FROM MASTER
+    .rt_critical_fail_store                 (rt_critical_fail_store        ),//in FROM MASTER
+    .fault_clear                            (fault_clear                   ),//in FROM MASTER
+    .aux_pcycle                             (aux_pcycle                    ) //FROM XREG  ����3.3v stby��Դ�ĸ�λ
 );
 
 endmodule
