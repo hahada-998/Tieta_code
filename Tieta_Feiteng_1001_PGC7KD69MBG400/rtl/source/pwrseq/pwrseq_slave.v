@@ -344,34 +344,33 @@ assign st_disable_main_efuse= (power_seq_sm == SM_DISABLE_MAIN_EFUSE);
 //   voltage sequencing is maintained.
 //------------------------------------------------------------------------------
 always @(posedge clk or posedge reset) begin
-  if (reset) begin
-    reached_sm_wait_powerok    <= 1'b0; 
-    reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
-    reg_cpu0_p1v8_en_r         <= 1'b0;
-    reg_cpu1_p1v8_en_r         <= 1'b0;
-    reg_cpu0_pll_p1v8_en_r     <= 1'b0;
-    reg_cpu1_pll_p1v8_en_r     <= 1'b0;
-    reg_cpu0_ddr_vdd_en_r      <= 1'b0;
-    reg_cpu1_ddr_vdd_en_r      <= 1'b0;
-    reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
-    reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
-    reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
-    reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
-    reg_cpu0_vddq_en_r         <= 1'b0;
-    reg_cpu1_vddq_en_r         <= 1'b0;
-    reg_cpu0_vdd_core_en_r     <= 1'b0;
-    reg_cpu1_vdd_core_en_r     <= 1'b0;
-    reg_p5v_stby_en_r          <= 1'b0;   
-    reg_p5v_en_r               <= 1'b0;   
-    reg_power_supply_on        <= 1'b0;
-	reg_cpu_por_n              <= 1'b0;      
-    usb_ponrst_r_n             <= 1'b0;
-	reg_pex_reset_r_n          <= 1'b0;
-	cpu_bios_en                <= 1'b0;
-	reg_main_efuse_en          <= 1'b0;
-	reg_p12v_en                <= 1'b0;
-    
-  end
+    if (reset) begin
+        reached_sm_wait_powerok    <= 1'b0; 
+        reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
+        reg_cpu0_p1v8_en_r         <= 1'b0;
+        reg_cpu1_p1v8_en_r         <= 1'b0;
+        reg_cpu0_pll_p1v8_en_r     <= 1'b0;
+        reg_cpu1_pll_p1v8_en_r     <= 1'b0;
+        reg_cpu0_ddr_vdd_en_r      <= 1'b0;
+        reg_cpu1_ddr_vdd_en_r      <= 1'b0;
+        reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
+        reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
+        reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
+        reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
+        reg_cpu0_vddq_en_r         <= 1'b0;
+        reg_cpu1_vddq_en_r         <= 1'b0;
+        reg_cpu0_vdd_core_en_r     <= 1'b0;
+        reg_cpu1_vdd_core_en_r     <= 1'b0;
+        reg_p5v_stby_en_r          <= 1'b0;   
+        reg_p5v_en_r               <= 1'b0;   
+        reg_power_supply_on        <= 1'b0;
+	      reg_cpu_por_n              <= 1'b0;      
+        usb_ponrst_r_n             <= 1'b0;
+	      reg_pex_reset_r_n          <= 1'b0;
+	      cpu_bios_en                <= 1'b0;
+	      reg_main_efuse_en          <= 1'b0;
+	      reg_p12v_en                <= 1'b0; 
+    end
   else if (t1us) begin
     case (power_seq_sm)
     SM_RESET_STATE : begin

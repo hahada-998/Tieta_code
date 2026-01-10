@@ -34,8 +34,15 @@ module Tieta_Feiteng_1001_top(
 
 
     /* begin: GPIO CPU0/1 D0/D1相关信号 */
-    input   i_CPU0_D0_TEMP_OVER                      /* synthesis LOC = "C2"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 温度 过高 信号
-    input   i_CPU0_D1_TEMP_OVER                      /* synthesis LOC = "J6"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D1 温度 过高 信号
+    input   i_CPU1_D0_GPIO_PORT0_R                   /* synthesis LOC = "C4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口0 信号
+    input   i_CPU1_D0_GPIO_PORT1_R                   /* synthesis LOC = "E1"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口1 信号
+    input   i_CPU1_D0_GPIO_PORT2_R                   /* synthesis LOC = "C3"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口2 信号
+    input   i_CPU1_D0_GPIO_PORT4_R                   /* synthesis LOC = "F6"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口4 信号
+    input   i_CPU1_D0_GPIO_PORT5_R                   /* synthesis LOC = "G6"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口5 信号
+    input   i_CPU1_D0_GPIO_PORT6_R                   /* synthesis LOC = "C1"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口6 信号
+    input   i_CPU1_D0_GPIO_PORT7_R                   /* synthesis LOC = "E4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口7 信号     
+    input   i_CPU1_D0_GPIO_PORT9_R                   /* synthesis LOC = "E3"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口9 信号
+    input   i_CPU1_D0_GPIO_PORT10_R                  /* synthesis LOC = "D2"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口10 信号
 
 
     /* end: GPIO CPU0/1 D0/D1相关信号 */
@@ -44,6 +51,10 @@ module Tieta_Feiteng_1001_top(
     input   i_CPU0_D0_UART1_TX                       /* synthesis LOC = "G3"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART1 发送 信号
     input   i_CPU0_D0_UART_SOUT                      /* synthesis LOC = "G1"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART 发送 信号
     input   i_CPU0_D1_UART1_TX                       /* synthesis LOC = "E2"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D1 UART1 发送 信号
+    
+    input   i_CPU1_D0_UART1_TX                       /* synthesis LOC = "G4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART1 发送 信号  
+    input   i_CPU1_D0_UART_SOUT                      /* synthesis LOC = "F5"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART 发送 信号
+    input   i_CPU1_D1_UART1_TX                       /* synthesis LOC = "G2"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 UART1 发送 信号
 
     /* end: UART相关信号 */
 
@@ -56,6 +67,13 @@ module Tieta_Feiteng_1001_top(
     input   i_CPU0_MCIO3_CABLE_ID0_R                 /* synthesis LOC = "F12"*/,// from  CPU0_MCIO_3/0 / J21_G97V22312HR                to  CPLD_S                                           default 1  // CPU0 MCIO3 电缆 ID0 信号
                                                      /* synthesis LOC = "A17"*/ // 未使用 
     input   i_CPU0_MCIO3_CABLE_ID1_R                 /* synthesis LOC = "G12"*/,// from  CPU0_MCIO_3/1 / J20_G97V22312HR                to  CPLD_S                                           default 1  // CPU0 MCIO3 电缆 ID1 信号
+    
+    input   i_CPU1_MCIO0_CABLE_ID0_R                 /* synthesis LOC = "A16"*/,// from  CPU1_MCIO_0/1 / J18_G97V22312HR                to  CPLD_S                                           default 1  // CPU1 MCIO0 电缆 ID0 信号
+    input   i_CPU1_MCIO0_CABLE_ID1_R                 /* synthesis LOC = "B15"*/,// from  CPU1_MCIO_0/1 / J18_G97V22312HR                to  CPLD_S                                           default 1  // CPU1 MCIO0 电缆 ID1 信号
+    input   i_CPU1_MCIO2_CABLE_ID0_R                 /* synthesis LOC = "A10"*/,// from  CPU1_MCIO_2/3 / J20_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO2 电缆 ID0 信号
+    input   i_CPU1_MCIO2_CABLE_ID1_R                 /* synthesis LOC = "A9"*/ ,// from  CPU1_MCIO_2/3 / J20_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO2 电缆 ID1 信号
+    input   i_CPU1_MCIO3_CABLE_ID0_R                 /* synthesis LOC = "D10"*/,// from  CPU1_MCIO_2/3 / J24_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO3 电缆 ID0 信号
+    input   i_CPU1_MCIO3_CABLE_ID1_R                 /* synthesis LOC = "B10"*/,// from  CPU1_MCIO_2/3 / J24_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO3 电缆 ID1 信号
 
     /* end:   CPU芯片的MCIO信号相关 */
 
@@ -64,8 +82,15 @@ module Tieta_Feiteng_1001_top(
     input   i_CABLE_PRSNT_N                         /* synthesis LOC  = "T17"*/,// from  J29_10217724B001                             to  CPLD_S                                           default 1  // 电缆 设备存在 信号
                                                     /* synthesis LOC  = "U17"*/ // 未使用
                                                     /* synthesis LOC  = "V17"*/ // 未使用
-    input   i_CHASSIS_ID0_N                         /* synthesis LOC = "E20"*/,// from  ?CHASSIS_ID?                                 to  CPLD_S                                           default 1  // 机箱 ID0 信号                        
-    input   i_CHASSIS_ID1_N                         /* synthesis LOC = "K14"*/,// from  ?CHASSIS_ID?                                 to  CPLD_S                                           default 1  // 机箱 ID1 信号
+    input   i_CHASSIS_ID0_N                         /* synthesis LOC  = "E20"*/,// from  ?CHASSIS_ID?                                  to  CPLD_S                                           default 1  // 机箱 ID0 信号                        
+    input   i_CHASSIS_ID1_N                         /* synthesis LOC  = "K14"*/,// from  ?CHASSIS_ID?                                  to  CPLD_S                                           default 1  // 机箱 ID1 信号
+    
+    input   i_CPU0_VIN_SNS_ALERT                    /* synthesis LOC  = "V13"*/,// from  CURRENT_DET0 / U57_TPA626_VR_S                to  CPLD_S                                           default 1  // CPU0 输入电压 传感器 告警 信号
+    
+    input   i_CPU0_D0_TEMP_OVER                     /* synthesis LOC  = "C2"*/ ,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 温度 过高 信号
+    input   i_CPU0_D1_TEMP_OVER                     /* synthesis LOC  = "J6"*/ ,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D1 温度 过高 信号
+    input   i_CPU1_D0_TEMP_OVER                     /* synthesis LOC  = "D1"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 温度 过高 信号
+    input   i_CPU1_D1_TEMP_OVER                      /* synthesis LOC = "H6"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 温度 过高 信号
 
 
     /* end: DEBUG 信号 */
@@ -123,7 +148,6 @@ input   i_CPU_NVME15_PRSNT_N                      /* synthesis LOC = "R11"*/,// 
 output  o_CPU_MCIO7_GPU_THROTTLE_N_R              /* synthesis LOC = "Y13"*/,// from  CPLD_S                                        to  CPU1_MCIO_2/3 / J23_G97V22312HR                  default 0  // CPU 与 GPU 之间的 “热管理 功耗控制” 边带信号
 output  o_JACK_CPU1_UART1_TX	                  /* synthesis LOC = "W13"*/,// from  CPLD_S                                        to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
 input   i_CPU_NVME16_PRSNT_N                      /* synthesis LOC = "V12"*/,// from  CPU0_MCIO_0/1 / J24_G97V22312HR               to  CPLD_S                                           default 1  // CPU0 NVME16 设备存在 信号
-input   i_CPU0_VIN_SNS_ALERT                      /* synthesis LOC = "V13"*/,// from  CURRENT_DET0 / U57_TPA626_VR_S                to  CPLD_S                                           default 1  // CPU0 输入电压 传感器 告警 信号
 output  o_LED8_N                                  /* synthesis LOC = "Y14"*/,// from  CPLD_S                                        to  CPLD_S_UART_LED_SW                               default 1  // LED8 灯 信号
 output  o_LED7_N                                  /* synthesis LOC = "W14"*/,// from  CPLD_S                                        to  CPLD_S_UART_LED_SW                               default 1  // LED7 灯 信号
 input   i_PAL_UPD72020_2_ALART                    /* synthesis LOC = "U12"*/,// from  PEX_USB_UPD720201_2 / U63                     to  CPLD_S                                           default 1  // UPD720201_2 告警 信号
@@ -299,29 +323,15 @@ inout   io_MCIO_PWR_EN0_R                        /* synthesis LOC  = "P1" */,// 
                                                  /* synthesis LOC  = "P2 "*/ // 未使用                        
 
 // 1.8V BANK
-input   i_CPU1_D0_GPIO_PORT0_R                   /* synthesis LOC = "C4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口0 信号
-input   i_CPU1_D0_GPIO_PORT2_R                   /* synthesis LOC = "C3"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口2 信号
-input   i_CPU1_D0_GPIO_PORT4_R                   /* synthesis LOC = "F6"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口4 信号
-input   i_CPU1_D0_GPIO_PORT5_R                   /* synthesis LOC = "G6"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口5 信号
-input   i_CPU1_D0_GPIO_PORT6_R                   /* synthesis LOC = "C1"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口6 信号
-input   i_CPU1_D0_GPIO_PORT7_R                   /* synthesis LOC = "E4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口7 信号     
-input   i_CPU1_D0_GPIO_PORT9_R                   /* synthesis LOC = "E3"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口9 信号
-input   i_CPU1_D0_GPIO_PORT10_R                  /* synthesis LOC = "D2"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口10 信号
-input   i_CPU1_D0_TEMP_OVER                      /* synthesis LOC = "D1"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 温度 过高 信号
-input   i_CPU1_D0_UART_SOUT                      /* synthesis LOC = "F5"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART 发送 信号
 output  o_CPU1_D0_UART1_RX                       /* synthesis LOC = "G5"*/,// from  CPLD_S                                         to  CPU1_GPIO1 / U2_S5000C_32_3200_C                 default 1  // CPU1 D0 UART1 接收 信号
 output  o_CPU1_D1_UART1_RX                       /* synthesis LOC = "F4"*/,// from  CPLD_S                                         to  CPU1_GPIO1 / U2_S5000C_32_3200_C                 default 1  // CPU1 D1 UART1 接收 信号
 output  o_CPU0_D1_UART1_RX                       /* synthesis LOC = "F3"*/,// from  CPLD_S                                         to  CPU0_GPIO1 / U1_S5000C_32_3200_C                 default 1  // CPU0 D1 UART1 接收 信号
-input   i_CPU1_D1_TEMP_OVER                      /* synthesis LOC = "H6"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 温度 过高 信号
 output  o_CPU1_D0_UART_SIN                       /* synthesis LOC = "H7"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPU1_UART / J613                                 default 1  // CPU1 D0 UART 接收 信号
-input   i_CPU1_D0_GPIO_PORT1_R                   /* synthesis LOC = "E1"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口1 信号
 output  o_CPU0_D0_UART1_RX                       /* synthesis LOC = "F2"*/,// from  CPLD_S                                         to  CPU0_GPIO1 / U1_S5000C_32_3200_C                 default 1  // CPU0 D0 UART1 接收 信号
                                                  /* synthesis LOC = "F1 "*/ // 未使用  
-input   i_CPU1_D0_UART1_TX                       /* synthesis LOC = "G4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART1 发送 信号  
 output  o_CPU0_D0_UART_SIN                       /* synthesis LOC = "H3"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPU0_UART / J614                                 default 1  // CPU0 D0 UART 接收 信号
 
 input   i_CPU1_D0_GPIO_PORT3_R                   /* synthesis LOC = "H4"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口3 信号
-input   i_CPU1_D1_UART1_TX                       /* synthesis LOC = "G2"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 UART1 发送 信号
 input   i_PEX_USB1_PPON1                         /* synthesis LOC = "J5"*/,// from  PEX_USB_UPD720201_2 / U40_XUSB2104LCGR         to  CPLD_S                                           default 1  // PEX USB1 PPON1 信号 
 input   i_PEX_USB1_PPON0                         /* synthesis LOC = "H2"*/,// from  PEX_USB_UPD720201_2 / U40_XUSB2104LCGR         to  CPLD_S                                           default 1  // PEX USB1 PPON0 信号
 input   i_PEX_USB2_PPON1                         /* synthesis LOC = "H1"*/,// from  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR        to  CPLD_S                                           default 1  // PEX USB2 PPON1 信号
@@ -351,18 +361,14 @@ output  o_PAL_UPD1_P1V1_EN_R                     /* synthesis LOC = "G9"*/,// fr
 output  o_CPLD_M_S_SGPIO1_LD_N                   /* synthesis LOC = "D8"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO1 加载使能 信号
 output  o_CPLD_M_S_SGPIO1_CLK                    /* synthesis LOC = "C8"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO1 时钟 信号
                                                  /* synthesis LOC = "B9 "*/ // 未使用 
-input   i_CPU1_MCIO2_CABLE_ID1_R                 /* synthesis LOC = "A9"*/,// from  CPU1_MCIO_2/3 / J20_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO2 电缆 ID1 信号
 // input   i_PAL2_TCK                               /* synthesis LOC = "C9" */,// from  CPU1_JTAG / J21_G97V22312HR                     to  CPLD_S                                           default 1  // PAL2 TCK 信号
 // input   i_PAL2_TMS                               /* synthesis LOC = "D9"*/,// from  CPU1_JTAG / J21_G97V22312HR                     to  CPLD_S                                           default 1  // PAL2 TMS 信号
-input   i_CPU1_MCIO3_CABLE_ID1_R                 /* synthesis LOC = "B10"*/,// from  CPU1_MCIO_2/3 / J24_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO3 电缆 ID1 信号
-input   i_CPU1_MCIO2_CABLE_ID0_R                 /* synthesis LOC = "A10"*/,// from  CPU1_MCIO_2/3 / J20_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO2 电缆 ID0 信号
 output  o_PAL_M2_PWR_EN_R                        /* synthesis LOC = "G10" */,// from  CPLD_S                                       to  PAL_M2_PWR_EN / U56                             default 1  // M.2 电源使能 信号
                                                  /* synthesis LOC = "F10"*/ // 未使用 
                                                  /* synthesis LOC = "B11"*/ // 未使用 
 output  o_CPLD_M_S_SGPIO_CLK                     /* synthesis LOC = "A11"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO 时钟 信号
 
 
-input   i_CPU1_MCIO3_CABLE_ID0_R                 /* synthesis LOC = "D10"*/,// from  CPU1_MCIO_2/3 / J24_G97V22321HR                to  CPLD_S                                           default 1  // CPU1 MCIO3 电缆 ID0 信号
 input   i_PAL_M2_0_PRSNT_N                       /* synthesis LOC = "C10"*/,// from  PAL_M2_0_PRSNT / J17                           to  CPLD_S                                           default 1  // M.2_0 设备存在 信号
 output  o_FAN_SNS_ALERT                          /* synthesis LOC = "A12"*/,// from  CPLD_S                                       to  FAN_SNS_ALERT / U60                             default 1  // 风扇 传感器 警报 信号
                                                  /* synthesis LOC = "B12"*/ // 未使用 
@@ -377,10 +383,8 @@ output  o_SW_5                                   /* synthesis LOC = "B14"*/,// f
 output  o_SW_6                                   /* synthesis LOC = "D12"*/,// from  CPLD_S                                         to  SW_6 / J9                                        default 1  // 开关 6 信号        
 output  o_SW_7                                   /* synthesis LOC = "C12"*/,// from  CPLD_S                                         to  SW_7 / J10                                       default 1  // 开关 7 信号        
 output  o_SW_8                                   /* synthesis LOC = "A15"*/,// from  CPLD_S                                         to  SW_8 / J12                                       default 1  // 开关 8 信号
-input   i_CPU1_MCIO0_CABLE_ID1_R                 /* synthesis LOC = "B15"*/,// from  CPU1_MCIO_0/1 / J18_G97V22312HR                to  CPLD_S                                           default 1  // CPU1 MCIO0 电缆 ID1 信号
 input   i_PAL_S_JTAGEN                           /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                  to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
 input   i_PAL_S_PROGRAM_N                        /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                              to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
-input   i_CPU1_MCIO0_CABLE_ID0_R                 /* synthesis LOC = "A16"*/,// from  CPU1_MCIO_0/1 / J18_G97V22312HR                to  CPLD_S                                           default 1  // CPU1 MCIO0 电缆 ID0 信号
 output  o_PAL_CPU1_I3C_SPD_SEL                   /* synthesis LOC = "B16"*/,// from  CPLD                                           to  CPU0/1_I2C_I3C_SW / U13                          default 1  // PAL CPU1 I3C SPD SEL 信号
 
 output  o_PAL_LED_UID_R                           /* synthesis LOC = "B17"*/,// from  CPLD_S                                        to  LED_UID / J22                                   default 1  // PAL LED UID 信号
