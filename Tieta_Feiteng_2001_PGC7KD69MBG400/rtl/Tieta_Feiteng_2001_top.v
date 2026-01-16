@@ -60,11 +60,17 @@ module Tieta_Feiteng_1001_top(
     input   i_CPU1_D1_UART1_TX                       /* synthesis LOC = "G2"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 UART1 发送 信号
     output  o_CPU1_D1_UART1_RX                       /* synthesis LOC = "F4"*/,// from  CPLD_S                                         to  CPU1_GPIO1 / U2_S5000C_32_3200_C                 default 1  // CPU1 D1 UART1 接收 信号
     
-    input   i_CPU0_D0_UART_SIN                       /* synthesis LOC = "H3"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPU0_UART / J614                                 default 1  // CPU0 D0 UART 接收 信号
-    output  o_CPU0_D0_UART_SOUT                      /* synthesis LOC = "G1"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART 发送 信号
-    input   i_CPU1_D0_UART_SIN                       /* synthesis LOC = "H7"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPU1_UART / J613                                 default 1  // CPU1 D0 UART 接收 信号
-    output  o_CPU1_D0_UART_SOUT                      /* synthesis LOC = "F5"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART 发送 信号
+    input   i_CPU0_D0_UART_SOUT                      /* synthesis LOC = "G1"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART 发送 信号
+    output  o_CPU0_D0_UART_SIN                       /* synthesis LOC = "H3"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPU0_UART / J614                                 default 1  // CPU0 D0 UART 接收 信号
+    input   i_CPU1_D0_UART_SOUT                      /* synthesis LOC = "F5"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART 发送 信号
+    output  o_CPU1_D0_UART_SIN                       /* synthesis LOC = "H7"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPU1_UART / J613                                 default 1  // CPU1 D0 UART 接收 信号
+
+    input   i_JACK_CPU0_D0_UART_SIN                   /* synthesis LOC = "Y11"*/,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 JACK UART 接收 信号
+    output  o_JACK_CPU0_D0_UART_SOUT                  /* synthesis LOC = "W12"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
     
+    input   i_JACK_CPU1_D0_UART_SIN                   /* synthesis LOC = "W16"*/,// from  CPU1_UART / J613                             to  CPLD_S                                           default 1  // CPU1 JACK UART 接收 信号
+    output  o_JACK_CPU1_D0_UART_SOUT                  /* synthesis LOC = "P13"*/,// from  CPLD_S                                       to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
+
     input   i_DB_UART_RX_R	                         /* synthesis LOC  = "L1 "*/,// from  DB_MODULE / J33_1338_201_8Q_N                to  CPLD_S                                           default 1  // DB UART 接收 信号
     output  o_DB_UART_TX_R	                          /* synthesis LOC  = "K7 "*/,// from  CPLD_S                                      to  DB_MODULE / J33_1338_201_8Q_N                    default 1  // DB UART 发送 信号       
     
@@ -74,12 +80,7 @@ module Tieta_Feiteng_1001_top(
     input   i_DBG_PAL_BMC_UART1_RX_CONN_R            /* synthesis LOC = "R19"*/,// from  J29_10317724B001                              to  CPLD_S                                           default 1  // BMC DEBUG UART1 接收 信号
     output  o_DBG_PAL_BMC_UART1_TX_CONN_R            /* synthesis LOC = "N16"*/,// from  CPLD_S                                        to  J29_10317724B001                                 default 1  // BMC DEBUG UART1 发送 信号
     
-    input   i_JACK_CPU0_D0_UART_SIN                   /* synthesis LOC = "Y11"*/,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 JACK UART 接收 信号
-    output  o_JACK_CPU0_D0_UART_SOUT                  /* synthesis LOC = "W12"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
     
-    input   i_JACK_CPU1_D0_UART_SIN                   /* synthesis LOC = "W16"*/,// from  CPU1_UART / J613                             to  CPLD_S                                           default 1  // CPU1 JACK UART 接收 信号
-    output  o_JACK_CPU1_D0_UART_SOUT                  /* synthesis LOC = "P13"*/,// from  CPLD_S                                       to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
-
     input   i_JACK_CPU0_UART1_RX                      /* synthesis LOC = "T12"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART1 接收 信号
     output  o_JACK_CPU0_UART1_TX                      /* synthesis LOC = "Y12"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
 
@@ -137,6 +138,8 @@ module Tieta_Feiteng_1001_top(
     output  o_PAL_UART4_OCP_DEBUG_TX                /* synthesis LOC = "P9"*/ ,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP 调试 UART4 发送 信号
     input   i_PAL_UART4_OCP_DEBUG_RX                /* synthesis LOC = "L15"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP 调试 UART4 接收 信号
 
+    output  o_PAL_OCP1_NCSI_EN_N_R                  , // 暂不使用
+    output  o_PAL_OCP2_NCSI_EN_N_R                  , // 暂不使用
     output  o_PAL_OCP_NCSI_SW_EN_N_R                /* synthesis LOC  = "M6" */,// from  CPLD_S                                       to  RISER_AUX/U89_SGM652321XTS20G/TR                 default 1  // OCP NCSI 开关使能 信号
     output  o_PAL_OCP_NCSI_CLK_50M_R                /* synthesis LOC  = "L7" */,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // OCP NCSI 时钟 50M 信号
 
@@ -145,6 +148,13 @@ module Tieta_Feiteng_1001_top(
   
     input   i_UART2_PAL_OCP_RX_R                    /* synthesis LOC = "T20"*/,// from  GENZ_168PIN                                   to  CPLD_S                                           default 1  // OCP UART2 接收 信号
     output  o_UART2_PAL_OCP_TX_R                    /* synthesis LOC = "T19"*/,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP UART2 接收 信号    
+    
+    input   i_PAL_OCP1_SS_CLK_R                     , // 暂不使用
+    input   i_PAL_OCP1_SS_LD_N_R                    , // 暂不使用
+    input   i_PAL_OCP1_SS_DATA_IN_R                 , // 暂不使用
+    input   i_PAL_OCP2_SS_CLK_R                     , // 暂不使用
+    input   i_PAL_OCP2_SS_LD_N_R                    , // 暂不使用
+    input   i_PAL_OCP2_SS_DATA_IN_R                 , // 暂不使用
     /* end: OCP */
 
 
@@ -229,8 +239,8 @@ module Tieta_Feiteng_1001_top(
     /* end:   CPU芯片的MCIO信号相关 */
 
     /* begin: RISER  */
-    output  o_PAL_RISER1_SS_CLK                       /* synthesis LOC = "T2" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行时钟 信号 
-    output  o_PAL_RISER1_SS_LD_N                      /* synthesis LOC = "R2" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行信号加载使能 信号                                               
+    input   i_PAL_RISER1_SS_CLK                       /* synthesis LOC = "T2" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行时钟 信号 
+    input   i_PAL_RISER1_SS_LD_N                      /* synthesis LOC = "R2" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行信号加载使能 信号                                               
     input   i_PAL_RISER1_SS_DATA_IN                   // 未添加
     input   i_PAL_RISER1_PRSNT_N                      /* synthesis LOC = "N3" */,// from  RISER1/J1_G64V3421MHR                         to  CPLD_S                                           default 1  // Riser1 设备存在 信号    
     input   i_MB_CB_RISER1_PRSNT0_N                   /* synthesis LOC = "N6"*/ ,// from  RISER1/G64V3421MHR                            to  CPLD_S                                           default 1  // 主板连接器 Riser1 设备存在0 信号
@@ -238,14 +248,14 @@ module Tieta_Feiteng_1001_top(
     input   i_PAL_RISER1_WIDTH_R                      /* synthesis LOC = "H16"*/,// from  RISER1/J1_G64V3421MHR                         to  CPLD_S                                           default 1  // Riser1 宽度 信号
     input   i_PAL_RISER1_SLOT_PERST_N_R               /* synthesis LOC = "E19"*/,// from  RISER1/J1_G64V3421MHR                         to  CPLD_S                                           default 1  // Riser1 插槽复位 信号
 
-    output  o_PAL_RISER2_SS_CLK                       /* synthesis LOC = "H20"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行时钟 信号                                              
-    output  o_PAL_RISER2_SS_LD_N                      /* synthesis LOC = "G16"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行信号加载使能 信号
+    input   i_PAL_RISER2_SS_CLK                       /* synthesis LOC = "H20"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行时钟 信号                                              
+    input   i_PAL_RISER2_SS_LD_N                      /* synthesis LOC = "G16"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行信号加载使能 信号
     input   i_PAL_RISER2_SS_DATA_IN                   // 未添加
     input   i_PAL_RISER2_PRSNT_N                      /* synthesis LOC = "P15"*/,// from  RISER2/J39_G64V3421MHR                        to  CPLD_S                                           default 1  // Riser2 设备存在 信号
     input   i_MB_CB_RISER2_PRSNT0_N                   /* synthesis LOC = "D5"*/ ,// from  RISER2/G64V3421MHR                            to  CPLD_S                                           default 1  // 主板连接器 Riser2 设备存在0 信号   
     input   i_PAL_RISER2_MODE_R                       /* synthesis LOC = "D18"*/,// from  RISER2/J39_G64V3421MHR                        to  CPLD_S                                           default 1  // Riser2 模式 信号
     input   i_PAL_RISER2_WIDTH_R                      /* synthesis LOC = "F16"*/,// from  RISER2/J39_G64V3421MHR                        to  CPLD_S                                           default 1  // Riser2 宽度 信号
-    output  o_PAL_RISER2_SLOT_PERST_N_R               /* synthesis LOC = "D17"*/,// from  CPLD_S                                        to  RISER2/J39_G64V3421MHR                           default 1  // Riser2 插槽复位 信号
+    input   i_PAL_RISER2_SLOT_PERST_N_R               /* synthesis LOC = "D17"*/,// from  CPLD_S                                        to  RISER2/J39_G64V3421MHR                           default 1  // Riser2 插槽复位 信号
         
     output  o_CPU0_RISER1_9548_RST_N_R                /* synthesis LOC = "J14"*/,// from  CPLD_S                                        to  RISER1/J1_G64V3421MHR                            default 1  // CPU0 Riser1 9548 复位 信号     
     output  o_MCIO11_RISER1_PERST2_N                  /* synthesis LOC = "K18"*/,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // MCIO11 Riser1 插槽复位2 信号
@@ -254,6 +264,15 @@ module Tieta_Feiteng_1001_top(
     input   i_PAL_THROTTLE_RISER1_R                   /* synthesis LOC = "N2" */,// from  RISER1/J1_G64V3421MHR                        to  CPLD_S                                            default 1  // Riser1 节流 信号
     input   i_PAL_THROTTLE_RISER2_R                   /* synthesis LOC = "P17"*/,// from  RISER2/J240_SGM6505HYTQF24G_TR               to  CPLD_S                                            default 1  // Riser2 节流 信号
     /* end: RISER  */
+
+    /* begin: MB CPLD ---> BP CPLD 的 SGPIO*/
+    input   i_PVT_SS_CLK_R    , // 暂未使用
+    input   i_PVT_SS_LD_N_R   , // 暂未使用
+    input   i_PVT_SS_DATI     , // 暂未使用
+    input   i_PVT_SS_CLK_1_R  , // 暂未使用
+    input   i_PVT_SS_LD_N_1_R , // 暂未使用
+    input   i_PVT_SS_DATI_1   , // 暂未使用
+    /* end: MB CPLD ---> BP CPLD 的 SGPIO*/
 
     /* begin: GPU  */
     output  o_CPU_MCIO0_GPU_THROTTLE_N_R	          /* synthesis LOC = "W1"*/ ,// from  CPLD_S                                        to  CPU0_MCIO_0/1 / J18_G97V22312HR                  default 0  // CPU 与 GPU 之间的 “热管理 功耗控制” 边带信号
@@ -311,7 +330,7 @@ module Tieta_Feiteng_1001_top(
     output  o_PAL_UPD2_P1V1_EN_R                      /* synthesis LOC = "L20"*/,// from  CPLD_S                                        to  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR          default 1  // UPD2 P1V1 电源使能 信号
     output  o_PAL_UPD2_P3V3_EN_R                      /* synthesis LOC = "K15"*/,// from  CPLD_S                                        to  PEX_USB_UPD720201_2 / U63                        default 1  // UPD2 P3V3 电源使能 信号
     output  o_PAL_UPD2_PERST_N_R                      /* synthesis LOC = "N17"*/,// from  CPLD_S                                        to  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR          default 1  // UPD2 插槽复位 信号                                                   
-    output  o_PAL_UPD2_PORNRST_N_R                    /* synthesis LOC = "K16"*/,// from  CPLD_S                                        to  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR          default 1  // UPD2 PORNRST_N 信号 PCH（平台控制器中心）向第 2 路更新通道（UPD2）发送的上电复位信号
+    output  o_PAL_UPD2_PONRST_N_R                     /* synthesis LOC = "K16"*/,// from  CPLD_S                                        to  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR          default 1  // UPD2 PORNRST_N 信号 PCH（平台控制器中心）向第 2 路更新通道（UPD2）发送的上电复位信号
     /* end: 电源上下电相关信号 */
 
     /* begin: LED灯 控制信号 */
@@ -333,6 +352,7 @@ module Tieta_Feiteng_1001_top(
     
     output	o_PAL_LED_HEL_GR_R	                      /* synthesis LOC = "J15"*/,// from  CPLD_S                                       to  SYS STATUS LED                                   default 1  // HEL 绿色 指示灯 信号
     output  o_PAL_LED_HEL_RED_R                       /* synthesis LOC = "J18"*/,// from  CPLD_S                                       to  SYS STATUS LED                                   default 1  // HEL 红色 指示灯 信号
+    output  o_PAL_LED_NIC_ACT_R                                                 ,
 
     output  o_PAL_LED_PWRBTN_GR_R                     /* synthesis LOC = "M16"*/,// from  CPLD_S                                       to  PWR BTN&LED                                      default 1  // 电源按钮 绿色 指示灯 信号
     output  o_PAL_LED_PWRBTN_AMBER_R                  /* synthesis LOC = "N19"*/,// from  CPLD_S                                       to  PWR BTN&LED                                      default 1  // 电源按钮 琥珀色 指示灯 信号
@@ -589,6 +609,76 @@ always @(posedge clk_50m or negedge pon_reset_n)begin
 end
 
 // M CPLD ---> S CPLD 数据解析
+wire                                    test_bat_en                         ;
+wire                                    bmc_extrst_uid                      ;
+wire                                    pal_m2_0_sel_lv33_r                 ;
+
+wire [7:0]                              i2c_ram_1058                        ;
+wire [7:0]                              i2c_ram_1057                        ;
+wire [7:0]                              i2c_ram_1056                        ;
+wire [7:0]                              i2c_ram_1055                        ;
+wire [7:0]                              i2c_ram_1054                        ;
+wire [7:0]                              i2c_ram_1053                        ;
+wire [7:0]                              i2c_ram_1052                        ;
+wire [7:0]                              i2c_ram_1051                        ;
+wire [7:0]                              i2c_ram_1050                        ;
+
+wire                                    pal_bp_efuse_pg                     ;
+wire                                    rst_i2c0_mux_n                      ;
+wire                                    pal_led_nic_act                     ;
+wire                                    rst_i2c_riser2_pca9548_n            ;
+wire                                    rst_i2c_riser1_pca9548_n            ;
+wire                                    cpu0_d0_bios_over                   ;
+wire                                    bmc_read_flag                       ;
+wire                                    vga2_dis                            ;
+
+wire [39:0]                             pfr_to_led                          ;
+wire                                    pgd_p1v8_stby_dly32ms               ;
+wire                                    pgd_p1v8_stby_dly30ms               ;
+wire                                    bios_security_bypass                ;
+wire                                    pal_rtc_intb                        ;
+wire                                    pal_ocp_ncsi_sw_en                  ;
+wire                                    pal_ocp2_ncsi_en                    ;
+wire                                    pal_ocp1_ncsi_en                    ;
+wire                                    pal_pe_wake_n                       ;
+wire                                    smb_pehp_cpu1_3v3_alert_n           ;
+
+wire [1:0]                              debug_reg_15                        ; 
+wire                                    rom_mux_bios_bmc_en                 ;      
+wire [31:0]                             AUX_BP_type                         ;
+wire [127:0]                            pcie_detect                         ;
+wire [15:0]                             o_mb_cb_prsnt_bmc                   ;
+wire                                    rom_mux_bios_bmc_sel                ; 
+
+wire [1:0]                              bmcctl_uart_sw                      ;
+wire                                    rom_bmc_bk_rst                      ;
+wire                                    rom_bmc_ma_rst                      ;
+wire                                    rst_pal_extrst_r_n                  ;
+wire                                    leakage_det_do_n                    ;
+wire                                    tpm_rst                             ;
+wire                                    rst_i2c13_mux_n                     ;
+wire                                    rst_i2c12_mux_n                     ;
+wire                                    rst_i2c11_mux_n                     ;
+wire                                    rst_i2c10_mux_n                     ;
+wire                                    rst_i2c8_mux_n                      ;
+wire                                    rst_i2c5_mux_n                      ;
+wire                                    rst_i2c4_2_mux_n                    ;
+wire                                    rst_i2c4_1_mux_n                    ;
+wire                                    rst_i2c3_mux_n                      ;
+wire                                    rst_i2c2_mux_n                      ;
+wire                                    rst_i2c1_mux_n                      ;
+wire                                    sys_hlth_red_blink_n                ;
+wire                                    sys_hlth_grn_blink_n                ;
+wire                                    led_uid                             ;
+wire                                    power_supply_on                     ;
+wire                                    ocp_main_en                         ;
+wire                                    ocp_aux_en                          ;
+wire                                    pex_reset_n                         ;
+wire                                    reached_sm_wait_powerok             ;
+wire                                    usb_ponrst_r_n                      ;
+wire                                    t4hz_test_mcpld                     ;
+wire [5:0]                              power_seq_sm		                ;   
+
 assign test_bat_en                    = mcpld_to_scpld_data_filter[345]     ;
 assign bmc_extrst_uid                 = mcpld_to_scpld_data_filter[344]     ;
 assign pal_m2_0_sel_lv33_r            = mcpld_to_scpld_data_filter[343]     ;
@@ -656,7 +746,7 @@ assign t4hz_test_mcpld                = mcpld_to_scpld_data_filter[6]       ;
 assign power_seq_sm		              = mcpld_to_scpld_data_filter[5:0]     ;
 
 // S CPLD ---> M CPLD
-wire [511:0]                    scpld_to_mcpld_p2s_data;
+wire [511:0]                          scpld_to_mcpld_p2s_data           ;
 p2s_slave #(.NBIT(512)) inst_cmu_to_mb_p2s(
 	.clk        (clk_50m					),
 	.rst        (~pon_reset_n				),
@@ -949,8 +1039,8 @@ pvt_gpi #(
     .clk                            (clk_50m),
     .reset_n                        (pon_reset_n & (~i_PAL_RISER1_PRSNT_N)  ),
     .clk_ena                        (t16us_tick                             ),
-    .serclk_in                      (o_PAL_RISER1_SS_CLK                    ),
-    .par_load_in_n                  (o_PAL_RISER1_SS_LD_N                   ),
+    .serclk_in                      (i_PAL_RISER1_SS_CLK                    ),
+    .par_load_in_n                  (i_PAL_RISER1_SS_LD_N                   ),
     .sdi                            (i_PAL_RISER1_SS_DATA_IN                ),
     .bit_idx_in                     (riser1_pvti_ss_count                   ),
     .bit_idx_out                    (riser1_pvti_ss_count                   ),
@@ -1020,13 +1110,13 @@ pvt_gpi #(
   .clk                              (clk_50m                                ),
   .reset_n                          (pon_reset_n & (~i_PAL_RISER2_PRSNT_N)  ),
   .clk_ena                          (t16us_tick                             ),
-  .serclk_in                        (o_PAL_RISER2_SS_CLK                    ),
-  .par_load_in_n                    (o_PAL_RISER2_SS_LD_N                   ),
+  .serclk_in                        (i_PAL_RISER2_SS_CLK                    ),
+  .par_load_in_n                    (i_PAL_RISER2_SS_LD_N                   ),
   .sdi                              (i_PAL_RISER2_SS_DATA_IN                ),
   .bit_idx_in                       (riser2_pvti_ss_count                   ),
   .bit_idx_out                      (riser2_pvti_ss_count                   ),
-  .serclk_out                       (o_PAL_RISER2_SS_CLK                    ),
-  .par_load_out_n                   (o_PAL_RISER2_SS_LD_N                   ),
+  .serclk_out                       (i_PAL_RISER2_SS_CLK                    ),
+  .par_load_out_n                   (i_PAL_RISER2_SS_LD_N                   ),
   .par_data                         ({riser2_pvti_byte3[7:0],riser2_pvti_byte2[7:0],riser2_pvti_byte1[7:0],riser2_pvti_byte0[7:0]})	               		
 );
 
@@ -1058,8 +1148,61 @@ end: RISER2 SGPIO 模块
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
-begin: main board SGPIO 模块 (暂不使用)
+begin: main board SGPIO 模块 (接口保留，数据暂不使用)
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire [5:0]                          mb1_pvti_ss_count                       ;
+
+wire                                cpu_nvme0_prsnt_n                       ;
+wire                                cpu_nvme1_prsnt_n                       ;
+wire                                cpu_nvme2_prsnt_n                       ;
+wire                                cpu_nvme3_prsnt_n                       ;
+wire                                cpu_nvme4_prsnt_n                       ;
+wire                                cpu_nvme5_prsnt_n                       ;
+wire                                cpu_nvme6_prsnt_n                       ;
+wire                                cpu_nvme7_prsnt_n                       ;
+wire                                cpu_nvme10_prsnt_n                      ;
+wire                                cpu_nvme11_prsnt_n                      ;
+wire                                cpu_nvme12_prsnt_n                      ;
+wire                                cpu_nvme13_prsnt_n                      ;
+wire                                cpu_nvme14_prsnt_n                      ;
+wire                                cpu_nvme15_prsnt_n                      ;
+wire                                cpu_nvme16_prsnt_n                      ;
+wire                                cpu_nvme17_prsnt_n                      ;
+
+wire                                cpu0_mcio0_cable_id0                    ;
+wire                                cpu0_mcio0_cable_id1                    ;
+wire                                cpu0_mcio1_cable_id0                    ;
+wire                                cpu0_mcio1_cable_id1                    ;
+wire                                cpu0_mcio2_cable_id0                    ;
+wire                                cpu0_mcio2_cable_id1                    ;
+wire                                cpu0_mcio3_cable_id0                    ;
+wire                                cpu0_mcio3_cable_id1                    ;
+wire                                cpu0_mcio4_cable_id0                    ;
+wire                                cpu0_mcio4_cable_id1                    ;
+wire                                cpu0_mcio5_cable_id0                    ;
+wire                                cpu0_mcio5_cable_id1                    ;
+wire                                cpu1_mcio0_cable_id0                    ;
+wire                                cpu1_mcio0_cable_id1                    ;
+wire                                cpu1_mcio1_cable_id0                    ;
+wire                                cpu1_mcio2_cable_id0                    ;
+wire                                cpu1_mcio2_cable_id1                    ;
+wire                                cpu1_mcio3_cable_id0                    ;
+wire                                cpu1_mcio3_cable_id1                    ;
+wire                                cpu1_mcio4_cable_id0                    ;
+wire                                cpu1_mcio4_cable_id1                    ;
+wire                                cpu1_mcio6_cable_id0                    ;
+wire                                cpu1_mcio1_cable_id1                    ;
+wire                                cpu1_mcio6_cable_id1                    ;
+
+wire                                pal_bp1_prsnt_n                         ;
+wire                                pal_bp2_prsnt_n                         ;
+wire                                pal_bp3_prsnt_n                         ;
+wire                                pal_bp4_prsnt_n                         ;
+wire                                pal_bp5_prsnt_n                         ;
+wire                                pal_bp6_prsnt_n                         ;
+wire                                pal_bp7_prsnt_n                         ;
+wire                                pal_bp8_prsnt_n                         ;
+
 pvt_gpi #(
 	.TOTAL_BIT_COUNT                (48                                     ),
 	.DEFAULT_STATE                  (48'h0                                  ),
@@ -1068,13 +1211,13 @@ pvt_gpi #(
 	.clk                            (clk_50m                                ),
 	.reset_n                        (pon_reset_n                            ),
 	.clk_ena                        (t16us_tick                             ),
-	.serclk_in                      (PVT_SS_CLK_R                           ),
-	.par_load_in_n                  (PVT_SS_LD_N_R                          ),
-	.sdi                            (PVT_SS_DATI                            ),
+	.serclk_in                      (i_PVT_SS_CLK_R                         ),
+	.par_load_in_n                  (i_PVT_SS_LD_N_R                        ),
+	.sdi                            (i_PVT_SS_DATI                          ),
 	.bit_idx_in                     (mb1_pvti_ss_count                      ),
 	.bit_idx_out                    (mb1_pvti_ss_count                      ),
-	.serclk_out                     (PVT_SS_CLK_R                           ),
-	.par_load_out_n                 (PVT_SS_LD_N_R                          ),
+	.serclk_out                     (i_PVT_SS_CLK_R                         ),
+	.par_load_out_n                 (i_PVT_SS_LD_N_R                        ),
 	.par_data                       ({cpu_nvme0_prsnt_n ,cpu_nvme1_prsnt_n ,cpu_nvme2_prsnt_n ,cpu_nvme3_prsnt_n ,
 	                                  cpu_nvme4_prsnt_n ,cpu_nvme5_prsnt_n ,cpu_nvme6_prsnt_n ,cpu_nvme7_prsnt_n ,          //U10 DATA
 					 
@@ -1095,38 +1238,85 @@ pvt_gpi #(
 					                })					 
 );
 
+wire [5:0]                          mb2_pvti_ss_count                       ;
+
+wire                                ocp_prsent_b7_n                         ;
+wire                                ocp_prsent_b6_n                         ;
+wire                                ocp_prsent_b5_n                         ;
+wire                                ocp_prsent_b4_n                         ;
+wire                                ocp_prsent_b3_n                         ;
+wire                                ocp_prsent_b2_n                         ;
+wire                                ocp_prsent_b1_n                         ;
+wire                                ocp_prsent_b0_n                         ;
+
+wire                                fan8_install_n                          ;
+wire                                fan7_install_n                          ;
+wire                                fan6_install_n                          ;
+wire                                fan5_install_n                          ;
+wire                                fan4_install_n                          ;
+wire                                fan3_install_n                          ;
+wire                                fan2_install_n                          ;
+wire                                fan1_install_n                          ;
+
+wire                                pal_gpu_fan4_prsnt                      ;
+wire                                pal_gpu_fan3_prsnt                      ;
+wire                                pal_gpu_fan2_prsnt                      ;
+wire                                pal_gpu_fan1_prsnt                      ;
+wire                                pal_gpu_fan4_foo                        ;
+wire                                pal_gpu_fan3_foo                        ;
+wire                                pal_gpu_fan2_foo                        ;
+wire                                pal_gpu_fan1_foo                        ;
+
+wire                                board_id7                               ;
+wire                                board_id6                               ;
+wire                                board_id5                               ;
+wire                                board_id4                               ;
+wire                                board_id3                               ;
+wire                                board_id2                               ;
+wire                                board_id1                               ;
+wire                                board_id0                               ;
+
+wire                                pca_revision_2                          ;
+wire                                pca_revision_1                          ;
+wire                                pca_revision_0                          ;
+wire                                pcb_revision_1                          ;
+wire                                pcb_revision_0                          ;
+wire                                cpu_nvme25_prsnt_n                      ;
+wire                                cpu_nvme24_prsnt_n                      ;
+wire                                cpu_nvme23_prsnt_n                      ;
+
 pvt_gpi #(
-	.TOTAL_BIT_COUNT                (48),
-	.DEFAULT_STATE                  (48'h0),
-	.NUMBER_OF_COUNTER_BITS         (6)
+	.TOTAL_BIT_COUNT                (48                                     ),
+	.DEFAULT_STATE                  (48'h0                                  ),
+	.NUMBER_OF_COUNTER_BITS         (6                                      )
 ) pvt_gpi_mb2_inst (
-	.clk                            (clk_50m),
-	.reset_n                        (pon_reset_n),
-	.clk_ena                        (t16us_tick),
-	.serclk_in                      (PVT_SS_CLK_1_R),
-	.par_load_in_n                  (PVT_SS_LD_N_1_R),
-	.sdi                            (PVT_SS_DATI_1),
-	.bit_idx_in                     (mb2_pvti_ss_count),
-	.bit_idx_out                    (mb2_pvti_ss_count),
-	.serclk_out                     (PVT_SS_CLK_1_R),
-	.par_load_out_n                 (PVT_SS_LD_N_1_R),
+	.clk                            (clk_50m                                ),
+	.reset_n                        (pon_reset_n                            ),
+	.clk_ena                        (t16us_tick                             ),
+	.serclk_in                      (i_PVT_SS_CLK_1_R                       ),
+	.par_load_in_n                  (i_PVT_SS_LD_N_1_R                      ),
+	.sdi                            (i_PVT_SS_DATI_1                        ),
+	.bit_idx_in                     (mb2_pvti_ss_count                      ),
+	.bit_idx_out                    (mb2_pvti_ss_count                      ),
+	.serclk_out                     (i_PVT_SS_CLK_1_R                       ),
+	.par_load_out_n                 (i_PVT_SS_LD_N_1_R                      ),
 	.par_data                       ({sw[0]           ,sw[1]           ,sw[2]           ,sw[3]           ,
 	                                  sw[4]           ,sw[5]           ,sw[6]           ,sw[7]           ,  //U180 DATA
 					 			 
-					                  ocp_prsent_b7_n ,ocp_prsent_b6_n ,ocp_prsent_b5_n ,ocp_prsent_b4_n ,
-					                  ocp_prsent_b3_n ,ocp_prsent_b2_n ,ocp_prsent_b1_n ,ocp_prsent_b0_n ,    //U181 DATA	
+					                ocp_prsent_b7_n ,ocp_prsent_b6_n ,ocp_prsent_b5_n ,ocp_prsent_b4_n ,
+					                ocp_prsent_b3_n ,ocp_prsent_b2_n ,ocp_prsent_b1_n ,ocp_prsent_b0_n,    //U181 DATA	
 
-                                      fan8_install_n,fan7_install_n,fan6_install_n,fan5_install_n,
-					                  fan4_install_n,fan3_install_n,fan2_install_n,fan1_install_n,          //U275 DATA
+                                    fan8_install_n,fan7_install_n,fan6_install_n,fan5_install_n,
+					                fan4_install_n,fan3_install_n,fan2_install_n,fan1_install_n,          //U275 DATA
 					 
-					                  pal_gpu_fan4_prsnt,pal_gpu_fan3_prsnt,pal_gpu_fan2_prsnt,pal_gpu_fan1_prsnt,
-					                  pal_gpu_fan4_foo,pal_gpu_fan3_foo,pal_gpu_fan2_foo,pal_gpu_fan1_foo,  //U276 DATA
+					                pal_gpu_fan4_prsnt,pal_gpu_fan3_prsnt,pal_gpu_fan2_prsnt,pal_gpu_fan1_prsnt,
+					                pal_gpu_fan4_foo,pal_gpu_fan3_foo,pal_gpu_fan2_foo,pal_gpu_fan1_foo,  //U276 DATA
 					 
-					                  board_id7,board_id6,board_id5,board_id4,
-					                  board_id3,board_id2,board_id1,board_id0,                              //U277 DATA
+					                board_id7,board_id6,board_id5,board_id4,
+					                board_id3,board_id2,board_id1,board_id0,                              //U277 DATA
 					 					 					 
-					                  pca_revision_2,pca_revision_1,pca_revision_0,pcb_revision_1,
-					                  pcb_revision_0,cpu_nvme25_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme23_prsnt_n //U278 DATA                 				     
+					                pca_revision_2,pca_revision_1,pca_revision_0,pcb_revision_1,
+					                pcb_revision_0,cpu_nvme25_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme23_prsnt_n //U278 DATA                 				     
 				                    })					 
 );  
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1136,23 +1326,32 @@ end: main board SGPIO 模块
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 begin: OCP1 SGPIO 模块 (暂不使用)
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire [5:0]                          ocp1_pvti_ss_count                      ;
+wire [7:0]                          ocp1_pvti_byte3                         ;
+wire [7:0]                          ocp1_pvti_byte2                         ;
+wire [7:0]                          ocp1_pvti_byte1                         ;
+wire [7:0]                          ocp1_pvti_byte0                         ;
+
+assign ocp1_prsnt_n = ocp_prsent_b3_n & ocp_prsent_b2_n & ocp_prsent_b1_n & ocp_prsent_b0_n;
+
 pvt_gpi #(
-    .TOTAL_BIT_COUNT                (32),
-    .DEFAULT_STATE                  (32'h7FFF_FFFE),
-    .NUMBER_OF_COUNTER_BITS         (6)
+    .TOTAL_BIT_COUNT                (32                                     ),
+    .DEFAULT_STATE                  (32'h7FFF_FFFE                          ),
+    .NUMBER_OF_COUNTER_BITS         (6                                      )
 ) pvt_gpi_ocp1_inst (
-    .clk                            (clk_50m),
-    .reset_n                        (pon_reset_n & (~ocp1_prsnt_n)),
-    .clk_ena                        (t16us_tick),
-    .serclk_in                      (PAL_OCP1_SS_CLK_R),
-    .par_load_in_n                  (PAL_OCP1_SS_LD_N_R),
-    .sdi                            (PAL_OCP1_SS_DATA_IN_R),
-    .bit_idx_in                     (ocp1_pvti_ss_count),
-    .bit_idx_out                    (ocp1_pvti_ss_count),
-    .serclk_out                     (PAL_OCP1_SS_CLK_R),
-    .par_load_out_n                 (PAL_OCP1_SS_LD_N_R),
+    .clk                            (clk_50m                                ),
+    .reset_n                        (pon_reset_n & (~ocp1_prsnt_n)          ),
+    .clk_ena                        (t16us_tick                             ),
+    .serclk_in                      (i_PAL_OCP1_SS_CLK_R                    ),
+    .par_load_in_n                  (i_PAL_OCP1_SS_LD_N_R                   ),
+    .sdi                            (i_PAL_OCP1_SS_DATA_IN_R                ),
+    .bit_idx_in                     (ocp1_pvti_ss_count                     ),
+    .bit_idx_out                    (ocp1_pvti_ss_count                     ),
+    .serclk_out                     (i_PAL_OCP1_SS_CLK_R                    ),
+    .par_load_out_n                 (i_PAL_OCP1_SS_LD_N_R                   ),
     .par_data                       ({ocp1_pvti_byte3[7:0], ocp1_pvti_byte2[7:0],ocp1_pvti_byte1[7:0], ocp1_pvti_byte0[7:0]})
 );
+
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 end: OCP1 SGPIO 模块 (暂不使用)
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -1161,26 +1360,153 @@ end: OCP1 SGPIO 模块 (暂不使用)
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 begin: OCP2 SGPIO 模块 (暂不使用)
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire [5:0]                          ocp2_pvti_ss_count                      ;
+wire [7:0]                          ocp2_pvti_byte3                         ;
+wire [7:0]                          ocp2_pvti_byte2                         ;
+wire [7:0]                          ocp2_pvti_byte1                         ;
+wire [7:0]                          ocp2_pvti_byte0                         ;
+
+assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_prsent_b7_n;
+
 pvt_gpi #(
-  .TOTAL_BIT_COUNT(32),
-  .DEFAULT_STATE(32'h7FFF_FFFE),
-  .NUMBER_OF_COUNTER_BITS(6)
+    .TOTAL_BIT_COUNT                (32                                     ),
+    .DEFAULT_STATE                  (32'h7FFF_FFFE                          ),
+    .NUMBER_OF_COUNTER_BITS         (6                                      )
 ) pvt_gpi_ocp2_inst (
-  .clk           (clk_50m),
-  .reset_n       (pon_reset_n & (~ocp2_prsnt_n)),
-  .clk_ena       (t16us_tick),
-  .serclk_in     (PAL_OCP2_SS_CLK_R),
-  .par_load_in_n (PAL_OCP2_SS_LD_N_R),
-  .sdi           (PAL_OCP2_SS_DATA_IN_R),
-  .bit_idx_in    (ocp2_pvti_ss_count),
-  .bit_idx_out   (ocp2_pvti_ss_count),
-  .serclk_out    (PAL_OCP2_SS_CLK_R),
-  .par_load_out_n(PAL_OCP2_SS_LD_N_R),
-  .par_data      ({ocp2_pvti_byte3[7:0], ocp2_pvti_byte2[7:0],ocp2_pvti_byte1[7:0], ocp2_pvti_byte0[7:0]})
+    .clk                            (clk_50m                                ),
+    .reset_n                        (pon_reset_n & (~ocp2_prsnt_n)          ),
+    .clk_ena                        (t16us_tick                             ),
+    .serclk_in                      (i_PAL_OCP2_SS_CLK_R                    ),
+    .par_load_in_n                  (i_PAL_OCP2_SS_LD_N_R                   ),
+    .sdi                            (i_PAL_OCP2_SS_DATA_IN_R                ),
+    .bit_idx_in                     (ocp2_pvti_ss_count                     ),
+    .bit_idx_out                    (ocp2_pvti_ss_count                     ),
+    .serclk_out                     (i_PAL_OCP2_SS_CLK_R                    ),
+    .par_load_out_n                 (i_PAL_OCP2_SS_LD_N_R                   ),
+    .par_data                       ({ocp2_pvti_byte3[7:0], ocp2_pvti_byte2[7:0],ocp2_pvti_byte1[7:0], ocp2_pvti_byte0[7:0]})
 );
+
+assign w_pal_ocp1_prsnt_n = {ocp_prsent_b3_n,ocp_prsent_b2_n,ocp_prsent_b1_n,ocp_prsent_b0_n};
+assign w_ocp1_x16_prsnt   = ((w_pal_ocp1_prsnt_n == 4'b0100)|(w_pal_ocp1_prsnt_n == 4'b0101)|(w_pal_ocp1_prsnt_n == 4'b0111)|(w_pal_ocp1_prsnt_n == 4'b1100)) ? 1'b1 : 1'b0;
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 end: OCP2 SGPIO 模块 (暂不使用)
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+begin: I2C Update 模块, 此IP核使用紫光的替换
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire                                wb_clk                                  ;
+defparam                            inst_osch.NOM_FREQ = "4.29"             ;
+OSCH inst_osch(
+    .STDBY		                    (1'b0		                            ),
+    .OSC		                    (wb_clk		                            ),
+    .SEDSTDBY	                    (			                            )
+);
+I2C_UPDATE inst_i2c_update_flash_config(
+    .wb_clk_i	                    (wb_clk	                                ),
+    .wb_rst_i	                    (		                                ),
+    .wb_cyc_i	                    (		                                ),
+    .wb_stb_i	                    (		                                ),
+    .wb_we_i	                    (		                                ),
+    .wb_adr_i	                    (		                                ),
+    .wb_dat_i	                    (		                                ),
+    .wb_dat_o	                    (		                                ),
+    .wb_ack_o	                    (		                                ),
+    .i2c1_irqo	                    (						                ),
+    .i2c1_scl	                    (BMC_I2C3_PAL_S_SCL_R	                ),
+    .i2c1_sda	                    (BMC_I2C3_PAL_S_SDA_R                   )
+); 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+end: I2C Update 模块, 此IP核使用紫光的替换
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+begin: 未使用模块
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire                                 w_bmc_active1_n                        ;
+
+FanControl #(
+    .FANNUMBER                      (1                                      ),
+    .TIME_OUT0                      (240                                    ),// common is 240s
+    .TIME_OUT1                      (10                                     )  // common is 10s
+) FanControl_m (
+    .i_clk                          (clk_50m                                ),//50MHz
+    .i_rst_n                        (pon_reset_n                            ),
+    .i_1uSCE                        (t1us_tick                              ),
+    .i_1000mSCE                     (t1s_tick                               ),                  
+    .i_heartbeat                    (i_pal_wdt_rst_n_r                      ),
+    .i_max_speed_ctrl               (8'd60                                  ),//can be decimal 60/65/70/75/80/85/90/95/100
+    .i_low_speed_pwr_on             (8'd10                                  ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
+    .i_fan_en_when_s5               (1'b1                                   ),      
+    .i_bmc_ctrl_when_s5             (1'b1                                   ),      
+    .i_pwr_on_st                    (1'b1                                   ),      
+    .i_fan_speed_when_s5            (8'd10                                  ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
+    .i_rst_bmc_n                    (1'b1                                   ),      
+    .o_bmc_active0_n                (                                       ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 
+    .o_bmc_active0_rst_n            (                                       ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 ; can be reset by i_rst_bmc_n
+    .o_wdt_override_pld_sel         (                                       ),//defaulte 0; bmc die:0; bmc actiev:1 ; related TIME_OUT1 
+    .o_bmc_active1_n                (w_bmc_active1_n                        ),//defaulte 1; bmc die:1; bmc actiev:0 ; related TIME_OUT1 
+    .i_BMC_pwm                      (1'b1                                   ),
+    .o_CPLD_pwm                     (                                       )
+);
+
+assign bmc_ready_flag = ~w_bmc_active1_n;
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+end: 未使用模块
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+begin: MB CPLD <--> BP CPLD 信号交互
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+// PE WAKE（CPU唤醒使用）
+assign pfr_pe_wake_n = pal_pe_wake_n; //& PAL_RISER1_WAKE_N_R ;
+
+// VGA
+assign pal_vga_sel_n = vga2_dis ? 1'b1 : (db_front_vga_cable_prsnt_n);
+
+// USB
+assign o_PAL_UPD1_PERST_N_R   = reached_sm_wait_powerok ;
+assign o_PAL_UPD2_PERST_N_R   = reached_sm_wait_powerok ;
+assign o_PAL_UPD1_PONRST_N_R  = usb_ponrst_r_n          ;
+assign o_PAL_UPD2_PONRST_N_R  = usb_ponrst_r_n          ;
+assign o_CPLD_M_S_EXCHANGE_S2 = i_PAL_PWR_SW_IN_N       ; 
+
+//OCPm LOM
+//assign lom_thermal_trip     = ~db_i_lom_prsnt_n ? db_i_lom_fan_on_aux : 1'b0;//1:thermal trip;0:normal
+
+//NCSI 
+assign o_PAL_OCP1_NCSI_EN_N_R   = ~pal_ocp1_ncsi_en  ; //J69
+assign o_PAL_OCP2_NCSI_EN_N_R   = ~pal_ocp2_ncsi_en  ; //J3 
+assign o_PAL_OCP_NCSI_SW_EN_N_R = ~pal_ocp_ncsi_sw_en; //J53 
+
+// LED
+assign o_LED1_N                 = ~power_seq_sm[0]   ;
+assign o_LED2_N                 = ~power_seq_sm[1]   ;
+assign o_LED3_N                 = ~power_seq_sm[2]   ;
+assign o_LED4_N                 = ~power_seq_sm[3]   ;
+assign o_LED5_N                 = ~power_seq_sm[4]   ;
+assign o_LED6_N                 = ~power_seq_sm[5]   ;
+assign o_LED7_N                 = bmc_extrst_uid     ;
+assign o_LED8_N                 = t4hz_clk_cmu       ;  
+
+assign o_PAL_LED_HEL_GR_R   = sys_hlth_grn_blink_n       ;
+assign o_PAL_LED_HEL_RED_R  = sys_hlth_red_blink_n       ;
+assign o_PAL_LED_NIC_ACT_R  = pal_led_nic_act            ;
+
+// UART 
+assign o_CPU1_D0_UART_SIN       = i_JACK_CPU1_D0_UART_SIN;
+assign o_JACK_CPU1_D0_UART_SOUT = i_CPU1_D0_UART_SOUT    ;
+
+assign o_JACK_CPU1_UART1_TX     = i_CPU1_D0_UART1_TX     ;
+assign o_CPU1_D0_UART1_RX       = i_JACK_CPU1_UART1_RX   ;
+
+assign o_JACK_CPU0_D0_UART_SOUT   = i_CPU0_D0_UART_SOUT    ;
+assign o_CPU0_D0_UART_SIN         = i_JACK_CPU0_D0_UART_SIN;
 endmodule
 
 
