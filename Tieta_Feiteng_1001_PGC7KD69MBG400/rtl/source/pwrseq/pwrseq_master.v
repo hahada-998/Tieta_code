@@ -1,72 +1,12 @@
-//=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : pwrseq_master.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
-// Description: This module is the power sequencing master. It is responsible for directing the
-//   system's power sequencing slaves to enable/disable VRMs. The master is responsible for
-//   monitoring each of the power goods coming back from the slaves. These power goods are
-//   consolidated to pgd_so_far When a power fault occurs, the master will normally transition to
-//   the SM_CRITICAL_FAIL state to allow the slave to capture the source of the fault. The master
-//   will then proceed with power-down sequence to protect the system.
-//   This module uses a single WDT counter for all timeout logic so it determines the largest
-//   counter needed based on the largest timeout parameter given below. This, together with
-//   sequence_tick and psu_on_tick, each platform can vary the granularity of the timeout values.
-// Parameter  :
-//   LIM_RECOV_MAX_RETRY_ATTEMPT: Number of allowed power-on retry attempt following a limited
-//     recoverable fault condition. Once the max number of attempt is reached, the system will only
-//     be recoverable by cycling aux efuse.
-//     Default: 2
-//   WDT_NBITS: Number of counter bits to use to support the timeout values below.
-//     Default: 8 (max of 255 for any timeout values)
-//     For the parameters below, it is assumed that the sequence_tick rate is 2ms while psu_on_tick
-//     rate is 32ms. Platform can use a different tick as needed.
-//   DSW_PWROK_TIMEOUT_VAL: ��cpu�ϵ�ʹ�ã����ó�20ms
-//     Default: 10 (sequence_tick=2ms * 10 = 20ms)
-//   PCH_WATCHDOG_TIMEOUT_VAL: ����p3v3�ϵ磬�����Դ���ϵ�ʱ����
-//     Default: 1000 (sequence_tick=2ms * 1000 = 2s)
-//   PON_WATCHDOG_TIMEOUT_VAL: Wait time for VRM turn on before considering it faulted.
-//     Default: 112 (sequence_tick=2ms * 112 = 224ms)
-//   PSU_WATCHDOG_TIMEOUT_VAL: 1st stage wait time for PSU turn on. If PSU is good during this
-//     time, power sequencer proceed to next stage. Otherwise, wait for 2nd stage.
-//     Default: 10 (psu_on_tick=32ms * 10 = 320ms)
-//   EFUSE_WATCHDOG_TIMEOUT_VAL: Wait time for efuse turnon before considering it faulted.
-//     Default: 137 (sequence_tick=2ms * 137 = 274ms)
-//   VCORE_WATCHDOG_TIMEOUT_VAL: Wait time for CPU vcore turn on before considering it faulted.
-//     Default: 112 (sequence_tick=2ms * 112 = 224ms)
-//   PDN_WATCHDOG_TIMEOUT_VAL: Wait time for VRM turn off during no-fault condition.
-//     Default: 2 (sequence_tick=2ms * 2 = 4ms)
-//   PDN_WATCHDOG_TIMEOUT_FAULT_VAL: Wait time for VRM turn off during fault condition.
-//     Default: 2 (sequence_tick=2ms * 2 = 4ms)
-//   DISABLE_INTEL_VCCIN_TIMEOUT_VAL, DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL: Wait time for VRM turn
-//     off during SM_DISABLE_INTEL_VCCIN state for both normal and fault condition.
-//     This is a state specific timout value.
-//     Default: PDN_WATCHDOG_TIMEOUT_VAL
-//   DISABLE_3V3_TIMEOUT_VAL, DISABLE_3V3_TIMEOUT_FAULT_VAL: Wait time for VRM turn off during
-//     SM_DISABLE_3V3 state for both normal and fault condition.
-//     This is a state specific timout value.
-//     Default: PDN_WATCHDOG_TIMEOUT_VAL
-//   PON_65MS_WATCHDOG_TIMEOUT_VAL: Wait before transitioning to SM_STEADY_PWROK after all VRM has turnd on.
-//     Default: 34 (sequence_tick=2ms * 34 = 68ms)
-//   DC_ON_WAIT_COMPLETE_NOFLT_VAL: Time to wait in SM_OFF_STANDBY before proceeding to turn on w/o fault.
-//     Default: 17 (256ms * 17 = 4.3s)
-//   DC_ON_WAIT_COMPLETE_FAULT_VAL: Time to wait in SM_OFF_STANDBY before proceeding to turn on with fault.
-//     Default: 2 (256ms * 2 = 512ms)
-//   PF_ON_WAIT_COMPLETE_VAL: Time to wait in SM_HALT_POWER_CYCLE before allowing recovery, if
-//     allowed. This is also the time used to assert PCH PWRBTN# input to force S0->S5 transition.
-//     Default: 33 (256ms * 33 = 8.4s)
-//   PO_ON_WAIT_COMPLETE_VAL: Time to assert the PCH PWRBTN# input to force an S5->S0 transition.
-//     Default: 1 (256ms * 1 = 256ms)
-//   S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL, S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL: Time to wait in
-//     SM_OFF_STANDBY before proceeding to enable the S5 devices.
-//     Default: 0 (256ms * 0 = 0)
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
-//=================================================================================================
+/* =================================================================================================
+电源上下电模块
+上电时序如下
+1. CPU_VDD_CORE电: 
+    - P3V3_STBY电稳定后2ms内使能 PAL_CPU0/1_VDD_CORE_EN_R
+2. CPU0_Dn_GPIO_VDDH/CPU_VT_AVDDH/CPU0_D0_EFUSE_VDDH/电:
+    - CPU_VDD_CORE电稳定后2ms内使能 PAL_CPU0_Dn_GPIO_VDDH_EN_R/PAL_CPU_VT_AVDDH_EN_R/PAL_CPU0_D0_EFUSE_VDDH_EN_R
+
+===================================================================================================*/
 `include "rs35m2c16s_g5_define.vh"
 `include "pwrseq_define.vh"
 module pwrseq_master #(
@@ -605,6 +545,113 @@ end
 // FSM 2
 always @(*) begin
     // 默认值，防止锁存
+    state_ns = state; 
+
+    case (state)
+        `SM_RESET_STATE: begin
+            state_ns = `SM_EN_P0V8_CPU_VDD_VCORE;
+        end
+
+        `SM_EN_P0V8_CPU_VDD_VCORE: begin
+            if(p0v8_vdd_core_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(p0v8_vdd_core_state_trans_en)
+                state_ns = `SM_EN_P1V8_CPU_GPIO ;
+        end
+
+        `SM_EN_P1V8_CPU_GPIO: begin
+            if(p1v8_cpu_gpio_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(p1v8_cpu_gpio_state_trans_en)
+                state_ns = `SM_EN_DDR_VDDQ      ;
+
+        end
+
+        `SM_EN_DDR_VDDQ: begin
+            if(ddr_vddq_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(ddr_vddq_state_trans_en)
+                state_ns = `SM_EN_PCIE_VP_VPU   ;
+        end
+
+        `SM_EN_PCIE_VP_VPU: begin
+            if(pcie_vp_vpu_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(pcie_vp_vpu_state_trans_en)
+                state_ns = `SM_DEVICE_PCIE_RESET;
+        end 
+
+        `SM_DEVICE_PCIE_RESET: begin
+            if(pcie_reset_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(pcie_reset_state_trans_en)
+                state_ns = `SM_CPU_RESET        ;
+        end
+
+        `SM_CPU_RESET: begin
+            if(cpu_reset_critical_fail_en)
+                state_ns = `SM_CRITICAL_FAIL    ;
+            else if(cpu_reset_state_trans_en)
+                state_ns = `SM_CPU_RESET        ;
+        end 
+
+        `SM_WAIT_POWEROK: begin
+            if(wait_steady_pwrok_fail_en)                             
+                state_ns = SM_CRITICAL_FAIL     ;
+            else if(wait_steady_pwrok_state_trans_en)      
+                state_ns = SM_STEADY_PWROK      ;
+        end 
+
+        `SM_STEADY_PWROK: begin
+            if(rt_critical_fail_store)                                
+                state_ns = SM_CRITICAL_FAIL;
+            else if(rt_normal_pwr_down)                               
+                state_ns = SM_CRITICAL_FAIL;
+            else if (~cpu_power_off)                                   
+                state_ns = SM_CRITICAL_FAIL;
+            else if (~pch_sys_reset_n)                                 
+                state_ns = SM_CRITICAL_FAIL;
+            else 
+                state_ns = SM_STEADY_PWROK ;
+        end
+
+        `SM_CRITICAL_FAIL: begin
+            if(pdn_watchdog_timeout)
+                state_ns = `SM_DISABLE_PCIE_VP_VPU;
+        end 
+
+        `SM_DISABLE_PCIE_VP_VPU: begin
+            if(pdn_watchdog_timeout)
+                state_ns = `SM_DISABLE_DDR_VDDQ_VDDQCK_PLL;
+        end 
+
+        `SM_DISABLE_DDR_VDDQ_VDDQCK_PLL: begin
+            if(pdn_watchdog_timeout)
+                state_ns = `SM_DISABLE_P1V8_CPU_GPIO_VT_EFUSE;
+        end 
+
+        `SM_DISABLE_P1V8_CPU_GPIO_VT_EFUSE: begin
+            if(pdn_watchdog_timeout)
+                state_ns = `SM_DISABLE_P0V8_CPU_VDD_VCORE;
+        end 
+
+        `SM_DISABLE_P0V8_CPU_VDD_VCORE: begin
+            if(pdn_watchdog_timeout)begin
+                if(any_pwr_fault_det)
+                    state_ns = `SM_DISABLE_P0V8_CPU_VDD_VCORE;
+                else 
+                    state_ns = `SM_RESET_STATE               ;   
+            end
+        end 
+
+        default : state_ns = `SM_RESET_STATE               ;  
+    endcase
+
+end 
+
+
+always @(*) begin
+    // 默认值，防止锁存
     state_ns = state;
 
     case (state)
@@ -765,7 +812,7 @@ always @(*) begin
         SM_DISABLE_VP:          if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_P2V5_VPP;
         SM_DISABLE_P2V5_VPP:    if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_P1V8;
         SM_DISABLE_P1V8:        if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_3V3;
-        SM_DISABLE_3V3:         if (disable_3v3_timeout)             state_ns = SM_DISABLE_5V;
+        SM_DISABLE_3V3:         if (disable_3v3_timeout )            state_ns = SM_DISABLE_5V;
         SM_DISABLE_5V:          if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_MAIN_EFUSE;
         SM_DISABLE_MAIN_EFUSE:  if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_TELEM;
         SM_DISABLE_TELEM:       if (pdn_watchdog_timeout)            state_ns = SM_DISABLE_PS_ON;
