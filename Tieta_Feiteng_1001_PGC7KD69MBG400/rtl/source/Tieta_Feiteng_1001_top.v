@@ -289,6 +289,11 @@ input  i_PAL_CPU1_D0_VP_0V9_PG                /* synthesis LOC = "M6"*/ ,// from
 input  i_PAL_CPU1_D1_VP_0V9_PG                /* synthesis LOC = "N4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VP               0.9V 电源良好信号输入       新增
 input  i_PAL_CPU1_D0_VPH_1V8_PG               /* synthesis LOC = "P5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D0 区域 VPH              1.8V 电源良好信号输入       新增
 input  i_PAL_CPU1_D1_VPH_1V8_PG               /* synthesis LOC = "V4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VPH              1.8V 电源良好信号输入       新增
+
+input  i_PAL_CPU1_DIMM_PWRGD_F                /* synthesis LOC = "D15"*/,
+output i_PAL_PVCC_HPMOS_CPU_EN_R              /* synthesis LOC = "D16"*/,
+
+
 /* end:电源上下电管理信号 */
 
 
@@ -340,6 +345,8 @@ input  i_TPM_MODULE_PRSNT_N                   /* synthesis LOC = "N17"*/,// from
 
 // CPU0 主板区域温度过高告警信号输出
 output o_CPU0_BOARD_TEMP_OVER_R               /* synthesis LOC = "P13"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/BOARD_TEMP_OVER   default 1  // CPU0    主板区域温度过高告警信号输出
+
+input  i_PAL_SYS_EEPROM_BYPASS_N_R            /* synthesis LOC = "D16"*/
 /* end: DEBUG 信号 */
 );
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
