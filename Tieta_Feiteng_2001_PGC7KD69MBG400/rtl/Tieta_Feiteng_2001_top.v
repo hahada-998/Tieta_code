@@ -216,15 +216,11 @@ module Tieta_Feiteng_1001_top(
     input   i_CPU_NVME16_PRSNT_N                      /* synthesis LOC = "V12"*/,// from  CPU0_MCIO_0/1 / J24_G97V22312HR               to  CPLD_S                                          default 1  // CPU0 NVME16 设备存在 信号
     input   i_CPU_NVME17_PRSNT_N                      /* synthesis LOC = "R12"*/,// from  CPU0_MCIO_0/1 / J24_G97V22312HR               to  CPLD_S                                          default 1  // CPU0 NVME17 设备存在 信号                                                                                                                                                    
     
-    
-
-
     input   i_PAL_M2_0_PRSNT_N                        /* synthesis LOC = "C10"*/,// from  PAL_M2_0_PRSNT / J17                          to  CPLD_S                                           default 1  // M.2_0 设备存在 信号
     input   i_PAL_M2_1_PRSNT_N                        /* synthesis LOC = "J19"*/,// from  M2_SATA_PORT/J26_APCI0556_P003A               to  CPLD_S                                           default 1  // M.2_1 设备存在 信号
     output  o_PAL_M2_0_PERST_N_R                      /* synthesis LOC = "D14"*/,// from  CPLD_S                                        to  M2_0_SATA_PORT / J24                            default 1  // PAL M2_0 PERST_N 信号
     output  o_PAL_M2_1_PERST_N_R                      /* synthesis LOC = "C15"*/,// from  CPLD_S                                        to  M2_1_SATA_PORT / J25                            default 1  // PAL M2_1 PERST_N 信号
 
-    
     input   i_PEX_USB1_PPON1                          /* synthesis LOC = "J5"*/,// from  PEX_USB_UPD720201_2 / U40_XUSB2104LCGR         to  CPLD_S                                           default 1  // PEX USB1 PPON1 信号 
     input   i_PEX_USB1_PPON0                          /* synthesis LOC = "H2"*/,// from  PEX_USB_UPD720201_2 / U40_XUSB2104LCGR         to  CPLD_S                                           default 1  // PEX USB1 PPON0 信号
     input   i_PEX_USB2_PPON1                          /* synthesis LOC = "H1"*/,// from  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR        to  CPLD_S                                           default 1  // PEX USB2 PPON1 信号

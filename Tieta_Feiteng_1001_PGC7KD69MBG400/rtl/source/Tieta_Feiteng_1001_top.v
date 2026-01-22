@@ -87,6 +87,7 @@ input  i_CPLD_M_S_SGPIO1_MISO                 /* synthesis LOC = "F17"*/,// from
 
 /* begin: GPIO CPU0/1 D0/D1相关信号 */
 // CPU0 D0 区域信号
+input  i_CPU0_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "Y1" */,
 input  i_CPU0_D0_CRU_RST_OK                   /* synthesis LOC = "Y13"*/,// form  CPU0_GPIO1/D0_CRU_RST_OK                      to  CPLD_M                                       default 0  // CPU0 D0 区域CRU复位完成信号
 input  i_CPU0_D0_BIOS_OVER                    /* synthesis LOC = "U10"*/,// from  CPU0_GPIO1/D0_UART2_RXD                       to  CPLD_M                                       default 0  // CPU0 D0 区域BIOS超时信号
 
@@ -254,41 +255,40 @@ input  i_PAL_PS2_PRSNT                        /* synthesis LOC = "B4"*/ ,// from
 input  i_PAL_PS2_SMB_ALERT_TO_FPGA            /* synthesis LOC = "F9"*/ ,// from  PSU_MISC2                                      to  CPLD_M                                       default 1  // PS2 SMBus告警到FPGA信号输入
 
 
-// CPU0 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号
+// GR1: CPU0 CPU运算核心 0.8V 电源良好信号
+input  i_PAL_CPU0_VDD_VCORE_P0V8_PG           /* synthesis LOC = "M18"*/,// from  CPU_VR8_Controler/.._PG                        to  CPLD_M                                       default 1  // CPU0 CPU运算核心、缓存         0.8V 电源良好信号输入       新增
+// GR2: CPU0 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号
 input  i_PAL_CPU0_P1V8_PG                     /* synthesis LOC = "M7"*/ ,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU0 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号输入
-// CPU0 PLL 区域 1.8V 电源良好信号
+// GR3: CPU0 DDR内存控制器总线 1.1V 电源良好信号
+// GR3: CPU0 DDR内存颗粒核心 0.8V 电源良好信号
+// GR3: CPU0 PLL 区域 1.8V 电源良好信号
+input  i_PAL_CPU0_VDDQ_P1V1_PG                /* synthesis LOC = "B1"*/ ,// from  CPU_VR8_Controler/.._PG                        to  CPLD_M                                       default 1  // CPU0 DDR内存控制器总线         1.1V 电源良好信号输入       新增
+input  i_PAL_CPU0_DDR_VDD_PG                  /* synthesis LOC = "L7"*/ ,// from  CPU_DDR_HM_PLL_VDDA_P0V8/.._PG                 to  CPLD_M                                       default 1  // CPU0 DDR内存颗粒核心           0.8V 电源良好信号输入
 input  i_PAL_CPU0_PLL_P1V8_PG                 /* synthesis LOC = "U2"*/ ,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU0 PLL区域                  1.8V 电源良好信号输入    
-// CPU0 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
-input  i_PAL_CPU0_D0_VPH_1V8_PG               /* synthesis LOC = "T5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D0 区域 VPH              1.8V 电源良好信号输入       新增
-input  i_PAL_CPU0_D1_VPH_1V8_PG               /* synthesis LOC = "R5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D1 区域 VPH              1.8V 电源良好信号输入       新增
-// CPU0 D0和D1区域 0.9V VP 高速相关辅助电路链路 电源良好信号
+// GR4: CPU0 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
+// GR4: CPU0 D0和D1区域 0.9V VP 高速相关辅助电路链路 电源良好信号
 input  i_PAL_CPU0_D0_VP_0V9_PG                /* synthesis LOC = "V2"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53319/.._PG        to  CPLD_M                                       default 1  // CPU0 D0 区域 VP               0.9V 电源良好信号输入       新增
 input  i_PAL_CPU0_D1_VP_0V9_PG                /* synthesis LOC = "N6"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53319/.._PG        to  CPLD_M                                       default 1  // CPU0 D1 区域 VP               0.9V 电源良好信号输入       新增
-// CPU0 DDR内存控制器总线 1.1V 电源良好信号
-input  i_PAL_CPU0_VDDQ_P1V1_PG                /* synthesis LOC = "B1"*/ ,// from  CPU_VR8_Controler/.._PG                        to  CPLD_M                                       default 1  // CPU0 DDR内存控制器总线         1.1V 电源良好信号输入       新增
-// CPU0 DDR内存颗粒核心 0.8V 电源良好信号
-input  i_PAL_CPU0_DDR_VDD_PG                  /* synthesis LOC = "L7"*/ ,// from  CPU_DDR_HM_PLL_VDDA_P0V8/.._PG                 to  CPLD_M                                       default 1  // CPU0 DDR内存颗粒核心           0.8V 电源良好信号输入
-// CPU0 CPU运算核心 0.8V 电源良好信号
-input  i_PAL_CPU0_VDD_VCORE_P0V8_PG           /* synthesis LOC = "M18"*/,// from  CPU_VR8_Controler/.._PG                        to  CPLD_M                                       default 1  // CPU0 CPU运算核心、缓存         0.8V 电源良好信号输入       新增
+input  i_PAL_CPU0_D0_VPH_1V8_PG               /* synthesis LOC = "T5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D0 区域 VPH              1.8V 电源良好信号输入       新增
+input  i_PAL_CPU0_D1_VPH_1V8_PG               /* synthesis LOC = "R5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU0 D1 区域 VPH              1.8V 电源良好信号输入       新增
 
 
-// CPU1 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号
+// GR1: CPU1 CPU运算核心 0.8V 电源良好信号
+input  i_PAL_CPU1_VDD_VCORE_P0V8_PG           /* synthesis LOC = "A10"*/,// from  CPU_VR8_Controler                              to  CPLD_M                                       default 1  // CPU1 PCIe 0.9V电源良好信号输入
+// GR2: CPU1 GPIO/VT_AVDDH/EFUSE 模块 1.8V 电源良好信号
 input  i_PAL_CPU1_P1V8_PG                     /* synthesis LOC = "C15"*/,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU1 PLL 1.8V电源良好信号输入
-// CPU1 PLL 区域 1.8V 电源良好信号
+// GR3: CPU1 DDR内存控制器总线 1.1V 电源良好信号
+// GR3: CPU1 DDR内存颗粒核心 0.8V 电源良好信号
+// GR3: CPU1 PLL 区域 1.8V 电源良好信号
+input  i_PAL_CPU1_VDDQ_P1V1_PG                /* synthesis LOC = "G10"*/,// from  CPU_VR8_Controler                              to  CPLD_M                                       default 1  // CPU1 DDR VDDQ 1.1V电源良好信号输入            新增 
+input  i_PAL_CPU1_DDR_VDD_PG                  /* synthesis LOC = "A5"*/ ,// from  CPU_DDR_HM_PLL_VDDA_P0V8/.._PG                 to  CPLD_M                                       default 1  // CPU1 DDR内存颗粒核心           0.8V 电源良好信号输入
 input  i_PAL_CPU1_PLL_P1V8_PG                 /* synthesis LOC = "B18"*/,// from  CPU_PLL_P1V8/.._PG                             to  CPLD_M                                       default 1  // CPU1 PLL 1.8V电源良好信号输入
-// CPU1 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
-input  i_PAL_CPU1_D0_VPH_1V8_PG               /* synthesis LOC = "P5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D0 区域 VPH              1.8V 电源良好信号输入       新增
-input  i_PAL_CPU1_D1_VPH_1V8_PG               /* synthesis LOC = "V4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VPH              1.8V 电源良好信号输入       新增
-// CPU1 D0和D1区域 0.9V VP 高速相关辅助电路链路 电源良好信号
+// GR4: CPU1 D0和D1区域 0.9V VP 高速相关辅助电路链路 电源良好信号
+// GR4: CPU1 D0和D1区域 1.8V VPH 低速相关辅助电路链路 电源良好信号
 input  i_PAL_CPU1_D0_VP_0V9_PG                /* synthesis LOC = "M6"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53319/.._PG        to  CPLD_M                                       default 1  // CPU1 D0 区域 VP               0.9V 电源良好信号输入       新增
 input  i_PAL_CPU1_D1_VP_0V9_PG                /* synthesis LOC = "N4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VP               0.9V 电源良好信号输入       新增
-// input  i_PAL_CPU1_PCIE_P0V9_PG             /* synthesis LOC = "D5"*/,
-// CPU1 DDR内存控制器总线 1.1V 电源良好信号
-input  i_PAL_CPU1_VDDQ_P1V1_PG                /* synthesis LOC = "G10"*/,// from  CPU_VR8_Controler                              to  CPLD_M                                       default 1  // CPU1 DDR VDDQ 1.1V电源良好信号输入            新增 
-// CPU1 DDR内存颗粒核心 0.8V 电源良好信号
-input  i_PAL_CPU1_DDR_VDD_PG                  /* synthesis LOC = "A5"*/ ,// from  CPU_DDR_HM_PLL_VDDA_P0V8/.._PG                 to  CPLD_M                                       default 1  // CPU1 DDR内存颗粒核心           0.8V 电源良好信号输入
-// CPU1 CPU运算核心 0.8V 电源良好信号
-input  i_PAL_CPU1_VDD_VCORE_P0V8_PG           /* synthesis LOC = "A10"*/,// from  CPU_VR8_Controler                              to  CPLD_M                                       default 1  // CPU1 PCIe 0.9V电源良好信号输入
+input  i_PAL_CPU1_D0_VPH_1V8_PG               /* synthesis LOC = "P5"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D0 区域 VPH              1.8V 电源良好信号输入       新增
+input  i_PAL_CPU1_D1_VPH_1V8_PG               /* synthesis LOC = "V4"*/ ,// from  CPU_PCIE_C2C_VP_VPH/8633B&RS53318/.._PG        to  CPLD_M                                       default 1  // CPU1 D1 区域 VPH              1.8V 电源良好信号输入       新增
 /* end:电源上下电管理信号 */
 
 
@@ -543,6 +543,195 @@ PGM_DEBOUNCE #(
 		                                     db_i_pal_p3v3_stby_pgd              //34 
 		})		 
  );
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+CPU 重启
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+reg                         cpu_reboot                      ; // CPU 重启信号
+reg                         cpu_reboot_S                    ; 
+reg                         cpu_reboot_x                    ;  
+reg                         cpu_power_off                   ;
+wire                        cpu_gpio_ok                     ;
+wire                        cpu_rb_flag                     ;
+wire                        cpu_po_flag                     ;
+
+// PWR_CRT0/PWR_CRT1 控制 CPU 的reboot和power_on
+assign cpu_rb_flag = ((~i_CPU0_D0_PWR_CTR0_R) & i_CPU0_D0_PWR_CTR1_R) ;
+assign cpu_po_flag = ((~i_CPU0_D0_PWR_CTR1_R) & i_CPU0_D0_PWR_CTR0_R) ; 
+
+edge_delay #(.CNTR_NBITS(4), .DEF_OUTPUT(1'b0), .DELAY_MODE(1'b0)) edge_delay_cpu_gpio_ok (
+    .clk                    (sys_clk                            ),
+    .reset                  (~pgd_aux_system                    ),
+    .cnt_size               (4'b1000                            ),
+    .cnt_step               (t1s_tick                           ),
+    .signal_in              (reached_sm_wait_powerok            ),
+    .delay_output           (cpu_gpio_ok                        )
+);
+
+always@(posedge sys_clk or negedge pgd_aux_system) begin 
+    if(!pgd_aux_system) begin
+        cpu_reboot      <= 1'b1;
+        cpu_power_off   <= 1'b1;
+    end
+    else begin
+        if(cpu_gpio_ok & cpu_po_flag)begin
+    	    cpu_reboot      <= 1'b1 ;
+            cpu_power_off   <= 1'b0 ;
+        end 
+        else if(cpu_gpio_ok & cpu_rb_flag) begin
+        	cpu_reboot      <= 1'b0;
+            cpu_power_off   <= 1'b0;
+        end 
+        else begin
+            cpu_reboot      <= 1'b1;
+            cpu_power_off   <= 1'b1;
+        end	
+    end  
+end
+
+reg                     singal_s0                           ;
+reg                     singal_s1                           ;
+wire                    singal_n                            ;
+reg                     force_reb                           ;
+reg [29:0]              count                               ;
+reg [29:0]              counts                              ;
+
+
+
+always @(posedge sys_clk or negedge pgd_aux_system) begin
+    if(!pgd_aux_system) begin
+        singal_s0   <= 1'b1;
+        singal_s1   <= 1'b1;
+    end
+    else begin
+        singal_s0   <= cpu_reboot & pch_sys_reset_n;          
+        singal_s1   <= singal_s0                   ;
+    end
+end
+
+assign singal_n = !singal_s0 & singal_s1;
+
+always @(posedge sys_clk or negedge pgd_aux_system) begin
+    if(!pgd_aux_system)begin
+        counts          <= 30'b0;
+        cpu_reboot_x    <= 1'b1 ;
+    end
+    else if(singal_n==1'b1) begin
+        counts          <=30'b1;
+        cpu_reboot_x    <=1'b1;
+    end
+    else if ((counts>=30'b1)&&(counts<=30'd75000000))begin
+        cpu_reboot_x    <=1'b1;
+        counts          <=counts+1;
+    end
+    else if((counts<=30'd75001000)&&(counts>=30'd75000001))begin
+        cpu_reboot_x    <=1'b0;
+        counts          <=counts+1;
+    end
+    else if(counts>=30'd75001001)begin
+        cpu_reboot_x    <=1'b1 ;
+        counts          <=30'b0;
+    end
+    else begin
+        counts          <=30'b0;
+        cpu_reboot_x    <=1'b1 ;             
+    end
+end
+
+always @(posedge sys_clk or negedge pgd_aux_system)begin
+    if(!pgd_aux_system) begin
+        count           <= 30'b0;
+        cpu_reboot_S    <=1'b1;
+    end 
+    else if( singal_n==1'b1)begin
+        count           <=30'b1;
+        cpu_reboot_S    <=1'b1;
+    end
+    else if ((count>=30'b1)&&(count<=30'd225000000))begin
+        cpu_reboot_S    <=1'b1;
+        count           <=count+1;
+    end
+    else if((count<=30'd225001000)&&(count>=30'd225000001))begin
+        cpu_reboot_S    <=1'b0;
+        count           <=count+1;
+    end
+    else if(count>=30'd225001001)begin
+        cpu_reboot_S    <=1'b1;
+        count           <=30'b0;
+    end
+    else begin
+        count           <=30'b0;
+        cpu_reboot_S    <=1'b1 ;             
+    end
+end
+
+
+//SW
+reg [29:0]countp;
+
+reg singal_p0;
+reg singal_p1;
+
+wire  singal_p;
+
+  reg  pch_pwrbtn_s;
+
+always @(negedge pgd_aux_system or posedge i_CLK_PAL_IN_25M)
+begin
+  if(!pgd_aux_system) 
+           begin
+                   singal_p0<= 1'b1;
+                   singal_p1 <= 1'b1;
+           end
+  else 
+    begin
+                   singal_p0<=  (~pch_pwrbtn) | (~st_halt_power_cycle);
+                   singal_p1 <= singal_p0;
+         end
+end
+
+assign singal_p=  !singal_p0&singal_p1;
+
+
+
+always @(negedge pgd_aux_system or posedge i_CLK_PAL_IN_25M)
+begin
+         if(!pgd_aux_system) 
+                   begin
+                            countp <= 30'b0;
+                            pch_pwrbtn_s<=1'b1;
+                   end
+         
+         else if ( singal_p==1'b1)//��⵽�½���
+                   begin
+                            countp<=30'b1;
+                            pch_pwrbtn_s<=1'b1;
+                   end
+         else if ((countp>=30'b1)&&(countp<=30'd500000000))//��ʼ������������3s
+                   begin
+                            pch_pwrbtn_s<=1'b1;
+                            countp<=countp+1;
+                   end
+         else if((countp<=30'd500001000)&&(countp>=30'd500000001))//cpu_reboot_S��ʼ����͵�ƽ
+                   begin
+                            pch_pwrbtn_s<=1'b0;
+                            countp<=countp+1;
+                   end
+         else if(countp>=30'd501001001)//��ʱһ��ʱ������
+                   begin
+                            pch_pwrbtn_s<=1'b1;
+                            countp<=30'b0;
+                   end
+         else
+                   begin
+                            countp<=30'b0;
+                            pch_pwrbtn_s<=1'b1 ;             
+                   end
+end
+
+
 
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -877,5 +1066,23 @@ pwrseq_slave #(
     .fault_clear                            (fault_clear                   ),//in FROM MASTER
     .aux_pcycle                             (aux_pcycle                    ) //FROM XREG  ����3.3v stby��Դ�ĸ�λ
 );
+
+input            i_cpu0_d0_peu_prest_0_n_r          ,
+input            i_cpu0_d0_peu_prest_1_n_r          , 
+input            i_cpu0_d0_peu_prest_2_n_r          , 
+input            i_cpu0_d0_peu_prest_3_n_r          , 
+input            i_cpu0_d1_peu_prest_0_n_r          ,
+input            i_cpu0_d1_peu_prest_1_n_r          ,
+input            i_cpu0_d1_peu_prest_2_n_r          ,
+input            i_cpu0_d1_peu_prest_3_n_r          ,
+
+input            i_cpu1_d0_peu_prest_0_n_r          ,
+input            i_cpu1_d0_peu_prest_1_n_r          , 
+input            i_cpu1_d0_peu_prest_2_n_r          , 
+input            i_cpu1_d0_peu_prest_3_n_r          , 
+input            i_cpu1_d1_peu_prest_0_n_r          ,
+input            i_cpu1_d1_peu_prest_1_n_r          ,
+input            i_cpu1_d1_peu_prest_2_n_r          ,
+input            i_cpu1_d1_peu_prest_3_n_r          , 
 
 endmodule
