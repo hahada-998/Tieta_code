@@ -1456,6 +1456,10 @@ assign o_CPU1_SB_EN_R              = 1'b0;
 
 // LOM 供电使能信号，高电平有效，始终使能
 assign o_PAL_PWR_LOM_EN_R          = 1'b1;
+assign o_PAL_P5V_BD_EN_R           = 1'b1;
+assign o_PAL_UPD_VCC_3V3_EN_R      = 1'b1;
+assign o_P5V_USB_MB_UP_EN_R        = 1'b1;
+assign o_P5V_USB_MB_DOWN_EN_R      = 1'b1;
 
 // CPU 12V 输入使能信号，高电平有效
 assign o_PAL_P12V_CPU0_VIN_EN_R   = 1'b1;
@@ -1494,6 +1498,19 @@ assign o_PAL_CPU1_DDR_VDD_EN_R    =  cpu1_ddr_vdd_en_r  ;//& cpu1_pwr_ctrl_en;//
 
 assign o_PAL_CPU0_PLL_P1V8_EN_R   =  cpu0_pll_p1v8_en_r ;
 assign o_PAL_CPU1_PLL_P1V8_EN_R   =  cpu1_pll_p1v8_en_r ;//& cpu1_pwr_ctrl_en;//20231121
+
+// CPU GR4 供电使能信号
+assign o_PAL_CPU0_D0_VP_0V9_EN    =  cpu0_d0_vp_p0v9_en_r  ;
+assign o_PAL_CPU0_D1_VP_0V9_EN    =  cpu0_d1_vp_p0v9_en_r  ;
+assign o_PAL_CPU0_D0_VPH_1V8_EN   =  cpu0_d0_vph_p1v8_en_r ;
+assign o_PAL_CPU0_D1_VPH_1V8_EN   =  cpu0_d1_vph_p1v8_en_r ;
+assign o_PAL_CPU1_D0_VP_0V9_EN    =  cpu1_d0_vp_p0v9_en_r  ;
+assign o_PAL_CPU1_D1_VP_0V9_EN    =  cpu1_d1_vp_p0v9_en_r  ;
+assign o_PAL_CPU1_D0_VPH_1V8_EN   =  cpu1_d0_vph_p1v8_en_r ;
+assign o_PAL_CPU1_D1_VPH_1V8_EN   =  cpu1_d1_vph_p1v8_en_r ;
+
+
+
 
 
 input            i_cpu0_d0_peu_prest_0_n_r          ,

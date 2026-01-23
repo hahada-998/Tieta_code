@@ -10,16 +10,34 @@
 ===================================================================================================*/
 `include "pwrseq_define.vh"
 module pwrseq#(
+    parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         , // 上电失败最大重试次数
     parameter WDT_NBITS                             = 10                        , // 看门狗计数器位宽
     
-    parameter PON_WATCHDOG_TIMEOUT_VAL              = 2                         , // P3V3          超时时间
+    parameter DSW_PWROK_TIMEOUT_VAL                 = 1                         , // CPU各组电源上电超时时间
+    parameter PCH_WATCHDOG_TIMEOUT_VAL              = 100                       , // 主板上电超时时间
+    parameter PON_WATCHDOG_TIMEOUT_VAL              = 12                        , // S5设备上电超时时间
+    parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10                        , // PSU上电超时时间
+    parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 14                        , // EFUSE上电超时时间
+    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 128                       , // 下电超时时间
+
+    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34,
+    parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17,
+    parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2,
+    parameter PF_ON_WAIT_COMPLETE_VAL               = 33,
+    parameter PO_ON_WAIT_COMPLETE_VAL               = 1,
+    parameter S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL = 0,
+    parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0
+
     parameter POR_WATCHDOG_TIMEOUT_VAL              = 112                        // PON_PWROK     超时时间
 )(
     input            clk                                , // clock
     input            reset                              , // reset
 
     // 状态跳转控制使用
-    input            t1ms_tick                          , // 1ms 时钟脉冲
+    input            t1ms_tick                          , // 1ms   时钟脉冲
+    input            t2ms_tick                          , // 2ms   时钟脉冲
+    input            t32ms_tick                         , // 32ms  时钟脉冲
+    input            t256ms_tick                        , // 256ms 时钟脉冲
 
     // 各组电源轨EN信号输出
     // GR1: CPU0_VDD P0V8
@@ -114,7 +132,10 @@ module pwrseq#(
 
     // 其他 PWRGOOD 信号
     output reg       reached_sm_wait_powerok            ,  
-    output reg       o_cpu_power_good                   
+    output reg       o_cpu_power_good                   ,
+
+    // 供外部监控当前状态机状态使用
+    output reg       power_seq_sm                       ,
 );
 
 /* ------------------------------------------------------------------------------------------------------------
@@ -160,7 +181,7 @@ always @(posedge clk or posedge reset) begin
     end
     else begin
         // 电源组1/2/3/4就绪超时
-        if (wdt_counter == PON_WATCHDOG_TIMEOUT_VAL)
+        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL)
             pon_watchdog_timeout <= 1'b1;
         // CPU_POR_N 超时
         if (wdt_counter == POR_WATCHDOG_TIMEOUT_VAL)
@@ -194,6 +215,21 @@ always @(posedge clk or posedge reset)begin
         pcie_reset_state_trans_en <= i_cpu_peu_prest_n_r;
 end
 
+wire st_off_standby                 ;
+wire st_ps_on                       ;
+wire st_steady_pwrok                ;
+wire st_critical_fail               ;
+wire st_halt_power_cycle            ;
+wire st_disable_main_efuse          ;
+assign power_seq_sm = curr_state    ;
+
+assign st_off_standby        = (power_seq_sm == SM_OFF_STANDBY);
+assign st_ps_on              = (power_seq_sm == SM_PS_ON);
+assign st_steady_pwrok       = (power_seq_sm == SM_STEADY_PWROK);
+assign st_critical_fail      = (power_seq_sm == SM_CRITICAL_FAIL);
+assign st_halt_power_cycle   = (power_seq_sm == SM_HALT_POWER_CYCLE);
+assign st_disable_main_efuse = (power_seq_sm == SM_DISABLE_MAIN_EFUSE);
+
 /* ------------------------------------------------------------------------------------------------------------
 主板上下电状态机
 ---------------------------------------------------------------------------------------------------------------*/
@@ -215,6 +251,17 @@ always @(*) begin
     next_state = curr_state; 
 
     case (curr_state)
+        `SM_RESET_STATE: begin
+            next_state = `SM_EN_P3V3_VCC          ;
+        end
+
+        `SM_EN_P3V3_VCC: begin
+            if(critical_fail_en_sm_en_p3v3_vcc)
+                next_state = `SM_CRITICAL_FAIL    ;
+            else if(pon_watchdog_timeout)
+                next_state = `SM_EN_P1V8_CPU_GPIO ;
+        end
+
         `SM_RESET_STATE: begin
             next_state = `SM_EN_P0V8_CPU_VDD_VCORE;
         end
