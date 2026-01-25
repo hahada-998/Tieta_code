@@ -13,14 +13,15 @@ module pwrseq#(
     parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         , // 上电失败最大重试次数
     parameter WDT_NBITS                             = 10                        , // 看门狗计数器位宽
     
-    parameter DSW_PWROK_TIMEOUT_VAL                 = 1                         , // CPU各组电源上电超时时间
+    parameter DSW_PWROK_TIMEOUT_VAL                 = 2                         , // CPU各组电源上电超时时间
     parameter PCH_WATCHDOG_TIMEOUT_VAL              = 100                       , // 主板上电超时时间
     parameter PON_WATCHDOG_TIMEOUT_VAL              = 12                        , // S5设备上电超时时间
     parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10                        , // PSU上电超时时间
     parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 14                        , // EFUSE上电超时时间
-    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 128                       , // 下电超时时间
+    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 2                         , // 下电超时时间
+    parameter POR_WATCHDOG_TIMEOUT_VAL              = 112                       , // PON_PWROK超时时间
 
-    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34,
+    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 65,
     parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17,
     parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2,
     parameter PF_ON_WAIT_COMPLETE_VAL               = 33,
@@ -28,14 +29,15 @@ module pwrseq#(
     parameter S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL = 0,
     parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0
 
-    parameter POR_WATCHDOG_TIMEOUT_VAL              = 112                        // PON_PWROK     超时时间
+    
 )(
     input            clk                                , // clock
     input            reset                              , // reset
 
     // 状态跳转控制使用
+    input            t1us,                    // 10ns pulse every 1us
     input            t1ms_tick                          , // 1ms   时钟脉冲
-    input            t2ms_tick                          , // 2ms   时钟脉冲
+    // input            t2ms_tick                          , // 2ms   时钟脉冲
     input            t32ms_tick                         , // 32ms  时钟脉冲
     input            t256ms_tick                        , // 256ms 时钟脉冲
 
@@ -146,6 +148,10 @@ wire                                          wdt_tick          ; // 看门狗�
 wire                                          wdt_counter_clr   ; // 看门狗计数器清零信号
 reg     [WDT_NBITS-1:0]                       wdt_counter       ; // 看门狗计数器
 
+assign wdt_tick = (off_state) ? t256ms       :
+                  (st_ps_on)  ? t32ms_tick   :  
+                                t1ms_tick    ;  
+
 // 状态跳转时清空看门狗计数器
 assign  wdt_counter_clr = (next_state != curr_state) ? 1'b1 : 1'b0 ;
 
@@ -155,7 +161,7 @@ always @(posedge clk or posedge reset) begin
         wdt_counter <= {WDT_NBITS{1'b0}} ;
     else if (wdt_counter_clr)
         wdt_counter <= {WDT_NBITS{1'b0}} ;
-    else if (t1ms_tick)
+    else if (wdt_tick)
         wdt_counter <= wdt_counter + 1'b1;
 end
 
@@ -163,31 +169,104 @@ end
 状态监控, “状态超时标志信号” 信号, 供状态机跳转使用
 各类挂死的超时标志, 达到阈值时置位，直到下次清零 
 ---------------------------------------------------------------------------------------------------------------*/
-// 超时标志：电源组1/2/3/4就绪超时; CPU_POR_N 超时
-reg                                           pon_watchdog_timeout                ; // 四组电源上电 超时标志
-reg                                           por_watchdog_timeout                ; // CPU_POR_N 超时标志   
+// 超时标志：电源组1/2/3/4就绪超时; CPU_POR_N 超时 
 reg                                           pgd_so_far                          ; // 全局PGD信号
 reg                                           power_on_critical_fail_en           ; // 上电故障使能信号
 reg                                           pcie_reset_state_trans_en           ; // PCIE_RESET 状态跳转使能信号
+
+reg                                           dsw_pwrok_timeout                   ; // 电源组1/2/3/4就绪超时
+reg                                           pch_watchdog_timeout                ; // 主板上电超时
+reg                                           pon_watchdog_timeout                ; // S5设备上电超时
+reg                                           psu_watchdog_timeout                ; // PSU上电超时
+reg                                           efuse_watchdog_timeout              ; // EFUSE上电超时
+reg                                           vcore_watchdog_timeout              ; // VCORE上电超时
+reg                                           pdn_watchdog_timeout                ; // 下电超时
+reg                                           disable_intel_vccin_timeout         ; // 关闭INTEL_VCCIN超时
+reg                                           disable_3v3_timeout                 ; // 关闭3V3超时
+reg                                           pon_65ms_watchdog_timeout           ; // 65ms上电超时
+reg                                           pf_on_wait_complete                 ; // PF上电等待完成超时
+reg                                           po_on_wait_complete                 ; // PO上电等待完成超时
+reg                                           s5_devices_on_wait_complete         ; // S5设备上电等待完成超时
+
 // 上电延时
 always @(posedge clk or posedge reset) begin
     if (reset)begin
-        pon_watchdog_timeout <= 1'b0;
-        por_watchdog_timeout <= 1'b0;
+        dsw_pwrok_timeout           <= 1'b0;
+        pch_watchdog_timeout        <= 1'b0;
+        pon_watchdog_timeout        <= 1'b0;
+        psu_watchdog_timeout        <= 1'b0;
+        efuse_watchdog_timeout      <= 1'b0;
+        vcore_watchdog_timeout      <= 1'b0;
+        pdn_watchdog_timeout        <= 1'b0;
+        disable_intel_vccin_timeout <= 1'b0;
+        disable_3v3_timeout         <= 1'b0;
     end
     else if(wdt_counter_clr) begin
-        pon_watchdog_timeout <= 1'b0;
-        por_watchdog_timeout <= 1'b0;
+        dsw_pwrok_timeout           <= 1'b0;
+        pch_watchdog_timeout        <= 1'b0;
+        pon_watchdog_timeout        <= 1'b0;
+        psu_watchdog_timeout        <= 1'b0;
+        efuse_watchdog_timeout      <= 1'b0;
+        vcore_watchdog_timeout      <= 1'b0;
+        pdn_watchdog_timeout        <= 1'b0;
+        disable_intel_vccin_timeout <= 1'b0;
+        disable_3v3_timeout         <= 1'b0;
     end
     else begin
-        // 电源组1/2/3/4就绪超时
-        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL)
-            pon_watchdog_timeout <= 1'b1;
-        // CPU_POR_N 超时
-        if (wdt_counter == POR_WATCHDOG_TIMEOUT_VAL)
-            por_watchdog_timeout <= 1'b1;
-    end
+        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL) // 2ms
+            dsw_pwrok_timeout <= 1'b1;
+
+        if (wdt_counter == PCH_WATCHDOG_TIMEOUT_VAL) // 100ms                                    
+            pch_watchdog_timeout <= 1'b1;                                                        
+                                                                                           
+        if (wdt_counter == PON_WATCHDOG_TIMEOUT_VAL) // 12ms                                  
+            pon_watchdog_timeout <= 1'b1;                                                        
+                                                                                           
+        if (wdt_counter == PSU_WATCHDOG_TIMEOUT_VAL) // 10ms                                    
+           psu_watchdog_timeout <= 1'b1;                                                        
+                                                                                           
+        if (wdt_counter == EFUSE_WATCHDOG_TIMEOUT_VAL) // 14ms                                     
+            efuse_watchdog_timeout <= 1'b1;                                                      
+                                                                                           
+        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL) // 2ms                                       
+            vcore_watchdog_timeout <= 1'b1;                                                      
+                                                                                           
+        if (wdt_counter == PON_65MS_WATCHDOG_TIMEOUT_VAL) // 65ms                                   
+            pon_65ms_watchdog_timeout <= 1'b1;                                                   
+                                                                                          
+        if (wdt_counter == PDN_WATCHDOG_TIMEOUT_VAL) // 2ms              
+            pdn_watchdog_timeout <= 1'b1;                                                                                                                                                                                                     
+    end 
 end 
+
+// Complete flags                                                                         
+// - Used for holding off actions form occurring until enough time has passed             
+always @(posedge clk or posedge reset) begin                                              
+  if (reset) begin                                                                        
+    dc_on_wait_complete         <= 1'b0;                                                  
+    po_on_wait_complete         <= 1'b0;                                                  
+    s5_devices_on_wait_complete <= 1'b0;
+  end
+  else if (t1us) begin
+    if (!off_state ) begin
+        dc_on_wait_complete         <= 1'b0;
+        po_on_wait_complete         <= 1'b0;
+        s5_devices_on_wait_complete <= 1'b0;
+    end
+    else begin
+      if (((wdt_counter == DC_ON_WAIT_COMPLETE_NOFLT_VAL) && !power_fault) ||
+          ((wdt_counter == DC_ON_WAIT_COMPLETE_FAULT_VAL) &&  power_fault))
+        dc_on_wait_complete <= 1'b1;
+
+      if (wdt_counter == PO_ON_WAIT_COMPLETE_VAL)
+        po_on_wait_complete <= 1'b1;
+
+      if (((wdt_counter == S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL) && !power_fault) ||
+          ((wdt_counter == S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL) &&  power_fault))
+        s5_devices_on_wait_complete <= 1'b1;
+    end
+  end
+end
 
 // 全局PGD信号
 always @(posedge clk or posedge reset) begin
@@ -204,7 +283,7 @@ always @(posedge clk or posedge reset)begin
     else if(keep_alive_on_fault)
         power_on_critical_fail_en <= 1'b0;
     else 
-        power_on_critical_fail_en <= (pon_watchdog_timeout & ~pgd_so_far) | any_pwr_fault_det;
+        power_on_critical_fail_en <= (dsw_pwrok_timeout & ~pgd_so_far) | any_pwr_fault_det;
 end
 
 // PCIE_RESET 状态跳转使能信号(等待DEVICE_PCIE_RST_N所有)
@@ -215,20 +294,22 @@ always @(posedge clk or posedge reset)begin
         pcie_reset_state_trans_en <= i_cpu_peu_prest_n_r;
 end
 
-wire st_off_standby                 ;
-wire st_ps_on                       ;
-wire st_steady_pwrok                ;
-wire st_critical_fail               ;
-wire st_halt_power_cycle            ;
-wire st_disable_main_efuse          ;
-assign power_seq_sm = curr_state    ;
+// 记录当前状态机状态
+wire        st_off_standby                 ;
+wire        st_ps_on                       ;
+wire        st_steady_pwrok                ;
+wire        st_critical_fail               ;
+wire        st_halt_power_cycle            ;
+wire        st_disable_main_efuse          ;
 
-assign st_off_standby        = (power_seq_sm == SM_OFF_STANDBY);
-assign st_ps_on              = (power_seq_sm == SM_PS_ON);
-assign st_steady_pwrok       = (power_seq_sm == SM_STEADY_PWROK);
-assign st_critical_fail      = (power_seq_sm == SM_CRITICAL_FAIL);
-assign st_halt_power_cycle   = (power_seq_sm == SM_HALT_POWER_CYCLE);
-assign st_disable_main_efuse = (power_seq_sm == SM_DISABLE_MAIN_EFUSE);
+assign power_seq_sm          = curr_state                               ;
+
+assign st_off_standby        = (power_seq_sm == SM_OFF_STANDBY)         ;
+assign st_ps_on              = (power_seq_sm == SM_PS_ON)               ;
+assign st_steady_pwrok       = (power_seq_sm == SM_STEADY_PWROK)        ;
+assign st_critical_fail      = (power_seq_sm == SM_CRITICAL_FAIL)       ;
+assign st_halt_power_cycle   = (power_seq_sm == SM_HALT_POWER_CYCLE)    ;
+assign st_disable_main_efuse = (power_seq_sm == SM_DISABLE_MAIN_EFUSE)  ;
 
 /* ------------------------------------------------------------------------------------------------------------
 主板上下电状态机
@@ -258,7 +339,7 @@ always @(*) begin
         `SM_EN_P3V3_VCC: begin
             if(critical_fail_en_sm_en_p3v3_vcc)
                 next_state = `SM_CRITICAL_FAIL    ;
-            else if(pon_watchdog_timeout)
+            else if(dsw_pwrok_timeout)
                 next_state = `SM_EN_P1V8_CPU_GPIO ;
         end
 
@@ -270,14 +351,14 @@ always @(*) begin
             if(power_on_critical_fail_en)
                 next_state = `SM_CRITICAL_FAIL    ;
             else if()
-            else if(pon_watchdog_timeout)
+            else if(dsw_pwrok_timeout)
                 next_state = `SM_EN_P1V8_CPU_GPIO ;
         end
 
         `SM_EN_P1V8_CPU_GPIO: begin
             if(power_on_critical_fail_en)
                 next_state = `SM_CRITICAL_FAIL    ;
-            else if(pon_watchdog_timeout)
+            else if(dsw_pwrok_timeout)
                 next_state = `SM_EN_DDR_VDDQ      ;
 
         end
@@ -285,14 +366,14 @@ always @(*) begin
         `SM_EN_DDR_VDDQ: begin
             if(power_on_critical_fail_en)
                 next_state = `SM_CRITICAL_FAIL    ;
-            else if(pon_watchdog_timeout)
+            else if(dsw_pwrok_timeout)
                 next_state = `SM_EN_PCIE_VP_VPU   ;
         end
 
         `SM_EN_PCIE_VP_VPU: begin
             if(power_on_critical_fail_en)
                 next_state = `SM_CRITICAL_FAIL    ;
-            else if(pon_watchdog_timeout)
+            else if(dsw_pwrok_timeout)
                 next_state = `SM_DEVICE_PCIE_RESET;
         end 
 
