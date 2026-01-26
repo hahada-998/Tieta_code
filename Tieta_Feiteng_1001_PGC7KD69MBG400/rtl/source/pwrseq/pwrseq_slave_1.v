@@ -50,7 +50,8 @@ module pwrseq_slave #(
     input                               reat_bp_efuse_pg                ,
     input                               front_bp_efuse_pg               ,
     input                               p5v_pgd                         ,
-    input                               vcc_1v1_pg                      ,
+    input                               p3v3_pgd                        ,
+    input                               p1v1_pgd                        ,
     input                               cpu1_vdd_core_pg	              ,
     input                               cpu0_vdd_core_pg	              ,
     input                               cpu1_p1v8_pg		                ,
@@ -163,7 +164,8 @@ module pwrseq_slave #(
     output                            cpu1_d1_vph_1v8_fault_det       ,       
     output                            pwrseq_sm_fault_det		          ,  
     output                            cpu_thermtrip_fault_det         ,       
-     
+    
+    // 其他信号
     input      [NUM_CPU-1:0]          i_cpu_thermtrip                 , 
     output     [NUM_CPU-1:0]          o_cpu_thermtrip_fault           ,
 
@@ -195,8 +197,6 @@ module pwrseq_slave #(
     input                              aux_pcycle                   
 );
 
-genvar i;
-
 wire    st_reset_state                         ;
 wire    st_off_standby                         ;
 wire    st_steady_pwrok                        ;
@@ -224,6 +224,9 @@ reg     reg_pvcc_hpmos_cpu_en_r		             ;
 reg     reg_power_supply_on	                   ;
 reg     reg_p12v_en                            ;
 
+// main e-fuse
+reg     reg_main_efuse_en                      ;
+
 reg     reg_p5v_en_r		                       ;
 
 reg     reg_p3v3_en_r		                       ;
@@ -249,75 +252,60 @@ reg     reg_cpu0_pcie_p1v8_en_r		             ;
 reg     reg_cpu1_pcie_p1v8_en_r                ;
 
 
-reg     reg_cpu0_d0_vp_p0v9_en_r              ;
-reg     reg_cpu0_d1_vp_p0v9_en_r              ;
-reg     reg_cpu0_d0_vph_p1v8_en_r             ;
-reg     reg_cpu0_d1_vph_p1v8_en_r             ;
-reg     reg_cpu1_d0_vp_p0v9_en_r              ;
-reg     reg_cpu1_d1_vp_p0v9_en_r              ;
-reg     reg_cpu1_d0_vph_p1v8_en_r             ;
-reg     reg_cpu1_d1_vph_p1v8_en_r             ;
+reg     reg_cpu0_d0_vp_p0v9_en_r               ;
+reg     reg_cpu0_d1_vp_p0v9_en_r               ;
+reg     reg_cpu0_d0_vph_p1v8_en_r              ;
+reg     reg_cpu0_d1_vph_p1v8_en_r              ;
+reg     reg_cpu1_d0_vp_p0v9_en_r               ;
+reg     reg_cpu1_d1_vp_p0v9_en_r               ;
+reg     reg_cpu1_d0_vph_p1v8_en_r              ;
+reg     reg_cpu1_d1_vph_p1v8_en_r              ;
 
-
-
-reg     reg_cpu_por_n	                         ;
 reg     reg_pex_reset_r_n                      ;
+reg     reg_cpu_por_n	                         ;
 
-// main e-fuse
-reg     reg_main_efuse_en                      ;
+assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_alive_on_fault );
 
-reg     ok_to_reset_aux                       ;
+assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r  ;
 
+assign power_supply_on	     =  reg_power_supply_on      ;  
+assign p12v_bp_front_en      =  reg_p12v_en & ( ~p12v_front_bp_efuse_fault_det  | keep_alive_on_fault);
+assign p12v_bp_rear_en       =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
 
+assign p5v_en_r            	 =  reg_p5v_en_r            & ( ~p5v_fault_det            | keep_alive_on_fault );
 
-assign p5v_stby_en_r	    =  reg_p5v_stby_en_r       & ( ~p5v_stby_fault_det       | keep_alive_on_fault );
+assign p3v3_en_r             =  reg_p3v3_en_r           & ( ~p3v3_stby_fault_det      | keep_alive_on_fault );		                  
 
-assign pvcc_hpmos_cpu_en_r  =  reg_pvcc_hpmos_cpu_en_r  ;
+assign p1v1_en_r             =  reg_p1v1_en_r           & ( ~vcc_1v1_fault_det        | keep_alive_on_fault );
 
-assign power_supply_on	    =  reg_power_supply_on      ;  
-assign p12v_bp_front_en     =  reg_p12v_en & ( ~p12v_front_bp_efuse_fault_det  | keep_alive_on_fault);
-assign p12v_bp_rear_en      =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
+assign cpu0_vdd_core_en_r    =  reg_cpu0_vdd_core_en_r  & ( ~cpu0_vdd_core_fault_det  | keep_alive_on_fault );
+assign cpu1_vdd_core_en_r    =  reg_cpu1_vdd_core_en_r  & ( ~cpu1_vdd_core_fault_det  | keep_alive_on_fault );
 
-assign p5v_en_r            	=  reg_p5v_en_r            & ( ~p5v_fault_det            | keep_alive_on_fault );
+assign cpu0_p1v8_en_r	       =  reg_cpu0_p1v8_en_r      & ( ~cpu0_p1v8_fault_det      | keep_alive_on_fault );
+assign cpu1_p1v8_en_r	       =  reg_cpu1_p1v8_en_r      & ( ~cpu1_p1v8_fault_det      | keep_alive_on_fault );
 
-assign p3v3_en_r            =  reg_p3v3_en_r           & ( ~p3v3_stby_fault_det      | keep_alive_on_fault );		                  
+assign cpu0_pll_p1v8_en_r	   =  reg_cpu0_pll_p1v8_en_r  & ( ~cpu0_pll_p1v8_fault_det  | keep_alive_on_fault );
+assign cpu1_pll_p1v8_en_r	   =  reg_cpu1_pll_p1v8_en_r  & ( ~cpu1_pll_p1v8_fault_det  | keep_alive_on_fault );
+assign cpu0_ddr_vdd_en_r	   =  reg_cpu0_ddr_vdd_en_r   & ( ~cpu0_ddr_vdd_fault_det   | keep_alive_on_fault );
+assign cpu1_ddr_vdd_en_r	   =  reg_cpu1_ddr_vdd_en_r   & ( ~cpu1_ddr_vdd_fault_det   | keep_alive_on_fault );
+assign cpu0_vddq_en_r	       =  reg_cpu0_vddq_en_r      & ( ~cpu0_vddq_fault_det      | keep_alive_on_fault );
+assign cpu1_vddq_en_r	       =  reg_cpu1_vddq_en_r      & ( ~cpu1_vddq_fault_det      | keep_alive_on_fault );
 
-assign p1v1_en_r            =  reg_p1v1_en_r           & ( ~vcc_1v1_fault_det        | keep_alive_on_fault );
+assign cpu0_pcie_p0v9_en_r	 =  reg_cpu0_pcie_p0v9_en_r   & ( ~cpu0_pcie_p0v9_fault_det | keep_alive_on_fault );
+assign cpu1_pcie_p0v9_en_r	 =  reg_cpu1_pcie_p0v9_en_r   & ( ~cpu1_pcie_p0v9_fault_det | keep_alive_on_fault );
+assign cpu0_pcie_p1v8_en_r	 =  reg_cpu0_pcie_p1v8_en_r   & ( ~cpu0_pcie_p1v8_fault_det | keep_alive_on_fault );
+assign cpu1_pcie_p1v8_en_r	 =  reg_cpu1_pcie_p1v8_en_r   & ( ~cpu1_pcie_p1v8_fault_det | keep_alive_on_fault );
+assign cpu0_d0_vp_p0v9_en_r  =  reg_cpu0_d0_vp_p0v9_en_r  & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
+assign cpu0_d1_vp_p0v9_en_r  =  reg_cpu0_d1_vp_p0v9_en_r  & (~cpu0_d1_vp_0v9_fault_det  | keep_alive_on_fault);
+assign cpu0_d0_vph_p1v8_en_r =  reg_cpu0_d0_vph_p1v8_en_r & (~cpu0_d0_vph_p1v8_fault_det| keep_alive_on_fault);
+assign cpu0_d1_vph_p1v8_en_r =  reg_cpu0_d1_vph_p1v8_en_r & (~cpu0_d1_vph_p1v8_fault_det| keep_alive_on_fault);
+assign cpu1_d0_vp_p0v9_en_r  =  reg_cpu1_d0_vp_p0v9_en_r  & (~cpu1_d0_vp_p0v9_fault_det | keep_alive_on_fault);
+assign cpu1_d1_vp_p0v9_en_r  =  reg_cpu1_d1_vp_p0v9_en_r  & (~cpu1_d1_vp_p0v9_fault_det | keep_alive_on_fault);
+assign cpu1_d0_vph_p1v8_en_r =  reg_cpu1_d0_vph_p1v8_en_r & (~cpu1_d0_vph_p1v8_fault_det| keep_alive_on_fault);
+assign cpu1_d1_vph_p1v8_en_r =  reg_cpu1_d1_vph_p1v8_en_r & (~cpu1_d1_vph_p1v8_fault_det| keep_alive_on_fault);
 
-assign cpu0_vdd_core_en_r   =  reg_cpu0_vdd_core_en_r  & ( ~cpu0_vdd_core_fault_det  | keep_alive_on_fault );
-assign cpu1_vdd_core_en_r   =  reg_cpu1_vdd_core_en_r  & ( ~cpu1_vdd_core_fault_det  | keep_alive_on_fault );
-
-assign cpu0_p1v8_en_r	      =  reg_cpu0_p1v8_en_r      & ( ~cpu0_p1v8_fault_det      | keep_alive_on_fault );
-assign cpu1_p1v8_en_r	      =  reg_cpu1_p1v8_en_r      & ( ~cpu1_p1v8_fault_det      | keep_alive_on_fault );
-
-assign cpu0_pll_p1v8_en_r	  =  reg_cpu0_pll_p1v8_en_r  & ( ~cpu0_pll_p1v8_fault_det  | keep_alive_on_fault );
-assign cpu1_pll_p1v8_en_r	  =  reg_cpu1_pll_p1v8_en_r  & ( ~cpu1_pll_p1v8_fault_det  | keep_alive_on_fault );
-assign cpu0_ddr_vdd_en_r	  =  reg_cpu0_ddr_vdd_en_r   & ( ~cpu0_ddr_vdd_fault_det   | keep_alive_on_fault );
-assign cpu1_ddr_vdd_en_r	  =  reg_cpu1_ddr_vdd_en_r   & ( ~cpu1_ddr_vdd_fault_det   | keep_alive_on_fault );
-assign cpu0_vddq_en_r	    =  reg_cpu0_vddq_en_r      & ( ~cpu0_vddq_fault_det      | keep_alive_on_fault );
-assign cpu1_vddq_en_r	    =  reg_cpu1_vddq_en_r      & ( ~cpu1_vddq_fault_det      | keep_alive_on_fault );
-
-
-assign cpu0_pcie_p0v9_en_r	=  reg_cpu0_pcie_p0v9_en_r & ( ~cpu0_pcie_p0v9_fault_det | keep_alive_on_fault );
-assign cpu1_pcie_p0v9_en_r	=  reg_cpu1_pcie_p0v9_en_r & ( ~cpu1_pcie_p0v9_fault_det | keep_alive_on_fault );
-assign cpu0_pcie_p1v8_en_r	=  reg_cpu0_pcie_p1v8_en_r & ( ~cpu0_pcie_p1v8_fault_det | keep_alive_on_fault );
-assign cpu1_pcie_p1v8_en_r	=  reg_cpu1_pcie_p1v8_en_r & ( ~cpu1_pcie_p1v8_fault_det | keep_alive_on_fault );
-
-
-assign cpu0_d0_vp_p0v9_en_r  = reg_cpu0_d0_vp_p0v9_en_r  & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu0_d1_vp_p0v9_en_r  = reg_cpu0_d1_vp_p0v9_en_r  & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu0_d0_vph_p1v8_en_r = reg_cpu0_d0_vph_p1v8_en_r & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu0_d1_vph_p1v8_en_r = reg_cpu0_d1_vph_p1v8_en_r & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu1_d0_vp_p0v9_en_r  = reg_cpu1_d0_vp_p0v9_en_r  & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu1_d1_vp_p0v9_en_r  = reg_cpu1_d1_vp_p0v9_en_r  & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu1_d0_vph_p1v8_en_r = reg_cpu1_d0_vph_p1v8_en_r & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-assign cpu1_d1_vph_p1v8_en_r = reg_cpu1_d1_vph_p1v8_en_r & (~cpu0_d0_vp_0v9_fault_det  | keep_alive_on_fault);
-
-   
-assign cpu_por_n	        =  reg_cpu_por_n           ;
-assign pex_reset_r_n	    =  reg_pex_reset_r_n       ;
-
-
+assign pex_reset_r_n	       =  reg_pex_reset_r_n       ;
+assign cpu_por_n	           =  reg_cpu_por_n           ;
 
 
 //------------------------------------------------------------------------------
@@ -326,12 +314,12 @@ assign pex_reset_r_n	    =  reg_pex_reset_r_n       ;
 //------------------------------------------------------------------------------
 assign st_reset_state       = (power_seq_sm == `SM_RESET_STATE       );
 assign st_off_standby       = (power_seq_sm == `SM_OFF_STANDBY       );
-assign st_steady_pwrok      = (power_seq_sm == SM_STEADY_PWROK      );
-assign st_critical_fail     = (power_seq_sm == SM_CRITICAL_FAIL     );
-assign st_halt_power_cycle  = (power_seq_sm == SM_HALT_POWER_CYCLE  );
-assign st_aux_fail_recovery = (power_seq_sm == SM_AUX_FAIL_RECOVERY );
-assign st_en_5v             = (power_seq_sm == SM_EN_5V             );
-assign st_disable_main_efuse= (power_seq_sm == SM_DISABLE_MAIN_EFUSE);
+assign st_steady_pwrok      = (power_seq_sm == `SM_STEADY_PWROK      );
+assign st_critical_fail     = (power_seq_sm == `SM_CRITICAL_FAIL     );
+assign st_halt_power_cycle  = (power_seq_sm == `SM_HALT_POWER_CYCLE  );
+assign st_aux_fail_recovery = (power_seq_sm == `SM_AUX_FAIL_RECOVERY );
+assign st_en_5v             = (power_seq_sm == `SM_EN_5V             );
+assign st_disable_main_efuse= (power_seq_sm == `SM_DISABLE_MAIN_EFUSE);
 // Shortcut to select whether the next state is VTT or VPP
 //YHY assign vpp_or_vtt_next = (no_vppen) ? st_en_p0v6_vtt : st_en_p2v5_vpp;
 
@@ -380,14 +368,21 @@ always @(posedge clk or posedge reset) begin
         reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
         reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
         reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
+        reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
+        reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
+        reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
+        reg_cpu0_d1_vph_p1v8_en_r  <= 1'b0;
+        reg_cpu1_d0_vp_p0v9_en_r   <= 1'b0;
+        reg_cpu1_d1_vp_p0v9_en_r   <= 1'b0;
+        reg_cpu1_d0_vph_p1v8_en_r  <= 1'b0;
+        reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
+
         
 	      reg_cpu_por_n              <= 1'b0;      
         usb_ponrst_r_n             <= 1'b0;
 	      reg_pex_reset_r_n          <= 1'b0;
 	      
-          reached_sm_wait_powerok    <= 1'b0; 
-	      
-	      
+        reached_sm_wait_powerok    <= 1'b0;   
     end
     else if (t1us) begin
         case (power_seq_sm)
@@ -427,22 +422,29 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
                 reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
                 reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
-               
-	              reg_cpu_por_n              <= 1'b0;
-	              usb_ponrst_r_n             <= 1'b0;
-	              reg_pex_reset_r_n          <= 1'b0;
+                reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu0_d1_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu1_d0_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu1_d1_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu1_d0_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
 
-                 reached_sm_wait_powerok    <= 1'b0; 
+                reg_pex_reset_r_n          <= 1'b0;
+	              usb_ponrst_r_n             <= 1'b0;
+
+                reg_cpu_por_n              <= 1'b0;
+	              
+                reached_sm_wait_powerok    <= 1'b0; 
             end
 
             `SM_OFF_STANDBY : begin
-	              ocp_aux_en                 <= 1'b1;
-	              cpu_bios_en                <= 1'b1;
-	              reg_p12v_en                <= 1'b0;
+	              ocp_aux_en                 <= 1'b1;  
             end
 
             `SM_PS_ON : begin
-              
+                cpu_bios_en                <= 1'b1;
             end
 
             `SM_EN_5V_STBY: begin
@@ -450,8 +452,6 @@ always @(posedge clk or posedge reset) begin
             end
 
             `SM_EN_TELEM : begin
-                // - Non-BL, enable PWM_CTRL_VDD and PVCC_HPMOS
-                // - BL, enabled later in `SM_EN_3V3
                 reg_pvcc_hpmos_cpu_en_r    <= 1'b1;
             end
 
@@ -464,16 +464,13 @@ always @(posedge clk or posedge reset) begin
 
             `SM_EN_5V : begin
                 reg_p5v_en_r <= 1'b1;
-
             end
 
             `SM_EN_3V3 : begin
-                cpu_bios_en                <= 1'b0;
                 reg_p3v3_en_r              <= 1'b1;
 	          end
 
             `SM_EN_1V1 : begin
-                cpu_bios_en                <= 1'b0;
                 reg_p1v1_en_r              <= 1'b1;
 	          end
 
@@ -494,154 +491,103 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_pll_p1v8_en_r     <= 1'b1;
 		            reg_cpu0_vddq_en_r         <= 1'b1;
                 reg_cpu1_vddq_en_r         <= 1'b1;
-
-                cpu_bios_en                <= 1'b1;
             end
 
             `SM_EN_VDD : begin          
-                reg_cpu0_pcie_p0v9_en_r    <= 1'b1;
-                reg_cpu1_pcie_p0v9_en_r    <= 1'b1;
-                reg_cpu0_pcie_p1v8_en_r    <= 1'b1;
-                reg_cpu1_pcie_p1v8_en_r    <= 1'b1;
-          
+                reg_cpu0_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
+                reg_cpu1_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
+                reg_cpu0_pcie_p1v8_en_r    <= 1'b1; // 实际不使用
+                reg_cpu1_pcie_p1v8_en_r    <= 1'b1; // 实际不使用
+
+                reg_cpu0_d0_vp_p0v9_en_r   <= 1'b1;
+                reg_cpu0_d1_vp_p0v9_en_r   <= 1'b1;
+                reg_cpu0_d0_vph_p1v8_en_r  <= 1'b1;
+                reg_cpu0_d1_vph_p1v8_en_r  <= 1'b1;
+                reg_cpu1_d0_vp_p0v9_en_r   <= 1'b1;
+                reg_cpu1_d1_vp_p0v9_en_r   <= 1'b1;
+                reg_cpu1_d0_vph_p1v8_en_r  <= 1'b1;
+                reg_cpu1_d1_vph_p1v8_en_r  <= 1'b1;
             end  
          
-     `PEX_RESET : begin          
-       reg_pex_reset_r_n          <= 1'b1; 
-     end 
+            `SM_DEVICE_PCIE_RESET : begin  
+                // 此信号不使用, 此状态实际是等待PUE复位释放        
+                reg_pex_reset_r_n          <= 1'b1; 
+            end 
      
-     `SM_CPU_RESET : begin          
-        reg_cpu_por_n             <= 1'b1;
-		usb_ponrst_r_n            <= 1'b1;
-        
-     end      
+            `SM_CPU_RESET : begin          
+                reg_cpu_por_n              <= 1'b1;
+		            usb_ponrst_r_n             <= 1'b1;
+             end      
            
-      `SM_WAIT_POWEROK : begin
-        reached_sm_wait_powerok   <= 1'b1;     
-        
-      end
+            `SM_WAIT_POWEROK : begin
+                reached_sm_wait_powerok    <= 1'b1;      
+            end
 
-      `SM_CRITICAL_FAIL : begin
-      	reg_main_efuse_en         <= 1'b0;       
-      end
+            `SM_CRITICAL_FAIL : begin
+            	  reg_main_efuse_en          <= 1'b0;       
+            end
 	  
-       `SM_DISABLE_VDD : begin
-       reg_cpu0_vddq_en_r         <= 1'b0;//20240112 d00412
-       reg_cpu1_vddq_en_r         <= 1'b0;//20240112 d00412
+            `SM_DISABLE_VDD : begin
+                reg_cpu0_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
+                reg_cpu1_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
+                reg_cpu0_pcie_p1v8_en_r    <= 1'b0; // 实际不使用
+                reg_cpu1_pcie_p1v8_en_r    <= 1'b0; // 实际不使用
 
-	   usb_ponrst_r_n             <= 1'b0;
-	   reached_sm_wait_powerok    <= 1'b0;
-	   reg_pex_reset_r_n          <= 1'b0;
-	   ocp_main_en                <= 1'b0;
-	   cpu_bios_en                <= 1'b0;
- 
+                reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu0_d1_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu1_d0_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu1_d1_vp_p0v9_en_r   <= 1'b0;
+                reg_cpu1_d0_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
             end  
-/***********************************************************************************************/
 
-       `SM_DISABLE_P0V8 : begin
-        reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
-        reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
-        reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
-        reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
-             
-            end         
-                                 
-//yhy  SM_DISABLE_VCCIO : begin
-//yhy    reg_pvccio_en <= 1'b0;
-//yhy    reg_mezz_en   <= 1'b0;
-//yhy       end
-            
-       `SM_DISABLE_VP : begin
-        
-//YHY    reg_mezz_en   <= 1'b0;
-      end
+            `SM_DISABLE_P2V5_VPP : begin
+                reg_cpu0_ddr_vdd_en_r      <= 1'b0;
+                reg_cpu1_ddr_vdd_en_r      <= 1'b0;
+                reg_cpu0_pll_p1v8_en_r     <= 1'b0;
+                reg_cpu1_pll_p1v8_en_r     <= 1'b0;
+		            reg_cpu0_vddq_en_r         <= 1'b0;
+                reg_cpu1_vddq_en_r         <= 1'b0;
+            end
 
-//YHY  SM_DISABLE_P0V6_VTT : begin
-//YHY     reg_pvddq_en      <= 1'b0;
-//YHY     reg_clk_en        <= 1'b0;
-//YHY     end
+            `SM_DISABLE_P1V8 : begin
+                reg_cpu0_p1v8_en_r         <= 1'b0;
+                reg_cpu1_p1v8_en_r         <= 1'b0;
+            end
 
-      `SM_DISABLE_P2V5_VPP : begin
-        // Not used if no_vppen is set
-        reg_cpu0_ddr_vdd_en_r      <= 1'b0;
-        reg_cpu1_ddr_vdd_en_r      <= 1'b0;
-		//reg_cpu0_vddq_en_r       <= 1'b0;//20240112 d00412
-        //reg_cpu1_vddq_en_r       <= 1'b0;//20240112 d00412
+            `SM_DISABLE_CPU_CORE : begin
+                reg_cpu0_vdd_core_en_r     <= 1'b0;
+                reg_cpu1_vdd_core_en_r     <= 1'b0;
+            end
 
-      end
+            `SM_DISABLE_1V1 : begin
+                reg_p1v1_en_r              <= 1'b0;
+	          end
 
-      `SM_DISABLE_P1V8 : begin
-        // Not used if no_vppen is set
-        reg_cpu0_p1v8_en_r         <= 1'b0;
-        reg_cpu1_p1v8_en_r         <= 1'b0;
-        reg_cpu0_pll_p1v8_en_r     <= 1'b0;//20240112 d00412
-        reg_cpu1_pll_p1v8_en_r     <= 1'b0;//20240112 d00412
-        
-      end
+            `SM_DISABLE_3V3 : begin
+                reg_p3v3_en_r              <= 1'b0;
+	          end
 
-      `SM_DISABLE_CPU_CORE : begin
-        // Not used if no_vppen is set
-        reg_cpu0_vdd_core_en_r     <= 1'b0;
-        reg_cpu1_vdd_core_en_r     <= 1'b0;
-      end
+            `SM_DISABLE_5V : begin
+                reg_p5v_en_r               <= 1'b1;
+            end
 
+            `SM_DISABLE_MAIN_EFUSE : begin
+                reg_power_supply_on        <= 1'b0;
+                ocp_main_en                <= 1'b0;
+                reg_main_efuse_en          <= 1'b0;
+                reg_p12v_en                <= 1'b0;
+            end
 
-      
+            `SM_DISABLE_TELEM : begin
+                reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
+            end
 
-      `SM_DISABLE_3V3 : begin
-        //reg_cpu0_pll_p1v8_en_r   <= 1'b0;//20240112 d00412
-        //reg_cpu1_pll_p1v8_en_r   <= 1'b0;//20240112 d00412
-      end
-
-      `SM_DISABLE_5V : begin
-        reg_p5v_en_r <= 1'b0;
-      end
-
-      `SM_DISABLE_MAIN_EFUSE : begin
-       reg_power_supply_on <= 1'b0;
-	   reg_main_efuse_en   <= 1'b0;
-	   reg_p12v_en         <= 1'b0;
-
-      end
-
-      `SM_DISABLE_TELEM : begin
-        reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
-        
-      end
-
-      `SM_DISABLE_PS_ON : begin
-       cpu_bios_en                 <= 1'b1; 
-      end
-
-      `SM_AUX_FAIL_RECOVERY : begin
-          //FIXME: Want this low for poweron board bringup. Revert back to 1'b1 for DP1.
-      end
-
-/*  
-  default : begin
-	  reached_sm_wait_powerok    <= 1'b0; 
-    reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
-    reg_cpu0_p1v8_en_r         <= 1'b0;
-    reg_cpu1_p1v8_en_r         <= 1'b0;
-    reg_cpu0_pll_p1v8_en_r     <= 1'b0;
-    reg_cpu1_pll_p1v8_en_r     <= 1'b0;
-    reg_cpu0_ddr_vdd_en_r      <= 1'b0;
-    reg_cpu1_ddr_vdd_en_r      <= 1'b0;
-    reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
-    reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
-    reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
-    reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
-    reg_cpu0_vddq_en_r         <= 1'b0;
-    reg_cpu1_vddq_en_r         <= 1'b0;
-    reg_cpu0_vdd_core_en_r     <= 1'b0;
-    reg_cpu1_vdd_core_en_r     <= 1'b0;
-    reg_p5v_stby_en_r          <= 1'b0;   
-    reg_p5v_en_r               <= 1'b0;   
-    reg_power_supply_on        <= 1'b0;
-	reg_cpu_por_n              <= 1'b0;
-	  
-	  end
-*/	  
+            `SM_DISABLE_PS_ON : begin
+                cpu_bios_en                 <= 1'b0; 
+            end 
     endcase
   end
 end
@@ -651,14 +597,15 @@ end
 // ok_to_reset_aux
 // - Asserts when in state where AUX power can be cycled
 //------------------------------------------------------------------------------
+reg     ok_to_reset_aux                       ;
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    ok_to_reset_aux <= 1'b0;
-  else
-    ok_to_reset_aux <= st_reset_state      |
-                       st_off_standby      |
-                       st_halt_power_cycle |
-                       st_aux_fail_recovery;
+    if (reset)
+        ok_to_reset_aux <= 1'b0;
+    else
+        ok_to_reset_aux <=  st_reset_state      |
+                            st_off_standby      |
+                            st_halt_power_cycle |
+                            st_aux_fail_recovery;
 end
 
 
@@ -683,8 +630,9 @@ assign pal_efuse_pcycle = aux_pcycle & ok_to_reset_aux;
 // Aux (P5V_STBY) fault detect
 // - P5V_STBY can be enabled while system in standby so need to check if it
 //   comes up. It takes time to ramp so we'll give it ~120ms to do it.
-//------------------------------------------------------------------------------
-
+//------------------------------------------------------------------------------                       
+    
+    
 //------------------------------------------------------------------------------
 // P5V_STBY Fault detect 
 //------------------------------------------------------------------------------
@@ -712,7 +660,6 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p5v_stby_fault_detect_inst (
   .any_vrm_fault    (),
   .vrm_fault        (p5v_stby_fault_det)
 );
-
 
 //------------------------------------------------------------------------------
 // P3V3_STBY Fault detect 
@@ -918,7 +865,6 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_reat_bp_efuse_fault_detect_inst 
   .vrm_fault        (p12v_reat_bp_efuse_fault_det)					//out
 );
 
-
 //------------------------------------------------------------------------------
 // P5V Fault detect 
 //------------------------------------------------------------------------------
@@ -947,6 +893,59 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p5v_fault_det_inst (
   .vrm_fault        (p5v_fault_det)					    //out
 ); 
 
+
+//------------------------------------------------------------------------------
+// CPU0_VDD_CORE & CPU1_VDD_CORE Fault detect 
+//------------------------------------------------------------------------------
+wire cpu0_vdd_core_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) cpu0_vdd_core_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (cpu0_vdd_core_en_r),
+  .delay_output  (cpu0_vdd_core_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_vdd_core_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (cpu0_vdd_core_en_r && cpu0_vdd_core_en_r_check),	//in
+  .vrm_pgood        (cpu0_vdd_core_pg),						//in
+  .vrm_chklive_en   (cpu0_vdd_core_en_r_check),					//in
+  .vrm_chklive_dis  (~cpu0_vdd_core_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (cpu0_vdd_core_fault_det)			//out
+);
+
+wire cpu1_vdd_core_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) cpu1_vdd_core_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (cpu1_vdd_core_en_r),
+  .delay_output  (cpu1_vdd_core_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_vdd_core_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (cpu1_vdd_core_en_r && cpu1_vdd_core_en_r_check),	//in
+  .vrm_pgood        (cpu1_vdd_core_pg),						//in
+  .vrm_chklive_en   (cpu1_vdd_core_en_r_check),						//in
+  .vrm_chklive_dis  (~cpu1_vdd_core_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (cpu1_vdd_core_fault_det)			    //out
+);
 
 //------------------------------------------------------------------------------
 // CPU0_P1V8 & CPU1_P1V8 Fault detect 
@@ -1001,59 +1000,59 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_p1v8_fault_det_inst (
   .vrm_fault        (cpu1_p1v8_fault_det)			//out
 );
 
-
 //------------------------------------------------------------------------------
-// CPU0_PLL_P1V8 & CPU1_PLL_P1V8 Fault detect 
+// CPU0_VDDQ & CPU1_VDDQ Fault detect 
 //------------------------------------------------------------------------------
-wire cpu0_pll_p1v8_en_r_check;
+wire cpu0_vddq_en_r_check;
 
-edge_delay #(.CNTR_NBITS(2)) cpu0_pll_p1v8_en_r_check_inst (
+edge_delay #(.CNTR_NBITS(2)) cpu0_vddq_en_r_check_inst (
   .clk           (clk),
   .reset         (reset),
   .cnt_size      (2'b10),
   .cnt_step      (t64ms),
-  .signal_in     (cpu0_pll_p1v8_en_r),
-  .delay_output  (cpu0_pll_p1v8_en_r_check)
+  .signal_in     (cpu0_vddq_en_r),
+  .delay_output  (cpu0_vddq_en_r_check)
 );
 
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_pll_p1v8_fault_det_inst (
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_vddq_fault_det_inst (
   .clk              (clk),								//in
   .reset            (reset),							//in
-  .vrm_enable       (cpu0_pll_p1v8_en_r & cpu0_pll_p1v8_en_r_check),	//in
-  .vrm_pgood        (cpu0_pll_p1v8_pg),						//in
-  .vrm_chklive_en   (cpu0_pll_p1v8_en_r_check),					//in
-  .vrm_chklive_dis  (~cpu0_pll_p1v8_en_r_check),					//in
+  .vrm_enable       (cpu0_vddq_en_r && cpu0_vddq_en_r_check),	//in
+  .vrm_pgood        (cpu0_vddq_pg),						//in
+  .vrm_chklive_en   (cpu0_vddq_en_r_check),					//in
+  .vrm_chklive_dis  (~cpu0_vddq_en_r_check),					//in
   .critical_fail    (st_critical_fail),					//in
   .fault_clear      (fault_clear),						//in
   .lock             (any_pwr_fault_det),				//in
   .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu0_pll_p1v8_fault_det)			//out
+  .vrm_fault        (cpu0_vddq_fault_det)			//out
 );
 
-wire cpu1_pll_p1v8_en_r_check;
+wire cpu1_vddq_en_r_check;
 
-edge_delay #(.CNTR_NBITS(2)) cpu1_pll_p1v8_en_r_check_inst (
+edge_delay #(.CNTR_NBITS(2)) cpu1_vddq_en_r_check_inst (
   .clk           (clk),
   .reset         (reset),
   .cnt_size      (2'b10),
   .cnt_step      (t64ms),
-  .signal_in     (cpu1_pll_p1v8_en_r),
-  .delay_output  (cpu1_pll_p1v8_en_r_check)
+  .signal_in     (cpu1_vddq_en_r),
+  .delay_output  (cpu1_vddq_en_r_check)
 );
 
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_pll_p1v8_fault_det_inst (
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_vddq_fault_det_inst (
   .clk              (clk),								//in
   .reset            (reset),							//in
-  .vrm_enable       (cpu1_pll_p1v8_en_r && cpu1_pll_p1v8_en_r_check),	//in
-  .vrm_pgood        (cpu1_pll_p1v8_pg),						//in
-  .vrm_chklive_en   (cpu1_pll_p1v8_en_r_check),						//in
-  .vrm_chklive_dis  (~cpu1_pll_p1v8_en_r_check),					//in
+  .vrm_enable       (cpu1_vddq_en_r && cpu1_vddq_en_r_check),	//in
+  .vrm_pgood        (cpu1_vddq_pg),						//in
+  .vrm_chklive_en   (cpu1_vddq_en_r_check),						//in
+  .vrm_chklive_dis  (~cpu1_vddq_en_r_check),					//in
   .critical_fail    (st_critical_fail),					//in
   .fault_clear      (fault_clear),						//in
   .lock             (any_pwr_fault_det),				//in
   .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu1_pll_p1v8_fault_det)			//out
+  .vrm_fault        (cpu1_vddq_fault_det)			    //out
 );
+
 
 
 //------------------------------------------------------------------------------
@@ -1109,6 +1108,284 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_ddr_vdd_fault_det_inst (
   .vrm_fault        (cpu1_ddr_vdd_fault_det)			//out
 );
 
+//------------------------------------------------------------------------------
+// CPU0_PLL_P1V8 & CPU1_PLL_P1V8 Fault detect 
+//------------------------------------------------------------------------------
+wire cpu0_pll_p1v8_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) cpu0_pll_p1v8_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (cpu0_pll_p1v8_en_r),
+  .delay_output  (cpu0_pll_p1v8_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_pll_p1v8_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (cpu0_pll_p1v8_en_r & cpu0_pll_p1v8_en_r_check),	//in
+  .vrm_pgood        (cpu0_pll_p1v8_pg),						//in
+  .vrm_chklive_en   (cpu0_pll_p1v8_en_r_check),					//in
+  .vrm_chklive_dis  (~cpu0_pll_p1v8_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (cpu0_pll_p1v8_fault_det)			//out
+);
+
+wire cpu1_pll_p1v8_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) cpu1_pll_p1v8_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (cpu1_pll_p1v8_en_r),
+  .delay_output  (cpu1_pll_p1v8_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_pll_p1v8_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (cpu1_pll_p1v8_en_r && cpu1_pll_p1v8_en_r_check),	//in
+  .vrm_pgood        (cpu1_pll_p1v8_pg),						//in
+  .vrm_chklive_en   (cpu1_pll_p1v8_en_r_check),						//in
+  .vrm_chklive_dis  (~cpu1_pll_p1v8_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (cpu1_pll_p1v8_fault_det)			//out
+);
+
+//------------------------------------------------------------------------------
+// CPU_VP_P0v9/CPU_VPH_1V8 Fault detect 
+//------------------------------------------------------------------------------
+wire  cpu0_d0_vp_p0v9_en_r_check  ; 
+wire  cpu0_d1_vp_p0v9_en_r_check  ; 
+wire  cpu0_d0_vph_p1v8_en_r_check ;
+wire  cpu0_d1_vph_p1v8_en_r_check ;
+wire  cpu1_d0_vp_p0v9_en_r_check  ; 
+wire  cpu1_d1_vp_p0v9_en_r_check  ; 
+wire  cpu1_d0_vph_p1v8_en_r_check ;
+wire  cpu1_d1_vph_p1v8_en_r_check ;
+// cpu0_d0_vp_p0v9_en
+edge_delay #(.CNTR_NBITS(2)) cpu0_d0_vp_p0v9_en_r_inst (
+  .clk              (clk                        ),
+  .reset            (reset                      ),
+  .cnt_size         (2'b10                      ),
+  .cnt_step         (t64ms                      ),
+  .signal_in        (cpu0_d0_vp_p0v9_en_r       ),
+  .delay_output     (cpu0_d0_vp_p0v9_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_d0_vp_p0v9_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu0_d0_vp_p0v9_en_r & cpu0_d0_vp_p0v9_en_r_check  ), // in
+  .vrm_pgood        (cpu0_d0_vp_0v9_pg                                  ), // in
+  .vrm_chklive_en   (cpu0_d0_vp_p0v9_en_r_check                         ), // in
+  .vrm_chklive_dis  (~cpu0_d0_vp_p0v9_en_r_check                        ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu0_d0_vp_0v9_fault_det                           )  // out
+);
+
+// cpu0_d1_vp_p0v9_en
+edge_delay #(.CNTR_NBITS(2)) cpu0_d1_vp_p0v9_en_r_inst (
+  .clk              (clk                        ),
+  .reset            (reset                      ),
+  .cnt_size         (2'b10                      ),
+  .cnt_step         (t64ms                      ),
+  .signal_in        (cpu0_d1_vp_p0v9_en_r       ),
+  .delay_output     (cpu0_d1_vp_p0v9_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_d1_vp_p0v9_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu0_d1_vp_p0v9_en_r & cpu0_d1_vp_p0v9_en_r_check  ), // in
+  .vrm_pgood        (cpu0_d1_vp_0v9_pg                                  ), // in
+  .vrm_chklive_en   (cpu0_d1_vp_p0v9_en_r_check                         ), // in
+  .vrm_chklive_dis  (~cpu0_d1_vp_p0v9_en_r_check                        ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu0_d1_vp_0v9_fault_det                         )  // out
+);
+
+// cpu0_d0_vph_p1v8_en
+edge_delay #(.CNTR_NBITS(2)) cpu0_d0_vph_p1v8_en_r_inst (
+  .clk              (clk                         ),
+  .reset            (reset                       ),
+  .cnt_size         (2'b10                       ),
+  .cnt_step         (t64ms                       ),
+  .signal_in        (cpu0_d0_vph_p1v8_en_r       ),
+  .delay_output     (cpu0_d0_vph_p1v8_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_d0_vph_p1v8_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu0_d0_vph_p1v8_en_r & cpu0_d0_vph_p1v8_en_r_check), // in
+  .vrm_pgood        (cpu0_d0_vph_1v8_pg                                 ), // in
+  .vrm_chklive_en   (cpu0_d0_vph_p1v8_en_r_check                        ), // in
+  .vrm_chklive_dis  (~cpu0_d0_vph_p1v8_en_r_check                       ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu0_d0_vph_p1v8_fault_det                         )  // out
+);
+
+// cpu0_d1_vph_p1v8_en
+edge_delay #(.CNTR_NBITS(2)) cpu0_d1_vph_p1v8_en_r_inst (
+  .clk              (clk                         ),
+  .reset            (reset                       ),
+  .cnt_size         (2'b10                       ),
+  .cnt_step         (t64ms                       ),
+  .signal_in        (cpu0_d1_vph_p1v8_en_r       ),
+  .delay_output     (cpu0_d1_vph_p1v8_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_d1_vph_p1v8_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu0_d1_vph_p1v8_en_r & cpu0_d1_vph_p1v8_en_r_check), // in
+  .vrm_pgood        (cpu0_d1_vph_1v8_pg                                 ), // in
+  .vrm_chklive_en   (cpu0_d1_vph_p1v8_en_r_check                        ), // in
+  .vrm_chklive_dis  (~cpu0_d1_vph_p1v8_en_r_check                       ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu0_d1_vph_p1v8_fault_det                         )  // out
+);
+
+// cpu1_d0_vp_p0v9_en
+edge_delay #(.CNTR_NBITS(2)) cpu1_d0_vp_p0v9_en_r_inst (
+  .clk              (clk                        ),
+  .reset            (reset                      ),
+  .cnt_size         (2'b10                      ),
+  .cnt_step         (t64ms                      ),
+  .signal_in        (cpu1_d0_vp_p0v9_en_r       ),
+  .delay_output     (cpu1_d0_vp_p0v9_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d0_vp_p0v9_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu1_d0_vp_p0v9_en_r & cpu1_d0_vp_p0v9_en_r_check  ), // in
+  .vrm_pgood        (cpu1_d0_vp_0v9_pg                                  ), // in
+  .vrm_chklive_en   (cpu1_d0_vp_p0v9_en_r_check                         ), // in
+  .vrm_chklive_dis  (~cpu1_d0_vp_p0v9_en_r_check                        ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu1_d0_vp_0v9_fault_det                           )  // out
+);
+
+// cpu1_d1_vp_p0v9_en
+edge_delay #(.CNTR_NBITS(2)) cpu1_d1_vp_p0v9_en_r_inst (
+  .clk              (clk                        ),
+  .reset            (reset                      ),
+  .cnt_size         (2'b10                      ),
+  .cnt_step         (t64ms                      ),
+  .signal_in        (cpu1_d1_vp_p0v9_en_r       ),
+  .delay_output     (cpu1_d1_vp_p0v9_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d1_vp_p0v9_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu1_d1_vp_p0v9_en_r & cpu1_d1_vp_p0v9_en_r_check  ), // in
+  .vrm_pgood        (cpu1_d1_vp_0v9_pg                                  ), // in
+  .vrm_chklive_en   (cpu1_d1_vp_p0v9_en_r_check                         ), // in
+  .vrm_chklive_dis  (~cpu1_d1_vp_p0v9_en_r_check                        ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu1_d1_vp_0v9_fault_det                           )  // out
+);
+
+// cpu1_d0_vph_p1v8_en
+edge_delay #(.CNTR_NBITS(2)) cpu1_d0_vph_p1v8_en_r_inst (
+  .clk              (clk                         ),
+  .reset            (reset                       ),
+  .cnt_size         (2'b10                       ),
+  .cnt_step         (t64ms                       ),
+  .signal_in        (cpu1_d0_vph_p1v8_en_r       ),
+  .delay_output     (cpu1_d0_vph_p1v8_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d0_vph_p1v8_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu1_d0_vph_p1v8_en_r & cpu1_d0_vph_p1v8_en_r_check), // in
+  .vrm_pgood        (cpu1_d0_vph_1v8_pg                                 ), // in
+  .vrm_chklive_en   (cpu1_d0_vph_p1v8_en_r_check                        ), // in
+  .vrm_chklive_dis  (~cpu1_d0_vph_p1v8_en_r_check                       ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu1_d0_vph_p1v8_fault_det                         )  // out
+);
+
+// cpu1_d1_vph_p1v8_en
+edge_delay #(.CNTR_NBITS(2)) cpu1_d1_vph_p1v8_en_r_inst (
+  .clk              (clk                         ),
+  .reset            (reset                       ),
+  .cnt_size         (2'b10                       ),
+  .cnt_step         (t64ms                       ),
+  .signal_in        (cpu1_d1_vph_p1v8_en_r       ),
+  .delay_output     (cpu1_d1_vph_p1v8_en_r_check )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d1_vph_p1v8_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu1_d1_vph_p1v8_en_r & cpu1_d1_vph_p1v8_en_r_check), // in
+  .vrm_pgood        (cpu1_d1_vph_1v8_pg                                 ), // in
+  .vrm_chklive_en   (cpu1_d1_vph_p1v8_en_r_check                        ), // in
+  .vrm_chklive_dis  (~cpu1_d1_vph_p1v8_en_r_check                       ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu1_d1_vph_p1v8_fault_det                         )  // out
+);
+
+edge_delay #(.CNTR_NBITS(2)) cpu1_d1_vph_p1v8_en_r_check_inst (
+  .clk              (clk                        ),
+  .reset            (reset                      ),
+  .cnt_size         (2'b10                      ),
+  .cnt_step         (t64ms                      ),
+  .signal_in        (cpu1_d1_vph_p1v8_en_r      ),
+  .delay_output     (cpu1_d1_vph_p1v8_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d1_vph_p1v8_fault_detect_inst (
+  .clk              (clk                                                ), // in
+  .reset            (reset                                              ), // in
+  .vrm_enable       (cpu1_d1_vph_p1v8_en_r & cpu1_d1_vph_p1v8_en_r_check), // in
+  .vrm_pgood        (cpu1_d1_vph_1v8_pg                                 ), // in
+  .vrm_chklive_en   (cpu1_d1_vph_p1v8_en_r_check                        ), // in
+  .vrm_chklive_dis  (~cpu1_d1_vph_p1v8_en_r_check                       ), // in
+  .critical_fail    (st_critical_fail                                   ), // in
+  .fault_clear      (fault_clear                                        ), // in
+  .lock             (any_pwr_fault_det                                  ), // in
+  .any_vrm_fault    (),
+  .vrm_fault        (cpu1_d1_vph_p1v8_fault_det                         )  // out
+);
 
 //------------------------------------------------------------------------------
 // CPU0_PCIE_P0V9 & CPU1_PCIE_P0V9 Fault detect 
@@ -1219,113 +1496,6 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_pcie_p1v8_fault_det_inst (
 
 
 //------------------------------------------------------------------------------
-// CPU0_VDDQ & CPU1_VDDQ Fault detect 
-//------------------------------------------------------------------------------
-wire cpu0_vddq_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu0_vddq_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu0_vddq_en_r),
-  .delay_output  (cpu0_vddq_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_vddq_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu0_vddq_en_r && cpu0_vddq_en_r_check),	//in
-  .vrm_pgood        (cpu0_vddq_pg),						//in
-  .vrm_chklive_en   (cpu0_vddq_en_r_check),					//in
-  .vrm_chklive_dis  (~cpu0_vddq_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu0_vddq_fault_det)			//out
-);
-
-wire cpu1_vddq_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu1_vddq_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu1_vddq_en_r),
-  .delay_output  (cpu1_vddq_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_vddq_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu1_vddq_en_r && cpu1_vddq_en_r_check),	//in
-  .vrm_pgood        (cpu1_vddq_pg),						//in
-  .vrm_chklive_en   (cpu1_vddq_en_r_check),						//in
-  .vrm_chklive_dis  (~cpu1_vddq_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu1_vddq_fault_det)			    //out
-);
-
-
-//------------------------------------------------------------------------------
-// CPU0_VDD_CORE & CPU1_VDD_CORE Fault detect 
-//------------------------------------------------------------------------------
-wire cpu0_vdd_core_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu0_vdd_core_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu0_vdd_core_en_r),
-  .delay_output  (cpu0_vdd_core_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_vdd_core_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu0_vdd_core_en_r && cpu0_vdd_core_en_r_check),	//in
-  .vrm_pgood        (cpu0_vdd_core_pg),						//in
-  .vrm_chklive_en   (cpu0_vdd_core_en_r_check),					//in
-  .vrm_chklive_dis  (~cpu0_vdd_core_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu0_vdd_core_fault_det)			//out
-);
-
-wire cpu1_vdd_core_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu1_vdd_core_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu1_vdd_core_en_r),
-  .delay_output  (cpu1_vdd_core_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_vdd_core_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu1_vdd_core_en_r && cpu1_vdd_core_en_r_check),	//in
-  .vrm_pgood        (cpu1_vdd_core_pg),						//in
-  .vrm_chklive_en   (cpu1_vdd_core_en_r_check),						//in
-  .vrm_chklive_dis  (~cpu1_vdd_core_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu1_vdd_core_fault_det)			    //out
-);
-
-//------------------------------------------------------------------------------
 // THERMTRIP_DETECT
 //------------------------------------------------------------------------------
 wire   cpupwrok_en;
@@ -1340,6 +1510,7 @@ edge_delay #(.CNTR_NBITS(2)) cpupwrok_en_check_inst (
   .delay_output  (cpupwrok_en_check)
 );
 
+genvar i;
 generate for (i = 0; i < NUM_CPU; i = i + 1) begin : _CPU_THERMTRIP_DETECT_BLOCK_
   fault_detectB_chklive #(.NUMBER_OF_VRM(1)) inst_cpu_thermtrip_fault_det (
     .clk              (clk),

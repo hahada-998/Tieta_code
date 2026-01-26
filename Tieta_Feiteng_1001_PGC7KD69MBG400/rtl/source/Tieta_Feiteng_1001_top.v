@@ -597,7 +597,7 @@ wire                                        p12v_bp_front_en            ;
 // 5. SM_EN_5V 状态上电使能
 wire                                        p5v_en_r                    ;
 // 6. SM_EN_3V3 状态上电使能
-wire                                        p3v_en_r                    ;
+wire                                        p3v3_en_r                    ;
 
 // 主电源使能信号
 // 1. SM_EN_VDD 状态上电使能
@@ -688,7 +688,7 @@ wire                                        db_i_pal_pgd_p12v_droop             
 wire                                        db_i_pal_front_bp_efuse_pg          ;// 
 wire                                        db_i_pal_reat_bp_efuse_pg  		    ;// 
 
-wire                                        db_i_pal_p5v_pgd                    ;//  
+wire                                        db_i_pal_p5v0_pgd                    ;//  
 
 wire                                        db_i_pal_vcc_1v1_pg                 ;// 新增
 
@@ -1547,7 +1547,7 @@ PGM_DEBOUNCE #(
                                             i_PAL_CPU1_PCIE_P1V8_PG             ,// 25 不使用       
                                             i_PAL_CPU0_PCIE_P0V9_PG   		    ,// 24 不使用        
                                             i_PAL_CPU1_PCIE_P0V9_PG             ,// 23 不使用
-    	                                    i_PAL_FAN_EFUSE_PG                  ,// 22
+    	                                    i_PAL_FAN_EFUSE_PG                  ,// 22 不使用
     	                                    i_PAL_CPU1_DDR_VDD_PG               ,// 21
     	                                    i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 20
     	                                    i_PAL_CPU1_VDDQ_P1V1_PG             ,// 19
@@ -1609,7 +1609,7 @@ PGM_DEBOUNCE #(
 		                                    db_i_pal_p5v_stby_pgd               ,// 16
 		                                    db_i_pal_ocp1_pwrgd                 ,// 15 不使用
 		                                    db_i_pal_dimm_efuse_pg              ,// 14 不使用
-		                                    db_i_pal_p5v_pgd                    ,// 13 不使用
+		                                    db_i_pal_p5v0_pgd                    ,// 13 不使用
 		                                    db_i_pal_pgd_p12v_stby_droop        ,// 12
 		                                    db_i_pal_pgd_p12v_droop             ,// 11
 		                                    db_ps_acok[0]                       ,// 10
@@ -2041,7 +2041,7 @@ pwrseq_slave #(
     .p3v3_stby_pg                           (db_i_pal_p3v3_stby_pgd      ),  //in
 
     .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	    ),
-    .dimm_efuse_pg			                (db_i_pal_dimm_efuse_pg	    ),  
+    .dimm_efuse_pg			                (1'b1 /*db_i_pal_dimm_efuse_pg*/),  
 
     .pgd_main_efuse                         (1'b1                        ),  //in
     .fan_efuse_pg			                (db_i_pal_fan_efuse_pg	    ),
@@ -2051,7 +2051,11 @@ pwrseq_slave #(
     .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg  ),
     .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg ),
 
-    .p5v_pgd                                (db_i_pal_p5v_pgd           ),
+    .p5v_pgd                                (db_i_pal_p5v0_pgd           ),
+
+    .p3v3_pgd                               (1'b1                        ), 
+
+    .p1v1_pgd                               (1'b1                        ), 
 
     .vcc_1v1_pg                             (db_i_pal_vcc_1v1_pg        ),
     
@@ -2420,8 +2424,8 @@ assign o_P1V8_STBY_CPLD_EN_R      = 1'b1;
 // 辅电源
 // 1. SM_OFF_STANDBY 状态上电使能
 // assign o_PAL_OCP1_STBY_PWR_EN_R   = ocp_aux_en         ; // OCP 辅助供电使能信号, 未使用
-assign o_BIOS0_RST_N_R            = cpu_bios_en ? (~rom_bios_ma_rst) : 1'bz; // ~rom_bios_ma_rst; // BIOS FLASH 复位信号输出，低电平有效  
-assign o_BIOS1_RST_N_R            = cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz; // ~rom_bios_bk_rst; // BIOS FLASH 复位信号输出，低电平有效 
+assign o_BIOS0_RST_N_R            = ~rom_bios_ma_rst    ; // cpu_bios_en ? (~rom_bios_ma_rst) : 1'bz; // BIOS FLASH 复位信号输出，低电平有效  
+assign o_BIOS1_RST_N_R            = ~rom_bios_bk_rst    ; // cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz; // BIOS FLASH 复位信号输出，低电平有效 
 
 assign o_PAL_FRONT_BP_EFUSE_EN_R  = p12v_bp_front_en    ; // 12V 前背板供电使能信号
 
@@ -2450,8 +2454,8 @@ assign o_P5V_USB_MB_UP_EN_R        = p5v_en_r            ; // 5V USB 上行使�
 assign o_P5V_USB_MB_DOWN_EN_R      = p5v_en_r            ; // 5V USB 上行使能信号
 
 // 6. SM_EN_3V3 状态上电使能
-assign o_PAL_UPD_VCC_3V3_EN_R      = p3v_en_r            ; // 3.3V 电源使能信号
-assign o_PAL_VCC_1V1_EN_R          = p3v_en_r            ; // 1.1V 电源使能信号
+assign o_PAL_UPD_VCC_3V3_EN_R      = p3v3_en_r            ; // 3.3V 电源使能信号
+assign o_PAL_VCC_1V1_EN_R          = p1v1_en_r            ; // 1.1V 电源使能信号
 
 
 // 主电源
