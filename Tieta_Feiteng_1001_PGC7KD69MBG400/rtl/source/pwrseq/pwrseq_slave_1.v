@@ -20,181 +20,193 @@ module pwrseq_slave #(
     parameter NUM_HD_BP                   = 0,
     parameter NUM_M2_BP                   = 0,
     parameter NUM_RISER                   = 0,
+
     parameter FAULT_VEC_SIZE              = 40,
-    // bit location guide for mask below                      3         3         2         1
-    //                                                        9         1         3         5         7
     parameter [FAULT_VEC_SIZE-1:0] RECOV_FAULT_MASK     = 40'b1111_1111_1111_1111_1111_1111_1111_1111_1111_1111,
     parameter [FAULT_VEC_SIZE-1:0] LIM_RECOV_FAULT_MASK = 40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000,
     parameter [FAULT_VEC_SIZE-1:0] NON_RECOV_FAULT_MASK = 40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000) (
 
-    input                               clk                             ,                       
-    input                               reset                           ,                       
-    input                               t1us                            ,                       
-    input                               t512us                          ,                       
-    input                               t1ms                            ,                       
-    input                               t2ms                            ,                       
-    input                               t64ms                           ,                       
-    input                               t1s                             ,                       
+    input                                       clk                             ,                       
+    input                                       reset                           ,                       
+    input                                       t1us                            ,                       
+    input                                       t512us                          ,                       
+    input                                       t1ms                            ,                       
+    input                                       t2ms                            ,                       
+    input                                       t64ms                           ,                       
+    input                                       t1s                             ,                       
 
-    input                               keep_alive_on_fault             ,   
+    input                                       keep_alive_on_fault             ,   
  
     // PGOOD 输入信号
-    input                               p3v3_stby_bp_pg                 ,
-    input                               p3v3_stby_pg                    ,
-    input                               p5v_stby_pgd		                ,
-    input                               dimm_efuse_pg		                ,
-    input                               pgd_main_efuse                  ,
-    input                               fan_efuse_pg		                ,
-    input                               pgd_p12v                        ,
-    input                               pgd_p12v_stby_droop             ,
-    input                               reat_bp_efuse_pg                ,
-    input                               front_bp_efuse_pg               ,
-    input                               p5v_pgd                         ,
-    input                               p3v3_pgd                        ,
-    input                               p1v1_pgd                        ,
-    input                               cpu1_vdd_core_pg	              ,
-    input                               cpu0_vdd_core_pg	              ,
-    input                               cpu1_p1v8_pg		                ,
-    input                               cpu0_p1v8_pg		                ,
-    input                               cpu1_pll_p1v8_pg	              ,
-    input                               cpu0_pll_p1v8_pg	              ,
-    input                               cpu1_vddq_pg		                ,
-    input                               cpu0_vddq_pg		                ,
-    input                               cpu1_ddr_vdd_pg	                ,
-    input                               cpu0_ddr_vdd_pg                 ,
-    input                               cpu0_pcie_p1v8_pg	              ,
-    input                               cpu1_pcie_p1v8_pg	              ,
-    input                               cpu0_pcie_p0v9_pg	              ,
-    input                               cpu1_pcie_p0v9_pg	              ,
-    input                               cpu0_d0_vp_0v9_pg               ,
-    input                               cpu0_d1_vp_0v9_pg               ,
-    input                               cpu0_d0_vph_1v8_pg              ,
-    input                               cpu0_d1_vph_1v8_pg              ,
-    input                               cpu1_d0_vp_0v9_pg               ,
-    input                               cpu1_d1_vp_0v9_pg               ,
-    input                               cpu1_d0_vph_1v8_pg              ,
-    input                               cpu1_d1_vph_1v8_pg              ,
-
-    // 上电使能信号
-    // 1. `SM_OFF_STANDBY 状态上电使能
-    output                              ocp_aux_en		                  ,		                
-    output                              cpu_bios_en                     ,                        
+    // stby电不受状态机控制
+    input                                       p3v3_stby_bp_pg                 ,
+    input                                       p3v3_stby_pg                    ,
     // 2. `SM_EN_5V_STBY 状态上电使能
-    output                              p5v_stby_en_r                   ,             
-    // 3. `SM_EN_TELEM 状态上电使能
-    output                              pvcc_hpmos_cpu_en_r             ,             
+    input                                       p5v_stby_pgd		                ,
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    output                              power_supply_on                 ,                    
-    output                              ocp_main_en				              ,           
-    output                              pal_main_efuse_en               ,                    
-    output                              p12v_bp_front_en                ,                    
-    output                              p12v_bp_rear_en                 ,                    
+    input                                       dimm_efuse_pg		                ,
+    input                                       fan_efuse_pg		                ,
+    input                                       pgd_main_efuse                  ,
+    input                                       pgd_p12v                        ,
+    input                                       pgd_p12v_stby_droop             ,
+    input                                       reat_bp_efuse_pg                ,
+    input                                       front_bp_efuse_pg               ,
     // 5. SM_EN_5V 状态上电使能
-    output                              p5v_en_r                        ,                          
+    input                                       p5v_pgd                         ,
     // 6. SM_EN_3V3 状态上电使能
-    output                              p3v3_en_r                       ,      
+    input                                       p3v3_pgd                        ,
     // 7. SM_EN_1V1 状态上电使能
-    output                              p1v1_en_r                       ,           
+    input                                       p1v1_pgd                        ,
     // 主电源使能信号
     // 1. SM_EN_VDD 状态上电使能
-    output                              cpu0_vdd_core_en_r              ,                
-    output                              cpu1_vdd_core_en_r              ,                
+    input                                       cpu1_vdd_core_pg	              ,
+    input                                       cpu0_vdd_core_pg	              ,
     // 2. SM_EN_P1V8 状态上电使能
-    output                              cpu0_p1v8_en_r                  ,                 
-    output                              cpu1_p1v8_en_r                  ,                 
+    input                                       cpu1_p1v8_pg		                ,
+    input                                       cpu0_p1v8_pg		                ,
     // 3. SM_EN_P2V5_VPP 状态上电使能
-    output                              cpu0_vddq_en_r                  ,                 
-    output                              cpu1_vddq_en_r                  ,                 
-    output                              cpu0_ddr_vdd_en_r               ,                 
-    output                              cpu1_ddr_vdd_en_r               ,                 
-    output                              cpu0_pll_p1v8_en_r              ,                 
-    output                              cpu1_pll_p1v8_en_r              ,                 
+    input                                       cpu1_pll_p1v8_pg	              ,
+    input                                       cpu0_pll_p1v8_pg	              ,
+    input                                       cpu1_vddq_pg		                ,
+    input                                       cpu0_vddq_pg		                ,
+    input                                       cpu1_ddr_vdd_pg	                ,
+    input                                       cpu0_ddr_vdd_pg                 ,
     // 4. SM_EN_P0V8 状态上电使能
-    output                              cpu0_d0_vp_p0v9_en_r            ,
-    output                              cpu0_d1_vp_p0v9_en_r            ,
-    output                              cpu0_d0_vph_p1v8_en_r           ,
-    output                              cpu0_d1_vph_p1v8_en_r           ,
-    output                              cpu1_d0_vp_p0v9_en_r            ,
-    output                              cpu1_d1_vp_p0v9_en_r            ,
-    output                              cpu1_d0_vph_p1v8_en_r           ,
-    output                              cpu1_d1_vph_p1v8_en_r           ,
+    input                                       cpu0_pcie_p1v8_pg	              ,
+    input                                       cpu1_pcie_p1v8_pg	              ,
+    input                                       cpu0_pcie_p0v9_pg	              ,
+    input                                       cpu1_pcie_p0v9_pg	              ,
+    input                                       cpu0_d0_vp_0v9_pg               ,
+    input                                       cpu0_d1_vp_0v9_pg               ,
+    input                                       cpu0_d0_vph_1v8_pg              ,
+    input                                       cpu0_d1_vph_1v8_pg              ,
+    input                                       cpu1_d0_vp_0v9_pg               ,
+    input                                       cpu1_d1_vp_0v9_pg               ,
+    input                                       cpu1_d0_vph_1v8_pg              ,
+    input                                       cpu1_d1_vph_1v8_pg              ,
+
+    // 上电使能信号
+    // 1. `SM_OFF_STANDBY/`SM_PS_ON 状态上电使能
+    output                                      ocp_aux_en		                  ,		                
+    output                                      cpu_bios_en                     ,                        
+    // 2. `SM_EN_5V_STBY 状态上电使能
+    output                                      p5v_stby_en_r                   ,             
+    // 3. `SM_EN_TELEM 状态上电使能
+    output                                      pvcc_hpmos_cpu_en_r             ,             
+    // 4. SM_EN_MAIN_EFUSE 状态上电使能
+    output                                      power_supply_on                 ,                    
+    output                                      ocp_main_en				              ,           
+    output                                      pal_main_efuse_en               ,                    
+    output                                      p12v_bp_front_en                ,                    
+    output                                      p12v_bp_rear_en                 ,                    
+    // 5. SM_EN_5V 状态上电使能
+    output                                      p5v_en_r                        ,                          
+    // 6. SM_EN_3V3 状态上电使能
+    output                                      p3v3_en_r                       ,      
+    // 7. SM_EN_1V1 状态上电使能
+    output                                      p1v1_en_r                       ,           
+    // 主电源使能信号
+    // 1. SM_EN_VDD 状态上电使能
+    output                                      cpu0_vdd_core_en_r              ,                
+    output                                      cpu1_vdd_core_en_r              ,                
+    // 2. SM_EN_P1V8 状态上电使能
+    output                                      cpu0_p1v8_en_r                  ,                 
+    output                                      cpu1_p1v8_en_r                  ,                 
+    // 3. SM_EN_P2V5_VPP 状态上电使能
+    output                                      cpu0_vddq_en_r                  ,                 
+    output                                      cpu1_vddq_en_r                  ,                 
+    output                                      cpu0_ddr_vdd_en_r               ,                 
+    output                                      cpu1_ddr_vdd_en_r               ,                 
+    output                                      cpu0_pll_p1v8_en_r              ,                 
+    output                                      cpu1_pll_p1v8_en_r              ,                 
+    // 4. SM_EN_P0V8 状态上电使能
+    output                                      cpu0_d0_vp_p0v9_en_r            ,
+    output                                      cpu0_d1_vp_p0v9_en_r            ,
+    output                                      cpu0_d0_vph_p1v8_en_r           ,
+    output                                      cpu0_d1_vph_p1v8_en_r           ,
+    output                                      cpu1_d0_vp_p0v9_en_r            ,
+    output                                      cpu1_d1_vp_p0v9_en_r            ,
+    output                                      cpu1_d0_vph_p1v8_en_r           ,
+    output                                      cpu1_d1_vph_p1v8_en_r           ,
     
     // 复位信号输出
-    input                              cpu_peu_prest_n_r               ,               
-    output                             cpu_por_n                       ,                    
-    output                             usb_ponrst_r_n                  ,                    
-    output                             pex_reset_r_n                   ,                    
+    input                                       cpu_peu_prest_n_r               ,               
+    output                                      cpu_por_n                       ,                    
+    output                                      usb_ponrst_r_n                  ,                    
+    output                                      pex_reset_r_n                   ,                    
     
     // 故障检测信号
-    output                            p5v_stby_fault_det		           ,     
-    output                            p3v3_stby_bp_fault_det           ,      
-    output                            main_efuse_fault_det             ,      
-    output                            p3v3_stby_fault_det              ,      
+    output                                      p5v_stby_fault_det		           ,     
+    output                                      p3v3_stby_bp_fault_det           ,      
+    output                                      main_efuse_fault_det             ,      
+    output                                      p3v3_stby_fault_det              ,      
     
-    output                            p12v_front_bp_efuse_fault_det   ,       
-    output                            p12v_reat_bp_efuse_fault_det	  ,      
-    output                            p12v_fan_efuse_fault_det		    ,    
-    output                            p12v_dimm_efuse_fault_det       ,       
-    output                            p12v_fault_det                  ,       
-    output                            p12v_stby_droop_fault_det       ,       
-    output                            p5v_fault_det		                ,    
-    output                            vcc_1v1_fault_det               ,       
-    output                            cpu0_vdd_core_fault_det	        ,    
-    output                            cpu1_vdd_core_fault_det	        ,    
-    output                            cpu0_p1v8_fault_det		          ,  
-    output                            cpu1_p1v8_fault_det		          ,  
-    output                            cpu0_vddq_fault_det		          ,  
-    output                            cpu1_vddq_fault_det		          ,  
-    output                            cpu0_ddr_vdd_fault_det	        ,        
-    output                            cpu1_ddr_vdd_fault_det	        ,        
-    output                            cpu0_pll_p1v8_fault_det	        ,    
-    output                            cpu1_pll_p1v8_fault_det	        ,    
+    output                                      p12v_front_bp_efuse_fault_det   ,       
+    output                                      p12v_reat_bp_efuse_fault_det	  ,      
+    output                                      p12v_fan_efuse_fault_det		    ,    
+    output                                      p12v_dimm_efuse_fault_det       ,       
+    output                                      p12v_fault_det                  ,       
+    output                                      p12v_stby_droop_fault_det       ,       
+    output                                      p5v_fault_det		                ,    
+    output                                      p3v3_fault_det                  ,
+    output                                      vcc_1v1_fault_det               ,       
+    output                                      cpu0_vdd_core_fault_det	        ,    
+    output                                      cpu1_vdd_core_fault_det	        ,    
+    output                                      cpu0_p1v8_fault_det		          ,  
+    output                                      cpu1_p1v8_fault_det		          ,  
+    output                                      cpu0_vddq_fault_det		          ,  
+    output                                      cpu1_vddq_fault_det		          ,  
+    output                                      cpu0_ddr_vdd_fault_det	        ,        
+    output                                      cpu1_ddr_vdd_fault_det	        ,        
+    output                                      cpu0_pll_p1v8_fault_det	        ,    
+    output                                      cpu1_pll_p1v8_fault_det	        ,    
           
-    output                            cpu1_pcie_p1v8_fault_det        ,       
-    output                            cpu0_pcie_p1v8_fault_det        ,       
-    output                            cpu1_pcie_p0v9_fault_det        ,       
-    output                            cpu0_pcie_p0v9_fault_det        ,       
-    output                            cpu0_d0_vp_0v9_fault_det        ,       
-    output                            cpu0_d1_vp_0v9_fault_det        ,       
-    output                            cpu0_d0_vph_1v8_fault_det       ,       
-    output                            cpu0_d1_vph_1v8_fault_det       ,       
-    output                            cpu1_d0_vp_0v9_fault_det        ,       
-    output                            cpu1_d1_vp_0v9_fault_det        ,       
-    output                            cpu1_d0_vph_1v8_fault_det       ,       
-    output                            cpu1_d1_vph_1v8_fault_det       ,       
-    output                            pwrseq_sm_fault_det		          ,  
-    output                            cpu_thermtrip_fault_det         ,       
-    
-    // 其他信号
-    input      [NUM_CPU-1:0]          i_cpu_thermtrip                 , 
-    output     [NUM_CPU-1:0]          o_cpu_thermtrip_fault           ,
+    output                                      cpu1_pcie_p1v8_fault_det        ,       
+    output                                      cpu0_pcie_p1v8_fault_det        ,       
+    output                                      cpu1_pcie_p0v9_fault_det        ,       
+    output                                      cpu0_pcie_p0v9_fault_det        ,       
+    output                                      cpu0_d0_vp_0v9_fault_det        ,       
+    output                                      cpu0_d1_vp_0v9_fault_det        ,       
+    output                                      cpu0_d0_vph_1v8_fault_det       ,       
+    output                                      cpu0_d1_vph_1v8_fault_det       ,       
+    output                                      cpu1_d0_vp_0v9_fault_det        ,       
+    output                                      cpu1_d1_vp_0v9_fault_det        ,       
+    output                                      cpu1_d0_vph_1v8_fault_det       ,       
+    output                                      cpu1_d1_vph_1v8_fault_det       ,     
 
-    output                            pal_efuse_pcycle                , 
+    output reg         [5:0]                    pwrseq_sm_fault_det			        ,  
+    output                                      cpu_thermtrip_fault_det         ,       
+    
+    // CPU 热保护输入及故障输出
+    input  [NUM_CPU-1:0]                        i_cpu_thermtrip                 , 
+    output [NUM_CPU-1:0]                        o_cpu_thermtrip_fault           ,
+
+    output                                      pal_efuse_pcycle                , 
 
     // HDD backplane
-    input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0] hd_bp_prsnt_n              ,          
-    input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0] hd_bp_pgd                  ,          
-    output [(NUM_HD_BP ? NUM_HD_BP:1)-1:0] hd_bp_fault_det            ,           
+    input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_prsnt_n                   ,          
+    input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_pgd                       ,          
+    output [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_fault_det                 ,           
     // Riser card
-    input  [(NUM_RISER ? NUM_RISER:1)-1:0] riser_prsnt_n              ,          
-    input  [(NUM_RISER ? NUM_RISER:1)-1:0] riser_pgd                  ,          
-    output [(NUM_RISER ? NUM_RISER:1)-1:0] riser_fault_det            ,          
-    output [(NUM_RISER ? NUM_RISER:1)-1:0] pal_riser_en               ,          
+    input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_prsnt_n                   ,          
+    input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_pgd                       ,          
+    output [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_fault_det                 ,          
+    output [(NUM_RISER ? NUM_RISER:1)-1:0]      pal_riser_en                    ,          
 
-    output [5:0]                       power_seq_sm                   , 
-    output reg                         reached_sm_wait_powerok        , 
+    output [5:0]                                power_seq_sm                    , 
+    output reg                                  reached_sm_wait_powerok         , 
 
-    output reg                         pgd_so_far                     ,   
-    output                             any_pwr_fault_det              , 
-    output                             any_aux_vrm_fault              , 
-    output                             any_recov_fault                , 
-    output                             any_lim_recov_fault            , 
-    output                             any_non_recov_fault            , 
-    output                             dc_on_wait_complete            , 
-    output                             rt_critical_fail_store         , 
-    input                              fault_clear                   ,         
+    output reg                                  pgd_so_far                      ,   
+    output reg                                  any_pwr_fault_det               , 
+    output                                      any_aux_vrm_fault               , 
+    output reg                                  any_recov_fault                 , 
+    output reg                                  any_lim_recov_fault             , 
+    output reg                                  any_non_recov_fault             , 
+    output                                      dc_on_wait_complete             , 
+    output                                      rt_critical_fail_store          , 
+    input                                       fault_clear                     ,         
 
-    input                              aux_pcycle                   
+    input                                       aux_pcycle                   
 );
 
 wire    st_reset_state                         ;
@@ -264,9 +276,10 @@ reg     reg_cpu1_d1_vph_p1v8_en_r              ;
 reg     reg_pex_reset_r_n                      ;
 reg     reg_cpu_por_n	                         ;
 
+
 assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_alive_on_fault );
 
-assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r  ;
+assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r                 ;
 
 assign power_supply_on	     =  reg_power_supply_on      ;  
 assign p12v_bp_front_en      =  reg_p12v_en & ( ~p12v_front_bp_efuse_fault_det  | keep_alive_on_fault);
@@ -274,7 +287,7 @@ assign p12v_bp_rear_en       =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   
 
 assign p5v_en_r            	 =  reg_p5v_en_r            & ( ~p5v_fault_det            | keep_alive_on_fault );
 
-assign p3v3_en_r             =  reg_p3v3_en_r           & ( ~p3v3_stby_fault_det      | keep_alive_on_fault );		                  
+assign p3v3_en_r             =  reg_p3v3_en_r           & ( ~p3v3_fault_det           | keep_alive_on_fault );		                  
 
 assign p1v1_en_r             =  reg_p1v1_en_r           & ( ~vcc_1v1_fault_det        | keep_alive_on_fault );
 
@@ -891,6 +904,64 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p5v_fault_det_inst (
   .lock             (any_pwr_fault_det),				//in
   .any_vrm_fault    (),									//out
   .vrm_fault        (p5v_fault_det)					    //out
+); 
+
+
+//------------------------------------------------------------------------------
+// P3V3 Fault detect 
+//------------------------------------------------------------------------------
+wire p3v3_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) p3v3_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (p3v3_en_r),
+  .delay_output  (p3v3_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (p3v3_en_r & p3v3_en_r_check),	    //in
+  .vrm_pgood        (p3v3_pgd),							//in
+  .vrm_chklive_en   (p3v3_en_r_check),					//in
+  .vrm_chklive_dis  (~p3v3_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (p3v3_fault_det)					    //out
+); 
+
+
+//------------------------------------------------------------------------------
+// P1V1 Fault detect 
+//------------------------------------------------------------------------------
+wire p1v1_en_r_check;
+
+edge_delay #(.CNTR_NBITS(2)) p1v1_en_r_check_inst (
+  .clk           (clk),
+  .reset         (reset),
+  .cnt_size      (2'b10),
+  .cnt_step      (t64ms),
+  .signal_in     (p1v1_en_r),
+  .delay_output  (p1v1_en_r_check)
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p1v1_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (p1v1_en_r & p1v1_en_r_check),	    //in
+  .vrm_pgood        (p1v1_pgd),							//in
+  .vrm_chklive_en   (p1v1_en_r_check),					//in
+  .vrm_chklive_dis  (~p1v1_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (vcc_1v1_fault_det)					    //out
 ); 
 
 
@@ -1608,54 +1679,62 @@ endgenerate
 // - check enabled when NUM_OPT_AUX is > 0
 //------------------------------------------------------------------------------
 //Fault Flag
-wire [FAULT_VEC_SIZE-1:0] fault_vec;
-wire [FAULT_VEC_SIZE-1:0] any_recov_fault_vec;
-wire [FAULT_VEC_SIZE-1:0] any_lim_recov_fault_vec;
-wire [FAULT_VEC_SIZE-1:0] any_non_recov_fault_vec;
-wire any_recov_fault_c;
-wire any_lim_recov_fault_c;
-wire any_non_recov_fault_c;
+wire  [FAULT_VEC_SIZE-1:0]                fault_vec                   ;
+wire  [FAULT_VEC_SIZE-1:0]                any_recov_fault_vec         ;
+wire  [FAULT_VEC_SIZE-1:0]                any_lim_recov_fault_vec     ;
+wire  [FAULT_VEC_SIZE-1:0]                any_non_recov_fault_vec     ;
+wire                                      any_recov_fault_c           ;
+wire                                      any_lim_recov_fault_c       ;
+wire                                      any_non_recov_fault_c       ;
 
-wire aux_fault;
+wire                                      aux_fault                   ;
 
 assign any_aux_vrm_fault = aux_fault;
 
-
 // fault_vec_mapping
-assign fault_vec[0]  = p5v_stby_fault_det ;  
-assign fault_vec[1]  = p5v_fault_det ;
-assign fault_vec[2]  = p12v_front_bp_efuse_fault_det;
-assign fault_vec[3]  = p12v_reat_bp_efuse_fault_det;
-assign fault_vec[4]  = 1'b0;//p12v_fan_efuse_fault_det;
-assign fault_vec[5]  = p12v_dimm_efuse_fault_det;
-assign fault_vec[6]  = cpu0_p1v8_fault_det;
-assign fault_vec[7]  = cpu1_p1v8_fault_det;
-assign fault_vec[8]  = cpu0_pll_p1v8_fault_det;
-assign fault_vec[9]  = cpu1_pll_p1v8_fault_det;
-assign fault_vec[10] = cpu0_ddr_vdd_fault_det;
-assign fault_vec[11] = cpu1_ddr_vdd_fault_det;
-assign fault_vec[12] = cpu0_pcie_p0v9_fault_det;
-assign fault_vec[13] = cpu1_pcie_p0v9_fault_det;
-assign fault_vec[14] = cpu0_pcie_p1v8_fault_det;
-assign fault_vec[15] = cpu1_pcie_p1v8_fault_det;
-assign fault_vec[16] = cpu0_vddq_fault_det;    
-assign fault_vec[17] = cpu1_vddq_fault_det; 
-assign fault_vec[18] = cpu0_vdd_core_fault_det;  
-assign fault_vec[19] = cpu1_vdd_core_fault_det;
-assign fault_vec[20] = p3v3_stby_fault_det;  
-assign fault_vec[21] = p3v3_stby_bp_fault_det;
-assign fault_vec[22] = 1'b0;//riser_mod_fault;
-assign fault_vec[23] = 1'b0;//|hd_bp_fault_det;
-assign fault_vec[24] = 1'b0;  // RSVD
-assign fault_vec[25] = 1'b0;  // RSVD
-assign fault_vec[26] = 1'b0;  // RSVD
-assign fault_vec[27] = 1'b0;  // RSVD
-assign fault_vec[28] = 1'b0;  // RSVD
-assign fault_vec[29] = 1'b0;  // RSVD
-assign fault_vec[30] = 1'b0;  // RSVD
-assign fault_vec[31] = 1'b0;  // RSVD
-assign fault_vec[32] = 1'b0;  // RSVD
-assign fault_vec[33] = 1'b0;  // RSVD
+assign fault_vec[0]  = p5v_stby_fault_det            ;  
+assign fault_vec[1]  = p3v3_stby_bp_fault_det        ;  
+assign fault_vec[2]  = main_efuse_fault_det          ;  
+assign fault_vec[3]  = p3v3_stby_fault_det           ;  
+
+assign fault_vec[4]  = p12v_front_bp_efuse_fault_det ;  
+assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det  ;
+assign fault_vec[6]  = p12v_fan_efuse_fault_det      ;  
+assign fault_vec[7]  = p12v_dimm_efuse_fault_det     ;
+assign fault_vec[8]  = p12v_fault_det                ;  
+assign fault_vec[9]  = p12v_stby_droop_fault_det     ;
+
+assign fault_vec[10] = p5v_fault_det                 ;
+assign fault_vec[11] = p3v3_fault_det                ;
+assign fault_vec[11] = vcc_1v1_fault_det             ;
+
+assign fault_vec[12] = cpu0_vdd_core_fault_det       ;  
+assign fault_vec[13] = cpu1_vdd_core_fault_det       ;
+
+assign fault_vec[14] = cpu0_p1v8_fault_det           ;  
+assign fault_vec[15] = cpu1_p1v8_fault_det           ;
+
+assign fault_vec[16] = cpu0_vddq_fault_det           ;  
+assign fault_vec[17] = cpu1_vddq_fault_det           ;
+assign fault_vec[18] = cpu0_ddr_vdd_fault_det        ;  
+assign fault_vec[19] = cpu1_ddr_vdd_fault_det        ;
+assign fault_vec[20] = cpu0_pll_p1v8_fault_det       ;  
+assign fault_vec[21] = cpu1_pll_p1v8_fault_det       ;
+
+assign fault_vec[22] =  cpu1_pcie_p1v8_fault_det     ;  
+assign fault_vec[23] =  cpu0_pcie_p1v8_fault_det     ;
+assign fault_vec[24] =  cpu1_pcie_p0v9_fault_det     ;  
+assign fault_vec[25] =  cpu0_pcie_p0v9_fault_det     ;
+
+assign fault_vec[26] =  cpu0_d0_vp_0v9_fault_det     ;  
+assign fault_vec[27] =  cpu0_d1_vp_0v9_fault_det     ;
+assign fault_vec[28] =  cpu0_d0_vph_1v8_fault_det    ;  
+assign fault_vec[29] =  cpu0_d1_vph_1v8_fault_det    ;
+assign fault_vec[30] =  cpu1_d0_vp_0v9_fault_det     ;  
+assign fault_vec[31] =  cpu1_d1_vp_0v9_fault_det     ;
+assign fault_vec[32] =  cpu1_d0_vph_1v8_fault_det    ;  
+assign fault_vec[33] =  cpu1_d1_vph_1v8_fault_det    ;
+
 assign fault_vec[34] = 1'b0;  // RSVD
 assign fault_vec[35] = 1'b0;  // RSVD
 assign fault_vec[36] = 1'b0;  // RSVD
@@ -1704,18 +1783,18 @@ end
 reg  fault_save_en;
 
 always @(posedge clk or posedge reset) begin
-  if (reset) begin
-    fault_save_en       <= 1'b1;
-    pwrseq_sm_fault_det <= 6'b0;
-  end
-  else if (t1us && fault_clear) begin
-    fault_save_en       <= 1'b1;
-    pwrseq_sm_fault_det <= 6'b0;
-  end
-  else if (t1us && st_critical_fail)
-    fault_save_en       <= 1'b0;
-  else if (t1us && fault_save_en)
-    pwrseq_sm_fault_det <= power_seq_sm;
+    if (reset) begin
+        fault_save_en       <= 1'b1;
+        pwrseq_sm_fault_det <= 6'b0;
+    end
+    else if (t1us && fault_clear) begin
+        fault_save_en       <= 1'b1;
+        pwrseq_sm_fault_det <= 6'b0;
+    end
+    else if (t1us && st_critical_fail)
+        fault_save_en       <= 1'b0;
+    else if (t1us && fault_save_en)
+        pwrseq_sm_fault_det <= power_seq_sm;
 end
 
 

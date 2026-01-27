@@ -2009,21 +2009,20 @@ assign db_i_cpu_peu_prest_n_r = db_i_cpu0_d0_peu_prest_0_n_r &
 pwrseq_slave #(
     .SHARED_P5V_STBY_HPMOS                  (1'b1                       ),
     .S5DEV_STUCKON_FAULT_CHK                (1'b0                       ),
-    //.BOUND_SYS_PWROK(1'b1),       
+    .BOUND_SYS_PWROK                        (1'b1                       ),       
     .NUM_CPU                                (`NUM_CPU                   ),
     .NUM_OPT_AUX                            (0                          ),
     .NUM_S5DEV                              (`NUM_S5DEV                 ),
     .NUM_SAS                                (1                          ),
     .NUM_HD_BP                              (8                          ),        //change in 20191212
     .NUM_M2_BP                              (1                          ),
-    .NUM_RISER                              (`NUM_RISER                 )
-    //YHY  .NUM_MEZZ(1)
+    .NUM_RISER                              (`NUM_RISER                 ),
     //.HPMOS_TYPE(2'b10),
     //.HPMOS_OWNER(4'b0000),
-    //.FAULT_VEC_SIZE(40),
-    //.RECOV_FAULT_MASK    (40'b0000_1111_1111_0000_0000_0000_0000_0000_0000_0000),
-    //.LIM_RECOV_FAULT_MASK(40'b0011_0000_0000_1111_1111_1111_1111_1111_1111_1111),
-    //.NON_RECOV_FAULT_MASK(40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000)
+    .FAULT_VEC_SIZE                         (40),
+    .RECOV_FAULT_MASK                       (40'b0000_1111_1111_0000_0000_0000_0000_0000_0000_0000),
+    .LIM_RECOV_FAULT_MASK                   (40'b0011_0000_0000_1111_1111_1111_1111_1111_1111_1111),
+    .NON_RECOV_FAULT_MASK                   (40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000)
 ) pwrseq_slave_inst (
     .clk                                    (sys_clk                    ),
     .reset                                  (~pon_reset_n               ),
@@ -2037,54 +2036,52 @@ pwrseq_slave #(
     .keep_alive_on_fault                    (keep_alive_on_fault        ),
 
     // PGOOD 输入信号
+    // stby电不受状态机控制
     .p3v3_stby_bp_pg                        (db_i_pal_p3v3_stby_bp_pgd   ),  //in
     .p3v3_stby_pg                           (db_i_pal_p3v3_stby_pgd      ),  //in
-
-    .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	    ),
+    // 2. `SM_EN_5V_STBY 状态上电使能
+    .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	     ),
+    // 4. SM_EN_MAIN_EFUSE 状态上电使能
     .dimm_efuse_pg			                (1'b1 /*db_i_pal_dimm_efuse_pg*/),  
-
+    .fan_efuse_pg			                (db_i_pal_fan_efuse_pg	     ),
     .pgd_main_efuse                         (1'b1                        ),  //in
-    .fan_efuse_pg			                (db_i_pal_fan_efuse_pg	    ),
-
     .pgd_p12v                               (db_i_pal_pgd_p12v_droop     ),  //in
     .pgd_p12v_stby_droop                    (db_i_pal_pgd_p12v_stby_droop),  //in
-    .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg  ),
-    .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg ),
-
+    .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg   ),
+    .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg  ),
+    // 5. SM_EN_5V 状态上电使能
     .p5v_pgd                                (db_i_pal_p5v0_pgd           ),
-
+    // 6. SM_EN_3V3 状态上电使能
     .p3v3_pgd                               (1'b1                        ), 
-
-    .p1v1_pgd                               (1'b1                        ), 
-
-    .vcc_1v1_pg                             (db_i_pal_vcc_1v1_pg        ),
-    
-    .cpu1_vdd_core_pg		                (db_i_pal_cpu1_vdd_core_pg  ),
-    .cpu0_vdd_core_pg			            (db_i_pal_cpu0_vdd_core_pg  ),
-
-    .cpu1_p1v8_pg		                    (db_i_pal_cpu1_p1v8_pg	    ),
-    .cpu0_p1v8_pg		                    (db_i_pal_cpu0_p1v8_pg	    ),
-
-    .cpu1_pll_p1v8_pg		                (db_i_pal_cpu1_pll_p1v8_pg  ),
-    .cpu0_pll_p1v8_pg		                (db_i_pal_cpu0_pll_p1v8_pg  ),
-    .cpu1_vddq_pg				            (db_i_pal_cpu1_vddq_pg	    ),  
-    .cpu0_vddq_pg		                    (db_i_pal_cpu0_vddq_pg	    ),
-    .cpu1_ddr_vdd_pg	                    (db_i_pal_cpu1_ddr_vdd_pg	),
-    .cpu0_ddr_vdd_pg                        (db_i_pal_cpu0_ddr_vdd_pg   ),
-
-    .cpu0_pcie_p1v8_pg		                (db_i_pal_cpu0_pcie_p1v8_pg ),  
-    .cpu1_pcie_p1v8_pg		                (db_i_pal_cpu1_pcie_p1v8_pg ),    
-    .cpu0_pcie_p0v9_pg		                (db_i_pal_cpu0_pcie_p0v9_pg ),
-    .cpu1_pcie_p0v9_pg		                (db_i_pal_cpu1_pcie_p0v9_pg ), 
-
-    .cpu0_d0_vp_0v9_pg                      (db_i_pal_cpu0_d0_vp_0v9_pg ),
-    .cpu0_d1_vp_0v9_pg                      (db_i_pal_cpu0_d1_vp_0v9_pg ),
-    .cpu0_d0_vph_1v8_pg                     (db_i_pal_cpu0_d0_vph_1v8_pg),
-    .cpu0_d1_vph_1v8_pg                     (db_i_pal_cpu0_d1_vph_1v8_pg),
-    .cpu1_d0_vp_0v9_pg                      (db_i_pal_cpu1_d0_vp_0v9_pg ),
-    .cpu1_d1_vp_0v9_pg                      (db_i_pal_cpu1_d1_vp_0v9_pg ),
-    .cpu1_d0_vph_1v8_pg                     (db_i_pal_cpu1_d0_vph_1v8_pg),
-    .cpu1_d1_vph_1v8_pg                     (db_i_pal_cpu1_d1_vph_1v8_pg),
+    // 7. SM_EN_1V1 状态上电使能
+    .p1v1_pgd                               (db_i_pal_vcc_1v1_pg         ), 
+    // 主电源使能信号
+    // 1. SM_EN_VDD 状态上电使能
+    .cpu1_vdd_core_pg		                (db_i_pal_cpu1_vdd_core_pg   ),
+    .cpu0_vdd_core_pg			            (db_i_pal_cpu0_vdd_core_pg   ),
+    // 2. SM_EN_P1V8 状态上电使能
+    .cpu1_p1v8_pg		                    (db_i_pal_cpu1_p1v8_pg	     ),
+    .cpu0_p1v8_pg		                    (db_i_pal_cpu0_p1v8_pg	     ),
+    // 3. SM_EN_P2V5_VPP 状态上电使能
+    .cpu1_pll_p1v8_pg		                (db_i_pal_cpu1_pll_p1v8_pg   ),
+    .cpu0_pll_p1v8_pg		                (db_i_pal_cpu0_pll_p1v8_pg   ),
+    .cpu1_vddq_pg				            (db_i_pal_cpu1_vddq_pg	     ),  
+    .cpu0_vddq_pg		                    (db_i_pal_cpu0_vddq_pg	     ),
+    .cpu1_ddr_vdd_pg	                    (db_i_pal_cpu1_ddr_vdd_pg	 ),
+    .cpu0_ddr_vdd_pg                        (db_i_pal_cpu0_ddr_vdd_pg    ),
+    // 4. SM_EN_P0V8 状态上电使能
+    .cpu0_pcie_p1v8_pg		                (db_i_pal_cpu0_pcie_p1v8_pg  ),  
+    .cpu1_pcie_p1v8_pg		                (db_i_pal_cpu1_pcie_p1v8_pg  ),    
+    .cpu0_pcie_p0v9_pg		                (db_i_pal_cpu0_pcie_p0v9_pg  ),
+    .cpu1_pcie_p0v9_pg		                (db_i_pal_cpu1_pcie_p0v9_pg  ), 
+    .cpu0_d0_vp_0v9_pg                      (db_i_pal_cpu0_d0_vp_0v9_pg  ),
+    .cpu0_d1_vp_0v9_pg                      (db_i_pal_cpu0_d1_vp_0v9_pg  ),
+    .cpu0_d0_vph_1v8_pg                     (db_i_pal_cpu0_d0_vph_1v8_pg ),
+    .cpu0_d1_vph_1v8_pg                     (db_i_pal_cpu0_d1_vph_1v8_pg ),
+    .cpu1_d0_vp_0v9_pg                      (db_i_pal_cpu1_d0_vp_0v9_pg  ),
+    .cpu1_d1_vp_0v9_pg                      (db_i_pal_cpu1_d1_vp_0v9_pg  ),
+    .cpu1_d0_vph_1v8_pg                     (db_i_pal_cpu1_d0_vph_1v8_pg ),
+    .cpu1_d1_vph_1v8_pg                     (db_i_pal_cpu1_d1_vph_1v8_pg ),
 
     // 上电使能信号
     // 1. SM_OFF_STANDBY 状态上电使能
@@ -2132,7 +2129,7 @@ pwrseq_slave #(
     .cpu1_d1_vph_p1v8_en_r                  (cpu1_d1_vph_p1v8_en_r      ),  //out
     
     // 复位信号输出
-    .cpu_peu_prest_n_r                 (db_i_cpu_peu_prest_n_r         ),  //in
+    .cpu_peu_prest_n_r                      (db_i_cpu_peu_prest_n_r         ),  //in
     .cpu_por_n                              (cpu_por_n                      ),  //out
     .usb_ponrst_r_n                         (usb_ponrst_r_n                 ),  //out 不使用
     .pex_reset_r_n                          (pex_reset_n                    ),  //out 不使用
@@ -2172,25 +2169,28 @@ pwrseq_slave #(
     .cpu1_pcie_p0v9_fault_det               (cpu1_pcie_p0v9_fault_det       ),// 不使用 
     .cpu0_pcie_p0v9_fault_det               (cpu0_pcie_p0v9_fault_det       ),// 不使用 
 
-    .cpu0_d0_vp_0v9_fault_det               (cpu0_d0_vp_0v9_fault_det       ),//
-    .cpu0_d1_vp_0v9_fault_det               (cpu0_d1_vp_0v9_fault_det       ),//
-    .cpu0_d0_vph_1v8_fault_det              (cpu0_d0_vph_1v8_fault_det      ),//
-    .cpu0_d1_vph_1v8_fault_det              (cpu0_d1_vph_1v8_fault_det      ),//
-    .cpu1_d0_vp_0v9_fault_det               (cpu1_d0_vp_0v9_fault_det       ),//
-    .cpu1_d1_vp_0v9_fault_det               (cpu1_d1_vp_0v9_fault_det       ),//
-    .cpu1_d0_vph_1v8_fault_det              (cpu1_d0_vph_1v8_fault_det      ),//
-    .cpu1_d1_vph_1v8_fault_det              (cpu1_d1_vph_1v8_fault_det      ),//
+    .cpu0_d0_vp_0v9_fault_det               (cpu0_d0_vp_0v9_fault_det       ),
+    .cpu0_d1_vp_0v9_fault_det               (cpu0_d1_vp_0v9_fault_det       ),
+    .cpu0_d0_vph_1v8_fault_det              (cpu0_d0_vph_1v8_fault_det      ),
+    .cpu0_d1_vph_1v8_fault_det              (cpu0_d1_vph_1v8_fault_det      ),
+    .cpu1_d0_vp_0v9_fault_det               (cpu1_d0_vp_0v9_fault_det       ),
+    .cpu1_d1_vp_0v9_fault_det               (cpu1_d1_vp_0v9_fault_det       ),
+    .cpu1_d0_vph_1v8_fault_det              (cpu1_d0_vph_1v8_fault_det      ),
+    .cpu1_d1_vph_1v8_fault_det              (cpu1_d1_vph_1v8_fault_det      ),
+
     .pwrseq_sm_fault_det		            (pwrseq_sm_fault_det	        ),
     .cpu_thermtrip_fault_det                (cpu_thermtrip_fault_det        ),
   
     // 其他信号  
     .brownout_warning                       (brownout_warning              ),//FROM PSU
-    //Therm status 
+
+    // CPU 热保护输入及故障输出
     .i_cpu_thermtrip                        (cpu_thermtrip_event           ),// CPU THERMTRIP indicator
-    .o_cpu_thermtrip_fault                  (cpu_thermtrip_fault           ),//out ��δʹ�� 
+    .o_cpu_thermtrip_fault                  (cpu_thermtrip_fault           ),// out 
     
-    .pal_efuse_pcycle                       (efuse_power_cycle             ),//out 04�Ĵ�����bit4 ����3.3vstby������
-    //BP            
+    .pal_efuse_pcycle                       (efuse_power_cycle             ),// out 
+
+    // HDD backplane           
     .hd_bp_prsnt_n                          (bp_prsnt                      ),//drive backplane presence
     .hd_bp_pgd                              (db_bp_aux_pg                  ),//drive backplane pgood
     .hd_bp_fault_det                        (hd_bp_fault_det               ),//drive backplane power fault
@@ -2212,7 +2212,8 @@ pwrseq_slave #(
     .dc_on_wait_complete                    (dc_on_wait_complete           ),//in FROM MASTER
     .rt_critical_fail_store                 (rt_critical_fail_store        ),//in FROM MASTER
     .fault_clear                            (fault_clear                   ),//in FROM MASTER
-    .aux_pcycle                             (aux_pcycle                    ) //FROM XREG  ����3.3v stby��Դ�ĸ�λ
+
+    .aux_pcycle                             (aux_pcycle                    ) //FROM XREG 
 );
 
 
