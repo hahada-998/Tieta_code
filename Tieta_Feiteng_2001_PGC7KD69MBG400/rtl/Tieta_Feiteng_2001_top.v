@@ -11,8 +11,6 @@ module Tieta_Feiteng_1001_top(
     output	o_PAL_BMC_SS_DATA_OUT	                /* synthesis LOC = "R7"*/ ,// from  CPLD_S                                        to  GENZ_168PIN/J98_5653E5-001H1020T                 default 0  // “PCH（平台控制器中心）向 BMC（基板管理控制器）发送的串行数据信号”
     input   i_PAL_BMC_SS_DATA_IN                    /* synthesis LOC = "R1" */,// from  GENZ_168PIN                                  to  CPLD_S                                           default 1  // BMC 串行数据 输入 信号                                      
                                             
-                                                    
-
     /* begin: JTAG 接口*/
     input   i_PAL_S_DONE                            /* synthesis LOC = "A19"*/,// from  S_DONE / J32                                 to  CPLD_S                                           default 1  // PAL S DONE 信号
     input   i_PAL_S_INITN                           /* synthesis LOC = "C17"*/,// from  S_INITN / J31                                to  CPLD_S                                           default 1  // PAL S INITN 信号

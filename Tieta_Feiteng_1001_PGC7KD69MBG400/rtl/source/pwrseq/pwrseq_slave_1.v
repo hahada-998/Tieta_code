@@ -146,14 +146,18 @@ module pwrseq_slave #(
     output                                      p12v_fan_efuse_fault_det		    ,    
     output                                      p12v_dimm_efuse_fault_det       ,       
     output                                      p12v_fault_det                  ,       
-    output                                      p12v_stby_droop_fault_det       ,       
+    output                                      p12v_stby_droop_fault_det       ,    
+
     output                                      p5v_fault_det		                ,    
     output                                      p3v3_fault_det                  ,
-    output                                      vcc_1v1_fault_det               ,       
+    output                                      vcc_1v1_fault_det               ,
+
     output                                      cpu0_vdd_core_fault_det	        ,    
-    output                                      cpu1_vdd_core_fault_det	        ,    
+    output                                      cpu1_vdd_core_fault_det	        , 
+
     output                                      cpu0_p1v8_fault_det		          ,  
     output                                      cpu1_p1v8_fault_det		          ,  
+
     output                                      cpu0_vddq_fault_det		          ,  
     output                                      cpu1_vddq_fault_det		          ,  
     output                                      cpu0_ddr_vdd_fault_det	        ,        
@@ -164,7 +168,8 @@ module pwrseq_slave #(
     output                                      cpu1_pcie_p1v8_fault_det        ,       
     output                                      cpu0_pcie_p1v8_fault_det        ,       
     output                                      cpu1_pcie_p0v9_fault_det        ,       
-    output                                      cpu0_pcie_p0v9_fault_det        ,       
+    output                                      cpu0_pcie_p0v9_fault_det        ,   
+        
     output                                      cpu0_d0_vp_0v9_fault_det        ,       
     output                                      cpu0_d1_vp_0v9_fault_det        ,       
     output                                      cpu0_d0_vph_1v8_fault_det       ,       
