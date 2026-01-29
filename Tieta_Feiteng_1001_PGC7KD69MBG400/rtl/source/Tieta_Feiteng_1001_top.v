@@ -14,7 +14,6 @@ inout  io_BMC_I2C9_PAL_M_SDA_R                /* synthesis LOC = "D11"*/,// from
 input  i_BMC_I2C9_PAL_M_SCL1_R                /* synthesis LOC = "B10"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL1信号输入              新增
 inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "D5"*/ ,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA1电源良好信号输入       新增
 
-
 // =============================================================================
 //  JTAG  
 // =============================================================================
@@ -37,11 +36,14 @@ input  i_BMC_JTAGM_NTRST_R                    /* synthesis LOC = "P20"*/,// from
 // =============================================================================
 //  BMC 相关信号 
 // =============================================================================
-// BMC UID按钮/卡存在信号
+// BMC UID按钮信号
 input  i_PAL_BMCUID_BUTTON_R                  /* synthesis LOC = "A17"*/,// from  BMC/GENZ_168PIN                                to  CPLD_M                                       default 1  // BMC UID按钮信号输入                           新增
+
+// BMC 卡存在信号
 input  i_PAL_BMC_CARD_PRSNT_N                 /* synthesis LOC = "N15"*/,// from  BMC/GENZ_168PIN                                to  CPLD_M                                       default 0  // BMC卡存在信号输入
 
 // BMC 预留信号
+// 不使用
 input  i_BMC_RESERVE_18                       /* synthesis LOC = "H19"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号18, I2C总线的仲裁请求信号输出
 input  i_BMC_RESERVE_17                       /* synthesis LOC = "N19"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号17                               新增
 input  i_BMC_RESERVE_16                       /* synthesis LOC = "N18"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号16                               新增
@@ -80,11 +82,13 @@ output o_CPLD_M_S_SGPIO_LD_N_R                /* synthesis LOC = "J20"*/,// from
 output o_CPLD_M_S_SGPIO_MOSI_R                /* synthesis LOC = "F10"*/,// from  CPLD_M                                         to  CPU_VR8_Controler                            default 1  // S_SGPIO 主设备MOSI信号输出
 input  i_CPLD_M_S_SGPIO_MISO                  /* synthesis LOC = "H15"*/,// from  CPLD_S                                        to  CPLD_M                                       default 1  // CPLD_S到CPLD_M的SGPIO MISO信号输入
 
+// 不使用
 output o_CPLD_M_S_SGPIO1_CLK_R                /* synthesis LOC = "G15"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1时钟信号输出
 output o_CPLD_M_S_SGPIO1_LD_N_R               /* synthesis LOC = "K17"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1负载使能信号输出
 output o_CPLD_M_S_SGPIO1_MOSI_R               /* synthesis LOC = "C20"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1 MOSI信号输出
 input  i_CPLD_M_S_SGPIO1_MISO                 /* synthesis LOC = "F17"*/,// from  CPLD_S                                        to  CPLD_M                                       default 1  // CPLD_S到CPLD_M的SGPIO1 MISO信号输入
 
+// 不使用
 input  i_CPU0_D1_SPI0_SCK                     /* synthesis LOC = "W12"*/,// from  CPU0_GPIO2/D1_SPIO_SCK                        to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 SCK信号 
 input  i_CPU0_D1_SPI0_CS                      /* synthesis LOC = "P10"*/,// from  CPU0_GPIO2/D1_SPIO_CSN0                       to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 片选信号 
 input  i_CPU0_D1_SPI0_MISO_R                  /* synthesis LOC = "V9"*/ ,// from  CPU0_GPIO2/D1_SPI0_MISO                       to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 MISO信号
@@ -96,12 +100,14 @@ output o_CPU0_D1_SPI0_MOSI                    /* synthesis LOC = "Y9" */,// from
 // 主供电模块 电源开启信号
 output o_PAL_PS1_P12V_ON_R                    /* synthesis LOC = "G8"*/ ,// from  CPLD_M                                         to  PSU_MISC2                                    default 1  // PS1 12V开启信号输入（反向）
 output o_PAL_PS2_P12V_ON_R                    /* synthesis LOC = "G7"*/ ,// from  CPLD_M                                         to  PSU_MISC2/PAL_PS2_P12V_ON_R                  default 1  // PS2 12V开启信号输入
-input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K7"*/ ,// from  RISER_AUX/J16                                  to  CPLD_M                                       default 1  // 主模块电源良好信号输入(未使用)
-
+output o_PAL_P12V_DISCHARGE_R                 /* synthesis LOC = "L1"*/ ,// from  CPLD_M                                         to  PSU_MISC2/PAL_P12V_DISCHARGE                 default 1  // 12V放电信号输出         
+// 未使用
+input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K6"*/ ,// from  RISER_AUX/J16                                  to  CPLD_M                                       default 1  // 主模块电源良好信号输入(未使用)
 
 // 辅助电源模块 电源良好信号
 inout  io_PAL_BP1_PWR_ON_R                    /* synthesis LOC = "E14"*/,// from  CPLD_M                                         to  BP_AUX_PWR/J84_PAL_BP1_PWR_ON_R              default 1  // BP1辅助电源开启信号输出                       新增
 inout  io_PAL_BP2_PWR_ON_R                    /* synthesis LOC = "U1"*/ ,// from  CPLD_M                                         to  REAR_BP_AUX_PWR/J86_1338_201/A1              default 1  // 后置背板电源开启信号输入输出           
+// 不使用
 input  i_PAL_BP1_AUX_PG                       /* synthesis LOC = "A3"*/ ,// from  CPLD_M                                         to  BP_AUX_PWR/J84_PAL_BP1_AUX_PG                default 1  // BP1辅助电源良好信号输入                       接入寄存器
 input  i_PAL_BP2_AUX_PG                       /* synthesis LOC = "E7"*/ ,// from  BP_AUX_PWR/J86_PAL_BP2_AUX_PG                  to  CPLD_M                                       default 1  // 辅助电源良好信号输入                          接入寄存器
 
@@ -170,6 +176,7 @@ input  i_PAL_CPU0_DIMM_PWRGD_F                /* synthesis LOC = "M16"*/,// from
 input  i_PAL_CPU1_DIMM_PWRGD_F                /* synthesis LOC = "D15"*/,// from  CPU1_DIMM3_WHITE/J1001/CPU0_DDR0_PWRGD         to  CPLD_M                                       default 1  // CPU1 DIMM槽位                 3.3V 电源良好信号输入
 
 // 3.3V 机箱后部面向背板的辅助供电模块 电源良好信号
+// output o_PAL_FRONT_BP_EFUSE_EN_R              /* synthesis LOC = "N16"*/,
 output o_PAL_REAT_BP_EFUSE_EN_R               /* synthesis LOC = "M1"*/ ,// from  CPLD_M                                        to  CURRENT_DET1/P12V_REAR_BP_VIN                default 1  // REAT BP eFUSE使能信号输出                     // 新增
 input  i_PAL_REAT_BP_EFUSE_OC                 /* synthesis LOC = "L3"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE过流信号输入                     // 新增
 input  i_PAL_REAT_BP_EFUSE_PG                 /* synthesis LOC = "M2"*/ ,// from  CURRENT_DET1/P12V_REAR_BP_VIN                  to  CPLD_M                                       default 1  // REAT BP eFUSE电源良好信号输入                 // 新增
@@ -360,6 +367,9 @@ output o_CPU1_POR_N_R                         /* synthesis LOC = "V16"*/,// from
 // =============================================================================
 //  DEBUG相关信号
 // =============================================================================
+// CPU0 D0 区域软关机中断信号输出
+output o_CPU0_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "R11"*/ ,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/CPU0_D0_SOFT_SHUTDOWN_INT_N default 1  // CPU0 D0 区域软关机中断信号输出
+
 // 机箱安全检测接口
 input  i_FRONT_PAL_INTRUDER                   /* synthesis LOC = "C10"*/,// from  INTRUDER_CONN                                 to  CPLD_M                                       default 1  // 机箱安全检测接口
 
@@ -519,7 +529,7 @@ input  i_CPU0_D0_GPIO_PORT7_R                 /* synthesis LOC = "P7"*/ ,// from
 input  i_CPU0_D0_DOWN_GPIO8_RST_N             /* synthesis LOC = "R7"*/ ,// from  CPU0_GPIO1/D0_GPIO_PORT[8]                    to  CPLD_M                                       default 0  // CPU0 D0 区域下行GPIO8复位信号
 input  i_CPU0_D0_GPIO_PORT9_R                 /* synthesis LOC = "R7"*/ ,// from  CPU0_GPIO1/D0_GPIO_PORT[9]                    to  CPLD_M                                       default 0  // CPU0 D0 区域通用输入输出端口 9  新增
 input  i_CPU0_D0_GPIO_PORT10_R                /* synthesis LOC = "Y3"*/ ,// from  CPU0_GPIO1/D0_GPIO_PORT[10]                   to  CPLD_M                                       default 1  // CPU0 D0 区域通用输入输出端口 10 新增
-input  i_CPU1_D0_GPIO_PORT4_R                 /* synthesis LOC = "Y10"*/// from  CPU1_GPIO1/D0_GPIO_PORT[4]                    to  CPLD_M                                       default 1  // CPU1 D0 区域 通用输入输出端口 4        新增
+input  i_CPU1_D0_GPIO_PORT4_R                 /* synthesis LOC = "Y10"*/// from  CPU1_GPIO1/D0_GPIO_PORT[4]                     to  CPLD_M                                       default 1  // CPU1 D0 区域 通用输入输出端口 4        新增
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -583,7 +593,6 @@ wire                                        s5dev_fan_on_aux            ;
 // 1. SM_OFF_STANDBY 状态上电使能
 wire                                        ocp_aux_en                  ; // 不使用
 wire                                        cpu_bios_en                 ; // 不使用
-wire                                        p12v_bp_front_en            ; // 不使用
 // 2. SM_EN_5V_STBY 状态上电使能
 wire                                        p5v_stby_en_r               ;
 // 3. SM_EN_TELEM 状态上电使能
@@ -593,7 +602,7 @@ wire                                        power_supply_on             ;
 wire                                        ocp_main_en                 ; // 不使用 
 wire                                        pal_main_efuse_en           ; // 不使用
 wire                                        p12v_bp_rear_en             ; // 不使用 
-wire                                        p12v_bp_front_en            ;
+wire                                        p12v_bp_front_en            ; // 不使用
 // 5. SM_EN_5V 状态上电使能
 wire                                        p5v_en_r                    ;
 // 6. SM_EN_3V3 状态上电使能
@@ -669,7 +678,7 @@ wire                                        db_i_pal_cpu1_dimm_pwrgd_f          
 wire                                        db_i_pal_p3v3_stby_bp_pgd           ;// 
 wire                                        db_i_pal_cpu0_dimm_pwrgd_f          ;// 不使用
 wire                                        db_i_pal_p3v3_stby_pgd              ;//  
-wire                                        db_i_pal_fan_efuse_pg               ;//  不使用
+wire                                        db_i_pal_fan_efuse_pg               ;// 不使用
 wire                                        db_i_pal_bp2_aux_pg                 ;// 
 wire                                        db_i_pal_bp1_aux_pg                 ;// 
 wire                                        db_i_pal_p12v_fan3_pg               ;// 
@@ -734,6 +743,8 @@ wire                                        p3v3_stby_fault_det               ;
 wire                                        p3v3_stby_bp_fault_det            ;
 wire                                        p12v_fan_efuse_fault_det          ;
 wire                                        p12v_dimm_efuse_fault_det         ;
+wire                                        p12v_cpu0_vin_fault_det           ;
+wire                                        p12v_cpu1_vin_fault_det           ;
 wire                                        main_efuse_fault_det              ;
 
 wire                                        p12v_front_bp_efuse_fault_det     ;
@@ -847,197 +858,197 @@ wire [7:0]                                  fan_tach15_byte1                  ;
 wire [7:0]                                  fan_tach16_byte2                  ;
 wire [7:0]                                  fan_tach16_byte1                  ;
 
-wire db_cpu_nvme17_prsnt_n;
-wire db_cpu_nvme16_prsnt_n;
-wire db_cpu_nvme15_prsnt_n;
-wire db_cpu_nvme14_prsnt_n;
-wire db_cpu_nvme13_prsnt_n;
-wire db_cpu_nvme12_prsnt_n;
-wire db_cpu_nvme11_prsnt_n;
-wire db_cpu_nvme10_prsnt_n;
-wire db_cpu_nvme19_prsnt_n;
-wire db_cpu_nvme18_prsnt_n;
-wire db_cpu_nvme23_prsnt_n;
-wire db_cpu_nvme22_prsnt_n;
-wire db_cpu_nvme7_prsnt_n ;
-wire db_cpu_nvme6_prsnt_n ;
-wire db_cpu_nvme5_prsnt_n ;
-wire db_cpu_nvme4_prsnt_n ;
-wire db_cpu_nvme3_prsnt_n ;
-wire db_cpu_nvme2_prsnt_n ;
-wire db_cpu_nvme1_prsnt_n ;
-wire db_cpu_nvme0_prsnt_n ;
-wire db_cpu_nvme9_prsnt_n ;
-wire db_cpu_nvme8_prsnt_n ;
-wire db_cpu_nvme25_prsnt_n;
-wire db_cpu_nvme24_prsnt_n;
-wire cpu_nvme17_prsnt_n;
-wire cpu_nvme16_prsnt_n;
-wire cpu_nvme15_prsnt_n;
-wire cpu_nvme14_prsnt_n;
-wire cpu_nvme13_prsnt_n;
-wire cpu_nvme12_prsnt_n;
-wire cpu_nvme11_prsnt_n;
-wire cpu_nvme10_prsnt_n;
-wire cpu_nvme19_prsnt_n;
-wire cpu_nvme18_prsnt_n;
-wire cpu_nvme23_prsnt_n;
-wire cpu_nvme22_prsnt_n;
-wire cpu_nvme7_prsnt_n ;
-wire cpu_nvme6_prsnt_n ;
-wire cpu_nvme5_prsnt_n ;
-wire cpu_nvme4_prsnt_n ;
-wire cpu_nvme3_prsnt_n ;
-wire cpu_nvme2_prsnt_n ;
-wire cpu_nvme1_prsnt_n ;
-wire cpu_nvme0_prsnt_n ;
-wire cpu_nvme9_prsnt_n ;
-wire cpu_nvme8_prsnt_n ;
-wire cpu_nvme25_prsnt_n;
-wire cpu_nvme24_prsnt_n;
+wire                                        db_cpu_nvme17_prsnt_n             ;
+wire                                        db_cpu_nvme16_prsnt_n             ;
+wire                                        db_cpu_nvme15_prsnt_n             ;
+wire                                        db_cpu_nvme14_prsnt_n             ;
+wire                                        db_cpu_nvme13_prsnt_n             ;
+wire                                        db_cpu_nvme12_prsnt_n             ;
+wire                                        db_cpu_nvme11_prsnt_n             ;
+wire                                        db_cpu_nvme10_prsnt_n             ;
+wire                                        db_cpu_nvme19_prsnt_n             ;
+wire                                        db_cpu_nvme18_prsnt_n             ;
+wire                                        db_cpu_nvme23_prsnt_n             ;
+wire                                        db_cpu_nvme22_prsnt_n             ;
+wire                                        db_cpu_nvme7_prsnt_n              ;
+wire                                        db_cpu_nvme6_prsnt_n              ;
+wire                                        db_cpu_nvme5_prsnt_n              ;
+wire                                        db_cpu_nvme4_prsnt_n              ;
+wire                                        db_cpu_nvme3_prsnt_n              ;
+wire                                        db_cpu_nvme2_prsnt_n              ;
+wire                                        db_cpu_nvme1_prsnt_n              ;
+wire                                        db_cpu_nvme0_prsnt_n              ;
+wire                                        db_cpu_nvme9_prsnt_n              ;
+wire                                        db_cpu_nvme8_prsnt_n              ;
+wire                                        db_cpu_nvme25_prsnt_n             ;
+wire                                        db_cpu_nvme24_prsnt_n             ;
+wire                                        cpu_nvme17_prsnt_n                ;
+wire                                        cpu_nvme16_prsnt_n                ;
+wire                                        cpu_nvme15_prsnt_n                ;
+wire                                        cpu_nvme14_prsnt_n                ;
+wire                                        cpu_nvme13_prsnt_n                ;
+wire                                        cpu_nvme12_prsnt_n                ;
+wire                                        cpu_nvme11_prsnt_n                ;
+wire                                        cpu_nvme10_prsnt_n                ;
+wire                                        cpu_nvme19_prsnt_n                ;
+wire                                        cpu_nvme18_prsnt_n                ;
+wire                                        cpu_nvme23_prsnt_n                ;
+wire                                        cpu_nvme22_prsnt_n                ;
+wire                                        cpu_nvme7_prsnt_n                 ;
+wire                                        cpu_nvme6_prsnt_n                 ;
+wire                                        cpu_nvme5_prsnt_n                 ;
+wire                                        cpu_nvme4_prsnt_n                 ;
+wire                                        cpu_nvme3_prsnt_n                 ;
+wire                                        cpu_nvme2_prsnt_n                 ;
+wire                                        cpu_nvme1_prsnt_n                 ;
+wire                                        cpu_nvme0_prsnt_n                 ;
+wire                                        cpu_nvme9_prsnt_n                 ;
+wire                                        cpu_nvme8_prsnt_n                 ;
+wire                                        cpu_nvme25_prsnt_n                ;
+wire                                        cpu_nvme24_prsnt_n                ;
 
-wire db_sys_sw_in_n;
-wire db_i_front_pal_intruder;
-wire debug_sw1;
-wire debug_sw2;
-wire debug_sw3;
-wire debug_sw4;
-wire debug_sw5;
-wire debug_sw6;
-wire debug_sw7;
-wire debug_sw8;
-wire [7:0] cpld_jtag_sel;
-wire uid_led_hold;
-wire uid_led_force_on;
-wire bmc_uid_update;
-wire db_i_pal_uid_sw_in_n;
-wire uid_led_out;
-wire led_uid;
-wire pf_blink_code;
-wire ocp_led;
-wire pal_led_nic_act;
-wire uid_led_state;
-wire ilo_hard_reset;
-wire ilo_rstreq_n;
-wire vwire_bmc_nmi;
-wire vwire_bmc_wakeup;
-wire vwire_bmc_sysrst;
-wire s_bmc_sysrst_n;
-wire vwire_bmc_shutdown;
-wire s_bmc_shutdown;
-wire db_pal_ext_rst_n;
-wire rst_btn_mask;
-wire bmc_ctrl_shutdown;
-wire aux_pcycle;
-wire efuse_power_cycle;
-wire pwrbtn_bl_mask;
-wire vwire_pwrbtn_bl;
-wire pwrcap_en;
-wire pwron_denied;
-wire power_wake_r_n;
-wire wol_en;
-wire [1:0] sideband_sel;
-wire rom_mux_bios_bmc_en;
-wire rom_mux_bios_bmc_sel;
-wire rom_bios_ma_rst;
-wire rom_bios_bk_rst;
-wire rom_bmc_bk_rst;
-wire rom_bmc_ma_rst;
-wire bmc_eeprom_wp;
-wire bios_eeprom_wp;
-wire cpld_rst_bmc;
-wire power_fault;
-wire db_gmt_fail_n;
-wire sys_hlth_grn_blink_n;
-wire sys_hlth_red_blink_n;
-wire hsb_fail_n;
-wire st_reset_state;
-wire st_off_standby;
-wire st_steady_pwrok;
-wire st_halt_power_cycle;
-wire st_aux_fail_recovery;
-wire dc_on_wait_complete;
-wire rt_critical_fail_store;
-wire fault_clear;
-wire pch_sys_reset;
-wire pch_sys_reset_n;
-wire rst_bmc_n;
-wire [`NUM_IO-1:0] rst_io_n;
-wire [`NUM_PSU-1:0] xr_ps_enable;
-wire [`NUM_PSU-1:0] db_ps_prsnt_n;
+wire                                        db_sys_sw_in_n                    ;
+wire                                        db_i_front_pal_intruder           ; // 机箱入侵检测信号输入
+wire                                        debug_sw1                         ;
+wire                                        debug_sw2                         ;
+wire                                        debug_sw3                         ;
+wire                                        debug_sw4                         ;
+wire                                        debug_sw5                         ;
+wire                                        debug_sw6                         ;
+wire                                        debug_sw7                         ;
+wire                                        debug_sw8                         ;
+wire [7:0]                                  cpld_jtag_sel                     ;
+wire                                        uid_led_hold                      ;
+wire                                        uid_led_force_on;
+wire                                        bmc_uid_update;
+// wire                                        db_i_pal_uid_sw_in_n              ; // UID按键输入信号    
+wire                                        uid_led_out                       ;
+wire                                        led_uid                           ;
+wire                                        pf_blink_code                     ;
+wire                                        ocp_led                           ;
+wire                                        pal_led_nic_act                   ;
+wire                                        uid_led_state                     ;
+wire                                        ilo_hard_reset                    ;
+wire                                        ilo_rstreq_n                      ;
+wire                                        vwire_bmc_nmi                     ;
+wire                                        vwire_bmc_wakeup                  ;
+wire                                        vwire_bmc_sysrst                  ;
+wire                                        s_bmc_sysrst_n                    ;
+wire                                        vwire_bmc_shutdown                ;
+wire                                        s_bmc_shutdown                    ;
+wire                                        db_pal_ext_rst_n                  ;
+wire                                        rst_btn_mask                      ;
+wire                                        bmc_ctrl_shutdown                 ;
+wire                                        aux_pcycle                        ;
+wire                                        efuse_power_cycle                 ;
+wire                                        pwrbtn_bl_mask;
+wire                                        vwire_pwrbtn_bl;
+wire                                        pwrcap_en;
+wire                                        pwron_denied;
+wire                                        power_wake_r_n;
+wire                                        wol_en;
+wire [1:0]                                  sideband_sel;
+wire                                        rom_mux_bios_bmc_en;
+wire                                        rom_mux_bios_bmc_sel;
+wire                                        rom_bios_ma_rst;
+wire                                        rom_bios_bk_rst;
+wire                                        rom_bmc_bk_rst;
+wire                                        rom_bmc_ma_rst;
+wire                                        bmc_eeprom_wp;
+wire                                        bios_eeprom_wp;
+wire                                        cpld_rst_bmc;
+wire                                        power_fault;
+wire                                        db_gmt_fail_n;
+wire                                        sys_hlth_grn_blink_n;
+wire                                        sys_hlth_red_blink_n;
+wire                                        hsb_fail_n;
+wire                                        st_reset_state;
+wire                                        st_off_standby;
+wire                                        st_steady_pwrok;
+wire                                        st_halt_power_cycle;
+wire                                        st_aux_fail_recovery;
+wire                                        dc_on_wait_complete;
+wire                                        rt_critical_fail_store;
+wire                                        fault_clear;
+wire                                        pch_sys_reset;
+wire                                        pch_sys_reset_n;
+wire                                        rst_bmc_n;
+wire [`NUM_IO-1:0]                          rst_io_n;
+wire [`NUM_PSU-1:0]                         xr_ps_enable;
+wire [`NUM_PSU-1:0]                         db_ps_prsnt_n;
 // wire [`NUM_PSU-1:0] db_ps_acok;
 // wire [`NUM_PSU-1:0] db_ps_dcok;
-wire [`NUM_PSU-1:0] ps_on_dly_n;
-wire [`NUM_PSU-1:0] ps_on_n;
-wire [`NUM_PSU-1:0] ps_fail;
-wire [7:0] hd_bp_fault_det;
-wire ps_caution;
-wire ps_critical;
-wire brownout_warning;
-wire brownout_fault;
-wire db_emc_alert_n;
-wire pwrbtn_mask;
-wire s_bmc_wakeup_n;
-wire interlock_broken;
-wire cpu_thermtrip;
-wire [`NUM_CPU-1:0]cpu_thermtrip_event;
-wire [`NUM_CPU-1:0]cpu_thermtrip_fault;
-wire pch_pwrbtn;
-wire pch_thrmtrip;
-wire force_pwrbtn_n;
-wire pch_thermtrip_flag;
-wire cpu_off_flag;
-wire reboot_flag;
-wire pgd_raw;
-wire pgd_so_far;
-wire turn_system_on;
-wire any_pwr_fault_det;
-wire any_lim_recov_fault;
-wire any_non_recov_fault;
+wire [`NUM_PSU-1:0]                         ps_on_dly_n;
+wire [`NUM_PSU-1:0]                         ps_on_n;
+wire [`NUM_PSU-1:0]                         ps_fail;
+wire [7:0]                                  hd_bp_fault_det;
+wire                                        ps_caution;
+wire                                        ps_critical;
+wire                                        brownout_warning;
+wire                                        brownout_fault;
+wire                                        db_emc_alert_n;
+wire                                        pwrbtn_mask;
+wire                                        s_bmc_wakeup_n;
+wire                                        interlock_broken;
+wire                                        cpu_thermtrip;
+wire [`NUM_CPU-1:0]                         cpu_thermtrip_event;
+wire [`NUM_CPU-1:0]                         cpu_thermtrip_fault;
+wire                                        pch_pwrbtn;
+wire                                        pch_thrmtrip;
+wire                                        force_pwrbtn_n;
+wire                                        pch_thermtrip_flag;
+wire                                        cpu_off_flag;
+wire                                        reboot_flag;
+wire                                        pgd_raw;
+wire                                        pgd_so_far;
+wire                                        turn_system_on;
+wire                                        any_pwr_fault_det;
+wire                                        any_lim_recov_fault;
+wire                                        any_non_recov_fault;
 
-wire [`NUM_PSU-1:0] mismatched_ps;
-wire s_cpu_rst_pcie_n;
-wire vwire_cpu_rst_pcie;
-wire db_i_pal_lcd_card_in;
-wire ifist_prsnt_n;
-wire [7:0] bios_post_code;
-wire [7:0] post_led_n;
-wire vga2_dis;
-wire [`NUM_PSU-1:0] s_ps_smb_alert_n;
-wire [`NUM_CPU-1:0] qual_cpu_vr_hot_n;
-wire [`NUM_CPU-1:0] mem_abcd_hot_alert;
-wire [`NUM_CPU-1:0] mem_efgh_hot_alert;
-wire [`NUM_CPU-1:0] cpu_mem_abcd_forcepr;
-wire [`NUM_CPU-1:0] cpu_mem_efgh_forcepr;
-wire pwrcap_wait;
-wire turn_on_wait;
-wire keep_alive_on_fault;
-wire pal_pwrbtn_grn_led;
-wire pal_pwrbtn_amb_led;
-wire ebrake;
-wire db_vr_hot_n;
-wire all_emc_alert_n;
-wire emc_alert_mask;
-wire riser1_tmp_alert_n;
-wire riser2_tmp_alert_n;
-wire riser1_emc_alert_mask;
-wire riser2_emc_alert_mask;
-wire db_riser1_tmp_alert_n;
-wire db_riser2_tmp_alert_n;
-wire pal_riser1_prsnt_n;
-wire pal_riser2_prsnt_n;
-wire db_pal_riser1_prsnt_n;
-wire db_pal_riser2_prsnt_n;
-wire ocp_temp_alert_mask  ;
-wire sensor_thermtrip;
-wire pal_m2_1_sel_r;
-wire pal_m2_1_prsnt_n;
-wire pal_m2_0_prsnt_n;
-wire front_m2_card_prsnt;
-wire [7:0] db_debug_sw;
-wire [7:0] bmc_i2c_rst;
-wire [7:0] bmc_i2c_rst2;
-wire [7:0] bmc_i2c_rst3;
+wire [`NUM_PSU-1:0]                         mismatched_ps;
+wire                                        s_cpu_rst_pcie_n;
+wire                                        vwire_cpu_rst_pcie;
+wire                                        db_i_pal_lcd_card_in;
+wire                                        ifist_prsnt_n;
+wire [7:0]                                  bios_post_code;
+wire [7:0]                                  post_led_n;
+wire                                        vga2_dis;
+wire [`NUM_PSU-1:0]                         s_ps_smb_alert_n;
+wire [`NUM_CPU-1:0]                         qual_cpu_vr_hot_n;
+wire [`NUM_CPU-1:0]                         mem_abcd_hot_alert;
+wire [`NUM_CPU-1:0]                         mem_efgh_hot_alert;
+wire [`NUM_CPU-1:0]                         cpu_mem_abcd_forcepr;
+wire [`NUM_CPU-1:0]                         cpu_mem_efgh_forcepr;
+wire                                        pwrcap_wait;
+wire                                        turn_on_wait;
+wire                                        keep_alive_on_fault;
+wire                                        pal_pwrbtn_grn_led;
+wire                                        pal_pwrbtn_amb_led;
+wire                                        ebrake;
+wire                                        db_vr_hot_n;
+wire                                        all_emc_alert_n;
+wire                                        emc_alert_mask;
+wire                                        riser1_tmp_alert_n;
+wire                                        riser2_tmp_alert_n;
+wire                                        riser1_emc_alert_mask;
+wire                                        riser2_emc_alert_mask;
+wire                                        db_riser1_tmp_alert_n;
+wire                                        db_riser2_tmp_alert_n;
+wire                                        pal_riser1_prsnt_n;
+wire                                        pal_riser2_prsnt_n;
+wire                                        db_pal_riser1_prsnt_n;
+wire                                        db_pal_riser2_prsnt_n;
+wire                                        ocp_temp_alert_mask  ;
+wire                                        sensor_thermtrip;
+wire                                        pal_m2_1_sel_r;
+wire                                        pal_m2_1_prsnt_n;
+wire                                        pal_m2_0_prsnt_n;
+wire                                        front_m2_card_prsnt;
+wire [7:0]                                  db_debug_sw;
+wire [7:0]                                  bmc_i2c_rst;
+wire [7:0]                                  bmc_i2c_rst2;
+wire [7:0]                                  bmc_i2c_rst3;
 wire rst_i2c0_mux_n;
 wire rst_i2c3_mux_n;
 wire rst_i2c13_mux_n;
@@ -1193,11 +1204,11 @@ wire  ocp_pvt_wake_n;
 wire  ocp_pvt_temp_warn_n;           
 wire  ocp_pvt_temp_crit_n;           
 wire  ocp_pvt_fan_on_aux;
-wire db_ocp_pvt_fan_on_aux;
-wire db_ocp2_pvt_fan_on_aux;
-wire pal_ocp1_ncsi_en;
-wire pal_ocp2_ncsi_en;
-wire pal_ocp_ncsi_sw_en;
+wire  db_ocp_pvt_fan_on_aux;
+wire  db_ocp2_pvt_fan_on_aux;
+wire  pal_ocp1_ncsi_en;
+wire  pal_ocp2_ncsi_en;
+wire  pal_ocp_ncsi_sw_en;
 
 wire auxint; 
 wire pme_event;
@@ -1337,10 +1348,13 @@ wire db_riser_prsnt_det_4;
 wire db_riser_prsnt_det_5;
 wire db_i_riser_prsnt_det_11;
 wire db_i_riser_prsnt_det_10;
-wire [7:0] db_bp_aux_pg;
-wire [7:0] bp_int;
-wire [7:0] bp_power_good;
-wire [7:0] bp_prsnt;
+
+
+wire [7:0]          db_bp_aux_pg        ; // 不使用
+wire [7:0]          bp_int              ; // 不使用
+wire [7:0]          bp_power_good       ; // 不使用
+wire [7:0]          bp_prsnt            ; // 不使用
+
 wire [31:0] AUX_BP_type;
 wire [127:0] pcie_detect;
 wire [7:0] pcie_detect_int;
@@ -1422,7 +1436,7 @@ timer_gen timer_gen_inst(
 输入信号消抖
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
-    .clk(clk_100m),
+    .clk(sys_clk),
     .rst(~pon_reset_n),
     .timer_tick(t64ms_tick),
     .din ({
@@ -1436,8 +1450,7 @@ PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
 		 debug_sw6                                ,//08
 		 debug_sw7                                ,//09
 		 debug_sw8                                ,//10
-		 /*i_PAL_UID_SW_IN_N & */i_PAL_BMCUID_BUTTON_R,//11
-		 //i_PAL_BMCUID_BUTTON_R                  ,//12
+		 i_PAL_BMCUID_BUTTON_R                    ,//11
 		 //chassis_id0_n                          ,//13
 		 //chassis_id1_n                          ,//14
 		 //chassis_id2_n                          ,//15
@@ -1460,8 +1473,7 @@ PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
 		 db_debug_sw[5]                           ,//08
 		 db_debug_sw[6]                           ,//09
 		 db_debug_sw[7]                           ,//10
-		 db_i_pal_uid_sw_in_n                     ,//11
-		 //db_i_pal_bmcuid_button_r                 ,//12
+		 db_i_pal_bmcuid_button_r                 ,//11
 		 //db_chassis_id[0]                         ,//13
 		 //db_chassis_id[1]                         ,//14
 		 //db_chassis_id[2]                         ,//15
@@ -1489,7 +1501,7 @@ wire  i_PAL_OCP1_PWRGD        = 1'b1;
 wire  i_PAL_DIMM_EFUSE_PG     = 1'b1;
 wire  i_PAL_P5V_PGD           = 1'b1;
 PGM_DEBOUNCE #(
-    .SIGCNT                                 (49                         ), 
+    .SIGCNT                                 (51                         ), 
     .NBITS                                  (2'b11                      ), 
     .ENABLE                                 (1'b1                       )
 ) db_inst_cpu_rail (
@@ -1498,6 +1510,8 @@ PGM_DEBOUNCE #(
     .timer_tick                             (1'b1                       ),
     .din                                    (
                                             {
+                                            i_PAL_P12V_CPU1_VIN_PG              ,// 50
+                                            i_PAL_P12V_CPU0_VIN_PG              ,// 49
                                             i_PAL_CPU0_D0_VP_0V9_PG             ,// 48
                                             i_PAL_CPU0_D1_VP_0V9_PG             ,// 47
                                             i_PAL_CPU0_D0_VPH_1V8_PG            ,// 46
@@ -1551,6 +1565,8 @@ PGM_DEBOUNCE #(
                                             ),
     .dout                                   (
                                             {
+                                            db_i_pal_p12v_cpu1_vin_pg           ,// 50
+                                            db_i_pal_p12v_cpu0_vin_pg           ,// 49
                                             db_i_pal_cpu0_d0_vp_0v9_pg          ,// 48
                                             db_i_pal_cpu0_d1_vp_0v9_pg          ,// 47
                                             db_i_pal_cpu0_d0_vph_1v8_pg         ,// 46
@@ -1606,7 +1622,315 @@ PGM_DEBOUNCE #(
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 BP PG信号信号消抖
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
+// 不使用
+PGM_DEBOUNCE_N #(.SIGCNT(8), .NBITS(2'b11), .ENABLE(1'b1)) db_bp_pgood_fault (
+    .clk                                    (sys_clk                   ),
+    .rst_n                                  (pon_reset_n                ),
+    .timer_tick                             (1'b1                       ),
+    .din                                    ({
+		                                    bp_power_good[7:0]                  		
+                                            }),
+    .dout                                   ({
+		                                    db_bp_aux_pg[7:0]              		 
+		                                    })		 
+ );
 
+// 机箱入侵检测信号消抖
+PGM_DEBOUNCE_N #(.SIGCNT(1), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
+    .clk			                        (sys_clk                   ),
+    .rst_n		                            (pon_reset_n                ),
+    .timer_tick	                            (t512us_tick                ),
+    .din                                    ({
+	                                        i_FRONT_PAL_INTRUDER       //01
+	        
+	                                        }),             
+  .dout                                     ({
+	                                        db_i_front_pal_intruder    //01
+	                                        }) 
+);
+
+
+// PSU DCOK 信号消抖
+PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_psu (
+  .clk                                      (sys_clk                   ),
+  .rst                                      (~pon_reset_n               ),
+  .timer_tick                               (t64ms_tick                 ),
+  .din                                      ({
+	                                         i_PAL_PS1_DCOK          ,//01
+		                                     i_PAL_PS2_DCOK           //02
+                                            }),             
+    .dout                                   ({
+                                             db_i_ps1_dc_ok          ,//01    
+                                             db_i_ps2_dc_ok           //02 
+                                            }) 
+);
+
+// 风扇/OCP/NVME等在位信号消抖
+PGM_DEBOUNCE #(.SIGCNT(47), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
+    .clk                                    (sys_clk),
+    .timer_tick                             (t512us_tick),
+    .rst                                    (~pon_reset_n),
+    .din                                    ({	
+                                            fan1_install_n            ,//01
+                                            fan2_install_n            ,//02
+                                            fan3_install_n            ,//03
+                                            fan4_install_n            ,//04
+                                            fan5_install_n            ,//05
+                                            fan6_install_n            ,//06
+                                            fan7_install_n            ,//07
+                                            fan8_install_n            ,//08
+		                                    ocp1_prsnt_n              ,//09
+		                                    ocp2_prsnt_n              ,//10
+		                                    cpu_nvme17_prsnt_n        ,//11
+		                                    cpu_nvme16_prsnt_n        ,//12
+		                                    cpu_nvme15_prsnt_n        ,//13
+		                                    cpu_nvme14_prsnt_n        ,//14
+		                                    cpu_nvme13_prsnt_n        ,//15
+		                                    cpu_nvme12_prsnt_n        ,//16
+		                                    cpu_nvme11_prsnt_n        ,//17
+		                                    cpu_nvme10_prsnt_n        ,//18
+		                                    cpu_nvme19_prsnt_n        ,//19
+		                                    cpu_nvme18_prsnt_n        ,//20
+		                                    cpu_nvme23_prsnt_n        ,//21
+		                                    cpu_nvme22_prsnt_n        ,//22
+		                                    cpu_nvme7_prsnt_n         ,//23
+		                                    cpu_nvme6_prsnt_n         ,//24
+		                                    cpu_nvme5_prsnt_n         ,//25
+		                                    cpu_nvme4_prsnt_n         ,//26
+		                                    cpu_nvme3_prsnt_n         ,//27
+		                                    cpu_nvme2_prsnt_n         ,//28
+		                                    cpu_nvme1_prsnt_n         ,//29
+		                                    cpu_nvme0_prsnt_n         ,//30
+		                                    cpu_nvme9_prsnt_n         ,//31
+		                                    cpu_nvme8_prsnt_n         ,//32
+		                                    cpu_nvme25_prsnt_n        ,//33
+		                                    cpu_nvme24_prsnt_n        ,//34
+		                                    ~i_PAL_PS1_PRSNT          ,//35
+		                                    ~i_PAL_PS2_PRSNT          ,//36
+		                                    pal_riser1_prsnt_n        ,//37
+		                                    pal_riser2_prsnt_n        ,//38
+		                                    tpm_prsnt_n               ,//39
+		                                    i_INTRUDER_CABLE_INST_N   ,//40
+		                                    i_PAL_OCP1_FAN_PRSNT_N    ,//41
+		                                    //i_PAL_GPU_FAN1_PRSNT      ,//42
+		                                    //i_PAL_GPU_FAN2_PRSNT      ,//43
+		                                    //i_PAL_GPU_FAN3_PRSNT      ,//44
+		                                    //i_PAL_GPU_FAN4_PRSNT      ,//45
+		                                    i_PAL_BMC_CARD_PRSNT_N    ,//46
+		                                    dsd_uart_prsnt_n          ,//47
+		                                    i_LEAKAGE_PRSNT_N         ,//48
+		                                    i_BREAK_DET_DO_N          ,//49
+		                                    i_LEAKAGE_DET_DO_N        ,//50
+		                                    i_PAL_OCP1_FAN_FOO         //51
+	  }),                   
+    .dout                                   ({
+                                            db_fan_prsnt_n[0]         ,//1
+                                            db_fan_prsnt_n[1]         ,//2
+                                            db_fan_prsnt_n[2]         ,//3
+                                            db_fan_prsnt_n[3]         ,//4
+                                            db_fan_prsnt_n[4]         ,//5
+                                            db_fan_prsnt_n[5]         ,//6
+                                            db_fan_prsnt_n[6]         ,//7
+                                            db_fan_prsnt_n[7]         ,//8
+		                                    db_ocp1_prsnt_n           ,//9
+		                                    db_ocp2_prsnt_n           ,//10
+		                                    db_cpu_nvme17_prsnt_n     ,//11
+		                                    db_cpu_nvme16_prsnt_n     ,//12
+		                                    db_cpu_nvme15_prsnt_n     ,//13
+		                                    db_cpu_nvme14_prsnt_n     ,//14
+		                                    db_cpu_nvme13_prsnt_n     ,//15
+		                                    db_cpu_nvme12_prsnt_n     ,//16
+		                                    db_cpu_nvme11_prsnt_n     ,//17
+		                                    db_cpu_nvme10_prsnt_n     ,//18
+		                                    db_cpu_nvme19_prsnt_n     ,//19
+		                                    db_cpu_nvme18_prsnt_n     ,//20
+		                                    db_cpu_nvme23_prsnt_n     ,//21
+		                                    db_cpu_nvme22_prsnt_n     ,//22
+		                                    db_cpu_nvme7_prsnt_n      ,//23
+		                                    db_cpu_nvme6_prsnt_n      ,//24
+		                                    db_cpu_nvme5_prsnt_n      ,//25
+		                                    db_cpu_nvme4_prsnt_n      ,//26
+		                                    db_cpu_nvme3_prsnt_n      ,//27
+		                                    db_cpu_nvme2_prsnt_n      ,//28
+		                                    db_cpu_nvme1_prsnt_n      ,//29
+		                                    db_cpu_nvme0_prsnt_n      ,//30
+		                                    db_cpu_nvme9_prsnt_n      ,//31
+		                                    db_cpu_nvme8_prsnt_n      ,//32
+		                                    db_cpu_nvme25_prsnt_n     ,//33
+		                                    db_cpu_nvme24_prsnt_n     ,//34
+		                                    db_ps_prsnt_n[0]          ,//35
+		                                    db_ps_prsnt_n[1]          ,//36
+		                                    db_pal_riser1_prsnt_n     ,//37
+		                                    db_pal_riser2_prsnt_n     ,//38
+		                                    db_tpm_prsnt_n            ,//39
+		                                    db_i_intruder_cable_inst_n,//40
+		                                    db_i_pal_ocp1_fan_prsnt_n ,//41
+		                                    //db_i_pal_gpu_fan_prsnt[0] ,//42
+		                                    //db_i_pal_gpu_fan_prsnt[1] ,//43
+		                                    //db_i_pal_gpu_fan_prsnt[2] ,//44
+		                                    //db_i_pal_gpu_fan_prsnt[3] ,//45
+		                                    db_i_pal_bmc_card_prsnt_n ,//46 // 未使用
+		                                    db_i_dsd_uart_prsnt_n     ,//47
+		                                    db_i_leakage_prsnt_n      ,//48
+		                                    db_i_break_det_do_n       ,//49
+		                                    db_i_leakage_det_do_n     ,//50
+		                                    db_i_pal_ocp1_fan_foo      //51
+	   })
+);
+
+// EMC_ALERT 和 GMT_FAIL 信号消抖
+PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_pgood_fault2_n (
+    .clk(sys_clk),
+    .rst(~pon_reset_n),
+    .timer_tick(1'b1),
+    .din({           
+         emc_alert_n              ,//01
+		 gmt_fail_n                //02
+        }),
+    .dout({
+         db_emc_alert_n           ,//01
+		 db_gmt_fail_n             //02 // 未使用
+      })
+);
+
+// 低速信号同步
+SYNC_DATA_N #(.SIGCNT(3)) sync_data_low (
+    .clk    (sys_clk),
+    .rst_n  (pon_reset_n),
+    .din    ({
+             vwire_bmc_shutdown,       //01
+		     ocp_pvt_fan_on_aux,       //02
+		     ocp2_pvt_fan_on_aux       //03
+	         }),           
+    .dout   ({
+            s_bmc_shutdown,           //01
+		    db_ocp_pvt_fan_on_aux,    //02
+		    db_ocp2_pvt_fan_on_aux    //03
+		    })   
+);
+
+// 高速信号同步
+SYNC_DATA #(.SIGCNT(5)) sync_data_high1 (
+    .clk    (sys_clk),
+    .rst    (~pon_reset_n),
+    .din    ({
+		     ~vwire_bmc_wakeup              ,     //01
+		     ~vwire_bmc_sysrst              ,     //02
+		     ~vwire_cpu_rst_pcie            ,     //03
+		     i_PAL_CPU0_VR_PMALT_UPD        ,     //04
+		     i_PAL_CPU1_VR_PMALT_UPD              //05    
+            }),      
+    .dout   ({
+		    s_bmc_wakeup_n                 ,     //01
+		    s_bmc_sysrst_n                 ,     //02
+		    s_cpu_rst_pcie_n               ,     //03 
+		    s_vr_cpu_i2c_alert_n[0]        ,     //04
+            s_vr_cpu_i2c_alert_n[1]              //05
+         })        
+);
+
+// OCP/NVME PVT信号同步
+SYNC_DATA #(.SIGCNT(32)) sync_data_ocp (
+    .clk    (sys_clk),
+    .rst    (~pon_reset_db_n),
+    .din    ({ocp_pvt_act_p0_n,//01
+    		  ocp_pvt_act_p1_n,//02
+    		  ocp_pvt_act_p2_n,//03
+    		  ocp_pvt_act_p3_n,//04
+    		  ocp_pvt_act_p4_n,//05
+    		  ocp_pvt_act_p5_n,//06
+              ocp_pvt_act_p6_n,//07
+              ocp_pvt_act_p7_n,//08
+              ocp_pvt_link_spda_p0_n & ocp_pvt_link_spdb_p0_n,//09
+              ocp_pvt_link_spda_p1_n & ocp_pvt_link_spdb_p1_n,//10
+              ocp_pvt_link_spda_p2_n & ocp_pvt_link_spdb_p2_n,//11
+              ocp_pvt_link_spda_p3_n & ocp_pvt_link_spdb_p3_n,//12
+    		  ocp_pvt_link_spda_p4_n & ocp_pvt_link_spdb_p4_n,//13
+              ocp_pvt_link_spda_p5_n & ocp_pvt_link_spdb_p5_n,//14
+              ocp_pvt_link_spda_p6_n & ocp_pvt_link_spdb_p6_n,//15
+              ocp_pvt_link_spda_p7_n & ocp_pvt_link_spdb_p7_n,//16
+    		  ocp2_pvt_act_p0_n,//17
+    		  ocp2_pvt_act_p1_n,//18
+    		  ocp2_pvt_act_p2_n,//19
+    		  ocp2_pvt_act_p3_n,//20
+    		  ocp2_pvt_act_p4_n,//21
+    		  ocp2_pvt_act_p5_n,//22
+    		  ocp2_pvt_act_p6_n,//23
+    		  ocp2_pvt_act_p7_n,//24
+    		  ocp2_pvt_link_spda_p0_n & ocp2_pvt_link_spdb_p0_n,//25
+    		  ocp2_pvt_link_spda_p1_n & ocp2_pvt_link_spdb_p1_n,//26
+    		  ocp2_pvt_link_spda_p2_n & ocp2_pvt_link_spdb_p2_n,//27
+    		  ocp2_pvt_link_spda_p3_n & ocp2_pvt_link_spdb_p3_n,//28
+    		  ocp2_pvt_link_spda_p4_n & ocp2_pvt_link_spdb_p4_n,//29
+    		  ocp2_pvt_link_spda_p5_n & ocp2_pvt_link_spdb_p5_n,//30
+    		  ocp2_pvt_link_spda_p6_n & ocp2_pvt_link_spdb_p6_n,//31
+    		  ocp2_pvt_link_spda_p7_n & ocp2_pvt_link_spdb_p7_n //32		  
+            }),      
+
+    .dout   ({s_ocp_act_n[0],//01
+    		  s_ocp_act_n[1],//02
+    		  s_ocp_act_n[2],//03
+    		  s_ocp_act_n[3],//04 
+    		  s_ocp_act_n[4],//05
+              s_ocp_act_n[5],//06
+    		  s_ocp_act_n[6],//07 
+    		  s_ocp_act_n[7],//08
+              s_ocp_link_n[0],//09	
+    		  s_ocp_link_n[1],//10
+    		  s_ocp_link_n[2],//11
+    		  s_ocp_link_n[3],//12
+    		  s_ocp_link_n[4],//13
+    		  s_ocp_link_n[5],//14
+    		  s_ocp_link_n[6],//15
+    		  s_ocp_link_n[7],//16
+    		  s_ocp2_act_n[0],//17
+    		  s_ocp2_act_n[1],//18
+    		  s_ocp2_act_n[2],//19
+    		  s_ocp2_act_n[3],//20
+    		  s_ocp2_act_n[4],//21
+    		  s_ocp2_act_n[5],//22
+    		  s_ocp2_act_n[6],//23
+    		  s_ocp2_act_n[7],//24
+    		  s_ocp2_link_n[0],//25
+    		  s_ocp2_link_n[1],//26
+    		  s_ocp2_link_n[2],//27
+    		  s_ocp2_link_n[3],//28
+    		  s_ocp2_link_n[4],//29
+    		  s_ocp2_link_n[5],//30
+    		  s_ocp2_link_n[6],//31
+    		  s_ocp2_link_n[7]//32
+             })        
+);
+
+// SMB_ALERT 信号消抖
+PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_alert (
+    .clk        (sys_clk),
+    .rst        (~pon_reset_n),
+    .timer_tick (1'b1),
+    .din        ({
+                riser1_tmp_alert_n   ,	  //01 
+                riser2_tmp_alert_n        //02    
+                }),   
+    .dout       ({                            
+    	        db_riser1_tmp_alert_n,    //01
+    	        db_riser2_tmp_alert_n     //02 
+    	        })   
+);
+
+// SMB_ALERT 信号消抖
+PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_alert_inst1 (
+    .clk        (sys_clk),
+    .rst        (~pon_reset_n),
+    .timer_tick (1'b1),
+    .din        ({
+                i_PAL_PS1_SMB_ALERT_TO_FPGA      ,	  //01 
+                i_PAL_PS2_SMB_ALERT_TO_FPGA           //02    
+                }),   
+    .dout       ({                            
+    	        db_i_ps1_smb_alert               ,    //01
+    	        db_i_ps2_smb_alert                    //02 
+    	        })   
+);
 
 // CPU 反馈的复位信号, PEU_PREST控制状态机跳转, 其他写入寄存器监控使用
 PGM_DEBOUNCE #(
@@ -1679,22 +2003,477 @@ PGM_DEBOUNCE #(
                                             )
 );
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+SGPIO 信号处理 M_CPLD<->S_CPLD
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+wire                                        t1hz_clk_cmu                ;
+wire                                        t2p5hz_clk_scpld            ;
+
+wire [511:0]                                mcpld_to_scpld_p2s_data     ;
+wire [511:0]                                scpld_to_mcpld_s2p_data     ;
+wire                                        scpld_sgpio_ld_n            ;
+wire                                        scpld_sgpio_clk             ;
+
+reg [426:0]	                                scpld_to_mcpld_data_filter  ;
+reg 	                                    scpld_sgpio_fail            ;
+
+always@(posedge sys_clk or negedge pon_reset_n)begin
+	if(~pon_reset_n)
+		begin
+			scpld_to_mcpld_data_filter <= {427{1'b0}};
+			scpld_sgpio_fail <=1'b0;
+		end
+	else if
+		((scpld_to_mcpld_s2p_data[3:0] == 4'b0101)&& (scpld_to_mcpld_s2p_data[511:508] == 4'b1010))
+		begin
+			scpld_to_mcpld_data_filter <= scpld_to_mcpld_s2p_data[430:4];
+			scpld_sgpio_fail <=1'b0;
+		end
+	else
+		begin
+			scpld_to_mcpld_data_filter <= scpld_to_mcpld_data_filter;
+			scpld_sgpio_fail <=1'b1;
+		end
+end
 
 
-// PSU DCOK 信号消抖
-PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_psu (
-  .clk                                      (clk_100m               ),
-  .rst                                      (~pon_reset_n           ),
-  .timer_tick                               (t64ms_tick             ),
-  .din                                      ({
-	                                         i_PAL_PS1_DCOK          ,//01
-		                                     i_PAL_PS2_DCOK           //02
-                                            }),             
-    .dout                                   ({
-                                             db_i_ps1_dc_ok          ,//01    
-                                             db_i_ps2_dc_ok           //02 
-                                            }) 
+//S CPLD ---> M CPLD
+s2p_master #(.NBIT(512)) inst_scpld_to_mcpld_s2p(
+    .clk            (sys_clk					), //in
+    .rst            (~pon_reset_n				), //in
+    .tick           (t1us_tick					), //in
+    .si             (i_CPLD_M_S_SGPIO_MISO		), //in   //SGPIO_MISO  Serial Signal input
+    .po             (scpld_to_mcpld_s2p_data	), //out  //Parallel Signal output
+    .sld_n          (scpld_sgpio_ld_n			), //out  //SGPIO_LOAD
+    .sclk           (scpld_sgpio_clk 			)  //out  //SGPIO_CLK
 );
+
+assign o_CPLD_M_S_SGPIO_LD_N_R = scpld_sgpio_ld_n; //SGPIO_LOAD
+assign o_CPLD_M_S_SGPIO_CLK_R  = scpld_sgpio_clk ;  //SGPIO_CLK
+
+//M CPLD  ---> S CPLD
+p2s_slave #(.NBIT(512)) inst_mcpld_to_scpld_p2s(
+	.clk            (sys_clk					),//in
+	.rst            (~pon_reset_n				),//in
+	.pi             (mcpld_to_scpld_p2s_data	),//in   //Parallel Signal input
+	.so             (o_CPLD_M_S_SGPIO_MOSI_R 	),//out  //SGPIO_MOSI Serial Signal output
+	.sld_n          (o_CPLD_M_S_SGPIO_LD_N_R	),//in   //SGPIO_LOAD
+	.sclk           (o_CPLD_M_S_SGPIO_CLK_R		) //in   //SGPIO_CLK
+);
+
+//S CPLD ---> M CPLD
+assign  bmc_ready_flag                = scpld_to_mcpld_data_filter[426];
+assign  bmc_pgd_p3v3_stby             = scpld_to_mcpld_data_filter[425];
+assign  bmc_pgd_p1v8_stby             = scpld_to_mcpld_data_filter[424];
+assign  bmc_pgd_p1v2_stby             = scpld_to_mcpld_data_filter[423];
+assign  bmc_pgd_p1v1_stby             = scpld_to_mcpld_data_filter[422];
+assign  bmc_pgd_p0v8_stby             = scpld_to_mcpld_data_filter[421];
+assign  cpu1_temp_over                = scpld_to_mcpld_data_filter[420];
+assign  cpu0_temp_over                = scpld_to_mcpld_data_filter[419];
+assign  lom_prsnt_n                   = scpld_to_mcpld_data_filter[418];
+assign  lom_thermal_trip              = scpld_to_mcpld_data_filter[417];
+assign  db_i_pal_ocp2_fan_prsnt_n     = scpld_to_mcpld_data_filter[416];
+assign  db_i_pal_ocp2_fan_foo         = scpld_to_mcpld_data_filter[415];
+assign  db_i_pal_lcd_card_in          = scpld_to_mcpld_data_filter[414];
+assign  ifist_prsnt_n                 = scpld_to_mcpld_data_filter[413];
+assign  bios_post_code[7:0]           = scpld_to_mcpld_data_filter[412:405];
+assign  bios_post_phase[7:0]          = scpld_to_mcpld_data_filter[404:397];
+assign  bios_post_rate[7:0]           = scpld_to_mcpld_data_filter[396:389];
+assign  bios_read_flag                = scpld_to_mcpld_data_filter[388];
+assign  bp_prsnt[7:0]                 = scpld_to_mcpld_data_filter[387:380];
+assign  usb2_lcd_alert                = scpld_to_mcpld_data_filter[379];
+assign  vga2_oc_alert                 = scpld_to_mcpld_data_filter[378];
+assign  pal_upd72020_2_alart          = scpld_to_mcpld_data_filter[377];
+assign  pal_upd72020_1_alart          = scpld_to_mcpld_data_filter[376];
+assign  usb3_right_ear_en             = scpld_to_mcpld_data_filter[375];
+assign  usb2_left_ear_en              = scpld_to_mcpld_data_filter[374];
+assign  dsd_uart_prsnt_n              = scpld_to_mcpld_data_filter[373];
+assign  pfr_pe_wake_n                 = scpld_to_mcpld_data_filter[372];
+assign  ocp2_pvt_link_spdb_p5_n       = scpld_to_mcpld_data_filter[371];//1
+assign  ocp2_pvt_act_p5_n             = scpld_to_mcpld_data_filter[370];//1
+assign  ocp2_pvt_link_spda_p6_n       = scpld_to_mcpld_data_filter[369];//1
+assign  ocp2_pvt_link_spdb_p6_n       = scpld_to_mcpld_data_filter[368];//1
+assign  ocp2_pvt_act_p6_n             = scpld_to_mcpld_data_filter[367];//1
+assign  ocp2_pvt_link_spda_p7_n       = scpld_to_mcpld_data_filter[366];//1
+assign  ocp2_pvt_link_spdb_p7_n       = scpld_to_mcpld_data_filter[365];//1
+assign  ocp2_pvt_act_p7_n             = scpld_to_mcpld_data_filter[364];//1
+assign  ocp2_pvt_act_p2_n             = scpld_to_mcpld_data_filter[363];//1
+assign  ocp2_pvt_link_spda_p3_n       = scpld_to_mcpld_data_filter[362];//1
+assign  ocp2_pvt_link_spdb_p3_n       = scpld_to_mcpld_data_filter[361];//1
+assign  ocp2_pvt_act_p3_n             = scpld_to_mcpld_data_filter[360];//1
+assign  ocp2_pvt_link_spda_p4_n       = scpld_to_mcpld_data_filter[359];//1
+assign  ocp2_pvt_link_spdb_p4_n       = scpld_to_mcpld_data_filter[358];//1
+assign  ocp2_pvt_act_p4_n             = scpld_to_mcpld_data_filter[357];//1
+assign  ocp2_pvt_link_spda_p5_n       = scpld_to_mcpld_data_filter[356];//1
+assign  ocp2_pvt_link_spda_p0_n       = scpld_to_mcpld_data_filter[355];//1
+assign  ocp2_pvt_link_spdb_p0_n       = scpld_to_mcpld_data_filter[354];//1
+assign  ocp2_pvt_act_p0_n             = scpld_to_mcpld_data_filter[353];//1
+assign  ocp2_pvt_link_spda_p1_n       = scpld_to_mcpld_data_filter[352];//1
+assign  ocp2_pvt_link_spdb_p1_n       = scpld_to_mcpld_data_filter[351];//1
+assign  ocp2_pvt_act_p1_n             = scpld_to_mcpld_data_filter[350];//1
+assign  ocp2_pvt_link_spda_p2_n       = scpld_to_mcpld_data_filter[349];//1
+assign  ocp2_pvt_link_spdb_p2_n       = scpld_to_mcpld_data_filter[348];//1
+assign  ocp2_pvt_prsntb0_n            = scpld_to_mcpld_data_filter[347];//1
+assign  ocp2_pvt_prsntb1_n            = scpld_to_mcpld_data_filter[346];//1
+assign  ocp2_pvt_prsntb2_n            = scpld_to_mcpld_data_filter[345];//1
+assign  ocp2_pvt_prsntb3_n            = scpld_to_mcpld_data_filter[344];//1
+assign  ocp2_pvt_wake_n               = scpld_to_mcpld_data_filter[343];//1
+assign  ocp2_pvt_temp_warn_n          = scpld_to_mcpld_data_filter[342];//1
+assign  ocp2_pvt_temp_crit_n          = scpld_to_mcpld_data_filter[341];//1
+assign  ocp2_pvt_fan_on_aux           = scpld_to_mcpld_data_filter[340];//0
+assign  ocp_pvt_link_spdb_p5_n        = scpld_to_mcpld_data_filter[339];//1
+assign  ocp_pvt_act_p5_n              = scpld_to_mcpld_data_filter[338];//1
+assign  ocp_pvt_link_spda_p6_n        = scpld_to_mcpld_data_filter[337];//1
+assign  ocp_pvt_link_spdb_p6_n        = scpld_to_mcpld_data_filter[336];//1
+assign  ocp_pvt_act_p6_n              = scpld_to_mcpld_data_filter[335];//1
+assign  ocp_pvt_link_spda_p7_n        = scpld_to_mcpld_data_filter[334];//1
+assign  ocp_pvt_link_spdb_p7_n        = scpld_to_mcpld_data_filter[333];//1
+assign  ocp_pvt_act_p7_n              = scpld_to_mcpld_data_filter[332];//1
+assign  ocp_pvt_act_p2_n              = scpld_to_mcpld_data_filter[331];//1
+assign  ocp_pvt_link_spda_p3_n        = scpld_to_mcpld_data_filter[330];//1
+assign  ocp_pvt_link_spdb_p3_n        = scpld_to_mcpld_data_filter[329];//1
+assign  ocp_pvt_act_p3_n              = scpld_to_mcpld_data_filter[328];//1
+assign  ocp_pvt_link_spda_p4_n        = scpld_to_mcpld_data_filter[327];//1
+assign  ocp_pvt_link_spdb_p4_n        = scpld_to_mcpld_data_filter[326];//1
+assign  ocp_pvt_act_p4_n              = scpld_to_mcpld_data_filter[325];//1
+assign  ocp_pvt_link_spda_p5_n        = scpld_to_mcpld_data_filter[324];//1
+assign  ocp_pvt_link_spda_p0_n        = scpld_to_mcpld_data_filter[323];//1
+assign  ocp_pvt_link_spdb_p0_n        = scpld_to_mcpld_data_filter[322];//1
+assign  ocp_pvt_act_p0_n              = scpld_to_mcpld_data_filter[321];//1
+assign  ocp_pvt_link_spda_p1_n        = scpld_to_mcpld_data_filter[320];//1
+assign  ocp_pvt_link_spdb_p1_n        = scpld_to_mcpld_data_filter[319];//1
+assign  ocp_pvt_act_p1_n              = scpld_to_mcpld_data_filter[318];//1
+assign  ocp_pvt_link_spda_p2_n        = scpld_to_mcpld_data_filter[317];//1
+assign  ocp_pvt_link_spdb_p2_n        = scpld_to_mcpld_data_filter[316];//1
+assign  ocp_pvt_prsntb0_n             = scpld_to_mcpld_data_filter[315];//1
+assign  ocp_pvt_prsntb1_n             = scpld_to_mcpld_data_filter[314];//1
+assign  ocp_pvt_prsntb2_n             = scpld_to_mcpld_data_filter[313];//1
+assign  ocp_pvt_prsntb3_n             = scpld_to_mcpld_data_filter[312];//1
+assign  ocp_pvt_wake_n                = scpld_to_mcpld_data_filter[311];//1
+assign  ocp_pvt_temp_warn_n           = scpld_to_mcpld_data_filter[310];//1
+assign  ocp_pvt_temp_crit_n           = scpld_to_mcpld_data_filter[309];//1
+assign  ocp_pvt_fan_on_aux            = scpld_to_mcpld_data_filter[308];//0
+
+assign  bmc_card_type                 = scpld_to_mcpld_data_filter[307:304];
+assign  bmc_card_pcb_rev              = scpld_to_mcpld_data_filter[303:301];
+assign  riser4_slot10_id              = scpld_to_mcpld_data_filter[300:295];
+assign  riser4_slot9_id               = scpld_to_mcpld_data_filter[294:289];
+assign  riser3_slot8_id               = scpld_to_mcpld_data_filter[288:283];
+assign  riser3_slot7_id               = scpld_to_mcpld_data_filter[282:277];
+assign  riser4_2_prsnt_n              = scpld_to_mcpld_data_filter[276];
+assign  riser4_1_prsnt_n              = scpld_to_mcpld_data_filter[275];
+assign  riser3_2_prsnt_n              = scpld_to_mcpld_data_filter[274];
+assign  riser3_1_prsnt_n              = scpld_to_mcpld_data_filter[273];
+assign  riser4_slot10_prsnt_n         = scpld_to_mcpld_data_filter[272];
+assign  riser4_slot9_prsnt_n          = scpld_to_mcpld_data_filter[271];
+assign  riser3_slot8_prsnt_n          = scpld_to_mcpld_data_filter[270];
+assign  riser3_slot7_prsnt_n          = scpld_to_mcpld_data_filter[269];
+assign  w4GpuRiser2Flag               = scpld_to_mcpld_data_filter[268];
+assign  w4GpuRiser1Flag               = scpld_to_mcpld_data_filter[267];
+assign  riser2_pvti_byte3             = scpld_to_mcpld_data_filter[266:259];
+assign  riser2_pvti_byte2             = scpld_to_mcpld_data_filter[258:251];
+assign  riser2_pvti_byte1             = scpld_to_mcpld_data_filter[250:243];
+assign  riser2_pvti_byte0             = scpld_to_mcpld_data_filter[242:235];
+assign  riser1_pvti_byte3             = scpld_to_mcpld_data_filter[234:227];
+assign  riser1_pvti_byte2             = scpld_to_mcpld_data_filter[226:219];
+assign  riser1_pvti_byte1             = scpld_to_mcpld_data_filter[218:211];
+assign  riser1_pvti_byte0             = scpld_to_mcpld_data_filter[210:203];
+assign  mb_cb_prsnt[15:0]             = scpld_to_mcpld_data_filter[202:187];
+assign  db_riser_prsnt_det_2          = scpld_to_mcpld_data_filter[186];
+assign  db_riser_prsnt_det_3          = scpld_to_mcpld_data_filter[185];
+assign  db_riser_prsnt_det_0          = scpld_to_mcpld_data_filter[184];
+assign  db_riser_prsnt_det_1          = scpld_to_mcpld_data_filter[183];
+assign  db_i_riser_prsnt_det_9        = scpld_to_mcpld_data_filter[182];
+assign  db_i_riser_prsnt_det_8        = scpld_to_mcpld_data_filter[181];
+assign  db_riser_prsnt_det_6          = scpld_to_mcpld_data_filter[180];
+assign  db_riser_prsnt_det_7          = scpld_to_mcpld_data_filter[179];
+assign  db_riser_prsnt_det_4          = scpld_to_mcpld_data_filter[178];
+assign  db_riser_prsnt_det_5          = scpld_to_mcpld_data_filter[177];
+assign  db_i_riser_prsnt_det_11       = scpld_to_mcpld_data_filter[176];
+assign  db_i_riser_prsnt_det_10       = scpld_to_mcpld_data_filter[175];
+assign  nvme_slot_number[43:0]        = scpld_to_mcpld_data_filter[174:131];
+assign  riser_ocp_m2_slot_number[19:0]= scpld_to_mcpld_data_filter[130:111];
+assign  db_i_p12v_stby_sns_alert      = scpld_to_mcpld_data_filter[110];
+assign  db_i_fan_sns_alert            = scpld_to_mcpld_data_filter[109];
+assign  db_i_dimm_sns_alert           = scpld_to_mcpld_data_filter[108];
+assign  board_id7                     = scpld_to_mcpld_data_filter[107];
+assign  board_id6                     = scpld_to_mcpld_data_filter[106];
+assign  board_id5                     = scpld_to_mcpld_data_filter[105];
+assign  pal_gpu_fan4_prsnt            = scpld_to_mcpld_data_filter[104];
+assign  pal_gpu_fan3_prsnt            = scpld_to_mcpld_data_filter[103];
+assign  pal_gpu_fan2_prsnt            = scpld_to_mcpld_data_filter[102];
+assign  pal_gpu_fan1_prsnt            = scpld_to_mcpld_data_filter[101];
+assign  pal_gpu_fan4_foo              = scpld_to_mcpld_data_filter[100];
+assign  pal_gpu_fan3_foo              = scpld_to_mcpld_data_filter[99];
+assign  pal_gpu_fan2_foo              = scpld_to_mcpld_data_filter[98];
+assign  pal_gpu_fan1_foo              = scpld_to_mcpld_data_filter[97];
+assign  bmc_cpld_version              = scpld_to_mcpld_data_filter[96:81];
+assign  pcb_revision_1                = scpld_to_mcpld_data_filter[80];
+assign  pcb_revision_0                = scpld_to_mcpld_data_filter[79];
+assign  pca_revision_2                = scpld_to_mcpld_data_filter[78];
+assign  pca_revision_1                = scpld_to_mcpld_data_filter[77];
+assign  pca_revision_0                = scpld_to_mcpld_data_filter[76];
+assign  mb_cpld2_ver                  = scpld_to_mcpld_data_filter[75:60];
+assign  i_pal_wdt_rst_n_r             = scpld_to_mcpld_data_filter[59];
+assign  tpm_prsnt_n                   = scpld_to_mcpld_data_filter[58];
+assign  tpm_pp                        = scpld_to_mcpld_data_filter[57];
+assign  pal_lcd_prsnt                 = scpld_to_mcpld_data_filter[56];
+assign  pal_m2_1_sel_r                = scpld_to_mcpld_data_filter[55];
+assign  pal_m2_1_prsnt_n              = scpld_to_mcpld_data_filter[54];
+assign  pal_m2_0_prsnt_n              = scpld_to_mcpld_data_filter[53];
+assign  pal_riser2_prsnt_n            = scpld_to_mcpld_data_filter[52];
+assign  pal_riser1_prsnt_n            = scpld_to_mcpld_data_filter[51];
+assign  riser2_tmp_alert_n            = scpld_to_mcpld_data_filter[50];
+assign  riser1_tmp_alert_n            = scpld_to_mcpld_data_filter[49];
+assign  db_pal_ext_rst_n              = scpld_to_mcpld_data_filter[48];
+assign  debug_sw8                     = scpld_to_mcpld_data_filter[47];
+assign  debug_sw7                     = scpld_to_mcpld_data_filter[46];
+assign  debug_sw6                     = scpld_to_mcpld_data_filter[45];
+assign  debug_sw5                     = scpld_to_mcpld_data_filter[44];
+assign  debug_sw4                     = scpld_to_mcpld_data_filter[43];
+assign  debug_sw3                     = scpld_to_mcpld_data_filter[42];
+assign  debug_sw2                     = scpld_to_mcpld_data_filter[41];
+assign  debug_sw1                     = scpld_to_mcpld_data_filter[40];
+assign  cpu_nvme17_prsnt_n            = scpld_to_mcpld_data_filter[39];
+assign  cpu_nvme16_prsnt_n            = scpld_to_mcpld_data_filter[38];
+assign  cpu_nvme15_prsnt_n            = scpld_to_mcpld_data_filter[37];
+assign  cpu_nvme14_prsnt_n            = scpld_to_mcpld_data_filter[36];
+assign  cpu_nvme13_prsnt_n            = scpld_to_mcpld_data_filter[35];
+assign  cpu_nvme12_prsnt_n            = scpld_to_mcpld_data_filter[34];
+assign  cpu_nvme11_prsnt_n            = scpld_to_mcpld_data_filter[33];
+assign  cpu_nvme10_prsnt_n            = scpld_to_mcpld_data_filter[32];
+assign  cpu_nvme19_prsnt_n            = scpld_to_mcpld_data_filter[31];
+assign  cpu_nvme18_prsnt_n            = scpld_to_mcpld_data_filter[30];
+assign  cpu_nvme23_prsnt_n            = scpld_to_mcpld_data_filter[29];
+assign  cpu_nvme22_prsnt_n            = scpld_to_mcpld_data_filter[28];
+assign  cpu_nvme7_prsnt_n             = scpld_to_mcpld_data_filter[27];
+assign  cpu_nvme6_prsnt_n             = scpld_to_mcpld_data_filter[26];
+assign  cpu_nvme5_prsnt_n             = scpld_to_mcpld_data_filter[25];
+assign  cpu_nvme4_prsnt_n             = scpld_to_mcpld_data_filter[24];
+assign  cpu_nvme3_prsnt_n             = scpld_to_mcpld_data_filter[23];
+assign  cpu_nvme2_prsnt_n             = scpld_to_mcpld_data_filter[22];
+assign  cpu_nvme1_prsnt_n             = scpld_to_mcpld_data_filter[21];
+assign  cpu_nvme0_prsnt_n             = scpld_to_mcpld_data_filter[20];
+assign  cpu_nvme9_prsnt_n             = scpld_to_mcpld_data_filter[19];
+assign  cpu_nvme8_prsnt_n             = scpld_to_mcpld_data_filter[18];
+assign  cpu_nvme25_prsnt_n            = scpld_to_mcpld_data_filter[17]; 
+assign  cpu_nvme24_prsnt_n            = scpld_to_mcpld_data_filter[16];
+assign  ocp_prsent_b7_n               = scpld_to_mcpld_data_filter[15];
+assign  ocp_prsent_b6_n               = scpld_to_mcpld_data_filter[14];
+assign  ocp_prsent_b5_n               = scpld_to_mcpld_data_filter[13];
+assign  ocp_prsent_b4_n               = scpld_to_mcpld_data_filter[12];
+assign  ocp_prsent_b3_n               = scpld_to_mcpld_data_filter[11];
+assign  ocp_prsent_b2_n               = scpld_to_mcpld_data_filter[10];
+assign  ocp_prsent_b1_n               = scpld_to_mcpld_data_filter[9] ;
+assign  ocp_prsent_b0_n               = scpld_to_mcpld_data_filter[8] ;
+assign  fan8_install_n                = scpld_to_mcpld_data_filter[7] ;
+assign  fan7_install_n                = scpld_to_mcpld_data_filter[6] ;
+assign  fan6_install_n                = scpld_to_mcpld_data_filter[5] ;
+assign  fan5_install_n                = scpld_to_mcpld_data_filter[4] ;
+assign  fan4_install_n                = scpld_to_mcpld_data_filter[3] ;
+assign  fan3_install_n                = scpld_to_mcpld_data_filter[2] ;
+assign  fan2_install_n                = scpld_to_mcpld_data_filter[1] ;
+assign  fan1_install_n                = scpld_to_mcpld_data_filter[0] ;
+
+//M CPLD ---> S CPLD 
+assign mcpld_to_scpld_p2s_data[511]     =  1'b1                      ; 
+assign mcpld_to_scpld_p2s_data[510]     =  1'b0                      ;
+assign mcpld_to_scpld_p2s_data[509]     =  1'b1                      ; 
+assign mcpld_to_scpld_p2s_data[508]     =  1'b0                      ;
+assign mcpld_to_scpld_p2s_data[507:350] = 158'b0                     ;
+assign mcpld_to_scpld_p2s_data[349]     = test_bat_en                ;
+assign mcpld_to_scpld_p2s_data[348]     = bmc_extrst_uid             ;
+assign mcpld_to_scpld_p2s_data[347]     = i_PAL_M2_0_SEL_LV33_R      ;
+assign mcpld_to_scpld_p2s_data[346:339] = i2c_ram_1058               ;
+assign mcpld_to_scpld_p2s_data[338:331] = i2c_ram_1057               ;
+assign mcpld_to_scpld_p2s_data[330:323] = i2c_ram_1056               ;
+assign mcpld_to_scpld_p2s_data[322:315] = i2c_ram_1055               ;
+assign mcpld_to_scpld_p2s_data[314:307] = i2c_ram_1054               ;
+assign mcpld_to_scpld_p2s_data[306:299] = i2c_ram_1053               ;
+assign mcpld_to_scpld_p2s_data[298:291] = i2c_ram_1052               ;
+assign mcpld_to_scpld_p2s_data[290:283] = i2c_ram_1051               ;
+assign mcpld_to_scpld_p2s_data[282:275] = i2c_ram_1050               ;
+assign mcpld_to_scpld_p2s_data[274]     = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
+assign mcpld_to_scpld_p2s_data[273]     = rst_i2c0_mux_n             ;
+assign mcpld_to_scpld_p2s_data[272]     = pal_led_nic_act            ;
+assign mcpld_to_scpld_p2s_data[271]     = rst_i2c_riser2_pca9548_n   ;
+assign mcpld_to_scpld_p2s_data[270]     = rst_i2c_riser1_pca9548_n   ;
+assign mcpld_to_scpld_p2s_data[269]     = i_CPU0_D0_BIOS_OVER        ;
+assign mcpld_to_scpld_p2s_data[268]     = bmc_read_flag_1            ;
+assign mcpld_to_scpld_p2s_data[267]     = vga2_dis                   ;
+assign mcpld_to_scpld_p2s_data[266:227] = pfr_to_led[39:0]           ;
+assign mcpld_to_scpld_p2s_data[226]     = pgd_p1v8_stby_dly32ms      ;
+assign mcpld_to_scpld_p2s_data[225]     = pgd_p1v8_stby_dly30ms      ;
+assign mcpld_to_scpld_p2s_data[224]     = bios_security_bypass       ;
+assign mcpld_to_scpld_p2s_data[223]     = i_PAL_RTC_INTB             ;
+assign mcpld_to_scpld_p2s_data[222]     = pal_ocp_ncsi_sw_en         ;
+assign mcpld_to_scpld_p2s_data[221]     = pal_ocp2_ncsi_en           ;
+assign mcpld_to_scpld_p2s_data[220]     = pal_ocp1_ncsi_en           ;
+assign mcpld_to_scpld_p2s_data[219]     = i_PAL_PE_WAKE_N_R          ;
+assign mcpld_to_scpld_p2s_data[218]     = i_SMB_PEHP_CPU1_3V3_ALERT_N;
+assign mcpld_to_scpld_p2s_data[217:216] = debug_reg_15[1:0]          ;
+assign mcpld_to_scpld_p2s_data[215]     =  rom_mux_bios_bmc_en       ;
+assign mcpld_to_scpld_p2s_data[214:183] =  AUX_BP_type[31:0]         ;
+assign mcpld_to_scpld_p2s_data[182:55]  =  pcie_detect[127:0]        ;
+assign mcpld_to_scpld_p2s_data[54:39]   =  o_mb_cb_prsnt_bmc[15:0]   ;
+assign mcpld_to_scpld_p2s_data[38]      =  rom_mux_bios_bmc_sel      ;
+//assign mcpld_to_scpld_p2s_data[37]    =  bmcctl_uart_sw_en         ;
+assign mcpld_to_scpld_p2s_data[37:36]   =  bmcctl_uart_sw[1:0]       ;
+assign mcpld_to_scpld_p2s_data[35]      =  rom_bmc_bk_rst            ;
+assign mcpld_to_scpld_p2s_data[34]      =  rom_bmc_ma_rst            ;
+assign mcpld_to_scpld_p2s_data[33]      =  rst_pal_extrst_r_n        ;
+assign mcpld_to_scpld_p2s_data[32]      =  db_i_leakage_det_do_n     ;
+assign mcpld_to_scpld_p2s_data[31]      =  tpm_rst                   ;
+assign mcpld_to_scpld_p2s_data[30]      =  rst_i2c13_mux_n           ;
+assign mcpld_to_scpld_p2s_data[29]      =  rst_i2c12_mux_n           ;
+assign mcpld_to_scpld_p2s_data[28]      =  rst_i2c11_mux_n           ;
+assign mcpld_to_scpld_p2s_data[27]      =  rst_i2c10_mux_n           ;
+assign mcpld_to_scpld_p2s_data[26]      =  rst_i2c8_mux_n            ;
+assign mcpld_to_scpld_p2s_data[25]      =  rst_i2c5_mux_n            ;
+assign mcpld_to_scpld_p2s_data[24]      =  rst_i2c4_2_mux_n          ;
+assign mcpld_to_scpld_p2s_data[23]      =  rst_i2c4_1_mux_n          ;
+assign mcpld_to_scpld_p2s_data[22]      =  rst_i2c3_mux_n            ;
+assign mcpld_to_scpld_p2s_data[21]      =  rst_i2c2_mux_n            ;
+assign mcpld_to_scpld_p2s_data[20]      =  rst_i2c1_mux_n            ;
+assign mcpld_to_scpld_p2s_data[19]      =  sys_hlth_red_blink_n      ;
+assign mcpld_to_scpld_p2s_data[18]      =  sys_hlth_grn_blink_n      ;
+assign mcpld_to_scpld_p2s_data[17]      =  led_uid                   ;
+assign mcpld_to_scpld_p2s_data[16]      =  power_supply_on           ;
+assign mcpld_to_scpld_p2s_data[15]      =  ocp_main_en               ;
+assign mcpld_to_scpld_p2s_data[14]      =  ocp_aux_en                ;
+assign mcpld_to_scpld_p2s_data[13]      =  pex_reset_n               ;
+assign mcpld_to_scpld_p2s_data[12]      =  reached_sm_wait_powerok   ;
+assign mcpld_to_scpld_p2s_data[11]      =  usb_ponrst_r_n            ;
+assign mcpld_to_scpld_p2s_data[10]      =  t4hz_clk                  ;
+assign mcpld_to_scpld_p2s_data[9:4]     =  power_seq_sm              ;
+assign mcpld_to_scpld_p2s_data[3]       =  1'b0                      ;
+assign mcpld_to_scpld_p2s_data[2]       =  1'b1                      ;
+assign mcpld_to_scpld_p2s_data[1]       =  1'b0                      ;
+assign mcpld_to_scpld_p2s_data[0]       =  1'b1                      ;
+
+
+assign riser1_cb_prsnt_slot1_n          = riser1_pvti_byte3[7];
+assign riser1_cb_prsnt_slot2_n          = riser1_pvti_byte3[6];
+assign riser1_cb_prsnt_slot3_n          = riser1_pvti_byte3[5];
+
+assign riser1_pwr_det0                  = riser1_pvti_byte2[5];
+assign riser1_pwr_det1                  = riser1_pvti_byte2[4];
+assign riser1_pcb_rev0                  = riser1_pvti_byte2[3];
+assign riser1_pcb_rev1                  = riser1_pvti_byte2[2];
+assign riser1_pwr_alert_n               = riser1_pvti_byte2[1];
+assign riser1_emc_alert_n               = riser1_pvti_byte2[0];
+
+assign riser1_slot1_prsnt_n             = riser1_pvti_byte1[7];
+assign riser1_slot2_prsnt_n             = riser1_pvti_byte1[6];
+assign riser1_slot3_prsnt_n             = riser1_pvti_byte1[5];
+
+assign riser1_id[0]                     = riser1_pvti_byte0[7];
+assign riser1_id[1]                     = riser1_pvti_byte0[6];
+assign riser1_id[2]                     = riser1_pvti_byte0[5];
+assign riser1_id[3]                     = riser1_pvti_byte0[4];
+assign riser1_id[4]                     = riser1_pvti_byte0[3];
+assign riser1_id[5]                     = riser1_pvti_byte0[2];
+assign pal_riser1_pwrgd                 = riser1_pvti_byte0[1];
+assign pal_riser1_pe_wake_n             = riser1_pvti_byte0[0];
+
+assign riser2_cb_prsnt_slot1_n          = riser2_pvti_byte3[7];
+assign riser2_cb_prsnt_slot2_n          = riser2_pvti_byte3[6];
+assign riser2_cb_prsnt_slot3_n          = riser2_pvti_byte3[5];
+
+assign riser2_pwr_det0                  = riser2_pvti_byte2[5];
+assign riser2_pwr_det1                  = riser2_pvti_byte2[4];
+assign riser2_pcb_rev0                  = riser2_pvti_byte2[3];
+assign riser2_pcb_rev1                  = riser2_pvti_byte2[2];
+assign riser2_pwr_alert_n               = riser2_pvti_byte2[1];
+assign riser2_emc_alert_n               = riser2_pvti_byte2[0];
+
+assign riser2_slot1_prsnt_n             = riser2_pvti_byte1[7];
+assign riser2_slot2_prsnt_n             = riser2_pvti_byte1[6];
+assign riser2_slot3_prsnt_n             = riser2_pvti_byte1[5];
+
+assign riser2_id[0]                     = riser2_pvti_byte0[7];
+assign riser2_id[1]                     = riser2_pvti_byte0[6];
+assign riser2_id[2]                     = riser2_pvti_byte0[5];
+assign riser2_id[3]                     = riser2_pvti_byte0[4];
+assign riser2_id[4]                     = riser2_pvti_byte0[3];
+assign riser2_id[5]                     = riser2_pvti_byte0[2];
+assign pal_riser2_pwrgd                 = riser2_pvti_byte0[1];
+assign pal_riser2_pe_wake_n             = riser2_pvti_byte0[0];
+
+assign riser2_pwr_cable_prsnt_n[0]      = riser2_pvti_byte2[5];
+assign riser2_pwr_cable_prsnt_n[1]      = riser2_pvti_byte2[4];
+assign riser2_pwr_cable_prsnt_n[2]      = riser2_pvti_byte2[7];
+assign riser2_pwr_cable_prsnt_n[3]      = riser2_pvti_byte2[6];//4GPU POWER CANLE DET
+
+assign riser1_pwr_cable_prsnt_n[0]      = riser1_pvti_byte2[5];
+assign riser1_pwr_cable_prsnt_n[1]      = riser1_pvti_byte2[4];
+assign riser1_pwr_cable_prsnt_n[2]      = riser1_pvti_byte2[7];
+assign riser1_pwr_cable_prsnt_n[3]      = riser1_pvti_byte2[6];//4GPU POWER CANLE DET
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+按键控制
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+power_button power_button_inst  (
+    .clk                   (sys_clk        ),
+    .reset                 (~pgd_aux_system ),
+    .t1s                   (t1s_tick        ),
+    .gpo_pwr_btn_mask      (pwrbtn_mask     ),
+    .xreg_pwr_btn_passthru (pwrbtn_bl_mask  ),
+    .xreg_vir_pwr_btn      (vwire_pwrbtn_bl ),
+    .defeat_pwr_btn_dis_n  (1'b0            ),
+    .turn_on_override      (1'b0            ),
+    .sys_sw_in_n           (db_sys_sw_in_n  ),
+    .gmt_shutdown          (s_bmc_shutdown  ),
+    .gmt_wakeup_n          (s_bmc_wakeup_n  ),
+    .cpu_thermtrip         (cpu_thermtrip   ),
+    .temp_deadly           (1'b0            ),
+    .interlock_broken      (interlock_broken),
+    .st_steady_pwrok       (st_steady_pwrok ),
+    .st_off_standby        (st_off_standby  ),
+    .pch_pwrbtn            (pch_pwrbtn      ),
+    .pch_thrmtrip          (pch_thrmtrip    ) 
+);
+
+assign interlock_broken = 1'b0;
+
+
+//------------------------------------------------------------------------------
+// Power button
+//------------------------------------------------------------------------------
+wire                        pch_pwrbtn                  ; // BMC 控制短按  
+wire                        pwrbtn_bl_mask              ; // BMC 控制长按
+wire                        vwire_pwrbtn_bl             ; // BMC 控制长按
+wire                        db_sys_sw_in_n   
+wire                        s_bmc_shutdown   
+wire                        s_bmc_wakeup_n   
+wire                        cpu_thermtrip              
+wire                        interlock_broken 
+wire                        st_steady_pwrok  
+wire                        st_off_standby   
+wire                        pch_pwrbtn       
+wire                        pch_thrmtrip     
+
+power_button power_button_inst  (
+.clk                        (sys_clk                    ),
+.reset                      (~pgd_aux_system            ),
+.t1s                        (t1s_tick                   ),
+.gpo_pwr_btn_mask           (pwrbtn_mask                ),
+.xreg_pwr_btn_passthru      (pwrbtn_bl_mask             ),
+.xreg_vir_pwr_btn           (vwire_pwrbtn_bl            ),
+.defeat_pwr_btn_dis_n       (1'b0                       ),
+.turn_on_override           (1'b0                       ),
+.sys_sw_in_n                (db_sys_sw_in_n             ),
+.gmt_shutdown               (s_bmc_shutdown             ),
+.gmt_wakeup_n               (s_bmc_wakeup_n             ),
+.cpu_thermtrip              (cpu_thermtrip              ),
+.temp_deadly                (1'b0                       ),
+.interlock_broken           (interlock_broken           ),
+.st_steady_pwrok            (st_steady_pwrok            ),
+.st_off_standby             (st_off_standby             ),
+.pch_pwrbtn                 (pch_pwrbtn                 ),
+.pch_thrmtrip               (pch_thrmtrip               ) 
+);
+
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 CPU 重启
@@ -1881,48 +2660,9 @@ begin
                    end
 end
 
-
-
-
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 上下电模块
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire                                        db_sys_sw_in_n              ;
-wire                                        pch_pwrbtn                  ;   
-wire                                        pch_pwrbtn_s                ;
-
-wire                                        pch_thrmtrip                ;
-wire                                        force_pwrbtn_n              ;
-
-wire                                        cpu_reboot_S                ; 
-wire                                        cpu_reboot_x                ; 
-wire                                        cpu_power_off               ; 
-
-wire                                        keep_alive_on_fault         ;
-wire                                        pgd_raw                     ;
-
-wire                                        pgd_so_far                  ;     
-wire                                        any_pwr_fault_det           ;     
-wire                                        any_lim_recov_fault         ;     
-wire                                        any_non_recov_fault         ;     
-wire                                        dc_on_wait_complete         ;    
-wire                                        rt_critical_fail_store      ;     
-wire                                        fault_clear                 ;     
-
-wire                                        pch_thermtrip_flag          ;
-wire                                        cpu_off_flag                ;
-wire                                        reboot_flag                 ;
-wire                                        power_wake_r_n              ;
-wire                                        pch_sys_reset_n             ;
-wire                                        turn_system_on              ;
-
-wire                                        power_fault                 ; 
-wire                                        stby_failure_detected       ; 
-wire                                        dc_failure_detected         ; 
-wire                                        rt_failure_detected         ; 
-wire                                        cpld_latch_sys_off          ; 
-wire                                        turn_on_wait                ; 
-
 // 上下电 master
 pwrseq_master #(
     .LIM_RECOV_MAX_RETRY_ATTEMPT            (2                          ),
@@ -2118,6 +2858,8 @@ pwrseq_slave #(
     .pgd_p12v_stby_droop                    (db_i_pal_pgd_p12v_stby_droop),  //in
     .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg   ),
     .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg  ),
+    .p12v_cpu1_vin_pg                       (db_i_pal_p12v_cpu1_vin_pg   ),
+    .p12v_cpu0_vin_pg                       (db_i_pal_p12v_cpu0_vin_pg   ),
     // 5. SM_EN_5V 状态上电使能
     .p5v_pgd                                (db_i_pal_p5v0_pgd           ),
     // 6. SM_EN_3V3 状态上电使能
@@ -2213,6 +2955,8 @@ pwrseq_slave #(
     .p12v_reat_bp_efuse_fault_det	        (p12v_reat_bp_efuse_fault_det	),
     .p12v_fan_efuse_fault_det		        (p12v_fan_efuse_fault_det	    ),
     .p12v_dimm_efuse_fault_det              (p12v_dimm_efuse_fault_det	    ),
+    .p12v_cpu1_vin_fault_det                (p12v_cpu0_vin_fault_det        ),
+    .p12v_cpu0_vin_fault_det                (p12v_cpu1_vin_fault_det        ),
     .p12v_fault_det                         (p12v_fault_det                 ),//out
     .p12v_stby_droop_fault_det              (p12v_stby_droop_fault_det      ),//out
 
@@ -2285,107 +3029,629 @@ pwrseq_slave #(
     .aux_pcycle                             (aux_pcycle                    ) //FROM XREG 
 );
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------
+风扇控制
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+reg [7:0]                               cpld_pwm_main_cnt       ;
+reg [`NUM_FAN-1:0]                      fan_pwm_n               ;
+reg                                     cpld_pwm_main_timeout   ;
+wire                                    fan_wdt_sel             ;
+wire                                    cpld_pwm_aux            ;
+wire                                    cpld_pwm_main           ;
+wire [7:0]                              duty_0                  ;
+wire [7:0]                              duty_1                  ;
+wire [7:0]                              duty_2                  ;
+wire [7:0]                              duty_3                  ;
+wire [7:0]                              duty_4                  ;
+wire [7:0]                              duty_5                  ;
+wire [7:0]                              duty_6                  ;
+wire [7:0]                              duty_7                  ;
+wire [7:0]                              duty_aux                ;
+wire [7:0]                              duty_main               ;
+wire [7:0]                              duty_main_max           ;
+wire [7:0]                              duty_main_min           ;
+wire [1:0]                              cpld_pwm_main_type      ;
+wire [7:0]                              bmc_pwm_main            ;
+
+//parameter FAN_PCT_0   = 8'h00;//  0/256= 0.000%
+//parameter FAN_PCT_10  = 8'h19;// 25/256= 9.766%
+//parameter FAN_PCT_20  = 8'h33;// 51/256=19.922%
+//parameter FAN_PCT_30  = 8'h49;// 76/256=29.688%
+  parameter FAN_PCT_40  = 8'h66;//102/256=39.844%
+  parameter FAN_PCT_50  = 8'h80;//128/256=50.000%
+//parameter FAN_PCT_60  = 8'h99;//153/256=59.766%
+//parameter FAN_PCT_67  = 8'hAB;//171/256=66.797%
+  parameter FAN_PCT_70  = 8'hB3;//179/256=69.922%
+  parameter FAN_PCT_80  = 8'hCC;//204/256=79.688%
+//parameter FAN_PCT_85  = 8'hD9;//217/256=84.766%
+  parameter FAN_PCT_90  = 8'hE6;//230/256=89.844%
+//parameter FAN_PCT_95  = 8'hF3;//243/256=94.922%
+  parameter FAN_PCT_100 = 8'hFF;//255/256=99.219%
+
+/*
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst2(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_aux),
+  .fan_pwm_out(cpld_pwm_aux));
+*/
+//assign duty_aux      = 8'h80;
+assign duty_main_max = 8'hE6;
+assign duty_main_min = 8'h80;
+
+always @(posedge sys_clk or negedge db_i_pal_p5v_pgd)begin
+    if (!db_i_pal_p5v_pgd)
+    begin
+      cpld_pwm_main_cnt     <= 8'h00;
+      cpld_pwm_main_timeout <= 1'b0;
+    end
+    else
+    begin
+      if (cpld_pwm_main_cnt==8'h78)
+      begin
+        cpld_pwm_main_cnt    <= cpld_pwm_main_cnt;
+        cpld_pwm_main_timeout <= 1'b1;
+      end
+      else
+      begin
+        cpld_pwm_main_cnt     <= t1s_tick ? cpld_pwm_main_cnt + 8'h01 : cpld_pwm_main_cnt;
+        cpld_pwm_main_timeout <= 1'b0;
+      end
+    end
+end
+
+assign duty_main = cpld_pwm_main_timeout ? duty_main_max : duty_main_min;
+assign cpld_pwm_main_type[1:0] = (duty_main==duty_main_max) ? 2'b10 : 
+                                 (duty_main==duty_main_min) ? 2'b01 : 2'b00;
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst1(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_main),
+  .fan_pwm_out(cpld_pwm_main));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst3(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_0),
+  .fan_pwm_out(bmc_pwm_main[0]));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst4(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_1),
+  .fan_pwm_out(bmc_pwm_main[1]));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst5(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_2),
+  .fan_pwm_out(bmc_pwm_main[2]));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst6(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_3),
+  .fan_pwm_out(bmc_pwm_main[3]));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst7(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_4),
+  .fan_pwm_out(bmc_pwm_main[4]));
+  
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst8(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_5),
+  .fan_pwm_out(bmc_pwm_main[5]));
+
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst9(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_6),
+  .fan_pwm_out(bmc_pwm_main[6]));
+  
+fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst10(
+  .pwm_clk    (t6m25_clk),
+  .reset_n    (pon_reset_n),
+  .enable     (1'b1),
+  .duty_cycle (duty_7),
+  .fan_pwm_out(bmc_pwm_main[7]));
+
+//assign bmc_pwm_main[7:0] = (~db_fan_prsnt_n[7:0]) & ({ i_PAL_FAN_BMC_PWM8,i_PAL_FAN_BMC_PWM7,i_PAL_FAN_BMC_PWM6,i_PAL_FAN_BMC_PWM5,i_PAL_FAN_BMC_PWM4,i_PAL_FAN_BMC_PWM3,i_PAL_FAN_BMC_PWM2,i_PAL_FAN_BMC_PWM1});
+
+always @(*)
+  begin
+    case({db_i_pal_p5v_pgd, bmc_ready_flag})
+      2'b00: begin
+        //fan_pwm_n[7]   <= 1'b1;
+		//fan_pwm_n[6]   <= 1'b1;
+        //fan_pwm_n[5]   <= ((~(s5dev_prsnt_n[0] & s5dev_prsnt_n[1])) & (s5dev_fan_on_aux)) ? cpld_pwm_aux : 1'b1;
+        //fan_pwm_n[4:0] <= 5'h1F;
+		  fan_pwm_n[7:0] <= 8'hFF;
+      end
+      2'b01: begin
+        //fan_pwm_n[7]   <= 1'b1;
+		//fan_pwm_n[6]   <= 1'b1;
+        //fan_pwm_n[5]   <= ((~(s5dev_prsnt_n[0] & s5dev_prsnt_n[1])) & (s5dev_fan_on_aux)) ? cpld_pwm_aux : 1'b1;
+        //fan_pwm_n[4:0] <= 5'h1F;
+		  fan_pwm_n[7:0] <= bmc_pwm_main[7:0];
+      end
+      2'b10  : fan_pwm_n[7:0] <= {8{cpld_pwm_main}};
+      2'b11  : fan_pwm_n[7:0] <= bmc_pwm_main[7:0];
+      default: fan_pwm_n[7:0] <= 8'hFF;
+    endcase
+  end
+
+assign emc_alert_n = i_PAL_TMP1_ALERT_N & i_PAL_TMP2_ALERT_N & i_PAL_TMP3_ALERT_N;
+assign fan_wdt_sel = 1'b0;
+assign s5dev_prsnt_n[0]  = db_ocp1_prsnt_n ;
+assign s5dev_prsnt_n[1]  = db_ocp2_prsnt_n ;
+assign s5dev_fan_on_aux  = ((~(db_ocp1_prsnt_n & db_ocp2_prsnt_n)) & (~db_emc_alert_n ) );
+
+assign o_PAL_FAN1_PWM_R =   db_fan_prsnt_n[0] ?  1'b0:  (~fan_pwm_n[0] );
+assign o_PAL_FAN2_PWM_R =   db_fan_prsnt_n[1] ?  1'b0:  (~fan_pwm_n[1] );
+assign o_PAL_FAN3_PWM_R =   db_fan_prsnt_n[2] ?  1'b0:  (~fan_pwm_n[2] );
+assign o_PAL_FAN4_PWM_R =   db_fan_prsnt_n[3] ?  1'b0:  (~fan_pwm_n[3] );
+assign o_PAL_FAN5_PWM_R =   db_fan_prsnt_n[4] ?  1'b0:  (~fan_pwm_n[4] );
+assign o_PAL_FAN6_PWM_R =   db_fan_prsnt_n[5] ?  1'b0:  (~fan_pwm_n[5] );  
+assign o_PAL_FAN7_PWM   =   db_fan_prsnt_n[6] ?  1'b0:  (~fan_pwm_n[6] );
+assign o_PAL_FAN8_PWM   =   db_fan_prsnt_n[7] ?  1'b0:  (~fan_pwm_n[7] );
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach1(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH1),
+.fan_rotor_byte2   (fan_tach1_byte2),
+.fan_rotor_byte1   (fan_tach1_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach2(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH1),
+.fan_rotor_byte2   (fan_tach2_byte2),
+.fan_rotor_byte1   (fan_tach2_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach3(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH2),
+.fan_rotor_byte2   (fan_tach3_byte2),
+.fan_rotor_byte1   (fan_tach3_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach4(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH2),
+.fan_rotor_byte2   (fan_tach4_byte2),
+.fan_rotor_byte1   (fan_tach4_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach5(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH3),
+.fan_rotor_byte2   (fan_tach5_byte2),
+.fan_rotor_byte1   (fan_tach5_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach6(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH3),
+.fan_rotor_byte2   (fan_tach6_byte2),
+.fan_rotor_byte1   (fan_tach6_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach7(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH4),
+.fan_rotor_byte2   (fan_tach7_byte2),
+.fan_rotor_byte1   (fan_tach7_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach8(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH4),
+.fan_rotor_byte2   (fan_tach8_byte2),
+.fan_rotor_byte1   (fan_tach8_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach9(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH5),
+.fan_rotor_byte2   (fan_tach9_byte2),
+.fan_rotor_byte1   (fan_tach9_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach10(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH5),
+.fan_rotor_byte2   (fan_tach10_byte2),
+.fan_rotor_byte1   (fan_tach10_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach11(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH6),
+.fan_rotor_byte2   (fan_tach11_byte2),
+.fan_rotor_byte1   (fan_tach11_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach12(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH6),
+.fan_rotor_byte2   (fan_tach12_byte2),
+.fan_rotor_byte1   (fan_tach12_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach13(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH7),
+.fan_rotor_byte2   (fan_tach13_byte2),
+.fan_rotor_byte1   (fan_tach13_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach14(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH7),
+.fan_rotor_byte2   (fan_tach14_byte2),
+.fan_rotor_byte1   (fan_tach14_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach15(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_FRONT_TACH8),
+.fan_rotor_byte2   (fan_tach15_byte2),
+.fan_rotor_byte1   (fan_tach15_byte1));
+
+fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach16(
+.count_step        (t8us_tick),
+.count_clear_step  (t1s_tick),
+.clk_50m           (sys_clk),
+.pon_reset_n       (pon_reset_n),
+.signal_in         (i_FAN_REAR_TACH8),
+.fan_rotor_byte2   (fan_tach16_byte2),
+.fan_rotor_byte1   (fan_tach16_byte1));
+
 
 //------------------------------------------------------------------------------
-// Power button
+// force_reb logic (emergency power down)
+// - Asserts when uid bottom is held at least 6s.
+// - This is one of the shutdown events
 //------------------------------------------------------------------------------
-wire                        pch_pwrbtn                  ; // BMC 控制短按  
-wire                        pwrbtn_bl_mask              ; // BMC 控制长按
-wire                        vwire_pwrbtn_bl             ; // BMC 控制长按
-wire                        db_sys_sw_in_n   
-wire                        s_bmc_shutdown   
-wire                        s_bmc_wakeup_n   
-wire                        cpu_thermtrip              
-wire                        interlock_broken 
-wire                        st_steady_pwrok  
-wire                        st_off_standby   
-wire                        pch_pwrbtn       
-wire                        pch_thrmtrip     
+reg  [2:0] force_reb_count;
 
-power_button power_button_inst  (
-.clk                        (sys_clk                    ),
-.reset                      (~pgd_aux_system            ),
-.t1s                        (t1s_tick                   ),
-.gpo_pwr_btn_mask           (pwrbtn_mask                ),
-.xreg_pwr_btn_passthru      (pwrbtn_bl_mask             ),
-.xreg_vir_pwr_btn           (vwire_pwrbtn_bl            ),
-.defeat_pwr_btn_dis_n       (1'b0                       ),
-.turn_on_override           (1'b0                       ),
-.sys_sw_in_n                (db_sys_sw_in_n             ),
-.gmt_shutdown               (s_bmc_shutdown             ),
-.gmt_wakeup_n               (s_bmc_wakeup_n             ),
-.cpu_thermtrip              (cpu_thermtrip              ),
-.temp_deadly                (1'b0                       ),
-.interlock_broken           (interlock_broken           ),
-.st_steady_pwrok            (st_steady_pwrok            ),
-.st_off_standby             (st_off_standby             ),
-.pch_pwrbtn                 (pch_pwrbtn                 ),
-.pch_thrmtrip               (pch_thrmtrip               ) 
+always @(posedge sys_clk or negedge pgd_aux_system)
+begin
+  if (~pgd_aux_system)
+  begin
+    force_reb_count <= 2'b00;
+    force_reb       <= 1'b1;
+  end
+  else if (db_i_pal_uid_sw_in_n)
+  begin
+    force_reb_count <= 2'b00;
+    force_reb       <= 1'b1;
+  end
+  else if (t1s_tick && (force_reb_count == 3'b111))
+  begin
+    force_reb       <= 1'b0;
+  end
+  else if (t1s_tick && !db_i_pal_uid_sw_in_n )
+  begin
+    force_reb_count <= force_reb_count + 1'b1;
+  end
+end
+
+
+//------------------------------------------------------------------------------
+// force_reb logic (emergency power down)
+// - Asserts when uid bottom is held at least 6s.
+// - This is one of the shutdown events
+//------------------------------------------------------------------------------
+reg  [1:0] force_reb_in_count;
+reg        force_reb_in;
+
+always @(posedge sys_clk or negedge pgd_aux_system)
+begin
+  if (~pgd_aux_system)
+  begin
+    force_reb_in_count <= 2'b00;
+    force_reb_in       <= 1'b1;
+  end
+  else if (db_pal_ext_rst_n)
+  begin
+    force_reb_in_count <= 2'b00;
+    force_reb_in       <= 1'b1;
+  end
+  else if (t1s_tick && (force_reb_in_count == 2'b11))
+  begin
+    force_reb_in       <= 1'b0;
+  end
+//YHY  else if (t1s && !sys_sw_in_n && gpo_pwr_btn_mask)
+    else if (t1s_tick && !db_pal_ext_rst_n )
+
+  begin
+    force_reb_in_count <= force_reb_in_count + 1'b1;
+  end
+end
+
+
+//------------------------------------------------------------------------------
+// PME Event
+// CHECKME: PE_WAKE_N (CR15) includes:
+// AROC   J21, only MEZZ type existed
+// RISER1 J1
+// RISER2 J39
+// RISER3 Slot7/8
+// RISER4 Slot9/10
+// OCP1/OCP2/AUX7 PEWAK
+// BMC    PAL_BMC_PE_WAKE_N, not used in G2 yet.
+//------------------------------------------------------------------------------
+pme_filter pme_filter_inst (
+  .clk              (sys_clk         ),//in
+  .t1hz_tick        (t1s_tick         ),//in
+  .pgoodaux         (pon_reset_db_n   ),//in
+  .pme_source_or_all(~pfr_pe_wake_n   ),//in ���е��ӿ�������wake�źţ�����pme_filter��1��Ч  
+  .pme_mask_n       (~power_supply_on ),//in psuʹ���źš�����pme_filter��0��ʾpsu�ϵ磬�򲻻ᴥ��db_pme_source_all��1��ʾpsuû�ϵ磬��ᴥ��db_pme_source_all������psu
+  .db_pme_source_all(db_pme_source_all),//out ���wake
+  .pme_event_pls    (pme_event        ) //out �ϱ��жϣ�1��ʾ����wake
 );
+
+assign power_wake_r_n = (!db_pme_source_all || power_supply_on || !wol_en) ? 1'b1 : 1'b0;  //ADD YHY
+
+//------------------------------------------------------------------------------
+// UID logic
+// CHECKME: Need to validate connections with new top level
+//------------------------------------------------------------------------------
+wire w_uid_btn_evt_wc;
+wire w_uid_rstbmc_evt_wc;
+wire uid_btn_all_invert;
+wire uid_button_long_evt;
+wire uid_button_short_evt;
+wire [7:0] w_uid_led_ctl;
+
+UID_Function#(
+.LONG_PRESS        (4'd5)
+)UID_Function_u0(
+.i_clk                    (sys_clk		        ),//input Clk
+.i_1mSEC                  (t1ms_tick	        ),
+.i_20mSEC                 (t32ms_tick	        ),
+.i_rst_n                  (pon_reset_n	        ),//Global rst,Active Low
+.i_clr_flag_short         (~w_uid_btn_evt_wc    ),//Use the same signal on common design
+.i_clr_flag_long          (~w_uid_rstbmc_evt_wc ),//Use the same signal on common design 
+.i_UID_BMC_BTN_N          (1'b1                 ),
+.i_UID_BTN_RP_CPLD_N      (i_PAL_BMCUID_BUTTON_R),//i_UID_BTN_CPLD_N
+.i_UID_BTN_FP_CPLD_N      (1'b1), 
+
+//Output Signal
+.o_BMC_UID_CPLD_N         (                    ),// reserved, bmc control uid led via i2c
+.o_BMC_EXTRST_CPLD_OUT_N  (bmc_extrst_uid	   ),
+.o_UID_BTN_short_pos      (uid_btn_all_invert  ),
+
+.o_uid_button_long        (uid_button_long_evt ),
+.o_uid_button_short       (uid_button_short_evt),
+
+.i_uid_valid              (1'b0                ),//reserved
+.i_uid_status             (8'h00               ),//reserved
+.o_uid_act_st             (                    )//reserved
+);
+
+//bmc control uid led when bmc active, or uid button will control uid led when bmc die;
+reg r_BMC_UID_CPLD_N;
+reg [7:0] r_uid_led_ctl;
+//assign o_uid_led_ctl    = r_uid_led_ctl;
+assign led_uid = r_BMC_UID_CPLD_N;
+always@(posedge sys_clk or negedge pon_reset_n)
+begin
+    if(~pon_reset_n)
+	begin
+        r_BMC_UID_CPLD_N  <= 1'b1;
+		r_uid_led_ctl     <= 8'h00;
+	end
+	else if(bmc_ready_flag) 
+    begin
+		r_uid_led_ctl  <= w_uid_led_ctl;
+	    case (w_uid_led_ctl)
+	    8'h00: r_BMC_UID_CPLD_N  <= 1'b1;
+		8'h01: r_BMC_UID_CPLD_N  <= t0p5hz_clk;
+		8'h02: r_BMC_UID_CPLD_N  <= t1hz_clk;
+		8'h04: r_BMC_UID_CPLD_N  <= t4hz_clk;
+		8'hff: r_BMC_UID_CPLD_N  <= 1'b0;
+		default: r_BMC_UID_CPLD_N  <= 1'b1;
+	    endcase
+	end
+	else  
+	begin
+		case (r_uid_led_ctl)
+		8'h00: 	
+		begin
+			r_BMC_UID_CPLD_N  <= 1'b1;
+			if(uid_btn_all_invert) 		        
+		        r_uid_led_ctl     <= 8'hff;
+		end
+		8'h01: 
+		begin
+			if(uid_btn_all_invert)
+			    r_uid_led_ctl     <= 8'hff;
+		end
+		8'h02: 
+		begin
+			if(uid_btn_all_invert)
+			    r_uid_led_ctl     <= 8'hff;
+		end
+		8'h04: 
+		begin
+			if(uid_btn_all_invert)
+			    r_uid_led_ctl     <= 8'hff;
+		end		
+		8'hff:
+		begin
+			r_BMC_UID_CPLD_N  <= 1'b0;
+			if(uid_btn_all_invert) 			    
+		        r_uid_led_ctl     <= 8'h00;
+		end
+		default: 
+		begin 
+		    r_uid_led_ctl     <= 8'h00; 
+       	end	
+		endcase	 
+	end
+end
+
+
+//------------------------------------------------------------------------------
+// SYSTEM HEALTHY LED
+// CHECKME: Need to validate connections with new top level
+//------------------------------------------------------------------------------
+reg r_pal_led_hel_red_r;
+reg r_pal_led_hel_gr_r;
+
+always@(posedge sys_clk or negedge pon_reset_n)//2023-4-25 add 
+begin
+	if(~pon_reset_n)
+	  begin
+		r_pal_led_hel_red_r  <= 1'b0;
+		r_pal_led_hel_gr_r   <= 1'b0;
+	end
+	else 
+	begin
+	case({w_sys_healthy_red,w_sys_healthy_grn}) 		
+        2'b00: begin
+		    r_pal_led_hel_red_r  <= 1'b0;
+		    r_pal_led_hel_gr_r   <= 1'b0;
+		end
+		2'b01: begin
+		    r_pal_led_hel_red_r  <= 1'b0;
+		    r_pal_led_hel_gr_r   <= 1'b1;
+		end
+		2'b10: begin
+		    r_pal_led_hel_red_r  <= t1hz_clk;
+		    r_pal_led_hel_gr_r   <= 1'b0;
+		end
+		2'b11: begin
+		    r_pal_led_hel_red_r  <= t1hz_clk;
+		    r_pal_led_hel_gr_r   <= t1hz_clk;
+		end
+	default: 	
+	begin
+	    r_pal_led_hel_red_r  <= 1'b0;
+		r_pal_led_hel_gr_r   <= 1'b0;
+	end
+	endcase
+	end
+end
+
+assign sys_hlth_red_blink_n = r_pal_led_hel_red_r   ;
+assign sys_hlth_grn_blink_n = r_pal_led_hel_gr_r    ;
+
+
+//PANEL logic
+assign o_LED_PWRBTN_GR_R  = (power_seq_sm==SM_STEADY_PWROK) ? 1'b1 : 1'b0                ;
+assign o_LED_PWRBTN_AMB_R = (power_seq_sm==SM_STEADY_PWROK) ? 1'b0 : 1'b1                ;
 
 
 //------------------------------------------------------------------------------
 // PSU 上电逻辑
 //------------------------------------------------------------------------------
-wire                ps_on_dly_n            ;
-wire                ps_fail                ;
-wire                ps_critical            ;      
-wire                brownout_warning       ;
-wire                brownout_fault         ;
+wire                    ps_on_dly_n             ;
+wire                    ps_fail                 ;
+wire                    ps_critical             ;      
+wire                    brownout_warning        ;
+wire                    brownout_fault          ;
 
 psu #(
-  .NUM_PSU(`NUM_PSU)
+    .NUM_PSU(`NUM_PSU)
 ) psu_inst (
-  .clk             (sys_clk                ),
-  .reset           (~pon_reset_n           ),
-  .t1us            (t1us_tick              ),
-  .t1ms            (t1ms_tick              ),
-  .t1s             (t1s_tick               ),
-  .xreg_ps_enable  (xr_ps_enable           ),
-  .xreg_ps_mismatch(2'b0                   ),
-  .gpo_cpld_rst    (1'b0                   ),
-  .power_seq_sm    (power_seq_sm           ),
-  .power_supply_on (power_supply_on        ),
-  .bad_fuse_det    (1'b0                   ),
-  .lom_prsnt_n     (1'b0                   ),
-  .lom_fan_on_aux  (1'b0                   ),
-  .ps_prsnt_n      (db_ps_prsnt_n          ),
-  .ps_acok         (db_ps_acok             ),
-  .ps_dcok         (db_ps_dcok             ),
-  .pgd_p12v_droop  (db_i_pal_pgd_p12v_droop),
-  .ps_on_n         (ps_on_dly_n            ),	
-  .ps_cyc_pwr_n    (                       ),
-  .ps_acok_link    (                       ),
-  .ps_fail         (ps_fail                ),
-  .ps_caution      (/*ps_caution*/         ),
-  .ps_critical     (ps_critical            ),
-  .brownout_warning(brownout_warning       ),
-  .brownout_fault  (brownout_fault         )
+    .clk                (sys_clk                ),
+    .reset              (~pon_reset_n           ),
+    .t1us               (t1us_tick              ),
+    .t1ms               (t1ms_tick              ),
+    .t1s                (t1s_tick               ),
+    .xreg_ps_enable     (xr_ps_enable           ), // 可以不使用
+    .xreg_ps_mismatch   (2'b0                   ),
+    .gpo_cpld_rst       (1'b0                   ),
+    .power_seq_sm       (power_seq_sm           ),
+    .power_supply_on    (power_supply_on        ),
+    .bad_fuse_det       (1'b0                   ),
+    .lom_prsnt_n        (1'b0                   ),
+    .lom_fan_on_aux     (1'b0                   ),
+    .ps_prsnt_n         (db_ps_prsnt_n          ),
+    .ps_acok            (db_ps_acok             ),
+    .ps_dcok            (db_ps_dcok             ),
+    .pgd_p12v_droop     (db_i_pal_pgd_p12v_droop),// 确保正确
+    .ps_on_n            (ps_on_dly_n            ),	
+    .ps_cyc_pwr_n       (                       ),
+    .ps_acok_link       (                       ),
+    .ps_fail            (ps_fail                ),
+    .ps_caution         (                       ),
+    .ps_critical        (ps_critical            ),
+    .brownout_warning   (brownout_warning       ),
+    .brownout_fault     (brownout_fault         )
 );
 
-//delay 1s for ps_on_n(fall)
-edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps0_on_n(
-  .clk         (sys_clk             ),
-  .reset       (~pon_reset_n        ),
-  .cnt_size    (2'b10               ),
-  .cnt_step    (t512ms_tick         ),
-  .signal_in   (ps_on_dly_n[0]      ),
-  .delay_output(ps_on_n[0]          )
+// delay 1s for ps_on_n(fall)
+edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps0_on_n (
+    .clk                (sys_clk                ),
+    .reset              (~pon_reset_n           ),
+    .cnt_size           (2'b10                  ),
+    .cnt_step           (t512ms_tick            ),
+    .signal_in          (ps_on_dly_n[0]         ),
+    .delay_output       (ps_on_n[0]             )
 );
 
 edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps1_on_n(
-  .clk         (sys_clk             ),
-  .reset       (~pon_reset_n        ),
-  .cnt_size    (2'b10               ),
-  .cnt_step    (t512ms_tick         ),
-  .signal_in   (ps_on_dly_n[1]      ),
-  .delay_output(ps_on_n[1]          )
+    .clk                (sys_clk                ),
+    .reset              (~pon_reset_n           ),
+    .cnt_size           (2'b10                  ),
+    .cnt_step           (t512ms_tick            ),
+    .signal_in          (ps_on_dly_n[1]         ),
+    .delay_output       (ps_on_n[1]             )
 );
 
 // PS1/PS2 12V使能信号，低电平有效
 assign o_PAL_PS1_P12V_ON_R    = ~ps_on_n[0]                     ;
-assign o_PAL_PS2_P12V_ON_R    = ~ps_on_n[1]                     ;
-assign o_PAL_P12V_DISCHARGE_R = (&ps_on_n[1:0]) ? 1'bz : 1'b0   ;
+assign o_PAL_PS2_P12V_ON_R    = ~ps_on_n[1]                     ;   
+assign o_PAL_P12V_DISCHARGE_R = (&ps_on_n[1:0]) ? 1'bz : 1'b0   ; // 实际未使用
 
 //------------------------------------------------------------------------------
 // 健康灯SYSTEM HEALTHY LED
@@ -2440,21 +3706,21 @@ assign o_LED_PWRBTN_AMB_R = (power_seq_sm==SM_STEADY_PWROK) ? 1'b0 : 1'b1       
 // BACKPLANE logic
 // 背板上电辅助信号处理
 //------------------------------------------------------------------------------
-wire[15:0]w_mb_to_bp_aux1_data;
-wire[15:0]w_mb_to_bp_aux2_data;
+wire    [15:0]                          w_mb_to_bp_aux1_data    ;
+wire    [15:0]                          w_mb_to_bp_aux2_data    ;
 
-wire[15:0]w_bp_to_mb_aux1_data;
-wire[15:0]w_bp_to_mb_aux2_data;
+wire    [15:0]                          w_bp_to_mb_aux1_data    ;
+wire    [15:0]                          w_bp_to_mb_aux2_data    ;
 
-//bit[7:6] rsv bit5:locate en bit[4:1]:locate bit0:pwr en
-wire[5:0]w_aux_rsvd_bit15_10;
-wire[1:0]w_mb_type;//mb_type 00:ICX  01:EGS  10:EGS 4U   11:ICX 4U
-wire[3:0]w_aux_rsvd_bit7_4;
-wire[2:0]w_aux_num_aux1;
-wire[2:0]w_aux_num_aux2;
+// bit[7:6] rsv bit5:locate en bit[4:1]:locate bit0:pwr en
+wire    [5:0]                           w_aux_rsvd_bit15_10     ;
+wire    [1:0]                           w_mb_type               ; // mb_type 00:ICX  01:EGS  10:EGS 4U  11:ICX 4U
+wire    [3:0]                           w_aux_rsvd_bit7_4       ;
+wire    [2:0]                           w_aux_num_aux1          ;
+wire    [2:0]                           w_aux_num_aux2          ;
 
-wire w_pal_bp1_pwr_on_r;
-wire w_pal_bp2_pwr_on_r;
+wire                                    w_pal_bp1_pwr_on_r      ;
+wire                                    w_pal_bp2_pwr_on_r      ;
 
 assign w_aux_rsvd_bit15_10 = 6'b0  ;
 assign w_mb_type           = 2'b01 ;
@@ -2462,13 +3728,14 @@ assign w_aux_rsvd_bit7_4   = 4'b0  ;
 assign w_aux_num_aux1      = 3'b001;
 assign w_aux_num_aux2      = 3'b010;
 
-
+// MB_CPLD 输出的数据格式
 assign w_pal_bp1_pwr_on_r = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
 assign w_pal_bp2_pwr_on_r = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
 
 assign w_mb_to_bp_aux1_data = {w_aux_rsvd_bit15_10,w_mb_type,w_aux_rsvd_bit7_4,w_aux_num_aux1,w_pal_bp1_pwr_on_r};
 assign w_mb_to_bp_aux2_data = {w_aux_rsvd_bit15_10,w_mb_type,w_aux_rsvd_bit7_4,w_aux_num_aux2,w_pal_bp2_pwr_on_r};
 
+// BP_CPLD 输入的数据格式
 assign i2c_ram_1055[0] = (w_bp_to_mb_aux1_data[7:0] == 8'b10011101) ? 1'b0 : 1'b1;//12LTG5
 assign i2c_ram_1055[1] = (w_bp_to_mb_aux1_data[7:0] == 8'b00001010) ? 1'b0 : 1'b1;//8+4
 assign i2c_ram_1055[2] = (w_bp_to_mb_aux1_data[7:0] == 8'b10011110) ? 1'b0 : 1'b1;//4+8
@@ -2493,36 +3760,36 @@ assign i2c_ram_1057[7:1] = 7'h7f;
 //AUX1  J84    Board_ID
 // ---------------------------------------------------------------------------------------------------------------------
 UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(24)) uart_master_u1 (
-.clk             (clk_100m            ),//input
-.rst             (~pon_reset_n        ),//input
-.tick            (t16us_tick          ),//input
-.t128ms_tick     (t128ms_tick         ),//input
-//Physical Pin        
-.ser_data        (io_PAL_BP1_PWR_ON_R ),//inout 
-//Physical Data
-.par_data_in     (w_mb_to_bp_aux1_data),//input 
-.par_data_out    (w_bp_to_mb_aux1_data),//output
-.send_enable     (1'b1                ),//input
-.pass_through    (w_pal_bp1_pwr_on_r  ),//input
-.error_flag      (                    ) //output
+    .clk                        (sys_clk             ),//input  系统时钟
+    .rst                        (~pon_reset_n        ),//input
+    .tick                       (t16us_tick          ),//input  BPS计数时钟
+    .t128ms_tick                (t128ms_tick         ),//input 
+    //Physical Pin        
+    .ser_data                   (io_PAL_BP1_PWR_ON_R ),//inout  MB_CPLD输出的串口数据, BP_CPLD输入的串口数据
+    //Physical Data
+    .par_data_in                (w_mb_to_bp_aux1_data),//input  MB_CPLD输入的并行数据, 16位
+    .par_data_out               (w_bp_to_mb_aux1_data),//output MB_CPLD输出的并行数据, 16位
+    .send_enable                (1'b1                ),//input
+    .pass_through               (w_pal_bp1_pwr_on_r  ),//input
+    .error_flag                 (                    ) //output
 );
 
 //----------------------------------------------------------------------------------------------------------------------
 //AUX2  J86    Board_ID
 // ---------------------------------------------------------------------------------------------------------------------
 UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(24)) uart_master_u2 (
-.clk             (clk_100m            ),//input
-.rst             (~pon_reset_n        ),//input
-.tick            (t16us_tick          ),//input
-.t128ms_tick     (t128ms_tick         ),//input
-//Physical Pin        
-.ser_data        (io_PAL_BP2_PWR_ON_R ),//inout 
-//Physical Data
-.par_data_in     (w_mb_to_bp_aux2_data),//input 
-.par_data_out    (w_bp_to_mb_aux2_data),//output
-.send_enable     (1'b1                ),//input
-.pass_through    (w_pal_bp2_pwr_on_r  ),//input
-.error_flag      (                    ) //output
+    .clk                        (sys_clk             ),//input  系统时钟
+    .rst                        (~pon_reset_n        ),//input
+    .tick                       (t16us_tick          ),//input  BPS计数时钟
+    .t128ms_tick                (t128ms_tick         ),//input
+    //Physical Pin        
+    .ser_data                   (io_PAL_BP2_PWR_ON_R ),//inout  MB_CPLD输出的串口数据, BP_CPLD输入的串口数据
+    //Physical Data
+    .par_data_in                (w_mb_to_bp_aux2_data),//input  MB_CPLD输入的并行数据, 16位
+    .par_data_out               (w_bp_to_mb_aux2_data),//output MB_CPLD输出的并行数据, 16位
+    .send_enable                (1'b1                ),//input
+    .pass_through               (w_pal_bp2_pwr_on_r  ),//input
+    .error_flag                 (                    ) //output
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -2535,12 +3802,12 @@ wire                            ocp_aux_pgd                 ;
 edge_delay #(
     .CNTR_NBITS    (5                       )
 ) ocp_main_en_delay_inst (
-    .clk           (clk_100m		        ),
-    .reset         (~pon_reset_n	        ),
-    .cnt_size      (5'h19		            ),
-    .cnt_step      (t2ms_tick	            ),
-    .signal_in     (ocp_main_en             ),
-    .delay_output  (ocp_main_en_dly50ms     )
+    .clk                        (sys_clk		        ),
+    .reset                      (~pon_reset_n	        ),
+    .cnt_size                   (5'h19		            ),
+    .cnt_step                   (t2ms_tick	            ),
+    .signal_in                  (ocp_main_en             ),
+    .delay_output               (ocp_main_en_dly50ms     )
 );
 assign ocp1_prsnt_n = ocp_prsent_b3_n & ocp_prsent_b2_n & ocp_prsent_b1_n & ocp_prsent_b0_n;
 assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_prsent_b7_n;
@@ -2576,6 +3843,7 @@ assign o_BIOS0_RST_N_R            = ~rom_bios_ma_rst    ; // cpu_bios_en ? (~rom
 assign o_BIOS1_RST_N_R            = ~rom_bios_bk_rst    ; // cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz; // BIOS FLASH 复位信号输出，低电平有效 
 
 assign o_PAL_FRONT_BP_EFUSE_EN_R  = p12v_bp_front_en    ; // 12V 前背板供电使能信号
+// assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en  ; // 12V 后背板供电使能信号, 未使用
 
 // 2. SM_EN_5V_STBY 状态上电使能
 assign o_PAL_P5V_STBY_EN_R        = p5v_stby_en_r       ; // 5V 待机电源使能信号
@@ -2592,8 +3860,15 @@ assign o_PAL_RISER2_PWR_EN_R       = power_supply_on    ; // RISER 卡供电使�
 assign o_PAL_P12V_CPU0_VIN_EN_R    = power_supply_on    ; // CPU 12V 输入使能信号，高电平有效
 assign o_PAL_P12V_CPU1_VIN_EN_R    = power_supply_on    ; // CPU 12V 输入使能信号，高电平有效
 
-// assign o_PAL_FRONT_BP_EFUSE_EN_R  = p12v_bp_front_en ; // 12V 前背板供电使能信号, 未使用
-// assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en  ; // 12V 后背板供电使能信号, 未使用
+// assign o_PAL_DIMM_EFUSE_EN_R       = power_supply_on    ;  
+// assign o_PAL_GPU1_EFUSE_EN_R       = power_supply_on    ;//20240517 d00412 VB change
+// assign o_PAL_GPU3_EFUSE_EN_R       = power_supply_on    ;//20240517 d00412 VB change
+// assign o_PAL_GPU2_EFUSE_EN_R       = power_supply_on    ;//20240517 d00412 VB change
+// assign o_PAL_GPU_FAN4_PWR_EN_R     = power_supply_on    ;
+// assign o_PAL_GPU_FAN3_PWR_EN_R     = power_supply_on    ;
+// assign o_PAL_GPU_FAN1_PWR_EN_R     = power_supply_on    ;
+// assign o_PAL_GPU_FAN2_PWR_EN_R     = power_supply_on    ;
+
 
 // 5. SM_EN_5V 状态上电使能
 assign o_PAL_P5V_BD_EN_R           = p5v_en_r            ; // 5V 主板电源使能信号
@@ -2646,5 +3921,859 @@ assign o_PAL_CPU0_VR8_RESET_R  = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
 // assign o_CPU0_VR_AVRST_R       = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
 assign o_PAL_CPU1_VR8_RESET_R  = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
 // assign o_CPU1_VR_AVRST_R       = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+// Power capping
+//------------------------------------------------------------------------------
+pwrcap #(
+  .NUMBER_OF_CPUS(`NUM_CPU),
+  .NUMBER_OF_PSU(`NUM_PSU),
+  .NUMBER_OF_CHANNEL(`NUM_CHN)
+) pwrcap_inst (
+  .sys_clk             (sys_clk                                ),
+  .reset_n             (pon_reset_db_n                          ),
+  .power_fault         (power_fault                             ),//in
+  .fault_blink_code    (pf_blink_code                           ),//in
+  .t30p5us             (t32us_tick                              ),
+  .pm_stpclk           (1'b0                                    ),
+  .sw_stpclk           (1'b0                                    ),//in,from xbus 0x14.2  cpu_throttle_force     
+  .vr_hot_n            (2'b1                                    ),//in ��ȥ��ʵ��û���� from thermal_inst qual_cpu_vr_hot_n                       
+  .ddr_pwrcap_enable   (1'b0                                    ),//in, from xbus 0x14.1       
+  .ddr_pwrcap_sw_therm (1'b0                                    ),//XREG 0X14 BIT0 ��ֵ0//in,from xbus 0x14.0       
+  .ddr_pwrcap_throttle (4'b0                                    ),//in                         
+  .dimm_alert          ({mem_efgh_hot_alert, mem_abcd_hot_alert}),//in, from thermal_inst        
+  .ddr_pwrcap_assert_ch(                                        ),//X86�͸�cpu,����ûȥ��,//out
+  .vdd3_pgood          (db_i_pal_p5v_pgd                        ),//in                  
+  .onehz_clk           (t1hz_clk                                ),//in                  
+  .pwrcap_en           (1'b0                                    ),//����pwrcap_grn����ʹ��                                 
+  .pwrcap_denied       (1'b0                                    ),//����pwrcap_amb����ʹ�� pwron_denied                                
+  .pwrcap_wait         (1'b0                                    ),//in,from xbus   pwrcap_wait                                     
+  .pwrseq_wait         (turn_on_wait                            ),//in,from MASTER                                      
+  .pwrcap_grn          (                                        ),//out,no use                                         
+  .pwrcap_amb          (                                        ),//out,no use                                         
+  .pwrbtn_grn          (pal_pwrbtn_grn_led                      ),//out,�Ҷ���Դ��     
+  .pwrbtn_amb          (pal_pwrbtn_amb_led                      ),//out,�Ҷ���Դ��     
+  .ebrake_en           (1'b0                                    ),//in,from xbus 0x14.3 ebrake_en
+  .ps_ac_ok            (db_ps_acok                              ),//in                  
+  .ebrake_state        (ebrake                                  ) //ac power loss//out,ac power loss  
+);
+
+
+//------------------------------------------------------------------------------
+// thermal 
+//------------------------------------------------------------------------------
+//cpu_thermtrip_event=1 ��ʾ���������¼�
+assign cpu_thermtrip_event[0]  = cpu0_temp_over;
+assign cpu_thermtrip_event[1]  = cpu1_temp_over;
+
+thermal thermal_inst (
+  .clk                    (sys_clk           ),
+  .pgd_p3v3_stby_async    (pon_reset_db_n     ),
+  .pgd_aux_system         (pgd_aux_system     ),
+  .pgd_p3v3               (db_i_pal_p5v_pgd   ),
+  .pch_sys_pwrok          (1'b1               ),
+  .st_steady_pwrok        (st_steady_pwrok    ),
+  .cpu_vr_hot_n           (2'b11              ),
+  .mem_vr_hot_n           (4'b1111            ),
+  .cpu_thermtrip_in       (cpu_thermtrip_event),
+  .thermtrip_ena          (1'b1               ),
+  .emc_alert_n            (1'b1               ),//all_emc_alert_n
+  .lom_temp_dead          (1'b0               ),
+  .lom_prsnt_n            (1'b1               ),//ȷ����,���ocp��λ &s5dev_prsnt_n
+  .aroc_temp_dead         (1'b0               ),
+  .cpu_ab_alert_n         (2'b11              ),
+  .cpu_cd_alert_n         (2'b11              ),
+  .pch_pltrst_n           (1'b1               ),
+  .qual_cpu_vr_hot_n      (qual_cpu_vr_hot_n  ),
+  .qual_mem_vr_hot_n      (                   ),
+  .or_all_cpu_thermtrip   (cpu_thermtrip      ),//out; ָʾ����CPU�¶ȸ澯
+  .sensor_thermtrip       (sensor_thermtrip   ),//���1��ʾriser ocp �����¸��ϱ�����,���ͳ��µ�ָ�
+  .qual_cpu_ab_alert      (mem_abcd_hot_alert ),
+  .qual_cpu_cd_alert      (mem_efgh_hot_alert )
+);
+
+assign all_emc_alert_n = (db_emc_alert_n        | emc_alert_mask                               ) |
+                         (db_riser1_tmp_alert_n | riser1_emc_alert_mask | db_pal_riser1_prsnt_n) |
+                         (db_riser2_tmp_alert_n | riser2_emc_alert_mask | db_pal_riser2_prsnt_n) |
+                         ( ocp_temp_alert_mask  | (db_ocp1_prsnt_n & db_ocp2_prsnt_n           ));
+	
+	
+//------------------------------------------------------------------------------
+// System reset
+//------------------------------------------------------------------------------
+system_reset #(
+  .PEAVEY_SUPPORT              (PEAVEY_SUPPORT),
+  .MAX_HSB_EVENTS_PER_RESET    (20),
+  .MAX_HSB_RST_ATTEMPT         (4),
+  .NUM_CPU                     (`NUM_CPU),
+  .NUM_IO                      (`NUM_IO)
+) system_reset_inst (
+  .clk                         (sys_clk                     ),
+  .reset                       (~pgd_aux_system              ),
+  .t1us                        (t1us_tick                    ),
+  .st_steady_pwrok             (st_steady_pwrok              ),
+  .reached_sm_pre_wait_powerok (reached_sm_wait_powerok      ),
+  .rt_critical_fail_store      (rt_critical_fail_store       ),
+  .glp_bootnext_n              (1'b1                         ),//s_bmc_bootnext_n��Զ��1
+  .glp_sysrst_n                (s_bmc_sysrst_n | rst_btn_mask),//change in 2020311 by g14161  ��ȥ��δʹ��
+  .sysrst_button_n             (force_reb_in | rst_btn_mask  ),//change in 2020311 by g14161 //20201212  �޸ĳɳ���4s���ܴ���  
+  .xdp_cpu_syspwrok            (1'b1                         ),//BMC_SYS_PWROK
+  .rst_pcie_cpu_n              (s_cpu_rst_pcie_n             ),//s_cpu_rst_pcie_n��Զ��1 
+  .hsb_en                      (1'b0                         ),//db_xdp_prsnt_n
+  .hsb_fail_n                  (hsb_fail_n                   ),
+  .pal_sys_reset               (pch_sys_reset                ),
+  .pal_sys_reset_n             (pch_sys_reset_n              ),
+  .rst_gmt_n                   (rst_bmc_n                    ),//��s_pch_pltrst_n��Ϊ����֮һ��BMC��λ//NOUSE
+  .gmt_lreset_n                (                             ),
+  .rst_io_n                    (rst_io_n                     ) //NOUSE
+);
+
+
+//------------------------------------------------------------------------------
+// NIC LED
+//------------------------------------------------------------------------------
+/*
+nic_leds #(.NUMBER_OF_NICS(16)) ocp_leds_inst (
+  .sys_clk           (sys_clk),               //input
+  .reset_n           (pon_reset_db_n),        //input
+  .lom_present_n     (1'b0),                  //input       db_ocp_prsnt_n
+  .t62p5ms           (t64ms_tick),            //input
+  .nic_link          ({~s_ocp_link_n[7:0],~s_ocp2_link_n[7:0]}),//input
+  .nic_act           ({~s_ocp_act_n[7:0],~s_ocp2_act_n[7:0]}), //input
+  .power_fault       (power_fault),           //input
+  .fault_blink_code  (pf_blink_code),         //input
+  .sid_nic_leds      (),                      //output
+  .fp_nic_led        (ocp_led)                //output
+);
+*/
+assign pal_led_nic_act = bmcctl_front_nic_led ? t4hz_clk : 
+                         ~(ocp_pvt_act_p0_n & ocp_pvt_act_p1_n & ocp_pvt_act_p2_n & ocp_pvt_act_p3_n & ocp_pvt_act_p4_n & ocp_pvt_act_p5_n & ocp_pvt_act_p6_n & ocp_pvt_act_p7_n & 
+						 ocp2_pvt_act_p0_n & ocp2_pvt_act_p1_n & ocp2_pvt_act_p2_n & ocp2_pvt_act_p3_n & ocp2_pvt_act_p4_n & ocp2_pvt_act_p5_n & ocp2_pvt_act_p6_n & ocp2_pvt_act_p7_n) ? t1hz_clk : 
+						 ~(ocp_pvt_link_spda_p0_n & ocp_pvt_link_spdb_p0_n & 
+						 ocp_pvt_link_spda_p1_n & ocp_pvt_link_spdb_p1_n & 
+						 ocp_pvt_link_spda_p2_n & ocp_pvt_link_spdb_p2_n & 
+						 ocp_pvt_link_spda_p3_n & ocp_pvt_link_spdb_p3_n & 
+						 ocp_pvt_link_spda_p4_n & ocp_pvt_link_spdb_p4_n & 
+						 ocp_pvt_link_spda_p5_n & ocp_pvt_link_spdb_p5_n & 
+						 ocp_pvt_link_spda_p6_n & ocp_pvt_link_spdb_p6_n & 
+						 ocp_pvt_link_spda_p7_n & ocp_pvt_link_spdb_p7_n & 
+						 ocp2_pvt_link_spda_p0_n & ocp2_pvt_link_spdb_p0_n & 
+						 ocp2_pvt_link_spda_p1_n & ocp2_pvt_link_spdb_p1_n & 
+						 ocp2_pvt_link_spda_p2_n & ocp2_pvt_link_spdb_p2_n & 
+						 ocp2_pvt_link_spda_p3_n & ocp2_pvt_link_spdb_p3_n & 
+						 ocp2_pvt_link_spda_p4_n & ocp2_pvt_link_spdb_p4_n & 
+						 ocp2_pvt_link_spda_p5_n & ocp2_pvt_link_spdb_p5_n & 
+						 ocp2_pvt_link_spda_p6_n & ocp2_pvt_link_spdb_p6_n & 
+						 ocp2_pvt_link_spda_p7_n & ocp2_pvt_link_spdb_p7_n) ? 1'b1 : 1'b0;
+
+
+//------------------------------------------------------------------------------
+// LED blink code
+// - Generates correct blink code based on power fault class
+//------------------------------------------------------------------------------
+  wire [7:0] pf_class0 = pf_class0_b0 | pf_class0_b1 | pf_class0_b2 | pf_class0_b3;
+  wire [7:0] pf_class1 = pf_class1_b0 | pf_class1_b1;
+  wire [7:0] pf_class2 = 8'b0;//pf_class2_b0 | pf_class2_b1;
+  wire [7:0] pf_class3 = 8'b0;
+  wire [7:0] pf_class4 = pf_class4_b0;
+  wire [7:0] pf_class5 = pf_class5_b0;
+  wire [7:0] pf_class6 = pf_class6_b0;
+  wire [7:0] pf_class7 = 8'b0;
+  wire [7:0] pf_class8 = 8'b0;
+  wire [7:0] pf_class9 = pf_class9_b0;
+  wire [7:0] pf_classa = pf_classa_b0;
+
+led_blink_code #(.CLASS_SIZE(8)) led_blink_code_inst (
+  .reset_n   (pgd_aux_system),
+  .sys_clk   (sys_clk      ),
+  .blink_clk (t2p5hz_clk    ),
+  .class_0   (pf_class0     ),
+  .class_1   (pf_class1     ),
+  .class_2   (pf_class2     ),
+  .class_3   (pf_class3     ),
+  .class_4   (pf_class4     ),
+  .class_5   (pf_class5     ),
+  .class_6   (pf_class6     ),
+  .class_7   (pf_class7     ),
+  .class_8   (pf_class8     ),
+  .class_9   (pf_class9     ),
+  .class_A   (pf_classa     ),
+  .health_led(pf_blink_code )   //out
+  );
+
+
+//------------------------------------------------------------------------------
+// POST LEDs
+//------------------------------------------------------------------------------
+wire debug_mode_led;
+
+post_leds post_leds_inst (
+  .sys_clk     (sys_clk),
+  .reset_n     (pgd_aux_system),
+  .sys_pgood   (1'b1),
+  .onehz_clk   (t1hz_clk),
+  .mux_led     (1'b1),
+  .mux_pwrseq  (~debug_mode_led),//ON=Sequence  //~db_debug_sw[3]
+  .power_seq_sm(power_seq_sm),
+  .pal_ver_led ({8'h00,8'h00,8'hFF,`CPLD_VER,8'hFF}),
+  .gpo_leds    (bios_post_code),
+  .gmt_leds    (8'h00),//bmc_led
+  .led_n       (post_led_n)
+);
+
+assign debug_mode_led = (~db_debug_sw[7]) ? db_debug_sw[3] : 1'b1;//0:LED For Debug Mode 1:LED For Normal Mode
+
+
+//------------------------------------------------------------------------------
+// Power fault reporting
+//------------------------------------------------------------------------------
+//0xA2
+assign pf_class0_b0  = {2'b0,
+                        p12v_cpu0_vin_fault_det,
+                        p12v_cpu1_vin_fault_det,
+                        p12v_dimm_efuse_fault_det,
+                        p5v_fault_det,
+						p12v_front_bp_efuse_fault_det,
+						p12v_reat_bp_efuse_fault_det
+						};
+//0xA3						
+assign pf_class0_b1  = {any_aux_vrm_fault         ,
+                        4'b0                      ,                         
+			            p5v_stby_fault_det        ,
+                        p3v3_stby_fault_det       ,
+                        p3v3_stby_bp_fault_det
+						};
+//0xA4	
+assign pf_class0_b2  = { keep_alive_on_fault,
+                         4'b0,
+                         db_i_dimm_sns_alert      ,
+		                 ~db_i_fan_sns_alert      ,   
+                         db_i_p12v_stby_sns_alert
+						 };  
+//0xA5
+assign pf_class0_b3  = {3'b0                      , 
+                        ~bmc_pgd_p3v3_stby        ,      
+                        ~bmc_pgd_p1v8_stby        ,       
+                        ~bmc_pgd_p1v2_stby        ,      
+                        ~bmc_pgd_p1v1_stby        ,	
+                        ~bmc_pgd_p0v8_stby 	                
+						};
+//0xA6
+assign pf_class1_b0  = {cpu_thermtrip_fault_det[0],
+                        cpu0_p1v8_fault_det       ,
+                        cpu0_pll_p1v8_fault_det   ,
+                        cpu0_ddr_vdd_fault_det    ,
+			            cpu0_pcie_p0v9_fault_det  ,
+			            cpu0_pcie_p1v8_fault_det  ,
+                        cpu0_vddq_fault_det       ,
+						cpu0_vdd_core_fault_det
+						};
+//0xA7						
+assign pf_class1_b1  = {cpu_thermtrip_fault_det[1],
+                        cpu1_p1v8_fault_det       ,
+                        cpu1_pll_p1v8_fault_det   ,
+                        cpu1_ddr_vdd_fault_det    ,
+                        cpu1_pcie_p0v9_fault_det  ,
+                        cpu1_pcie_p1v8_fault_det  ,      
+                        cpu1_vddq_fault_det       ,
+						cpu1_vdd_core_fault_det   
+						};
+//0xA8
+assign pf_class2_b0  = {6'b0,
+                        i_CPU0_VR8_CAT_FLT        ,
+                        ~i_PAL_CPU0_VR_OD           
+                        }; 
+//0xA9						
+assign pf_class2_b1  = {6'b0,
+                        i_CPU1_VR8_CAT_FLT        ,
+                        ~i_PAL_CPU1_VR_OD          
+						};
+//0xAA Riser
+assign pf_class4_b0  = {8'b0};
+
+//0xAC OCP
+assign pf_class5_b0  = {8'b0};
+//0xAD 
+assign pf_class6_b0  = {8'b0};
+//0xAE BP
+assign pf_class9_b0  = {8'b0};//hd_bp_fault_det;
+//0xAF PSU
+assign pf_classa_b0  = {3'b0,
+                        brownout_fault,
+                        4'b0         
+					   };
+//------------------------------------------------------------------------------
+// BMC Logic Begin
+//------------------------------------------------------------------------------
+assign rst_pal_extrst_r_n = bmc_extrst_uid;//ilo_hard_reset ? 1'b0 : 1'b1;
+assign o_PAL_BMC_SRST_R   = bmc_extrst_uid;//ilo_hard_reset ? 1'b0 : 1'b1;
+
+
+//BMC INTERRUPT
+reg auxint_n_r;
+always @(posedge sys_clk or negedge pgd_aux_system)
+ begin
+   if (!pgd_aux_system)
+     auxint_n_r <= 1'b1;
+   else if (~pgd_aux_system_sasd)
+     auxint_n_r <= 1'b1;
+   else
+     auxint_n_r <= ~auxint;
+ end
+
+assign o_PAL_BMC_INT_N = auxint_n_r;
+
+//------------------------------------------------------------------------------
+// BMC Logic End
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// ID logic
+//------------------------------------------------------------------------------
+//assign board_id[7:0]      = {board_id7,board_id6,board_id5,board_id4,board_id3,board_id2,board_id1,board_id0};
+
+//------------------------------------------------------------------------------
+// I2C MUX logic
+//------------------------------------------------------------------------------
+assign rst_i2c1_mux_n           = ~bmc_i2c_rst[0] ;
+assign rst_i2c2_mux_n           = ~bmc_i2c_rst[1] ;
+assign rst_i2c3_mux_n           = ~bmc_i2c_rst[2] ;
+assign rst_i2c4_1_mux_n         = ~bmc_i2c_rst[3] ;
+//assign rst_i2c4_2_mux_n         = ~bmc_i2c_rst[4] ;
+assign rst_i2c0_mux_n           = ~bmc_i2c_rst[4] ;
+assign rst_i2c5_mux_n           = ~bmc_i2c_rst[5] ;
+assign rst_i2c8_mux_n           = ~bmc_i2c_rst[6] ;
+assign rst_i2c10_mux_n          = ~bmc_i2c_rst[7] ;
+assign rst_i2c11_mux_n          = ~bmc_i2c_rst2[0];
+assign rst_i2c12_mux_n          = ~bmc_i2c_rst2[1];
+assign rst_i2c13_mux_n          = ~bmc_i2c_rst2[2];
+assign o_PAL_RST_CPU1_VPP_N_R   = ~bmc_i2c_rst2[3];
+assign o_PAL_RST_CPU0_VPP_N_R   = ~bmc_i2c_rst2[4];
+assign rst_i2c_riser1_pca9548_n = ~bmc_i2c_rst2[5];
+assign rst_i2c_riser2_pca9548_n = ~bmc_i2c_rst2[6];
+assign rst_i2c4_2_mux_n         = ~bmc_i2c_rst2[7];
+
+assign o_PAL_OCP_DEBUG_EN_R    = 1'b1;//1 enable sw (U39)
+
+
+//------------------------------------------------------------------------------
+// Security Bypass
+//------------------------------------------------------------------------------
+assign bmc_security_bypass  = db_debug_sw[7] ? (~db_debug_sw[0]) : 1'b0;//0:HDM use custom account & password 1:HDM use default account & password
+assign bios_security_bypass = db_debug_sw[7] ? (~db_debug_sw[5]) : 1'b0;//BIOS normal boot 1:clear BIOS's password boot
+
+
+//------------------------------------------------------------------------------
+// OC logic
+//------------------------------------------------------------------------------
+/*
+assign ocp_fault_det1 = {db_pal_upd72020_1_alart,db_pal_upd72020_2_alart,db_i_pal_usb_upd2_oci1b,db_i_pal_usb_upd2_oci2b};
+assign ocp_fault_det2 = {db_i_pal_usb_upd1_oci4b,db_vga2_oc_alert,db_usb2_lcd_alert,1'b0};
+*/
+//------------------------------------------------------------------------------
+// Misc logic
+//------------------------------------------------------------------------------
+assign power_on_off = (power_seq_sm==SM_OFF_STANDBY      ) ? 1'b0:
+                      (power_seq_sm==SM_STEADY_PWROK     ) ? 1'b1: power_on_off;
+
+assign o_PAL_CPU0_VR_SELECT_N_R = i_CPU0_D0_BIOS_OVER ? 1'b0 : 1'b1;//cpu0_vr_select_n;
+assign o_PAL_CPU1_VR_SELECT_N_R = i_CPU0_D0_BIOS_OVER ? 1'b0 : 1'b1;//cpu1_vr_select_n;
+assign o_PAL_RTC_SELECT_N       = bmc_ready_flag ? rtc_select_n : 1'b0;
+assign bmc_read_flag_1          = fan_wdt_sel ? bmc_read_flag: 1'b1;
+
+assign o_CPLD_M_S_EXCHANGE_S1_R = i_PAL_P3V3_STBY_PGD;
+
+assign o_CPU0_POR_N_R = cpu_por_n;
+assign o_CPU1_POR_N_R = cpu_por_n;//& cpu1_pwr_ctrl_en;//20231121
+
+assign o_CPU0_D0_SE_RECOVERY_R = 1'b0;
+assign o_CPU0_D1_SE_RECOVERY_R = 1'b0;
+assign o_CPU0_D2_SE_RECOVERY_R = 1'b0;
+assign o_CPU0_D3_SE_RECOVERY_R = 1'b0;
+assign o_CPU1_D1_SE_RECOVERY_R = 1'b0;
+assign o_CPU1_D0_SE_RECOVERY_R = 1'b0;
+assign o_CPU1_D2_SE_RECOVERY_R = 1'b0;
+assign o_CPU1_D3_SE_RECOVERY_R = 1'b0;
+
+assign ft_cpu_rst_ok  =	ft_cpu0_rst_ok & ft_cpu1_rst_ok;
+assign ft_cpu0_rst_ok = i_CPU0_D1_CRU_RST_OK & i_CPU0_D0_CRU_RST_OK & i_CPU0_D2_CRU_RST_OK & i_CPU0_D3_CRU_RST_OK;
+assign ft_cpu1_rst_ok = i_CPU1_D1_CRU_RST_OK & i_CPU1_D0_CRU_RST_OK & i_CPU1_D2_CRU_RST_OK & i_CPU1_D3_CRU_RST_OK;
+
+
+
+assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en     ;
+assign o_PAL_FAN_EFUSE_EN_R       = db_i_pal_p3v3_stby_pgd;//power_supply_on     ;  
+assign o_PAL_PVCC_HPMOS_CPU_EN_R  =  pvcc_hpmos_cpu_en_r; 
+assign o_PAL_CPU1_P1V8_EN_R       =  cpu1_p1v8_en_r     ;//& cpu1_pwr_ctrl_en;//20231121
+assign o_PAL_CPU1_PLL_P1V8_EN_R   =  cpu1_pll_p1v8_en_r ;//& cpu1_pwr_ctrl_en;//20231121
+assign o_PAL_CPU1_PCIE_P0V9_EN_R  =  cpu1_pcie_p0v9_en_r;//& cpu1_pwr_ctrl_en;//20231121
+
+assign o_PAL_CPU0_VDDQ_EN_R       =  cpu0_vddq_en_r     ;
+assign o_PAL_CPU1_VDDQ_EN_R       =  cpu1_vddq_en_r     ;//& cpu1_pwr_ctrl_en;//20231121
+assign o_PAL_P5V_EN_R             =  p5v_en_r           ;
+assign o_PAL_CPU0_PCIE_P0V9_EN_R  =  cpu0_pcie_p0v9_en_r;
+assign o_PAL_CPU1_PCIE_P1V8_EN_R  =  cpu1_pcie_p1v8_en_r;//& cpu1_pwr_ctrl_en;//20231121
+assign o_PAL_CPU1_VDD_CORE_EN_R   =  cpu1_vdd_core_en_r ;//& cpu1_pwr_ctrl_en;//20231121
+assign o_PAL_CPU0_P1V8_EN_R       =  cpu0_p1v8_en_r     ;
+assign o_PAL_CPU0_VDD_CORE_EN_R   =  cpu0_vdd_core_en_r ;
+assign o_PAL_CPU0_PLL_P1V8_EN_R   =  cpu0_pll_p1v8_en_r ;
+assign o_PAL_P5V_STBY_EN_R        =  p5v_stby_en_r      ;
+assign o_PAL_CPU0_PCIE_P1V8_EN_R  =  cpu0_pcie_p1v8_en_r;
+assign o_PAL_CPU0_DDR_VDD_EN_R    =  cpu0_ddr_vdd_en_r  ;
+assign o_PAL_CPU1_DDR_VDD_EN_R    =  cpu1_ddr_vdd_en_r  ;//& cpu1_pwr_ctrl_en;//20231121
+assign o_CPU0_SB_EN_R             =  1'b0               ;
+assign o_CPU1_SB_EN_R             =  1'b0               ;
+assign o_CPU0_I2C_TRAN_EN_R       =  cpu0_vddq_en_r     ;//20231221 d00412 VB add
+assign o_CPU1_I2C_TRAN_EN_R       =  cpu1_vddq_en_r     ;//20231221 d00412 VB add
+
+assign o_PAL_PWR_LOM_EN_R         = 1'b1                ;//20240517 d00412 VB change
+
+assign o_PAL_CK440_PWRDN_N_R      =  1'b1               ;
+assign o_USB2_LEFT_EAR_EN_R       =  usb2_left_ear_en   ;
+
+//assign o_USB3_RIGHT_EAR_EN_R    =  usb3_right_ear_en  ;//20240517 d00412 VB change
+assign o_PAL_OCP1_FAN_PWR_EN_R    =  1'b1               ;
+
+            
+			
+assign o_PAL_OCP1_MAINPWR_ON_R    =  1'b1               ;
+assign o_PAL_OCP1_AUXPWR_ON_R     =  1'b1               ;
+
+
+assign o_PAL_CPU0_VR8_RESET_R  = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
+assign o_CPU0_VR_AVRST_R       = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
+assign o_PAL_CPU1_VR8_RESET_R  = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
+assign o_CPU1_VR_AVRST_R       = (~db_i_ps1_dc_ok) | (~db_i_ps2_dc_ok);
+
+
+assign o_CPU0_PE1_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU0_PE2_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU0_PE3_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU1_PE1_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU1_PE2_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU1_PE3_RST_N_R      = reached_sm_wait_powerok;
+assign o_CPU1_RSVD_PE_RST_N_R  = reached_sm_wait_powerok;
+assign o_PAL_UPD2_PERST_N_R    = reached_sm_wait_powerok;//20240517 d00412 VB change
+assign o_BMC_CPLD_RSVD_GPIO2_R = i_PAL_RTC_INTB;
+
+assign o_BMC_RESERVE_0         = i_CPLD_M_S_EXCHANGE_S2_R;
+assign o_BMC_RESERVE_1         = i_PAL_UID_SW_IN_N;
+//------------------------------------------------------------------------------
+// POWER Sequence  Start
+//------------------------------------------------------------------------------
+assign st_reset_state       = (power_seq_sm==SM_RESET_STATE      );
+assign st_off_standby       = (power_seq_sm==SM_OFF_STANDBY      );
+assign st_steady_pwrok      = (power_seq_sm==SM_STEADY_PWROK     );
+assign st_halt_power_cycle  = (power_seq_sm==SM_HALT_POWER_CYCLE );
+assign st_aux_fail_recovery = (power_seq_sm==SM_AUX_FAIL_RECOVERY);
+
+
+//riser rst
+//assign o_PAL_RISER1_RST_N_R   = reached_sm_wait_powerok;//VB CHANGE
+//assign o_PAL_RISER2_RST_N_R   = reached_sm_wait_powerok;//VB CHANGE
+assign o_PAL_BMC_PERST_N_R    = reached_sm_wait_powerok;
+
+//M.2
+assign front_m2_card_prsnt    = ~(pal_m2_0_prsnt_n & pal_m2_1_prsnt_n);
+
+
+//NCSI Switch
+assign pal_ocp1_ncsi_en   = pgd_aux_system ? (sideband_sel == 2'b01) : 1'b0;//Ĭ��״̬OCP1
+assign pal_ocp2_ncsi_en   = pgd_aux_system ? (sideband_sel == 2'b10) : 1'b0;//OCP2
+assign pal_ocp_ncsi_sw_en = pgd_aux_system ? (sideband_sel == 2'b11) : 1'b0;//OCP3
+
+
+//OCP
+wire ocp_aux_50ms_pgd;
+wire ocp_main_en_dly50ms;
+wire ocp_aux_pgd;
+edge_delay #(
+  .CNTR_NBITS    (5)
+) ocp_main_en_delay_inst (
+  .clk           (sys_clk		),
+  .reset         (~pon_reset_n	),
+  .cnt_size      (5'h19		),
+  .cnt_step      (t2ms_tick	),
+  .signal_in     (ocp_main_en),
+  .delay_output  (ocp_main_en_dly50ms)
+);
+assign ocp1_prsnt_n = ocp_prsent_b3_n & ocp_prsent_b2_n & ocp_prsent_b1_n & ocp_prsent_b0_n;
+assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_prsent_b7_n;
+
+assign ocp_aux_50ms_pgd         = (ocp_main_en_dly50ms)  ? db_i_pal_ocp1_pwrgd : 1'b1;
+assign ocp_aux_pgd            = (ocp_main_en		)    ? ocp_aux_50ms_pgd    : db_i_pal_ocp1_pwrgd; 
+
+assign o_PAL_OCP1_HP_SW_EN_R    = 1'b0       ;
+assign o_PAL_OCP1_STBY_PWR_EN_R = ocp_aux_en ;
+assign o_PAL_OCP1_MAIN_PWR_EN_R = ocp_main_en;
+assign o_PAL_OCP1_PERST0_N_R    = reached_sm_wait_powerok;
+assign o_PAL_OCP1_PERST1_N_R    = reached_sm_wait_powerok;
+
+
+//BIOS FLASH
+assign o_BIOS0_RST_N_R          = ~rom_bios_ma_rst;//cpu_bios_en ? (~rom_bios_ma_rst) : 1'bz;  
+assign o_BIOS1_RST_N_R          = ~rom_bios_bk_rst;//cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz;
+
+
+//SYS EEPROM WP
+assign o_PAL_SYS_EEPROM_BYPASS_N_R = bios_eeprom_wp;//~debug_sw6;//bios_eeprom_wp;
+
+//MCIO PRSNT
+assign o_CPU0_D0_PEU_PREST_0_N_R = 1'bz;
+assign o_CPU0_D0_PEU_PREST_1_N_R = 1'bz;
+assign o_CPU0_D0_PEU_PREST_2_N_R = 1'bz;
+assign o_CPU0_D0_PEU_PREST_3_N_R = 1'bz;
+assign o_CPU0_D1_PEU_PREST_0_N_R = db_cpu_nvme24_prsnt_n;//db_cpu_nvme24_prsnt_n;
+assign o_CPU0_D1_PEU_PREST_1_N_R = db_cpu_nvme9_prsnt_n;//db_cpu_nvme25_prsnt_n;
+assign o_CPU0_D1_PEU_PREST_2_N_R = db_cpu_nvme25_prsnt_n;//db_cpu_nvme8_prsnt_n ;
+assign o_CPU0_D1_PEU_PREST_3_N_R = db_cpu_nvme8_prsnt_n;//db_cpu_nvme9_prsnt_n ;
+assign o_CPU0_D2_PEU_PREST_0_N_R = db_cpu_nvme0_prsnt_n;//db_cpu_nvme0_prsnt_n ;
+assign o_CPU0_D2_PEU_PREST_1_N_R = db_cpu_nvme3_prsnt_n;//db_cpu_nvme1_prsnt_n ;
+assign o_CPU0_D2_PEU_PREST_2_N_R = db_cpu_nvme1_prsnt_n;//db_cpu_nvme2_prsnt_n ;
+assign o_CPU0_D2_PEU_PREST_3_N_R = db_cpu_nvme2_prsnt_n;//db_cpu_nvme3_prsnt_n ;
+assign o_CPU0_D3_PEU_PREST_0_N_R = db_cpu_nvme4_prsnt_n;//db_cpu_nvme4_prsnt_n ;
+assign o_CPU0_D3_PEU_PREST_1_N_R = db_cpu_nvme7_prsnt_n;//db_cpu_nvme5_prsnt_n ;
+assign o_CPU0_D3_PEU_PREST_2_N_R = db_cpu_nvme5_prsnt_n;//db_cpu_nvme6_prsnt_n ;
+assign o_CPU0_D3_PEU_PREST_3_N_R = db_cpu_nvme6_prsnt_n;//db_cpu_nvme7_prsnt_n ;
+assign o_CPU1_D0_PEU_PREST_0_N_R = db_cpu_nvme22_prsnt_n;//db_cpu_nvme22_prsnt_n;
+assign o_CPU1_D0_PEU_PREST_1_N_R = db_cpu_nvme19_prsnt_n;//db_cpu_nvme23_prsnt_n;
+assign o_CPU1_D0_PEU_PREST_2_N_R = db_cpu_nvme23_prsnt_n;//db_cpu_nvme18_prsnt_n;
+assign o_CPU1_D0_PEU_PREST_3_N_R = db_cpu_nvme18_prsnt_n;//db_cpu_nvme19_prsnt_n;
+assign o_CPU1_D1_PEU_PREST_0_N_R = 1'bz;
+assign o_CPU1_D1_PEU_PREST_1_N_R = 1'bz;
+assign o_CPU1_D1_PEU_PREST_2_N_R = 1'bz;
+assign o_CPU1_D1_PEU_PREST_3_N_R = 1'bz;
+assign o_CPU1_D2_PEU_PREST_0_N_R = db_cpu_nvme10_prsnt_n;//db_cpu_nvme10_prsnt_n;
+assign o_CPU1_D2_PEU_PREST_1_N_R = db_cpu_nvme13_prsnt_n;//db_cpu_nvme11_prsnt_n;
+assign o_CPU1_D2_PEU_PREST_2_N_R = db_cpu_nvme11_prsnt_n;//db_cpu_nvme12_prsnt_n;
+assign o_CPU1_D2_PEU_PREST_3_N_R = db_cpu_nvme12_prsnt_n;//db_cpu_nvme13_prsnt_n;
+assign o_CPU1_D3_PEU_PREST_0_N_R = db_cpu_nvme14_prsnt_n;//db_cpu_nvme14_prsnt_n;
+assign o_CPU1_D3_PEU_PREST_1_N_R = db_cpu_nvme17_prsnt_n;//db_cpu_nvme15_prsnt_n;
+assign o_CPU1_D3_PEU_PREST_2_N_R = db_cpu_nvme15_prsnt_n;//db_cpu_nvme16_prsnt_n;
+assign o_CPU1_D3_PEU_PREST_3_N_R = db_cpu_nvme16_prsnt_n;//db_cpu_nvme17_prsnt_n;
+
+assign pfr_vpp_alert = i_SMB_PEHP_CPU0_3V3_ALERT_N & i_SMB_PEHP_CPU1_3V3_ALERT_N;
+assign o_PAL_CPU0_NVME_ALERT_N_R = pfr_vpp_alert ? 1'bz : 1'b0;
+assign o_PAL_CPU1_NVME_ALERT_N_R = pfr_vpp_alert ? 1'bz : 1'b0;
+
+
+//PAL_P3V3_STBY_RST_N is active high (with pulldown), while others is active low (with pullup).
+assign o_PAL_P3V3_STBY_RST_R     = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
+assign o_PAL_P3V3_STBY_BP_RST_R  = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
+
+
+
+
+//------------------------------------------------------------------------------
+// I2C Update Start
+//------------------------------------------------------------------------------
+wire                                    wb_clk      ;
+defparam inst_osch.NOM_FREQ = "4.29";
+OSCH inst_osch(
+    .STDBY		    (1'b0		                ),
+    .OSC		    (wb_clk		                ),
+    .SEDSTDBY	    (			                )
+);
+I2C_UPDATE inst_i2c_update_flash_config(
+    .wb_clk_i	    (wb_clk	                    ),
+    .wb_rst_i	    (		                    ),
+    .wb_cyc_i	    (		                    ),
+    .wb_stb_i	    (		                    ),
+    .wb_we_i	    (		                    ),
+    .wb_adr_i	    (		                    ),
+    .wb_dat_i	    (		                    ),
+    .wb_dat_o	    (		                    ),
+    .wb_ack_o	    (		                    ),
+    .i2c1_irqo	    (						    ),
+    .i2c1_scl	    (i_BMC_I2C9_PAL_M_SCL_R     ),
+    .i2c1_sda	    (io_BMC_I2C9_PAL_M_SDA_R    )
+); 
+
+wire [15:0]                             mb_cpld1_ver; 
+assign mb_cpld1_ver = 16'h01A1;
+
+bmc_cpld_i2c_ram #(
+    .DLY_LEN       (16)   //50MHz,330ns
+) bmc_cpld_i2c_ram_u0 (
+    .i_rst_n                       (pon_reset_n             ),  
+    .i_clk                         (sys_clk	                ),
+    .t1s                           (t1s_tick                ),
+    .t1us                          (t1us_tick               ),
+    .t125ms                        (t128ms_tick             ),
+    .pgoodaux                      (pgd_aux_system          ),
+    .pon_reset_sasd                (~pgd_aux_system_sasd    ),
+    .i_1ms_clk                     (t1ms_tick               ),	          
+    .i_rst_i2c_n                   (1'b1                    ),//(i_BMC_CPLD_I2C_RST_R_N),
+    .i_scl                         (i_BMC_I2C9_PAL_M_SCL1_R ), 
+    .io_sda                        (io_BMC_I2C9_PAL_M_SDA1_R),
+ 
+    .bmc_security_bypass           (bmc_security_bypass      ),//addr 0x0000[6]      in
+
+    .cpld_pwm_main_type            (cpld_pwm_main_type[1:0]  ),//addr 0x0002[6:5]    in   01:50%  10:90%
+    .fan_wdt_sel 			       (bmc_ready_flag           ),//addr 0x0002[4]      in
+    .fm_bmc_fan_wdt_feed	       (i_pal_wdt_rst_n_r        ),//addr 0x0002[1]      in
+
+    .vwire_bmc_wakeup 	           (vwire_bmc_wakeup         ),//addr 0x0003[6]      out
+    .vwire_bmc_sysrst              (vwire_bmc_sysrst         ),//addr 0x0003[5]      out
+    .vwire_bmc_shutdown            (vwire_bmc_shutdown       ),//addr 0x0003[4]      out
+    .pwr_btn_state                 (~db_sys_sw_in_n          ),//addr 0x0003[3]      in
+    .rst_btn_state                 (~force_reb_in            ),//addr 0x0003[2]      in
+    .rst_btn_mask                  (rst_btn_mask             ),//addr 0x0003[0]      out
+
+    .bmc_ctrl_shutdown             (bmc_ctrl_shutdown        ),//addr 0x0004[6]      out
+    .aux_pcycle                    (aux_pcycle               ),//addr 0x0004[4]      out
+    .pwrbtn_bl_mask                (pwrbtn_bl_mask           ),//addr 0x0004[3]      out  reserved
+    .vwire_pwrbtn_bl               (vwire_pwrbtn_bl          ),//addr 0x0004[2]      out  reserved
+    .physical_pwrbtn_mask          (pwrbtn_mask              ),//addr 0x0004[1]      out
+    .st_steady_pwrok               (st_steady_pwrok          ),//addr 0x0004[0]      in
+
+    .bmc_uid_update                (bmc_uid_update           ),//addr 0x0005[7]      out
+
+    .wol_en                        (wol_en                   ),//addr 0x0006[3]      out
+    .sideband_sel                  (sideband_sel[1:0]        ),//addr 0x0006[1:0]    out
+
+    .rom_mux_bios_bmc_en           (rom_mux_bios_bmc_en      ),//addr 0x0007[7]      out
+    .rom_mux_bios_bmc_sel          (rom_mux_bios_bmc_sel     ),//addr 0x0007[6]      out
+    .rom_bios_bk_rst               (rom_bios_bk_rst          ),//addr 0x0007[3]      out
+    .rom_bios_ma_rst    	       (rom_bios_ma_rst          ),//addr 0x0007[2]      out
+    .rom_bmc_bk_rst                (rom_bmc_bk_rst           ),//addr 0x0007[1]      out
+    .rom_bmc_ma_rst                (rom_bmc_ma_rst           ),//addr 0x0007[0]      out
+
+    .test_bat_en                   (test_bat_en              ),//addr 0x0008[7]      out
+    .bios_eeprom_wp                (bios_eeprom_wp           ),//addr 0x0008[6]      out
+
+    .o_uid_led_ctl				   (w_uid_led_ctl  	         ),//addr 0x0009[7:0]    out
+
+    .i_uid_btn_evt				   (uid_button_short_evt     ),//addr 0x000A[1]      in 
+    .o_uid_btn_evt_clr			   (w_uid_btn_evt_wc	     ),//addr 0x000A[1]      out
+    .i_uid_rstbmc_evt			   (uid_button_long_evt      ),//addr 0x000A[0]      in
+    .o_uid_rstbmc_evt_clr		   (w_uid_rstbmc_evt_wc      ),//addr 0x000A[0]      out
+
+    .bmcctl_front_nic_led          (bmcctl_front_nic_led     ),//addr 0x000B[2]      out
+    .o_sys_healthy_red             (w_sys_healthy_red        ),//addr 0x000B[1]      out
+    .o_sys_healthy_grn             (w_sys_healthy_grn        ),//addr 0x000B[0]      out
+
+    .port_80         		       (bios_post_code[7:0]      ),//addr 0x000D[7:0]    in
+
+    .port_84                       (bios_post_rate[7:0]      ),//addr 0x000E[7:0]    in         
+
+    .lpc_io_data_port85            (bios_post_phase[7:0]     ),//addr 0x000F[7:0]    in
+
+    .rtc_select_n                  (rtc_select_n             ),//addr 0x0010[4]      out
+    .vga2_dis                      (vga2_dis                 ),//addr 0x0010[3]      out
+    .cpu0_d0_bios_over             (i_CPU0_D0_BIOS_OVER      ),//addr 0x0010[0]      in
+
+    .bios_read_flag                (bios_read_flag           ),//addr 0x0013[7]      in 
+    .bmc_read_flag                 (bmc_read_flag            ),//addr 0x0013[6]      out
+
+    .m2_slot2_type                 (pal_m2_1_sel_r           ),//addr 0x0015[4]      in
+    .m2_slot1_type                 (i_PAL_M2_0_SEL_LV33_R    ),//addr 0x0015[3]      in
+    .m2_slot2_prsnt                (~pal_m2_1_prsnt_n        ),//addr 0x0015[2]      in
+    .m2_slot1_prsnt                (~pal_m2_0_prsnt_n        ),//addr 0x0015[1]      in
+    .m2_card_prsnt                 (front_m2_card_prsnt      ),//addr 0x0015[0]      in
+
+    .bmcctl_uart_sw                (bmcctl_uart_sw[1:0]      ),//addr 0x0016[7:6]    out
+
+    .bmc_i2c_rst                   (bmc_i2c_rst              ),//addr 0x0019[7:0]    out
+
+    .bmc_i2c_rst2                  (bmc_i2c_rst2             ),//addr 0x001A[7:0]    out
+
+    .bmc_i2c_rst3                  (bmc_i2c_rst3             ),//addr 0x001B[7:0]    out
+
+    .tpm_rst      	               (tpm_rst                  ),//addr 0x001D[7]      out                     
+    .tpm_prsnt                     (~db_tpm_prsnt_n          ),//addr 0x001D[6]      in
+    .intruder            		   (db_i_front_pal_intruder  ),//addr 0x001D[5]      in
+    .intruder_cable_prsnt		   (~db_i_intruder_cable_inst_n),//addr 0x001D[4]    in
+    .dsd_prsnt              	   (~db_i_dsd_uart_prsnt_n   ),//addr 0x001D[3]    in
+
+    .fan_tach1_byte2               (fan_tach1_byte2          ),//addr 0x0020[7:0]    in
+    .fan_tach1_byte1               (fan_tach1_byte1          ),//addr 0x0021[7:0]    in
+    .fan_tach2_byte2               (fan_tach2_byte2          ),//addr 0x0022[7:0]    in
+    .fan_tach2_byte1               (fan_tach2_byte1          ),//addr 0x0023[7:0]    in
+    .fan_tach3_byte2               (fan_tach3_byte2          ),//addr 0x0024[7:0]    in
+    .fan_tach3_byte1               (fan_tach3_byte1          ),//addr 0x0025[7:0]    in
+    .fan_tach4_byte2               (fan_tach4_byte2          ),//addr 0x0026[7:0]    in
+    .fan_tach4_byte1               (fan_tach4_byte1          ),//addr 0x0027[7:0]    in
+    .fan_tach5_byte2               (fan_tach5_byte2          ),//addr 0x0028[7:0]    in
+    .fan_tach5_byte1               (fan_tach5_byte1          ),//addr 0x0029[7:0]    in
+    .fan_tach6_byte2               (fan_tach6_byte2          ),//addr 0x002A[7:0]    in
+    .fan_tach6_byte1               (fan_tach6_byte1          ),//addr 0x002B[7:0]    in
+    .fan_tach7_byte2               (fan_tach7_byte2          ),//addr 0x002C[7:0]    in
+    .fan_tach7_byte1               (fan_tach7_byte1          ),//addr 0x002D[7:0]    in
+    .fan_tach8_byte2               (fan_tach8_byte2          ),//addr 0x002E[7:0]    in
+    .fan_tach8_byte1               (fan_tach8_byte1          ),//addr 0x002F[7:0]    in
+    .fan_tach9_byte2               (fan_tach9_byte2          ),//addr 0x0030[7:0]    in
+    .fan_tach9_byte1               (fan_tach9_byte1          ),//addr 0x0031[7:0]    in
+    .fan_tach10_byte2              (fan_tach10_byte2         ),//addr 0x0032[7:0]    in
+    .fan_tach10_byte1              (fan_tach10_byte1         ),//addr 0x0033[7:0]    in
+    .fan_tach11_byte2              (fan_tach11_byte2         ),//addr 0x0034[7:0]    in
+    .fan_tach11_byte1              (fan_tach11_byte1         ),//addr 0x0035[7:0]    in
+    .fan_tach12_byte2              (fan_tach12_byte2         ),//addr 0x0036[7:0]    in
+    .fan_tach12_byte1              (fan_tach12_byte1         ),//addr 0x0037[7:0]    in
+    .fan_tach13_byte2              (fan_tach13_byte2         ),//addr 0x0038[7:0]    in
+    .fan_tach13_byte1              (fan_tach13_byte1         ),//addr 0x0039[7:0]    in
+    .fan_tach14_byte2              (fan_tach14_byte2         ),//addr 0x003A[7:0]    in
+    .fan_tach14_byte1              (fan_tach14_byte1         ),//addr 0x003B[7:0]    in
+    .fan_tach15_byte2              (fan_tach15_byte2         ),//addr 0x003C[7:0]    in
+    .fan_tach15_byte1              (fan_tach15_byte1         ),//addr 0x003D[7:0]    in
+    .fan_tach16_byte2              (fan_tach16_byte2         ),//addr 0x003E[7:0]    in
+    .fan_tach16_byte1              (fan_tach16_byte1         ),//addr 0x003F[7:0]    in
+
+    .duty_0                        (duty_0                   ),//addr 0x0040[7:0]    out
+    .duty_1                        (duty_1                   ),//addr 0x0041[7:0]    out
+    .duty_2                        (duty_2                   ),//addr 0x0042[7:0]    out
+    .duty_3                        (duty_3                   ),//addr 0x0043[7:0]    out
+    .duty_4                        (duty_4                   ),//addr 0x0044[7:0]    out
+    .duty_5                        (duty_5                   ),//addr 0x0045[7:0]    out
+    .duty_6                        (duty_6                   ),//addr 0x0046[7:0]    out
+    .duty_7                        (duty_7                   ),//addr 0x0047[7:0]    out
+
+    .ps_prsnt                      (~db_ps_prsnt_n           ),//addr 0x0050[1:0]    in
+    .psu_smb_alert_n               ({db_i_ps2_smb_alert,db_i_ps1_smb_alert}),//addr 0x52[1:0]  in
+    .ps_fail                       (db_ps_acok               ),//addr 0x0053[1:0]    in from PSU
+    .ps_dcok                       (db_ps_dcok               ),//addr 0x0054[1:0]    in
+    .pal_gpu_fan4_foo              (pal_gpu_fan4_foo         ),//addr 0x0056[3]      in
+    .pal_gpu_fan3_foo              (pal_gpu_fan3_foo         ),//addr 0x0056[2]      in
+    .pal_gpu_fan2_foo              (pal_gpu_fan2_foo         ),//addr 0x0056[1]      in
+    .pal_gpu_fan1_foo              (pal_gpu_fan1_foo         ),//addr 0x0056[0]      in
+    .ocp2_fan_foo                  (db_i_pal_ocp2_fan_foo    ),//addr 0x0057[7]      in
+    .ocp2_fan_prsnt               (~db_i_pal_ocp2_fan_prsnt_n),//addr 0x0057[6]      in
+    .ocp1_fan_foo                  (db_i_pal_ocp1_fan_foo    ),//addr 0x0057[5]      in
+    .ocp1_fan_prsnt               (~db_i_pal_ocp1_fan_prsnt_n),//addr 0x0057[4]      in
+    .fan_prsnt                     (~db_fan_prsnt_n[7:0]     ),//addr 0x0058[7:0]    in
+    .gpu_fan_prsnt              ({~pal_gpu_fan4_prsnt,~pal_gpu_fan3_prsnt,~pal_gpu_fan2_prsnt,~pal_gpu_fan1_prsnt}),//addr 0x0059[3:0]  in
+
+    .board2_type                   (bmc_card_type            ),//addr 0x0070[7:4]    in
+    .board2_pcb_rev                (bmc_card_pcb_rev         ),//addr 0x0070[3:1]    in
+    .bp_prsnt                      (bp_prsnt                 ),//addr 0x0071[7:0]    in
+    .ocp2_fan_on_aux               (db_ocp2_pvt_fan_on_aux   ),//addr 0x0072[7]      in
+    .ocp2_prsnt                    (~db_ocp2_prsnt_n         ),//addr 0x0072[6]      in
+    .ocp_fan_on_aux                (db_ocp_pvt_fan_on_aux    ),//addr 0x0072[5]      in
+    .ocp_prsnt                     (~db_ocp1_prsnt_n         ),//addr 0x0072[4]      in
+
+    .riser2_prsnt                  (~db_pal_riser2_prsnt_n   ),//addr 0x0080[1]      in
+    .riser1_prsnt                  (~db_pal_riser1_prsnt_n   ),//addr 0x0080[0]      in
+
+    .cpu_nvme0_prsnt_n             (~cpu_nvme0_prsnt_n       ),//addr 0x0090[7]      in
+    .cpu_nvme1_prsnt_n             (~cpu_nvme1_prsnt_n       ),//addr 0x0090[6]      in
+    .cpu_nvme2_prsnt_n             (~cpu_nvme2_prsnt_n       ),//addr 0x0090[5]      in
+    .cpu_nvme3_prsnt_n             (~cpu_nvme3_prsnt_n       ),//addr 0x0090[4]      in
+    .cpu_nvme4_prsnt_n             (~cpu_nvme4_prsnt_n       ),//addr 0x0090[3]      in
+    .cpu_nvme5_prsnt_n             (~cpu_nvme5_prsnt_n       ),//addr 0x0090[2]      in
+    .cpu_nvme6_prsnt_n             (~cpu_nvme6_prsnt_n       ),//addr 0x0090[1]      in
+    .cpu_nvme7_prsnt_n             (~cpu_nvme7_prsnt_n       ),//addr 0x0090[0]      in
+
+    .cpu_nvme8_prsnt_n             (~cpu_nvme8_prsnt_n       ),//addr 0x0091[7]      in
+    .cpu_nvme9_prsnt_n             (~cpu_nvme9_prsnt_n       ),//addr 0x0091[6]      in
+    .cpu_nvme10_prsnt_n            (~cpu_nvme10_prsnt_n      ),//addr 0x0091[5]      in
+    .cpu_nvme11_prsnt_n            (~cpu_nvme11_prsnt_n      ),//addr 0x0091[4]      in
+    .cpu_nvme12_prsnt_n            (~cpu_nvme12_prsnt_n      ),//addr 0x0091[3]      in
+    .cpu_nvme13_prsnt_n            (~cpu_nvme13_prsnt_n      ),//addr 0x0091[2]      in
+    .cpu_nvme14_prsnt_n            (~cpu_nvme14_prsnt_n      ),//addr 0x0091[1]      in
+    .cpu_nvme15_prsnt_n            (~cpu_nvme15_prsnt_n      ),//addr 0x0091[0]      in
+
+    .cpu_nvme16_prsnt_n            (~cpu_nvme16_prsnt_n      ),//addr 0x0092[7]      in
+    .cpu_nvme17_prsnt_n            (~cpu_nvme17_prsnt_n      ),//addr 0x0092[6]      in
+    .cpu_nvme18_prsnt_n            (~cpu_nvme18_prsnt_n      ),//addr 0x0092[5]      in
+    .cpu_nvme19_prsnt_n            (~cpu_nvme19_prsnt_n      ),//addr 0x0092[4]      in
+    .cpu_nvme22_prsnt_n            (~cpu_nvme22_prsnt_n      ),//addr 0x0092[3]      in
+    .cpu_nvme23_prsnt_n            (~cpu_nvme23_prsnt_n      ),//addr 0x0092[2]      in
+    .cpu_nvme24_prsnt_n            (~cpu_nvme24_prsnt_n      ),//addr 0x0092[1]      in
+    .cpu_nvme25_prsnt_n            (~cpu_nvme25_prsnt_n      ),//addr 0x0092[0]      in
+
+    .power_on_off                  (power_on_off             ),//addr 0x00A0[6]      in
+    .power_seq_sm                  (power_seq_sm[5:0]        ),//addr 0x00A0[5-0]    in
+
+    .power_fault                   (power_fault              ),//addr 0x00A1[6]      in
+    .pwrseq_sm_fault_det           (pwrseq_sm_fault_det[5:0] ),//addr 0x00A1[5-0]    in
+
+    .pf_class0_b0                  (pf_class0_b0[7:0]        ),//addr 0x00A2[7-0]    in
+    .pf_class0_b1                  (pf_class0_b1[7:0]        ),//addr 0x00A3[7-0]    in
+    .pf_class0_b2                  (pf_class0_b2[7:0]        ),//addr 0x00A4[7-0]    in
+    .pf_class0_b3                  (pf_class0_b3[7:0]        ),//addr 0x00A5[7-0]    in
+    .pf_class1_b0                  (pf_class1_b0[7:0]        ),//addr 0x00A6[7-0]    in
+    .pf_class1_b1                  (pf_class1_b1[7:0]        ),//addr 0x00A7[7-0]    in
+    .pf_class2_b0                  (pf_class2_b0[7:0]        ),//addr 0x00A8[7-0]    in
+    .pf_class2_b1                  (pf_class2_b1[7:0]        ),//addr 0x00A9[7-0]    in
+    .pf_class4_b0                  (pf_class4_b0[7:0]        ),//addr 0x00AA[7-0]    in
+    .pf_class5_b0                  (pf_class5_b0[7:0]        ),//addr 0x00AC[7-0]    in
+    .pf_class6_b0                  (pf_class6_b0[7:0]        ),//addr 0x00AD[7-0]    in
+    .pf_class9_b0                  (pf_class9_b0[7:0]        ),//addr 0x00AE[7-0]    in
+    .pf_classa_b0                  (pf_classa_b0[7:0]        ),//addr 0x00AF[4]      in
+
+    .pdt_line                      (8'h00                    ),//addr 0x00C2[7:0]    in
+    .pdt_gen                       (8'h06                    ),//addr 0x00C3[7:0]    in
+    .server_id                     (8'h21                    ),//addr 0x00C5[7:0]    in
+    .board_id                      (8'h01                    ),//addr 0x00C6[7:0]    in
+
+    .pcb_rev   				       ({1'b0,pcb_revision_1,pcb_revision_0}),//addr 0xF1[2-0]  in
+
+    .bmc_cpld_version              (bmc_cpld_version[15:0]   ),//addr 0x00FA-0x00FB[7:0]    in
+    .mb_cpld2_ver                  (mb_cpld2_ver[15:0]       ),//addr 0x00FC-0x00FD[7:0]    in
+    .mb_cpld1_ver                  (mb_cpld1_ver[15:0]       ),//addr 0x00FE-0x00FF[7:0]    in
+
+    .i2c_ram_1050                  (i2c_ram_1050             ),//addr 0x1050[7:0]    out        
+    .i2c_ram_1051                  (i2c_ram_1051             ),//addr 0x1051[7:0]    out
+    .i2c_ram_1052                  (i2c_ram_1052             ),//addr 0x1052[7:0]    out
+    .i2c_ram_1053                  (i2c_ram_1053             ),//addr 0x1053[7:0]    out
+    .i2c_ram_1054                  (i2c_ram_1054             ),//addr 0x1054[7:0]    out
+    .i2c_ram_1055                  (i2c_ram_1055             ),//addr 0x1055[7:0]    in
+    .i2c_ram_1056                  (i2c_ram_1056             ),//addr 0x1056[7:0]    in
+    .i2c_ram_1057                  (i2c_ram_1057             ),//addr 0x1057[7:0]    in
+    .i2c_ram_1058                  (i2c_ram_1058             ),//addr 0x1058[7:0]    in
+
+    .ilo_hard_reset                (ilo_hard_reset           ) //in
+);
+
+
+// BMC下发CPU软关机中断信号
+wire                                bmc_ctrl_shutdown_neg       ;
+reg                                 soft_shutdown               ;
+reg [29:0]                          time_cnt                    ;
+reg                                 state                       ;
+
+Edge_Detect1 Edge_Detect_u3(
+    .i_clk                          (sys_clk                    ),//input Clk
+    .i_rst_n                        (pon_reset_n                ),//Global rst,Active Low
+    .i_signal                       (bmc_ctrl_shutdown          ),
+    .o_signal_pos                   (                           ),
+    .o_signal_neg                   (bmc_ctrl_shutdown_neg      ),
+    .o_signal_invert                (                           )
+);
+
+always @(posedge sys_clk or negedge pon_reset_n)begin
+	if(~pon_reset_n)begin
+		soft_shutdown <= 1'b0;
+		time_cnt      <= 30'd0;
+		state         <= 0;
+	end
+	else begin
+		case(state)
+		   0: begin
+				soft_shutdown <= 1'b0;
+				time_cnt	  <= 30'd0;
+				if(bmc_ctrl_shutdown_neg)
+					state	  <= 1;
+				else
+					state	  <= state;
+			end 
+            1: begin
+				time_cnt	  <=  (time_cnt >= 30'd2000000) ? 30'd0 : time_cnt + 1'd1;
+				state		  <= !(time_cnt	>= 30'd2000000)                          ;
+				soft_shutdown <=  (time_cnt	>= 30'd1000000)	? 1'b1  : 1'b0           ;
+			end
+		endcase
+	end
+end
+
+assign o_CPU0_D0_SOFT_SHUTDOWN_INT_N = soft_shutdown;
 
 endmodule

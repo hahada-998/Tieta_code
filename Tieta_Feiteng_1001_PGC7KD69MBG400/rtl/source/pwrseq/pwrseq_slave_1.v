@@ -51,6 +51,8 @@ module pwrseq_slave #(
     input                                       pgd_p12v_stby_droop             ,
     input                                       reat_bp_efuse_pg                ,
     input                                       front_bp_efuse_pg               ,
+    input                                       p12v_cpu1_vin_pg                ,
+    input                                       p12v_cpu0_vin_pg                ,
     // 5. SM_EN_5V 状态上电使能
     input                                       p5v_pgd                         ,
     // 6. SM_EN_3V3 状态上电使能
@@ -144,7 +146,9 @@ module pwrseq_slave #(
     output                                      p12v_front_bp_efuse_fault_det   ,       
     output                                      p12v_reat_bp_efuse_fault_det	  ,      
     output                                      p12v_fan_efuse_fault_det		    ,    
-    output                                      p12v_dimm_efuse_fault_det       ,       
+    output                                      p12v_dimm_efuse_fault_det       , 
+    output                                      p12v_cpu1_vin_fault_det         ,
+    output                                      p12v_cpu0_vin_fault_det         ,  
     output                                      p12v_fault_det                  ,       
     output                                      p12v_stby_droop_fault_det       ,    
 
@@ -826,7 +830,35 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_dimm_efuse_fault_detect_inst (
   .any_vrm_fault    (),									//out
   .vrm_fault        (p12v_dimm_efuse_fault_det)					//out
 );   
-  
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu1_vin_fault_detect_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (power_supply_on && power_supply_on_check),			//in
+  .vrm_pgood        (p12v_cpu1_vin_pg),							//in
+  .vrm_chklive_en   (power_supply_on_check),					//in
+  .vrm_chklive_dis  (~power_supply_on_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (p12v_cpu1_vin_fault_det)					//out
+);  
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu0_vin_fault_fault_detect_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (power_supply_on && power_supply_on_check),			//in
+  .vrm_pgood        (p12v_cpu0_vin_pg),							//in
+  .vrm_chklive_en   (power_supply_on_check),					//in
+  .vrm_chklive_dis  (~power_supply_on_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (p12v_cpu0_vin_fault_det)					//out
+);  
+
 //------------------------------------------------------------------------------
 // P12V_BP_FRONT Fault detect 
 //------------------------------------------------------------------------------  
@@ -1706,43 +1738,42 @@ assign fault_vec[4]  = p12v_front_bp_efuse_fault_det ;
 assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det  ;
 assign fault_vec[6]  = p12v_fan_efuse_fault_det      ;  
 assign fault_vec[7]  = p12v_dimm_efuse_fault_det     ;
-assign fault_vec[8]  = p12v_fault_det                ;  
-assign fault_vec[9]  = p12v_stby_droop_fault_det     ;
+assign fault_vec[8]  = p12v_cpu1_vin_fault_det       ;
+assign fault_vec[9]  = p12v_cpu0_vin_fault_det       ;
+assign fault_vec[10]  = p12v_fault_det                ;  
+assign fault_vec[11]  = p12v_stby_droop_fault_det     ;
 
-assign fault_vec[10] = p5v_fault_det                 ;
-assign fault_vec[11] = p3v3_fault_det                ;
-assign fault_vec[11] = vcc_1v1_fault_det             ;
+assign fault_vec[12] = p5v_fault_det                 ;
+assign fault_vec[13] = p3v3_fault_det                ;
+assign fault_vec[14] = vcc_1v1_fault_det             ;
 
-assign fault_vec[12] = cpu0_vdd_core_fault_det       ;  
-assign fault_vec[13] = cpu1_vdd_core_fault_det       ;
+assign fault_vec[15] = cpu0_vdd_core_fault_det       ;  
+assign fault_vec[16] = cpu1_vdd_core_fault_det       ;
 
-assign fault_vec[14] = cpu0_p1v8_fault_det           ;  
-assign fault_vec[15] = cpu1_p1v8_fault_det           ;
+assign fault_vec[17] = cpu0_p1v8_fault_det           ;  
+assign fault_vec[18] = cpu1_p1v8_fault_det           ;
 
-assign fault_vec[16] = cpu0_vddq_fault_det           ;  
-assign fault_vec[17] = cpu1_vddq_fault_det           ;
-assign fault_vec[18] = cpu0_ddr_vdd_fault_det        ;  
-assign fault_vec[19] = cpu1_ddr_vdd_fault_det        ;
-assign fault_vec[20] = cpu0_pll_p1v8_fault_det       ;  
-assign fault_vec[21] = cpu1_pll_p1v8_fault_det       ;
+assign fault_vec[19] = cpu0_vddq_fault_det           ;  
+assign fault_vec[20] = cpu1_vddq_fault_det           ;
+assign fault_vec[21] = cpu0_ddr_vdd_fault_det        ;  
+assign fault_vec[22] = cpu1_ddr_vdd_fault_det        ;
+assign fault_vec[23] = cpu0_pll_p1v8_fault_det       ;  
+assign fault_vec[24] = cpu1_pll_p1v8_fault_det       ;
 
-assign fault_vec[22] =  cpu1_pcie_p1v8_fault_det     ;  
-assign fault_vec[23] =  cpu0_pcie_p1v8_fault_det     ;
-assign fault_vec[24] =  cpu1_pcie_p0v9_fault_det     ;  
-assign fault_vec[25] =  cpu0_pcie_p0v9_fault_det     ;
+assign fault_vec[25] =  cpu1_pcie_p1v8_fault_det     ;  
+assign fault_vec[26] =  cpu0_pcie_p1v8_fault_det     ;
+assign fault_vec[27] =  cpu1_pcie_p0v9_fault_det     ;  
+assign fault_vec[28] =  cpu0_pcie_p0v9_fault_det     ;
 
-assign fault_vec[26] =  cpu0_d0_vp_0v9_fault_det     ;  
-assign fault_vec[27] =  cpu0_d1_vp_0v9_fault_det     ;
-assign fault_vec[28] =  cpu0_d0_vph_1v8_fault_det    ;  
-assign fault_vec[29] =  cpu0_d1_vph_1v8_fault_det    ;
-assign fault_vec[30] =  cpu1_d0_vp_0v9_fault_det     ;  
-assign fault_vec[31] =  cpu1_d1_vp_0v9_fault_det     ;
-assign fault_vec[32] =  cpu1_d0_vph_1v8_fault_det    ;  
-assign fault_vec[33] =  cpu1_d1_vph_1v8_fault_det    ;
+assign fault_vec[29] =  cpu0_d0_vp_0v9_fault_det     ;  
+assign fault_vec[30] =  cpu0_d1_vp_0v9_fault_det     ;
+assign fault_vec[31] =  cpu0_d0_vph_1v8_fault_det    ;  
+assign fault_vec[32] =  cpu0_d1_vph_1v8_fault_det    ;
+assign fault_vec[33] =  cpu1_d0_vp_0v9_fault_det     ;  
+assign fault_vec[34] =  cpu1_d1_vp_0v9_fault_det     ;
+assign fault_vec[35] =  cpu1_d0_vph_1v8_fault_det    ;  
+assign fault_vec[36] =  cpu1_d1_vph_1v8_fault_det    ;
 
-assign fault_vec[34] = 1'b0;  // RSVD
-assign fault_vec[35] = 1'b0;  // RSVD
-assign fault_vec[36] = 1'b0;  // RSVD
 assign fault_vec[37] = 1'b0;  // RSVD
 assign fault_vec[38] = 1'b0;  // RSVD
 assign fault_vec[39] = 1'b0;  // RSVD
