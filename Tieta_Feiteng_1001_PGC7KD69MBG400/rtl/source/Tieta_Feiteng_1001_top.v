@@ -1538,29 +1538,29 @@ PGM_DEBOUNCE #(
                                             i_PAL_CPU1_PCIE_P1V8_PG             ,// 25 不使用       
                                             i_PAL_CPU0_PCIE_P0V9_PG   		    ,// 24 不使用        
                                             i_PAL_CPU1_PCIE_P0V9_PG             ,// 23 不使用
-    	                                    i_PAL_FAN_EFUSE_PG                  ,// 22 不使用
-    	                                    i_PAL_CPU1_DDR_VDD_PG               ,// 21
-    	                                    i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 20
-    	                                    i_PAL_CPU1_VDDQ_P1V1_PG             ,// 19
-    	                                    i_PAL_CPU1_P1V8_PG                  ,// 18
-    	                                    i_PAL_CPU1_PLL_P1V8_PG              ,// 17
+    	                                      i_PAL_FAN_EFUSE_PG                  ,// 22 不使用
+    	                                      i_PAL_CPU1_DDR_VDD_PG               ,// 21
+    	                                      i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 20
+    	                                      i_PAL_CPU1_VDDQ_P1V1_PG             ,// 19
+    	                                      i_PAL_CPU1_P1V8_PG                  ,// 18
+    	                                      i_PAL_CPU1_PLL_P1V8_PG              ,// 17
                                             i_PAL_P5V_STBY_PGD                  ,// 16
                                             i_PAL_OCP1_PWRGD                    ,// 15 不使用
                                             i_PAL_DIMM_EFUSE_PG                 ,// 14 不使用
                                             i_PAL_P5V_PGD                       ,// 13 不使用
                                             i_PAL_PGD_P12V_STBY_DROOP           ,// 12
-    	                                    i_PAL_PGD_P12V_DROOP                ,// 11
+    	                                      i_PAL_PGD_P12V_DROOP                ,// 11
                                             i_PAL_PS1_ACFAIL & i_PAL_PS1_PRSNT  ,// 10
-    	                                    i_PAL_PS2_ACFAIL & i_PAL_PS2_PRSNT  ,// 09
-    	                                    ~i_PAL_PS1_DCOK  & i_PAL_PS1_PRSNT  ,// 08
-    	                                    ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,// 07
+    	                                      i_PAL_PS2_ACFAIL & i_PAL_PS2_PRSNT  ,// 09
+    	                                      ~i_PAL_PS1_DCOK  & i_PAL_PS1_PRSNT  ,// 08
+    	                                      ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,// 07
                                             i_PAL_CPU1_DIMM_PWRGD_F             ,// 06
-    	                                    i_PAL_P3V3_STBY_PGD                 ,// 05
+    	                                      i_PAL_P3V3_STBY_PGD                 ,// 05
                                             i_PAL_PGD_88SE9230_VDD1V0           ,// 04
                                             i_PAL_PGD_88SE9230_P1V8             ,// 03
                                             i_PAL_CPU0_DIMM_PWRGD_F             ,// 02
                                             i_P1V8_STBY_CPLD_PG                 ,// 01              
-    	                                    i_PAL_P3V3_STBY_PGD                  // 00 
+    	                                      i_PAL_P3V3_STBY_PGD                  // 00 
                                             }
                                             ),
     .dout                                   (
@@ -1594,28 +1594,28 @@ PGM_DEBOUNCE #(
                                             db_i_pal_cpu0_pcie_p0v9_pg          ,// 24 不使用    
                                             db_i_pal_cpu1_pcie_p0v9_pg          ,// 23 不使用
                                             db_i_pal_fan_efuse_pg               ,// 22 
-		                                    db_i_pal_cpu1_ddr_vdd_pg            ,// 21
-		                                    db_i_pal_cpu0_vdd_core_pg           ,// 20
-		                                    db_i_pal_cpu1_vddq_pg               ,// 19
-		                                    db_i_pal_cpu1_p1v8_pg               ,// 18
-		                                    db_i_pal_cpu1_pll_p1v8_pg           ,// 17
-		                                    db_i_pal_p5v_stby_pgd               ,// 16
-		                                    db_i_pal_ocp1_pwrgd                 ,// 15 不使用
-		                                    db_i_pal_dimm_efuse_pg              ,// 14 不使用
-		                                    db_i_pal_p5v0_pgd                    ,// 13 不使用
-		                                    db_i_pal_pgd_p12v_stby_droop        ,// 12
-		                                    db_i_pal_pgd_p12v_droop             ,// 11
-		                                    db_ps_acok[0]                       ,// 10
-		                                    db_ps_acok[1]                       ,// 09
-		                                    db_ps_dcok[0]                       ,// 08
-		                                    db_ps_dcok[1]                       ,// 07
-		                                    db_i_pal_cpu1_dimm_pwrgd_f          ,// 06
-		                                    db_i_pal_p3v3_stby_bp_pgd           ,// 05
-		                                    db_i_pal_pgd_88se9230_vdd1v0        ,// 04
-		                                    db_i_pal_pgd_88se9230_p1v8          ,// 03
-		                                    db_i_pal_cpu0_dimm_pwrgd_f          ,// 02
-		                                    db_i_p1v8_stby_cpld_pg              ,// 01           
-		                                    db_i_pal_p3v3_stby_pgd               // 00 
+		                                        db_i_pal_cpu1_ddr_vdd_pg            ,// 21
+		                                        db_i_pal_cpu0_vdd_core_pg           ,// 20
+		                                        db_i_pal_cpu1_vddq_pg               ,// 19
+		                                        db_i_pal_cpu1_p1v8_pg               ,// 18
+		                                        db_i_pal_cpu1_pll_p1v8_pg           ,// 17
+		                                        db_i_pal_p5v_stby_pgd               ,// 16
+		                                        db_i_pal_ocp1_pwrgd                 ,// 15 不使用
+		                                        db_i_pal_dimm_efuse_pg              ,// 14 不使用
+		                                        db_i_pal_p5v0_pgd                    ,// 13 不使用
+		                                        db_i_pal_pgd_p12v_stby_droop        ,// 12
+		                                        db_i_pal_pgd_p12v_droop             ,// 11
+		                                        db_ps_acok[0]                       ,// 10
+		                                        db_ps_acok[1]                       ,// 09
+		                                        db_ps_dcok[0]                       ,// 08
+		                                        db_ps_dcok[1]                       ,// 07
+		                                        db_i_pal_cpu1_dimm_pwrgd_f          ,// 06
+		                                        db_i_pal_p3v3_stby_bp_pgd           ,// 05
+		                                        db_i_pal_pgd_88se9230_vdd1v0        ,// 04
+		                                        db_i_pal_pgd_88se9230_p1v8          ,// 03
+		                                        db_i_pal_cpu0_dimm_pwrgd_f          ,// 02
+		                                        db_i_p1v8_stby_cpld_pg              ,// 01           
+		                                        db_i_pal_p3v3_stby_pgd               // 00 
 		                                    })		 
 );
 
@@ -4325,7 +4325,6 @@ assign o_PAL_CPU1_VDD_CORE_EN_R   =  cpu1_vdd_core_en_r ;//& cpu1_pwr_ctrl_en;//
 assign o_PAL_CPU0_P1V8_EN_R       =  cpu0_p1v8_en_r     ;
 assign o_PAL_CPU0_VDD_CORE_EN_R   =  cpu0_vdd_core_en_r ;
 assign o_PAL_CPU0_PLL_P1V8_EN_R   =  cpu0_pll_p1v8_en_r ;
-assign o_PAL_P5V_STBY_EN_R        =  p5v_stby_en_r      ;
 assign o_PAL_CPU0_PCIE_P1V8_EN_R  =  cpu0_pcie_p1v8_en_r;
 assign o_PAL_CPU0_DDR_VDD_EN_R    =  cpu0_ddr_vdd_en_r  ;
 assign o_PAL_CPU1_DDR_VDD_EN_R    =  cpu1_ddr_vdd_en_r  ;//& cpu1_pwr_ctrl_en;//20231121
@@ -4467,7 +4466,7 @@ assign o_PAL_CPU1_NVME_ALERT_N_R = pfr_vpp_alert ? 1'bz : 1'b0;
 
 //PAL_P3V3_STBY_RST_N is active high (with pulldown), while others is active low (with pullup).
 assign o_PAL_P3V3_STBY_RST_R     = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
-assign o_PAL_P3V3_STBY_BP_RST_R  = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
+// assign o_PAL_P3V3_STBY_BP_RST_R  = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
 
 
 
