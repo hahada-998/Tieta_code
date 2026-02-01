@@ -550,8 +550,8 @@ input  i_CPU1_D0_GPIO_PORT4_R                 /* synthesis LOC = "Y10"*/// from 
 // clks & resets
 parameter                                   PEAVEY_SUPPORT       = 1'b1 ;  
 wire                                        done_booting_delayed = 1'b1 ; // 不使用, 系统booting_done, 来自BMC, 默认写1
-wire                                        clk_50m                     ; // 不使用
-wire                                        sys_clk                     ; // 系统时钟
+wire                                        clk_50m                     ; // 系统时钟
+wire                                        clk_25m                     ; // 不使用
 wire                                        pll_lock                    ;
 wire                                        pon_reset_n                 ; // 使用  , 全局复位
 wire                                        pon_reset_db_n              ; // 不使用, 复位
@@ -1061,323 +1061,6 @@ wire [7:0]                                  db_debug_sw;
 wire [7:0]                                  bmc_i2c_rst;
 wire [7:0]                                  bmc_i2c_rst2;
 wire [7:0]                                  bmc_i2c_rst3;
-<<<<<<< HEAD
-wire rst_i2c0_mux_n;
-wire rst_i2c3_mux_n;
-wire rst_i2c13_mux_n;
-wire rst_i2c1_mux_n;
-wire rst_i2c4_2_mux_n;
-wire rst_i2c8_mux_n;
-wire rst_i2c2_mux_n;
-wire rst_i2c5_mux_n;
-wire rst_i2c12_mux_n;
-wire rst_i2c11_mux_n;
-wire rst_i2c4_1_mux_n;
-wire rst_i2c10_mux_n;
-wire rst_i2c_riser1_pca9548_n;
-wire rst_i2c_riser2_pca9548_n;
-wire pal_lcd_busy;
-wire pal_lcd_prsnt;
-wire tpm_pp;
-wire tpm_rst;
-wire tpm_prsnt_n;
-wire db_tpm_prsnt_n;
-wire db_i_intruder_cable_inst_n;
-
-wire [`NUM_CPU-1:0] s_vr_cpu_i2c_alert_n;
-wire db_i_pal_ocp1_fan_prsnt_n;
-wire db_i_pal_bmc_card_prsnt_n;
-wire rst_pal_extrst_r_n;
-wire db_i_pal_bmcuid_button_r;
-wire bmc_extrst_uid;
-wire test_bat_en;
-wire i_pal_wdt_rst_n_r;
-wire [1:0]bmcctl_uart_sw;
-wire fan_dbg_mode;
-wire [15:0] mb_cpld2_ver;
-
-wire [7:0]i2c_ram_1050;
-wire [7:0]i2c_ram_1051;
-wire [7:0]i2c_ram_1052;
-wire [7:0]i2c_ram_1053;
-wire [7:0]i2c_ram_1054;
-wire [7:0]i2c_ram_1055;
-wire [7:0]i2c_ram_1056;
-wire [7:0]i2c_ram_1057;
-wire [7:0]i2c_ram_1058;
-
-wire pca_revision_0;
-wire pca_revision_1;
-wire pca_revision_2;
-wire pcb_revision_0;
-wire pcb_revision_1;
-wire [15:0]bmc_cpld_version;
-wire [2:0] db_chassis_id;
-wire [2:0] chassis_id;
-wire [1:0] mb_class_id;
-wire [3:0] led_custom_mode;
-wire mb_t1hz_clk;
-wire board_id5;
-wire board_id6;
-wire board_id7;
-wire power_on_off;
-wire [7:0] pf_class0_b0;
-wire [7:0] pf_class0_b1;
-wire [7:0] pf_class0_b2;
-wire [7:0] pf_class0_b3;
-wire [7:0] pf_class1_b0;
-wire [7:0] pf_class1_b1;
-wire [7:0] pf_class2_b0;
-wire [7:0] pf_class2_b1;
-wire [7:0] pf_class4_b0;
-wire [7:0] pf_class5_b0;
-wire [7:0] pf_class6_b0;
-wire [7:0] pf_class9_b0;
-wire [7:0] pf_classa_b0;
-
-
-
-wire bmc_security_bypass;
-wire bios_security_bypass;
-wire bmc_read_flag;
-wire bmc_read_flag_1;
-wire [39:0]pfr_to_led;
-wire [7:0]led_class_date1;
-wire [7:0]led_class_date2;
-wire [7:0]led_class_date3;
-wire [7:0]led_class_date4;
-wire [7:0]led_class_date5;
-
-wire [7:0]s_ocp_act_n;
-wire [7:0]s_ocp_link_n;
-wire [7:0]s_ocp2_act_n;
-wire [7:0]s_ocp2_link_n;
-wire  ocp2_pvt_link_spdb_p5_n;       
-wire  ocp2_pvt_act_p5_n;             
-wire  ocp2_pvt_link_spda_p6_n;      
-wire  ocp2_pvt_link_spdb_p6_n;       
-wire  ocp2_pvt_act_p6_n;             
-wire  ocp2_pvt_link_spda_p7_n;      
-wire  ocp2_pvt_link_spdb_p7_n;       
-wire  ocp2_pvt_act_p7_n;             
-wire  ocp2_pvt_act_p2_n;             
-wire  ocp2_pvt_link_spda_p3_n;       
-wire  ocp2_pvt_link_spdb_p3_n;       
-wire  ocp2_pvt_act_p3_n;             
-wire  ocp2_pvt_link_spda_p4_n;       
-wire  ocp2_pvt_link_spdb_p4_n;       
-wire  ocp2_pvt_act_p4_n;             
-wire  ocp2_pvt_link_spda_p5_n;       
-wire  ocp2_pvt_link_spda_p0_n;       
-wire  ocp2_pvt_link_spdb_p0_n;       
-wire  ocp2_pvt_act_p0_n;             
-wire  ocp2_pvt_link_spda_p1_n;       
-wire  ocp2_pvt_link_spdb_p1_n;       
-wire  ocp2_pvt_act_p1_n;             
-wire  ocp2_pvt_link_spda_p2_n;       
-wire  ocp2_pvt_link_spdb_p2_n;       
-wire  ocp2_pvt_prsntb0_n;            
-wire  ocp2_pvt_prsntb1_n;            
-wire  ocp2_pvt_prsntb2_n;            
-wire  ocp2_pvt_prsntb3_n;           
-wire  ocp2_pvt_wake_n;               
-wire  ocp2_pvt_temp_warn_n;         
-wire  ocp2_pvt_temp_crit_n;          
-wire  ocp2_pvt_fan_on_aux;           
-wire  ocp_pvt_link_spdb_p5_n;        
-wire  ocp_pvt_act_p5_n;              
-wire  ocp_pvt_link_spda_p6_n;        
-wire  ocp_pvt_link_spdb_p6_n;        
-wire  ocp_pvt_act_p6_n;              
-wire  ocp_pvt_link_spda_p7_n;        
-wire  ocp_pvt_link_spdb_p7_n;       
-wire  ocp_pvt_act_p7_n;              
-wire  ocp_pvt_act_p2_n;              
-wire  ocp_pvt_link_spda_p3_n;        
-wire  ocp_pvt_link_spdb_p3_n;        
-wire  ocp_pvt_act_p3_n;              
-wire  ocp_pvt_link_spda_p4_n;        
-wire  ocp_pvt_link_spdb_p4_n;        
-wire  ocp_pvt_act_p4_n;              
-wire  ocp_pvt_link_spda_p5_n;        
-wire  ocp_pvt_link_spda_p0_n;        
-wire  ocp_pvt_link_spdb_p0_n;        
-wire  ocp_pvt_act_p0_n;              
-wire  ocp_pvt_link_spda_p1_n;        
-wire  ocp_pvt_link_spdb_p1_n;        
-wire  ocp_pvt_act_p1_n;              
-wire  ocp_pvt_link_spda_p2_n;        
-wire  ocp_pvt_link_spdb_p2_n;        
-wire  ocp_pvt_prsntb0_n;             
-wire  ocp_pvt_prsntb1_n;             
-wire  ocp_pvt_prsntb2_n;             
-wire  ocp_pvt_prsntb3_n;             
-wire  ocp_pvt_wake_n;               
-wire  ocp_pvt_temp_warn_n;           
-wire  ocp_pvt_temp_crit_n;           
-wire  ocp_pvt_fan_on_aux;
-wire  db_ocp_pvt_fan_on_aux;
-wire  db_ocp2_pvt_fan_on_aux;
-wire  pal_ocp1_ncsi_en;
-wire  pal_ocp2_ncsi_en;
-wire  pal_ocp_ncsi_sw_en;
-
-wire auxint; 
-wire pme_event;
-wire pfr_pe_wake_n;     
-wire db_pme_source_all;
-wire dsd_uart_prsnt_n;
-wire db_i_dsd_uart_prsnt_n;
-wire db_i_leakage_prsnt_n;
-wire db_i_break_det_do_n;
-wire db_i_leakage_det_do_n;
-wire db_i_pal_ocp1_fan_foo;
-wire db_i_pal_ocp2_fan_foo;
-wire db_i_pal_ocp2_fan_prsnt_n;
-wire pal_gpu_fan1_foo;
-wire pal_gpu_fan2_foo;
-wire pal_gpu_fan3_foo;
-wire pal_gpu_fan4_foo;
-wire pal_gpu_fan4_prsnt;
-wire pal_gpu_fan3_prsnt;
-wire pal_gpu_fan2_prsnt;
-wire pal_gpu_fan1_prsnt;
-wire lom_thermal_trip;
-wire lom_prsnt_n;
-wire cpu0_temp_over;
-wire cpu1_temp_over;
-wire bmc_pgd_p0v8_stby;
-wire bmc_pgd_p1v1_stby;
-wire bmc_pgd_p1v2_stby;
-wire bmc_pgd_p1v8_stby;
-wire bmc_pgd_p3v3_stby;
-wire bmc_ready_flag;
-wire w_sys_healthy_red;
-wire w_sys_healthy_grn;
-
-wire bmcctl_front_nic_led;
-wire nic_led_bmc_ctl;
-wire pfr_vpp_alert;
-wire usb3_right_ear_en;
-wire usb2_left_ear_en;
-wire rtc_select_n;
-wire cpu1_vr_select_n;
-wire cpu0_vr_select_n;
-wire [`NUM_NIC-1:0] ocp_fault_det1;
-wire [`NUM_NIC-1:0] ocp_fault_det2;
-//wire db_i_pal_usb_upd2_oci1b;
-wire db_i_pal_usb_upd2_oci2b;
-//wire db_i_pal_usb_upd1_oci4b;
-wire pal_upd72020_1_alart;
-wire pal_upd72020_2_alart;
-wire vga2_oc_alert;
-wire usb2_lcd_alert;
-wire db_pal_upd72020_1_alart;
-wire db_pal_upd72020_2_alart;
-wire db_vga2_oc_alert;
-wire db_usb2_lcd_alert;
-wire pgd_p1v8_stby_dly32ms;
-wire pgd_p1v8_stby_dly30ms;
-wire bios_read_flag;
-wire machine_rev;
-wire [7:0] bios_post_rate;
-wire [7:0] bios_post_phase;
-
-wire [3:0] bmc_card_type;
-wire [2:0] bmc_card_pcb_rev;
-wire [7:0] riser1_pvti_byte3;
-wire [7:0] riser1_pvti_byte2;
-wire [7:0] riser1_pvti_byte1;
-wire [7:0] riser1_pvti_byte0;
-wire [7:0] riser2_pvti_byte3;
-wire [7:0] riser2_pvti_byte2;
-wire [7:0] riser2_pvti_byte1;
-wire [7:0] riser2_pvti_byte0;
-wire riser1_cb_prsnt_slot1_n;
-wire riser1_cb_prsnt_slot2_n;
-wire riser1_cb_prsnt_slot3_n;
-wire riser1_pwr_det0;
-wire riser1_pwr_det1;
-wire riser1_pcb_rev0;
-wire riser1_pcb_rev1;
-wire riser1_pwr_alert_n;
-wire riser1_emc_alert_n;
-wire riser1_slot1_prsnt_n;
-wire riser1_slot2_prsnt_n;
-wire riser1_slot3_prsnt_n;
-wire [5:0]riser1_id;
-wire pal_riser1_pwrgd;
-wire pal_riser1_pe_wake_n;
-wire riser2_cb_prsnt_slot1_n;
-wire riser2_cb_prsnt_slot2_n;
-wire riser2_cb_prsnt_slot3_n;
-wire riser2_pwr_det0;
-wire riser2_pwr_det1;
-wire riser2_pcb_rev0;
-wire riser2_pcb_rev1;
-wire riser2_pwr_alert_n;
-wire riser2_emc_alert_n;
-wire riser2_slot1_prsnt_n;
-wire riser2_slot2_prsnt_n;
-wire riser2_slot3_prsnt_n;
-wire [5:0]riser2_id;
-wire pal_riser2_pwrgd;
-wire pal_riser2_pe_wake_n;
-wire [3:0]riser2_pwr_cable_prsnt_n;
-wire [3:0]riser1_pwr_cable_prsnt_n;
-wire w4GpuRiser2Flag;
-wire w4GpuRiser1Flag;
-wire riser3_slot7_prsnt_n;
-wire riser3_slot8_prsnt_n;
-wire riser4_slot9_prsnt_n;
-wire riser4_slot10_prsnt_n;
-wire riser3_1_prsnt_n;
-wire riser3_2_prsnt_n;
-wire riser4_1_prsnt_n;
-wire riser4_2_prsnt_n;
-
-wire riser4_2_pwr_en;
-wire riser4_1_pwr_en;
-wire riser3_2_pwr_en;
-wire riser3_1_pwr_en;
-wire riser2_pwr_en;
-wire riser1_pwr_en;
-
-wire [5:0]riser3_slot7_id;
-wire [5:0]riser3_slot8_id;
-wire [5:0]riser4_slot9_id;
-wire [5:0]riser4_slot10_id;
-
-wire db_riser_prsnt_det_2;
-wire db_riser_prsnt_det_3;
-wire db_riser_prsnt_det_0;
-wire db_riser_prsnt_det_1;
-wire db_i_riser_prsnt_det_9;
-wire db_i_riser_prsnt_det_8;
-wire db_riser_prsnt_det_6;
-wire db_riser_prsnt_det_7;
-wire db_riser_prsnt_det_4;
-wire db_riser_prsnt_det_5;
-wire db_i_riser_prsnt_det_11;
-wire db_i_riser_prsnt_det_10;
-
-
-wire [7:0]          db_bp_aux_pg        ; // 不使用
-wire [7:0]          bp_int              ; // 不使用
-wire [7:0]          bp_power_good       ; // 不使用
-wire [7:0]          bp_prsnt            ; // 不使用
-
-wire [31:0] AUX_BP_type;
-wire [127:0] pcie_detect;
-wire [7:0] pcie_detect_int;
-
-wire [15:0] o_mb_cb_prsnt_bmc;
-wire [7:0] debug_reg_15;
-wire [15:0] mb_cb_prsnt;
-wire [19:0] riser_ocp_m2_slot_number;//0x30[7:0],0x31[7:0],0x32[2:0]
-wire [43:0] nvme_slot_number;        //0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
-
-=======
 wire                                        rst_i2c0_mux_n;
 wire                                        rst_i2c3_mux_n;
 wire                                        rst_i2c13_mux_n;
@@ -1709,7 +1392,6 @@ wire [7:0]                                  debug_reg_15                  ; // �
 wire [15:0]                                 mb_cb_prsnt                   ; // 未使用   SCPLD -> MCPLD
 wire [19:0]                                 riser_ocp_m2_slot_number      ; // 未使用   SCPLD -> MCPLD    0x30[7:0],0x31[7:0],0x32[2:0]
 wire [43:0]                                 nvme_slot_number              ; // 未使用   SCPLD -> MCPLD    0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
->>>>>>> 7bea704236b1dde19eccbf986fa139eb815e41b6
 
 wire gmt_fail_n = 1'b1;
 //d00412 end
@@ -1721,7 +1403,7 @@ pll_i25M_o50M_o25M pll_inst (
     .clkin1                                 (i_CLK_PAL_IN_25M           ), // input 25.0000MHz
     .rst                                    (~i_PAL_P3V3_STBY_PGD       ), // input
     .clkout0                                (clk_50m                    ), // output 50.00000000MHz
-    .clkout1                                (sys_clk                    ), // output 25.00000000MHz
+    .clkout1                                (clk_25m                    ), // output 25.00000000MHz
     .lock                                   (pll_lock                   )  // output
 
 );
@@ -1730,7 +1412,7 @@ pll_i25M_o50M_o25M pll_inst (
 全局复位 
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 pon_reset pon_reset_inst( 
-    .clk                                    (sys_clk                    ),// input:  复位/PGD 同步时钟源（25MHz）
+    .clk                                    (clk_50m                    ),// input:  复位/PGD 同步时钟源（25MHz）
     .pll_lock                               (pll_lock                   ),// input:  仅在 PLL 锁定后才允许释放复位
     .pgd_p3v3_stby                          (i_PAL_P3V3_STBY_PGD        ),// input:  待机 3.3V 电源良好指示（PGD）
     .pgd_aux_gmt                            (pgd_aux_bmc                ),// input:  来自 BMC 的 AUX PGD 原始输入
@@ -1747,7 +1429,7 @@ pon_reset pon_reset_inst(
 时钟树
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 timer_gen timer_gen_inst(
-    .clk                                    (sys_clk                    ),
+    .clk                                    (clk_50m                    ),
     .reset                                  (~pon_reset_n               ),
     .t40ns                                  (t40ns_tick                 ),
     .t80ns                                  (t80ns_tick                 ),
@@ -1781,7 +1463,7 @@ timer_gen timer_gen_inst(
 输入信号消抖
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
-    .clk(sys_clk),
+    .clk(clk_50m),
     .rst(~pon_reset_n),
     .timer_tick(t64ms_tick),
     .din ({
@@ -1850,7 +1532,7 @@ PGM_DEBOUNCE #(
     .NBITS                                  (2'b11                      ), 
     .ENABLE                                 (1'b1                       )
 ) db_inst_cpu_rail (
-    .clk                                    (sys_clk                    ),
+    .clk                                    (clk_50m                    ),
     .rst                                    (~pon_reset_n               ),
     .timer_tick                             (1'b1                       ),
     .din                                    (
@@ -1969,7 +1651,7 @@ BP PG信号信号消抖
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 // 未使用
 PGM_DEBOUNCE_N #(.SIGCNT(8), .NBITS(2'b11), .ENABLE(1'b1)) db_bp_pgood_fault (
-    .clk                               (sys_clk                    ),
+    .clk                               (clk_50m                    ),
     .rst_n                             (pon_reset_n                ),
     .timer_tick                        (1'b1                       ),
     .din                               ({
@@ -1982,7 +1664,7 @@ PGM_DEBOUNCE_N #(.SIGCNT(8), .NBITS(2'b11), .ENABLE(1'b1)) db_bp_pgood_fault (
 
 // 机箱入侵检测信号消抖
 PGM_DEBOUNCE_N #(.SIGCNT(1), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
-    .clk			                        (sys_clk                   ),
+    .clk			                        (clk_50m                   ),
     .rst_n		                            (pon_reset_n                ),
     .timer_tick	                            (t512us_tick                ),
     .din                                    ({
@@ -1997,7 +1679,7 @@ PGM_DEBOUNCE_N #(.SIGCNT(1), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
 
 // PSU DCOK 信号消抖
 PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_psu (
-  .clk                                      (sys_clk                   ),
+  .clk                                      (clk_50m                   ),
   .rst                                      (~pon_reset_n               ),
   .timer_tick                               (t64ms_tick                 ),
   .din                                      ({
@@ -2012,7 +1694,7 @@ PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_psu (
 
 // 风扇/OCP/NVME等在位信号消抖
 PGM_DEBOUNCE #(.SIGCNT(47), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
-    .clk                                    (sys_clk),
+    .clk                                    (clk_50m),
     .timer_tick                             (t512us_tick),
     .rst                                    (~pon_reset_n),
     .din                                    ({	
@@ -2125,7 +1807,7 @@ PGM_DEBOUNCE #(.SIGCNT(47), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
 
 // EMC_ALERT 和 GMT_FAIL 信号消抖
 PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_pgood_fault2_n (
-    .clk(sys_clk),
+    .clk(clk_50m),
     .rst(~pon_reset_n),
     .timer_tick(1'b1),
     .din({           
@@ -2140,7 +1822,7 @@ PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_pgood_fault2_n (
 
 // 低速信号同步
 SYNC_DATA_N #(.SIGCNT(3)) sync_data_low (
-    .clk    (sys_clk),
+    .clk    (clk_50m),
     .rst_n  (pon_reset_n),
     .din    ({
              vwire_bmc_shutdown,       //01
@@ -2156,7 +1838,7 @@ SYNC_DATA_N #(.SIGCNT(3)) sync_data_low (
 
 // 高速信号同步
 SYNC_DATA #(.SIGCNT(5)) sync_data_high1 (
-    .clk    (sys_clk),
+    .clk    (clk_50m),
     .rst    (~pon_reset_n),
     .din    ({
 		     ~vwire_bmc_wakeup              ,     //01
@@ -2176,7 +1858,7 @@ SYNC_DATA #(.SIGCNT(5)) sync_data_high1 (
 
 // OCP/NVME PVT信号同步
 SYNC_DATA #(.SIGCNT(32)) sync_data_ocp (
-    .clk    (sys_clk),
+    .clk    (clk_50m),
     .rst    (~pon_reset_db_n),
     .din    ({ocp_pvt_act_p0_n,//01
     		  ocp_pvt_act_p1_n,//02
@@ -2249,7 +1931,7 @@ SYNC_DATA #(.SIGCNT(32)) sync_data_ocp (
 
 // SMB_ALERT 信号消抖
 PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_alert (
-    .clk        (sys_clk),
+    .clk        (clk_50m),
     .rst        (~pon_reset_n),
     .timer_tick (1'b1),
     .din        ({
@@ -2264,7 +1946,7 @@ PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_alert (
 
 // SMB_ALERT 信号消抖
 PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_alert_inst1 (
-    .clk        (sys_clk),
+    .clk        (clk_50m),
     .rst        (~pon_reset_n),
     .timer_tick (1'b1),
     .din        ({
@@ -2283,7 +1965,7 @@ PGM_DEBOUNCE #(
     .NBITS                                  (2'b11                      ), 
     .ENABLE                                 (1'b1                       )
 ) db_inst_cpu_rail (
-    .clk                                    (sys_clk                    ),
+    .clk                                    (clk_50m                    ),
     .rst                                    (~pon_reset_n               ),
     .timer_tick                             (1'b1                       ),
     .din                                    (
@@ -2362,7 +2044,7 @@ wire                                        scpld_sgpio_clk             ;
 reg [426:0]	                                scpld_to_mcpld_data_filter  ;
 reg 	                                    scpld_sgpio_fail            ;
 
-always@(posedge sys_clk or negedge pon_reset_n)begin
+always@(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)
 		begin
 			scpld_to_mcpld_data_filter <= {427{1'b0}};
@@ -2384,7 +2066,7 @@ end
 
 //S CPLD ---> M CPLD
 s2p_master #(.NBIT(512)) inst_scpld_to_mcpld_s2p(
-    .clk            (sys_clk					), //in
+    .clk            (clk_50m					), //in
     .rst            (~pon_reset_n				), //in
     .tick           (t1us_tick					), //in
     .si             (i_CPLD_M_S_SGPIO_MISO		), //in   //SGPIO_MISO  Serial Signal input
@@ -2398,7 +2080,7 @@ assign o_CPLD_M_S_SGPIO_CLK_R  = scpld_sgpio_clk ;  //SGPIO_CLK
 
 //M CPLD  ---> S CPLD
 p2s_slave #(.NBIT(512)) inst_mcpld_to_scpld_p2s(
-	.clk            (sys_clk					),//in
+	.clk            (clk_50m					),//in
 	.rst            (~pon_reset_n				),//in
 	.pi             (mcpld_to_scpld_p2s_data	),//in   //Parallel Signal input
 	.so             (o_CPLD_M_S_SGPIO_MOSI_R 	),//out  //SGPIO_MOSI Serial Signal output
@@ -2759,7 +2441,7 @@ assign riser1_pwr_cable_prsnt_n[3]      = riser1_pvti_byte2[6];//4GPU POWER CANL
 按键控制
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 power_button power_button_inst  (
-    .clk                   (sys_clk        ),
+    .clk                   (clk_50m        ),
     .reset                 (~pgd_aux_system ),
     .t1s                   (t1s_tick        ),
     .gpo_pwr_btn_mask      (pwrbtn_mask     ),
@@ -2799,7 +2481,7 @@ wire                        pch_pwrbtn
 wire                        pch_thrmtrip     
 
 power_button power_button_inst  (
-.clk                        (sys_clk                    ),
+.clk                        (clk_50m                    ),
 .reset                      (~pgd_aux_system            ),
 .t1s                        (t1s_tick                   ),
 .gpo_pwr_btn_mask           (pwrbtn_mask                ),
@@ -2836,7 +2518,7 @@ assign cpu_rb_flag = ((~i_CPU0_D0_PWR_CTR0_R) & i_CPU0_D0_PWR_CTR1_R) ;
 assign cpu_po_flag = ((~i_CPU0_D0_PWR_CTR1_R) & i_CPU0_D0_PWR_CTR0_R) ; 
 
 edge_delay #(.CNTR_NBITS(4), .DEF_OUTPUT(1'b0), .DELAY_MODE(1'b0)) edge_delay_cpu_gpio_ok (
-    .clk                    (sys_clk                            ),
+    .clk                    (clk_50m                            ),
     .reset                  (~pgd_aux_system                    ),
     .cnt_size               (4'b1000                            ),
     .cnt_step               (t1s_tick                           ),
@@ -2844,7 +2526,7 @@ edge_delay #(.CNTR_NBITS(4), .DEF_OUTPUT(1'b0), .DELAY_MODE(1'b0)) edge_delay_cp
     .delay_output           (cpu_gpio_ok                        )
 );
 
-always@(posedge sys_clk or negedge pgd_aux_system) begin 
+always@(posedge clk_50m or negedge pgd_aux_system) begin 
     if(!pgd_aux_system) begin
         cpu_reboot      <= 1'b1;
         cpu_power_off   <= 1'b1;
@@ -2874,7 +2556,7 @@ reg [29:0]              counts                              ;
 
 
 
-always @(posedge sys_clk or negedge pgd_aux_system) begin
+always @(posedge clk_50m or negedge pgd_aux_system) begin
     if(!pgd_aux_system) begin
         singal_s0   <= 1'b1;
         singal_s1   <= 1'b1;
@@ -2887,7 +2569,7 @@ end
 
 assign singal_n = !singal_s0 & singal_s1;
 
-always @(posedge sys_clk or negedge pgd_aux_system) begin
+always @(posedge clk_50m or negedge pgd_aux_system) begin
     if(!pgd_aux_system)begin
         counts          <= 30'b0;
         cpu_reboot_x    <= 1'b1 ;
@@ -2914,7 +2596,7 @@ always @(posedge sys_clk or negedge pgd_aux_system) begin
     end
 end
 
-always @(posedge sys_clk or negedge pgd_aux_system)begin
+always @(posedge clk_50m or negedge pgd_aux_system)begin
     if(!pgd_aux_system) begin
         count           <= 30'b0;
         cpu_reboot_S    <=1'b1;
@@ -3041,7 +2723,7 @@ pwrseq_master #(
     // -----------------------------------------------------------
     // 1. 时钟与复位接口（模块时序基准与初始化）
     // -----------------------------------------------------------
-    .clk                                    (sys_clk                    ), // 输入：50MHz 工作时钟（模块内部时序逻辑的基准，如状态机跳转、计数器计时）
+    .clk                                    (clk_50m                    ), // 输入：50MHz 工作时钟（模块内部时序逻辑的基准，如状态机跳转、计数器计时）
     .reset                                  (~pon_reset_n               ), // 输入：模块复位信号（高电平有效）
     // .cmu_fault_clear_rst		            (~pon_reset_n               ), // 输入：CMU（电源管理芯片）故障清除复位信号
 
@@ -3178,7 +2860,7 @@ pwrseq_slave #(
     .LIM_RECOV_FAULT_MASK                   (40'b0011_0000_0000_1111_1111_1111_1111_1111_1111_1111),
     .NON_RECOV_FAULT_MASK                   (40'b0000_0000_0000_0000_0000_0000_0000_0000_0000_0000)
 ) pwrseq_slave_inst (
-    .clk                                    (sys_clk                    ),
+    .clk                                    (clk_50m                    ),
     .reset                                  (~pon_reset_n               ),
     .t1us                                   (t1us_tick                  ),
     .t512us                                 (t512us_tick                ),
@@ -3426,7 +3108,7 @@ fan_pwm # (.TOTAL_BITS(8), .POL(1'b1)) fan_pwm_inst2(
 assign duty_main_max = 8'hE6;
 assign duty_main_min = 8'h80;
 
-always @(posedge sys_clk or negedge db_i_pal_p5v_pgd)begin
+always @(posedge clk_50m or negedge db_i_pal_p5v_pgd)begin
     if (!db_i_pal_p5v_pgd)
     begin
       cpld_pwm_main_cnt     <= 8'h00;
@@ -3557,7 +3239,7 @@ assign o_PAL_FAN8_PWM   =   db_fan_prsnt_n[7] ?  1'b0:  (~fan_pwm_n[7] );
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach1(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH1),
 .fan_rotor_byte2   (fan_tach1_byte2),
@@ -3566,7 +3248,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach1(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach2(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH1),
 .fan_rotor_byte2   (fan_tach2_byte2),
@@ -3575,7 +3257,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach2(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach3(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH2),
 .fan_rotor_byte2   (fan_tach3_byte2),
@@ -3584,7 +3266,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach3(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach4(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH2),
 .fan_rotor_byte2   (fan_tach4_byte2),
@@ -3593,7 +3275,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach4(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach5(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH3),
 .fan_rotor_byte2   (fan_tach5_byte2),
@@ -3602,7 +3284,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach5(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach6(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH3),
 .fan_rotor_byte2   (fan_tach6_byte2),
@@ -3611,7 +3293,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach6(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach7(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH4),
 .fan_rotor_byte2   (fan_tach7_byte2),
@@ -3620,7 +3302,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach7(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach8(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH4),
 .fan_rotor_byte2   (fan_tach8_byte2),
@@ -3629,7 +3311,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach8(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach9(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH5),
 .fan_rotor_byte2   (fan_tach9_byte2),
@@ -3638,7 +3320,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach9(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach10(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH5),
 .fan_rotor_byte2   (fan_tach10_byte2),
@@ -3647,7 +3329,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach10(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach11(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH6),
 .fan_rotor_byte2   (fan_tach11_byte2),
@@ -3656,7 +3338,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach11(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach12(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH6),
 .fan_rotor_byte2   (fan_tach12_byte2),
@@ -3665,7 +3347,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach12(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach13(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH7),
 .fan_rotor_byte2   (fan_tach13_byte2),
@@ -3674,7 +3356,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach13(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach14(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH7),
 .fan_rotor_byte2   (fan_tach14_byte2),
@@ -3683,7 +3365,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach14(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach15(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_FRONT_TACH8),
 .fan_rotor_byte2   (fan_tach15_byte2),
@@ -3692,7 +3374,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach15(
 fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach16(
 .count_step        (t8us_tick),
 .count_clear_step  (t1s_tick),
-.clk_50m           (sys_clk),
+.clk_50m           (clk_50m),
 .pon_reset_n       (pon_reset_n),
 .signal_in         (i_FAN_REAR_TACH8),
 .fan_rotor_byte2   (fan_tach16_byte2),
@@ -3706,7 +3388,7 @@ fan_speed_detect # (.TOTAL_BITS(8), .POL(1'b1)) fan_speed_detect_tach16(
 //------------------------------------------------------------------------------
 reg  [2:0] force_reb_count;
 
-always @(posedge sys_clk or negedge pgd_aux_system)
+always @(posedge clk_50m or negedge pgd_aux_system)
 begin
   if (~pgd_aux_system)
   begin
@@ -3737,7 +3419,7 @@ end
 reg  [1:0] force_reb_in_count;
 reg        force_reb_in;
 
-always @(posedge sys_clk or negedge pgd_aux_system)
+always @(posedge clk_50m or negedge pgd_aux_system)
 begin
   if (~pgd_aux_system)
   begin
@@ -3774,7 +3456,7 @@ end
 // BMC    PAL_BMC_PE_WAKE_N, not used in G2 yet.
 //------------------------------------------------------------------------------
 pme_filter pme_filter_inst (
-  .clk              (sys_clk         ),//in
+  .clk              (clk_50m         ),//in
   .t1hz_tick        (t1s_tick         ),//in
   .pgoodaux         (pon_reset_db_n   ),//in
   .pme_source_or_all(~pfr_pe_wake_n   ),//in ���е��ӿ�������wake�źţ�����pme_filter��1��Ч  
@@ -3799,7 +3481,7 @@ wire [7:0] w_uid_led_ctl;
 UID_Function#(
 .LONG_PRESS        (4'd5)
 )UID_Function_u0(
-.i_clk                    (sys_clk		        ),//input Clk
+.i_clk                    (clk_50m		        ),//input Clk
 .i_1mSEC                  (t1ms_tick	        ),
 .i_20mSEC                 (t32ms_tick	        ),
 .i_rst_n                  (pon_reset_n	        ),//Global rst,Active Low
@@ -3827,7 +3509,7 @@ reg r_BMC_UID_CPLD_N;
 reg [7:0] r_uid_led_ctl;
 //assign o_uid_led_ctl    = r_uid_led_ctl;
 assign led_uid = r_BMC_UID_CPLD_N;
-always@(posedge sys_clk or negedge pon_reset_n)
+always@(posedge clk_50m or negedge pon_reset_n)
 begin
     if(~pon_reset_n)
 	begin
@@ -3892,7 +3574,7 @@ end
 reg r_pal_led_hel_red_r;
 reg r_pal_led_hel_gr_r;
 
-always@(posedge sys_clk or negedge pon_reset_n)//2023-4-25 add 
+always@(posedge clk_50m or negedge pon_reset_n)//2023-4-25 add 
 begin
 	if(~pon_reset_n)
 	  begin
@@ -3948,7 +3630,7 @@ wire                    brownout_fault          ;
 psu #(
     .NUM_PSU(`NUM_PSU)
 ) psu_inst (
-    .clk                (sys_clk                ),
+    .clk                (clk_50m                ),
     .reset              (~pon_reset_n           ),
     .t1us               (t1us_tick              ),
     .t1ms               (t1ms_tick              ),
@@ -3977,7 +3659,7 @@ psu #(
 
 // delay 1s for ps_on_n(fall)
 edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps0_on_n (
-    .clk                (sys_clk                ),
+    .clk                (clk_50m                ),
     .reset              (~pon_reset_n           ),
     .cnt_size           (2'b10                  ),
     .cnt_step           (t512ms_tick            ),
@@ -3986,7 +3668,7 @@ edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps
 );
 
 edge_delay #(.CNTR_NBITS(2), .DEF_OUTPUT(1'b1), .DELAY_MODE(1'b0)) edge_delay_ps1_on_n(
-    .clk                (sys_clk                ),
+    .clk                (clk_50m                ),
     .reset              (~pon_reset_n           ),
     .cnt_size           (2'b10                  ),
     .cnt_step           (t512ms_tick            ),
@@ -4006,7 +3688,7 @@ assign o_PAL_P12V_DISCHARGE_R = (&ps_on_n[1:0]) ? 1'bz : 1'b0   ; // 实际未�
 reg r_pal_led_hel_red_r;
 reg r_pal_led_hel_gr_r ;
 
-always@(posedge sys_clk or negedge pon_reset_n)begin
+always@(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)
 	  begin
 		r_pal_led_hel_red_r  <= 1'b0;
@@ -4106,7 +3788,7 @@ assign i2c_ram_1057[7:1] = 7'h7f;
 //AUX1  J84    Board_ID
 // ---------------------------------------------------------------------------------------------------------------------
 UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(24)) uart_master_u1 (
-    .clk                        (sys_clk             ),//input  系统时钟
+    .clk                        (clk_50m             ),//input  系统时钟
     .rst                        (~pon_reset_n        ),//input
     .tick                       (t16us_tick          ),//input  BPS计数时钟
     .t128ms_tick                (t128ms_tick         ),//input 
@@ -4124,7 +3806,7 @@ UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(
 //AUX2  J86    Board_ID
 // ---------------------------------------------------------------------------------------------------------------------
 UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(24)) uart_master_u2 (
-    .clk                        (sys_clk             ),//input  系统时钟
+    .clk                        (clk_50m             ),//input  系统时钟
     .rst                        (~pon_reset_n        ),//input
     .tick                       (t16us_tick          ),//input  BPS计数时钟
     .t128ms_tick                (t128ms_tick         ),//input
@@ -4148,7 +3830,7 @@ wire                            ocp_aux_pgd                 ;
 edge_delay #(
     .CNTR_NBITS    (5                       )
 ) ocp_main_en_delay_inst (
-    .clk                        (sys_clk		        ),
+    .clk                        (clk_50m		        ),
     .reset                      (~pon_reset_n	        ),
     .cnt_size                   (5'h19		            ),
     .cnt_step                   (t2ms_tick	            ),
@@ -4298,7 +3980,7 @@ pwrcap #(
   .NUMBER_OF_PSU(`NUM_PSU),
   .NUMBER_OF_CHANNEL(`NUM_CHN)
 ) pwrcap_inst (
-  .sys_clk             (sys_clk                                ),
+  .clk_50m             (clk_50m                                ),
   .reset_n             (pon_reset_db_n                          ),
   .power_fault         (power_fault                             ),//in
   .fault_blink_code    (pf_blink_code                           ),//in
@@ -4335,7 +4017,7 @@ assign cpu_thermtrip_event[0]  = cpu0_temp_over;
 assign cpu_thermtrip_event[1]  = cpu1_temp_over;
 
 thermal thermal_inst (
-  .clk                    (sys_clk           ),
+  .clk                    (clk_50m           ),
   .pgd_p3v3_stby_async    (pon_reset_db_n     ),
   .pgd_aux_system         (pgd_aux_system     ),
   .pgd_p3v3               (db_i_pal_p5v_pgd   ),
@@ -4376,7 +4058,7 @@ system_reset #(
   .NUM_CPU                     (`NUM_CPU),
   .NUM_IO                      (`NUM_IO)
 ) system_reset_inst (
-  .clk                         (sys_clk                     ),
+  .clk                         (clk_50m                     ),
   .reset                       (~pgd_aux_system              ),
   .t1us                        (t1us_tick                    ),
   .st_steady_pwrok             (st_steady_pwrok              ),
@@ -4402,7 +4084,7 @@ system_reset #(
 //------------------------------------------------------------------------------
 /*
 nic_leds #(.NUMBER_OF_NICS(16)) ocp_leds_inst (
-  .sys_clk           (sys_clk),               //input
+  .clk_50m           (clk_50m),               //input
   .reset_n           (pon_reset_db_n),        //input
   .lom_present_n     (1'b0),                  //input       db_ocp_prsnt_n
   .t62p5ms           (t64ms_tick),            //input
@@ -4453,7 +4135,7 @@ assign pal_led_nic_act = bmcctl_front_nic_led ? t4hz_clk :
 
 led_blink_code #(.CLASS_SIZE(8)) led_blink_code_inst (
   .reset_n   (pgd_aux_system),
-  .sys_clk   (sys_clk      ),
+  .clk_50m   (clk_50m      ),
   .blink_clk (t2p5hz_clk    ),
   .class_0   (pf_class0     ),
   .class_1   (pf_class1     ),
@@ -4476,7 +4158,7 @@ led_blink_code #(.CLASS_SIZE(8)) led_blink_code_inst (
 wire debug_mode_led;
 
 post_leds post_leds_inst (
-  .sys_clk     (sys_clk),
+  .clk_50m     (clk_50m),
   .reset_n     (pgd_aux_system),
   .sys_pgood   (1'b1),
   .onehz_clk   (t1hz_clk),
@@ -4581,7 +4263,7 @@ assign o_PAL_BMC_SRST_R   = bmc_extrst_uid;//ilo_hard_reset ? 1'b0 : 1'b1;
 
 //BMC INTERRUPT
 reg auxint_n_r;
-always @(posedge sys_clk or negedge pgd_aux_system)
+always @(posedge clk_50m or negedge pgd_aux_system)
  begin
    if (!pgd_aux_system)
      auxint_n_r <= 1'b1;
@@ -4749,7 +4431,7 @@ wire ocp_aux_pgd;
 edge_delay #(
   .CNTR_NBITS    (5)
 ) ocp_main_en_delay_inst (
-  .clk           (sys_clk		),
+  .clk           (clk_50m		),
   .reset         (~pon_reset_n	),
   .cnt_size      (5'h19		),
   .cnt_step      (t2ms_tick	),
@@ -4854,7 +4536,7 @@ bmc_cpld_i2c_ram #(
     .DLY_LEN       (16)   //50MHz,330ns
 ) bmc_cpld_i2c_ram_u0 (
     .i_rst_n                       (pon_reset_n             ),  
-    .i_clk                         (sys_clk	                ),
+    .i_clk                         (clk_50m	                ),
     .t1s                           (t1s_tick                ),
     .t1us                          (t1us_tick               ),
     .t125ms                        (t128ms_tick             ),
@@ -5091,7 +4773,7 @@ reg [29:0]                          time_cnt                    ;
 reg                                 state                       ;
 
 Edge_Detect1 Edge_Detect_u3(
-    .i_clk                          (sys_clk                    ),//input Clk
+    .i_clk                          (clk_50m                    ),//input Clk
     .i_rst_n                        (pon_reset_n                ),//Global rst,Active Low
     .i_signal                       (bmc_ctrl_shutdown          ),
     .o_signal_pos                   (                           ),
@@ -5099,7 +4781,7 @@ Edge_Detect1 Edge_Detect_u3(
     .o_signal_invert                (                           )
 );
 
-always @(posedge sys_clk or negedge pon_reset_n)begin
+always @(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)begin
 		soft_shutdown <= 1'b0;
 		time_cnt      <= 30'd0;
