@@ -1070,11 +1070,10 @@ wire tpm_rst;
 wire tpm_prsnt_n;
 wire db_tpm_prsnt_n;
 wire db_i_intruder_cable_inst_n;
-// wire db_i_pal_cpu1_dimm_pwrgd_f;
+
 wire [`NUM_CPU-1:0] s_vr_cpu_i2c_alert_n;
 wire db_i_pal_ocp1_fan_prsnt_n;
 wire db_i_pal_bmc_card_prsnt_n;
-wire db_i_pal_cpu0_dimm_pwrgd_f;
 wire rst_pal_extrst_r_n;
 wire db_i_pal_bmcuid_button_r;
 wire bmc_extrst_uid;
@@ -3843,7 +3842,7 @@ assign o_BIOS0_RST_N_R            = ~rom_bios_ma_rst    ; // cpu_bios_en ? (~rom
 assign o_BIOS1_RST_N_R            = ~rom_bios_bk_rst    ; // cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz; // BIOS FLASH 复位信号输出，低电平有效 
 
 assign o_PAL_FRONT_BP_EFUSE_EN_R  = p12v_bp_front_en    ; // 12V 前背板供电使能信号
-// assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en  ; // 12V 后背板供电使能信号, 未使用
+assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en  ; // 12V 后背板供电使能信号, 未使用
 
 // 2. SM_EN_5V_STBY 状态上电使能
 assign o_PAL_P5V_STBY_EN_R        = p5v_stby_en_r       ; // 5V 待机电源使能信号
@@ -4309,7 +4308,6 @@ assign ft_cpu1_rst_ok = i_CPU1_D1_CRU_RST_OK & i_CPU1_D0_CRU_RST_OK & i_CPU1_D2_
 
 
 
-assign o_PAL_REAT_BP_EFUSE_EN_R   = p12v_bp_rear_en     ;
 assign o_PAL_FAN_EFUSE_EN_R       = db_i_pal_p3v3_stby_pgd;//power_supply_on     ;  
 assign o_PAL_PVCC_HPMOS_CPU_EN_R  =  pvcc_hpmos_cpu_en_r; 
 assign o_PAL_CPU1_P1V8_EN_R       =  cpu1_p1v8_en_r     ;//& cpu1_pwr_ctrl_en;//20231121
