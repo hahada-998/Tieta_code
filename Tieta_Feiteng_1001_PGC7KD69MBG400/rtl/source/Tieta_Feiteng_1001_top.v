@@ -3419,27 +3419,21 @@ end
 reg  [1:0] force_reb_in_count;
 reg        force_reb_in;
 
-always @(posedge clk_50m or negedge pgd_aux_system)
-begin
-  if (~pgd_aux_system)
-  begin
-    force_reb_in_count <= 2'b00;
-    force_reb_in       <= 1'b1;
+always @(posedge clk_50m or negedge pgd_aux_system)begin
+  if (~pgd_aux_system)begin
+      force_reb_in_count <= 2'b00;
+      force_reb_in       <= 1'b1;
   end
-  else if (db_pal_ext_rst_n)
-  begin
-    force_reb_in_count <= 2'b00;
-    force_reb_in       <= 1'b1;
+  else if (db_pal_ext_rst_n)begin
+      force_reb_in_count <= 2'b00;
+      force_reb_in       <= 1'b1;
   end
-  else if (t1s_tick && (force_reb_in_count == 2'b11))
-  begin
-    force_reb_in       <= 1'b0;
+  else if (t1s_tick && (force_reb_in_count == 2'b11))begin
+      force_reb_in       <= 1'b0;
   end
 //YHY  else if (t1s && !sys_sw_in_n && gpo_pwr_btn_mask)
-    else if (t1s_tick && !db_pal_ext_rst_n )
-
-  begin
-    force_reb_in_count <= force_reb_in_count + 1'b1;
+  else if (t1s_tick && !db_pal_ext_rst_n )begin
+      force_reb_in_count <= force_reb_in_count + 1'b1;
   end
 end
 
@@ -3470,43 +3464,44 @@ assign power_wake_r_n = (!db_pme_source_all || power_supply_on || !wol_en) ? 1'b
 //------------------------------------------------------------------------------
 // UID logic
 // CHECKME: Need to validate connections with new top level
+// 传入SCPLD控制点灯
 //------------------------------------------------------------------------------
-wire w_uid_btn_evt_wc;
-wire w_uid_rstbmc_evt_wc;
-wire uid_btn_all_invert;
-wire uid_button_long_evt;
-wire uid_button_short_evt;
-wire [7:0] w_uid_led_ctl;
+wire                      w_uid_btn_evt_wc        ;
+wire                      w_uid_rstbmc_evt_wc     ;
+wire                      uid_btn_all_invert      ;
+wire                      uid_button_long_evt     ;
+wire                      uid_button_short_evt    ;
+wire [7:0]                w_uid_led_ctl           ;
 
 UID_Function#(
-.LONG_PRESS        (4'd5)
+    .LONG_PRESS               (4'd5                       )
 )UID_Function_u0(
-.i_clk                    (clk_50m		        ),//input Clk
-.i_1mSEC                  (t1ms_tick	        ),
-.i_20mSEC                 (t32ms_tick	        ),
-.i_rst_n                  (pon_reset_n	        ),//Global rst,Active Low
-.i_clr_flag_short         (~w_uid_btn_evt_wc    ),//Use the same signal on common design
-.i_clr_flag_long          (~w_uid_rstbmc_evt_wc ),//Use the same signal on common design 
-.i_UID_BMC_BTN_N          (1'b1                 ),
-.i_UID_BTN_RP_CPLD_N      (i_PAL_BMCUID_BUTTON_R),//i_UID_BTN_CPLD_N
-.i_UID_BTN_FP_CPLD_N      (1'b1), 
+    .i_clk                    (clk_50m		                ),//input Clk
+    .i_1mSEC                  (t1ms_tick	                ),
+    .i_20mSEC                 (t32ms_tick	                ),
+    .i_rst_n                  (pon_reset_n	              ),//Global rst,Active Low
+    .i_clr_flag_short         (~w_uid_btn_evt_wc          ),//Use the same signal on common design
+    .i_clr_flag_long          (~w_uid_rstbmc_evt_wc       ),//Use the same signal on common design 
+    .i_UID_BMC_BTN_N          (1'b1                       ),
+    .i_UID_BTN_RP_CPLD_N      (i_PAL_BMCUID_BUTTON_R      ),//i_UID_BTN_CPLD_N
+    .i_UID_BTN_FP_CPLD_N      (1'b1                       ),//not used    
 
-//Output Signal
-.o_BMC_UID_CPLD_N         (                    ),// reserved, bmc control uid led via i2c
-.o_BMC_EXTRST_CPLD_OUT_N  (bmc_extrst_uid	   ),
-.o_UID_BTN_short_pos      (uid_btn_all_invert  ),
+    //Output Signal
+    .o_BMC_UID_CPLD_N         (                           ),// reserved, bmc control uid led via i2c
+    .o_BMC_EXTRST_CPLD_OUT_N  (bmc_extrst_uid	            ),
+    .o_UID_BTN_short_pos      (uid_btn_all_invert         ),
 
-.o_uid_button_long        (uid_button_long_evt ),
-.o_uid_button_short       (uid_button_short_evt),
+    .o_uid_button_long        (uid_button_long_evt        ),
+    .o_uid_button_short       (uid_button_short_evt       ),
 
-.i_uid_valid              (1'b0                ),//reserved
-.i_uid_status             (8'h00               ),//reserved
-.o_uid_act_st             (                    )//reserved
+    .i_uid_valid              (1'b0                       ),//reserved
+    .i_uid_status             (8'h00                      ),//reserved
+    .o_uid_act_st             (                           )//reserved
 );
 
 //bmc control uid led when bmc active, or uid button will control uid led when bmc die;
-reg r_BMC_UID_CPLD_N;
-reg [7:0] r_uid_led_ctl;
+reg                           r_BMC_UID_CPLD_N;
+reg [7:0]                     r_uid_led_ctl;
 //assign o_uid_led_ctl    = r_uid_led_ctl;
 assign led_uid = r_BMC_UID_CPLD_N;
 always@(posedge clk_50m or negedge pon_reset_n)
@@ -4052,30 +4047,30 @@ assign all_emc_alert_n = (db_emc_alert_n        | emc_alert_mask                
 // System reset
 //------------------------------------------------------------------------------
 system_reset #(
-  .PEAVEY_SUPPORT              (PEAVEY_SUPPORT),
-  .MAX_HSB_EVENTS_PER_RESET    (20),
-  .MAX_HSB_RST_ATTEMPT         (4),
-  .NUM_CPU                     (`NUM_CPU),
-  .NUM_IO                      (`NUM_IO)
+    .PEAVEY_SUPPORT              (PEAVEY_SUPPORT),
+    .MAX_HSB_EVENTS_PER_RESET    (20),
+    .MAX_HSB_RST_ATTEMPT         (4),
+    .NUM_CPU                     (`NUM_CPU),
+    .NUM_IO                      (`NUM_IO)
 ) system_reset_inst (
-  .clk                         (clk_50m                     ),
-  .reset                       (~pgd_aux_system              ),
-  .t1us                        (t1us_tick                    ),
-  .st_steady_pwrok             (st_steady_pwrok              ),
-  .reached_sm_pre_wait_powerok (reached_sm_wait_powerok      ),
-  .rt_critical_fail_store      (rt_critical_fail_store       ),
-  .glp_bootnext_n              (1'b1                         ),//s_bmc_bootnext_n��Զ��1
-  .glp_sysrst_n                (s_bmc_sysrst_n | rst_btn_mask),//change in 2020311 by g14161  ��ȥ��δʹ��
-  .sysrst_button_n             (force_reb_in | rst_btn_mask  ),//change in 2020311 by g14161 //20201212  �޸ĳɳ���4s���ܴ���  
-  .xdp_cpu_syspwrok            (1'b1                         ),//BMC_SYS_PWROK
-  .rst_pcie_cpu_n              (s_cpu_rst_pcie_n             ),//s_cpu_rst_pcie_n��Զ��1 
-  .hsb_en                      (1'b0                         ),//db_xdp_prsnt_n
-  .hsb_fail_n                  (hsb_fail_n                   ),
-  .pal_sys_reset               (pch_sys_reset                ),
-  .pal_sys_reset_n             (pch_sys_reset_n              ),
-  .rst_gmt_n                   (rst_bmc_n                    ),//��s_pch_pltrst_n��Ϊ����֮һ��BMC��λ//NOUSE
-  .gmt_lreset_n                (                             ),
-  .rst_io_n                    (rst_io_n                     ) //NOUSE
+    .clk                         (clk_50m                     ),
+    .reset                       (~pgd_aux_system              ),
+    .t1us                        (t1us_tick                    ),
+    .st_steady_pwrok             (st_steady_pwrok              ),
+    .reached_sm_pre_wait_powerok (reached_sm_wait_powerok      ),
+    .rt_critical_fail_store      (rt_critical_fail_store       ),
+    .glp_bootnext_n              (1'b1                         ),
+    .glp_sysrst_n                (s_bmc_sysrst_n | rst_btn_mask),
+    .sysrst_button_n             (force_reb_in | rst_btn_mask  ),
+    .xdp_cpu_syspwrok            (1'b1                         ),
+    .rst_pcie_cpu_n              (s_cpu_rst_pcie_n             ),
+    .hsb_en                      (1'b0                         ),
+    .hsb_fail_n                  (hsb_fail_n                   ),
+    .pal_sys_reset               (pch_sys_reset                ),
+    .pal_sys_reset_n             (pch_sys_reset_n              ),
+    .rst_gmt_n                   (rst_bmc_n                    ),
+    .gmt_lreset_n                (                             ),
+    .rst_io_n                    (rst_io_n                     ) 
 );
 
 
@@ -4624,7 +4619,7 @@ bmc_cpld_i2c_ram #(
     .tpm_prsnt                     (~db_tpm_prsnt_n          ),//addr 0x001D[6]      in
     .intruder            		       (db_i_front_pal_intruder  ),//addr 0x001D[5]      in
     .intruder_cable_prsnt		       (~db_i_intruder_cable_inst_n),//addr 0x001D[4]    in
-    .dsd_prsnt              	     (~db_i_dsd_uart_prsnt_n   ),//addr 0x001D[3]    in
+    .dsd_prsnt              	     (~db_i_dsd_uart_prsnt_n   ),//addr 0x001D[3]      in
 
     .fan_tach1_byte2               (fan_tach1_byte2          ),//addr 0x0020[7:0]    in
     .fan_tach1_byte1               (fan_tach1_byte1          ),//addr 0x0021[7:0]    in
