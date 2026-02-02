@@ -146,10 +146,10 @@ module Tieta_Feiteng_1001_top(
     input   i_UART2_PAL_OCP_RX_R                    /* synthesis LOC = "T20"*/,// from  GENZ_168PIN                                   to  CPLD_S                                           default 1  // OCP UART2 接收 信号
     output  o_UART2_PAL_OCP_TX_R                    /* synthesis LOC = "T19"*/,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP UART2 接收 信号    
     
-    input   i_PAL_OCP1_SS_CLK_R                     , // 暂不使用
+    output  o_PAL_OCP1_SS_CLK_R                     , // 暂不使用
     input   i_PAL_OCP1_SS_LD_N_R                    , // 暂不使用
     input   i_PAL_OCP1_SS_DATA_IN_R                 , // 暂不使用
-    input   i_PAL_OCP2_SS_CLK_R                     , // 暂不使用
+    output  o_PAL_OCP2_SS_CLK_R                     , // 暂不使用
     input   i_PAL_OCP2_SS_LD_N_R                    , // 暂不使用
     input   i_PAL_OCP2_SS_DATA_IN_R                 , // 暂不使用
     /* end: OCP */
@@ -394,7 +394,7 @@ module Tieta_Feiteng_1001_top(
     // output  o_PAL_DB2000_1_OE_N_R                   /* synthesis LOC = "B5" */,// from  DB2000_1_CLK / U47_AU5440AQMR                 to  CPLD_S                                           default 1  // DB2000_1 输出使能 信号
     output  o_PAL_CK440_OE_N_R                      /* synthesis LOC = "K17"*/,// from  CPLD_S                                       to  CK440_CLKER / U70_RS2CG440ZUDE                   default 1  // CK440 输出使能 信号               
 
-    input	i_PAL_EXT_RST_N	                        /* synthesis LOC = "W15"*/,// from  CPLD_S_UART_LED_SW                            to  CPLD_S                                           default 1  // 外部 复位 信号
+    input	  i_PAL_EXT_RST_N	                        /* synthesis LOC = "W15"*/,// from  CPLD_S_UART_LED_SW                            to  CPLD_S                                           default 1  // 外部 复位 信号
 
     input   i_PAL_LOM_FAN_ON_AUX_R                  /* synthesis LOC = "M3" */,// from  RISER_AUX / J16                              to  CPLD_S                                            default 1  // LOM 风扇 开启 辅助 信号
     input   i_FAN_SNS_ALERT                         /* synthesis LOC = "A12"*/,// from  CPLD_S                                       to  FAN_SNS_ALERT / U60                               default 1  // 风扇 传感器 警报 信号
@@ -416,7 +416,7 @@ module Tieta_Feiteng_1001_top(
     output	o_PAL_RST_TPM_N_R	                    /* synthesis LOC = "Y1"*/ ,// from  CPLD_S                                       to  TPM/ J25_323114MG4FBK00R01                       default 0  // TPM模块 复位 信号 
     output	o_PAL_TPM_DRQ1_N	                    /* synthesis LOC = "W2"*/ ,// from  CPLD_S                                       to  TPM/ J25_323114MG4FBK00R01                       default 1  // TPM模块 DRQ1 信号, TPM 模块向 PCH 发起的 DMA 请求信号                                              
 
-    // output  o_PAL_TEST_BAT_EN                       /* synthesis LOC = "U5" */,// from  CPLD_S                                       to  TRC                                              default 1  // 测试 电池 使能 信号
+    output  o_PAL_TEST_BAT_EN                       /* synthesis LOC = "U5" */,// from  CPLD_S                                       to  TRC                                              default 1  // 测试 电池 使能 信号
                                                     /* synthesis LOC = "R6"*/ // 未使用
 
     input   i_CPU1_D0_GPIO_PORT3_R                  /* synthesis LOC = "H4"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C              to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口3 信号
@@ -580,274 +580,288 @@ wire                            pal_mcio14_cable_id1                            
 wire                            pal_mcio14_cable_id0                                ;
 wire                            w_ocp1_x16_prsnt                                    ;
 
-wire [7:0]mcio11_slot_id;
-wire [7:0]mcio4_slot_id;
-wire [7:0]mcio0_slot_id;
-wire [7:0]mcio1_slot_id;
-wire [7:0]mcio2_slot_id;
-wire [7:0]mcio3_slot_id;
-wire [7:0]mcio10_slot_id;
-wire [7:0]mcio9_slot_id;
-wire [7:0]mcio5_slot_id;
-wire [7:0]mcio6_slot_id;
-wire [7:0]mcio7_slot_id;
-wire [7:0]mcio8_slot_id;
+wire [7:0]                      mcio11_slot_id                                      ;
+wire [7:0]                      mcio4_slot_id                                       ;
+wire [7:0]                      mcio0_slot_id                                       ;
+wire [7:0]                      mcio1_slot_id                                       ;
+wire [7:0]                      mcio2_slot_id                                       ;
+wire [7:0]                      mcio3_slot_id                                       ;
+wire [7:0]                      mcio10_slot_id                                      ;
+wire [7:0]                      mcio9_slot_id                                       ;
+wire [7:0]                      mcio5_slot_id                                       ;
+wire [7:0]                      mcio6_slot_id                                       ;
+wire [7:0]                      mcio7_slot_id                                       ;
+wire [7:0]                      mcio8_slot_id                                       ;
 
-wire [7:0]i2c_ram_1050;
-wire [7:0]i2c_ram_1051;
-wire [7:0]i2c_ram_1052;
-wire [7:0]i2c_ram_1053;
-wire [7:0]i2c_ram_1054;
-wire [7:0]i2c_ram_1055;
-wire [7:0]i2c_ram_1056;
-wire [7:0]i2c_ram_1057;
-wire [7:0]i2c_ram_1058;
-wire pal_m2_0_sel_lv33_r;
-wire bmc_extrst_uid;
+wire [7:0]                      i2c_ram_1050                                        ;
+wire [7:0]                      i2c_ram_1051                                        ;
+wire [7:0]                      i2c_ram_1052                                        ;
+wire [7:0]                      i2c_ram_1053                                        ;
+wire [7:0]                      i2c_ram_1054                                        ;
+wire [7:0]                      i2c_ram_1055                                        ;
+wire [7:0]                      i2c_ram_1056                                        ;
+wire [7:0]                      i2c_ram_1057                                        ;
+wire [7:0]                      i2c_ram_1058                                        ;
 
-wire pal_bp1_prsnt_n;
-wire pal_bp2_prsnt_n;
-wire pal_bp3_prsnt_n;
-wire pal_bp4_prsnt_n;
-wire pal_bp5_prsnt_n;
-wire pal_bp6_prsnt_n;
-wire pal_bp7_prsnt_n;
-wire pal_bp8_prsnt_n;
-wire pal_gpu_fan4_prsnt;
-wire pal_gpu_fan3_prsnt;
-wire pal_gpu_fan2_prsnt;
-wire pal_gpu_fan1_prsnt;
-wire pal_gpu_fan4_foo;
-wire pal_gpu_fan3_foo;
-wire pal_gpu_fan2_foo;
-wire pal_gpu_fan1_foo;
-wire board_id7;
-wire board_id6;
-wire board_id5;
-wire board_id4;
-wire board_id3;
-wire board_id2;
-wire board_id1;
-wire board_id0;
-wire pca_revision_2;
-wire pca_revision_1;
-wire pca_revision_0;
-wire pcb_revision_1;
-wire pcb_revision_0;
-wire cpu_nvme25_prsnt_n;
-wire cpu_nvme24_prsnt_n;
-wire cpu_nvme23_prsnt_n;
+// wire                            pal_m2_0_sel_lv33_r                                 ;
+wire                            bmc_extrst_uid                                      ;
 
-wire fan8_install_n;
-wire fan7_install_n;
-wire fan6_install_n;
-wire fan5_install_n;
-wire fan4_install_n;
-wire fan3_install_n;
-wire fan2_install_n;
-wire fan1_install_n;
-wire riser_prsnt_det_0;
-wire riser_prsnt_det_1;
-wire riser_prsnt_det_2;
-wire riser_prsnt_det_3;
-wire riser_prsnt_det_4;
-wire riser_prsnt_det_5;
-wire riser_prsnt_det_6;
-wire riser_prsnt_det_7;
-wire [7:0]sw;
-wire [3:0]w_pal_ocp1_prsnt_n;
-wire ocp_prsent_b7_n;
-wire ocp_prsent_b6_n;
-wire ocp_prsent_b5_n;
-wire ocp_prsent_b4_n;
-wire ocp_prsent_b3_n;
-wire ocp_prsent_b2_n;
-wire ocp_prsent_b1_n;
-wire ocp_prsent_b0_n;
-wire cpu0_pcie1_b26_1;
-wire cpu0_pcie1_a26_1;
-wire cpu0_pcie1_b26_2;
-wire cpu0_pcie1_a26_2;
-wire cpu1_pcie0_b26_1;
-wire cpu1_pcie0_a26_1;
-wire cpu1_pcie0_b26_2;
-wire cpu1_pcie0_a26_2;
-wire cpu0_pcie2_b26_1;
-wire cpu0_pcie2_a26_1;
-wire cpu0_pcie2_b26_2;
-wire cpu0_pcie2_a26_2;
-wire cpu0_pcie3_b26_1;
-wire cpu0_pcie3_a26_1;
-wire cpu0_pcie3_b26_2;
-wire cpu0_pcie3_a26_2;
-wire cpu1_pcie2_b26_1;
-wire cpu1_pcie2_a26_1;
-wire cpu1_pcie2_b26_2;
-wire cpu1_pcie2_a26_2;
-wire cpu1_pcie3_b26_1;
-wire cpu1_pcie3_a26_1;
-wire cpu1_pcie3_b26_2;
-wire cpu1_pcie3_a26_2;
-wire db_pal_ext_rst_n;
-wire rst_i2c0_mux_n;
-wire rst_i2c3_mux_n       ;
-wire rst_i2c13_mux_n      ;
-wire rst_i2c1_mux_n       ;
-wire rst_i2c4_2_mux_n     ;
-wire rst_i2c8_mux_n       ;
-wire rst_i2c2_mux_n       ;
-wire rst_i2c5_mux_n       ;
-wire rst_i2c12_mux_n      ;
-wire rst_i2c11_mux_n      ;
-wire rst_i2c4_1_mux_n     ;
-wire rst_i2c10_mux_n      ;
-wire rst_i2c_riser1_pca9548_n;
-wire rst_i2c_riser2_pca9548_n;
-wire pal_led_nic_act;
-wire st_reset_state;
-wire st_off_standby;
-wire st_steady_pwrok;
-wire st_halt_power_cycle;
-wire st_aux_fail_recovery;
-wire tpm_rst;
-wire t4hz_clk_cmu;
-wire [15:0]bmc_cpld_version;
-wire [15:0]cpld_date_mmdd;
-wire [3:0]lattice_cpld;
-wire [3:0]reserve_port;
-wire [3:0]board_id;
-wire [2:0]pcb_version;
-wire nc_port;
+wire                            pal_bp1_prsnt_n                                     ;
+wire                            pal_bp2_prsnt_n                                     ;
+wire                            pal_bp3_prsnt_n                                     ;
+wire                            pal_bp4_prsnt_n                                     ;
+wire                            pal_bp5_prsnt_n                                     ;
+wire                            pal_bp6_prsnt_n                                     ;
+wire                            pal_bp7_prsnt_n                                     ;
+wire                            pal_bp8_prsnt_n                                     ;
+wire                            pal_gpu_fan4_prsnt                                  ;
+wire                            pal_gpu_fan3_prsnt                                  ;
+wire                            pal_gpu_fan2_prsnt                                  ;
+wire                            pal_gpu_fan1_prsnt                                  ;
+wire                            pal_gpu_fan4_foo                                    ;
+wire                            pal_gpu_fan3_foo                                    ;
+wire                            pal_gpu_fan2_foo                                    ;
+wire                            pal_gpu_fan1_foo                                    ;
+wire                            board_id7                                           ;
+wire                            board_id6                                           ;
+wire                            board_id5                                           ;
+wire                            board_id4                                           ;
+wire                            board_id3                                           ;
+wire                            board_id2                                           ;
+wire                            board_id1                                           ;
+wire                            board_id0                                           ;
+wire                            pca_revision_2                                      ;
+wire                            pca_revision_1                                      ;
+wire                            pca_revision_0                                      ;
+wire                            pcb_revision_1                                      ;
+wire                            pcb_revision_0                                      ;
+wire                            cpu_nvme25_prsnt_n                                  ;
+wire                            cpu_nvme24_prsnt_n                                  ;
+wire                            cpu_nvme23_prsnt_n                                  ;
 
-wire pal_bp_efuse_pg;
-wire db_i_pal_pgd_p0v8;
-wire db_i_pal_pgd_p1v1;
-wire db_i_pal_pgd_p1v2;
-wire db_i_pal_pgd_p1v8;
-wire db_i_pal_pgd_p3v3;
-wire reserve_port1;
-wire i_pal_wdt_rst_n_r;
-wire bmc_ready_flag;
-wire i_pal_health_fan_ctrl;
-wire i_pal_ifist_prsnt_n;
-wire i_pal_bmc_rst_ind_n;
-wire i_pal_bmc_tmp_alert_n;
-wire i_pal_program_n;
-wire i_peci_master_sel;
-wire i_vr_i2c_bmc_oe_n;
-wire i_vr_i2c_bmc_sel;
-wire i_pal_usb_rear_down_oc_n;
-wire i_pal_usb_rear_up_oc_n;
-wire i_pal_vga_rear_vcc_oc_n;
-wire i_bmc_hang_flag;
-wire rst_pal_extrst_r_n;
-wire [1:0]uart_mux_select;
-wire remote_xdp_syspwrok_r;
+wire                            fan8_install_n                                      ;
+wire                            fan7_install_n                                      ;
+wire                            fan6_install_n                                      ;
+wire                            fan5_install_n                                      ;
+wire                            fan4_install_n                                      ;
+wire                            fan3_install_n                                      ;
+wire                            fan2_install_n                                      ;
+wire                            fan1_install_n                                      ;
+
+wire                            riser_prsnt_det_0                                   ;
+wire                            riser_prsnt_det_1                                   ;
+wire                            riser_prsnt_det_2                                   ;
+wire                            riser_prsnt_det_3                                   ;
+wire                            riser_prsnt_det_4                                   ;
+wire                            riser_prsnt_det_5                                   ;
+wire                            riser_prsnt_det_6                                   ;
+wire                            riser_prsnt_det_7                                   ;
+
+wire [7:0]                      sw                                                  ;
+
+wire [3:0]                      w_pal_ocp1_prsnt_n                                  ;
+
+wire                            ocp_prsent_b7_n                                     ;
+wire                            ocp_prsent_b6_n                                     ;
+wire                            ocp_prsent_b5_n                                     ;
+wire                            ocp_prsent_b4_n                                     ;
+wire                            ocp_prsent_b3_n                                     ;
+wire                            ocp_prsent_b2_n                                     ;
+wire                            ocp_prsent_b1_n                                     ;
+wire                            ocp_prsent_b0_n                                     ;
+wire                            cpu0_pcie1_b26_1                                    ;
+wire                            cpu0_pcie1_a26_1                                    ;
+wire                            cpu0_pcie1_b26_2                                    ;
+wire                            cpu0_pcie1_a26_2                                    ;
+wire                            cpu1_pcie0_b26_1                                    ;
+wire                            cpu1_pcie0_a26_1                                    ;
+wire                            cpu1_pcie0_b26_2                                    ;
+wire                            cpu1_pcie0_a26_2                                    ;
+wire                            cpu0_pcie2_b26_1                                    ;
+wire                            cpu0_pcie2_a26_1                                    ;
+wire                            cpu0_pcie2_b26_2                                    ;
+wire                            cpu0_pcie2_a26_2                                    ;
+wire                            cpu0_pcie3_b26_1                                    ;
+wire                            cpu0_pcie3_a26_1                                    ;
+wire                            cpu0_pcie3_b26_2                                    ;
+wire                            cpu0_pcie3_a26_2                                    ;
+wire                            cpu1_pcie2_b26_1                                    ;
+wire                            cpu1_pcie2_a26_1                                    ;
+wire                            cpu1_pcie2_b26_2                                    ;
+wire                            cpu1_pcie2_a26_2                                    ;
+wire                            cpu1_pcie3_b26_1                                    ;
+wire                            cpu1_pcie3_a26_1                                    ;
+wire                            cpu1_pcie3_b26_2                                    ;
+wire                            cpu1_pcie3_a26_2                                    ;
+
+wire                            db_pal_ext_rst_n                                    ;
+
+wire                            rst_i2c0_mux_n                                      ;
+wire                            rst_i2c3_mux_n                                      ;
+wire                            rst_i2c13_mux_n                                     ;
+wire                            rst_i2c1_mux_n                                      ;
+wire                            rst_i2c4_2_mux_n                                    ;
+wire                            rst_i2c8_mux_n                                      ;
+wire                            rst_i2c2_mux_n                                      ;
+wire                            rst_i2c5_mux_n                                      ;
+wire                            rst_i2c12_mux_n                                     ;
+wire                            rst_i2c11_mux_n                                     ;
+wire                            rst_i2c4_1_mux_n                                    ;
+wire                            rst_i2c10_mux_n                                     ;
+
+wire                            rst_i2c_riser1_pca9548_n                            ;
+wire                            rst_i2c_riser2_pca9548_n                            ;
+wire                            pal_led_nic_act                                     ;
+wire                            st_reset_state                                      ;
+wire                            st_off_standby                                      ;
+wire                            st_steady_pwrok                                     ;
+wire                            st_halt_power_cycle                                 ;
+wire                            st_aux_fail_recovery                                ;
+wire                            tpm_rst                                             ;
+wire                            t4hz_clk_cmu                                        ;
+wire [15:0]                     bmc_cpld_version                                    ;
+wire [15:0]                     cpld_date_mmdd                                      ;
+
+wire [3:0]                      lattice_cpld                                        ;
+wire [3:0]                      reserve_port                                        ;
+wire [3:0]                      board_id                                            ;
+wire [2:0]                      pcb_version                                         ;
+
+wire                            nc_port                                             ;
+
+wire                            pal_bp_efuse_pg                                     ;
+wire                            db_i_pal_pgd_p0v8                                   ;
+wire                            db_i_pal_pgd_p1v1                                   ;
+wire                            db_i_pal_pgd_p1v2                                   ;
+wire                            db_i_pal_pgd_p1v8                                   ;
+wire                            db_i_pal_pgd_p3v3                                   ;
+
+wire                            reserve_port1                                       ;
+wire                            i_pal_wdt_rst_n_r                                   ;
+wire                            bmc_ready_flag                                      ;
+wire                            i_pal_health_fan_ctrl                               ;
+wire                            i_pal_ifist_prsnt_n                                 ;
+wire                            i_pal_bmc_rst_ind_n                                 ;
+wire                            i_pal_bmc_tmp_alert_n                               ;
+wire                            i_pal_program_n                                     ;
+wire                            i_peci_master_sel                                   ;
+wire                            i_vr_i2c_bmc_oe_n                                   ;
+wire                            i_vr_i2c_bmc_sel                                    ;
+wire                            i_pal_usb_rear_down_oc_n                            ;
+wire                            i_pal_usb_rear_up_oc_n                              ;
+wire                            i_pal_vga_rear_vcc_oc_n                             ;
+wire                            i_bmc_hang_flag                                     ;
+wire                            rst_pal_extrst_r_n                                  ;
+
+wire [1:0]                      uart_mux_select                                     ;
+wire                            remote_xdp_syspwrok_r                               ; // 未使用
 //wire pal_plt_bmc_thermtrip_n_r;
-wire leakage_det_do_n;
+wire                            leakage_det_do_n                                    ;
 //wire pal_bmc_uboot_en_n_r;
-wire pal_pwrgd_cpu0_lvc3_r;
-wire pfr_bmc_fw0_rst_n;
-wire pfr_bmc_fw1_rst_n;
-//wire pal_p5v_usb_rear_down_en_r;
-//wire remote_xdp_pod_prsnt_n;
-//wire pal_usb2_ocpdbg_oc_n_r;
-//wire pal_emmc_en_pwr_r;
-//wire pal_p5v_vga_rear_en_r;
-//wire pal_p5v_usb_rear_up_en_r;
-wire rom_bmc_ma_rst;
-wire rom_bmc_bk_rst;
-wire [1:0]bmcctl_uart_sw;
-//wire bmcctl_uart_sw_en;
-wire [15:0] mb_cpld2_ver;
+wire                            pal_pwrgd_cpu0_lvc3_r                               ;
+wire                            pfr_bmc_fw0_rst_n                                   ; // 未使用
+wire                            pfr_bmc_fw1_rst_n                                   ; // 未使用
+//wire pal_p5v_usb_rear_down_en_r; // 未使用
+//wire remote_xdp_pod_prsnt_n    ; // 未使用
+//wire pal_usb2_ocpdbg_oc_n_r    ; // 未使用
+//wire pal_emmc_en_pwr_r         ; // 未使用
+//wire pal_p5v_vga_rear_en_r     ; // 未使用
+//wire pal_p5v_usb_rear_up_en_r  ; // 未使用
+wire                            rom_bmc_ma_rst                                      ;
+wire                            rom_bmc_bk_rst                                      ;
+wire [1:0]                      bmcctl_uart_sw                                      ;
+wire                            bmcctl_uart_sw_en                                   ;
+wire [15:0]                     mb_cpld2_ver                                        ;
 // wire db_i_dimm_sns_alert;
-wire db_i_fan_sns_alert;
-wire db_i_p12v_stby_sns_alert;
-wire db_i_pal_lcd_card_in;
-wire rom_mux_bios_bmc_sel;
-wire rom_mux_bios_bmc_en;
-wire test_bat_en;
-wire rst_n;
-wire [7:0]usb_en;
-wire [39:0]pfr_to_led;
-wire pal_rtc_intb;
-wire pgd_p1v8_stby_dly30ms;
-wire pgd_p1v8_stby_dly32ms;
-wire vga2_dis;
-wire pal_vga_sel_n;
-wire db_front_vga_cable_prsnt_n;
-wire db_i_pal_ocp2_fan_foo;
-wire db_i_pal_ocp2_fan_prsnt_n;
-wire [7:0] bios_read_rtc;
-wire [7:0] bios_post_code;
-wire [7:0] bios_post_rate;
-wire [7:0] bios_post_phase;
+wire                            db_i_fan_sns_alert                                  ;
+wire                            db_i_p12v_stby_sns_alert                            ;
+wire                            db_i_pal_lcd_card_in                                ;
+wire                            rom_mux_bios_bmc_sel                                ;
+wire                            rom_mux_bios_bmc_en                                 ;
+wire                            test_bat_en                                         ;
+wire                            rst_n                                               ;
 
-wire ocp1_prsnt_n;
-wire ocp2_prsnt_n;
-wire [5:0] ocp1_pvti_ss_count;
-wire [5:0] ocp2_pvti_ss_count;
-wire [7:0] ocp1_pvti_byte3;
-wire [7:0] ocp1_pvti_byte2;
-wire [7:0] ocp1_pvti_byte1;
-wire [7:0] ocp1_pvti_byte0;
-wire [7:0] ocp2_pvti_byte3;
-wire [7:0] ocp2_pvti_byte2;
-wire [7:0] ocp2_pvti_byte1;
-wire [7:0] ocp2_pvti_byte0;
-wire pal_ocp1_ncsi_en;
-wire pal_ocp2_ncsi_en;
-wire pal_ocp_ncsi_sw_en;
-wire db_i_lom_fan_on_aux;
-wire riser3_1_prsnt_n;
-wire riser3_2_prsnt_n;
-wire riser4_1_prsnt_n;
-wire riser4_2_prsnt_n;
-wire [5:0]riser3_slot7_id;
-wire [5:0]riser3_slot8_id;
-wire [5:0]riser4_slot9_id;
-wire [5:0]riser4_slot10_id;
-wire riser3_slot7_prsnt_n;
-wire riser3_slot8_prsnt_n;
-wire riser4_slot9_prsnt_n;
-wire riser4_slot10_prsnt_n;
-wire pal_pe_wake_n;
-wire db_pal_riser3_slot7_pe_wake_n;
-wire db_pal_riser3_slot8_pe_wake_n;
-wire pal_riser3_slot7_pwrgd;
-wire pal_riser3_slot8_pwrgd;
-wire pal_riser4_slot9_pwrgd;
-wire pal_riser4_slot10_pwrgd;
-wire smb_pehp_cpu1_3v3_alert_n;
-wire bios_security_bypass;
-wire bios_read_flag;
-wire bmc_read_flag;
-wire cpu0_d0_bios_over;
-wire cpu0_temp_over;
-wire cpu1_temp_over;
-wire db_i_cpu0_d0_temp_over;
-wire db_i_cpu0_d1_temp_over;
-wire db_i_cpu0_d2_temp_over;
-wire db_i_cpu0_d3_temp_over;
-wire db_i_cpu1_d0_temp_over;
-wire db_i_cpu1_d1_temp_over;
-wire db_i_cpu1_d2_temp_over;
-wire db_i_cpu1_d3_temp_over;
+wire [7:0]                      usb_en                                              ;
+wire [39:0]                     pfr_to_led                                          ;
+wire                            pal_rtc_intb                                        ;
+wire                            pgd_p1v8_stby_dly30ms                               ;
+wire                            pgd_p1v8_stby_dly32ms                               ;
+wire                            vga2_dis                                            ;
+wire                            pal_vga_sel_n                                       ;
+wire                            db_front_vga_cable_prsnt_n                          ;
+wire                            db_i_pal_ocp2_fan_foo                               ;
+wire                            db_i_pal_ocp2_fan_prsnt_n                           ;
+
+wire [7:0]                      bios_read_rtc                                       ;
+wire [7:0]                      bios_post_code                                      ;
+wire [7:0]                      bios_post_rate                                      ;
+wire [7:0]                      bios_post_phase                                     ;
+
+wire                            ocp1_prsnt_n                                        ;
+wire                            ocp2_prsnt_n                                        ;
+wire [5:0]                      ocp1_pvti_ss_count                                  ;
+wire [5:0]                      ocp2_pvti_ss_count                                  ;
+wire [7:0]                      ocp1_pvti_byte3                                     ;
+wire [7:0]                      ocp1_pvti_byte2                                     ;
+wire [7:0]                      ocp1_pvti_byte1                                     ;
+wire [7:0]                      ocp1_pvti_byte0                                     ;
+wire [7:0]                      ocp2_pvti_byte3                                     ;
+wire [7:0]                      ocp2_pvti_byte2                                     ;
+wire [7:0]                      ocp2_pvti_byte1                                     ;
+wire [7:0]                      ocp2_pvti_byte0                                     ;
+wire                            pal_ocp1_ncsi_en                                    ;
+wire                            pal_ocp2_ncsi_en                                    ;
+wire                            pal_ocp_ncsi_sw_en                                  ;
+wire                            db_i_lom_fan_on_aux                                 ;
+wire                            riser3_1_prsnt_n                                    ;
+wire                            riser3_2_prsnt_n                                    ;
+wire                            riser4_1_prsnt_n                                    ;
+wire                            riser4_2_prsnt_n                                    ;
+wire [5:0]                      riser3_slot7_id                                     ;
+wire [5:0]                      riser3_slot8_id                                     ;
+wire [5:0]                      riser4_slot9_id                                     ;
+wire [5:0]                      riser4_slot10_id                                    ;
+wire                            riser3_slot7_prsnt_n                                ;
+wire                            riser3_slot8_prsnt_n                                ;
+wire                            riser4_slot9_prsnt_n                                ;
+wire                            riser4_slot10_prsnt_n                               ;
+wire                            pal_pe_wake_n                                       ;
+wire                            db_pal_riser3_slot7_pe_wake_n                       ;// 未使用
+wire                            db_pal_riser3_slot8_pe_wake_n                       ;// 未使用
+wire                            pal_riser3_slot7_pwrgd                              ;// 未使用
+wire                            pal_riser3_slot8_pwrgd                              ;// 未使用
+wire                            pal_riser4_slot9_pwrgd                              ;// 未使用
+wire                            pal_riser4_slot10_pwrgd                             ;// 未使用
+wire                            smb_pehp_cpu1_3v3_alert_n                           ;
+wire                            bios_security_bypass                                ;
+wire                            bios_read_flag                                      ;
+wire                            bmc_read_flag                                       ;
+wire                            cpu0_d0_bios_over                                   ;
+wire                            cpu0_temp_over                                      ;
+wire                            cpu1_temp_over                                      ;
+wire                            db_i_cpu0_d0_temp_over;
+wire                            db_i_cpu0_d1_temp_over;
+wire                            db_i_cpu0_d2_temp_over;
+wire                            db_i_cpu0_d3_temp_over;
+wire                            db_i_cpu1_d0_temp_over;
+wire                            db_i_cpu1_d1_temp_over;
+wire                            db_i_cpu1_d2_temp_over;
+wire                            db_i_cpu1_d3_temp_over;
 //VPP
-wire [11:0] J20_CPU1_MCIO_R_vpp;
-wire [11:0] J19_CPU1_MCIO_R_vpp;
-wire [11:0] J18_CPU1_MCIO_R_vpp;
-wire [11:0] J17_CPU1_MCIO_R_vpp;
-wire [11:0] J29_CPU1_MCIO_R_vpp;
-wire [11:0] J16_CPU1_MCIO_R_vpp;
-wire [11:0] J23_CPU2_MCIO_R_vpp;
-wire [11:0] J24_CPU2_MCIO_R_vpp;
-wire [11:0] J21_CPU2_MCIO_R_vpp;
-wire [11:0] J22_CPU2_MCIO_R_vpp;
-wire [11:0] J74_CPU2_MCIO_R_vpp;
-wire [11:0] J25_CPU2_MCIO_R_vpp;
-wire [11:0] J1_CPU1_MCIO_R_vpp ;
-wire [11:0] J39_CPU2_MCIO_R_vpp;
+wire [11:0]                     J20_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J19_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J18_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J17_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J29_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J16_CPU1_MCIO_R_vpp   ;
+wire [11:0]                     J23_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J24_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J21_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J22_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J74_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J25_CPU2_MCIO_R_vpp   ;
+wire [11:0]                     J1_CPU1_MCIO_R_vpp    ;
+wire [11:0]                     J39_CPU2_MCIO_R_vpp   ;
 localparam port_num = 14;
 wire [12*port_num-1:0] para_data_in;
 wire [9*port_num-1:0] par_data_out;
@@ -965,106 +979,104 @@ timer_gen timer_gen_inst(
 // PWRGOOD DEBOUNCE
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 PGM_DEBOUNCE_N #(.SIGCNT(4), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_pwrgood (
-    .clk			            (clk_50m),
-    .rst_n		                (pon_reset_n),
+    .clk			                  (clk_50m),
+    .rst_n		                  (pon_reset_n),
     .timer_tick	                (1'b1),
     .din                        ({
-	                            // i_PAL_OCP2_PWRGD          ,	//01
-	                            // ~i_DIMM_SNS_ALERT         , //02
-	                            ~i_FAN_SNS_ALERT          , //03
-	                            ~i_P12V_STBY_SNS_ALERT      //04
-	                            }),             
+	                              // i_PAL_OCP2_PWRGD          ,	//01
+	                              // ~i_DIMM_SNS_ALERT         , //02
+	                              ~i_FAN_SNS_ALERT          , //03
+	                              ~i_P12V_STBY_SNS_ALERT      //04
+	                              }),             
     .dout                       ({
-	                            // db_i_pal_ocp2_pwrgd       ,	//01
-	                            // db_i_dimm_sns_alert       , //02
-	                            db_i_fan_sns_alert        , //03
-	                            db_i_p12v_stby_sns_alert    //04
-	                            }) 
+	                              // db_i_pal_ocp2_pwrgd       ,	//01
+	                              // db_i_dimm_sns_alert       , //02
+	                              db_i_fan_sns_alert        , //03
+	                              db_i_p12v_stby_sns_alert    //04
+	                              }) 
 );
 
 
 PGM_DEBOUNCE_N #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
-  .clk			(clk_50m),
-  .rst_n		(pon_reset_n),
-  .timer_tick	(t512us_tick),
-  .din({
-	 i_PAL_LCD_CARD_IN         ,  //01
-	 i_PAL_LOM_FAN_ON_AUX_R       //02
-	 }),             
-  .dout({
-	 db_i_pal_lcd_card_in    ,  //01
-	 db_i_lom_fan_on_aux        //02
-	  }) 
+    .clk			                (clk_50m),
+    .rst_n		                (pon_reset_n),
+    .timer_tick	              (t512us_tick),
+    .din                      ({
+	                            i_PAL_LCD_CARD_IN         ,  //01
+	                            i_PAL_LOM_FAN_ON_AUX_R       //02
+	                            }),             
+    .dout                     ({
+	                            db_i_pal_lcd_card_in    ,  //01
+	                            db_i_lom_fan_on_aux        //02
+	                            }) 
 );
 //------------------------------------------------------------------------------
 // Input debouncers and synchronizers
 //------------------------------------------------------------------------------
 PGM_DEBOUNCE #(.SIGCNT(1), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
-.clk(clk_50m),
-.rst(~pon_reset_n),
-.timer_tick(t64ms_tick),
-.din({
-      PAL_EXT_RST_N                //01    
-     }),                           
-.dout({
-      db_pal_ext_rst_n               //01     
-      })             
+    .clk          (clk_50m                ),
+    .rst          (~pon_reset_n           ),
+    .timer_tick   (t64ms_tick             ),
+    .din          ({
+                  i_PAL_EXT_RST_N                //01    
+                  }),                           
+    .dout         ({
+                  db_pal_ext_rst_n               //01     
+                  })             
 );
 
-
 PGM_DEBOUNCE #(.SIGCNT(14), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
-  .clk(clk_50m),
-  .rst(~pon_reset_n),
-  .timer_tick(1'b1),
-  .din({
-	         riser_prsnt_det_2               ,//01 J20 B28
-	         riser_prsnt_det_3               ,//02 J19 B28 
-             riser_prsnt_det_0               ,//03 J18 B28
-			 riser_prsnt_det_1               ,//04 J17 B28
-			 RISER_PRSNT_DET_9               ,//05 J29 B28
-			 RISER_PRSNT_DET_8               ,//06 J16 B28
-			 riser_prsnt_det_6               ,//07 J23 B28
-			 riser_prsnt_det_7               ,//08 J24 B28
-			 riser_prsnt_det_4               ,//09 J21 B28
-			 riser_prsnt_det_5               ,//10 J22 B28
-			 RISER_PRSNT_DET_11              ,//11 J74 B28
-			 RISER_PRSNT_DET_10              ,//12 J25 B28
-			 PAL_RISER1_PRSNT_N              ,//13
-			 PAL_RISER2_PRSNT_N               //14
-  }),             
-  .dout({
-			 db_riser_prsnt_det_2            ,//01 J20 B28
-	         db_riser_prsnt_det_3            ,//02 J19 B28
-             db_riser_prsnt_det_0            ,//03 J18 B28
-             db_riser_prsnt_det_1            ,//04 J17 B28
-             db_i_riser_prsnt_det_9          ,//05 J29 B28
-             db_i_riser_prsnt_det_8          ,//06 J16 B28
-             db_riser_prsnt_det_6            ,//07 J23 B28
-			 db_riser_prsnt_det_7            ,//08 J24 B28
-			 db_riser_prsnt_det_4            ,//09 J21 B28
-			 db_riser_prsnt_det_5            ,//10 J22 B28
-			 db_i_riser_prsnt_det_11         ,//11 J74 B28
-			 db_i_riser_prsnt_det_10         ,//12 J25 B28
-			 db_i_pal_riser1_prsnt_n         ,//13
-			 db_i_pal_riser2_prsnt_n          //14
-  }) 
+    .clk(clk_50m),
+    .rst(~pon_reset_n),
+    .timer_tick(1'b1),
+    .din({
+	      riser_prsnt_det_2               ,//01 J20 B28
+	      riser_prsnt_det_3               ,//02 J19 B28 
+        riser_prsnt_det_0               ,//03 J18 B28
+			  riser_prsnt_det_1               ,//04 J17 B28
+			  RISER_PRSNT_DET_9               ,//05 J29 B28
+			  RISER_PRSNT_DET_8               ,//06 J16 B28
+			  riser_prsnt_det_6               ,//07 J23 B28
+			  riser_prsnt_det_7               ,//08 J24 B28
+			  riser_prsnt_det_4               ,//09 J21 B28
+			  riser_prsnt_det_5               ,//10 J22 B28
+			  RISER_PRSNT_DET_11              ,//11 J74 B28
+			  RISER_PRSNT_DET_10              ,//12 J25 B28
+			  PAL_RISER1_PRSNT_N              ,//13
+			  PAL_RISER2_PRSNT_N               //14
+        }),             
+    .dout({
+			  db_riser_prsnt_det_2            ,//01 J20 B28
+	      db_riser_prsnt_det_3            ,//02 J19 B28
+        db_riser_prsnt_det_0            ,//03 J18 B28
+        db_riser_prsnt_det_1            ,//04 J17 B28
+        db_i_riser_prsnt_det_9          ,//05 J29 B28
+        db_i_riser_prsnt_det_8          ,//06 J16 B28
+        db_riser_prsnt_det_6            ,//07 J23 B28
+			  db_riser_prsnt_det_7            ,//08 J24 B28
+			  db_riser_prsnt_det_4            ,//09 J21 B28
+			  db_riser_prsnt_det_5            ,//10 J22 B28
+			  db_i_riser_prsnt_det_11         ,//11 J74 B28
+			  db_i_riser_prsnt_det_10         ,//12 J25 B28
+			  db_i_pal_riser1_prsnt_n         ,//13
+			  db_i_pal_riser2_prsnt_n          //14
+      }) 
 );
 
 PGM_DEBOUNCE #(.SIGCNT(3), .NBITS (2'b10), .ENABLE(1'b1)) db_pe_wake_inst(
-  .clk(clk_50m),
-  .timer_tick(t512us_tick),
-  .rst(~pon_reset_n),
-  .din({	                               
-		FRONT_VGA_CABLE_PRSNT_N              ,//01
-		PAL_OCP2_FAN_FOO                     ,//02
-		PAL_OCP2_FAN_PRSNT_N                  //03
-	  }),                   
-  .dout({       
-		db_front_vga_cable_prsnt_n           ,//01
-		db_i_pal_ocp2_fan_foo                ,//02
-		db_i_pal_ocp2_fan_prsnt_n             //03
-		
-	   })
+    .clk                (clk_50m),
+    .timer_tick         (t512us_tick),
+    .rst                (~pon_reset_n),
+    .din                ({	                               
+		                    i_FRONT_VGA_CABLE_PRSNT_N              ,//01
+		                    i_PAL_OCP2_FAN_FOO                     ,//02
+		                    i_PAL_OCP2_FAN_PRSNT_N                  //03
+	                      }),                   
+    .dout                 ({       
+		                    db_front_vga_cable_prsnt_n            ,//01
+		                    db_i_pal_ocp2_fan_foo                 ,//02
+		                    db_i_pal_ocp2_fan_prsnt_n              //03
+	                      })
 );
 
 
@@ -1072,25 +1084,25 @@ SYNC_DATA_N #(.SIGCNT(8)) sync_cpu_data_low (
   .clk    (clk_50m),
   .rst_n  (pon_reset_n),          
   .din    ({
-			CPU0_D0_TEMP_OVER	             , //01
-			CPU0_D1_TEMP_OVER	             , //02
-			CPU0_D2_TEMP_OVER			     , //03
-			CPU0_D3_TEMP_OVER			     , //04
-			CPU1_D0_TEMP_OVER			     , //05
-			CPU1_D1_TEMP_OVER				 , //06 
-			CPU1_D2_TEMP_OVER			     , //07
-			CPU1_D3_TEMP_OVER			       //08
+			    i_CPU0_D0_TEMP_OVER	             , //01
+			    i_CPU0_D1_TEMP_OVER	             , //02
+			    i_CPU0_D2_TEMP_OVER			     , //03
+			    i_CPU0_D3_TEMP_OVER			     , //04
+			    i_CPU1_D0_TEMP_OVER			     , //05
+			    i_CPU1_D1_TEMP_OVER				 , //06 
+			    i_CPU1_D2_TEMP_OVER			     , //07
+			    i_CPU1_D3_TEMP_OVER			       //08
 		    }), 
 			
   .dout   ({
-			db_i_cpu0_d0_temp_over	         , //01
-			db_i_cpu0_d1_temp_over	         , //02
-			db_i_cpu0_d2_temp_over			 , //03
-			db_i_cpu0_d3_temp_over			 , //04
-			db_i_cpu1_d0_temp_over			 , //05
-			db_i_cpu1_d1_temp_over	         , //06 
-			db_i_cpu1_d2_temp_over			 , //07
-			db_i_cpu1_d3_temp_over			   //08
+			    db_i_cpu0_d0_temp_over	         , //01
+			    db_i_cpu0_d1_temp_over	         , //02
+			    db_i_cpu0_d2_temp_over			 , //03
+			    db_i_cpu0_d3_temp_over			 , //04
+			    db_i_cpu1_d0_temp_over			 , //05
+			    db_i_cpu1_d1_temp_over	         , //06 
+			    db_i_cpu1_d2_temp_over			 , //07
+			    db_i_cpu1_d3_temp_over			   //08
 			})      
 );
 
@@ -1260,7 +1272,7 @@ assign scpld_to_mcpld_p2s_data[63]      = i_pal_wdt_rst_n_r              ;
 assign scpld_to_mcpld_p2s_data[62]      = TPM_MODULE_PRSNT_N             ;//TPM_PRSNT_N
 assign scpld_to_mcpld_p2s_data[61]      = 1'b0                           ;
 assign scpld_to_mcpld_p2s_data[60]      = 1'b0                           ;//PAL_LCD_PRSNT
-assign scpld_to_mcpld_p2s_data[59]      = PAL_M2_1_SEL_R                 ;//PAL_LCD_BUSY
+// assign scpld_to_mcpld_p2s_data[59]      = i_PAL_M2_1_SEL_R                 ;//PAL_LCD_BUSY
 assign scpld_to_mcpld_p2s_data[58]      = PAL_M2_1_PRSNT_N               ;
 assign scpld_to_mcpld_p2s_data[57]      = PAL_M2_0_PRSNT_N               ;
 assign scpld_to_mcpld_p2s_data[56]      = PAL_RISER2_PRSNT_N             ;
@@ -1317,7 +1329,7 @@ assign scpld_to_mcpld_p2s_data[0]       = 1'b1                           ;
 //M CPLD ---> S CPLD
 assign test_bat_en                    = mcpld_to_scpld_data_filter[345];
 assign bmc_extrst_uid                 = mcpld_to_scpld_data_filter[344];
-assign pal_m2_0_sel_lv33_r            = mcpld_to_scpld_data_filter[343];
+// assign pal_m2_0_sel_lv33_r            = mcpld_to_scpld_data_filter[343];
 assign i2c_ram_1058                   = mcpld_to_scpld_data_filter[342:335];
 assign i2c_ram_1057                   = mcpld_to_scpld_data_filter[334:327];
 assign i2c_ram_1056                   = mcpld_to_scpld_data_filter[326:319];
@@ -1351,7 +1363,7 @@ assign AUX_BP_type[31:0]              = mcpld_to_scpld_data_filter[210:179];
 assign pcie_detect[127:0]             = mcpld_to_scpld_data_filter[178:51];
 assign o_mb_cb_prsnt_bmc[15:0]        = mcpld_to_scpld_data_filter[50:35];
 assign rom_mux_bios_bmc_sel           = mcpld_to_scpld_data_filter[34] ;
-//assign bmcctl_uart_sw_en            = mcpld_to_scpld_data_filter[33] ;
+assign bmcctl_uart_sw_en              = mcpld_to_scpld_data_filter[33] ;
 assign bmcctl_uart_sw[1:0]            = mcpld_to_scpld_data_filter[33:32] ;
 assign rom_bmc_bk_rst                 = mcpld_to_scpld_data_filter[31] ;
 assign rom_bmc_ma_rst                 = mcpld_to_scpld_data_filter[30] ;
@@ -1570,74 +1582,74 @@ assign pal_riser2_pe_wake_n        = riser2_pvti_byte0[0];
 // MAIN BOARD SGPIO
 //------------------------------------------------------------------------------	
 pvt_gpi #(
-	.TOTAL_BIT_COUNT                (48                                     ),
-	.DEFAULT_STATE                  (48'h0                                  ),
-	.NUMBER_OF_COUNTER_BITS         (6                                      )
+	  .TOTAL_BIT_COUNT                (48                                     ),
+	  .DEFAULT_STATE                  (48'h0                                  ),
+	  .NUMBER_OF_COUNTER_BITS         (6                                      )
 ) pvt_gpi_mb1_inst (
-	.clk                            (clk_50m                                ),
-	.reset_n                        (pon_reset_n                            ),
-	.clk_ena                        (t16us_tick                             ),
-	.serclk_in                      (o_PVT_SS_CLK_R                         ),
-	.par_load_in_n                  (i_PVT_SS_LD_N_R                        ),
-	.sdi                            (i_PVT_SS_DATI                          ),
-	.bit_idx_in                     (mb1_pvti_ss_count                      ),
-	.bit_idx_out                    (mb1_pvti_ss_count                      ),
-	.serclk_out                     (o_PVT_SS_CLK_R                         ),
-	.par_load_out_n                 (i_PVT_SS_LD_N_R                        ),
-	.par_data                       (
+	  .clk                            (clk_50m                                ),
+	  .reset_n                        (pon_reset_n                            ),
+	  .clk_ena                        (t16us_tick                             ),
+	  .serclk_in                      (o_PVT_SS_CLK_R                         ),
+	  .par_load_in_n                  (i_PVT_SS_LD_N_R                        ),
+	  .sdi                            (i_PVT_SS_DATI                          ),
+	  .bit_idx_in                     (mb1_pvti_ss_count                      ),
+	  .bit_idx_out                    (mb1_pvti_ss_count                      ),
+	  .serclk_out                     (o_PVT_SS_CLK_R                         ),
+	  .par_load_out_n                 (i_PVT_SS_LD_N_R                        ),
+	  .par_data                       (
                                     {cpu_nvme0_prsnt_n ,cpu_nvme1_prsnt_n ,cpu_nvme2_prsnt_n ,cpu_nvme3_prsnt_n ,
-	                                cpu_nvme4_prsnt_n ,cpu_nvme5_prsnt_n ,cpu_nvme6_prsnt_n ,cpu_nvme7_prsnt_n ,          //U10 DATA
-					 
-					                cpu_nvme10_prsnt_n,cpu_nvme11_prsnt_n,cpu_nvme12_prsnt_n,cpu_nvme13_prsnt_n,
-					                cpu_nvme14_prsnt_n,cpu_nvme15_prsnt_n,cpu_nvme16_prsnt_n,cpu_nvme17_prsnt_n,          //U22 DATA
-					 
-					                cpu0_mcio0_cable_id0,cpu0_mcio0_cable_id1,cpu0_mcio1_cable_id0,cpu0_mcio1_cable_id1,
-					                cpu0_mcio2_cable_id0,cpu0_mcio2_cable_id1,cpu0_mcio3_cable_id0,cpu0_mcio3_cable_id1,  //U157 DATA
-					 
-					                cpu0_mcio4_cable_id0,cpu0_mcio4_cable_id1,cpu0_mcio5_cable_id0,cpu0_mcio5_cable_id1,
-					                cpu1_mcio0_cable_id0,cpu1_mcio0_cable_id1,cpu1_mcio1_cable_id0,cpu1_mcio1_cable_id1,  //U212 DATA
-					 
-					                cpu1_mcio2_cable_id0,cpu1_mcio2_cable_id1,cpu1_mcio3_cable_id0,cpu1_mcio3_cable_id1,
-					                cpu1_mcio4_cable_id0,cpu1_mcio4_cable_id1,cpu1_mcio6_cable_id0,cpu1_mcio6_cable_id1,  //U213 DATA
-					 					 					 
-					                pal_bp1_prsnt_n     ,pal_bp2_prsnt_n     ,pal_bp3_prsnt_n     ,pal_bp4_prsnt_n     ,
-					                pal_bp5_prsnt_n     ,pal_bp6_prsnt_n     ,pal_bp7_prsnt_n     ,pal_bp8_prsnt_n       //U217 DATA
-					               })					 
-);                 
+	                                  cpu_nvme4_prsnt_n ,cpu_nvme5_prsnt_n ,cpu_nvme6_prsnt_n ,cpu_nvme7_prsnt_n ,          //U10 DATA
+  
+					                          cpu_nvme10_prsnt_n,cpu_nvme11_prsnt_n,cpu_nvme12_prsnt_n,cpu_nvme13_prsnt_n,
+					                          cpu_nvme14_prsnt_n,cpu_nvme15_prsnt_n,cpu_nvme16_prsnt_n,cpu_nvme17_prsnt_n,          //U22 DATA
+  
+					                          cpu0_mcio0_cable_id0,cpu0_mcio0_cable_id1,cpu0_mcio1_cable_id0,cpu0_mcio1_cable_id1,
+					                          cpu0_mcio2_cable_id0,cpu0_mcio2_cable_id1,cpu0_mcio3_cable_id0,cpu0_mcio3_cable_id1,  //U157 DATA
+  
+					                          cpu0_mcio4_cable_id0,cpu0_mcio4_cable_id1,cpu0_mcio5_cable_id0,cpu0_mcio5_cable_id1,
+					                          cpu1_mcio0_cable_id0,cpu1_mcio0_cable_id1,cpu1_mcio1_cable_id0,cpu1_mcio1_cable_id1,  //U212 DATA
+  
+					                          cpu1_mcio2_cable_id0,cpu1_mcio2_cable_id1,cpu1_mcio3_cable_id0,cpu1_mcio3_cable_id1,
+					                          cpu1_mcio4_cable_id0,cpu1_mcio4_cable_id1,cpu1_mcio6_cable_id0,cpu1_mcio6_cable_id1,  //U213 DATA
+  
+					                          pal_bp1_prsnt_n     ,pal_bp2_prsnt_n     ,pal_bp3_prsnt_n     ,pal_bp4_prsnt_n     ,
+					                          pal_bp5_prsnt_n     ,pal_bp6_prsnt_n     ,pal_bp7_prsnt_n     ,pal_bp8_prsnt_n       //U217 DATA
+					                         })					 
+);                  
 
 pvt_gpi #(
-	.TOTAL_BIT_COUNT(48),
-	.DEFAULT_STATE(48'h0),
-	.NUMBER_OF_COUNTER_BITS(6)
+	  .TOTAL_BIT_COUNT(48),
+	  .DEFAULT_STATE(48'h0),
+	  .NUMBER_OF_COUNTER_BITS(6)
 ) pvt_gpi_mb2_inst (
-	.clk           (clk_50m),
-	.reset_n       (pon_reset_n),
-	.clk_ena       (t16us_tick),
-	.serclk_in     (PVT_SS_CLK_1_R),
-	.par_load_in_n (PVT_SS_LD_N_1_R),
-	.sdi           (PVT_SS_DATI_1),
-	.bit_idx_in    (mb2_pvti_ss_count),
-	.bit_idx_out   (mb2_pvti_ss_count),
-	.serclk_out    (PVT_SS_CLK_1_R),
-	.par_load_out_n(PVT_SS_LD_N_1_R),
-	.par_data      ({sw[0]           ,sw[1]           ,sw[2]           ,sw[3]           ,
-	                 sw[4]           ,sw[5]           ,sw[6]           ,sw[7]           ,  //U180 DATA
+	  .clk           (clk_50m),
+	  .reset_n       (pon_reset_n),
+	  .clk_ena       (t16us_tick),
+	  .serclk_in     (o_PVT_SS_CLK_1_R),
+	  .par_load_in_n (i_PVT_SS_LD_N_1_R),
+	  .sdi           (i_PVT_SS_DATI_1),
+	  .bit_idx_in    (mb2_pvti_ss_count),
+	  .bit_idx_out   (mb2_pvti_ss_count),
+	  .serclk_out    (i_PVT_SS_CLK_1_R),
+	  .par_load_out_n(i_PVT_SS_LD_N_1_R),
+	  .par_data      ({sw[0]           ,sw[1]           ,sw[2]           ,sw[3]           ,
+	                   sw[4]           ,sw[5]           ,sw[6]           ,sw[7]           ,  //U180 DATA
 					 			 
-					 ocp_prsent_b7_n ,ocp_prsent_b6_n ,ocp_prsent_b5_n ,ocp_prsent_b4_n ,
-					 ocp_prsent_b3_n ,ocp_prsent_b2_n ,ocp_prsent_b1_n ,ocp_prsent_b0_n,    //U181 DATA	
+					          ocp_prsent_b7_n ,ocp_prsent_b6_n ,ocp_prsent_b5_n ,ocp_prsent_b4_n ,
+					          ocp_prsent_b3_n ,ocp_prsent_b2_n ,ocp_prsent_b1_n ,ocp_prsent_b0_n,    //U181 DATA	
 
-                     fan8_install_n,fan7_install_n,fan6_install_n,fan5_install_n,
-					 fan4_install_n,fan3_install_n,fan2_install_n,fan1_install_n,          //U275 DATA
+                    fan8_install_n,fan7_install_n,fan6_install_n,fan5_install_n,
+					          fan4_install_n,fan3_install_n,fan2_install_n,fan1_install_n,          //U275 DATA
 					 
-					 pal_gpu_fan4_prsnt,pal_gpu_fan3_prsnt,pal_gpu_fan2_prsnt,pal_gpu_fan1_prsnt,
-					 pal_gpu_fan4_foo,pal_gpu_fan3_foo,pal_gpu_fan2_foo,pal_gpu_fan1_foo,  //U276 DATA
+					          pal_gpu_fan4_prsnt,pal_gpu_fan3_prsnt,pal_gpu_fan2_prsnt,pal_gpu_fan1_prsnt,
+					          pal_gpu_fan4_foo,pal_gpu_fan3_foo,pal_gpu_fan2_foo,pal_gpu_fan1_foo,  //U276 DATA
 					 
-					 board_id7,board_id6,board_id5,board_id4,
-					 board_id3,board_id2,board_id1,board_id0,                              //U277 DATA
+					          board_id7,board_id6,board_id5,board_id4,
+					          board_id3,board_id2,board_id1,board_id0,                              //U277 DATA
 					 					 					 
-					 pca_revision_2,pca_revision_1,pca_revision_0,pcb_revision_1,
-					 pcb_revision_0,cpu_nvme25_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme23_prsnt_n //U278 DATA                 				     
-				    })					 
+					          pca_revision_2,pca_revision_1,pca_revision_0,pcb_revision_1,
+					          pcb_revision_0,cpu_nvme25_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme23_prsnt_n //U278 DATA                 				     
+				           })					 
 );             
 
 
@@ -1645,42 +1657,42 @@ pvt_gpi #(
 // OCP1 SGPIO SCAN CHAIN
 //------------------------------------------------------------------------------
 pvt_gpi #(
-  .TOTAL_BIT_COUNT(32),
-  .DEFAULT_STATE(32'h7FFF_FFFE),
-  .NUMBER_OF_COUNTER_BITS(6)
+    .TOTAL_BIT_COUNT          (32                               ),
+    .DEFAULT_STATE            (32'h7FFF_FFFE                    ),
+    .NUMBER_OF_COUNTER_BITS   (6                                )
 ) pvt_gpi_ocp1_inst (
-  .clk           (clk_50m),
-  .reset_n       (pon_reset_n & (~ocp1_prsnt_n)),
-  .clk_ena       (t16us_tick),
-  .serclk_in     (PAL_OCP1_SS_CLK_R),
-  .par_load_in_n (PAL_OCP1_SS_LD_N_R),
-  .sdi           (PAL_OCP1_SS_DATA_IN_R),
-  .bit_idx_in    (ocp1_pvti_ss_count),
-  .bit_idx_out   (ocp1_pvti_ss_count),
-  .serclk_out    (PAL_OCP1_SS_CLK_R),
-  .par_load_out_n(PAL_OCP1_SS_LD_N_R),
-  .par_data      ({ocp1_pvti_byte3[7:0], ocp1_pvti_byte2[7:0],ocp1_pvti_byte1[7:0], ocp1_pvti_byte0[7:0]})
+    .clk                      (clk_50m                          ),
+    .reset_n                  (pon_reset_n & (~ocp1_prsnt_n)    ),
+    .clk_ena                  (t16us_tick                       ),
+    .serclk_in                (o_PAL_OCP1_SS_CLK_R              ),
+    .par_load_in_n            (i_PAL_OCP1_SS_LD_N_R             ),
+    .sdi                      (i_PAL_OCP1_SS_DATA_IN_R          ),
+    .bit_idx_in               (ocp1_pvti_ss_count               ),
+    .bit_idx_out              (ocp1_pvti_ss_count               ),
+    .serclk_out               (i_PAL_OCP1_SS_CLK_R              ),
+    .par_load_out_n           (i_PAL_OCP1_SS_LD_N_R             ),
+    .par_data                 ({ocp1_pvti_byte3[7:0], ocp1_pvti_byte2[7:0],ocp1_pvti_byte1[7:0], ocp1_pvti_byte0[7:0]})
 );
 
 //------------------------------------------------------------------------------
 // OCP2 SGPIO SCAN CHAIN
 //------------------------------------------------------------------------------
 pvt_gpi #(
-  .TOTAL_BIT_COUNT(32),
-  .DEFAULT_STATE(32'h7FFF_FFFE),
-  .NUMBER_OF_COUNTER_BITS(6)
+    .TOTAL_BIT_COUNT          (32                               ),
+    .DEFAULT_STATE            (32'h7FFF_FFFE                    ),
+    .NUMBER_OF_COUNTER_BITS   (6                                )
 ) pvt_gpi_ocp2_inst (
-  .clk           (clk_50m),
-  .reset_n       (pon_reset_n & (~ocp2_prsnt_n)),
-  .clk_ena       (t16us_tick),
-  .serclk_in     (PAL_OCP2_SS_CLK_R),
-  .par_load_in_n (PAL_OCP2_SS_LD_N_R),
-  .sdi           (PAL_OCP2_SS_DATA_IN_R),
-  .bit_idx_in    (ocp2_pvti_ss_count),
-  .bit_idx_out   (ocp2_pvti_ss_count),
-  .serclk_out    (PAL_OCP2_SS_CLK_R),
-  .par_load_out_n(PAL_OCP2_SS_LD_N_R),
-  .par_data      ({ocp2_pvti_byte3[7:0], ocp2_pvti_byte2[7:0],ocp2_pvti_byte1[7:0], ocp2_pvti_byte0[7:0]})
+    .clk                      (clk_50m                          ),
+    .reset_n                  (pon_reset_n & (~ocp2_prsnt_n)    ),
+    .clk_ena                  (t16us_tick                       ),
+    .serclk_in                (o_PAL_OCP2_SS_CLK_R              ),
+    .par_load_in_n            (i_PAL_OCP2_SS_LD_N_R             ),
+    .sdi                      (i_PAL_OCP2_SS_DATA_IN_R          ),
+    .bit_idx_in               (ocp2_pvti_ss_count               ),
+    .bit_idx_out              (ocp2_pvti_ss_count               ),
+    .serclk_out               (i_PAL_OCP2_SS_CLK_R              ),
+    .par_load_out_n           (i_PAL_OCP2_SS_LD_N_R             ),
+    .par_data                 ({ocp2_pvti_byte3[7:0], ocp2_pvti_byte2[7:0],ocp2_pvti_byte1[7:0], ocp2_pvti_byte0[7:0]})
 );
 
 assign ocp1_prsnt_n = ocp_prsent_b3_n & ocp_prsent_b2_n & ocp_prsent_b1_n & ocp_prsent_b0_n;
@@ -1777,25 +1789,25 @@ assign CPLD_M_S_EXCHANGE_S2 = PAL_PWR_SW_IN_N;
 
 
 //NCSI 
-assign PAL_OCP1_NCSI_EN_N_R   = ~pal_ocp1_ncsi_en;  //J69
-assign PAL_OCP2_NCSI_EN_N_R   = ~pal_ocp2_ncsi_en;  //J3 
-assign PAL_OCP_NCSI_SW_EN_N_R = ~pal_ocp_ncsi_sw_en;//J53 
+assign o_PAL_OCP1_NCSI_EN_N_R   = ~pal_ocp1_ncsi_en  ; //J69
+assign o_PAL_OCP2_NCSI_EN_N_R   = ~pal_ocp2_ncsi_en  ; //J3 
+assign o_PAL_OCP_NCSI_SW_EN_N_R = ~pal_ocp_ncsi_sw_en; //J53 
 
 
 //LED
-assign LED1_N               = ~power_seq_sm[0];
-assign LED2_N               = ~power_seq_sm[1];
-assign LED3_N               = ~power_seq_sm[2];
-assign LED4_N               = ~power_seq_sm[3];
-assign LED5_N               = ~power_seq_sm[4];
-assign LED6_N               = ~power_seq_sm[5];
-assign LED7_N               = bmc_extrst_uid;//1'b1            ;
-assign LED8_N               = t4hz_clk_cmu    ;  
+assign o_LED1_N               = ~power_seq_sm[0];
+assign o_LED2_N               = ~power_seq_sm[1];
+assign o_LED3_N               = ~power_seq_sm[2];
+assign o_LED4_N               = ~power_seq_sm[3];
+assign o_LED5_N               = ~power_seq_sm[4];
+assign o_LED6_N               = ~power_seq_sm[5];
+assign o_LED7_N               = bmc_extrst_uid  ;//1'b1            ;
+assign o_LED8_N               = t4hz_clk_cmu    ;  
 
 assign PAL_LED_HEL_GR_R     = sys_hlth_grn_blink_n  ;
 assign PAL_LED_HEL_RED_R    = sys_hlth_red_blink_n  ;
 
-assign PAL_LED_NIC_ACT_R    = pal_led_nic_act ;
+assign o_PAL_LED_NIC_ACT_R    = pal_led_nic_act ;
 
 //UART
 assign JACK_CPU1_D0_UART_SOUT = CPU1_D0_UART_SOUT    ;
@@ -1813,8 +1825,8 @@ assign PAL_BMC_UART1_RX       = CPU0_D0_UART1_TX     ;
 assign JACK_CPU0_UART1_TX     = CPU0_D0_UART1_TX     ;
 assign PAL_UART4_OCP2_TXD     = CPU0_D0_UART1_TX     ;
 
-assign CPU0_D0_UART1_RX       = (bmcctl_uart_sw == 2'b01) ? PAL_BMC_UART1_TX   :
-                                (bmcctl_uart_sw == 2'b10) ? PAL_UART4_OCP2_RXD : JACK_CPU0_UART1_RX;
+assign o_CPU0_D0_UART1_RX     = (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX   :
+                                (bmcctl_uart_sw == 2'b10) ? i_PAL_UART4_OCP2_RXD : i_JACK_CPU0_UART1_RX;
 
 //assign CPU0_D0_UART1_RX     = sw[7] ? JACK_CPU0_UART1_RX : PAL_BMC_UART1_TX;
 /*
@@ -1836,29 +1848,28 @@ assign cpu0_temp_over         = db_i_cpu0_d0_temp_over | db_i_cpu0_d1_temp_over 
 assign cpu1_temp_over         = db_i_cpu1_d0_temp_over | db_i_cpu1_d1_temp_over | db_i_cpu1_d2_temp_over | db_i_cpu1_d3_temp_over;
 
 //DDR5 SPD
-assign PAL_CPU0_I3C_SPD_SEL   = cpu0_d0_bios_over ? 1'b0 : 1'b1;
-assign PAL_CPU1_I3C_SPD_SEL   = cpu0_d0_bios_over ? 1'b0 : 1'b1;
-
+assign o_PAL_CPU0_I3C_SPD_SEL   = cpu0_d0_bios_over ? 1'b0 : 1'b1;
+assign o_PAL_CPU1_I3C_SPD_SEL   = cpu0_d0_bios_over ? 1'b0 : 1'b1;
 
 //TPM
-assign PAL_RST_TPM_N_R        = tpm_rst ? 1'b0 : reached_sm_wait_powerok;
+assign o_PAL_RST_TPM_N_R      = tpm_rst ? 1'b0 : reached_sm_wait_powerok;
 
 //I2C MUX
-assign RST_I2C3_MUX_N_R           = rst_i2c3_mux_n          ;
-assign RST_I2C13_MUX_N_R          = rst_i2c13_mux_n         ;
-assign RST_I2C1_MUX_N_R           = rst_i2c1_mux_n          ;
-assign RST_I2C4_2_MUX_N_R         = rst_i2c4_2_mux_n        ;
-assign RST_I2C8_MUX_N_R           = rst_i2c8_mux_n          ;
-assign RST_I2C2_MUX_N_R           = rst_i2c2_mux_n          ;
-assign RST_I2C5_MUX_N_R           = rst_i2c5_mux_n          ;
-//assign RST_I2C12_MUX_N_R          = rst_i2c12_mux_n         ;
-assign RST_I2C11_MUX_N_R          = rst_i2c11_mux_n         ;
-assign RST_I2C4_1_MUX_N_R         = rst_i2c4_1_mux_n        ;
-assign RST_I2C_BMC_9548_MUX_N_R   = rst_i2c10_mux_n         ;
+assign o_RST_I2C3_MUX_N_R           = rst_i2c3_mux_n          ;
+assign o_RST_I2C13_MUX_N_R          = rst_i2c13_mux_n         ;
+assign o_RST_I2C1_MUX_N_R           = rst_i2c1_mux_n          ;
+assign o_RST_I2C4_2_MUX_N_R         = rst_i2c4_2_mux_n        ;
+assign o_RST_I2C8_MUX_N_R           = rst_i2c8_mux_n          ;
+assign o_RST_I2C2_MUX_N_R           = rst_i2c2_mux_n          ;
+assign o_RST_I2C5_MUX_N_R           = rst_i2c5_mux_n          ;
+assign o_RST_I2C12_MUX_N_R          = rst_i2c12_mux_n         ;
+assign o_RST_I2C11_MUX_N_R          = rst_i2c11_mux_n         ;
+assign o_RST_I2C4_1_MUX_N_R         = rst_i2c4_1_mux_n        ;
+assign o_RST_I2C_BMC_9548_MUX_N_R   = rst_i2c10_mux_n         ;
 //assign RST_I2C_RISER1_PCA9548_N_R = rst_i2c_riser1_pca9548_n;
 //assign RST_I2C_RISER2_PCA9548_N_R = rst_i2c_riser2_pca9548_n;
-assign CPU0_RISER1_9548_RST_N_R   = rst_i2c_riser1_pca9548_n;
-assign CPU1_RISER2_9548_RST_N_R   = rst_i2c_riser2_pca9548_n;
+assign o_CPU0_RISER1_9548_RST_N_R   = rst_i2c_riser1_pca9548_n;
+assign o_CPU1_RISER2_9548_RST_N_R   = rst_i2c_riser2_pca9548_n;
 //CLK BUFFER
 assign PAL_DB2000_3_OE_N_R = 1'b0;//VB CHANGE
 assign PAL_DB2000_2_OE_N_R = 1'b0;//VB CHANGE
@@ -1903,21 +1914,21 @@ assign PAL_UPD2_P3V3_EN_R = 1'b1;
 assign PAL_GPU_PWR_EN_R  = 1'b1;
 assign PAL_OCP2_MAINPWR_ON_R = 1'b1;
 assign PAL_OCP2_FAN_PWR_EN_R = 1'b1;
-assign PAL_TEST_BAT_EN = test_bat_en;
+assign o_PAL_TEST_BAT_EN = test_bat_en;
 assign PAL_OCP2_AUXPWR_ON_R  = 1'b1;
 assign PAL_DB2000_1_PD_R     = 1'b1;
 assign PAL_DB2000_2_PD_R     = 1'b1;
 assign PAL_DB2000_3_PD_R     = 1'b1;
-assign PAL_SPI_SELECT_R      = ~rom_mux_bios_bmc_sel;
-assign PAL_SPI_SWITCH_EN_R   = rom_mux_bios_bmc_en;
+assign o_PAL_SPI_SELECT_R      = ~rom_mux_bios_bmc_sel;
+assign o_PAL_SPI_SWITCH_EN_R   = rom_mux_bios_bmc_en;
 assign USB2_LCD_EN_R         = 1'b1;//20240517 d00412 VB CHANGE
 assign LEAR_USB3_1_EN_R      = 1'b1;//20240518 d00412 VB CHANGE
 assign PAL_CK440_OE_N_R      = 1'b0;//20240518 d00412 VB CHANGE
 assign LEAR_USB3_2_EN_R      = 1'b1;//20240518 d00412 VB CHANGE
 assign PAL_UPD2_P1V0_EN      = 1'b1;//20240518 d00412 VB CHANGE
-assign M2_2_SW_SEL_R         = pal_m2_0_sel_lv33_r ? 1'b0 : 1'b1;//sw[0];//1'b1;//20240518 d00412 VB CHANGE
-assign M2_1_SW_SEL_R         = PAL_M2_1_SEL_R      ? 1'b0 : 1'b1;//sw[0];//20240518 d00412 VB CHANGE
-assign o_PAL_GPU4_EFUSE_EN_R   = power_supply_on;//20240518 d00412 VB CHANGE
+// assign o_M2_2_SW_SEL_R         = pal_m2_0_sel_lv33_r ? 1'b0 : 1'b1;//sw[0];//1'b1;//20240518 d00412 VB CHANGE
+// assign o_M2_1_SW_SEL_R         = i_PAL_M2_1_SEL_R      ? 1'b0 : 1'b1;//sw[0];//20240518 d00412 VB CHANGE
+// assign o_PAL_GPU4_EFUSE_EN_R   = power_supply_on;//20240518 d00412 VB CHANGE
 
 assign o_MCIO11_RISER1_PERST2_N    = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 // assign o_PAL_RISER1_SLOT_PERST_N_R = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
@@ -1940,8 +1951,8 @@ edge_delay #(
   .delay_output  (ocp_main_en_dly50ms)
 );
 
-// assign ocp_aux_50ms_pgd       = (ocp_main_en_dly50ms)  ? db_i_pal_ocp2_pwrgd : 1'b1;
-// assign ocp_aux_pgd            = (ocp_main_en		)    ? ocp_aux_50ms_pgd    : db_i_pal_ocp2_pwrgd;
+// assign ocp_aux_50ms_pgd = (ocp_main_en_dly50ms)  ? db_i_pal_ocp2_pwrgd : 1'b1;
+// assign ocp_aux_pgd      = (ocp_main_en		)       ? ocp_aux_50ms_pgd    : db_i_pal_ocp2_pwrgd;
 
 assign PAL_OCP1_NCSI_CLK_50M_R = PAL_BMC_NCSI_CLK_50M_R;
 // assign o_PAL_OCP2_PERST1_N_R     = reached_sm_wait_powerok;
@@ -1969,10 +1980,8 @@ assign st_aux_fail_recovery = (power_seq_sm == 6'h2C);
 
 //BMC
 
-/*
 assign uart_mux_select[1]      = 1'b0;//0:DSD Presnt;1:DSD not Presnt
 assign uart_mux_select[0]      = bmcctl_uart_sw_en ? bmcctl_uart_sw : ((~sw[7]) ? sw[1] : 1'b1);
-*/
 assign mb_cpld2_ver            = 16'h01A1;
 
 //assign PAL_I2C_VPP_RISER1_SLOT_R = power_supply_on;
