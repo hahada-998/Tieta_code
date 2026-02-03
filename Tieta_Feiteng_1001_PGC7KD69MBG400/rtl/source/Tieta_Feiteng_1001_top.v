@@ -2089,20 +2089,20 @@ p2s_slave #(.NBIT(512)) inst_mcpld_to_scpld_p2s(
 );
 
 //S CPLD ---> M CPLD
-assign  bmc_ready_flag                = scpld_to_mcpld_data_filter[426];
-assign  bmc_pgd_p3v3_stby             = scpld_to_mcpld_data_filter[425];
-assign  bmc_pgd_p1v8_stby             = scpld_to_mcpld_data_filter[424];
-assign  bmc_pgd_p1v2_stby             = scpld_to_mcpld_data_filter[423];
-assign  bmc_pgd_p1v1_stby             = scpld_to_mcpld_data_filter[422];
-assign  bmc_pgd_p0v8_stby             = scpld_to_mcpld_data_filter[421];
-assign  cpu1_temp_over                = scpld_to_mcpld_data_filter[420];
-assign  cpu0_temp_over                = scpld_to_mcpld_data_filter[419];
-assign  lom_prsnt_n                   = scpld_to_mcpld_data_filter[418];
-assign  lom_thermal_trip              = scpld_to_mcpld_data_filter[417];
-assign  db_i_pal_ocp2_fan_prsnt_n     = scpld_to_mcpld_data_filter[416];
-assign  db_i_pal_ocp2_fan_foo         = scpld_to_mcpld_data_filter[415];
-assign  db_i_pal_lcd_card_in          = scpld_to_mcpld_data_filter[414];
-assign  ifist_prsnt_n                 = scpld_to_mcpld_data_filter[413];
+assign  bmc_ready_flag                = scpld_to_mcpld_data_filter[426]    ;
+assign  bmc_pgd_p3v3_stby             = scpld_to_mcpld_data_filter[425]    ;
+assign  bmc_pgd_p1v8_stby             = scpld_to_mcpld_data_filter[424]    ;
+assign  bmc_pgd_p1v2_stby             = scpld_to_mcpld_data_filter[423]    ;
+assign  bmc_pgd_p1v1_stby             = scpld_to_mcpld_data_filter[422]    ;
+assign  bmc_pgd_p0v8_stby             = scpld_to_mcpld_data_filter[421]    ;
+assign  cpu1_temp_over                = scpld_to_mcpld_data_filter[420]    ;
+assign  cpu0_temp_over                = scpld_to_mcpld_data_filter[419]    ;
+assign  lom_prsnt_n                   = scpld_to_mcpld_data_filter[418]    ;
+assign  lom_thermal_trip              = scpld_to_mcpld_data_filter[417]    ;
+assign  db_i_pal_ocp2_fan_prsnt_n     = scpld_to_mcpld_data_filter[416]    ;
+assign  db_i_pal_ocp2_fan_foo         = scpld_to_mcpld_data_filter[415]    ;
+assign  db_i_pal_lcd_card_in          = scpld_to_mcpld_data_filter[414]    ;
+assign  ifist_prsnt_n                 = scpld_to_mcpld_data_filter[413]    ; // 未使用
 assign  bios_post_code[7:0]           = scpld_to_mcpld_data_filter[412:405];
 assign  bios_post_phase[7:0]          = scpld_to_mcpld_data_filter[404:397];
 assign  bios_post_rate[7:0]           = scpld_to_mcpld_data_filter[396:389];
@@ -2181,8 +2181,9 @@ assign  ocp_pvt_temp_warn_n           = scpld_to_mcpld_data_filter[310];//1
 assign  ocp_pvt_temp_crit_n           = scpld_to_mcpld_data_filter[309];//1
 assign  ocp_pvt_fan_on_aux            = scpld_to_mcpld_data_filter[308];//0
 
-assign  bmc_card_type                 = scpld_to_mcpld_data_filter[307:304];
-assign  bmc_card_pcb_rev              = scpld_to_mcpld_data_filter[303:301];
+assign  bmc_card_type                 = scpld_to_mcpld_data_filter[307:304]; // CMU CPLD传入
+assign  bmc_card_pcb_rev              = scpld_to_mcpld_data_filter[303:301]; // CMU CPLD传入
+
 assign  riser4_slot10_id              = scpld_to_mcpld_data_filter[300:295];
 assign  riser4_slot9_id               = scpld_to_mcpld_data_filter[294:289];
 assign  riser3_slot8_id               = scpld_to_mcpld_data_filter[288:283];
@@ -4192,7 +4193,7 @@ assign pf_class0_b1  = {any_aux_vrm_fault         ,
 assign pf_class0_b2  = { keep_alive_on_fault,
                          4'b0,
                          db_i_dimm_sns_alert      ,
-		                 ~db_i_fan_sns_alert      ,   
+		                     ~db_i_fan_sns_alert      ,   
                          db_i_p12v_stby_sns_alert
 						 };  
 //0xA5
@@ -4610,9 +4611,7 @@ bmc_cpld_i2c_ram #(
     .bmcctl_uart_sw                (bmcctl_uart_sw[1:0]      ),//addr 0x0016[7:6]    out
 
     .bmc_i2c_rst                   (bmc_i2c_rst              ),//addr 0x0019[7:0]    out
-
     .bmc_i2c_rst2                  (bmc_i2c_rst2             ),//addr 0x001A[7:0]    out
-
     .bmc_i2c_rst3                  (bmc_i2c_rst3             ),//addr 0x001B[7:0]    out
 
     .tpm_rst      	               (tpm_rst                  ),//addr 0x001D[7]      out                     
