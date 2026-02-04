@@ -433,6 +433,7 @@ input  i_PAL_TMP3_ALERT_N                     /* synthesis LOC = "P17"*/,// from
 // UPD72020 软硬盘控制器电源告警信号输入
 input  i_PAL_USB_UPD2_OCI2B                   /* synthesis LOC = "A12"*/,// from  USB3.0/U311_JW7111SSOTBTRPBF                   to  CPLD_M                                      default 1  // USB UPD2 OCI2B信号输入输出
 input  i_PAL_USB_UPD2_OCI1B                   /* synthesis LOC = "B15"*/,// from  USB3.0                                         to  CPLD_M                                       default 1  // USB UPD2 OCIIB信号输入                       新增
+
 // 未使用
 input  i_PAL_UPD72020_VCC_ALART               /* synthesis LOC = "G17"*/,// from  WX1860_POL_U82_JW7111SSOTBTRPBF/OUT            to  CPLD_M                                       default 1  // UPD72020 VCC电源告警信号输入
 
@@ -472,7 +473,6 @@ output o_FT_CPU1_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "R15"*/,// from
 
 // CPU1 D0 区域软关机中断信号
 output o_CPU0_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "Y1" */,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/D0_UART2_TXD      default 0  // CPU0 D0 区域软关机中断信号 , 触发系统软关机流程
-// 未使用
 output o_CPU1_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "Y1"*/, // from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/D0_UART2_TXD      default 0  // CPU1 D0 区域软关机中断信号 , 触发系统软关机流程
 
 // CPU0/1 主板区域温度过高告警信号输出
@@ -929,6 +929,11 @@ wire                                        debug_sw5                         ;
 wire                                        debug_sw6                         ;
 wire                                        debug_sw7                         ;
 wire                                        debug_sw8                         ;
+
+wire                                        chassis_id0_n                     ; // SCPLD 传入
+wire                                        chassis_id1_n                     ; // SCPLD 传入
+wire                                        chassis_id2_n                     ; // SCPLD 传入
+
 wire [7:0]                                  cpld_jtag_sel                     ;
 wire                                        uid_led_hold                      ;
 wire                                        uid_led_force_on;
@@ -1005,6 +1010,7 @@ wire                                        interlock_broken;
 wire                                        cpu_thermtrip;
 wire [`NUM_CPU-1:0]                         cpu_thermtrip_event;
 wire [`NUM_CPU-1:0]                         cpu_thermtrip_fault;
+
 wire                                        pch_pwrbtn;
 wire                                        pch_thrmtrip;
 wire                                        force_pwrbtn_n;
@@ -1112,7 +1118,9 @@ wire                                        pca_revision_2;
 wire                                        pcb_revision_0;
 wire                                        pcb_revision_1;
 wire [15:0]                                 bmc_cpld_version;
+
 wire [2:0]                                  db_chassis_id;
+
 wire [2:0]                                  chassis_id;
 wire [1:0]                                  mb_class_id;
 wire [3:0]                                  led_custom_mode;
@@ -1263,6 +1271,7 @@ wire                                        usb2_left_ear_en;
 wire                                        rtc_select_n;
 wire                                        cpu1_vr_select_n;
 wire                                        cpu0_vr_select_n;
+
 wire [`NUM_NIC-1:0]                         ocp_fault_det1;
 wire [`NUM_NIC-1:0]                         ocp_fault_det2;
 wire                                        db_i_pal_usb_upd2_oci1b;
@@ -1463,55 +1472,55 @@ timer_gen timer_gen_inst(
 输入信号消抖
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
-    .clk(clk_50m),
-    .rst(~pon_reset_n),
-    .timer_tick(t64ms_tick),
-    .din ({
-         i_CPLD_M_S_EXCHANGE_S2_R | pwrbtn_mask   ,//01 
-         // i_FRONT_PAL_INTRUDER                     ,//02
-         debug_sw1                                ,//03
-         debug_sw2                                ,//04
-         debug_sw3                                ,//05
-         debug_sw4	                              ,//06
-         debug_sw5	                              ,//07
-		 debug_sw6                                ,//08
-		 debug_sw7                                ,//09
-		 debug_sw8                                ,//10
-		 i_PAL_BMCUID_BUTTON_R                    ,//11
-		 //chassis_id0_n                          ,//13
-		 //chassis_id1_n                          ,//14
-		 //chassis_id2_n                          ,//15
-		 i_PAL_USB_UPD2_OCI1B                   ,//16
-		 i_PAL_USB_UPD2_OCI2B                     ,//17
-		 //i_PAL_USB_UPD1_OCI4B                     ,//18
-		 pal_upd72020_1_alart                     ,//19 // 不使用
-		 pal_upd72020_2_alart                     ,//20 // 不使用
-		 vga2_oc_alert                            ,//21
-		 usb2_lcd_alert                            //22
-    }),                           
-    .dout({
-         db_sys_sw_in_n                           ,//01 
-         // db_i_front_pal_intruder                  ,//02
-		 db_debug_sw[0]                           ,//03
-		 db_debug_sw[1]                           ,//04
-		 db_debug_sw[2]                           ,//05
-		 db_debug_sw[3]                           ,//06
-		 db_debug_sw[4]                           ,//07
-		 db_debug_sw[5]                           ,//08
-		 db_debug_sw[6]                           ,//09
-		 db_debug_sw[7]                           ,//10
-		 db_i_pal_bmcuid_button_r                 ,//11
-		 //db_chassis_id[0]                         ,//13
-		 //db_chassis_id[1]                         ,//14
-		 //db_chassis_id[2]                         ,//15
-		 db_i_pal_usb_upd2_oci1b                  ,//16
-		 db_i_pal_usb_upd2_oci2b                  ,//17
-		 //db_i_pal_usb_upd1_oci4b                  ,//18
-		 db_pal_upd72020_1_alart                  ,//19
-		 db_pal_upd72020_2_alart                  ,//20
-		 db_vga2_oc_alert                         ,//21
-		 db_usb2_lcd_alert                         //22                    
-  })             
+    .clk                                    (clk_50m                    ),
+    .rst                                    (~pon_reset_n               ),
+    .timer_tick                             (t64ms_tick                 ),
+    .din                                    ({
+                                              i_CPLD_M_S_EXCHANGE_S2_R | pwrbtn_mask   ,//01 
+                                              // i_FRONT_PAL_INTRUDER                     ,//02
+                                              debug_sw1                                ,//03
+                                              debug_sw2                                ,//04
+                                              debug_sw3                                ,//05
+                                              debug_sw4	                              ,//06
+                                              debug_sw5	                              ,//07
+		                                          debug_sw6                                ,//08
+		                                          debug_sw7                                ,//09
+		                                          debug_sw8                                ,//10
+		                                          i_PAL_BMCUID_BUTTON_R                    ,//11
+		                                          chassis_id0_n                          ,//13
+		                                          chassis_id1_n                          ,//14
+		                                          //chassis_id2_n                          ,//15
+		                                          i_PAL_USB_UPD2_OCI1B                     ,//16
+		                                          i_PAL_USB_UPD2_OCI2B                     ,//17
+		                                          //i_PAL_USB_UPD1_OCI4B                     ,//18
+		                                          pal_upd72020_1_alart                     ,//19 // 不使用
+		                                          pal_upd72020_2_alart                     ,//20 // 不使用
+		                                          vga2_oc_alert                            ,//21
+		                                          usb2_lcd_alert                            //22
+                                            }),                           
+      .dout                                 ({
+                                              db_sys_sw_in_n                           ,//01 
+                                              // db_i_front_pal_intruder                  ,//02
+		                                          db_debug_sw[0]                           ,//03
+		                                          db_debug_sw[1]                           ,//04
+		                                          db_debug_sw[2]                           ,//05
+		                                          db_debug_sw[3]                           ,//06
+		                                          db_debug_sw[4]                           ,//07
+		                                          db_debug_sw[5]                           ,//08
+		                                          db_debug_sw[6]                           ,//09
+		                                          db_debug_sw[7]                           ,//10
+		                                          db_i_pal_bmcuid_button_r                 ,//11
+		                                          db_chassis_id[0]                         ,//13
+		                                          db_chassis_id[1]                         ,//14
+		                                          //db_chassis_id[2]                         ,//15
+		                                          db_i_pal_usb_upd2_oci1b                  ,//16
+		                                          db_i_pal_usb_upd2_oci2b                  ,//17
+		                                          //db_i_pal_usb_upd1_oci4b                  ,//18
+		                                          db_pal_upd72020_1_alart                  ,//19
+		                                          db_pal_upd72020_2_alart                  ,//20
+		                                          db_vga2_oc_alert                         ,//21
+		                                          db_usb2_lcd_alert                         //22                    
+                                            })             
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -2089,6 +2098,11 @@ p2s_slave #(.NBIT(512)) inst_mcpld_to_scpld_p2s(
 );
 
 //S CPLD ---> M CPLD
+// 新增信号
+assign  chassis_id0_n                 = scpld_to_mcpld_data_filter[428]    ;
+assign  chassis_id1_n                 = scpld_to_mcpld_data_filter[427]    ;
+// 新增信号
+
 assign  bmc_ready_flag                = scpld_to_mcpld_data_filter[426]    ;
 assign  bmc_pgd_p3v3_stby             = scpld_to_mcpld_data_filter[425]    ;
 assign  bmc_pgd_p1v8_stby             = scpld_to_mcpld_data_filter[424]    ;
@@ -2441,67 +2455,28 @@ assign riser1_pwr_cable_prsnt_n[3]      = riser1_pvti_byte2[6];//4GPU POWER CANL
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 按键控制
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-power_button power_button_inst  (
-    .clk                   (clk_50m        ),
-    .reset                 (~pgd_aux_system ),
-    .t1s                   (t1s_tick        ),
-    .gpo_pwr_btn_mask      (pwrbtn_mask     ),
-    .xreg_pwr_btn_passthru (pwrbtn_bl_mask  ),
-    .xreg_vir_pwr_btn      (vwire_pwrbtn_bl ),
-    .defeat_pwr_btn_dis_n  (1'b0            ),
-    .turn_on_override      (1'b0            ),
-    .sys_sw_in_n           (db_sys_sw_in_n  ),
-    .gmt_shutdown          (s_bmc_shutdown  ),
-    .gmt_wakeup_n          (s_bmc_wakeup_n  ),
-    .cpu_thermtrip         (cpu_thermtrip   ),
-    .temp_deadly           (1'b0            ),
-    .interlock_broken      (interlock_broken),
-    .st_steady_pwrok       (st_steady_pwrok ),
-    .st_off_standby        (st_off_standby  ),
-    .pch_pwrbtn            (pch_pwrbtn      ),
-    .pch_thrmtrip          (pch_thrmtrip    ) 
+power_button power_button_inst  (                 
+    .clk                   (clk_50m                           ),
+    .reset                 (~pon_reset_n/*~pgd_aux_system*/   ),
+    .t1s                   (t1s_tick                          ),
+    .gpo_pwr_btn_mask      (pwrbtn_mask                       ),
+    .xreg_pwr_btn_passthru (pwrbtn_bl_mask                    ),
+    .xreg_vir_pwr_btn      (vwire_pwrbtn_bl                   ),
+    .defeat_pwr_btn_dis_n  (1'b0                              ),
+    .turn_on_override      (1'b0                              ),
+    .sys_sw_in_n           (db_sys_sw_in_n                    ),
+    .gmt_shutdown          (s_bmc_shutdown                    ),
+    .gmt_wakeup_n          (s_bmc_wakeup_n                    ),
+    .cpu_thermtrip         (cpu_thermtrip                     ),
+    .temp_deadly           (1'b0                              ),
+    .interlock_broken      (interlock_broken                  ),
+    .st_steady_pwrok       (st_steady_pwrok                   ),
+    .st_off_standby        (st_off_standby                    ),
+    .pch_pwrbtn            (pch_pwrbtn                        ),
+    .pch_thrmtrip          (pch_thrmtrip                      ) 
 );
 
 assign interlock_broken = 1'b0;
-
-
-//------------------------------------------------------------------------------
-// Power button
-//------------------------------------------------------------------------------
-wire                        pch_pwrbtn                  ; // BMC 控制短按  
-wire                        pwrbtn_bl_mask              ; // BMC 控制长按
-wire                        vwire_pwrbtn_bl             ; // BMC 控制长按
-wire                        db_sys_sw_in_n   
-wire                        s_bmc_shutdown   
-wire                        s_bmc_wakeup_n   
-wire                        cpu_thermtrip              
-wire                        interlock_broken 
-wire                        st_steady_pwrok  
-wire                        st_off_standby   
-wire                        pch_pwrbtn       
-wire                        pch_thrmtrip     
-
-power_button power_button_inst  (
-.clk                        (clk_50m                    ),
-.reset                      (~pgd_aux_system            ),
-.t1s                        (t1s_tick                   ),
-.gpo_pwr_btn_mask           (pwrbtn_mask                ),
-.xreg_pwr_btn_passthru      (pwrbtn_bl_mask             ),
-.xreg_vir_pwr_btn           (vwire_pwrbtn_bl            ),
-.defeat_pwr_btn_dis_n       (1'b0                       ),
-.turn_on_override           (1'b0                       ),
-.sys_sw_in_n                (db_sys_sw_in_n             ),
-.gmt_shutdown               (s_bmc_shutdown             ),
-.gmt_wakeup_n               (s_bmc_wakeup_n             ),
-.cpu_thermtrip              (cpu_thermtrip              ),
-.temp_deadly                (1'b0                       ),
-.interlock_broken           (interlock_broken           ),
-.st_steady_pwrok            (st_steady_pwrok            ),
-.st_off_standby             (st_off_standby             ),
-.pch_pwrbtn                 (pch_pwrbtn                 ),
-.pch_thrmtrip               (pch_thrmtrip               ) 
-);
-
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 CPU 重启
@@ -2520,25 +2495,25 @@ assign cpu_po_flag = ((~i_CPU0_D0_PWR_CTR1_R) & i_CPU0_D0_PWR_CTR0_R) ;
 
 edge_delay #(.CNTR_NBITS(4), .DEF_OUTPUT(1'b0), .DELAY_MODE(1'b0)) edge_delay_cpu_gpio_ok (
     .clk                    (clk_50m                            ),
-    .reset                  (~pgd_aux_system                    ),
+    .reset                  (~pon_reset_n/*~pgd_aux_system*/    ),
     .cnt_size               (4'b1000                            ),
     .cnt_step               (t1s_tick                           ),
     .signal_in              (reached_sm_wait_powerok            ),
     .delay_output           (cpu_gpio_ok                        )
 );
 
-always@(posedge clk_50m or negedge pgd_aux_system) begin 
-    if(!pgd_aux_system) begin
+always@(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/) begin 
+    if(!pon_reset_n)begin
         cpu_reboot      <= 1'b1;
         cpu_power_off   <= 1'b1;
     end
     else begin
         if(cpu_gpio_ok & cpu_po_flag)begin
-    	    cpu_reboot      <= 1'b1 ;
+    	      cpu_reboot      <= 1'b1 ;
             cpu_power_off   <= 1'b0 ;
         end 
         else if(cpu_gpio_ok & cpu_rb_flag) begin
-        	cpu_reboot      <= 1'b0;
+        	  cpu_reboot      <= 1'b0;
             cpu_power_off   <= 1'b0;
         end 
         else begin
@@ -2555,10 +2530,15 @@ reg                     force_reb                           ;
 reg [29:0]              count                               ;
 reg [29:0]              counts                              ;
 
+// SW
+reg [29:0]              countp                              ;
+reg                     singal_p0                           ;
+reg                     singal_p1                           ;
+wire                    singal_p                            ;
+reg                     pch_pwrbtn_s                        ;
 
-
-always @(posedge clk_50m or negedge pgd_aux_system) begin
-    if(!pgd_aux_system) begin
+always @(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/) begin
+    if(!pon_reset_n) begin
         singal_s0   <= 1'b1;
         singal_s1   <= 1'b1;
     end
@@ -2570,8 +2550,8 @@ end
 
 assign singal_n = !singal_s0 & singal_s1;
 
-always @(posedge clk_50m or negedge pgd_aux_system) begin
-    if(!pgd_aux_system)begin
+always @(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/) begin
+    if(!pon_reset_n)begin
         counts          <= 30'b0;
         cpu_reboot_x    <= 1'b1 ;
     end
@@ -2579,11 +2559,11 @@ always @(posedge clk_50m or negedge pgd_aux_system) begin
         counts          <=30'b1;
         cpu_reboot_x    <=1'b1;
     end
-    else if ((counts>=30'b1)&&(counts<=30'd75000000))begin
+    else if ((counts>=30'b1) && (counts<=30'd75000000))begin
         cpu_reboot_x    <=1'b1;
         counts          <=counts+1;
     end
-    else if((counts<=30'd75001000)&&(counts>=30'd75000001))begin
+    else if((counts<=30'd75001000) && (counts>=30'd75000001))begin
         cpu_reboot_x    <=1'b0;
         counts          <=counts+1;
     end
@@ -2597,20 +2577,20 @@ always @(posedge clk_50m or negedge pgd_aux_system) begin
     end
 end
 
-always @(posedge clk_50m or negedge pgd_aux_system)begin
-    if(!pgd_aux_system) begin
+always @(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/)begin
+    if(!pon_reset_n)begin
         count           <= 30'b0;
         cpu_reboot_S    <=1'b1;
     end 
-    else if( singal_n==1'b1)begin
+    else if(singal_n==1'b1)begin
         count           <=30'b1;
         cpu_reboot_S    <=1'b1;
     end
-    else if ((count>=30'b1)&&(count<=30'd225000000))begin
+    else if ((count>=30'b1) && (count<=30'd225000000))begin
         cpu_reboot_S    <=1'b1;
         count           <=count+1;
     end
-    else if((count<=30'd225001000)&&(count>=30'd225000001))begin
+    else if((count<=30'd225001000) && (count>=30'd225000001))begin
         cpu_reboot_S    <=1'b0;
         count           <=count+1;
     end
@@ -2624,68 +2604,44 @@ always @(posedge clk_50m or negedge pgd_aux_system)begin
     end
 end
 
-
-//SW
-reg [29:0]countp;
-
-reg singal_p0;
-reg singal_p1;
-
-wire  singal_p;
-
-  reg  pch_pwrbtn_s;
-
-always @(negedge pgd_aux_system or posedge i_CLK_PAL_IN_25M)
-begin
-  if(!pgd_aux_system) 
-           begin
-                   singal_p0<= 1'b1;
-                   singal_p1 <= 1'b1;
-           end
-  else 
-    begin
-                   singal_p0<=  (~pch_pwrbtn) | (~st_halt_power_cycle);
-                   singal_p1 <= singal_p0;
-         end
+always @(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/)begin
+    if(!pon_reset_n)begin
+        singal_p0 <= 1'b1;
+        singal_p1 <= 1'b1;
+    end
+    else begin
+        singal_p0 <=  (~pch_pwrbtn) | (~st_halt_power_cycle);
+        singal_p1 <= singal_p0;
+    end
 end
 
-assign singal_p=  !singal_p0&singal_p1;
+assign singal_p = !singal_p0 & singal_p1;
 
-
-
-always @(negedge pgd_aux_system or posedge i_CLK_PAL_IN_25M)
-begin
-         if(!pgd_aux_system) 
-                   begin
-                            countp <= 30'b0;
-                            pch_pwrbtn_s<=1'b1;
-                   end
-         
-         else if ( singal_p==1'b1)//��⵽�½���
-                   begin
-                            countp<=30'b1;
-                            pch_pwrbtn_s<=1'b1;
-                   end
-         else if ((countp>=30'b1)&&(countp<=30'd500000000))//��ʼ������������3s
-                   begin
-                            pch_pwrbtn_s<=1'b1;
-                            countp<=countp+1;
-                   end
-         else if((countp<=30'd500001000)&&(countp>=30'd500000001))//cpu_reboot_S��ʼ����͵�ƽ
-                   begin
-                            pch_pwrbtn_s<=1'b0;
-                            countp<=countp+1;
-                   end
-         else if(countp>=30'd501001001)//��ʱһ��ʱ������
-                   begin
-                            pch_pwrbtn_s<=1'b1;
-                            countp<=30'b0;
-                   end
-         else
-                   begin
-                            countp<=30'b0;
-                            pch_pwrbtn_s<=1'b1 ;             
-                   end
+always @(posedge clk_50m or negedge pon_reset_n /*pgd_aux_system*/)begin
+    if(!pon_reset_n) begin
+        countp        <= 30'b0 ;
+        pch_pwrbtn_s  <= 1'b1  ;
+    end 
+    else if (singal_p==1'b1)begin
+        countp        <=30'b1 ;
+        pch_pwrbtn_s  <=1'b1  ;
+    end
+    else if ((countp>=30'b1)&&(countp<=30'd500000000))begin
+        pch_pwrbtn_s  <=1'b1;
+        countp        <=countp+1;
+    end
+    else if((countp<=30'd500001000)&&(countp>=30'd500000001))begin
+        pch_pwrbtn_s  <=1'b0    ;
+        countp        <=countp+1;
+    end
+    else if(countp>=30'd501001001)begin
+        pch_pwrbtn_s  <=1'b1 ;
+        countp        <=30'b0;
+    end
+    else begin
+        countp        <=30'b0;
+        pch_pwrbtn_s  <=1'b1 ;             
+    end
 end
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -2742,7 +2698,6 @@ pwrseq_master #(
     // 3. 物理按键信号; 南桥状态和控制信息; 
     // -----------------------------------------------------------
     .sys_sw_in_n                            (db_sys_sw_in_n             ),
-    // .pch_slp4_n                             (pch_slp4_n                 ),
     .pch_pwrbtn_n                           (~pch_pwrbtn                ),
     .pch_pwrbtn_s                           (pch_pwrbtn_s               ),
     
@@ -2750,9 +2705,9 @@ pwrseq_master #(
     .force_pwrbtn_n                         (force_pwrbtn_n             ), // 输出：强制电源按钮信号（低电平有效，送至 PSU，当前未使用）
                                                                            // 备用功能：故障下电后，强制 PCH 切换到 S5 状态，确保彻底断电
 
-    .cpu_reboot                             (cpu_reboot_S               ), // 输入：CPU重启 YHY  ADD  
-    .cpu_reboot_x                           (cpu_reboot_x               ), // 输入：CPU重启 YHY  ADD   
-    .cpu_power_off                          (cpu_power_off              ), // 输入：CPU下电 YHY  ADD  
+    .cpu_reboot                             (cpu_reboot_S               ), // 输入：CPU重启  
+    .cpu_reboot_x                           (cpu_reboot_x               ), // 输入：CPU重启   
+    .cpu_power_off                          (cpu_power_off              ), // 输入：CPU下电  
     
     .xr_ps_en                               (1'b1                       ), // 输入：XR 电源使能信号（1=使能，0=禁用）
 
@@ -3497,68 +3452,60 @@ UID_Function#(
 
     .i_uid_valid              (1'b0                       ),//reserved
     .i_uid_status             (8'h00                      ),//reserved
-    .o_uid_act_st             (                           )//reserved
+    .o_uid_act_st             (                           ) //reserved
 );
 
 //bmc control uid led when bmc active, or uid button will control uid led when bmc die;
-reg                           r_BMC_UID_CPLD_N;
-reg [7:0]                     r_uid_led_ctl;
-//assign o_uid_led_ctl    = r_uid_led_ctl;
-assign led_uid = r_BMC_UID_CPLD_N;
-always@(posedge clk_50m or negedge pon_reset_n)
-begin
-    if(~pon_reset_n)
-	begin
-        r_BMC_UID_CPLD_N  <= 1'b1;
-		r_uid_led_ctl     <= 8'h00;
-	end
-	else if(bmc_ready_flag) 
-    begin
-		r_uid_led_ctl  <= w_uid_led_ctl;
-	    case (w_uid_led_ctl)
-	    8'h00: r_BMC_UID_CPLD_N  <= 1'b1;
-		8'h01: r_BMC_UID_CPLD_N  <= t0p5hz_clk;
-		8'h02: r_BMC_UID_CPLD_N  <= t1hz_clk;
-		8'h04: r_BMC_UID_CPLD_N  <= t4hz_clk;
-		8'hff: r_BMC_UID_CPLD_N  <= 1'b0;
-		default: r_BMC_UID_CPLD_N  <= 1'b1;
-	    endcase
-	end
-	else  
-	begin
-		case (r_uid_led_ctl)
-		8'h00: 	
-		begin
-			r_BMC_UID_CPLD_N  <= 1'b1;
-			if(uid_btn_all_invert) 		        
-		        r_uid_led_ctl     <= 8'hff;
-		end
-		8'h01: 
-		begin
-			if(uid_btn_all_invert)
-			    r_uid_led_ctl     <= 8'hff;
-		end
-		8'h02: 
-		begin
-			if(uid_btn_all_invert)
-			    r_uid_led_ctl     <= 8'hff;
-		end
-		8'h04: 
-		begin
-			if(uid_btn_all_invert)
-			    r_uid_led_ctl     <= 8'hff;
-		end		
-		8'hff:
-		begin
-			r_BMC_UID_CPLD_N  <= 1'b0;
-			if(uid_btn_all_invert) 			    
-		        r_uid_led_ctl     <= 8'h00;
-		end
-		default: 
-		begin 
-		    r_uid_led_ctl     <= 8'h00; 
-       	end	
-		endcase	 
+reg                           r_BMC_UID_CPLD_N            ;
+reg [7:0]                     r_uid_led_ctl               ;
+
+assign o_uid_led_ctl = r_uid_led_ctl                      ;
+assign led_uid       = r_BMC_UID_CPLD_N                   ;
+
+always @(posedge clk_50m or negedge pon_reset_n)begin
+    if(~pon_reset_n) begin
+        r_BMC_UID_CPLD_N  <= 1'b1         ;
+		    r_uid_led_ctl     <= 8'h00        ;
+	  end
+	  else if(bmc_ready_flag)begin
+		    r_uid_led_ctl     <= w_uid_led_ctl;
+	      case(w_uid_led_ctl)
+	          8'h00: r_BMC_UID_CPLD_N    <= 1'b1      ;
+		        8'h01: r_BMC_UID_CPLD_N    <= t0p5hz_clk;
+		        8'h02: r_BMC_UID_CPLD_N    <= t1hz_clk  ;
+		        8'h04: r_BMC_UID_CPLD_N    <= t4hz_clk  ;
+		        8'hff: r_BMC_UID_CPLD_N    <= 1'b0      ;
+		        default: r_BMC_UID_CPLD_N  <= 1'b1      ;
+	      endcase
+	  end
+	  else begin
+		    case (r_uid_led_ctl)
+		        8'h00: begin
+			          r_BMC_UID_CPLD_N  <= 1'b1;
+			              if(uid_btn_all_invert) 		        
+		                    r_uid_led_ctl <= 8'hff;
+		        end
+		        8'h01: begin
+		        	  if(uid_btn_all_invert)
+		        	      r_uid_led_ctl     <= 8'hff;
+		            end
+		        8'h02: begin
+		        	  if(uid_btn_all_invert)
+		        	      r_uid_led_ctl     <= 8'hff;
+		        end
+		        8'h04: begin
+		        	  if(uid_btn_all_invert)
+		        	      r_uid_led_ctl     <= 8'hff;
+		        end		
+		        8'hff: begin
+		        	  r_BMC_UID_CPLD_N  <= 1'b0;
+		        	  if(uid_btn_all_invert) 			    
+		                r_uid_led_ctl     <= 8'h00;
+		        end
+		        default: begin 
+		            r_uid_led_ctl     <= 8'h00; 
+       	    end	
+		    endcase	 
 	end
 end
 
@@ -4253,8 +4200,8 @@ assign pf_classa_b0  = {3'b0,
 //------------------------------------------------------------------------------
 // BMC Logic Begin
 //------------------------------------------------------------------------------
-assign rst_pal_extrst_r_n = bmc_extrst_uid;//ilo_hard_reset ? 1'b0 : 1'b1;
-assign o_PAL_BMC_SRST_R   = bmc_extrst_uid;//ilo_hard_reset ? 1'b0 : 1'b1;
+assign rst_pal_extrst_r_n = bmc_extrst_uid ; //ilo_hard_reset ? 1'b0 : 1'b1; UID长按给BMC复位
+assign o_PAL_BMC_SRST_R   = bmc_extrst_uid ; //ilo_hard_reset ? 1'b0 : 1'b1; UID长按给BMC复位
 
 
 //BMC INTERRUPT
@@ -4398,11 +4345,11 @@ assign o_BMC_RESERVE_1         = i_PAL_UID_SW_IN_N;
 //------------------------------------------------------------------------------
 // POWER Sequence  Start
 //------------------------------------------------------------------------------
-assign st_reset_state       = (power_seq_sm==SM_RESET_STATE      );
-assign st_off_standby       = (power_seq_sm==SM_OFF_STANDBY      );
-assign st_steady_pwrok      = (power_seq_sm==SM_STEADY_PWROK     );
-assign st_halt_power_cycle  = (power_seq_sm==SM_HALT_POWER_CYCLE );
-assign st_aux_fail_recovery = (power_seq_sm==SM_AUX_FAIL_RECOVERY);
+assign st_reset_state       = (power_seq_sm == `SM_RESET_STATE      );
+assign st_off_standby       = (power_seq_sm == `SM_OFF_STANDBY      );
+assign st_steady_pwrok      = (power_seq_sm == `SM_STEADY_PWROK     );
+assign st_halt_power_cycle  = (power_seq_sm == `SM_HALT_POWER_CYCLE );
+assign st_aux_fail_recovery = (power_seq_sm == `SM_AUX_FAIL_RECOVERY);
 
 
 //riser rst
@@ -4498,10 +4445,9 @@ assign o_PAL_P3V3_STBY_RST_R     = (aux_pcycle || (st_off_standby && brownout_fa
 // assign o_PAL_P3V3_STBY_BP_RST_R  = (aux_pcycle || (st_off_standby && brownout_fault)) ? 1'b1 : 1'bz;//efuse_power_cycle ? 1'b1 : 1'bz;
 
 
-
-
 //------------------------------------------------------------------------------
-// I2C Update Start
+// !!!I2C Update Start!!!
+// 用紫光的替换方案
 //------------------------------------------------------------------------------
 wire                                    wb_clk      ;
 defparam inst_osch.NOM_FREQ = "4.29";
@@ -4512,15 +4458,15 @@ OSCH inst_osch(
 );
 I2C_UPDATE inst_i2c_update_flash_config(
     .wb_clk_i	    (wb_clk	                    ),
-    .wb_rst_i	    (		                    ),
-    .wb_cyc_i	    (		                    ),
-    .wb_stb_i	    (		                    ),
-    .wb_we_i	    (		                    ),
-    .wb_adr_i	    (		                    ),
-    .wb_dat_i	    (		                    ),
-    .wb_dat_o	    (		                    ),
-    .wb_ack_o	    (		                    ),
-    .i2c1_irqo	    (						    ),
+    .wb_rst_i	    (		                        ),
+    .wb_cyc_i	    (		                        ),
+    .wb_stb_i	    (		                        ),
+    .wb_we_i	    (		                        ),
+    .wb_adr_i	    (		                        ),
+    .wb_dat_i	    (		                        ),
+    .wb_dat_o	    (		                        ),
+    .wb_ack_o	    (		                        ),
+    .i2c1_irqo	  (						                ),
     .i2c1_scl	    (i_BMC_I2C9_PAL_M_SCL_R     ),
     .i2c1_sda	    (io_BMC_I2C9_PAL_M_SDA_R    )
 ); 
@@ -4529,25 +4475,25 @@ wire [15:0]                             mb_cpld1_ver;
 assign mb_cpld1_ver = 16'h01A1;
 
 bmc_cpld_i2c_ram #(
-    .DLY_LEN       (16)   //50MHz,330ns
+    .DLY_LEN                       (16)   //50MHz,330ns
 ) bmc_cpld_i2c_ram_u0 (
-    .i_rst_n                       (pon_reset_n             ),  
-    .i_clk                         (clk_50m	                ),
-    .t1s                           (t1s_tick                ),
-    .t1us                          (t1us_tick               ),
-    .t125ms                        (t128ms_tick             ),
-    .pgoodaux                      (pgd_aux_system          ),
-    .pon_reset_sasd                (~pgd_aux_system_sasd    ),
-    .i_1ms_clk                     (t1ms_tick               ),	          
-    .i_rst_i2c_n                   (1'b1                    ),//(i_BMC_CPLD_I2C_RST_R_N),
-    .i_scl                         (i_BMC_I2C9_PAL_M_SCL1_R ), 
-    .io_sda                        (io_BMC_I2C9_PAL_M_SDA1_R),
+    .i_rst_n                       (pon_reset_n              ),  
+    .i_clk                         (clk_50m	                 ),
+    .t1s                           (t1s_tick                 ),
+    .t1us                          (t1us_tick                ),
+    .t125ms                        (t128ms_tick              ),
+    .pgoodaux                      (pgd_aux_system           ),
+    .pon_reset_sasd                (~pgd_aux_system_sasd     ),
+    .i_1ms_clk                     (t1ms_tick                ),	          
+    .i_rst_i2c_n                   (1'b1                     ),//(i_BMC_CPLD_I2C_RST_R_N),
+    .i_scl                         (i_BMC_I2C9_PAL_M_SCL1_R  ), 
+    .io_sda                        (io_BMC_I2C9_PAL_M_SDA1_R ),
  
     .bmc_security_bypass           (bmc_security_bypass      ),//addr 0x0000[6]      in
 
     .cpld_pwm_main_type            (cpld_pwm_main_type[1:0]  ),//addr 0x0002[6:5]    in   01:50%  10:90%
-    .fan_wdt_sel 			       (bmc_ready_flag           ),//addr 0x0002[4]      in
-    .fm_bmc_fan_wdt_feed	       (i_pal_wdt_rst_n_r        ),//addr 0x0002[1]      in
+    .fan_wdt_sel 			             (bmc_ready_flag           ),//addr 0x0002[4]      in
+    .fm_bmc_fan_wdt_feed	         (i_pal_wdt_rst_n_r        ),//addr 0x0002[1]      in
 
     .vwire_bmc_wakeup 	           (vwire_bmc_wakeup         ),//addr 0x0003[6]      out
     .vwire_bmc_sysrst              (vwire_bmc_sysrst         ),//addr 0x0003[5]      out
@@ -4571,25 +4517,25 @@ bmc_cpld_i2c_ram #(
     .rom_mux_bios_bmc_en           (rom_mux_bios_bmc_en      ),//addr 0x0007[7]      out
     .rom_mux_bios_bmc_sel          (rom_mux_bios_bmc_sel     ),//addr 0x0007[6]      out
     .rom_bios_bk_rst               (rom_bios_bk_rst          ),//addr 0x0007[3]      out
-    .rom_bios_ma_rst    	       (rom_bios_ma_rst          ),//addr 0x0007[2]      out
+    .rom_bios_ma_rst    	         (rom_bios_ma_rst          ),//addr 0x0007[2]      out
     .rom_bmc_bk_rst                (rom_bmc_bk_rst           ),//addr 0x0007[1]      out
     .rom_bmc_ma_rst                (rom_bmc_ma_rst           ),//addr 0x0007[0]      out
 
     .test_bat_en                   (test_bat_en              ),//addr 0x0008[7]      out
     .bios_eeprom_wp                (bios_eeprom_wp           ),//addr 0x0008[6]      out
 
-    .o_uid_led_ctl				   (w_uid_led_ctl  	         ),//addr 0x0009[7:0]    out
+    .o_uid_led_ctl				         (w_uid_led_ctl  	         ),//addr 0x0009[7:0]    out  // BMC 控制 UID LED 状态
 
-    .i_uid_btn_evt				   (uid_button_short_evt     ),//addr 0x000A[1]      in 
-    .o_uid_btn_evt_clr			   (w_uid_btn_evt_wc	     ),//addr 0x000A[1]      out
-    .i_uid_rstbmc_evt			   (uid_button_long_evt      ),//addr 0x000A[0]      in
-    .o_uid_rstbmc_evt_clr		   (w_uid_rstbmc_evt_wc      ),//addr 0x000A[0]      out
+    .i_uid_btn_evt				         (uid_button_short_evt     ),//addr 0x000A[1]      in   // UID 长按 状态记录
+    .o_uid_btn_evt_clr			       (w_uid_btn_evt_wc	       ),//addr 0x000A[1]      out  // UID 长按 状态清除
+    .i_uid_rstbmc_evt			         (uid_button_long_evt      ),//addr 0x000A[0]      in   // UID 短按 状态记录
+    .o_uid_rstbmc_evt_clr		       (w_uid_rstbmc_evt_wc      ),//addr 0x000A[0]      out  // UID 短按 状态清除
 
     .bmcctl_front_nic_led          (bmcctl_front_nic_led     ),//addr 0x000B[2]      out
     .o_sys_healthy_red             (w_sys_healthy_red        ),//addr 0x000B[1]      out
     .o_sys_healthy_grn             (w_sys_healthy_grn        ),//addr 0x000B[0]      out
 
-    .port_80         		       (bios_post_code[7:0]      ),//addr 0x000D[7:0]    in
+    .port_80         		           (bios_post_code[7:0]      ),//addr 0x000D[7:0]    in
 
     .port_84                       (bios_post_rate[7:0]      ),//addr 0x000E[7:0]    in         
 
@@ -4671,11 +4617,11 @@ bmc_cpld_i2c_ram #(
     .pal_gpu_fan2_foo              (pal_gpu_fan2_foo         ),//addr 0x0056[1]      in
     .pal_gpu_fan1_foo              (pal_gpu_fan1_foo         ),//addr 0x0056[0]      in
     .ocp2_fan_foo                  (db_i_pal_ocp2_fan_foo    ),//addr 0x0057[7]      in
-    .ocp2_fan_prsnt               (~db_i_pal_ocp2_fan_prsnt_n),//addr 0x0057[6]      in
+    .ocp2_fan_prsnt                (~db_i_pal_ocp2_fan_prsnt_n),//addr 0x0057[6]      in
     .ocp1_fan_foo                  (db_i_pal_ocp1_fan_foo    ),//addr 0x0057[5]      in
-    .ocp1_fan_prsnt               (~db_i_pal_ocp1_fan_prsnt_n),//addr 0x0057[4]      in
+    .ocp1_fan_prsnt                (~db_i_pal_ocp1_fan_prsnt_n),//addr 0x0057[4]      in
     .fan_prsnt                     (~db_fan_prsnt_n[7:0]     ),//addr 0x0058[7:0]    in
-    .gpu_fan_prsnt              ({~pal_gpu_fan4_prsnt,~pal_gpu_fan3_prsnt,~pal_gpu_fan2_prsnt,~pal_gpu_fan1_prsnt}),//addr 0x0059[3:0]  in
+    .gpu_fan_prsnt                 ({~pal_gpu_fan4_prsnt,~pal_gpu_fan3_prsnt,~pal_gpu_fan2_prsnt,~pal_gpu_fan1_prsnt}),//addr 0x0059[3:0]  in
 
     .board2_type                   (bmc_card_type            ),//addr 0x0070[7:4]    in
     .board2_pcb_rev                (bmc_card_pcb_rev         ),//addr 0x0070[3:1]    in
@@ -4740,7 +4686,7 @@ bmc_cpld_i2c_ram #(
     .server_id                     (8'h21                    ),//addr 0x00C5[7:0]    in
     .board_id                      (8'h01                    ),//addr 0x00C6[7:0]    in
 
-    .pcb_rev   				       ({1'b0,pcb_revision_1,pcb_revision_0}),//addr 0xF1[2-0]  in
+    .pcb_rev   				             ({1'b0,pcb_revision_1,pcb_revision_0}),//addr 0xF1[2-0]  in
 
     .bmc_cpld_version              (bmc_cpld_version[15:0]   ),//addr 0x00FA-0x00FB[7:0]    in
     .mb_cpld2_ver                  (mb_cpld2_ver[15:0]       ),//addr 0x00FC-0x00FD[7:0]    in
@@ -4759,7 +4705,6 @@ bmc_cpld_i2c_ram #(
     .ilo_hard_reset                (ilo_hard_reset           ) //in
 );
 
-
 // BMC下发CPU软关机中断信号
 wire                                bmc_ctrl_shutdown_neg       ;
 reg                                 soft_shutdown               ;
@@ -4777,30 +4722,30 @@ Edge_Detect1 Edge_Detect_u3(
 
 always @(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)begin
-		soft_shutdown <= 1'b0;
-		time_cnt      <= 30'd0;
-		state         <= 0;
+		  soft_shutdown <= 1'b0;
+		  time_cnt      <= 30'd0;
+		  state         <= 0;
 	end
 	else begin
-		case(state)
-		   0: begin
-				soft_shutdown <= 1'b0;
-				time_cnt	  <= 30'd0;
-				if(bmc_ctrl_shutdown_neg)
-					state	  <= 1;
-				else
-					state	  <= state;
-			end 
-            1: begin
-				time_cnt	  <=  (time_cnt >= 30'd2000000) ? 30'd0 : time_cnt + 1'd1;
-				state		  <= !(time_cnt	>= 30'd2000000)                          ;
-				soft_shutdown <=  (time_cnt	>= 30'd1000000)	? 1'b1  : 1'b0           ;
-			end
-		endcase
+		  case(state)
+		      0: begin
+		  		    soft_shutdown <= 1'b0;
+		  		    time_cnt	    <= 30'd0;
+		  		    if(bmc_ctrl_shutdown_neg)
+		  		    	  state	    <= 1;
+		  		    else
+		  		    	  state	    <= state;
+		  	  end 
+          1: begin
+		  		    time_cnt	  <=  (time_cnt >= 30'd2000000) ? 30'd0 : time_cnt + 1'd1;
+		  		    state		  <= !(time_cnt	>= 30'd2000000)                          ;
+		  		    soft_shutdown <=  (time_cnt	>= 30'd1000000)	? 1'b1  : 1'b0           ;
+		  	  end
+		  endcase
 	end
 end
 
 assign o_CPU0_D0_SOFT_SHUTDOWN_INT_N = soft_shutdown;
-// assign o_CPU1_D0_SOFT_SHUTDOWN_INT_N = soft_shutdown;
+assign o_CPU1_D0_SOFT_SHUTDOWN_INT_N = soft_shutdown;
 
 endmodule

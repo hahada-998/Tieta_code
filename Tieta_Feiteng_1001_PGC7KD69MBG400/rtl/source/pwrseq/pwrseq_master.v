@@ -833,53 +833,52 @@ always @(*) begin
                 po_failure_detected_set = 1'b1;
             end
             else if (pch_state_trans_en) begin
-                state_ns =  `SM_EN_P1V8;
+                state_ns =  `SM_EN_1V1;
+            end
+        end
+
+        `SM_EN_1V1 : begin
+            if (pch_critical_fail_en) begin
+                state_ns = `SM_CRITICAL_FAIL;
+                po_failure_detected_set = 1'b1;
+            end
+            else if (pch_state_trans_en) begin
+                state_ns =  `SM_EN_CPU_CORE;
             end
         end
 
         // 4. CPU 主电源组上电序列
-        `SM_EN_P1V8 : begin
+        `SM_EN_CPU_CORE : begin
           if (pchdsw_critical_fail_en) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
           end
           else if (pchdsw_state_trans_en) begin
-                state_ns = `SM_EN_P2V5_VPP;
+                state_ns = `SM_EN_CPU_P1V8;
           end
         end
 
-        `SM_EN_P2V5_VPP : begin
+        `SM_EN_CPU_P1V8 : begin
+          if (pchdsw_critical_fail_en) begin
+                state_ns = `SM_CRITICAL_FAIL;
+                po_failure_detected_set = 1'b1;
+          end
+          else if (pchdsw_state_trans_en) begin
+                state_ns = `SM_EN_CPU_DDR     ;
+          end
+        end
+
+        `SM_EN_CPU_DDR : begin
             if (pchdsw_critical_fail_en) begin
                   state_ns = `SM_CRITICAL_FAIL;
                   po_failure_detected_set = 1'b1;
             end
             else if (pchdsw_state_trans_en) begin
-                  state_ns = `SM_EN_VP;   
+                  state_ns = `SM_EN_CPU_VP;   
             end
-        end
-
-
-        `SM_EN_VP : begin                        
-            if (pchdsw_critical_fail_en) begin        
-                state_ns = `SM_CRITICAL_FAIL;           
-                po_failure_detected_set = 1'b1;        
-            end                                      
-            else if (pchdsw_state_trans_en) begin      
-                state_ns = `SM_EN_P0V8;               
-            end                                      
-        end                                        
-
-        `SM_EN_P0V8 : begin                   
-            if (pchdsw_critical_fail_en) begin    
-                state_ns = `SM_CRITICAL_FAIL;       
-                po_failure_detected_set = 1'b1;    
-            end                                  
-            else if (pchdsw_state_trans_en) begin 
-                state_ns = `SM_EN_VDD;           
-            end                                  
-        end                                    
+        end                                   
 	
-        `SM_EN_VDD : begin                   
+        `SM_EN_CPU_VP : begin                   
             if (pchdsw_critical_fail_en) begin    
                 state_ns = `SM_CRITICAL_FAIL;       
                 po_failure_detected_set = 1'b1;    
@@ -888,7 +887,6 @@ always @(*) begin
                 state_ns = `PEX_RESET;            
             end                                  
         end	
-       
        
         `PEX_RESET  : begin                   
             if(pchdsw_critical_fail_en)begin    
@@ -948,42 +946,42 @@ always @(*) begin
         // 下电状态
         // 1. 故障下电开始
         `SM_CRITICAL_FAIL : begin
-            state_ns = `SM_DISABLE_VDD;
+            state_ns = `SM_DISABLE_CPU_VP;
             assert_button_clr = 1'b1;
         end
 
-        // 2. CPU 主电源组下电序列
-        `SM_DISABLE_VDD : begin              
-            if (pdn_watchdog_timeout) begin            
-                state_ns = `SM_DISABLE_P0V8;              
-            end                                  
-        end	                                  
-
-        `SM_DISABLE_P0V8 : begin                  
-            if (pdn_watchdog_timeout) begin          
-                state_ns = `SM_DISABLE_VP;              
-            end                                      
-        end	                                    
-
-        `SM_DISABLE_VP : begin
+        // 2. CPU 主电源组下电序列                                   
+        `SM_DISABLE_CPU_VP : begin
             if (pdn_watchdog_timeout) begin
-                state_ns = `SM_DISABLE_P2V5_VPP;
+                state_ns = `SM_DISABLE_CPU_DDR;
             end
         end
 
-        `SM_DISABLE_P2V5_VPP : begin
+        `SM_DISABLE_CPU_DDR : begin
             if (pdn_watchdog_timeout) begin
-                state_ns = `SM_DISABLE_P1V8;
+                state_ns = `SM_DISABLE_CPU_P1V8;
             end
         end    
     
-        `SM_DISABLE_P1V8 : begin
+        `SM_DISABLE_CPU_P1V8 : begin
             if (pdn_watchdog_timeout) begin
-                state_ns = `SM_DISABLE_3V3;
+                state_ns = `SM_DISABLE_CPU_CORE;
             end
         end       
+
+        `SM_DISABLE_CPU_CORE : begin
+            if (pdn_watchdog_timeout) begin
+                state_ns = `SM_DISABLE_1V1;
+            end
+        end  
     
         // 3. 辅电下电
+        `SM_DISABLE_1V1 : begin
+            if (disable_3v3_timeout) begin
+                state_ns = `SM_DISABLE_3V3;
+            end
+        end
+
         `SM_DISABLE_3V3 : begin
             if (disable_3v3_timeout) begin
                 state_ns = `SM_DISABLE_5V;

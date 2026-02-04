@@ -429,11 +429,9 @@ module Tieta_Feiteng_1001_top(
     // 未使用
     input   i_CABLE_PRSNT_N                         /* synthesis LOC = "T17"*/,// from  J29_10217724B001                              to  CPLD_S                                           default 1  // 电缆 设备存在 信号
     // 未使用
-
-    // 未使用, 存寄存器                                            
+                                          
     input   i_CHASSIS_ID0_N                         /* synthesis LOC = "E20"*/,// from  ?CHASSIS_ID?                                  to  CPLD_S                                           default 1  // 机箱 ID0 信号                        
     input   i_CHASSIS_ID1_N                         /* synthesis LOC = "A17"*/,// from  ?CHASSIS_ID?                                  to  CPLD_S                                           default 1  // 机箱 ID1 信号
-    // 未使用, 存寄存器
 
     // 未使用, 存寄存器
     input   i_CPU0_VIN_SNS_ALERT                    /* synthesis LOC = "V13"*/,// from  CURRENT_DET0 / U57_TPA626_VR_S                to  CPLD_S                                           default 1  // CPU0 输入电压 传感器 告警 信号
@@ -726,7 +724,7 @@ wire                            riser_prsnt_det_5                               
 wire                            riser_prsnt_det_6                                   ;
 wire                            riser_prsnt_det_7                                   ;
 
-wire [7:0]                      sw                                                  ;
+wire [7:0]                      sw                                                  ; // 拨码开关
 
 wire [3:0]                      w_pal_ocp1_prsnt_n                                  ;
 
@@ -1246,7 +1244,13 @@ assign scpld_to_mcpld_p2s_data[511]     = 1'b1                           ;
 assign scpld_to_mcpld_p2s_data[510]     = 1'b0                           ;
 assign scpld_to_mcpld_p2s_data[509]     = 1'b1                           ; 
 assign scpld_to_mcpld_p2s_data[508]     = 1'b0                           ;
-assign scpld_to_mcpld_p2s_data[507:431] = 77'b0                          ;
+assign scpld_to_mcpld_p2s_data[507:433] = 75'b0                          ;
+
+// 新增信号
+assign scpld_to_mcpld_p2s_data[432]     = i_CHASSIS_ID0_N               ;
+assign scpld_to_mcpld_p2s_data[431]     = i_CHASSIS_ID1_N               ;
+// 新增信号
+
 assign scpld_to_mcpld_p2s_data[430]     = bmc_ready_flag                 ;
 assign scpld_to_mcpld_p2s_data[429]     = db_i_pal_pgd_p3v3              ;
 assign scpld_to_mcpld_p2s_data[428]     = db_i_pal_pgd_p1v8              ;
@@ -1363,7 +1367,7 @@ assign scpld_to_mcpld_p2s_data[53]      = riser1_emc_alert_n             ;
 assign scpld_to_mcpld_p2s_data[52]      = db_pal_ext_rst_n               ;
 
 // 拨码开关状态
-assign scpld_to_mcpld_p2s_data[51:44]   = sw                             ;
+assign scpld_to_mcpld_p2s_data[51:44]   = sw                             ; // 传入MCPLD, 拨码开关使用
 
 // NVMe 网卡存在信号
 assign scpld_to_mcpld_p2s_data[43]      = cpu_nvme17_prsnt_n             ;//CPU1 D3
@@ -1458,7 +1462,7 @@ assign bmcctl_uart_sw_en              = mcpld_to_scpld_data_filter[33]      ;
 assign bmcctl_uart_sw[1:0]            = mcpld_to_scpld_data_filter[33:32]   ;
 assign rom_bmc_bk_rst                 = mcpld_to_scpld_data_filter[31]      ;
 assign rom_bmc_ma_rst                 = mcpld_to_scpld_data_filter[30]      ;
-assign rst_pal_extrst_r_n             = mcpld_to_scpld_data_filter[29]      ;
+assign rst_pal_extrst_r_n             = mcpld_to_scpld_data_filter[29]      ; // 主CPLD UID长按复位
 assign leakage_det_do_n               = mcpld_to_scpld_data_filter[28]      ;
 assign tpm_rst                        = mcpld_to_scpld_data_filter[27]      ; // 主CPLD addr 0x001D[7]
 
@@ -1477,7 +1481,7 @@ assign rst_i2c1_mux_n                 = mcpld_to_scpld_data_filter[16] ; // 主C
 
 assign sys_hlth_red_blink_n           = mcpld_to_scpld_data_filter[15] ; // 从CPLD addr 0x000B[1]
 assign sys_hlth_grn_blink_n           = mcpld_to_scpld_data_filter[14] ; // 从CPLD addr 0x000B[0]
-assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主CPLD  
+assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主CPLD 控制UID点灯
 assign power_supply_on                = mcpld_to_scpld_data_filter[12] ;
 assign ocp_main_en                    = mcpld_to_scpld_data_filter[11] ;
 assign ocp_aux_en                     = mcpld_to_scpld_data_filter[10] ;
@@ -1564,9 +1568,9 @@ assign mbcpld_to_bmccpld_p2s_data[16]    = leakage_det_do_n;
 assign mbcpld_to_bmccpld_p2s_data[15]    = 1'b1;//pal_plt_bmc_thermtrip_n_r        
 assign mbcpld_to_bmccpld_p2s_data[14]    = st_steady_pwrok;//remote_xdp_syspwrok_r            
 assign mbcpld_to_bmccpld_p2s_data[13:12] = uart_mux_select;//weihe
-assign mbcpld_to_bmccpld_p2s_data[11:4]  = sw;
+assign mbcpld_to_bmccpld_p2s_data[11:4]  = sw                                   ; // 传入BMCCPLD 拨码开关使用
 assign mbcpld_to_bmccpld_p2s_data[3]     = DSD_UART_PRSNT_N; 
-assign mbcpld_to_bmccpld_p2s_data[2]     = rst_pal_extrst_r_n;
+assign mbcpld_to_bmccpld_p2s_data[2]     = rst_pal_extrst_r_n                   ; // 传入BMCCPLD 复位使用
 assign mbcpld_to_bmccpld_p2s_data[1]     = pal_vga_sel_n;
 assign mbcpld_to_bmccpld_p2s_data[0]     = t4hz_clk;
 

@@ -501,12 +501,12 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_vdd_core_en_r     <= 1'b1;
             end 
 
-            `SM_EN_P1V8 : begin
+            `SM_EN_CPU_P1V8 : begin
                 reg_cpu0_p1v8_en_r         <= 1'b1;
                 reg_cpu1_p1v8_en_r         <= 1'b1;
             end
 
-            `SM_EN_P2V5_VPP : begin
+            `SM_EN_CPU_DDR : begin
                 reg_cpu0_ddr_vdd_en_r      <= 1'b1;
                 reg_cpu1_ddr_vdd_en_r      <= 1'b1;
                 reg_cpu0_pll_p1v8_en_r     <= 1'b1;
@@ -515,7 +515,7 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_vddq_en_r         <= 1'b1;
             end
 
-            `SM_EN_VDD : begin          
+            `SM_EN_CPU_VP : begin          
                 reg_cpu0_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
                 reg_cpu1_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
                 reg_cpu0_pcie_p1v8_en_r    <= 1'b1; // 实际不使用
@@ -549,7 +549,7 @@ always @(posedge clk or posedge reset) begin
             	  reg_main_efuse_en          <= 1'b0;       
             end
 	  
-            `SM_DISABLE_VDD : begin
+            `SM_DISABLE_CPU_VP : begin
                 reg_cpu0_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
                 reg_cpu1_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
                 reg_cpu0_pcie_p1v8_en_r    <= 1'b0; // 实际不使用
@@ -565,7 +565,7 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
             end  
 
-            `SM_DISABLE_P2V5_VPP : begin
+            `SM_DISABLE_CPU_DDR : begin
                 reg_cpu0_ddr_vdd_en_r      <= 1'b0;
                 reg_cpu1_ddr_vdd_en_r      <= 1'b0;
                 reg_cpu0_pll_p1v8_en_r     <= 1'b0;
@@ -574,7 +574,7 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_vddq_en_r         <= 1'b0;
             end
 
-            `SM_DISABLE_P1V8 : begin
+            `SM_DISABLE_CPU_P1V8 : begin
                 reg_cpu0_p1v8_en_r         <= 1'b0;
                 reg_cpu1_p1v8_en_r         <= 1'b0;
             end
