@@ -1,0 +1,123 @@
+Designs:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v
+Size: 319606bytes
+Last modified time: 2026/02/09 21:30:52
+2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
+Size: 1528bytes
+Last modified time: 2026/02/09 19:29:17
+3. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/tpm_define.v
+Size: 10145bytes
+Last modified time: 2017/01/05 17:34:00
+4. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/button_ctrl/power_button.v
+Size: 6063bytes
+Last modified time: 2023/12/13 19:41:20
+5. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_delay.v
+Size: 2689bytes
+Last modified time: 2017/09/02 13:24:16
+6. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_detect.v
+Size: 2215bytes
+Last modified time: 2022/12/01 22:01:13
+7. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/Edge_Detect1.v
+Size: 2216bytes
+Last modified time: 2024/04/02 16:43:14
+8. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_sync.v
+Size: 3068bytes
+Last modified time: 2017/09/02 13:24:54
+9. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/led_blink_code.v
+Size: 7633bytes
+Last modified time: 2017/09/02 11:47:00
+10. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/pon_reset.v
+Size: 6186bytes
+Last modified time: 2025/12/30 10:28:06
+11. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/post_leds.v
+Size: 4059bytes
+Last modified time: 2020/10/13 11:21:08
+12. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v
+Size: 21657bytes
+Last modified time: 2017/09/02 15:40:12
+13. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/system_reset.v
+Size: 13856bytes
+Last modified time: 2020/08/05 14:21:07
+14. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/thermal.v
+Size: 6831bytes
+Last modified time: 2026/02/09 19:23:27
+15. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/UID_Function.v
+Size: 12846bytes
+Last modified time: 2024/08/02 09:47:56
+16. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/p2s_master.v
+Size: 2074bytes
+Last modified time: 2018/07/05 16:26:48
+17. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/p2s_slave.v
+Size: 2770bytes
+Last modified time: 2018/07/05 16:26:48
+18. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v
+Size: 3081bytes
+Last modified time: 2018/07/05 16:26:48
+19. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_slave.v
+Size: 2727bytes
+Last modified time: 2018/08/13 11:11:54
+20. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/uart_master.v
+Size: 7640bytes
+Last modified time: 2024/04/25 20:52:56
+21. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_counter.v
+Size: 1970bytes
+Last modified time: 2021/02/10 09:29:54
+22. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_pwm_tach.v
+Size: 8743bytes
+Last modified time: 2025/09/02 21:32:58
+23. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/bmc_cpld_i2c_ram.v
+Size: 48551bytes
+Last modified time: 2026/02/09 20:58:01
+24. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/psu.v
+Size: 12372bytes
+Last modified time: 2026/02/09 19:25:10
+25. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrcap.v
+Size: 10000bytes
+Last modified time: 2026/02/09 19:25:35
+26. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_master.v
+Size: 45595bytes
+Last modified time: 2026/02/09 20:59:38
+27. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave.v
+Size: 84265bytes
+Last modified time: 2026/02/09 20:32:11
+28. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/timer_gen_50mhz.v
+Size: 5887bytes
+Last modified time: 2026/02/09 20:21:58
+29. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/pme_filter.v
+Size: 1827bytes
+Last modified time: 2017/09/02 11:46:14
+30. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/fault_detectB_chklive.v
+Size: 3422bytes
+Last modified time: 2017/09/02 13:27:02
+31. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave_dev.v
+Size: 3729bytes
+Last modified time: 2020/07/18 09:55:10
+32. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/lowpass_filter.v
+Size: 2909bytes
+Last modified time: 2022/09/13 13:55:57
+33. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/edge_detect.v
+Size: 2251bytes
+Last modified time: 2017/09/02 13:24:34
+34. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/pwrcap_pwrbtn_led.v
+Size: 4068bytes
+Last modified time: 2026/02/09 20:44:31
+35. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/delay_timer.v
+Size: 2627bytes
+Last modified time: 2017/09/02 13:23:58
+36. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/i2c_slave_bmc.v
+Size: 4905bytes
+Last modified time: 2022/09/09 17:01:31
+37. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/i2c_slave_basic0.v
+Size: 18663bytes
+Last modified time: 2022/09/09 17:01:11
+
+IPs:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.idf
+Size: 25677bytes
+Last modified time: 2025/12/30 10:07:31
+
+Constraints:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc
+Size: 14812bytes
+Last modified time: 2026/02/09 21:32:56
+

@@ -144,17 +144,18 @@ module Tieta_Feiteng_1001_top(
     input   i_CPLD_M_S_SGPIO_LD_N                   /* synthesis LOC = "B13"*/ ,// from  CPLD_M                                         to  CPLD_S                                           default 1  // CPLD 主从 SGPIO 加载使能 信号    
     input   i_CPLD_M_S_SGPIO_MOSI                   /* synthesis LOC = "C18"*/ ,// from  CPLD_M                                         to  CPLD_S                                           default 1  // CPLD 主从 SGPIO MOSI 信号
     output  o_CPLD_M_S_SGPIO_MISO_R                 /* synthesis LOC = "B18"*/ ,// from  CPLD_M                                         to  CPLD_S                                           default 1  // CPLD 主从 SGPIO MISO 信号
+   
     input   i_CPLD_M_S_SGPIO1_CLK                   /* synthesis LOC = "C14"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO1 时钟 信号
     input   i_CPLD_M_S_SGPIO1_LD_N                  /* synthesis LOC = "B17"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO1 加载使能 信号
     input   i_CPLD_M_S_SGPIO1_MOSI                  /* synthesis LOC = "C15"*/,// from  CPLD_S                                         to  CPLD_M                                           default 1  // CPLD 主从 SGPIO1 MOSI 信号
-    output  o_CPLD_M_S_SGPIO1_MISO_R                /* synthesis LOC = ""*/,// from  CPLD_M                                         to  CPLD_S                                           default 1  // CPLD 主从 SGPIO1 MISO 信号
+    output  o_CPLD_M_S_SGPIO1_MISO_R                /* synthesis LOC = "F18"*/,// from  CPLD_M                                         to  CPLD_S                                           default 1  // CPLD 主从 SGPIO1 MISO 信号
     /* end: SGPIO 信号, CPLD_S -> CPLD_M, CPLD_M -> CPLD_S */
 
     /* begin: OCP */
     output  o_PAL_UART4_OCP_DEBUG_TX                /* synthesis LOC = "L3"*/ ,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP 调试 UART4 发送 信号
     input   i_PAL_UART4_OCP_DEBUG_RX                /* synthesis LOC = "L5"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP 调试 UART4 接收 信号
 
-    input   i_PAL_BMC_NCSI_CLK_50M_R                /* synthesis LOC = "F18"*/ ,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S_UART_LED_SW                               default 1  // BMC NCSI 时钟 50M 信号
+    input   i_PAL_BMC_NCSI_CLK_50M_R                /* synthesis LOC = "F17"*/ ,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S_UART_LED_SW                               default 1  // BMC NCSI 时钟 50M 信号
     output  o_PAL_WX1860_NCSI_CLK_50M_R             /* synthesis LOC = "K19"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // WX1860 NCSI 时钟 50M 信号                                                    
     output  o_PAL_WX1860_NCSI_SW_EN_N_R             /* synthesis LOC = "W18"*/,// from  CPLD_S                                       to  U38 -- U20WX1869A2                               default 1  // WX1860 NCSI 开关使能 信号
 
@@ -324,7 +325,7 @@ module Tieta_Feiteng_1001_top(
     output  o_CPU_MCIO8_GPU_THROTTLE_N_R              /* synthesis LOC = "Y1" */,// from  CPLD_S                                        to  CPU1_MCIO_2/3 / J24_G97V22321HR                  default 1  // CPU MCIO8 GPU 节流 信号
     /* end: GPU  */
 
-    /* begin: 电源上下电相关信号 还有其他的en*/
+   /* begin: 单线协议相关信号 */
     // !!!这里后续要调整!!!
     inout  io_MCIO_PWR_EN0_R                          /* synthesis LOC  = "P1" */,// from  CPU1_MCIO_0/1 / J18_G97V22312HR              to  CPLD_S                                           default 1  // MCIO 电源使能0 信号
     // inout  io_MCIO_PWR_EN1_R                                                     ,
@@ -339,7 +340,9 @@ module Tieta_Feiteng_1001_top(
     // inout  io_MCIO_PWR_EN10_R                                                       ,
     // inout  io_MCIO_PWR_EN11_R                                                       ,
     // !!!这里后续要调整!!!
-    
+    /* end: 单线协议相关信号 */
+
+    /* begin: 电源上下电相关信号 还有其他的en*/
     input   i_PAL_PWR_SW_IN_N                         /* synthesis LOC  = "N5"*/ ,// from  CPLD_S_UART_LED_SW                            to  CPLD_S                                           default 1  // 电源开关 输入 信号
 
     // 未使用 
@@ -348,6 +351,13 @@ module Tieta_Feiteng_1001_top(
     output  o_PAL_P12V_STBY_EFUSE_EN_R                /* synthesis LOC = "B8"*/,// from  CPLD_S                                        to  CURRENT_DET1 / P12V_STBY                         default 1  // 12V 待机 EFUSE 使能 信号                                            
     input   i_P12V_STBY_SNS_ALERT                     /* synthesis LOC = "R14"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                  to  CPLD_S                                           default 1  // 12V 待机 传感器 告警 信号
     // 未使用 
+
+    // 未使用 
+    input   i_PAL_P12V_RISER1_VIN_PG                  /* synthesis LOC = "T10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 良好 信号
+    input   i_PAL_P12V_RISER1_VIN_FLTB                /* synthesis LOC = "P10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 故障 信号
+    input   i_PAL_P12V_RISER2_VIN_PG                  /* synthesis LOC = "L16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 良好 信号
+    input   i_PAL_P12V_RISER2_VIN_FLTB                /* synthesis LOC = "N16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 故障 信号
+    // 未使用
 
     // 未使用 
     input   i_PAL_GPU1_EFUSE_OC	                      /* synthesis LOC = "V3" */,// from  GPU1_PWR                                      to  CPLD_S                                           default 1  // GPU1 EFUSE 过温保护 信号
@@ -361,27 +371,23 @@ module Tieta_Feiteng_1001_top(
     // 未使用 
 
     // 未使用 
-    input   i_PAL_P12V_RISER1_VIN_PG                  /* synthesis LOC = "T10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 良好 信号
-    input   i_PAL_P12V_RISER1_VIN_FLTB                /* synthesis LOC = "P10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 故障 信号
-    input   i_PAL_P12V_RISER2_VIN_PG                  /* synthesis LOC = "L16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 良好 信号
-    input   i_PAL_P12V_RISER2_VIN_FLTB                /* synthesis LOC = "N16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 故障 信号
-
     input   i_PAL_PGD_USB_UPD1_P1V1                   /* synthesis LOC = "G15"*/,// from  PEX_USB_1/SGM61030_3V3to1v1                   to  CPLD_S                                           default 1  // USB_UPD1 P1V1 电源良好 信号
-    input   i_PAL_PGD_USB_UPD2_P1V1                   /* synthesis LOC = "B9"*/,// from  PEX_USB_UPD720201_2 / SGM61030_3V3to1v1       to  CPLD_S                                           default 1  // USB_UPD2 P1V1 电源良好 信号
+    input   i_PAL_PGD_USB_UPD2_P1V1                   /* synthesis LOC = "B9"*/ ,// from  PEX_USB_UPD720201_2 / SGM61030_3V3to1v1       to  CPLD_S                                           default 1  // USB_UPD2 P1V1 电源良好 信号
     output  o_P5V_USB2_LEFT_EAR_EN                    /* synthesis LOC = "P20"*/,// from  CPLD_S                                        to  USB2_LEFT_EAR / U14_JW7111ssoTBTRPBF             default 1  // 5V USB2 左耳 电源使能 信号
     output  o_P5V_USB2_EN                             /* synthesis LOC = "M14"*/,// from  CPLD_S                                        to  USB2_POWER / U15_JW7111SSOTBTRPBF                default 1  // 5V USB2 电源使能 信号
-    
-    input   i_P5V_USB2_OCI2B                          /* synthesis LOC = "N14"*/,// from  USB2_POWER / U15_JW7111SSOTBTRPBF                to  CPLD_S                                           default 1  // 5V USB2 OCI2B 信号
     // 未使用 
 
-    // 未使用                                   
+    // 未使用     
+    input   i_P5V_USB2_OCI2B                          /* synthesis LOC = "N14"*/,// from  USB2_POWER / U15_JW7111SSOTBTRPBF                to  CPLD_S                                           default 1  // 5V USB2 OCI2B 信号                              
     input   i_PAL_RISER4_PWR_PGD                      /* synthesis LOC = "D6" */,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // Riser4 电源良好 信号                                        
     // 未使用
 
-    output  PAL_P1V1_STBY_EN_R                        /* synthesis LOC = "C6"*/,// from  CPLD_S                                        to  P1V1_STBY_POWER / U42_SGM61030_3V3to1v1          default 1  // P1V1 待机 电源使能 信号
-
-    output  o_PAL_M2_PWR_EN_R                         /* synthesis LOC = "M20"*/,// from  CPLD_S                                        to  PAL_M2_PWR_EN / U56                             default 1  // M.2 电源使能 信号
-    output  o_PAL_P5V_BD_OC                           /* synthesis LOC = "B1"*/ ,// from  CPLD_S                                        to  DB_MODULE / U39_JW7111SSOTBTRPBF                 default 1  // P5V_BD_OC 信号    
+    output  o_PAL_P1V1_STBY_EN_R                      /* synthesis LOC = "C6"*/,// from  CPLD_S                                        to  P1V1_STBY_POWER / U42_SGM61030_3V3to1v1          default 1  // P1V1 待机 电源使能 信号
+    output  o_PAL_M2_PWR_EN_R                         /* synthesis LOC = "M20"*/,// from  CPLD_S                                         to  PAL_M2_PWR_EN / U56                             default 1  // M.2 电源使能 信号
+    
+    // 未使用
+    input   i_PAL_P5V_BD_OC                           /* synthesis LOC = "B1"*/ ,// from  CPLD_S                                        to  DB_MODULE / U39_JW7111SSOTBTRPBF                 default 1  // P5V_BD_OC 信号    
+    // 未使用
 
     output  o_PAL_UPD1_P1V1_EN_R                      /* synthesis LOC = "J19"*/ ,// from  CPLD_S                                        to  PEX_USB_1 / U40_XUSB2104LCGR                     default 1  // UPD1 P1V1 电源使能 信号
     output  o_PAL_UPD1_P3V3_EN_R                      /* synthesis LOC = "H20"*/ ,// from  CPLD_S                                        to  PEX_USB__1 / U40_XUSB2104LCGR                   default 1  // UPD1 P3V3 电源使能 信号
@@ -428,7 +434,7 @@ module Tieta_Feiteng_1001_top(
     output  o_PAL_LED_UID_R                           /* synthesis LOC = "A20"*/,// from  CPLD_S                                        to  LED_UID / J22                                   default 1  // PAL LED UID 信号
     
     // 未使用, 后续添加
-    output  o_PAL_RJ45_2_1000M_LED                    /* synthesis LOC = "F17"*/,// from  CPLD_S                                       to  U20_WX1860A2                                     default 1  // RJ45_2 网口 1000M 指示灯 信号
+    output  o_PAL_RJ45_2_1000M_LED                    /* synthesis LOC = "T14"*/,// from  CPLD_S                                       to  U20_WX1860A2                                     default 1  // RJ45_2 网口 1000M 指示灯 信号
     output  o_PAL_RJ45_2_100M_LED                     /* synthesis LOC = "R14"*/,// from  CPLD_S                                       to  U20_WX1860A2                                     default 1  // RJ45_1 网口 100M 指示灯 信号
     output  o_PAL_RJ45_2_ACT_LED                      /* synthesis LOC = "P14"*/,// from  CPLD_S                                       to  J32_AC7412_3557_004_H0                           default 1  // RJ45_2 网口 活动 指示灯 信号                                                    
     output  o_PAL_RJ45_1_1000M_LED                    /* synthesis LOC = "P13"*/,// from  CPLD_S                                       to  J2_AC7412_3557_004_H0                            default 1  // RJ45_1 网口 1000M 指示灯 信号
@@ -572,7 +578,11 @@ assign	                        pgd_aux_bmc = 1'b1                               
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 wire                            reached_sm_wait_powerok                             ;
 wire                            db_i_pal_ocp2_pwrgd                                 ;
-wire                            power_supply_on                                     ; 
+
+wire                            power_supply_on                                     ; // 主CPLD传入, 上电控制信息
+wire                            p5v_en_r                                            ; // 主CPLD传入, 上电控制信息
+wire                            p3v3_en_r                                           ; // 主CPLD传入, 上电控制信息
+wire                            p1v1_en_r                                           ; // 主CPLD传入, 上电控制信息
 
 
 //For PVT
@@ -1245,24 +1255,24 @@ always@(posedge clk_50m or negedge pon_reset_n)
 end
 
 
-//M CPLD ---> S CPLD
-s2p_slave #(.NBIT(512)) inst_mb_to_cmu_s2p(
-	.clk(clk_50m                  ),
-	.rst(~pon_reset_n             ),
-	.si(i_CPLD_M_S_SGPIO_MOSI	      ),//SGPIO_MOSI Serial Signal input
-	.po(mcpld_to_scpld_s2p_data),//Parallel Signal output
-	.sld_n(o_CPLD_M_S_SGPIO_LD_N	  ),//SGPIO_LOAD
-	.sclk(i_CPLD_M_S_SGPIO_CLK		  ) //SGPIO_CLK
+// M CPLD ---> S CPLD
+s2p_slave #(.NBIT(512)) inst_mcpld_to_scpld_s2p(
+	.clk    (clk_50m                      ),
+	.rst    (~pon_reset_n                 ),
+	.si     (i_CPLD_M_S_SGPIO_MOSI	      ),// in  SGPIO_MOSI Serial Signal input
+	.po     (mcpld_to_scpld_s2p_data      ),// out Parallel Signal output
+	.sld_n  (i_CPLD_M_S_SGPIO_LD_N	      ),// in  SGPIO_LOAD
+	.sclk   (i_CPLD_M_S_SGPIO_CLK		  ) // in  SGPIO_CLK
 ); 
 
-//S CPLD ---> M CPLD
-p2s_slave #(.NBIT(512)) inst_cmu_to_mb_p2s(
-	.clk(clk_50m					),
-	.rst(~pon_reset_n				),
-	.pi(scpld_to_mcpld_p2s_data	),//Parallel Signal input
-	.so(CPLD_M_S_SGPIO_MISO_R	    ),//SGPIO_MISO Serial Signal output
-	.sld_n(CPLD_M_S_SGPIO_LD_N   	),//SGPIO_LOAD
-	.sclk(CPLD_M_S_SGPIO_CLK	    ) //SGPIO_CLK
+// S CPLD ---> M CPLD
+p2s_slave #(.NBIT(512)) inst_scpld_to_mcpld_p2s(
+	.clk    (clk_50m					),
+	.rst    (~pon_reset_n				),
+	.pi     (scpld_to_mcpld_p2s_data	),// in Parallel Signal input
+	.so     (o_CPLD_M_S_SGPIO_MISO_R	),// out SGPIO_MISO Serial Signal output
+	.sld_n  (i_CPLD_M_S_SGPIO_LD_N   	),// in SGPIO_LOAD
+	.sclk   (i_CPLD_M_S_SGPIO_CLK	    ) // in SGPIO_CLK
 );
 
 //S CPLD ---> M CPLD
@@ -1273,8 +1283,8 @@ assign scpld_to_mcpld_p2s_data[508]     = 1'b0                           ;
 assign scpld_to_mcpld_p2s_data[507:433] = 75'b0                          ;
 
 // 新增信号
-assign scpld_to_mcpld_p2s_data[432]     = i_CHASSIS_ID0_N               ;
-assign scpld_to_mcpld_p2s_data[431]     = i_CHASSIS_ID1_N               ;
+assign scpld_to_mcpld_p2s_data[432]     = i_CHASSIS_ID0_N                ;
+assign scpld_to_mcpld_p2s_data[431]     = i_CHASSIS_ID1_N                ;
 // 新增信号
 
 assign scpld_to_mcpld_p2s_data[430]     = bmc_ready_flag                 ;
@@ -1448,6 +1458,11 @@ assign scpld_to_mcpld_p2s_data[1]       = 1'b0                           ;
 assign scpld_to_mcpld_p2s_data[0]       = 1'b1                           ;
 
 //M CPLD ---> S CPLD
+
+assign p5v_en_r                       = mcpld_to_scpld_data_filter[348]     ; // 主CPLD 上电控制信号
+assign p3v3_en_r                      = mcpld_to_scpld_data_filter[347]     ; // 主CPLD 上电控制信号
+assign p1v1_en_r                      = mcpld_to_scpld_data_filter[346]     ; // 主CPLD 上电控制信号
+
 assign test_bat_en                    = mcpld_to_scpld_data_filter[345]     ; // 主CPLD addr 0x0008[7] 
 assign bmc_extrst_uid                 = mcpld_to_scpld_data_filter[344]     ; // 从CPLD UID_FUNCTIN 模块给出
 // assign pal_m2_0_sel_lv33_r            = mcpld_to_scpld_data_filter[343]    ;
@@ -1508,7 +1523,7 @@ assign rst_i2c1_mux_n                 = mcpld_to_scpld_data_filter[16] ; // 主C
 assign sys_hlth_red_blink_n           = mcpld_to_scpld_data_filter[15] ; // 从CPLD addr 0x000B[1]
 assign sys_hlth_grn_blink_n           = mcpld_to_scpld_data_filter[14] ; // 从CPLD addr 0x000B[0]
 assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主CPLD 控制UID点灯
-assign power_supply_on                = mcpld_to_scpld_data_filter[12] ;
+assign power_supply_on                = mcpld_to_scpld_data_filter[12] ; // 主CPLD power_supply电/p12v_efuse电
 assign ocp_main_en                    = mcpld_to_scpld_data_filter[11] ;
 assign ocp_aux_en                     = mcpld_to_scpld_data_filter[10] ;
 assign pex_reset_n                    = mcpld_to_scpld_data_filter[9]  ;
@@ -2088,11 +2103,11 @@ assign PAL_DB2000_1_OE10_N_R = 1'b0;
 //assign PAL_DB2000_1_OE9_N_R = 1'b0;
 //assign PAL_DB2000_2_OE9_N_R = 1'b0;
 
-
-assign o_PAL_M2_PWR_EN_R          = 1'b1; // ???写死???
-assign o_PAL_P5V_BD_OC            = 1'b1; // ???写死???
-assign o_P5V_USB2_LEFT_EAR_EN     = 1'b1; // ???写死???
-assign o_PAL_P12V_STBY_EFUSE_EN_R = 1'b1; // ???写死???
+assign o_PAL_P1V1_STBY_EN_R       = p1v1_en_r        ;
+assign o_PAL_M2_PWR_EN_R          = p3v3_en_r        ;
+assign o_P5V_USB2_LEFT_EAR_EN     = p5v_en_r         ; 
+assign o_P5V_USB2_EN              = p5v_en_r         ;
+assign o_PAL_P12V_STBY_EFUSE_EN_R = power_supply_on  ; 
 
 
 //assign PAL_CK440_OE4_N_R = 1'b0;
@@ -2461,7 +2476,7 @@ UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(
     .t128ms_tick     (t128ms_tick          ),//input
 	.par_data_in     (w_mb_to_bp_mcio0_data),//input 
 	.par_data_out    (w_bp_to_mb_mcio0_data),//output
-	.ser_data        (io_MCIO_PWR_EN0_R       ),//inout
+	.ser_data        (io_MCIO_PWR_EN0_R    ),//inout
     .riser_en_out    (w_pal_mcio0_pwr_en   ),//input
 	.mcio_cable_id0  (cpu0_mcio0_cable_id0 ),//input
 	.mcio_cable_id1  (cpu0_mcio0_cable_id1 ),//input

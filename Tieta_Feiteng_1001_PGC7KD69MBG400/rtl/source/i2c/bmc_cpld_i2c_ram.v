@@ -97,6 +97,43 @@ input         intruder,                 //addr 0x001D [5]
 input         intruder_cable_prsnt,     //addr 0x001D [4]
 input         dsd_prsnt,                //addr 0x001D [3]
 
+input         i_fan0_prsnt_n  ,
+input         i_fan0_p12v_gok ,
+input         i_fan1_prsnt_n  ,
+input         i_fan1_p12v_gok ,
+input         i_fan2_prsnt_n  ,
+input         i_fan2_p12v_gok ,
+input         i_fan3_prsnt_n  ,
+input         i_fan3_p12v_gok ,
+
+output        o_fan3_p12v_en  ,
+output        o_fan2_p12v_en  ,
+output        o_fan1_p12v_en  ,
+output        o_fan0_p12v_en  ,
+
+output  [7:0] o_pwm_bmc_fan0  ,
+output  [7:0] o_pwm_bmc_fan1  ,
+output  [7:0] o_pwm_bmc_fan2  ,
+output  [7:0] o_pwm_bmc_fan3  ,
+
+input   [7:0] i_fan0_type     ,
+input   [7:0] i_fan1_type     ,
+input   [7:0] i_fan2_type     ,
+input   [7:0] i_fan3_type     ,
+
+output  [7:0] o_bmc_ctr_fan_led_status,
+
+input   [7:0]  i_fan0_tach0_real_h,
+input   [7:0]  i_fan0_tach0_real_l,
+input   [7:0]  i_fan1_tach1_real_h,
+input   [7:0]  i_fan1_tach1_real_l,
+input   [7:0]  i_fan2_tach2_real_h,
+input   [7:0]  i_fan2_tach2_real_l,
+input   [7:0]  i_fan3_tach3_real_h,
+input   [7:0]  i_fan3_tach3_real_l,
+
+
+/*
 input    [7:0]fan_tach1_byte2,          //addr 0x0020 [7:0]
 input    [7:0]fan_tach1_byte1,          //addr 0x0021 [7:0]
 input    [7:0]fan_tach2_byte2,          //addr 0x0022 [7:0]
@@ -138,6 +175,7 @@ output  [7:0]  duty_4,                  //addr 0x0044 [7:0]
 output  [7:0]  duty_5,                  //addr 0x0045 [7:0]           
 output  [7:0]  duty_6,                  //addr 0x0046 [7:0]           
 output  [7:0]  duty_7,                  //addr 0x0047 [7:0]  
+*/
 
 input   [1:0]  ps_prsnt,                //addr 0x0050 [1:0]
 input   [1:0]  psu_smb_alert_n,         //addr 0x0052 [1:0]
@@ -540,14 +578,14 @@ assign bmc_i2c_rst3         = r_reg_001B[7:0];
 
 assign tpm_rst              = r_reg_001D[6];
 
-assign duty_0               = r_reg_0040[7:0];
-assign duty_1               = r_reg_0041[7:0];
-assign duty_2               = r_reg_0042[7:0];
-assign duty_3               = r_reg_0043[7:0];
-assign duty_4               = r_reg_0044[7:0];
-assign duty_5               = r_reg_0045[7:0];
-assign duty_6               = r_reg_0046[7:0];
-assign duty_7               = r_reg_0047[7:0];
+// assign duty_0               = r_reg_0040[7:0];
+// assign duty_1               = r_reg_0041[7:0];
+// assign duty_2               = r_reg_0042[7:0];
+// assign duty_3               = r_reg_0043[7:0];
+// assign duty_4               = r_reg_0044[7:0];
+// assign duty_5               = r_reg_0045[7:0];
+// assign duty_6               = r_reg_0046[7:0];
+// assign duty_7               = r_reg_0047[7:0];
 
 assign i2c_ram_1050         = r_reg_1050[7:0];
 assign i2c_ram_1051         = r_reg_1051[7:0];
@@ -576,38 +614,38 @@ assign w_ram_0013 = {bios_read_flag,bmc_read_flag,6'b0};
 assign w_ram_0015 = {3'b0,m2_slot2_type,m2_slot1_type,m2_slot2_prsnt,m2_slot1_prsnt,m2_card_prsnt};
 assign w_ram_0016 = {bmcctl_uart_sw,6'b0};
 assign w_ram_001D = {tpm_rst,tpm_prsnt,intruder,intruder_cable_prsnt,dsd_prsnt,3'b0};
-assign w_ram_0020 = fan_tach1_byte2;
-assign w_ram_0021 = fan_tach1_byte1;
-assign w_ram_0022 = fan_tach2_byte2;
-assign w_ram_0023 = fan_tach2_byte1;
-assign w_ram_0024 = fan_tach3_byte2;
-assign w_ram_0025 = fan_tach3_byte1;
-assign w_ram_0026 = fan_tach4_byte2;
-assign w_ram_0027 = fan_tach4_byte1;
-assign w_ram_0028 = fan_tach5_byte2;
-assign w_ram_0029 = fan_tach5_byte1;
-assign w_ram_002A = fan_tach6_byte2;
-assign w_ram_002B = fan_tach6_byte1;
-assign w_ram_002C = fan_tach7_byte2;
-assign w_ram_002D = fan_tach7_byte1;
-assign w_ram_002E = fan_tach8_byte2;
-assign w_ram_002F = fan_tach8_byte1;
-assign w_ram_0030 = fan_tach9_byte2;
-assign w_ram_0031 = fan_tach9_byte1;
-assign w_ram_0032 = fan_tach10_byte2;
-assign w_ram_0033 = fan_tach10_byte1;
-assign w_ram_0034 = fan_tach11_byte2;
-assign w_ram_0035 = fan_tach11_byte1;
-assign w_ram_0036 = fan_tach12_byte2;
-assign w_ram_0037 = fan_tach12_byte1;
-assign w_ram_0038 = fan_tach13_byte2;
-assign w_ram_0039 = fan_tach13_byte1;
-assign w_ram_003A = fan_tach14_byte2;
-assign w_ram_003B = fan_tach14_byte1;
-assign w_ram_003C = fan_tach15_byte2;
-assign w_ram_003D = fan_tach15_byte1;
-assign w_ram_003E = fan_tach16_byte2;
-assign w_ram_003F = fan_tach16_byte1;
+// assign w_ram_0020 = fan_tach1_byte2;
+// assign w_ram_0021 = fan_tach1_byte1;
+// assign w_ram_0022 = fan_tach2_byte2;
+// assign w_ram_0023 = fan_tach2_byte1;
+// assign w_ram_0024 = fan_tach3_byte2;
+// assign w_ram_0025 = fan_tach3_byte1;
+// assign w_ram_0026 = fan_tach4_byte2;
+// assign w_ram_0027 = fan_tach4_byte1;
+// assign w_ram_0028 = fan_tach5_byte2;
+// assign w_ram_0029 = fan_tach5_byte1;
+// assign w_ram_002A = fan_tach6_byte2;
+// assign w_ram_002B = fan_tach6_byte1;
+// assign w_ram_002C = fan_tach7_byte2;
+// assign w_ram_002D = fan_tach7_byte1;
+// assign w_ram_002E = fan_tach8_byte2;
+// assign w_ram_002F = fan_tach8_byte1;
+// assign w_ram_0030 = fan_tach9_byte2;
+// assign w_ram_0031 = fan_tach9_byte1;
+// assign w_ram_0032 = fan_tach10_byte2;
+// assign w_ram_0033 = fan_tach10_byte1;
+// assign w_ram_0034 = fan_tach11_byte2;
+// assign w_ram_0035 = fan_tach11_byte1;
+// assign w_ram_0036 = fan_tach12_byte2;
+// assign w_ram_0037 = fan_tach12_byte1;
+// assign w_ram_0038 = fan_tach13_byte2;
+// assign w_ram_0039 = fan_tach13_byte1;
+// assign w_ram_003A = fan_tach14_byte2;
+// assign w_ram_003B = fan_tach14_byte1;
+// assign w_ram_003C = fan_tach15_byte2;
+// assign w_ram_003D = fan_tach15_byte1;
+// assign w_ram_003E = fan_tach16_byte2;
+// assign w_ram_003F = fan_tach16_byte1;
 assign w_ram_0050 = {6'b0,ps_prsnt[1:0]};
 assign w_ram_0052 = {6'b0,psu_smb_alert_n[1:0]};
 assign w_ram_0053 = {6'b0,ps_fail[1:0]};

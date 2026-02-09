@@ -1,0 +1,12 @@
+[
+    {
+        "phase": "route",
+        "table_title": "Route",
+        "title": ["Window", "Direction", "Type", "Level"],
+        "name": ["Window", "Direction", "Type", "Level"],
+        "version": 1,
+        "top_module_name": "Tieta_Feiteng_1001_top",
+        "arch": {"family": "Compact", "device": "PGC7KD", "package": "MBG400", "speedgrade": "-6"},
+        "svn_version": "187561"
+    }
+]

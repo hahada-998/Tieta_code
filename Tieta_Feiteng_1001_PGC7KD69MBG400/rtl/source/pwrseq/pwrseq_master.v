@@ -8,11 +8,12 @@
 6. 错误处理状态: 依次关闭各组电源, 直至全部关闭后, 若无任何电源故障信号, 则重新开始上电序列
 7. 监控到电源故障, 输出Fault信号, 组寄存器写入日志
 ===================================================================================================*/
-`include "pwrseq_define.vh"
+`include "pwrseq_define.v"
 
 module pwrseq_master #(
     parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         ,
     parameter WDT_NBITS                             = 10                        ,
+    parameter P3V3_VCC_WATCHDOG_TIOMEOUT_VAL        = 2                         ,
     parameter DSW_PWROK_TIMEOUT_VAL                 = 10                        ,
     parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000                      ,
     parameter PON_WATCHDOG_TIMEOUT_VAL              = 112                       ,
@@ -49,6 +50,7 @@ module pwrseq_master #(
     input            pch_pwrbtn_s,            // SB power button input (same signal driven to SB PWRBTN) delay 1s
     input            pch_thermtrip_n,         // SB bound thermtrip signal (same signal driven to SB THERMTRIP)
     input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)
+    input            pch_sys_reset_n,
     output reg       force_pwrbtn_n,          // forces SB to switch to S5 after power shutdown due to fault
 
     // CPU 重启和关机信号（实际未使用）
@@ -68,7 +70,7 @@ module pwrseq_master #(
     input            keep_alive_on_fault,   
 
     // 点灯观察使用
-    output           pgd_raw,  
+    output reg       pgd_raw,  
 
     // S5 上电设备控制信号（不使用）
     input            s5dev_pwren_request,     // S5 powered device enable request
@@ -187,12 +189,12 @@ wire                                    rt_critical_fail_check      ;
 wire                                    rt_normal_pwr_down          ;
 
 // SM states
-assign st_off_standby        = (power_seq_sm == SM_OFF_STANDBY)         ; // S5待机状态
-assign st_ps_on              = (power_seq_sm == SM_PS_ON)               ; // PSU上电状态
-assign st_steady_pwrok       = (power_seq_sm == SM_STEADY_PWROK)        ; // 稳定PWROK状态
-assign st_critical_fail      = (power_seq_sm == SM_CRITICAL_FAIL)       ; // 严重故障处理状态
-assign st_halt_power_cycle   = (power_seq_sm == SM_HALT_POWER_CYCLE)    ; // 停止电源循环状态
-assign st_disable_main_efuse = (power_seq_sm == SM_DISABLE_MAIN_EFUSE)  ; // 禁用主E-fuse状态
+assign st_off_standby        = (power_seq_sm == `SM_OFF_STANDBY)         ; // S5待机状态
+assign st_ps_on              = (power_seq_sm == `SM_PS_ON)               ; // PSU上电状态
+assign st_steady_pwrok       = (power_seq_sm == `SM_STEADY_PWROK)        ; // 稳定PWROK状态
+assign st_critical_fail      = (power_seq_sm == `SM_CRITICAL_FAIL)       ; // 严重故障处理状态
+assign st_halt_power_cycle   = (power_seq_sm == `SM_HALT_POWER_CYCLE)    ; // 停止电源循环状态
+assign st_disable_main_efuse = (power_seq_sm == `SM_DISABLE_MAIN_EFUSE)  ; // 禁用主E-fuse状态
 
 
 //------------------------------------------------------------------------------
@@ -344,7 +346,7 @@ always @(posedge clk or posedge reset) begin
         r_pwrbtn_1s_cnt <= 3'd0;
     else begin
         // 每512ms采样一次按键状态
-        if(t512ms_tick) begin
+        if(t256ms) begin
             if ((~pch_pwrbtn_n) && st_steady_pwrok) begin
                 // 按下且处于运行稳定态，计数递增直到 4
                 if (r_pwrbtn_1s_cnt < 3'd7)
@@ -362,7 +364,7 @@ end
 always @(posedge clk or posedge reset) begin
     if (reset) 
         r_Pwrbtn_long   <= 1'b0;
-    else if(t512ms_tick && (~pch_pwrbtn_n) && st_steady_pwrok && (r_pwrbtn_1s_cnt == 3'd7))
+    else if(t256ms && (~pch_pwrbtn_n) && st_steady_pwrok && (r_pwrbtn_1s_cnt == 3'd7))
         // 每512ms采样一次按键状态
         r_Pwrbtn_long <= 1'b1;
     else if(assert_button_clr)
@@ -370,7 +372,7 @@ always @(posedge clk or posedge reset) begin
         r_Pwrbtn_long <= 1'b0;
 end
 
-always @(posedge clk or posedge reset) begin
+always @(posedge clk) begin
     r_Pwrbtn_long_flag <= ~pch_pwrbtn_n & r_Pwrbtn_long;
 end 
 
