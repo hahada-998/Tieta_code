@@ -1910,6 +1910,7 @@ assign w_ocp1_x16_prsnt   = ((w_pal_ocp1_prsnt_n == 4'b0100)|(w_pal_ocp1_prsnt_n
 //------------------------------------------------------------------------------
 // I2C Update Start
 //------------------------------------------------------------------------------
+/*
 wire wb_clk;
 defparam inst_osch.NOM_FREQ = "4.29";
 OSCH inst_osch(
@@ -1932,7 +1933,7 @@ I2C_UPDATE inst_i2c_update_flash_config(
 .i2c1_sda	(BMC_I2C3_PAL_S_SDA_R   )
 
 ); 
-
+*/
 
 //------------------------------------------------------------------------------
 // LED BOARD CONTROL
