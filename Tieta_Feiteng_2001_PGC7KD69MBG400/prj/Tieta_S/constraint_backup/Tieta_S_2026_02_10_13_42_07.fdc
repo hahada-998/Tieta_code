@@ -1,0 +1,18 @@
+create_clock -name {i_CLK_C42_IN_25M} [get_ports {i_CLK_C42_IN_25M}] -period {40} -waveform {0.000 20.000}
+create_generated_clock -name {clk_50m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout0}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {2} -duty_cycle {50.000}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_LOC} {V8}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:io_CPU0_D0_I2C1_PE_STRAP_SDA} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:io_CPU0_D0_I2C1_PE_STRAP_SDA} {PAP_IO_LOC} {A3}
+define_attribute {p:io_CPU0_D0_I2C1_PE_STRAP_SDA} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:io_CPU0_D0_I2C1_PE_STRAP_SDA} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:io_CPU1_D0_I2C1_PE_STRAP_SDA} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:io_CPU1_D0_I2C1_PE_STRAP_SDA} {PAP_IO_LOC} {V9}
+define_attribute {p:io_CPU1_D0_I2C1_PE_STRAP_SDA} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:io_CPU1_D0_I2C1_PE_STRAP_SDA} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:io_MCIO_PWR_EN0_R} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:io_MCIO_PWR_EN0_R} {PAP_IO_LOC} {P1}
+define_attribute {p:io_MCIO_PWR_EN0_R} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:io_MCIO_PWR_EN0_R} {PAP_IO_STANDARD} {LVCMOS33}

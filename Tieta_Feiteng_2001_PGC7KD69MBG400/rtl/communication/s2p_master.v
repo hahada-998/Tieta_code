@@ -1,19 +1,11 @@
-//======================================================================================
-//    _     _    _______    _______
-//   | |   | |  |_____  |  |  _____|
-//   | |___| |   _____| |  | |
-//   |  ___  |  |_____  |  | |
-//   | |   | |   _____| |  | |_____
-//   |_|   |_|  |_______|  |_______|
-//
-// Copyright(c) 2007, H3C Technology Inc, All right reserved
-//
-// Filename    :
-// Project     : 2014 V500R002
-// Author      :
-// Date        :
-// Email       :
-// Company     : H3C Technology .Inc
+//=================================================================================================--
+// Copyright(c) 2021, CLOUDNINEINFO.CO, Ltd, All right reserved
+// Filename   : AIS03MB03.v
+// Project    : CLOUDNINEINFO common code
+// Author     : LIZHONGLEI
+// Date       : 2020-09-24
+// Email      : lizhonglei@h3c.com
+// Company    : CLOUDNINEINFO.CO., Ltd
 //
 //--------------------------------------------------------------------------------------
 //Description :
@@ -26,7 +18,8 @@
 
 module s2p_master #(parameter NBIT = 64) (
   input                 clk  ,
-  input                 rst  ,
+  input            warm_rst  ,
+  input            cold_rst  ,
   input                 tick ,
   input                 si   ,
   output reg [NBIT-1:0] po   ,
@@ -60,9 +53,9 @@ localparam WCNT = clogb2(NBIT*2);
   reg [NBIT-1:0] po_r     ;
   reg [WCNT-1:0] cnt;
 
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge warm_rst)
   begin
-    if (rst)
+    if (warm_rst)
       tick_r <= 3'b00;
     else
       tick_r <= {tick_r[1:0],tick};
@@ -70,9 +63,9 @@ localparam WCNT = clogb2(NBIT*2);
 
   assign tick_pp = (tick_r[2:1] == 2'b01) ? 1'b1 : 1'b0;
 
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge warm_rst)
   begin
-    if (rst) begin
+    if (warm_rst) begin
       si_r   <= 2'b00;
       sclk_r <= 1'b0;
     end
@@ -84,17 +77,17 @@ localparam WCNT = clogb2(NBIT*2);
 
   assign sclk_pp = ({sclk_r, sclk}==2'b01) ? 1'b1 : 1'b0;
 
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge warm_rst)
   begin
-      if (rst)
+      if (warm_rst)
           sclk_pp_r <= 1'b0;
       else
           sclk_pp_r <= sclk_pp;
   end
 
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge warm_rst)
   begin
-      if (rst)
+      if (warm_rst)
         cnt <= {WCNT{1'b0}};
       else if (tick_pp)begin
         if (cnt==NBIT*2-1)
@@ -112,17 +105,17 @@ localparam WCNT = clogb2(NBIT*2);
   assign sclk  = cnt[0];
   assign sld_n = ((cnt == {WCNT{1'b0}}) || (cnt == {{(WCNT-1){1'b0}},1'b1}))? 1'b0 : 1'b1;
 **/
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge warm_rst)
   begin
-    if (rst)
+    if (warm_rst)
       po_r <= {NBIT{1'b0}};
     else if (sclk_pp)
       po_r[(cnt>>1)] <= si_r[1];
   end
 
-  always@(posedge clk or posedge rst)
+  always@(posedge clk or posedge cold_rst)
   begin
-    if(rst)
+    if(cold_rst)
       po <= {NBIT{1'b0}};
     else if (sclk_pp_r && (cnt==NBIT*2-1))
       po <= po_r;

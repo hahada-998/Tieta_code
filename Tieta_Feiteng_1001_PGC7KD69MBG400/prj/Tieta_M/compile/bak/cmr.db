@@ -291,7 +291,7 @@
         <row>
             <data>0h:0m:9s</data>
             <data>0h:0m:9s</data>
-            <data>0h:0m:18s</data>
+            <data>0h:0m:19s</data>
             <data>179</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
@@ -1241,6 +1241,9 @@
         </row>
         <row>
             <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1887)] i_PAL_CPU1_VR_PMALT_UPD is declared implicitly.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2178)] i_CPU1_D0_GPIO_PORT4_R is declared implicitly.</data>
         </row>
         <row>
             <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2976)] stby_failure_detected is declared implicitly.</data>
@@ -5716,71 +5719,8 @@
             <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
         </row>
         <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
             <data message="4">Module instance {Tieta_Feiteng_1001_top} parameter value:
     PEAVEY_SUPPORT = 1'h1 | 1'd1 | 1'b1</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
-        </row>
-        <row>
-            <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
         </row>
         <row>
             <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
@@ -6756,10 +6696,10 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1512)] Width mismatch between port 'din' (15 bits) and port connection (20 bits) in module instance 'PGM_DEBOUNCE'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1512)] Width mismatch between port 'din' (15 bits) and port connection (18 bits) in module instance 'PGM_DEBOUNCE'.</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1536)] Width mismatch between port 'dout' (15 bits) and port connection (20 bits) in module instance 'PGM_DEBOUNCE'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1536)] Width mismatch between port 'dout' (15 bits) and port connection (18 bits) in module instance 'PGM_DEBOUNCE'.</data>
         </row>
         <row>
             <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1575)] Elaborating instance db_inst_cpu_rail.</data>
@@ -8734,9 +8674,6 @@
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_PAL_RISER2_SWITCH_EN in module Tieta_Feiteng_1001_top.</data>
         </row>
         <row>
-            <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_FAN_P12V_DISCHARGE_R in module Tieta_Feiteng_1001_top.</data>
-        </row>
-        <row>
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_PAL_DPLL_GPIO0_R in module Tieta_Feiteng_1001_top.</data>
         </row>
         <row>
@@ -8747,9 +8684,6 @@
         </row>
         <row>
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_PAL_DPLL_RESET_R in module Tieta_Feiteng_1001_top.</data>
-        </row>
-        <row>
-            <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_PAL_BMC_PREST_N_R in module Tieta_Feiteng_1001_top.</data>
         </row>
         <row>
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4)] Assign a tri-state buf to drive the floating output port o_PAL_WX1860_NRST_R in module Tieta_Feiteng_1001_top.</data>
@@ -8906,6 +8840,9 @@
         </row>
         <row>
             <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1887)] Net i_PAL_CPU1_VR_PMALT_UPD in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2178)] Net i_CPU1_D0_GPIO_PORT4_R in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
             <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3230)] The net 'w_BMC_pwe_D_fan[0]' in Tieta_Feiteng_1001_top is un-driven.</data>

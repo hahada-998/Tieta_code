@@ -1,0 +1,1 @@
+create_clock -name {i_CLK_C42_IN_25M} [get_ports {i_CLK_C42_IN_25M}] -period {40} -waveform {0.000 20.000}

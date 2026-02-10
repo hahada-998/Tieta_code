@@ -1,7 +1,7 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v
-Size: 319606bytes
-Last modified time: 2026/02/09 21:30:52
+Size: 319656bytes
+Last modified time: 2026/02/10 19:38:29
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
 Size: 1528bytes
 Last modified time: 2026/02/09 19:29:17
@@ -118,6 +118,11 @@ Last modified time: 2025/12/30 10:07:31
 
 Constraints:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc
-Size: 14812bytes
-Last modified time: 2026/02/09 21:32:56
+Size: 99138bytes
+Last modified time: 2026/02/10 19:41:21
+
+Physical Constraint Editor (Post-Map):
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/device_map/Tieta_Feiteng_1001_top.pcf
+Size: 25224bytes
+Last modified time: 2026/02/10 19:39:55
 

@@ -1,0 +1,1889 @@
+The following ports are set to default value, please confirm:
+Port 'p:io_BMC_I2C3_PAL_S_SDA1_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_CPU0_D0_I2C1_PE_STRAP_SDA':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_CPU1_D0_I2C1_PE_STRAP_SDA':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN0_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN2_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN3_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN5_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN7_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:io_MCIO_PWR_EN8_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPLD_M_S_EXCHANGE_S2':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPLD_M_S_SGPIO1_MISO_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPLD_M_S_SGPIO_MISO_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU0_D0_UART1_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU0_D0_UART_SIN':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU0_D1_UART1_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU0_RISER1_9548_RST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU1_D0_UART1_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU1_D0_UART_SIN':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU1_D1_UART1_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU1_RISER2_9548_RST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO0_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO2_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO3_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO5_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO7_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_CPU_MCIO8_GPU_THROTTLE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_DB9_TOD_UART_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_DBG_CPU0_UART1_TX_CONN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_DB_UART_TX_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_JACK_CPU0_D0_UART_SOUT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_JACK_CPU0_UART1_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_JACK_CPU1_D0_UART_SOUT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_JACK_CPU1_UART1_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LEAR_CPU0_UART1_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED1_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED2_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED3_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED4_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED5_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED6_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED7_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_LED8_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_MCIO11_RISER1_PERST2_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N0_100M':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N0_1000M':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N0_ACT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N1_100M':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N1_1000M':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_N1_ACT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_P5V_USB2_EN':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_BMC_SS_CLK':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_BMC_SS_DATA_OUT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_BMC_SS_LOAD_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_BMC_UART1_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_BMC_UART4_RX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_CK440_OE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_CPU0_I3C_SPD_SEL':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_CPU1_I3C_SPD_SEL':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_DB800_1_OE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_DB800_1_PD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_DB2000_1_OE_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_DB2000_1_PD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_GPU1_EFUSE_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_GPU2_EFUSE_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_GPU3_EFUSE_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_GPU4_EFUSE_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_LED_HEL_GR_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_LED_HEL_RED_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_LED_PWRBTN_AMB_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_LED_PWRBTN_GR_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_LED_UID_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_M2_0_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_M2_1_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_M2_PWR_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_OCP_NCSI_CLK_50M_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_OCP_NCSI_SW_EN_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_P1V1_STBY_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_P12V_STBY_EFUSE_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER1_SLOT_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER1_SS_CLK':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER1_SS_LD_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER2_SLOT_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER2_SS_CLK':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RISER2_SS_LD_N':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_1_100M_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_1_1000M_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_1_ACT_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_2_100M_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_2_1000M_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RJ45_2_ACT_LED':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_RST_TCM_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_SPI_SELECT_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_SPI_SWITCH_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_TEST_BAT_EN':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_THROTTLE_RISER1_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_THROTTLE_RISER2_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UART4_OCP_DEBUG_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD1_P1V1_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD1_P3V3_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD1_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD1_PONRST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD2_P1V1_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD2_P3V3_EN_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD2_PERST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_UPD2_PONRST_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_WX1860_NCSI_CLK_50M_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_PAL_WX1860_NCSI_SW_EN_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RISER1_SELECT':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RISER1_SWITCH_EN':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RISER_AUX_TOD_UART1_TXD':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RISER_AUX_TOD_UART2_TXD':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C1_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C2_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C3_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C4_1_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C4_2_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C5_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C12_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C13_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RST_I2C_BMC_9548_MUX_N_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_Riser1_TOD_UART_TXD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_Riser2_TOD_UART_TXD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_UART0_CPU_LOG_TX':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_UART2_PAL_OCP_TX_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_USB2_SW_SEL_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:i_BMC_I2C3_PAL_S_SCL1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BMC_I2C3_PAL_S_SCL_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID0':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID2':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID3':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID4':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID5':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID6':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BOARD_ID7':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CABLE_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CHASSIS_ID0_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CHASSIS_ID1_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CLK_C42_IN_25M':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_EXCHANGE_S1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_EXCHANGE_S3':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_EXCHANGE_S4':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_EXCHANGE_S5':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO1_CLK':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO1_LD_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO1_MOSI':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO_CLK':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO_LD_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPLD_M_S_SGPIO_MOSI':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D0_I2C1_PE_STRAP_SCL':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D0_TEMP_OVER':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D0_UART1_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D0_UART_SOUT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D1_TEMP_OVER':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_D1_UART1_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO0_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO0_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO2_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO2_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO3_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_MCIO3_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU0_VIN_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT2_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT3_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT4_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT5_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT6_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT7_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT9_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_GPIO_PORT10_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_I2C1_PE_STRAP_SCL':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_TEMP_OVER':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_UART1_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D0_UART_SOUT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D1_TEMP_OVER':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_D1_UART1_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO0_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO0_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO2_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO2_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO3_CABLE_ID0_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_MCIO3_CABLE_ID1_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU1_VIN_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME0_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME1_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME4_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME5_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME6_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME7_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME10_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME11_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME14_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME15_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME16_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_CPU_NVME17_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_DB9_TOD_UART_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_DBG_CPU0_UART1_RX_CONN_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_DBG_PAL_BMC_UART1_RX_CONN_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_DB_UART_RX_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_FAN_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_JACK_CPU0_D0_UART_SIN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_JACK_CPU0_UART1_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_JACK_CPU1_D0_UART_SIN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_JACK_CPU1_UART1_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_LEAR_CPU0_UART1_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_MB_CB_RISER1_PRSNT0_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_MB_CB_RISER2_PRSNT0_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_P5V_USB2_OCI2B':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_P12V_RISER1_VIN_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_P12V_RISER2_VIN_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_P12V_STBY_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL2_TCK':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL2_TDI':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL2_TDO':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL2_TMS':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_BMC_NCSI_CLK_50M_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_BMC_SS_DATA_IN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_BMC_UART1_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_BMC_UART4_TX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_EXT_RST_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU1_EFUSE_OC':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU1_EFUSE_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU2_EFUSE_OC':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU2_EFUSE_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU3_EFUSE_OC':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU3_EFUSE_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU4_EFUSE_OC':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_GPU4_EFUSE_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_LOM_FAN_ON_AUX_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_M2_0_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_M2_1_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_OCP_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_OCP_RISER_CPLD':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_RISER1_VIN_FLTB':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_RISER1_VIN_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_RISER2_VIN_FLTB':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_RISER2_VIN_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_STBY_EFUSE_FLTB':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_P12V_STBY_EFUSE_PG':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_PGD_USB_UPD1_P1V1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_PGD_USB_UPD2_P1V1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_PWR_SW_IN_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER1_MODE_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER1_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER1_WAKE_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER1_WIDTH_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER2_MODE_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER2_PRSNT_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER2_WAKE_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER2_WIDTH_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_RISER4_PWR_PGD':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_S_DONE':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_S_INITN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_S_JTAGEN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_S_PROGRAM_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_S_SN':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UART4_OCP_DEBUG_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD1_PEWAKE_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD1_SMIB_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD2_PEWAKE_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD2_SMIB_N':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD72020_1_ALART':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PAL_UPD72020_2_ALART':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PCA_REVISION_0':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PCA_REVISION_1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PCA_REVISION_2':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PCB_REVISION_0':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PCB_REVISION_1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PEX_USB1_PPON0':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PEX_USB1_PPON1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PEX_USB2_PPON0':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_PEX_USB2_PPON1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_REAR_BP_SNS_ALERT':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_RISER_AUX_TOD_UART1_RXD':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_RISER_AUX_TOD_UART2_RXD':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_RISER_MB_PRSNT_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_Riser1_TOD_UART_RXD_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_Riser2_TOD_UART_RXD_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_1':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_2':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_3':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_4':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_5':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_6':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_7':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_SW_8':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_UART0_CPU_LOG_RX':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_UART2_PAL_OCP_RX_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:io_BMC_I2C3_PAL_S_SDA_R':
+BUS_KEEPER is set to default value: PULLUP,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+

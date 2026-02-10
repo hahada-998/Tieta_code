@@ -1,19 +1,11 @@
-//======================================================================================
-//    _     _    _______    _______
-//   | |   | |  |_____  |  |  _____|
-//   | |___| |   _____| |  | |
-//   |  ___  |  |_____  |  | |
-//   | |   | |   _____| |  | |_____
-//   |_|   |_|  |_______|  |_______|
-//
-// Copyright(c) 2007, H3C Technology Inc, All right reserved
-//
-// Filename    :
-// Project     : 2014 V500R002
-// Author      :
-// Date        :
-// Email       :
-// Company     : H3C Technology .Inc
+//=================================================================================================--
+// Copyright(c) 2021, CLOUDNINEINFO.CO, Ltd, All right reserved
+// Filename   : AIS03MB03.v
+// Project    : CLOUDNINEINFO common code
+// Author     : LIZHONGLEI
+// Date       : 2020-09-24
+// Email      : lizhonglei@h3c.com
+// Company    : CLOUDNINEINFO.CO., Ltd
 //
 //--------------------------------------------------------------------------------------
 //Description :

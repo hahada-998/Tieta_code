@@ -1,0 +1,136 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// *                   C O P Y R I G H T     N O T I C E                       *
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// *                                                                           *
+// * Inspur Company Confidential                                               *
+// *                                                                           *
+// * (c) Copyright 2020 - 2025 Inspur Electronic Information Industry Co.,Ltd. *
+// * All rights reserved.                                                      *
+// *                                                                           *
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Engineer:        Abel Ge
+// * Email:           gezh@inspur.com 
+// * Module Name:     WDT_init
+// * Project Name:     
+// * Description:     Module Function
+// *    UID Control
+// * Instances:       Modules included in this file
+// *    <1> lowpass_filter
+// *    <2> Edge_Detect
+// *    <3> NA
+// *    <4> NA
+// * Modification:    The content been modified
+// *    2020-11-26: New Created
+// *    2021-4-25 : use localparam intead of parameter in internal module
+// *
+// * 
+`timescale 1ns / 1ps
+
+module WDT_init#(
+parameter WDT_TIMIEOUT0 = 'd6 ,
+parameter WDT_TIMIEOUT1 = 'd6 ,
+parameter RST_VLU      = 1'b0
+)
+(
+input i_clk,		//input Clk
+input i_rst_n,		//Global rst,Active Low
+input i_wdt_en ,    //WDT timeout detect eabale
+
+input i_WDT_cnt_clk, //WDT counter clock
+input i_WDT_cnt_clr, //WDT counter clear
+
+//Output Signal
+output o_WDT_timeout  //active higeh
+);
+//////////////////////////////////////////////////////////////////////////////////
+// Parameters
+//////////////////////////////////////////////////////////////////////////////////
+localparam LOW    = 1'b0;
+localparam HIGH   = 1'b1;
+localparam Z      = 1'bz;
+
+//////////////////////////////////////////////////////////////////////////////////
+// Internal Signals
+//////////////////////////////////////////////////////////////////////////////////
+reg [9:0] r_wdt_cnt;
+wire w_WDT_cnt_clk_pos;
+wire w_WDT_cnt_clr_pos;
+reg r_WDT_cnt_clk_dly1,r_WDT_cnt_clk_dly2;
+reg r_WDT_cnt_clr_dly1 ,r_WDT_cnt_clr_dly2;
+reg r_WDT_timeout;
+reg r_boot_flag_n;
+//////////////////////////////////////////////////////////////////////////////////
+// edge detect
+//////////////////////////////////////////////////////////////////////////////////
+always@(posedge i_clk or negedge i_rst_n)
+begin
+    if(~i_rst_n)
+    begin
+        r_WDT_cnt_clk_dly1 <= 1'b1;
+		r_WDT_cnt_clk_dly2 <= 1'b1;
+        r_WDT_cnt_clr_dly1 <= 1'b1;
+		r_WDT_cnt_clr_dly2 <= 1'b1;
+	end
+    else
+    begin
+        r_WDT_cnt_clk_dly1 <= i_WDT_cnt_clk;
+		r_WDT_cnt_clk_dly2 <= r_WDT_cnt_clk_dly1;
+        r_WDT_cnt_clr_dly1 <= i_WDT_cnt_clr ;
+		r_WDT_cnt_clr_dly2 <= r_WDT_cnt_clr_dly1;	    
+    end
+end
+
+assign w_WDT_cnt_clk_pos = r_WDT_cnt_clk_dly1 && (~r_WDT_cnt_clk_dly2);
+assign w_WDT_cnt_clr_pos = r_WDT_cnt_clr_dly1 && (~r_WDT_cnt_clr_dly2);
+
+//////////////////////////////////////////////////////////////////////////////////
+// timeout detect
+//////////////////////////////////////////////////////////////////////////////////
+wire [9:0] w_wdt_timeout_NUM;
+assign w_wdt_timeout_NUM = r_boot_flag_n?WDT_TIMIEOUT1:WDT_TIMIEOUT0 ;
+
+always@(posedge i_clk or negedge i_rst_n)
+begin
+    if(~i_rst_n)
+    begin
+        r_WDT_timeout <= RST_VLU;  //RST_VLU
+        r_wdt_cnt     <= {10{RST_VLU}};
+        r_boot_flag_n <= 1'b0;
+    end
+    else
+    begin
+        if(w_WDT_cnt_clr_pos && (~r_boot_flag_n))
+        begin
+            r_wdt_cnt     <= 8'd0;
+            r_boot_flag_n <= 1'b1;
+        end
+        // else if(r_wdt_cnt >= WDT_TIMIEOUT)
+        else if(r_wdt_cnt >= w_wdt_timeout_NUM)
+        begin
+            r_wdt_cnt   <= r_wdt_cnt;
+        end
+        else if( i_wdt_en & w_WDT_cnt_clk_pos)
+        begin
+            r_wdt_cnt   <= r_wdt_cnt + 1;
+        end
+        else
+        begin
+            r_wdt_cnt   <= r_wdt_cnt ;
+        end
+        
+        // if(r_wdt_cnt >= WDT_TIMIEOUT  )
+        if(r_wdt_cnt >= w_wdt_timeout_NUM  )
+        begin
+            r_WDT_timeout   <= 1'b1;
+        end
+        else
+        begin
+            r_WDT_timeout   <= 1'b0;
+        end
+    end
+end
+
+assign o_WDT_timeout = r_WDT_timeout ;
+
+
+endmodule

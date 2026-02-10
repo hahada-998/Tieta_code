@@ -1,7 +1,7 @@
 //V001B0 w22909 20220831 IIO V1.5 to V1.6
 //20221204  Wangqilong  1.1    PCIe bandwidth&Slot loop back scheme.
 
-`include "as03mb03_define.vh" 
+`include "as03mb03_define.v" 
 module I2C_SLAVE_REG 
 (
     input             rc_reset_n,

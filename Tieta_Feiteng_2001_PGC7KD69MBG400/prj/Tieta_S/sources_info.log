@@ -1,0 +1,86 @@
+Designs:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v
+Size: 221498bytes
+Last modified time: 2026/02/10 16:30:01
+2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/pon_reset.v
+Size: 6186bytes
+Last modified time: 2026/02/10 08:39:59
+3. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/timer_gen_50mhz.v
+Size: 6077bytes
+Last modified time: 2026/02/10 08:39:59
+4. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/synclib.v
+Size: 21657bytes
+Last modified time: 2026/02/10 08:39:59
+5. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/p2s_slave.v
+Size: 2897bytes
+Last modified time: 2026/02/10 08:39:59
+6. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/pcie_dync_alloc.v
+Size: 1219bytes
+Last modified time: 2026/02/10 08:39:59
+7. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/pcie_slot_number.v
+Size: 4763bytes
+Last modified time: 2026/02/10 08:39:59
+8. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/pvt_gpi.v
+Size: 2426bytes
+Last modified time: 2026/02/10 08:39:59
+9. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/s2p_master.v
+Size: 3036bytes
+Last modified time: 2023/09/20 19:27:24
+10. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/s2p_slave.v
+Size: 2591bytes
+Last modified time: 2021/09/18 17:11:45
+11. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/uart_master.v
+Size: 6201bytes
+Last modified time: 2026/02/10 08:39:59
+12. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/UART_MASTER_VPP.v
+Size: 7031bytes
+Last modified time: 2026/02/10 08:39:59
+13. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/fan_ctrl/FanControl.v
+Size: 10321bytes
+Last modified time: 2026/02/10 08:39:59
+14. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/edge_delay.v
+Size: 2758bytes
+Last modified time: 2026/02/10 08:39:59
+15. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/edge_detect.v
+Size: 2216bytes
+Last modified time: 2026/02/10 08:39:59
+16. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/Edge_Detect1.v
+Size: 2217bytes
+Last modified time: 2026/02/10 08:39:59
+17. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/include/as03mb03_define.v
+Size: 12918bytes
+Last modified time: 2026/02/10 08:39:59
+18. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
+Size: 1528bytes
+Last modified time: 2026/02/10 08:39:59
+19. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/include/tpm_define.v
+Size: 10145bytes
+Last modified time: 2026/02/10 08:39:59
+20. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/WDT.v
+Size: 4100bytes
+Last modified time: 2022/10/14 15:02:50
+21. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/WDT_init.v
+Size: 4512bytes
+Last modified time: 2022/10/14 15:02:50
+22. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/I2C_SLAVE_INF.v
+Size: 10008bytes
+Last modified time: 2026/02/10 08:39:59
+23. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/I2C_SLAVE_REG.v
+Size: 28062bytes
+Last modified time: 2026/02/10 10:21:19
+
+IPs:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.idf
+Size: 25677bytes
+Last modified time: 2026/02/10 08:52:31
+
+Constraints:
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc
+Size: 77785bytes
+Last modified time: 2026/02/10 16:29:03
+
+Physical Constraint Editor (Post-Map):
+1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/device_map/Tieta_Feiteng_2001_top.pcf
+Size: 17531bytes
+Last modified time: 2026/02/10 16:19:51
+
