@@ -3,7 +3,7 @@ project name,Tieta_S.pds
 
 Single Seed:
 Seed,State,Convergence,Setup(Slow),Setup(Fast),Hold(Slow),Hold(Fast),Recovery(Slow),Recovery(Fast),Removal(Slow),Removal(Fast),PBM-GP,PBM-PreGP,PBM-PostGP,LP,Total Placement Cpu Time,Detailed routing,Total Routing Cpu Time,Wire Length After Post-GP,Wire Length After LP,Wire Length After DP,Routing Arc Length,Worst Slack After GP Timing,Worst Slack After LP Timing,Worst Slack Before RP,Worst Slack Before DP,Worst Slack After DP,Worst Slack After Placement,Worst Slack After TA By Preroute,TNS After DP,TNS Before Route,Setup(Slow) Total Failing TNS,Setup(Slow) Total Failing Endpoints,Hold(Slow) Total Failing THS,Hold(Slow) Total Failing Endpoints,Power
-single,OK,OK,10.806,14.281,0.394,0.257,14.305,16.383,1.122,0.703,NA,NA,NA,NA,6.78,4.92,6.39,NA,NA,NA,17842,NA,NA,NA,NA,NA,11321,NA,NA,NA,0.000,0,0.000,0,NA
+single,OK,OK,11.289,14.616,0.394,0.256,13.495,15.919,1.141,0.700,NA,NA,NA,NA,6.25,3.68,5.06,NA,NA,NA,17933,NA,NA,NA,NA,NA,11264,NA,NA,NA,0.000,0,0.000,0,NA
 Pass Rate/Convergence Rate,100.00%,100.00%
 
 Synthesize:
@@ -15,9 +15,9 @@ Synthesize Partition Blocks Summary:
 Name,type,Status,Reason,Start Time,End Time,Real Time,CPU Time
 NA,NA,NA,NA,NA,NA,NA,NA
 partition blocks number:,NA
-Synthesize Cpu Time,0h:0m:14s
-Synthesize Process Cpu Time,0h:0m:16s
-Synthesize Real Time,0h:0m:20s
+Synthesize Cpu Time,0h:0m:10s
+Synthesize Process Cpu Time,0h:0m:11s
+Synthesize Real Time,0h:0m:12s
 
 Device Map:
 Device Map Resource Usage Summary:
@@ -25,7 +25,7 @@ Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB
 Used,1536,1461,0,NA,0,NA,NA,NA,NA
 Available,5920,8880,26,NA,3552,NA,NA,NA,NA
 Utilization(%),26%,17%,0%,NA,0%,NA,NA,NA,NA
-Device Map Process Cpu Time,0h:0m:4s
+Device Map Process Cpu Time,0h:0m:3s
 
 Project Configurations:
 top module,Tieta_Feiteng_2001_top

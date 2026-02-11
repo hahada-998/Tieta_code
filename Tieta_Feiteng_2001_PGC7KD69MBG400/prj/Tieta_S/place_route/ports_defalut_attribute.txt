@@ -896,12 +896,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_BMC_I2C3_PAL_S_SCL_R':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_BOARD_ID0':
 BUS_KEEPER is set to default value: PULLUP,
 HYS_DRIVE_MODE is set to default value: NOHYS,
@@ -909,18 +903,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_BOARD_ID1':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_BOARD_ID2':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_BOARD_ID3':
 BUS_KEEPER is set to default value: PULLUP,
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1418,30 +1400,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_PAL2_TCK':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL2_TDI':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL2_TDO':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL2_TMS':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_PAL_BMC_NCSI_CLK_50M_R':
 BUS_KEEPER is set to default value: PULLUP,
 HYS_DRIVE_MODE is set to default value: NOHYS,
@@ -1658,36 +1616,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_PAL_S_DONE':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_S_INITN':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_S_JTAGEN':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_S_PROGRAM_N':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_S_SN':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_PAL_UART4_OCP_DEBUG_RX':
 BUS_KEEPER is set to default value: PULLUP,
 HYS_DRIVE_MODE is set to default value: NOHYS,
@@ -1875,12 +1803,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_UART2_PAL_OCP_RX_R':
-BUS_KEEPER is set to default value: PULLUP,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:io_BMC_I2C3_PAL_S_SDA_R':
 BUS_KEEPER is set to default value: PULLUP,
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,

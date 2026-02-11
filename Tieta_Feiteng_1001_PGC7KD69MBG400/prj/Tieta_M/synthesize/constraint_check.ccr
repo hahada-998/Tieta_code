@@ -1,4 +1,4 @@
-##### Written on 2026/02/10 19:41:47 ################################################
+##### Written on 2026/02/11 11:22:26 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,7 +13,7 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 10 critical warning(s), 345 warning(s), out of 1453 constraint(s)
+Found 0 error(s), 0 critical warning(s), 333 warning(s), out of 1367 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
@@ -21,23 +21,9 @@ Constraints With Issues(infos):
 Other Issues(infos):
 ********************************************
 
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:io_BMC_I2C9_PAL_M_SDA_R' to package pin 'D11' due to the conflict between the state of 'D11' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' to package pin 'W20' due to the conflict between the state of 'W20' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:o_PAL_TDO' to package pin 'E8' due to the conflict between the state of 'E8' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_BMC_I2C9_PAL_M_SCL_R' to package pin 'C11' due to the conflict between the state of 'C11' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_CPU0_D1_PWR_CTR0_R' to package pin 'Y6' due to the conflict between the state of 'Y6' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_CPU1_RST_VPP_I2C_N' to package pin 'W6' due to the conflict between the state of 'W6' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_PAL_M_SN' to package pin 'Y20' due to the conflict between the state of 'Y20' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_PAL_TCK' to package pin 'C9' due to the conflict between the state of 'C9' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_PAL_TDI' to package pin 'C7' due to the conflict between the state of 'C7' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_PAL_TMS' to package pin 'D9' due to the conflict between the state of 'D9' and the configuration mode.
-
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_PAL_BP1_PWR_ON_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_PAL_BP1_PWR_ON_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_PAL_BP1_PWR_ON_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -140,12 +126,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_P1V8_STBY_CPLD_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_P1V8_STBY_CPLD_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_P1V8_STBY_CPLD_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -356,9 +336,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_PAL_SYS_EEPROM_BYPASS_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_SYS_EEPROM_BYPASS_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_SYS_EEPROM_BYPASS_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_TDO' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_TDO' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_TDO' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_UPD_VCC_3V3_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_UPD_VCC_3V3_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_UPD_VCC_3V3_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.

@@ -7,14 +7,6 @@ OFF_CHIP_TERMINATION is set to default value: N,
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:io_BMC_I2C9_PAL_M_SDA_R':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-
 Port 'p:io_PAL_BP1_PWR_ON_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -249,20 +241,6 @@ OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
 Port 'p:o_CPU1_SB_EN_R':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -759,13 +737,6 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_PAL_TDO':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
 Port 'p:o_PAL_UPD_VCC_3V3_EN_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -809,16 +780,6 @@ OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
 Port 'p:i_BMC_I2C9_PAL_M_SCL1_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_BMC_I2C9_PAL_M_SCL_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_BMC_JTAGM_NTRST_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1083,16 +1044,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_CPU0_D1_PWR_CTR0_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_CPU0_D1_PWR_CTR1_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_CPU0_D1_SPIO_CS':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1104,11 +1055,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_CPU0_D1_SPIO_SCK':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_CPU0_RST_VPP_I2C_N':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1219,11 +1165,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_CPU1_D1_PWR_CTR1_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_CPU1_RST_VPP_I2C_N':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1563,31 +1504,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_PAL_M_DONE':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_M_INITN':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_M_JTAGEN':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_M_PROGRAM_N':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_M_SN':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_PAL_P3V3_STBY_PGD':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1733,16 +1649,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_PAL_TCK':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_TDI':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_PAL_TMP1_ALERT_N':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1754,11 +1660,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_PAL_TMP3_ALERT_N':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_TMS':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,

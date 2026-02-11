@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <general_container id="generate_bit_stream_settings">
+        <table_container>
+            <table id="generate_bit_stream_settings" title="Generate Bit Stream Settings" column_number="2">
+                <column_headers>
+                    <data>Name</data>
+                    <data>Value</data>
+                </column_headers>
+                <row>
+                    <data>Part</data>
+                    <data>PGC7KD-6MBG400</data>
+                </row>
+                <row>
+                    <data>Top Module</data>
+                    <data>Tieta_Feiteng_1001_top</data>
+                </row>
+            </table>
+        </table_container>
+        <general_container align="3">
+            <table_container>
+                <data>General</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Create Bit File</data>
+                        <data>true</data>
+                    </row>
+                    <row>
+                        <data>Create Bin File</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Reverse Bit In a Byte</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Reverse Byte In a Word</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Enable Write Feature Value</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Compress Bitstream</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Disable Cyclic Redundancy Checking(CRC)</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Write DRM Data</data>
+                        <data>true</data>
+                    </row>
+                    <row>
+                        <data>Unused IO Status</data>
+                        <data>PULLDW</data>
+                    </row>
+                    <row>
+                        <data>Show Time Info</data>
+                        <data>true</data>
+                    </row>
+                    <row>
+                        <data>Show Manufacturer Info</data>
+                        <data>true</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>Configuration</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Usercode</data>
+                        <data>FFFFFFFF</data>
+                    </row>
+                    <row>
+                        <data>Master Configuration Clock Frequency</data>
+                        <data>2.08M</data>
+                    </row>
+                    <row>
+                        <data>Enable OSC Shut Off</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Enable Watchdog In User Mode</data>
+                        <data></data>
+                    </row>
+                    <row>
+                        <data>Enable Watchdog In Configuration Mode</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Load Watchdog</data>
+                        <data>3FFFFFFF</data>
+                    </row>
+                    <row>
+                        <data>Enable Done Synchronization</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>SRAM Retention</data>
+                        <data>false</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>Startup</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Enable Wait PLL Lock</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Wake Up Clock</data>
+                        <data>Master Configuration Clock</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>Readback</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Create Mask File</data>
+                        <data>true</data>
+                    </row>
+                    <row>
+                        <data>Enable Mask Variable Memory In Read Back</data>
+                        <data>true</data>
+                    </row>
+                    <row>
+                        <data>Master Configuration Clock Frequency In Read Back</data>
+                        <data>2.08M</data>
+                    </row>
+                    <row>
+                        <data>Disable Readback CRC</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Enable CRC Clock In Read Back</data>
+                        <data>false</data>
+                    </row>
+                    <row>
+                        <data>Bitstream Security</data>
+                        <data>enable reconfigure, enable readback</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>Feature Control</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Hexadecimal Value Of Feature Control Settings</data>
+                        <data>20902</data>
+                    </row>
+                </table>
+            </table_container>
+            <table_container>
+                <data>SEU File</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Soft Error Insertion</data>
+                        <data></data>
+                    </row>
+                </table>
+            </table_container>
+        </general_container>
+    </general_container>
+    <table id="generate_bit_stream_runtime" title="Generate Bit Stream Runtime &amp; Memory" column_number="7">
+        <column_headers>
+            <data>Cpu Time</data>
+            <data>Process Cpu Time</data>
+            <data>Real Time</data>
+            <data>Peak Memory (MB)</data>
+            <data>Operation System</data>
+            <data>CPU</data>
+            <data>RAM(GB)</data>
+        </column_headers>
+        <row>
+            <data>0h:0m:6s</data>
+            <data>0h:0m:7s</data>
+            <data>0h:0m:8s</data>
+            <data>424</data>
+            <data>WINDOWS 10 x86_64</data>
+            <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
+            <data>8</data>
+        </row>
+    </table>
+    <table id="report_end" title="Report Ended" column_number="0">
+        <column_headers/>
+    </table>
+    <table id="generate_bit_stream_messages" title="Generate Bit Stream Messages" column_number="1">
+        <column_headers/>
+        <row>
+            <data message="4">Multithreading enabled for Timing using a maximum of 4 processes.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'io_BMC_I2C9_PAL_M_SDA_R' to package pin 'D11' due to the conflict between the state of 'D11' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' to package pin 'W20' due to the conflict between the state of 'W20' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'o_PAL_TDO' to package pin 'E8' due to the conflict between the state of 'E8' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_BMC_I2C9_PAL_M_SCL_R' to package pin 'C11' due to the conflict between the state of 'C11' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_CPU0_D1_PWR_CTR0_R' to package pin 'Y6' due to the conflict between the state of 'Y6' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_CPU1_RST_VPP_I2C_N' to package pin 'W6' due to the conflict between the state of 'W6' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_PAL_M_SN' to package pin 'Y20' due to the conflict between the state of 'Y20' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_PAL_TCK' to package pin 'C9' due to the conflict between the state of 'C9' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_PAL_TDI' to package pin 'C7' due to the conflict between the state of 'C7' and the configuration mode.</data>
+        </row>
+        <row>
+            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_PAL_TMS' to package pin 'D9' due to the conflict between the state of 'D9' and the configuration mode.</data>
+        </row>
+    </table>
+</tables>

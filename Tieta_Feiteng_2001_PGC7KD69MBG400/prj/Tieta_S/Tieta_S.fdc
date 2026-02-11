@@ -1,6 +1,6 @@
 create_clock -name {i_CLK_C42_IN_25M} [get_ports {i_CLK_C42_IN_25M}] -period {40} -waveform {0.000 20.000}
 create_generated_clock -name {clk_50m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout0}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {2} -duty_cycle {50.000}
-create_generated_clock -name {clk_25m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout1}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {1} -duty_cycle {25.000}
+create_generated_clock -name {clk_25m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout1}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {1} -duty_cycle {50.000}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_DIRECTION} {INOUT}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_LOC} {V8}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_VCCIO} {3.3}
@@ -509,10 +509,10 @@ define_attribute {p:i_BMC_I2C3_PAL_S_SCL1_R} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_BMC_I2C3_PAL_S_SCL1_R} {PAP_IO_LOC} {W8}
 define_attribute {p:i_BMC_I2C3_PAL_S_SCL1_R} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_BMC_I2C3_PAL_S_SCL1_R} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_LOC} {C11}
-define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_LOC} {C11}
+# define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_BOARD_ID0} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_BOARD_ID0} {PAP_IO_LOC} {T16}
 define_attribute {p:i_BOARD_ID0} {PAP_IO_VCCIO} {3.3}
@@ -521,14 +521,14 @@ define_attribute {p:i_BOARD_ID1} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_BOARD_ID1} {PAP_IO_LOC} {W12}
 define_attribute {p:i_BOARD_ID1} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_BOARD_ID1} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_BOARD_ID2} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_BOARD_ID2} {PAP_IO_LOC} {Y6}
-define_attribute {p:i_BOARD_ID2} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_BOARD_ID2} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_BOARD_ID3} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_BOARD_ID3} {PAP_IO_LOC} {W6}
-define_attribute {p:i_BOARD_ID3} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_BOARD_ID3} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_BOARD_ID2} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_BOARD_ID2} {PAP_IO_LOC} {Y6}
+# define_attribute {p:i_BOARD_ID2} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_BOARD_ID2} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_BOARD_ID3} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_BOARD_ID3} {PAP_IO_LOC} {W6}
+# define_attribute {p:i_BOARD_ID3} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_BOARD_ID3} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_BOARD_ID4} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_BOARD_ID4} {PAP_IO_LOC} {P18}
 define_attribute {p:i_BOARD_ID4} {PAP_IO_VCCIO} {3.3}
@@ -857,22 +857,22 @@ define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_LOC} {T8}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL2_TCK} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL2_TCK} {PAP_IO_LOC} {C9}
-define_attribute {p:i_PAL2_TCK} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL2_TCK} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL2_TDI} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL2_TDI} {PAP_IO_LOC} {C7}
-define_attribute {p:i_PAL2_TDI} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL2_TDI} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL2_TDO} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL2_TDO} {PAP_IO_LOC} {E8}
-define_attribute {p:i_PAL2_TDO} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL2_TDO} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL2_TMS} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL2_TMS} {PAP_IO_LOC} {D9}
-define_attribute {p:i_PAL2_TMS} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL2_TMS} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_LOC} {C9}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_LOC} {C7}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_LOC} {E8}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_LOC} {D9}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_LOC} {F17}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_VCCIO} {3.3}
@@ -1021,26 +1021,26 @@ define_attribute {p:i_PAL_RISER4_PWR_PGD} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_PAL_RISER4_PWR_PGD} {PAP_IO_LOC} {D6}
 define_attribute {p:i_PAL_RISER4_PWR_PGD} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_PAL_RISER4_PWR_PGD} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_S_DONE} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_S_DONE} {PAP_IO_LOC} {A19}
-define_attribute {p:i_PAL_S_DONE} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_S_DONE} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_S_INITN} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_S_INITN} {PAP_IO_LOC} {C17}
-define_attribute {p:i_PAL_S_INITN} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_S_INITN} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_LOC} {C13}
-define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_LOC} {D13}
-define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_S_SN} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_S_SN} {PAP_IO_LOC} {Y20}
-define_attribute {p:i_PAL_S_SN} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_S_SN} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL_S_DONE} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL_S_DONE} {PAP_IO_LOC} {A19}
+# define_attribute {p:i_PAL_S_DONE} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL_S_DONE} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL_S_INITN} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL_S_INITN} {PAP_IO_LOC} {C17}
+# define_attribute {p:i_PAL_S_INITN} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL_S_INITN} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_LOC} {C13}
+# define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_LOC} {D13}
+# define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL_S_SN} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL_S_SN} {PAP_IO_LOC} {Y20}
+# define_attribute {p:i_PAL_S_SN} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL_S_SN} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_PAL_UART4_OCP_DEBUG_RX} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_PAL_UART4_OCP_DEBUG_RX} {PAP_IO_LOC} {L5}
 define_attribute {p:i_PAL_UART4_OCP_DEBUG_RX} {PAP_IO_VCCIO} {3.3}
@@ -1165,7 +1165,7 @@ define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_LOC} {E14}
 define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_LOC} {D11}
-define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_LOC} {D11}
+# define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_STANDARD} {LVCMOS33}

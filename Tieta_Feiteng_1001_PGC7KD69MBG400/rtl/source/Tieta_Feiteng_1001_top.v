@@ -11,8 +11,9 @@ input  i_CLK_PAL_IN_25M                       /* synthesis LOC = "K19"*/,// from
 // =============================================================================
 //  I2C  
 // =============================================================================
-input  i_BMC_I2C9_PAL_M_SCL_R                 /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
-inout  io_BMC_I2C9_PAL_M_SDA_R                /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
+// 未使用, 专用管脚I2C在线升级使用
+// input  i_BMC_I2C9_PAL_M_SCL_R                 /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
+// inout  io_BMC_I2C9_PAL_M_SDA_R                /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
 input  i_BMC_I2C9_PAL_M_SCL1_R                /* synthesis LOC = "B2"*/ ,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL1信号输入              新增
 inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "B3"*/ ,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA1电源良好信号输入       新增
 
@@ -21,17 +22,18 @@ inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "B3"*/ ,// from
 // =============================================================================
 /* begin: JTAG BMC和插座二选一 */
 // BMC JTAG信号
-input  i_BMC_JTAGM_NTRST_R                    /* synthesis LOC = "A2"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // BMC JTAG复位信号输入                         新增
+// input  i_BMC_JTAGM_NTRST_R                    /* synthesis LOC = "A2"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // BMC JTAG复位信号输入                         新增
 // 插座 JTAG信号
-input  i_PAL_M_JTAGEN                      /* synthesis LOC = "C13"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // 主JTAG使能信号输入                           新增
-input  i_PAL_M_SN                          /* synthesis LOC = "Y20"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M   
-input  i_PAL_M_PROGRAM_N                   /* synthesis LOC = "D13"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // 主编程信号输入（低电平有效，反向）
-input  i_PAL_M_INITN                       /* synthesis LOC = "C17"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 0  // 主INITN信号输入（低电平有效）
-input  i_PAL_M_DONE                        /* synthesis LOC = "A19"*/, // from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 0  // 主DONE信号输入
-output o_PAL_TDO                           /* synthesis LOC = "E8"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDO测试数据输出信号输出                       新增
-input  i_PAL_TDI                           /* synthesis LOC = "C7"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDI测试数据输入信号输入                       新增
-input  i_PAL_TCK                           /* synthesis LOC = "C9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TCK测试时钟信号输入
-input  i_PAL_TMS                           /* synthesis LOC = "D9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TMS测试模式选择信号输入
+// input  i_PAL_M_JTAGEN                      /* synthesis LOC = "C13"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // 主JTAG使能信号输入                           新增
+// input  i_PAL_M_SN                          /* synthesis LOC = "Y20"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M   
+// input  i_PAL_M_PROGRAM_N                   /* synthesis LOC = "D13"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // 主编程信号输入（低电平有效，反向）
+// input  i_PAL_M_INITN                       /* synthesis LOC = "C17"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 0  // 主INITN信号输入（低电平有效）
+// input  i_PAL_M_DONE                        /* synthesis LOC = "A19"*/, // from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 0  // 主DONE信号输入
+// 未使用, 专用管脚JTAG使用
+// output o_PAL_TDO                           /* synthesis LOC = "E8"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDO测试数据输出信号输出                       新增
+// input  i_PAL_TDI                           /* synthesis LOC = "C7"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDI测试数据输入信号输入                       新增
+// input  i_PAL_TCK                           /* synthesis LOC = "C9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TCK测试时钟信号输入
+// input  i_PAL_TMS                           /* synthesis LOC = "D9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TMS测试模式选择信号输入
 /* end: JTAG BMC和插座二选一 */
 
 
@@ -351,9 +353,10 @@ input  i_CPU1_D0_CRU_RST_OK                   /* synthesis LOC = "R6"*/ ,// form
 input  i_CPU1_D1_CRU_RST_OK                   /* synthesis LOC = "V6"*/,// form  CPU1_GPIO2/D1_CRU_RST_OK                      to  CPLD_M                                       default 1  // CPU1 D1 区域CRU复位完成信号
 // !!! 实际为判断使用!!!
 
-// 未使用
-input  i_CPU0_RST_VPP_I2C_N                   /* synthesis LOC = "T10"*/,// from  CPU0_GPIO1/D0_GPIO_PORT[11]                   to  CPLD_M                                       default 0  // CPU0 VPP电源域 VDD_IO_P1V8 电源中断 I2C复位信号
-input  i_CPU1_RST_VPP_I2C_N                   /* synthesis LOC = "W6"*/, // from  CPU1_GPIO1/D0_GPIO_PORT[11]                   to  CPLD_M                                       default 0  // CPU1 VPP电源域 VDD_IO_P1V8 电源中断 I2C复位信号
+// !!! 暂时不使用, 先注释 !!! 
+// input  i_CPU0_RST_VPP_I2C_N                   /* synthesis LOC = "T10"*/,// from  CPU0_GPIO1/D0_GPIO_PORT[11]                   to  CPLD_M                                       default 0  // CPU0 VPP电源域 VDD_IO_P1V8 电源中断 I2C复位信号
+// input  i_CPU1_RST_VPP_I2C_N                   /* synthesis LOC = "W6"*/, // from  CPU1_GPIO1/D0_GPIO_PORT[11]                   to  CPLD_M                                       default 0  // CPU1 VPP电源域 VDD_IO_P1V8 电源中断 I2C复位信号
+// !!! 暂时不使用, 先注释 !!! 
 
 output o_CPU0_PE2_RST_N_R                     /* synthesis LOC = "U18"*/ ,// from  CPLD_M                                        to  CPU0_MCIO_0/1/SIDEBAND_2                     default 1  // CPU0 PE2复位信号输出
 output o_CPU0_PE3_RST_N_R                     /* synthesis LOC = "L20"*/ ,// from  CPLD_M                                        to  CPU0_MCIO_2/3 / CPU0_NVM4/6_PERST_N          default 1  // CPU0 PE3复位信号输出
@@ -484,9 +487,9 @@ output o_CPU0_I2C_TRAN_EN_R                   /* synthesis LOC = "Y1"*/,// from 
 output o_CPU1_I2C_TRAN_EN_R                   /* synthesis LOC = "W1"*/,// from  CPLD_M                                        to  U217/218_RS0302YH8                           default 1  // CPU1    I2C传输使能信号（CPU 与 DDR 之间的 I2C 电平转换电路）
 
 // CPU0/1 SCP从Flash启动信号输出
-// 未使用
-output o_FT_CPU0_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W20"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/REV9              default 1  // CPU0 SCP从Flash启动信号
-output o_FT_CPU1_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W8"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/REV9              default 1  // CPU1 SCP从Flash启动信号
+// 未使用, Flash的专用引脚
+// output o_FT_CPU0_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W20"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/REV9              default 1  // CPU0 SCP从Flash启动信号
+// output o_FT_CPU1_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W8"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/REV9              default 1  // CPU1 SCP从Flash启动信号
 
 // CPU1 D0 区域软关机中断信号
 output o_CPU0_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "R11" */,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/D0_UART2_TXD      default 0  // CPU0 D0 区域软关机中断信号 , 触发系统软关机流程
@@ -526,8 +529,8 @@ input  i_CPU1_VR_ALERT_N_R                    /* synthesis LOC = "D2"*/  ,// fro
 input  i_CPU0_D0_PWR_CTR0_R                   /* synthesis LOC = "Y13"*/, // form  CPU0_GPIO1/D0_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号0（cpu的状态反馈, 解除重上电）
 input  i_CPU0_D0_PWR_CTR1_R                   /* synthesis LOC = "U11"*/, // from  CPU0_GPIO1/D0_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号1（cpu的状态反馈, 控制重上电）
 // 未使用
-input  i_CPU0_D1_PWR_CTR0_R                   /* synthesis LOC = "Y6"*/ , // from  CPU0_GPIO2/D1_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号0
-input  i_CPU0_D1_PWR_CTR1_R                   /* synthesis LOC = "Y18"*/, // from  CPU0_GPIO2/D1_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号1
+// input  i_CPU0_D1_PWR_CTR0_R                   /* synthesis LOC = "Y6"*/ , // from  CPU0_GPIO2/D1_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号0
+// input  i_CPU0_D1_PWR_CTR1_R                   /* synthesis LOC = "Y18"*/, // from  CPU0_GPIO2/D1_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号1
 input  i_CPU1_D0_PWR_CTR0_R                   /* synthesis LOC = "W9"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号0
 input  i_CPU1_D0_PWR_CTR1_R                   /* synthesis LOC = "Y8"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号1
 input  i_CPU1_D1_PWR_CTR0_R                   /* synthesis LOC = "Y5"*/ ,// from  CPU1_GPIO2/D1_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU1 D1 区域电源控制信号0
@@ -677,8 +680,8 @@ wire                                        usb_ponrst_r_n              ; // 不
 wire                                        usb_perst_r_n               ; // 不使用
 
 // PCIE复位信号输入, 滤波后输出给cpu_por_n使用
-wire                                        db_i_cpu0_rst_vpp_i2c_n             ;     
-wire                                        db_i_cpu1_rst_vpp_i2c_n             ; 
+// wire                                        db_i_cpu0_rst_vpp_i2c_n             ;     
+// wire                                        db_i_cpu1_rst_vpp_i2c_n             ; 
 wire                                        db_i_cpu0_d0_cru_rst_ok             ;    
 wire                                        db_i_cpu0_d1_cru_rst_ok             ;    
 wire                                        db_i_cpu1_d0_cru_rst_ok             ;    
@@ -2008,8 +2011,8 @@ PGM_DEBOUNCE #(.SIGCNT(26), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rst_rail (
     .timer_tick     (1'b1                       ),
     .din            (
                     {
-                    i_CPU0_RST_VPP_I2C_N           ,// 25   
-                    i_CPU1_RST_VPP_I2C_N           ,// 24
+                    // i_CPU0_RST_VPP_I2C_N           ,// 25   
+                    // i_CPU1_RST_VPP_I2C_N           ,// 24
                     i_CPU0_D0_CRU_RST_OK           ,// 23      
                     i_CPU0_D1_CRU_RST_OK           ,// 22      
                     i_CPU1_D0_CRU_RST_OK           ,// 21      
@@ -2038,8 +2041,8 @@ PGM_DEBOUNCE #(.SIGCNT(26), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rst_rail (
                     ),
     .dout           (
                     {
-                    db_i_cpu0_rst_vpp_i2c_n        ,// 25     
-                    db_i_cpu1_rst_vpp_i2c_n        ,// 24 
+                    // db_i_cpu0_rst_vpp_i2c_n        ,// 25     
+                    // db_i_cpu1_rst_vpp_i2c_n        ,// 24 
                     db_i_cpu0_d0_cru_rst_ok        ,// 23    
                     db_i_cpu0_d1_cru_rst_ok        ,// 22    
                     db_i_cpu1_d0_cru_rst_ok        ,// 21    
@@ -4543,7 +4546,7 @@ bmc_cpld_i2c_ram #(
 // BMC下发CPU软关机中断信号
 wire                                bmc_ctrl_shutdown_neg       ;
 reg                                 soft_shutdown               ;
-reg [29:0]                          time_cnt                    ;
+reg [20:0]                          time_cnt                    ;
 reg                                 state                       ;
 
 Edge_Detect1 Edge_Detect_u3(
@@ -4558,23 +4561,23 @@ Edge_Detect1 Edge_Detect_u3(
 always @(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)begin
 		  soft_shutdown <= 1'b0;
-		  time_cnt      <= 30'd0;
+		  time_cnt      <= 21'd0;
 		  state         <= 0;
 	end
 	else begin
 		  case(state)
 		      0: begin
 		  		    soft_shutdown <= 1'b0;
-		  		    time_cnt	    <= 30'd0;
+		  		    time_cnt	    <= 21'd0;
 		  		    if(bmc_ctrl_shutdown_neg)
 		  		    	  state	    <= 1;
 		  		    else
 		  		    	  state	    <= state;
 		  	  end 
           1: begin
-		  		    time_cnt	  <=  (time_cnt >= 30'd2000000) ? 30'd0 : time_cnt + 1'd1;
-		  		    state		  <= !(time_cnt	>= 30'd2000000)                          ;
-		  		    soft_shutdown <=  (time_cnt	>= 30'd1000000)	? 1'b1  : 1'b0           ;
+		  		    time_cnt	  <=  (time_cnt >= 21'd2000000) ? 21'd0 : time_cnt + 1'd1;
+		  		    state		  <= !(time_cnt	>= 21'd2000000)                          ;
+		  		    soft_shutdown <=  (time_cnt	>= 21'd1000000)	? 1'b1  : 1'b0           ;
 		  	  end
 		  endcase
 	end

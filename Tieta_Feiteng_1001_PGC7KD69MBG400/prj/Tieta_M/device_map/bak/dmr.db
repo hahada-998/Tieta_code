@@ -10186,7 +10186,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10216,7 +10216,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10246,7 +10246,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10276,7 +10276,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10306,7 +10306,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10336,7 +10336,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10366,7 +10366,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10396,7 +10396,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10426,7 +10426,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10456,7 +10456,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -10486,7 +10486,7 @@
                     <data></data>
                     <data></data>
                     <data></data>
-                    <data></data>
+                    <data>NONE</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -14292,8 +14292,8 @@
         <row>
             <data>0h:0m:3s</data>
             <data>0h:0m:4s</data>
-            <data>0h:0m:5s</data>
-            <data>210</data>
+            <data>0h:0m:6s</data>
+            <data>212</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -16310,6 +16310,9 @@
         </row>
         <row>
             <data message="4">Infer CARRY group, base inst: bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N267_1_1/gateop, insts:5.</data>
+        </row>
+        <row>
+            <data message="5">Public-4010: Pcf file C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/device_map/Tieta_Feiteng_1001_top.pcf has been covered.</data>
         </row>
     </table>
 </tables>

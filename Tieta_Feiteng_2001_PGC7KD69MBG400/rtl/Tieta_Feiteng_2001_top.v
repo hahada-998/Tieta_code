@@ -11,15 +11,16 @@ module Tieta_Feiteng_2001_top(
     input   i_PAL_BMC_SS_DATA_IN                    /* synthesis LOC = "N17" */,// from  GENZ_168PIN                                  to  CPLD_S                                           default 1  // BMC 串行数据 输入 信号                                      
                                             
     /* begin: JTAG 接口*/
-    input   i_PAL_S_DONE                            /* synthesis LOC = "A19"*/,// from  S_DONE / J32                                 to  CPLD_S                                           default 1  // PAL S DONE 信号
-    input   i_PAL_S_INITN                           /* synthesis LOC = "C17"*/,// from  S_INITN / J31                                to  CPLD_S                                           default 1  // PAL S INITN 信号
-    input   i_PAL_S_JTAGEN                          /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
-    input   i_PAL_S_PROGRAM_N                       /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                            to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
-    input   i_PAL_S_SN                              /* synthesis LOC = "Y20"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                 to  CPLD_S                                           default 1  // S_SN 信号 UPD1/UPD2 序列号 信号
-    input   i_PAL2_TDO                              /* synthesis LOC = "E8"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    input   i_PAL2_TDI                              /* synthesis LOC = "C7"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    input   i_PAL2_TCK                              /* synthesis LOC = "C9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    input   i_PAL2_TMS                              /* synthesis LOC = "D9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // 专用引脚暂不使用
+    // input   i_PAL_S_DONE                            /* synthesis LOC = "A19"*/,// from  S_DONE / J32                                 to  CPLD_S                                           default 1  // PAL S DONE 信号
+    // input   i_PAL_S_INITN                           /* synthesis LOC = "C17"*/,// from  S_INITN / J31                                to  CPLD_S                                           default 1  // PAL S INITN 信号
+    // input   i_PAL_S_JTAGEN                          /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
+    // input   i_PAL_S_PROGRAM_N                       /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                            to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
+    // input   i_PAL_S_SN                              /* synthesis LOC = "Y20"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                 to  CPLD_S                                           default 1  // S_SN 信号 UPD1/UPD2 序列号 信号
+    // input   i_PAL2_TDO                              /* synthesis LOC = "E8"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TDI                              /* synthesis LOC = "C7"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TCK                              /* synthesis LOC = "C9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TMS                              /* synthesis LOC = "D9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
     
     /* end: JTAG 接口*/
 
@@ -44,8 +45,8 @@ module Tieta_Feiteng_2001_top(
 
 
     /* begin: I3C 接口*/
-    input   i_BMC_I2C3_PAL_S_SCL_R                  /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL 信号
-    input   io_BMC_I2C3_PAL_S_SDA_R                 /* synthesis LOC = "D11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA 信号
+    // input   i_BMC_I2C3_PAL_S_SCL_R                  /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL 信号
+    // inout   io_BMC_I2C3_PAL_S_SDA_R                 /* synthesis LOC = "D11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA 信号
     input   i_BMC_I2C3_PAL_S_SCL1_R                 /* synthesis LOC = "W8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL1 信号
     inout   io_BMC_I2C3_PAL_S_SDA1_R                /* synthesis LOC = "V8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA1 信号
     
@@ -216,8 +217,9 @@ module Tieta_Feiteng_2001_top(
 
     input   i_BOARD_ID0                              /* synthesis LOC = "T16"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID0 信号
     input   i_BOARD_ID1                              /* synthesis LOC = "W12"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID1 信号
-    input   i_BOARD_ID2                              /* synthesis LOC = "Y6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID2 信号
-    input   i_BOARD_ID3                              /* synthesis LOC = "W6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID3 信号
+    // 未使用 !!! Y6, W6 引脚冲突 !!! s
+    // input   i_BOARD_ID2                              /* synthesis LOC = "Y6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID2 信号
+    // input   i_BOARD_ID3                              /* synthesis LOC = "W6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID3 信号
     input   i_BOARD_ID4                              /* synthesis LOC = "P18"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID4 信号
     input   i_BOARD_ID5                              /* synthesis LOC = "N18"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID5 信号
     input   i_BOARD_ID6                              /* synthesis LOC = "M18"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID6 信号
@@ -729,8 +731,8 @@ wire                            board_id7                                       
 wire                            board_id6                                           ;
 wire                            board_id5                                           ;
 wire                            board_id4                                           ;
-wire                            board_id3                                           ;
-wire                            board_id2                                           ;
+// wire                            board_id3                                           ;
+// wire                            board_id2                                           ;
 wire                            board_id1                                           ;
 wire                            board_id0                                           ;
 
@@ -1765,8 +1767,8 @@ assign cpu1_mcio3_cable_id1 = i_CPU1_MCIO3_CABLE_ID1_R;
 // BOARD ID
 assign board_id0            = i_BOARD_ID0;
 assign board_id1            = i_BOARD_ID1;
-assign board_id2            = i_BOARD_ID2;
-assign board_id3            = i_BOARD_ID3;
+// assign board_id2            = i_BOARD_ID2;
+// assign board_id3            = i_BOARD_ID3;
 assign board_id4            = i_BOARD_ID4;
 assign board_id5            = i_BOARD_ID5;
 assign board_id6            = i_BOARD_ID6;

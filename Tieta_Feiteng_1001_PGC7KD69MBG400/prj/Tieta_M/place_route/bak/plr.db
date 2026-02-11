@@ -3903,7 +3903,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3922,7 +3922,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3941,7 +3941,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3960,7 +3960,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3979,7 +3979,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3998,7 +3998,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -4017,7 +4017,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -4036,7 +4036,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -4055,7 +4055,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -4074,7 +4074,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -4093,7 +4093,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -11662,8 +11662,8 @@
         <row>
             <data>0h:0m:10s</data>
             <data>0h:0m:24s</data>
-            <data>0h:0m:15s</data>
-            <data>597</data>
+            <data>0h:0m:14s</data>
+            <data>595</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -12708,39 +12708,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_TMP1_ALERT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_TMP2_ALERT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_TMP3_ALERT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_TMS' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD72020_VCC_ALART' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_USB_UPD1_OCI1B' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_USB_UPD1_OCI2B' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_VCC_1V1_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SMB_PEHP_CPU0_3V3_ALERT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SMB_PEHP_CPU1_3V3_ALERT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_TPM_MODULE_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="6">ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/place_route/ports_defalut_attribute.txt(line number:0)] to confirm.</data>
