@@ -17,7 +17,7 @@ module Tieta_Feiteng_2001_top(
     // input   i_PAL_S_JTAGEN                          /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
     // input   i_PAL_S_PROGRAM_N                       /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                            to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
     // input   i_PAL_S_SN                              /* synthesis LOC = "Y20"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                 to  CPLD_S                                           default 1  // S_SN 信号 UPD1/UPD2 序列号 信号
-    // input   i_PAL2_TDO                              /* synthesis LOC = "E8"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // output  i_PAL2_TDO                              /* synthesis LOC = "E8"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
     // input   i_PAL2_TDI                              /* synthesis LOC = "C7"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
     // input   i_PAL2_TCK                              /* synthesis LOC = "C9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
     // input   i_PAL2_TMS                              /* synthesis LOC = "D9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
@@ -1986,13 +1986,13 @@ assign pfr_pe_wake_n = pal_pe_wake_n /*& i_PAL_RISER1_WAKE_N_R*/ ;
 assign pal_vga_sel_n = vga2_dis ? 1'b1 : (db_front_vga_cable_prsnt_n);
 
 //USB
-assign o_PAL_UPD2_PERST_N_R   = reached_sm_wait_powerok;
-assign o_PAL_UPD1_PERST_N_R   = reached_sm_wait_powerok;
-assign o_PAL_UPD1_PONRST_N_R  = usb_ponrst_r_n;
-assign o_PAL_UPD2_PONRST_N_R  = usb_ponrst_r_n;
+assign o_PAL_UPD2_PERST_N_R   = reached_sm_wait_powerok ;
+assign o_PAL_UPD1_PERST_N_R   = reached_sm_wait_powerok ;
+assign o_PAL_UPD1_PONRST_N_R  = usb_ponrst_r_n          ;
+assign o_PAL_UPD2_PONRST_N_R  = usb_ponrst_r_n          ;
 
-assign pal_p3v3_stby_pgd      = i_CPLD_M_S_EXCHANGE_S1;
-assign o_CPLD_M_S_EXCHANGE_S2 = i_PAL_PWR_SW_IN_N     ; 
+assign pal_p3v3_stby_pgd      = i_CPLD_M_S_EXCHANGE_S1  ;
+assign o_CPLD_M_S_EXCHANGE_S2 = i_PAL_PWR_SW_IN_N       ; 
 
 
 //OCPm LOM

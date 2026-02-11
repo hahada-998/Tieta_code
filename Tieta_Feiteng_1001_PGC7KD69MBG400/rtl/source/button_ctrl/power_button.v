@@ -57,7 +57,7 @@ wire       shutdown_events_pe;
 //   - BL_MODE and xreg_pwr_btn_passthru = 1
 //   - BL_MODE and turn_on_override = 1
 //------------------------------------------------------------------------------
-   assign pwr_btn_allow = ~(st_steady_pwrok & gpo_pwr_btn_mask & defeat_pwr_btn_dis_n);//defeat_pwr_btn_dis_nƒ¨»œ0£¨À˘“‘pwr_btn_allow”¿‘∂∂º «1
+   assign pwr_btn_allow = ~(st_steady_pwrok & gpo_pwr_btn_mask & defeat_pwr_btn_dis_n);
   
    always @(posedge clk or posedge reset)
    begin
@@ -67,7 +67,7 @@ wire       shutdown_events_pe;
        pch_pwrbtn <= 1'b0;
      else
        pch_pwrbtn <= ~gmt_wakeup_n |
-                     (~force_off & ~sys_sw_in_n & pwr_btn_allow);//defeat_pwr_btn_dis_nƒ¨»œ0£¨À˘“‘pwr_btn_allow”¿‘∂∂º «1
+                     (~force_off & ~sys_sw_in_n & pwr_btn_allow);//defeat_pwr_btn_dis_nƒ¨ÔøΩÔøΩ0ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩpwr_btn_allowÔøΩÔøΩ‘∂ÔøΩÔøΩÔøΩÔøΩ1
    end
 
 

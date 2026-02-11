@@ -44,19 +44,19 @@ module pwrseq_slave #(
     // 2. `SM_EN_5V_STBY 状态上电使能
     input                                       p5v_stby_pgd		                ,
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    input                                       dimm_efuse_pg		                ,
-    input                                       fan_efuse_pg		                ,
-    input                                       pgd_main_efuse                  ,
+    input                                       dimm_efuse_pg		                , // 不使用, 写死1
+    input                                       fan_efuse_pg		                , // 不使用, 写死1
+    input                                       pgd_main_efuse                  , // 不使用, 写死1
     input                                       pgd_p12v                        ,
     input                                       pgd_p12v_stby_droop             ,
     input                                       reat_bp_efuse_pg                ,
-    input                                       front_bp_efuse_pg               ,
+    input                                       front_bp_efuse_pg               , // 不使用, 写死1
     input                                       p12v_cpu1_vin_pg                ,
     input                                       p12v_cpu0_vin_pg                ,
     // 5. SM_EN_5V 状态上电使能
     input                                       p5v_pgd                         ,
     // 6. SM_EN_3V3 状态上电使能
-    input                                       p3v3_pgd                        ,
+    input                                       p3v3_pgd                        , // 不使用, 写死1
     // 7. SM_EN_1V1 状态上电使能
     input                                       p1v1_pgd                        ,
     // 主电源使能信号
@@ -288,9 +288,9 @@ reg     reg_cpu_por_n	                         ;
 
 assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_alive_on_fault );
 
-assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r                 ;
+assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r ;
 
-assign power_supply_on	     =  reg_power_supply_on      ;  
+assign power_supply_on	     =  reg_power_supply_on ;  
 assign p12v_bp_front_en      =  reg_p12v_en & ( ~p12v_front_bp_efuse_fault_det  | keep_alive_on_fault);
 assign p12v_bp_rear_en       =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
 
@@ -1708,12 +1708,12 @@ assign any_aux_vrm_fault = aux_fault;
 // fault_vec_mapping
 assign fault_vec[0]  = p5v_stby_fault_det            ;  
 assign fault_vec[1]  = p3v3_stby_bp_fault_det        ;  
-assign fault_vec[2]  = main_efuse_fault_det          ;  
+assign fault_vec[2]  = main_efuse_fault_det          ; // 未使用 
 assign fault_vec[3]  = p3v3_stby_fault_det           ;  
 
 assign fault_vec[4]  = p12v_front_bp_efuse_fault_det ;  
 assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det  ;
-assign fault_vec[6]  = p12v_fan_efuse_fault_det      ;  
+assign fault_vec[6]  = p12v_fan_efuse_fault_det      ; // 未使用
 assign fault_vec[7]  = p12v_dimm_efuse_fault_det     ;
 assign fault_vec[8]  = p12v_cpu1_vin_fault_det       ;
 assign fault_vec[9]  = p12v_cpu0_vin_fault_det       ;

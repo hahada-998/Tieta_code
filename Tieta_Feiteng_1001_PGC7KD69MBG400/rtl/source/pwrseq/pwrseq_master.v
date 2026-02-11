@@ -13,12 +13,16 @@
 module pwrseq_master #(
     parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         ,
     parameter WDT_NBITS                             = 10                        ,
+
     parameter P3V3_VCC_WATCHDOG_TIOMEOUT_VAL        = 2                         ,
-    parameter DSW_PWROK_TIMEOUT_VAL                 = 10                        ,
-    parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000                      ,
     parameter PON_WATCHDOG_TIMEOUT_VAL              = 112                       ,
     parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10                        ,
     parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 137                       ,
+    parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000                      ,
+    parameter DSW_PWROK_TIMEOUT_VAL                 = 10                        ,
+    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34                        ,
+    
+    
     parameter VCORE_WATCHDOG_TIMEOUT_VAL            = PON_WATCHDOG_TIMEOUT_VAL  ,
     parameter PDN_WATCHDOG_TIMEOUT_VAL              = 2                         ,
     parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = PDN_WATCHDOG_TIMEOUT_VAL  ,
@@ -26,17 +30,25 @@ module pwrseq_master #(
     parameter DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL = PDN_WATCHDOG_TIMEOUT_VAL  ,
     parameter DISABLE_3V3_TIMEOUT_VAL               = PDN_WATCHDOG_TIMEOUT_VAL  ,
     parameter DISABLE_3V3_TIMEOUT_FAULT_VAL         = PDN_WATCHDOG_TIMEOUT_VAL  ,
-    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34                        ,
-    parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17                        ,
-    parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2                         ,
+    
     parameter PF_ON_WAIT_COMPLETE_VAL               = 33                        ,
     parameter PO_ON_WAIT_COMPLETE_VAL               = 1                         ,
+    
     parameter S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL = 0                         ,
-    parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0) (
-
-    // 时钟; 上电/下电时序控制使用
+    parameter S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL = 0                         ,
+    
+    parameter DC_ON_WAIT_COMPLETE_NOFLT_VAL         = 17                        ,
+    parameter DC_ON_WAIT_COMPLETE_FAULT_VAL         = 2                         
+) (
+    // -----------------------------------------------------------
+    // 1. 时钟与复位接口（模块时序基准与初始化）
+    // -----------------------------------------------------------
     input            clk,                     // clock
     input            reset,                   // reset
+
+    // -----------------------------------------------------------
+    // 2. 定时脉冲接口（模块内部时序控制与计时基准）
+    // -----------------------------------------------------------
     input            t1us,                    // 10ns pulse every 1us
     input            t512us,                  // 10ns pulse every 512us
     input            t256ms,                  // 10ns pulse every 256ms
@@ -44,19 +56,23 @@ module pwrseq_master #(
     input            sequence_tick,           // tick used for wdt timeout during power-up/down states
     input            psu_on_tick,             // tick used for wdt timeout during PS on state
 
-    // 物理电源按钮及南桥状态/控制信号
+     // -----------------------------------------------------------
+    // 3. 物理按键信号; 南桥状态和控制信息; 
+    // -----------------------------------------------------------
     input            sys_sw_in_n,             // system's power button switch
     input            pch_pwrbtn_n,            // SB power button input (same signal driven to SB PWRBTN)
     input            pch_pwrbtn_s,            // SB power button input (same signal driven to SB PWRBTN) delay 1s
+    
     input            pch_thermtrip_n,         // SB bound thermtrip signal (same signal driven to SB THERMTRIP)
-    input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)
-    input            pch_sys_reset_n,
     output reg       force_pwrbtn_n,          // forces SB to switch to S5 after power shutdown due to fault
-
+    
     // CPU 重启和关机信号（实际未使用）
     input            cpu_reboot,               
     input            cpu_reboot_x,             
-    input            cpu_power_off,     
+    input            cpu_power_off,  
+
+    input            xr_ps_en,                // system allowed to power on (Xreg's ps_enable)
+    input            pch_sys_reset_n,
 
     // 故障状态输出的flag信号（实际未使用）
     output reg       pch_thermtrip_FLAG, 
@@ -72,11 +88,15 @@ module pwrseq_master #(
     // 点灯观察使用
     output reg       pgd_raw,  
 
-    // S5 上电设备控制信号（不使用）
+    // -----------------------------------------------------------
+    // 4. 电源S5上电控制 来自? BMC or PWR_SEQ_SLAVE ?
+    // -----------------------------------------------------------
     input            s5dev_pwren_request,     // S5 powered device enable request
     input            s5dev_pwrdis_request,    // S5 powered device disable request
 
-    // 上电slave接口
+    // -----------------------------------------------------------
+    // 5. pwrseq_slave模块接口
+    // ----------------------------------------------------------- 
     input            pgd_so_far,              // current overall power status
     input            any_pwr_fault_det,       // any type of power fault
     input            any_lim_recov_fault,     // any limited recovery fault
@@ -88,7 +108,9 @@ module pwrseq_master #(
     input            Power_WAKE_R_N,
     output  reg      turn_system_on,
 
-    // Status
+    // -----------------------------------------------------------
+    // 6. 状态监控
+    // ----------------------------------------------------------- 
     output reg       power_fault,             // power fault is active
     output reg       stby_failure_detected,   // standby failure detected (goes to Xreg byte07[4]
     output reg       po_failure_detected,     // poweron failure detected (goes to Xreg byte07[2])
