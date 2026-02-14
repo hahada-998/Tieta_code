@@ -1,7 +1,7 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v
-Size: 319900bytes
-Last modified time: 2026/02/11 10:58:19
+Size: 319753bytes
+Last modified time: 2026/02/11 17:36:54
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
 Size: 1528bytes
 Last modified time: 2026/02/09 19:29:17
@@ -9,8 +9,8 @@ Last modified time: 2026/02/09 19:29:17
 Size: 10145bytes
 Last modified time: 2017/01/05 17:34:00
 4. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/button_ctrl/power_button.v
-Size: 6063bytes
-Last modified time: 2023/12/13 19:41:20
+Size: 6036bytes
+Last modified time: 2026/02/11 14:53:34
 5. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_delay.v
 Size: 2689bytes
 Last modified time: 2017/09/02 13:24:16
@@ -75,11 +75,11 @@ Last modified time: 2026/02/09 19:25:10
 Size: 10000bytes
 Last modified time: 2026/02/09 19:25:35
 26. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_master.v
-Size: 45595bytes
-Last modified time: 2026/02/09 20:59:38
+Size: 46615bytes
+Last modified time: 2026/02/11 16:11:51
 27. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave.v
-Size: 84265bytes
-Last modified time: 2026/02/09 20:32:11
+Size: 84377bytes
+Last modified time: 2026/02/11 17:30:46
 28. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/timer_gen_50mhz.v
 Size: 5887bytes
 Last modified time: 2026/02/09 20:21:58
@@ -118,11 +118,11 @@ Last modified time: 2025/12/30 10:07:31
 
 Constraints:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc
-Size: 97805bytes
-Last modified time: 2026/02/11 10:55:43
+Size: 96638bytes
+Last modified time: 2026/02/11 15:51:22
 
 Physical Constraint Editor (Post-Map):
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/device_map/Tieta_Feiteng_1001_top.pcf
-Size: 25400bytes
-Last modified time: 2026/02/10 19:42:02
+Size: 23958bytes
+Last modified time: 2026/02/11 11:22:42
 

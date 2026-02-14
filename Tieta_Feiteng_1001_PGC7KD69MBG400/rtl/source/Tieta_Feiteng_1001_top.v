@@ -3216,7 +3216,7 @@ pwrseq_slave #(
     .pgd_so_far                             (pgd_so_far                    ),//out,TO MASTER
     .any_pwr_fault_det                      (any_pwr_fault_det             ),//out,TO MASTER
     .any_aux_vrm_fault                      (any_aux_vrm_fault             ),//out
-    .any_recov_fault                        (),
+    .any_recov_fault                        (                              ),
     .any_lim_recov_fault                    (any_lim_recov_fault           ),//out,TO MASTER
     .any_non_recov_fault                    (any_non_recov_fault           ),//out,TO MASTER
     .dc_on_wait_complete                    (dc_on_wait_complete           ),//in FROM MASTER

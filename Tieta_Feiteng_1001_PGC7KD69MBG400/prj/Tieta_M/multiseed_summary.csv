@@ -3,11 +3,11 @@ project name,Tieta_M.pds
 
 Single Seed:
 Seed,State,Convergence,Setup(Slow),Setup(Fast),Hold(Slow),Hold(Fast),Recovery(Slow),Recovery(Fast),Removal(Slow),Removal(Fast),PBM-GP,PBM-PreGP,PBM-PostGP,LP,Total Placement Cpu Time,Detailed routing,Total Routing Cpu Time,Wire Length After Post-GP,Wire Length After LP,Wire Length After DP,Routing Arc Length,Worst Slack After GP Timing,Worst Slack After LP Timing,Worst Slack Before RP,Worst Slack Before DP,Worst Slack After DP,Worst Slack After Placement,Worst Slack After TA By Preroute,TNS After DP,TNS Before Route,Setup(Slow) Total Failing TNS,Setup(Slow) Total Failing Endpoints,Hold(Slow) Total Failing THS,Hold(Slow) Total Failing Endpoints,Power
-single,OK,OK,9.152,13.386,0.394,0.257,14.600,16.617,0.679,0.426,NA,NA,NA,NA,10.55,4.58,6.84,NA,NA,NA,22786,NA,NA,NA,NA,NA,9332,NA,NA,NA,0.000,0,0.000,0,NA
+single,OK,OK,9.785,13.698,0.395,0.256,13.638,16.018,0.850,0.569,NA,NA,NA,NA,6.42,7.94,10.15,NA,NA,NA,22658,NA,NA,NA,NA,NA,9905,NA,NA,NA,0.000,0,0.000,0,NA
 Pass Rate/Convergence Rate,100.00%,100.00%
 
 Synthesize:
-control_set,169
+control_set,170
 Synthesize Performance Summary:
 slack category,Synthesize Setup WNS,Synthesize Setup TNS,Synthesize Recovery WNS,Synthesize Recovery TNS
 slack value,9.218,0.000,14.641,0.000
@@ -15,17 +15,17 @@ Synthesize Partition Blocks Summary:
 Name,type,Status,Reason,Start Time,End Time,Real Time,CPU Time
 NA,NA,NA,NA,NA,NA,NA,NA
 partition blocks number:,NA
-Synthesize Cpu Time,0h:0m:12s
-Synthesize Process Cpu Time,0h:0m:14s
-Synthesize Real Time,0h:0m:14s
+Synthesize Cpu Time,0h:0m:10s
+Synthesize Process Cpu Time,0h:0m:12s
+Synthesize Real Time,0h:0m:13s
 
 Device Map:
 Device Map Resource Usage Summary:
 Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB
-Used,2065,1938,0,NA,0,NA,NA,NA,NA
+Used,2062,1941,0,NA,0,NA,NA,NA,NA
 Available,5920,8880,26,NA,3552,NA,NA,NA,NA
 Utilization(%),35%,22%,0%,NA,0%,NA,NA,NA,NA
-Device Map Process Cpu Time,0h:0m:4s
+Device Map Process Cpu Time,0h:0m:3s
 
 Project Configurations:
 top module,Tieta_Feiteng_1001_top

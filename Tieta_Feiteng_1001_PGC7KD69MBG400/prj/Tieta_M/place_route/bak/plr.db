@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1837</data>
+                    <data>1835</data>
                     <data>0</data>
                 </row>
                 <row>
@@ -280,7 +280,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1837</data>
+                    <data>1835</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -346,44 +346,6 @@
             <data>i_BMC_I2C9_PAL_M_SCL1_R</data>
             <data>input</data>
             <data>B2</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_BMC_I2C9_PAL_M_SCL_R</data>
-            <data>input</data>
-            <data>C11</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_BMC_JTAGM_NTRST_R</data>
-            <data>input</data>
-            <data>A2</data>
             <data>BANK0</data>
             <data>1.8</data>
             <data>LVCMOS18</data>
@@ -1407,44 +1369,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D1_PWR_CTR0_R</data>
-            <data>input</data>
-            <data>Y6</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_D1_PWR_CTR1_R</data>
-            <data>input</data>
-            <data>Y18</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>i_CPU0_D1_SPIO_CS</data>
             <data>input</data>
             <data>R13</data>
@@ -1486,25 +1410,6 @@
             <data>i_CPU0_D1_SPIO_SCK</data>
             <data>input</data>
             <data>V12</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_RST_VPP_I2C_N</data>
-            <data>input</data>
-            <data>T10</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1923,25 +1828,6 @@
             <data>i_CPU1_D1_PWR_CTR1_R</data>
             <data>input</data>
             <data>W3</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU1_RST_VPP_I2C_N</data>
-            <data>input</data>
-            <data>W6</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -3212,101 +3098,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_PAL_M_DONE</data>
-            <data>input</data>
-            <data>A19</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_M_INITN</data>
-            <data>input</data>
-            <data>C17</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_M_JTAGEN</data>
-            <data>input</data>
-            <data>C13</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_M_PROGRAM_N</data>
-            <data>input</data>
-            <data>D13</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_M_SN</data>
-            <data>input</data>
-            <data>Y20</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>i_PAL_P12V_CPU0_VIN_FLTB</data>
             <data>input</data>
             <data>K18</data>
@@ -3858,44 +3649,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_PAL_TCK</data>
-            <data>input</data>
-            <data>C9</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_TDI</data>
-            <data>input</data>
-            <data>C7</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>i_PAL_TMP1_ALERT_N</data>
             <data>input</data>
             <data>V17</data>
@@ -3940,25 +3693,6 @@
             <data>BANK5</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_TMS</data>
-            <data>input</data>
-            <data>D9</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
             <data>NA</data>
             <data>NONE</data>
             <data>NA</data>
@@ -4108,25 +3842,6 @@
             <data>io_BMC_I2C9_PAL_M_SDA1_R</data>
             <data>inout</data>
             <data>B3</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>io_BMC_I2C9_PAL_M_SDA_R</data>
-            <data>inout</data>
-            <data>D11</data>
             <data>BANK0</data>
             <data>1.8</data>
             <data>LVCMOS18</data>
@@ -4773,44 +4488,6 @@
             <data>o_CPU1_SB_EN_R</data>
             <data>output</data>
             <data>W2</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_FT_CPU0_SCP_BOOT_FROM_FLASH_R</data>
-            <data>output</data>
-            <data>W20</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_FT_CPU1_SCP_BOOT_FROM_FLASH_R</data>
-            <data>output</data>
-            <data>W8</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -6157,25 +5834,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_PAL_TDO</data>
-            <data>output</data>
-            <data>E8</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>o_PAL_UPD_VCC_3V3_EN_R</data>
             <data>output</data>
             <data>H20</data>
@@ -6458,9 +6116,9 @@
             <data>IOBS_0_31</data>
             <data>BANK0</data>
             <data>DIFFIO_B0_39N</data>
-            <data>i_BMC_JTAGM_NTRST_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>A1</data>
@@ -6701,9 +6359,9 @@
             <data>IOBS_0_63</data>
             <data>BANK0</data>
             <data>DIFFI_B0_30N/TDI</data>
-            <data>i_PAL_TDI</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C8</data>
@@ -6728,9 +6386,9 @@
             <data>IOBS_0_93</data>
             <data>BANK0</data>
             <data>DIFFI_B0_24N/TMS</data>
-            <data>i_PAL_TMS</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>F10</data>
@@ -6800,9 +6458,9 @@
             <data>IOBS_0_92</data>
             <data>BANK0</data>
             <data>DIFFI_B0_24P/TCK</data>
-            <data>i_PAL_TCK</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>D12</data>
@@ -6827,18 +6485,18 @@
             <data>IOBS_0_224</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0P/INIT_FLAG_N</data>
-            <data>i_PAL_M_INITN</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>D11</data>
             <data>IOBS_0_123</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18N/SDA/CLK0N_B0</data>
-            <data>io_BMC_I2C9_PAL_M_SDA_R</data>
-            <data>inout</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C12</data>
@@ -6863,27 +6521,27 @@
             <data>IOBS_0_159</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12N/RSTN</data>
-            <data>i_PAL_M_PROGRAM_N</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C13</data>
             <data>IOBS_0_158</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12P/JTAGEN</data>
-            <data>i_PAL_M_JTAGEN</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C11</data>
             <data>IOBS_0_122</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18P/SCL/CLK0P_B0</data>
-            <data>i_BMC_I2C9_PAL_M_SCL_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>G8</data>
@@ -6989,9 +6647,9 @@
             <data>IOBS_0_225</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0N/CFG_DONE</data>
-            <data>i_PAL_M_DONE</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>D8</data>
@@ -7016,9 +6674,9 @@
             <data>IOBS_0_62</data>
             <data>BANK0</data>
             <data>DIFFI_B0_30P/TDO</data>
-            <data>o_PAL_TDO</data>
-            <data>output</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C10</data>
@@ -7907,9 +7565,9 @@
             <data>IOBS_156_117</data>
             <data>BANK2</data>
             <data>DIFFI_B2_20N</data>
-            <data>i_CPU0_RST_VPP_I2C_N</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>R14</data>
@@ -8177,18 +7835,18 @@
             <data>IOBS_156_61</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31N/MISO_SO</data>
-            <data>i_CPU0_D1_PWR_CTR0_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>W20</data>
             <data>IOBS_156_223</data>
             <data>BANK2</data>
             <data>DIFFI_B2_1N/MOSI_SI</data>
-            <data>o_FT_CPU0_SCP_BOOT_FROM_FLASH_R</data>
-            <data>output</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>P14</data>
@@ -8222,9 +7880,9 @@
             <data>IOBR_156_204</data>
             <data>BANK2</data>
             <data>DIFFI_B2_5P</data>
-            <data>i_CPU0_D1_PWR_CTR1_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>V15</data>
@@ -8420,9 +8078,9 @@
             <data>IOBR_156_84</data>
             <data>BANK2</data>
             <data>DIFFI_B2_27P</data>
-            <data>o_FT_CPU1_SCP_BOOT_FROM_FLASH_R</data>
-            <data>output</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>V8</data>
@@ -8456,9 +8114,9 @@
             <data>IOBR_156_222</data>
             <data>BANK2</data>
             <data>DIFFI_B2_1P/FCSI_N</data>
-            <data>i_PAL_M_SN</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>T16</data>
@@ -8564,9 +8222,9 @@
             <data>IOBR_156_60</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31P/CFG_CLK</data>
-            <data>i_CPU1_RST_VPP_I2C_N</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>N4</data>
@@ -9334,23 +8992,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>321</data>
+            <data>316</data>
             <data>592</data>
-            <data>55</data>
+            <data>54</data>
             <row>
                 <data>FF</data>
-                <data>834</data>
+                <data>852</data>
                 <data>3552</data>
                 <data>24</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>884</data>
+                <data>879</data>
                 <data>2368</data>
                 <data>38</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>884</data>
+                    <data>879</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9370,23 +9028,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>452</data>
+            <data>463</data>
             <data>888</data>
-            <data>51</data>
+            <data>53</data>
             <row>
                 <data>FF</data>
-                <data>1105</data>
+                <data>1086</data>
                 <data>5328</data>
                 <data>21</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1191</data>
+                <data>1186</data>
                 <data>3552</data>
                 <data>34</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>1191</data>
+                    <data>1186</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9418,9 +9076,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>313</data>
+            <data>295</data>
             <data>336</data>
-            <data>94</data>
+            <data>88</data>
             <row>
                 <data>IOBD</data>
                 <data>21</data>
@@ -9429,15 +9087,15 @@
             </row>
             <row>
                 <data>IOBR</data>
-                <data>40</data>
+                <data>36</data>
                 <data>42</data>
-                <data>96</data>
+                <data>86</data>
             </row>
             <row>
                 <data>IOBS</data>
-                <data>252</data>
+                <data>238</data>
                 <data>273</data>
-                <data>93</data>
+                <data>88</data>
             </row>
         </row>
         <row>
@@ -9502,21 +9160,21 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>143</data>
+            <data>133</data>
             <data>252</data>
-            <data>57</data>
+            <data>53</data>
         </row>
         <row>
             <data>IOLDLY</data>
-            <data>59</data>
+            <data>54</data>
             <data>84</data>
-            <data>71</data>
+            <data>65</data>
         </row>
         <row>
             <data>IOL</data>
-            <data>313</data>
+            <data>295</data>
             <data>336</data>
-            <data>94</data>
+            <data>88</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -9623,15 +9281,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_1001_top</data>
-            <data>2075</data>
-            <data>1939</data>
+            <data>2065</data>
+            <data>1938</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>313</data>
+            <data>295</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9668,7 +9326,7 @@
             </row>
             <row>
                 <data>UID_Function_u0(UID_Function)</data>
-                <data>50</data>
+                <data>49</data>
                 <data>30</data>
                 <data>0</data>
                 <data>0</data>
@@ -9760,8 +9418,8 @@
             </row>
             <row>
                 <data>bmc_cpld_i2c_ram_u0(bmc_cpld_i2c_ram)</data>
-                <data>495</data>
-                <data>378</data>
+                <data>484</data>
+                <data>376</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9782,8 +9440,8 @@
                 <data>0</data>
                 <row>
                     <data>i2c_slave_bmc_u0(i2c_slave_bmc)</data>
-                    <data>224</data>
-                    <data>170</data>
+                    <data>215</data>
+                    <data>168</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9804,8 +9462,8 @@
                     <data>0</data>
                     <row>
                         <data>i2c_slave_basic0_u0(i2c_slave_basic0)</data>
-                        <data>92</data>
-                        <data>95</data>
+                        <data>82</data>
+                        <data>93</data>
                         <data>0</data>
                         <data>0</data>
                         <data>0</data>
@@ -10243,7 +9901,7 @@
             </row>
             <row>
                 <data>pwrseq_master_inst(pwrseq_master)</data>
-                <data>144</data>
+                <data>145</data>
                 <data>87</data>
                 <data>0</data>
                 <data>0</data>
@@ -11600,8 +11258,8 @@
             </row>
             <row>
                 <data>uart_master_u1(UART_MASTER)</data>
-                <data>78</data>
-                <data>57</data>
+                <data>74</data>
+                <data>54</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -11623,8 +11281,8 @@
             </row>
             <row>
                 <data>uart_master_u2(UART_MASTER)</data>
-                <data>72</data>
-                <data>53</data>
+                <data>76</data>
+                <data>56</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -11660,10 +11318,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:10s</data>
-            <data>0h:0m:24s</data>
             <data>0h:0m:14s</data>
-            <data>595</data>
+            <data>0h:0m:31s</data>
+            <data>0h:0m:21s</data>
+            <data>597</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -11682,15 +11340,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_PAL_BP1_PWR_ON_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -11997,24 +11646,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_CPU1_SB_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_P1V8_STBY_CPLD_EN_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -12645,15 +12276,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_SYS_EEPROM_BYPASS_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TDO' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TDO' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TDO' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_UPD_VCC_3V3_EN_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>

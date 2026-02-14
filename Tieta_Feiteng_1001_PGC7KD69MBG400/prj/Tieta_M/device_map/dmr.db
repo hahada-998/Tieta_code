@@ -344,21 +344,6 @@
                     <data>TRUE</data>
                 </row>
                 <row>
-                    <data>i:i_CPU0_D1_SPIO_CS_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_CPU0_D1_SPIO_MISO_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_CPU0_D1_SPIO_SCK_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
                     <data>i:i_CPU0_VR8_CAT_FLT_ibuf</data>
                     <data>PAP_DONT_TOUCH</data>
                     <data>TRUE</data>
@@ -419,16 +404,6 @@
                     <data>TRUE</data>
                 </row>
                 <row>
-                    <data>i:i_CPU1_D0_PWR_CTR0_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_CPU1_D0_PWR_CTR1_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
                     <data>i:i_CPU1_D1_CRU_RST_OK_ibuf</data>
                     <data>PAP_DONT_TOUCH</data>
                     <data>TRUE</data>
@@ -455,16 +430,6 @@
                 </row>
                 <row>
                     <data>i:i_CPU1_D1_PEU_PREST_3_N_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_CPU1_D1_PWR_CTR0_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_CPU1_D1_PWR_CTR1_R_ibuf</data>
                     <data>PAP_DONT_TOUCH</data>
                     <data>TRUE</data>
                 </row>
@@ -795,11 +760,6 @@
                 </row>
                 <row>
                     <data>i:i_PAL_DPLL_RRSNT_R_ibuf</data>
-                    <data>PAP_DONT_TOUCH</data>
-                    <data>TRUE</data>
-                </row>
-                <row>
-                    <data>i:i_PAL_MAIN_PWR_OK_ibuf</data>
                     <data>PAP_DONT_TOUCH</data>
                     <data>TRUE</data>
                 </row>
@@ -1613,36 +1573,6 @@
                     <data></data>
                 </row>
                 <row>
-                    <data>o_CPU0_D1_SPIO_MOSI</data>
-                    <data>output</data>
-                    <data>P14</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
                     <data>o_CPU0_D0123_SOCKET_ID_R</data>
                     <data>output</data>
                     <data>Y11</data>
@@ -1766,36 +1696,6 @@
                     <data>o_CPU0_POR_N_R</data>
                     <data>output</data>
                     <data>T16</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>o_CPU0_SB_EN_R</data>
-                    <data>output</data>
-                    <data>V16</data>
                     <data>3.3</data>
                     <data>LVCMOS33</data>
                     <data></data>
@@ -2036,36 +1936,6 @@
                     <data>o_CPU1_POR_N_R</data>
                     <data>output</data>
                     <data>V9</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>o_CPU1_SB_EN_R</data>
-                    <data>output</data>
-                    <data>W2</data>
                     <data>3.3</data>
                     <data>LVCMOS33</data>
                     <data></data>
@@ -5963,96 +5833,6 @@
                     <data></data>
                 </row>
                 <row>
-                    <data>i_CPU0_D1_SPIO_CS</data>
-                    <data>input</data>
-                    <data>R13</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_CPU0_D1_SPIO_MISO_R</data>
-                    <data>input</data>
-                    <data>P10</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_CPU0_D1_SPIO_SCK</data>
-                    <data>input</data>
-                    <data>V12</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
                     <data>i_CPU0_VR8_CAT_FLT</data>
                     <data>input</data>
                     <data>K17</data>
@@ -6413,66 +6193,6 @@
                     <data></data>
                 </row>
                 <row>
-                    <data>i_CPU1_D0_PWR_CTR0_R</data>
-                    <data>input</data>
-                    <data>W9</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_CPU1_D0_PWR_CTR1_R</data>
-                    <data>input</data>
-                    <data>Y8</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
                     <data>i_CPU1_D1_CRU_RST_OK</data>
                     <data>input</data>
                     <data>V6</data>
@@ -6626,66 +6346,6 @@
                     <data>i_CPU1_D1_PEU_PREST_3_N_R</data>
                     <data>input</data>
                     <data>W5</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_CPU1_D1_PWR_CTR0_R</data>
-                    <data>input</data>
-                    <data>Y5</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_CPU1_D1_PWR_CTR1_R</data>
-                    <data>input</data>
-                    <data>W3</data>
                     <data>3.3</data>
                     <data>LVCMOS33</data>
                     <data></data>
@@ -8668,36 +8328,6 @@
                     <data>A12</data>
                     <data>1.8</data>
                     <data>LVCMOS18</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data>NONE</data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                    <data></data>
-                </row>
-                <row>
-                    <data>i_PAL_MAIN_PWR_OK</data>
-                    <data>input</data>
-                    <data>K6</data>
-                    <data>3.3</data>
-                    <data>LVCMOS33</data>
                     <data></data>
                     <data></data>
                     <data></data>
@@ -11478,7 +11108,7 @@
             <data>DIFFI_B2_27N</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>U9</data>
@@ -11559,7 +11189,7 @@
             <data>DIFFI_B2_6N</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>U14</data>
@@ -11577,7 +11207,7 @@
             <data>DIFFI_B2_8N</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>W17</data>
@@ -11730,7 +11360,7 @@
             <data>DIFFI_B2_33N</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>R8</data>
@@ -11802,7 +11432,7 @@
             <data>DIFFI_B2_2P</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>Y19</data>
@@ -11928,7 +11558,7 @@
             <data>DIFFI_B2_16P</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>Y13</data>
@@ -12000,7 +11630,7 @@
             <data>DIFFI_B2_24P</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>W9</data>
@@ -12009,7 +11639,7 @@
             <data>DIFFI_B2_25P/CLK0P_B2</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>V9</data>
@@ -12099,7 +11729,7 @@
             <data>DIFFI_B2_39P/FCS_N</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>T7</data>
@@ -12153,7 +11783,7 @@
             <data>DIFFI_B2_37P</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>P7</data>
@@ -12459,7 +12089,7 @@
             <data>DIFFI_B4_3P</data>
             <data></data>
             <data></data>
-            <data>YES</data>
+            <data></data>
         </row>
         <row>
             <data>L1</data>
@@ -12957,7 +12587,7 @@
             <data>pll_inst/u_pll_e2</data>
             <data>clkbufg_0</data>
             <data>ntclkbufg_0</data>
-            <data>1936</data>
+            <data>1939</data>
         </row>
         <row>
             <data>CLKOUT1</data>
@@ -12976,7 +12606,7 @@
         <row>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
-            <data>1778</data>
+            <data>1781</data>
         </row>
         <row>
             <data>pme_filter_inst/pgoodaux_inv_1</data>
@@ -13018,21 +12648,16 @@
         <row>
             <data>ntclkbufg_0</data>
             <data>clkbufg_0/gopclkbufg</data>
-            <data>1936</data>
+            <data>1939</data>
         </row>
         <row>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
-            <data>1778</data>
+            <data>1781</data>
         </row>
         <row>
             <data>inst_scpld_to_mcpld_s2p/si_r [1]</data>
             <data>inst_scpld_to_mcpld_s2p/si_r[1]</data>
-            <data>197</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/N80</data>
-            <data>inst_scpld_to_mcpld_s2p/N80_3/gateop</data>
             <data>197</data>
         </row>
         <row>
@@ -13041,24 +12666,29 @@
             <data>197</data>
         </row>
         <row>
-            <data>N591</data>
-            <data>N591_8/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/N80</data>
+            <data>inst_scpld_to_mcpld_s2p/N80_3/gateop</data>
+            <data>197</data>
+        </row>
+        <row>
+            <data>N590</data>
+            <data>N590_8/gateop</data>
             <data>189</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [0]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[0]</data>
-            <data>165</data>
+            <data>169</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [1]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[1]</data>
-            <data>164</data>
+            <data>168</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [2]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[2]</data>
-            <data>117</data>
+            <data>118</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_rst</data>
@@ -13073,7 +12703,7 @@
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [3]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[3]</data>
-            <data>69</data>
+            <data>64</data>
         </row>
         <row>
             <data>fault_clear</data>
@@ -13081,18 +12711,18 @@
             <data>62</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/w_WR</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_I2C_RW</data>
-            <data>54</data>
-        </row>
-        <row>
             <data>t64ms_tick</data>
             <data>timer_gen_inst/t64ms</data>
-            <data>54</data>
+            <data>56</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_start</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_start</data>
+            <data>55</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/w_WR</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_I2C_RW</data>
             <data>54</data>
         </row>
         <row>
@@ -13101,28 +12731,28 @@
             <data>41</data>
         </row>
         <row>
-            <data>any_pwr_fault_det</data>
-            <data>pwrseq_slave_inst/any_pwr_fault_det</data>
-            <data>40</data>
-        </row>
-        <row>
             <data>t512us_tick</data>
             <data>timer_gen_inst/t512us</data>
             <data>40</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [7]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[7]</data>
-            <data>37</data>
+            <data>any_pwr_fault_det</data>
+            <data>pwrseq_slave_inst/any_pwr_fault_det</data>
+            <data>39</data>
         </row>
         <row>
-            <data>inst_mcpld_to_scpld_p2s/cnt [0]</data>
-            <data>inst_mcpld_to_scpld_p2s/cnt[0]</data>
-            <data>36</data>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [7]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[7]</data>
+            <data>39</data>
         </row>
         <row>
             <data>inst_mcpld_to_scpld_p2s/cnt [1]</data>
             <data>inst_mcpld_to_scpld_p2s/cnt[1]</data>
+            <data>36</data>
+        </row>
+        <row>
+            <data>inst_mcpld_to_scpld_p2s/cnt [0]</data>
+            <data>inst_mcpld_to_scpld_p2s/cnt[0]</data>
             <data>36</data>
         </row>
         <row>
@@ -13133,7 +12763,7 @@
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [5]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[5]</data>
-            <data>33</data>
+            <data>31</data>
         </row>
         <row>
             <data>pwrseq_slave_inst/reg_cpu0_ddr_vdd_en_r</data>
@@ -13146,13 +12776,13 @@
             <data>29</data>
         </row>
         <row>
-            <data>_N9716</data>
-            <data>N1570[4]_0/gateop</data>
+            <data>_N10077</data>
+            <data>N1567[4]_0/gateop</data>
             <data>29</data>
         </row>
         <row>
-            <data>_N10002</data>
-            <data>N720_mux5_1/gateop</data>
+            <data>_N10289</data>
+            <data>N719_mux5_1/gateop</data>
             <data>28</data>
         </row>
         <row>
@@ -13161,13 +12791,13 @@
             <data>27</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [1]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[1]</data>
+            <data>_N10290</data>
+            <data>N719_mux5_2/gateop</data>
             <data>26</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [7]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[7]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [1]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[1]</data>
             <data>26</data>
         </row>
         <row>
@@ -13186,23 +12816,18 @@
             <data>26</data>
         </row>
         <row>
-            <data>_N10003</data>
-            <data>N720_mux5_2/gateop</data>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [7]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[7]</data>
             <data>26</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/cnt [2]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[2]</data>
+            <data>25</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_scl_in</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_glitchlessSignal_scl_q</data>
-            <data>25</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/st_steady_pwrok</data>
-            <data>pwrseq_master_inst/state_reg[18]</data>
-            <data>25</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [7]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[7]</data>
             <data>25</data>
         </row>
         <row>
@@ -13211,13 +12836,13 @@
             <data>25</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [9]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[9]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [7]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[7]</data>
             <data>25</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [2]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[2]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [9]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[9]</data>
             <data>25</data>
         </row>
         <row>
@@ -13226,19 +12851,14 @@
             <data>25</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [2]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[2]</data>
+            <data>pwrseq_master_inst/st_steady_pwrok</data>
+            <data>pwrseq_master_inst/state_reg[18]</data>
             <data>24</data>
         </row>
         <row>
-            <data>pwrseq_slave_inst/st_reset_state</data>
-            <data>pwrseq_master_inst/state_reg[0]</data>
-            <data>23</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [6]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[6]</data>
-            <data>23</data>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [2]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[2]</data>
+            <data>24</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [5]</data>
@@ -13246,29 +12866,29 @@
             <data>23</data>
         </row>
         <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/w_stop</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_stop</data>
+            <data>22</data>
+        </row>
+        <row>
             <data>uart_master_u1/curr_state_reg [0]</data>
             <data>uart_master_u1/curr_state_reg[0]</data>
             <data>22</data>
         </row>
         <row>
-            <data>_N2097</data>
-            <data>N1358_2/gateop</data>
+            <data>pwrseq_slave_inst/st_reset_state</data>
+            <data>pwrseq_master_inst/state_reg[0]</data>
+            <data>22</data>
+        </row>
+        <row>
+            <data>_N2101</data>
+            <data>N1357_2/gateop</data>
             <data>21</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
             <data>21</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/w_stop</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_stop</data>
-            <data>21</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461/gateop</data>
-            <data>20</data>
         </row>
         <row>
             <data>uart_master_u1/data_count [1]</data>
@@ -13276,8 +12896,18 @@
             <data>20</data>
         </row>
         <row>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [6]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[6]</data>
+            <data>20</data>
+        </row>
+        <row>
             <data>uart_master_u2/data_count [1]</data>
             <data>uart_master_u2/data_count[1]</data>
+            <data>20</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461/gateop</data>
             <data>20</data>
         </row>
         <row>
@@ -13291,28 +12921,23 @@
             <data>19</data>
         </row>
         <row>
-            <data>uart_master_u1/data_count [2]</data>
-            <data>uart_master_u1/data_count[2]</data>
-            <data>19</data>
-        </row>
-        <row>
             <data>inst_mcpld_to_scpld_p2s/cnt [2]</data>
             <data>inst_mcpld_to_scpld_p2s/cnt[2]</data>
             <data>19</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly [15]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly[15]</data>
-            <data>18</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/N36</data>
-            <data>pwrseq_master_inst/N36.eq_2/gateop</data>
-            <data>18</data>
+            <data>uart_master_u1/data_count [2]</data>
+            <data>uart_master_u1/data_count[2]</data>
+            <data>19</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N3</data>
             <data>bmc_cpld_i2c_ram_u0/N459_45[7]_30_1/gateop</data>
+            <data>18</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly [15]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly[15]</data>
             <data>18</data>
         </row>
         <row>
@@ -13326,22 +12951,12 @@
             <data>18</data>
         </row>
         <row>
-            <data>pgd_aux_system_sasd</data>
-            <data>pon_reset_inst/pgd_aux_system_sasd</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [3]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[3]</data>
-            <data>17</data>
-        </row>
-        <row>
             <data>inst_scpld_to_mcpld_s2p/cnt [5]</data>
             <data>inst_scpld_to_mcpld_s2p/cnt[5]</data>
             <data>17</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N10558</data>
+            <data>inst_scpld_to_mcpld_s2p/_N10663</data>
             <data>inst_scpld_to_mcpld_s2p/N56_2_3/gateop</data>
             <data>17</data>
         </row>
@@ -13351,12 +12966,32 @@
             <data>17</data>
         </row>
         <row>
+            <data>inst_scpld_to_mcpld_s2p/cnt [3]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[3]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>pwrseq_master_inst/st_off_standby</data>
+            <data>pwrseq_master_inst/state_reg[2]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>pwrseq_master_inst/N36</data>
+            <data>pwrseq_master_inst/N36.eq_2/gateop</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>pgd_aux_system_sasd</data>
+            <data>pon_reset_inst/pgd_aux_system_sasd</data>
+            <data>17</data>
+        </row>
+        <row>
             <data>inst_scpld_to_mcpld_s2p/cnt [6]</data>
             <data>inst_scpld_to_mcpld_s2p/cnt[6]</data>
             <data>17</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/_N9656</data>
+            <data>bmc_cpld_i2c_ram_u0/_N10017</data>
             <data>bmc_cpld_i2c_ram_u0/N459_45[7]_13/gateop</data>
             <data>17</data>
         </row>
@@ -13366,8 +13001,8 @@
             <data>16</data>
         </row>
         <row>
-            <data>timer_gen_inst/t32us_e</data>
-            <data>timer_gen_inst/t32us_e</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_inv</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_16_lutcollapse/gateop</data>
             <data>16</data>
         </row>
         <row>
@@ -13376,28 +13011,33 @@
             <data>16</data>
         </row>
         <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N48</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N48_4/gateop</data>
+            <data>16</data>
+        </row>
+        <row>
+            <data>timer_gen_inst/t32us_e</data>
+            <data>timer_gen_inst/t32us_e</data>
+            <data>16</data>
+        </row>
+        <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N16</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N16/gateop</data>
             <data>16</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9751</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_34/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9957</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_26/gateop</data>
             <data>16</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9747</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_30/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9961</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_30/gateop</data>
             <data>16</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9746</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_29/gateop</data>
-            <data>16</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9743</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_26/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9960</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_29/gateop</data>
             <data>16</data>
         </row>
         <row>
@@ -13406,23 +13046,38 @@
             <data>16</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N48</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N48_4/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9965</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_34/gateop</data>
             <data>16</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_inv</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_16_lutcollapse/gateop</data>
-            <data>16</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9768</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_51/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9982</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_51/gateop</data>
             <data>15</data>
         </row>
         <row>
+            <data>inst_scpld_to_mcpld_s2p/_N9968</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_37/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N9969</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_38/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N9993</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_62/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N10664</data>
+            <data>inst_scpld_to_mcpld_s2p/N56_2_2/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
             <data>uart_master_u1/N445</data>
-            <data>uart_master_u1/N445_3/gateop</data>
+            <data>uart_master_u1/N445_6/gateop</data>
             <data>14</data>
         </row>
         <row>
@@ -13431,58 +13086,23 @@
             <data>14</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N10559</data>
-            <data>inst_scpld_to_mcpld_s2p/N56_2_2/gateop</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9755</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_38/gateop</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9754</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_37/gateop</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/st_off_standby</data>
-            <data>pwrseq_master_inst/state_reg[2]</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9779</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_62/gateop</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>pon_reset_db_n</data>
-            <data>pon_reset_inst/pon_reset_db_n</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9778</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_61/gateop</data>
-            <data>13</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9748</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_31/gateop</data>
-            <data>13</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9750</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_33/gateop</data>
-            <data>13</data>
-        </row>
-        <row>
             <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
             <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
             <data>13</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9788</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_71/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9962</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_31/gateop</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>nt_o_PAL_BMC_PERST_N_R</data>
+            <data>pwrseq_slave_inst/reached_sm_wait_powerok</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N10002</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_71/gateop</data>
             <data>13</data>
         </row>
         <row>
@@ -13491,13 +13111,8 @@
             <data>13</data>
         </row>
         <row>
-            <data>nt_o_PAL_BMC_SRST_R</data>
-            <data>UID_Function_u0/r_BMC_EXTRST_CPLD_OUT_N</data>
-            <data>13</data>
-        </row>
-        <row>
-            <data>uart_master_u2/data_count [0]</data>
-            <data>uart_master_u2/data_count[0]</data>
+            <data>inst_scpld_to_mcpld_s2p/_N9986</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_55/gateop</data>
             <data>13</data>
         </row>
         <row>
@@ -13506,13 +13121,28 @@
             <data>13</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/_N9772</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[76]_55/gateop</data>
+            <data>bmc_cpld_i2c_ram_u0/_N10018</data>
+            <data>bmc_cpld_i2c_ram_u0/N459_45[7]_14/gateop</data>
             <data>13</data>
         </row>
         <row>
-            <data>nt_o_PAL_BMC_PERST_N_R</data>
-            <data>pwrseq_slave_inst/reached_sm_wait_powerok</data>
+            <data>uart_master_u2/data_count [0]</data>
+            <data>uart_master_u2/data_count[0]</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N9992</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_61/gateop</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N9964</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[52]_33/gateop</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>nt_o_PAL_BMC_SRST_R</data>
+            <data>UID_Function_u0/r_BMC_EXTRST_CPLD_OUT_N</data>
             <data>13</data>
         </row>
     </table>
@@ -13525,13 +13155,13 @@
         </column_headers>
         <row>
             <data>FF</data>
-            <data>1938</data>
+            <data>1941</data>
             <data>8880</data>
             <data>22</data>
         </row>
         <row>
             <data>LUT</data>
-            <data>2065</data>
+            <data>2062</data>
             <data>5920</data>
             <data>35</data>
         </row>
@@ -13555,9 +13185,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>295</data>
+            <data>284</data>
             <data>336</data>
-            <data>88</data>
+            <data>85</data>
         </row>
         <row>
             <data>IOCKGATE</data>
@@ -13656,9 +13286,9 @@
         </column_headers>
         <row>
             <data>0h:0m:3s</data>
-            <data>0h:0m:4s</data>
-            <data>0h:0m:5s</data>
-            <data>211</data>
+            <data>0h:0m:3s</data>
+            <data>0h:0m:8s</data>
+            <data>209</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -15602,16 +15232,16 @@
             <data message="4">The instance clkbufg_1(GTP_CLKBUFG) has been inserted on the net clk_25m in design, driver pin CLKOUT1(instance pll_inst/u_pll_e2) -&gt; load pin CLK(instance r_pwm_D_fan_limit_use[0][4]).</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1346_0_1/gateop, insts:20.</data>
+            <data message="4">Infer CARRY group, base inst: N1345_0_1/gateop, insts:20.</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1809_0_1/gateop, insts:29.</data>
+            <data message="4">Infer CARRY group, base inst: N1812_0_1/gateop, insts:29.</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1812_0_1/gateop, insts:27.</data>
+            <data message="4">Infer CARRY group, base inst: N1815_0_1/gateop, insts:27.</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1814_0_1/gateop, insts:28.</data>
+            <data message="4">Infer CARRY group, base inst: N1817_0_1/gateop, insts:28.</data>
         </row>
         <row>
             <data message="4">Infer CARRY group, base inst: UID_Function_u0/N186_1_1/gateop, insts:7.</data>
