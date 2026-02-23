@@ -132,7 +132,7 @@ module pwrseq_slave #(
     output                                      cpu1_d1_vph_p1v8_en_r           ,
     
     // 复位信号输出
-    input                                       cpu_peu_prest_n_r               ,               
+    // input                                       cpu_peu_prest_n_r               ,               
     output                                      cpu_por_n                       ,                    
     output  reg                                 usb_ponrst_r_n                  ,                    
     output                                      pex_reset_r_n                   ,                    

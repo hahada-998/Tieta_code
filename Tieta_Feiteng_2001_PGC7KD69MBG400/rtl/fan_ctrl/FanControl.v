@@ -23,35 +23,33 @@
 // * v1.3: 2021-5-14: add   "r_pwr_on_st_dly <= i_pwr_on_st;"
 
 module  FanControl #(
-	parameter FANNUMBER	=	8,
-	parameter TIME_OUT0	=	'd15 , // Unit: second 
-	parameter TIME_OUT1	=	'd15  // Unit: second 
+	parameter FANNUMBER	= 8            , // 风扇数量
+	parameter TIME_OUT0	= 'd15         , // Unit: second 
+	parameter TIME_OUT1	= 'd15           // Unit: second 
 	)
 (
-    input		i_clk           ,
-    input		i_rst_n         ,
-    input		i_1uSCE         ,
-    input		i_1000mSCE      ,   	
-    input		i_heartbeat     ,
-    input [7:0] i_max_speed_ctrl,
-    input [7:0] i_low_speed_pwr_on,
-    input       i_fan_en_when_s5   ,
-    input       i_bmc_ctrl_when_s5 ,
-    input       i_pwr_on_st        ,
-    input [7:0] i_fan_speed_when_s5,
+    input		i_clk                  ,
+    input		i_rst_n                ,
+    input		i_1uSCE                ,
+    input		i_1000mSCE             ,   	
+    input		i_heartbeat            ,
+    input [7:0] i_max_speed_ctrl       ,
+    input [7:0] i_low_speed_pwr_on     ,
+    input       i_fan_en_when_s5       ,
+    input       i_bmc_ctrl_when_s5     ,
+    input       i_pwr_on_st            ,
+    input [7:0] i_fan_speed_when_s5    ,
     
-    input       i_rst_bmc_n   ,
+    input       i_rst_bmc_n            ,
 
     output      o_bmc_active0_n        ,  
     output      o_bmc_active0_rst_n    ,  
     output      o_wdt_override_pld_sel ,  
     output      o_bmc_active1_n        ,  
     
-    
-    
-    input	[FANNUMBER-1:0] i_BMC_pwm,	
+    input	[FANNUMBER-1:0] i_BMC_pwm  ,	
     output	[FANNUMBER-1:0] o_CPLD_pwm
- 
+
 ); 
 	
 // wire wRst;
