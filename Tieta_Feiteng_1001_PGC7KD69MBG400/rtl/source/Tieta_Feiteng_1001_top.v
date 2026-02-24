@@ -722,10 +722,11 @@ wire                                        db_i_pal_p3v3_stby_pgd              
 wire                                        db_i_pal_fan_efuse_pg               ;// 不使用
 wire                                        db_i_pal_bp2_aux_pg                 ;// 不使用, 可以接入BMC寄存器中存储
 wire                                        db_i_pal_bp1_aux_pg                 ;// 不使用, 可以接入BMC寄存器中存储
-wire                                        db_i_pal_p12v_fan3_pg               ;
-wire                                        db_i_pal_p12v_fan2_pg               ;
-wire                                        db_i_pal_p12v_fan1_pg               ;
-wire                                        db_i_pal_p12v_fan0_pg               ;
+
+wire                                        db_i_pal_p12v_fan3_pg               ;// BMC寄存    addr 0x0020[7]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan2_pg               ;// BMC寄存    addr 0x0020[5]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan1_pg               ;// BMC寄存    addr 0x0020[3]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan0_pg               ;// BMC寄存    addr 0x0020[1]    Fan0 12V电压是否正常，1：正常；0：异常
 
 wire                                        db_i_pal_pgd_88se9230_p1v8          ;// 不使用, 写死为1
 wire                                        db_i_pal_pgd_88se9230_vdd1v0        ;// 不使用, 写死为1
@@ -2066,11 +2067,11 @@ PGM_DEBOUNCE #(.SIGCNT(24), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rst_rail (
 );
 
 // 风扇信号消抖
-wire                db_i_fan0_prsnt_n             ;
-wire                db_i_fan1_prsnt_n             ;
-wire                db_i_fan2_prsnt_n             ;
-wire                db_i_fan3_prsnt_n             ;
-wire [7:0]          i_fan_tach_db                ;   
+wire                db_i_fan0_prsnt_n             ; // BMC寄存     addr 0x0020[0]     Fan0是否存在，1：存在；0：不存在
+wire                db_i_fan1_prsnt_n             ; // BMC寄存     addr 0x0020[2]     Fan0是否存在，1：存在；0：不存在
+wire                db_i_fan2_prsnt_n             ; // BMC寄存     addr 0x0020[4]     Fan0是否存在，1：存在；0：不存在
+wire                db_i_fan3_prsnt_n             ; // BMC寄存     addr 0x0020[6]     Fan0是否存在，1：存在；0：不存在
+wire [7:0]          i_fan_tach_db                 ;   
 
 PGM_DEBOUNCE #(.SIGCNT(4), .NBITS(2'b10), .ENABLE(1'b1)) db_fan_ctrl_inst1 (
     .clk            (clk_50m),
@@ -3243,7 +3244,7 @@ pwrseq_slave #(
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 风扇控制
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire [3:0]                                  bmc_pwr_fan               ;
+wire [3:0]                                  bmc_pwr_fan               ; //BMC下发      addr 0x0021[3:0]      Fan3 12V电源控制，1：使能；0：不使能
 wire [7:0]                                  bmc_pwm_fan[3:0]          ;
 wire [3:0]                                  bmc_fan_status            ;
 wire [10:0]                                 w_fan_tach_real[3:0]      ;
@@ -3264,25 +3265,25 @@ wire [7:0]                                  w_fan_tach_reg [3:0]      ;
 wire [3:0]                                  w_fan_pwm_out             ;
 
 
-
+// 风扇使能控制：当BMC下发不使能时，强制关闭风扇；当BMC下发使能但风扇不存在时，也强制关闭风扇；只有当BMC下发使能且风扇存在时，才使能风扇
 assign o_PAL_P12V_FAN0_EN_R        = (bmc_pwr_fan[0]    == 0) ? 1'b0 :
-                                     (db_i_fan0_prsnt_n == 1) ? 1'b0 : 1'bz; 
+                                     (db_i_fan0_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
 assign o_PAL_P12V_FAN1_EN_R        = (bmc_pwr_fan[1]    == 0) ? 1'b0 :
-                                     (db_i_fan1_prsnt_n == 1) ? 1'b0 : 1'bz; 
+                                     (db_i_fan1_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
 assign o_PAL_P12V_FAN2_EN_R        = (bmc_pwr_fan[2]    == 0) ? 1'b0 :
-                                     (db_i_fan2_prsnt_n == 1) ? 1'b0 : 1'bz; 
+                                     (db_i_fan2_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
 assign o_PAL_P12V_FAN3_EN_R        = (bmc_pwr_fan[3]    == 0) ? 1'b0 :
-                                     (db_i_fan3_prsnt_n == 1) ? 1'b0 : 1'bz;
+                                     (db_i_fan3_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
                                         
-assign o_PAL_FAN_FAIL_LED0_R       = (bmc_fan_status[0] == 1) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_FAIL_LED1_R       = (bmc_fan_status[1] == 1) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_FAIL_LED2_R       = (bmc_fan_status[2] == 1) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_FAIL_LED3_R       = (bmc_fan_status[3] == 1) ? 1'b0 : 1'bz;
+assign o_PAL_FAN_FAIL_LED0_R       = (bmc_fan_status[0] == 1) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_FAIL_LED1_R       = (bmc_fan_status[1] == 1) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_FAIL_LED2_R       = (bmc_fan_status[2] == 1) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_FAIL_LED3_R       = (bmc_fan_status[3] == 1) ? 1'b0 : 1'b1; // 1'bz;
 
-assign o_PAL_FAN_NRML_LED0_R       = (bmc_fan_status[0] == 0) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_NRML_LED1_R       = (bmc_fan_status[1] == 0) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_NRML_LED2_R       = (bmc_fan_status[2] == 0) ? 1'b0 : 1'bz;
-assign o_PAL_FAN_NRML_LED3_R       = (bmc_fan_status[3] == 0) ? 1'b0 : 1'bz;
+assign o_PAL_FAN_NRML_LED0_R       = (bmc_fan_status[0] == 0) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_NRML_LED1_R       = (bmc_fan_status[1] == 0) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_NRML_LED2_R       = (bmc_fan_status[2] == 0) ? 1'b0 : 1'b1; // 1'bz;
+assign o_PAL_FAN_NRML_LED3_R       = (bmc_fan_status[3] == 0) ? 1'b0 : 1'b1; // 1'bz;
 
 
 
@@ -4385,19 +4386,19 @@ bmc_cpld_i2c_ram #(
     .intruder_cable_prsnt		   (~db_i_intruder_cable_inst_n),//addr 0x001D[4]    in   BMC寄存 入侵线缆是否连接，1：连接；0：未连接
     .dsd_prsnt              	   (~db_i_dsd_uart_prsnt_n   ),//addr 0x001D[3]      in   BMC寄存 DSD UART是否存在，1：存在；0：不存在   不使用
 
-    .i_fan0_prsnt_n                (~db_i_fan0_prsnt_n       ),//addr 0x0020[0]      in
-    .i_fan0_p12v_gok               (db_i_pal_p12v_fan0_pg    ),//addr 0x0020[1]      in
-    .i_fan1_prsnt_n                (~db_i_fan1_prsnt_n       ),//addr 0x0020[2]      in
-    .i_fan1_p12v_gok               (db_i_pal_p12v_fan1_pg    ),//addr 0x0020[3]      in
-    .i_fan2_prsnt_n                (~db_i_fan2_prsnt_n       ),//addr 0x0020[4]      in
-    .i_fan2_p12v_gok               (db_i_pal_p12v_fan2_pg    ),//addr 0x0020[5]      in
-    .i_fan3_prsnt_n                (~db_i_fan3_prsnt_n       ),//addr 0x0020[6]      in
-    .i_fan3_p12v_gok               (db_i_pal_p12v_fan3_pg    ),//addr 0x0020[7]      in
+    .i_fan0_prsnt_n                (~db_i_fan0_prsnt_n       ),//addr 0x0020[0]      in   BMC寄存 Fan0是否存在，1：存在；0：不存在
+    .i_fan0_p12v_gok               (db_i_pal_p12v_fan0_pg    ),//addr 0x0020[1]      in   BMC寄存 Fan0 12V电压是否正常，1：正常；0：异常
+    .i_fan1_prsnt_n                (~db_i_fan1_prsnt_n       ),//addr 0x0020[2]      in   BMC寄存 Fan1是否存在，1：存在；0：不存在
+    .i_fan1_p12v_gok               (db_i_pal_p12v_fan1_pg    ),//addr 0x0020[3]      in   BMC寄存 Fan1 12V电压是否正常，1：正常；0：异常
+    .i_fan2_prsnt_n                (~db_i_fan2_prsnt_n       ),//addr 0x0020[4]      in   BMC寄存 Fan2是否存在，1：存在；0：不存在
+    .i_fan2_p12v_gok               (db_i_pal_p12v_fan2_pg    ),//addr 0x0020[5]      in   BMC寄存 Fan2 12V电压是否正常，1：正常；0：异常
+    .i_fan3_prsnt_n                (~db_i_fan3_prsnt_n       ),//addr 0x0020[6]      in   BMC寄存 Fan3是否存在，1：存在；0：不存在
+    .i_fan3_p12v_gok               (db_i_pal_p12v_fan3_pg    ),//addr 0x0020[7]      in   BMC寄存 Fan3 12V电压是否正常，1：正常；0：异常
 
-    .o_fan3_p12v_en                (bmc_pwr_fan[3]           ),//addr 0x0021[3]      out
-    .o_fan2_p12v_en                (bmc_pwr_fan[2]           ),//addr 0x0021[2]      out
-    .o_fan1_p12v_en                (bmc_pwr_fan[1]           ),//addr 0x0021[1]      out
-    .o_fan0_p12v_en                (bmc_pwr_fan[0]           ),//addr 0x0021[0]      out
+    .o_fan3_p12v_en                (bmc_pwr_fan[3]           ),//addr 0x0021[3]      out  BMC下发 Fan3 12V电源控制，1：使能；0：不使能
+    .o_fan2_p12v_en                (bmc_pwr_fan[2]           ),//addr 0x0021[2]      out  BMC下发 Fan2 12V电源控制，1：使能；0：不使能
+    .o_fan1_p12v_en                (bmc_pwr_fan[1]           ),//addr 0x0021[1]      out  BMC下发 Fan1 12V电源控制，1：使能；0：不使能
+    .o_fan0_p12v_en                (bmc_pwr_fan[0]           ),//addr 0x0021[0]      out  BMC下发 Fan0 12V电源控制，1：使能；0：不使能
 
     .o_pwm_bmc_fan0                (bmc_pwm_fan[0][7:0]      ),//addr 0x0022         out
     .o_pwm_bmc_fan1                (bmc_pwm_fan[1][7:0]      ),//addr 0x0023         out
