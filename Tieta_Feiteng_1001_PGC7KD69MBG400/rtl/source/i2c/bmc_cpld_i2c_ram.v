@@ -21,90 +21,90 @@ module bmc_cpld_i2c_ram #(
     input   [15:0]  mb_cpld1_ver,             //addr 0x00FE-0x00FF[7:0]  
     input           bmc_security_bypass,      //addr 0x0000[6]
  
-input   [1:0] cpld_pwm_main_type,       //addr 0x0002[6:5]
-input         fan_wdt_sel,              //addr 0x0002[4]
-input         fm_bmc_fan_wdt_feed,      //addr 0x0002[1]  
-input         ilo_hard_reset,
+    input   [1:0]   cpld_pwm_main_type,       //addr 0x0002[6:5]
+    input           fan_wdt_sel,              //addr 0x0002[4]
+    input           fm_bmc_fan_wdt_feed,      //addr 0x0002[1]  
+    input           ilo_hard_reset,
 
-output        vwire_bmc_wakeup,         //addr 0x0003 [6]
-output        vwire_bmc_sysrst,         //addr 0x0003 [5]
-output        vwire_bmc_shutdown,       //addr 0x0003 [4]
-input         pwr_btn_state,            //addr 0x0003 [3]
-input         rst_btn_state,            //addr 0x0003 [2]
-output        rst_btn_mask,             //addr 0x0003 [0]
+    output          vwire_bmc_wakeup,         //addr 0x0003 [6]
+    output          vwire_bmc_sysrst,         //addr 0x0003 [5]
+    output          vwire_bmc_shutdown,       //addr 0x0003 [4]
+    input           pwr_btn_state,            //addr 0x0003 [3]
+    input           rst_btn_state,            //addr 0x0003 [2]
+    output          rst_btn_mask,             //addr 0x0003 [0]
 
-output        bmc_ctrl_shutdown,        //addr 0x0004 [6]
-output        aux_pcycle,               //addr 0x0004 [4]
-output        pwrbtn_bl_mask,           //addr 0x0004 [3]
-output        vwire_pwrbtn_bl,          //addr 0x0004 [2]
-output        physical_pwrbtn_mask,     //addr 0x0004 [1]
-input         st_steady_pwrok,          //addr 0x0004 [0]
+    output          bmc_ctrl_shutdown,        //addr 0x0004 [6]
+    output          aux_pcycle,               //addr 0x0004 [4]
+    output          pwrbtn_bl_mask,           //addr 0x0004 [3]
+    output          vwire_pwrbtn_bl,          //addr 0x0004 [2]
+    output          physical_pwrbtn_mask,     //addr 0x0004 [1]
+    input           st_steady_pwrok,          //addr 0x0004 [0]
 
-output        bmc_uid_update,            //addr 0x0005 [7]
+    output        bmc_uid_update,            //addr 0x0005 [7]
 
-output        wol_en,                   //addr 0x0006 [3]          
-output  [1:0] sideband_sel,             //addr 0x0006 [1:0]
+    output        wol_en,                   //addr 0x0006 [3]          
+    output  [1:0] sideband_sel,             //addr 0x0006 [1:0]
 
-output        rom_mux_bios_bmc_en,      //addr 0x0007 [7]
-output        rom_mux_bios_bmc_sel,     //addr 0x0007 [6]
-output        rom_bios_bk_rst,          //addr 0x0007 [3]
-output        rom_bios_ma_rst,          //addr 0x0007 [2]
-output        rom_bmc_bk_rst,           //addr 0x0007 [1]
-output        rom_bmc_ma_rst,           //addr 0x0007 [0]
+    output        rom_mux_bios_bmc_en,      //addr 0x0007 [7]
+    output        rom_mux_bios_bmc_sel,     //addr 0x0007 [6]
+    output        rom_bios_bk_rst,          //addr 0x0007 [3]
+    output        rom_bios_ma_rst,          //addr 0x0007 [2]
+    output        rom_bmc_bk_rst,           //addr 0x0007 [1]
+    output        rom_bmc_ma_rst,           //addr 0x0007 [0]
 
-output        test_bat_en,              //addr 0x0008 [7]
-output        bios_eeprom_wp,           //addr 0x0008 [6]
+    output        test_bat_en,              //addr 0x0008 [7]
+    output        bios_eeprom_wp,           //addr 0x0008 [6]
 
-output wire [7:0] o_uid_led_ctl,        //addr 0x0009 [7:0]
+    output wire [7:0] o_uid_led_ctl,        //addr 0x0009 [7:0]
 
-input  wire   i_uid_btn_evt,            //addr 0x000A[1]
-output wire   o_uid_btn_evt_clr,        //addr 0x000A[0]
-input  wire   i_uid_rstbmc_evt,         //addr 0x000A[1]
-output wire   o_uid_rstbmc_evt_clr,     //addr 0x000A[0]
+    input  wire   i_uid_btn_evt,            //addr 0x000A[1]
+    output wire   o_uid_btn_evt_clr,        //addr 0x000A[0]
+    input  wire   i_uid_rstbmc_evt,         //addr 0x000A[1]
+    output wire   o_uid_rstbmc_evt_clr,     //addr 0x000A[0]
 
-output        bmcctl_front_nic_led,     //addr 0x000B[2]
-output wire   o_sys_healthy_red,        //addr 0x000B[1]
-output wire   o_sys_healthy_grn,        //addr 0x000B[0]
+    output        bmcctl_front_nic_led,     //addr 0x000B[2]
+    output wire   o_sys_healthy_red,        //addr 0x000B[1]
+    output wire   o_sys_healthy_grn,        //addr 0x000B[0]
           
-input   [7:0] port_80,                  //addr 0x000d [7:0]
+    input   [7:0] port_80,                  //addr 0x000d [7:0]
 
-input   [7:0] port_84,                  //addr 0x000e [7:0]
+    input   [7:0] port_84,                  //addr 0x000e [7:0]
 
-input   [7:0] lpc_io_data_port85,       //addr 0x000f [7:0]          
+    input   [7:0] lpc_io_data_port85,       //addr 0x000f [7:0]          
 
-output        rtc_select_n,             //addr 0x0010 [4]         
-output        vga2_dis,                 //addr 0x0010 [3]                 
-input         cpu0_d0_bios_over,        //addr 0x0010 [0]        
+    output        rtc_select_n,             //addr 0x0010 [4]         
+    output        vga2_dis,                 //addr 0x0010 [3]                 
+    input         cpu0_d0_bios_over,        //addr 0x0010 [0]        
 
-input         bios_read_flag,           //addr 0x0013 [7]          
-output        bmc_read_flag,            //addr 0x0013 [6]          
+    input         bios_read_flag,           //addr 0x0013 [7]          
+    output        bmc_read_flag,            //addr 0x0013 [6]          
 
-input         m2_slot2_type,            //addr 0x0015 [4]          
-input         m2_slot1_type,            //addr 0x0015 [3]
-input         m2_slot2_prsnt,           //addr 0x0015 [2]          
-input         m2_slot1_prsnt,           //addr 0x0015 [1]          
-input         m2_card_prsnt,            //addr 0x0015 [0]          
+    input         m2_slot2_type,            //addr 0x0015 [4]          
+    input         m2_slot1_type,            //addr 0x0015 [3]
+    input         m2_slot2_prsnt,           //addr 0x0015 [2]          
+    input         m2_slot1_prsnt,           //addr 0x0015 [1]          
+    input         m2_card_prsnt,            //addr 0x0015 [0]          
 
-output  [1:0] bmcctl_uart_sw,           //addr 0x0016 [7:6]
+    output  [1:0] bmcctl_uart_sw,           //addr 0x0016 [7:6]
 
-output  [7:0] bmc_i2c_rst,              //addr 0x0019 [7:0]
-output  [7:0] bmc_i2c_rst2,             //addr 0x001A [7:0]
-output  [7:0] bmc_i2c_rst3,             //addr 0x001B [7:0]
+    output  [7:0] bmc_i2c_rst,              //addr 0x0019 [7:0]
+    output  [7:0] bmc_i2c_rst2,             //addr 0x001A [7:0]
+    output  [7:0] bmc_i2c_rst3,             //addr 0x001B [7:0]
 
-output        tpm_rst,                  //addr 0x001D [7]           
-input         tpm_prsnt,                //addr 0x001D [6]
-input         intruder,                 //addr 0x001D [5]
-input         intruder_cable_prsnt,     //addr 0x001D [4]
-input         dsd_prsnt,                //addr 0x001D [3]
+    output        tpm_rst,                  //addr 0x001D [7]           
+    input         tpm_prsnt,                //addr 0x001D [6]
+    input         intruder,                 //addr 0x001D [5]
+    input         intruder_cable_prsnt,     //addr 0x001D [4]
+    input         dsd_prsnt,                //addr 0x001D [3]
 
-input         i_fan0_prsnt_n  ,
-input         i_fan0_p12v_gok ,
-input         i_fan1_prsnt_n  ,
-input         i_fan1_p12v_gok ,
-input         i_fan2_prsnt_n  ,
-input         i_fan2_p12v_gok ,
-input         i_fan3_prsnt_n  ,
-input         i_fan3_p12v_gok ,
+    input         i_fan0_prsnt_n  ,
+    input         i_fan0_p12v_gok ,
+    input         i_fan1_prsnt_n  ,
+    input         i_fan1_p12v_gok ,
+    input         i_fan2_prsnt_n  ,
+    input         i_fan2_p12v_gok ,
+    input         i_fan3_prsnt_n  ,
+    input         i_fan3_p12v_gok ,
 
 output        o_fan3_p12v_en  ,
 output        o_fan2_p12v_en  ,
@@ -481,8 +481,34 @@ reg [7:0] r_reg_0019;
 reg [7:0] r_reg_001A;
 reg [7:0] r_reg_001B;
 reg [7:0] r_reg_001D;
+
+// begin: mod by z02665 20260225 添加风扇相关寄存器
+reg [7:0] r_reg_0020;
+
+reg [7:0] r_reg_0021;
+
+reg [7:0] r_reg_0022;
+reg [7:0] r_reg_0023;
+reg [7:0] r_reg_0024;
+reg [7:0] r_reg_0025;
+
+reg [7:0] r_reg_0026;
+reg [7:0] r_reg_0027;
+reg [7:0] r_reg_0028;
+reg [7:0] r_reg_0029;
+
+reg [7:0] r_reg_002A;
+
+reg [7:0] r_reg_002B;
+reg [7:0] r_reg_002C;
+reg [7:0] r_reg_002D;
+reg [7:0] r_reg_002E;
+reg [7:0] r_reg_002F;
 reg [7:0] r_reg_0030;
+reg [7:0] r_reg_0031;
 reg [7:0] r_reg_0032;
+// end: mod by z02665 20260225 添加风扇相关寄存器
+
 reg [7:0] r_reg_0033;
 reg [7:0] r_reg_0040;
 reg [7:0] r_reg_0041;
@@ -578,6 +604,14 @@ assign bmc_i2c_rst3         = r_reg_001B[7:0];
 
 assign tpm_rst              = r_reg_001D[6];
 
+// begin: mod by z02665 20260225 风扇转速相关寄存器修改
+assign o_fan0_p12v_en       = r_reg_0021[0];
+assign o_fan1_p12v_en       = r_reg_0021[1];
+assign o_fan2_p12v_en       = r_reg_0021[2];
+assign o_fan3_p12v_en       = r_reg_0021[3];
+
+assign o_pwn_bmc_fan0       = r_reg_0022   ;
+assign o_pwn_bmc_fan1       = r_reg_0023   ;
 // assign duty_0               = r_reg_0040[7:0];
 // assign duty_1               = r_reg_0041[7:0];
 // assign duty_2               = r_reg_0042[7:0];
@@ -586,6 +620,7 @@ assign tpm_rst              = r_reg_001D[6];
 // assign duty_5               = r_reg_0045[7:0];
 // assign duty_6               = r_reg_0046[7:0];
 // assign duty_7               = r_reg_0047[7:0];
+// end: mod by z02665 20260225 风扇转速相关寄存器修改
 
 assign i2c_ram_1050         = r_reg_1050[7:0];
 assign i2c_ram_1051         = r_reg_1051[7:0];
@@ -614,6 +649,14 @@ assign w_ram_0013 = {bios_read_flag,bmc_read_flag,6'b0};
 assign w_ram_0015 = {3'b0,m2_slot2_type,m2_slot1_type,m2_slot2_prsnt,m2_slot1_prsnt,m2_card_prsnt};
 assign w_ram_0016 = {bmcctl_uart_sw,6'b0};
 assign w_ram_001D = {tpm_rst,tpm_prsnt,intruder,intruder_cable_prsnt,dsd_prsnt,3'b0};
+
+// begin: mod by z02665 20260225 风扇转速相关寄存器修改
+assign w_ram_0020 = {i_fan3_p12v_gok, i_fan3_prsnt_n, i_fan2_p12v_gok, i_fan2_prsnt_n, i_fan1_p12v_gok, i_fan1_prsnt_n, i_fan0_p12v_gok, i_fan0_prsnt_n};
+
+// end: mod by z02665 20260225 风扇转速相关寄存器修改
+
+
+
 // assign w_ram_0020 = fan_tach1_byte2;
 // assign w_ram_0021 = fan_tach1_byte1;
 // assign w_ram_0022 = fan_tach2_byte2;
@@ -1096,6 +1139,198 @@ always@(posedge i_clk or negedge i_rst_n) begin
         r_reg_001D  <= w_i2c_data_out;
     end
 end
+
+// begin: mod by z02665 20260225 添加风扇相关寄存器
+//0x0020
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0020  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0020) && w_data_vld_pos)  begin
+        r_reg_0020  <= w_i2c_data_out;
+    end
+end
+
+//0x0021
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0021  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0021) && w_data_vld_pos)  begin
+        r_reg_0021  <= w_i2c_data_out;
+    end
+end
+
+//0x0022
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0022  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0022) && w_data_vld_pos)  begin
+        r_reg_0022  <= w_i2c_data_out;
+    end
+end
+
+//0x0023
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0023  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0023) && w_data_vld_pos)  begin
+        r_reg_0023  <= w_i2c_data_out;
+    end
+end
+
+//0x0024
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0024  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0024) && w_data_vld_pos)  begin
+        r_reg_0024  <= w_i2c_data_out;
+    end
+end
+
+//0x0025
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0025  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0025) && w_data_vld_pos)  begin
+        r_reg_0025  <= w_i2c_data_out;
+    end
+end
+
+//0x0026
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0026  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0026) && w_data_vld_pos)  begin
+        r_reg_0026  <= w_i2c_data_out;
+    end
+end
+
+//0x0027
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0027  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0027) && w_data_vld_pos)  begin
+        r_reg_0027  <= w_i2c_data_out;
+    end
+end
+
+//0x0028
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0028  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0028) && w_data_vld_pos)  begin
+        r_reg_0028  <= w_i2c_data_out;
+    end
+end
+
+//0x0029
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0029  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0029) && w_data_vld_pos)  begin
+        r_reg_0029  <= w_i2c_data_out;
+    end
+end
+
+//0x002A
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002A  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002A) && w_data_vld_pos)  begin
+        r_reg_002A  <= w_i2c_data_out;
+    end
+end
+
+//0x002B
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002B  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002B) && w_data_vld_pos)  begin
+        r_reg_002B  <= w_i2c_data_out;
+    end
+end
+
+//0x002C
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002C  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002C) && w_data_vld_pos)  begin
+        r_reg_002C  <= w_i2c_data_out;
+    end
+end
+
+//0x002D
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002D  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002D) && w_data_vld_pos)  begin
+        r_reg_002D  <= w_i2c_data_out;
+    end
+end
+
+//0x002E
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002E  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002E) && w_data_vld_pos)  begin
+        r_reg_002E  <= w_i2c_data_out;
+    end
+end
+
+//0x002F
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_002F  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h002F) && w_data_vld_pos)  begin
+        r_reg_002F  <= w_i2c_data_out;
+    end
+end
+
+//0x0030
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0030  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0030) && w_data_vld_pos)  begin
+        r_reg_0030  <= w_i2c_data_out;
+    end
+end
+
+//0x0031
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0031  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0031) && w_data_vld_pos)  begin
+        r_reg_0031  <= w_i2c_data_out;
+    end
+end
+
+//0x0032
+always@(posedge i_clk or negedge i_rst_n) begin
+    if(~i_rst_n)  begin
+        r_reg_0032  <=8'h00;
+    end
+    else if((w_WR==1'b0)&&(w_i2c_command==16'h0032) && w_data_vld_pos)  begin
+        r_reg_0032  <= w_i2c_data_out;
+    end
+end
+// end: mod by z02665 20260225 添加风扇相关寄存器
 
 //0x0040
 always@(posedge i_clk or negedge i_rst_n) begin

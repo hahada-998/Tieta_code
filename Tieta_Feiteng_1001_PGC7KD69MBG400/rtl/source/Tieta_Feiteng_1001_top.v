@@ -300,34 +300,34 @@ input  i_PAL_CPU1_D1_VPH_1V8_PG               /* synthesis LOC = "G3"*/ ,// from
 // =============================================================================
 //  风扇信号
 // =============================================================================
-input  i_FAN0_PRSNT_N                         /* synthesis LOC = "G7"*/,// from  FAN_INSTALL/FAN_PRSNT_N                       to  CPLD_M                                       default 0  // 风扇0存在信号输入                     新增
+input  i_FAN0_PRSNT_N                         /* synthesis LOC = "G7"*/ ,// from  FAN_INSTALL/FAN_PRSNT_N                        to  CPLD_M                                       default 0  // 风扇0存在信号输入                     新增
 input  i_FAN1_PRSNT_N                         /* synthesis LOC = "L17"*/,// from  FAN_INSTALL/FAN_PRSNT_N                       to  CPLD_M                                       default 0  // 风扇1存在信号输入                     新增
 input  i_FAN2_PRSNT_N                         /* synthesis LOC = "R19"*/,// from  FAN_INSTALL/FAN_PRSNT_N                       to  CPLD_M                                       default 0  // 风扇2存在信号输入                     新增
-input  i_FAN3_PRSNT_N                         /* synthesis LOC = "N3"*/,// from  FAN_INSTALL/FAN_PRSNT_N                       to  CPLD_M                                       default 0  // 风扇3存在信号输入                     新增
+input  i_FAN3_PRSNT_N                         /* synthesis LOC = "N3"*/ ,// from  FAN_INSTALL/FAN_PRSNT_N                        to  CPLD_M                                       default 0  // 风扇3存在信号输入                     新增
 
-input  i_FAN_TACH_0_D                         /* synthesis LOC = "F7"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇0转速信号输入                     新增
-input  i_FAN_TACH_1_D                         /* synthesis LOC = "C6"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇1转速信号输入                     新增
-input  i_FAN_TACH_2_D                         /* synthesis LOC = "M18"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇2转速信号输入                     新增
-input  i_FAN_TACH_3_D                         /* synthesis LOC = "L16"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇3转速信号输入                     新增
-input  i_FAN_TACH_4_D                         /* synthesis LOC = "R17"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇4转速信号输入                     新增 
-input  i_FAN_TACH_5_D                         /* synthesis LOC = "T19"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇5转速信号输入                     新增 
-input  i_FAN_TACH_6_D                         /* synthesis LOC = "M3"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇6转速信号输入                     新增 
-input  i_FAN_TACH_7_D                         /* synthesis LOC = "N2"*/ ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇7转速信号输入                     新增  
+input  i_FAN_TACH_0_D                         /* synthesis LOC = "F7"*/  ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇0转速信号输入                     新增
+input  i_FAN_TACH_1_D                         /* synthesis LOC = "C6"*/  ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇1转速信号输入                     新增
+input  i_FAN_TACH_2_D                         /* synthesis LOC = "M18"*/ ,// from  FAN_TACH                                     to  CPLD_M                                       default 1  // 风扇2转速信号输入                     新增
+input  i_FAN_TACH_3_D                         /* synthesis LOC = "L16"*/ ,// from  FAN_TACH                                     to  CPLD_M                                       default 1  // 风扇3转速信号输入                     新增
+input  i_FAN_TACH_4_D                         /* synthesis LOC = "R17"*/ ,// from  FAN_TACH                                     to  CPLD_M                                       default 1  // 风扇4转速信号输入                     新增 
+input  i_FAN_TACH_5_D                         /* synthesis LOC = "T19"*/ ,// from  FAN_TACH                                     to  CPLD_M                                       default 1  // 风扇5转速信号输入                     新增 
+input  i_FAN_TACH_6_D                         /* synthesis LOC = "M3"*/  ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇6转速信号输入                     新增 
+input  i_FAN_TACH_7_D                         /* synthesis LOC = "N2"*/  ,// from  FAN_TACH                                      to  CPLD_M                                       default 1  // 风扇7转速信号输入                     新增  
 
-output o_PAL_FAN0_PWM_R                       /* synthesis LOC = "T18"*/ ,// from  CPLD_M                                        to  FAN_CONN/FAN_ESD/PAL_FAN1_PWM                default 1  // 风扇1 PWM调速信号输出
-output o_PAL_FAN1_PWM_R                       /* synthesis LOC = "P20"*/ ,// from  CPLD_M                                        to  FAN_CONN/FAN_ESD/PAL_FAN1_PWM                default 1  // 风扇1 PWM调速信号输出
+output o_PAL_FAN0_PWM_R                       /* synthesis LOC = "T18"*/ ,// from  CPLD_M                                       to  FAN_CONN/FAN_ESD/PAL_FAN1_PWM                default 1  // 风扇1 PWM调速信号输出
+output o_PAL_FAN1_PWM_R                       /* synthesis LOC = "P20"*/ ,// from  CPLD_M                                       to  FAN_CONN/FAN_ESD/PAL_FAN1_PWM                default 1  // 风扇1 PWM调速信号输出
 output o_PAL_FAN2_PWM_R                       /* synthesis LOC = "G1"*/ ,// from  CPLD_M                                        to  FAN_CONN/FAN_ESD/PAL_FAN2_PWM                default 1  // 风扇2 PWM调速信号输出                 
 output o_PAL_FAN3_PWM_R                       /* synthesis LOC = "G2"*/ ,// from  CPLD_M                                        to  FAN_CONN/FAN_ESD/PAL_FAN3_PWM                default 1  // 风扇3 PWM调速信号输出
 
-output o_PAL_FAN_FAIL_LED0_R                  /* synthesis LOC = "M19"*/ ,// from  CPLD_M                                        to  FAN_FAIL_LED0/D36_18_225SURSYGC_S530_...     default 1  // 风扇故障LED0控制信号输出              新增
-output o_PAL_FAN_FAIL_LED1_R                  /* synthesis LOC = "P18"*/ ,// from  CPLD_M                                        to  FAN_FAIL_LED1/D37_18_225SURSYGC_S530_...     default 1  // 风扇故障LED1控制信号输出              新增
-output o_PAL_FAN_FAIL_LED2_R                  /* synthesis LOC = "H2"*/  ,// from  CPLD_M                                        to  FAN_FAIL_LED2/D38_18_225SURSYGC_S530_...     default 1  // 风扇故障LED2控制信号输出              新增         
-output o_PAL_FAN_FAIL_LED3_R                  /* synthesis LOC = "K2"*/  ,// from  CPLD_M                                        to  FAN_FAIL_LED3/D39_18_225SURSYGC_S530_...     default 1  // 风扇故障LED3控制信号输出              新增
+output o_PAL_FAN_FAIL_LED0_R                  /* synthesis LOC = "M19"*/ ,// from  CPLD_M                                       to  FAN_FAIL_LED0/D36_18_225SURSYGC_S530_...     default 1  // 风扇故障LED0控制信号输出              新增
+output o_PAL_FAN_FAIL_LED1_R                  /* synthesis LOC = "P18"*/ ,// from  CPLD_M                                       to  FAN_FAIL_LED1/D37_18_225SURSYGC_S530_...     default 1  // 风扇故障LED1控制信号输出              新增
+output o_PAL_FAN_FAIL_LED2_R                  /* synthesis LOC = "H2"*/  ,// from  CPLD_M                                       to  FAN_FAIL_LED2/D38_18_225SURSYGC_S530_...     default 1  // 风扇故障LED2控制信号输出              新增         
+output o_PAL_FAN_FAIL_LED3_R                  /* synthesis LOC = "K2"*/  ,// from  CPLD_M                                       to  FAN_FAIL_LED3/D39_18_225SURSYGC_S530_...     default 1  // 风扇故障LED3控制信号输出              新增
 
-output o_PAL_FAN_NRML_LED0_R                  /* synthesis LOC = "R20"*/ ,// from  CPLD_M                                        to  FAN_NORMAL_LED0/D36_18_225SURSYGC_S530_...   default 1  // 风扇正常LED0控制信号输出              新增
-output o_PAL_FAN_NRML_LED1_R                  /* synthesis LOC = "N20"*/ ,// from  CPLD_M                                        to  FAN_NORMAL_LED1/D37_18_225SURSYGC_S530_...   default 1  // 风扇正常LED1控制信号输出              新增
-output o_PAL_FAN_NRML_LED2_R                  /* synthesis LOC = "H1"*/  ,// from  CPLD_M                                        to  FAN_NORMAL_LED2/D38_18_225SURSYGC_S530_...   default 1  // 风扇正常LED2控制信号输出              新增
-output o_PAL_FAN_NRML_LED3_R                  /* synthesis LOC = "J1"*/  ,// from  CPLD_M                                        to  FAN_NORMAL_LED3/D39_18_225SURSYGC_S530_...   default 1  // 风扇正常LED3控制信号输出              新增
+output o_PAL_FAN_NRML_LED0_R                  /* synthesis LOC = "R20"*/ ,// from  CPLD_M                                       to  FAN_NORMAL_LED0/D36_18_225SURSYGC_S530_...   default 1  // 风扇正常LED0控制信号输出              新增
+output o_PAL_FAN_NRML_LED1_R                  /* synthesis LOC = "N20"*/ ,// from  CPLD_M                                       to  FAN_NORMAL_LED1/D37_18_225SURSYGC_S530_...   default 1  // 风扇正常LED1控制信号输出              新增
+output o_PAL_FAN_NRML_LED2_R                  /* synthesis LOC = "H1"*/  ,// from  CPLD_M                                       to  FAN_NORMAL_LED2/D38_18_225SURSYGC_S530_...   default 1  // 风扇正常LED2控制信号输出              新增
+output o_PAL_FAN_NRML_LED3_R                  /* synthesis LOC = "J1"*/  ,// from  CPLD_M                                       to  FAN_NORMAL_LED3/D39_18_225SURSYGC_S530_...   default 1  // 风扇正常LED3控制信号输出              新增
 
 // =============================================================================
 //  DPLL控制信号
@@ -3244,13 +3244,12 @@ pwrseq_slave #(
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 风扇控制
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-wire [3:0]                                  bmc_pwr_fan               ; //BMC下发      addr 0x0021[3:0]      Fan3 12V电源控制，1：使能；0：不使能
-wire [7:0]                                  bmc_pwm_fan[3:0]          ;
-wire [3:0]                                  bmc_fan_status            ;
-wire [10:0]                                 w_fan_tach_real[3:0]      ;
+wire [3:0]                                  bmc_pwr_fan               ; // BMC下发      addr 0x0021[3:0]      Fan3 12V电源控制，1：使能；0：不使能
+wire [7:0]                                  w_BMC_pwe_D_fan[3:0]      ; // BMC下发      addr 0x0022~0x0025    Fan0 pwm控制，占空比，0-255对应0%-100%
+wire [3:0]                                  bmc_fan_status            ; // BMC下发      addr 0x002A[3:0]      Fan 状态，1：正常；0：异常（如转速过低或过高）
+wire [10:0]                                 w_fan_tach_real[3:0]      ; // BMC寄存      addr 0x002B~0x0032    Fan转速实际值，单位RPM，11位二进制表示，范围0-2047RPM
 wire [1:0]                                  cpld_pwm_main_type        ; // 原信号不使用，根据风扇类型自动调整PWM上限
 
-wire [7:0]                                  w_BMC_pwe_D_fan[3:0]      ;
 wire [7:0]                                  w_FAN_default_pwm         ;
 wire [7:0]                                  w_FAN_max_pwm             ;
 wire [7:0]                                  w_FAN_half_pwm            ;
@@ -3286,57 +3285,58 @@ assign o_PAL_FAN_NRML_LED2_R       = (bmc_fan_status[2] == 0) ? 1'b0 : 1'b1; // 
 assign o_PAL_FAN_NRML_LED3_R       = (bmc_fan_status[3] == 0) ? 1'b0 : 1'b1; // 1'bz;
 
 
+assign w_FAN_default_pwm = 8'd80     ; 
+assign w_FAN_max_pwm     = 8'd255    ; 
+assign w_FAN_DIE_PWM     = 8'd204    ; 
+assign w_FAN_half_pwm    = 8'd127    ;
 
-assign w_FAN_default_pwm = 8'd80 ; 
-assign w_FAN_max_pwm = 8'd255    ; 
-assign w_FAN_DIE_PWM = 8'd204    ; 
-assign w_FAN_half_pwm = 8'd127   ;
 generate  
     genvar k;
     for(k=0;k<4;k=k+1)begin 
-	      always @(posedge clk_25m or negedge pon_reset_n) begin
-            if( !pon_reset_n) begin
-                r_pwm_D_fan_pre_limit[k]		<= 8'd0 ;
+	    always @(posedge clk_25m or negedge pon_reset_n) begin
+            if(!pon_reset_n) begin
+                r_pwm_D_fan_pre_limit[k] <= 8'd0 ;
             end
             else begin
                 if(w_BMC_pwe_D_fan[k] == 8'b0) begin  
-           		      r_pwm_D_fan_pre_limit[k] <= w_FAN_default_pwm;
-           		  end
-		    	  else if(bmc_ready_flag) begin                           
-		    	      r_pwm_D_fan_pre_limit[k]	<= w_FAN_DIE_PWM; 
-		    	  end
+           		    r_pwm_D_fan_pre_limit[k] <= w_FAN_default_pwm  ;
+           		end
+		    	else if(bmc_ready_flag) begin                           
+		    	    r_pwm_D_fan_pre_limit[k] <= w_FAN_DIE_PWM       ; 
+		    	end
            	else 
-           		    r_pwm_D_fan_pre_limit[k]	<= w_BMC_pwe_D_fan[k]	;
+           		    r_pwm_D_fan_pre_limit[k] <= w_BMC_pwe_D_fan[k]	;
             end
-        end						
+        end		
+
         // fan max pwm set
-	      always @(posedge clk_25m or negedge pon_reset_n) begin 
+	    always @(posedge clk_25m or negedge pon_reset_n) begin 
             if( !pon_reset_n)begin
-                    r_pwm_D_fan_limit_use[k] <= 8'd0 ;
+                r_pwm_D_fan_limit_use[k] <= 8'd0 ;
             end
             else begin
-		            if((r_pwm_D_fan_pre_limit[k]	>= w_FAN_max_pwm) && (w_fan_type[k] == 8'd56))begin     
-		    		        r_pwm_D_fan_limit_use[k]	<= w_FAN_max_pwm; 
-		    	      end
+		        if((r_pwm_D_fan_pre_limit[k] >= w_FAN_max_pwm) && (w_fan_type[k] == 8'd56))
+		    		r_pwm_D_fan_limit_use[k]	<= w_FAN_max_pwm; 
+
                 else 
-		    		        r_pwm_D_fan_limit_use[k]	<= r_pwm_D_fan_pre_limit[k];
-                end
+		    		r_pwm_D_fan_limit_use[k]	<= r_pwm_D_fan_pre_limit[k];
+            end
         end
  	 
         //fan tach ==================================================      
         fan_pwm_tach fan_pwm_tach_m (
-            .i_clk				      ( clk_50m		                ),
-            .i_rst_n			      ( pon_reset_n	              ),
-            .i_clk_0_4us		    ( t6m25_clk		              ),				//w_0_4us_clk  //2023-6-6 chg to t6m25_clk
-            .i_clk_1s			      ( t1hz_clk		              ),
-            .i_pwm_duty			    ( r_pwm_D_fan_limit_use[k]	),	//2023-9-20  chg w_pwm_D_fan[k] to r_pwm_D_fan_limit_use
-            .i_fan_tach0		    ( i_fan_tach_db[2*k]		    ),
-            .i_fan_tach1		    ( i_fan_tach_db[2*k+1]		  ),
-            .o_pwm_out			    ( w_fan_pwm_out[k]			    ),
-            .o_fan_tach0_reg	  ( w_fan_tach_reg[2*k]		    ),
+            .i_clk				  ( clk_50m		                  ),
+            .i_rst_n			  ( pon_reset_n	                  ),
+            .i_clk_0_4us		  ( t6m25_clk		              ), //w_0_4us_clk  //2023-6-6 chg to t6m25_clk
+            .i_clk_1s			  ( t1hz_clk		              ),
+            .i_pwm_duty			  ( r_pwm_D_fan_limit_use[k]	  ), //2023-9-20  chg w_pwm_D_fan[k] to r_pwm_D_fan_limit_use
+            .i_fan_tach0		  ( i_fan_tach_db[2*k]		      ),
+            .i_fan_tach1		  ( i_fan_tach_db[2*k+1]		  ),
+            .o_pwm_out			  ( w_fan_pwm_out[k]			  ),
+            .o_fan_tach0_reg	  ( w_fan_tach_reg[2*k]		      ),
             .o_fan_tach1_reg	  ( w_fan_tach_reg[2*k+1]		  ),
-	          .o_fan_tach0_cnt	  ( w_fan_tach_real[2*k]	    ),
-            .o_fan_tach1_cnt	  ( w_fan_tach_real[2*k+1]    )
+	        .o_fan_tach0_cnt	  ( w_fan_tach_real[2*k]	      ),
+            .o_fan_tach1_cnt	  ( w_fan_tach_real[2*k+1]        )
         );    
     end
 endgenerate 
@@ -4400,26 +4400,26 @@ bmc_cpld_i2c_ram #(
     .o_fan1_p12v_en                (bmc_pwr_fan[1]           ),//addr 0x0021[1]      out  BMC下发 Fan1 12V电源控制，1：使能；0：不使能
     .o_fan0_p12v_en                (bmc_pwr_fan[0]           ),//addr 0x0021[0]      out  BMC下发 Fan0 12V电源控制，1：使能；0：不使能
 
-    .o_pwm_bmc_fan0                (bmc_pwm_fan[0][7:0]      ),//addr 0x0022         out
-    .o_pwm_bmc_fan1                (bmc_pwm_fan[1][7:0]      ),//addr 0x0023         out
-    .o_pwm_bmc_fan2                (bmc_pwm_fan[2][7:0]      ),//addr 0x0024         out
-    .o_pwm_bmc_fan3                (bmc_pwm_fan[3][7:0]      ),//addr 0x0025         out
+    .o_pwm_bmc_fan0                (w_BMC_pwe_D_fan[0][7:0]  ),//addr 0x0022         out  BMC下发 Fan0 pwm控制，占空比，0-255对应0%-100%
+    .o_pwm_bmc_fan1                (w_BMC_pwe_D_fan[1][7:0]  ),//addr 0x0023         out  BMC下发 Fan1 pwm控制，占空比，0-255对应0%-100%
+    .o_pwm_bmc_fan2                (w_BMC_pwe_D_fan[2][7:0]  ),//addr 0x0024         out  BMC下发 Fan2 pwm控制，占空比，0-255对应0%-100%
+    .o_pwm_bmc_fan3                (w_BMC_pwe_D_fan[3][7:0]  ),//addr 0x0025         out  BMC下发 Fan3 pwm控制，占空比，0-255对应0%-100%
 
-    .i_fan0_type                   (8'h56                    ),//addr 0x0026          in   0x56:4线PWM风扇，0x5A:3线风扇
-    .i_fan1_type                   (8'h56                    ),//addr 0x0027          in   0x56:4线PWM风扇，0x5A:3线风扇
-    .i_fan2_type                   (8'h56                    ),//addr 0x0028          in   0x56:4线PWM风扇，0x5A:3线风扇
-    .i_fan3_type                   (8'h56                    ),//addr 0x0029          in   0x56:4线PWM风扇，0x5A:3线风扇
+    .i_fan0_type                   (8'h56                    ),//addr 0x0026         in   BMC寄存 0x56:4线PWM风扇，0x5A:3线风扇
+    .i_fan1_type                   (8'h56                    ),//addr 0x0027         in   BMC寄存 0x56:4线PWM风扇，0x5A:3线风扇
+    .i_fan2_type                   (8'h56                    ),//addr 0x0028         in   BMC寄存 0x56:4线PWM风扇，0x5A:3线风扇
+    .i_fan3_type                   (8'h56                    ),//addr 0x0029         in   BMC寄存 0x56:4线PWM风扇，0x5A:3线风扇
 
-    .o_bmc_ctr_fan_led_status      (bmc_fan_status           ),//addr 0x002A[3:0]   out  每位代表一个风扇，1表示异常，0表示正常
+    .o_bmc_ctr_fan_led_status      (bmc_fan_status           ),//addr 0x002A[3:0]    out  BMC下发 每位代表一个风扇，1表示异常，0表示正常
 
-    .i_fan0_tach0_real_h           (w_fan_tach_real[0][10:3] ),//addr 0x002B[7:0]    in
-    .i_fan0_tach0_real_l           (w_fan_tach_real[0][2:0]  ),//addr 0x002C[7:0]    in
-    .i_fan1_tach1_real_h           (w_fan_tach_real[1][10:3] ),//addr 0x002D[7:0]    in
-    .i_fan1_tach1_real_l           (w_fan_tach_real[1][2:0]  ),//addr 0x002E[7:0]    in
-    .i_fan2_tach2_real_h           (w_fan_tach_real[2][10:3] ),//addr 0x002F[7:0]    in
-    .i_fan2_tach2_real_l           (w_fan_tach_real[2][2:0]  ),//addr 0x0030[7:0]    in
-    .i_fan3_tach3_real_h           (w_fan_tach_real[3][10:3] ),//addr 0x0031[7:0]    in
-    .i_fan3_tach3_real_l           (w_fan_tach_real[3][2:0]  ),//addr 0x0032[7:0]    in
+    .i_fan0_tach0_real_h           (w_fan_tach_real[0][10:3] ),//addr 0x002B[7:0]    in   BMC寄存 Fan0实际转速高8位
+    .i_fan0_tach0_real_l           (w_fan_tach_real[0][2:0]  ),//addr 0x002C[7:0]    in   BMC寄存 Fan0实际转速第3位
+    .i_fan1_tach1_real_h           (w_fan_tach_real[1][10:3] ),//addr 0x002D[7:0]    in   BMC寄存 Fan1实际转速高8位
+    .i_fan1_tach1_real_l           (w_fan_tach_real[1][2:0]  ),//addr 0x002E[7:0]    in   BMC寄存 Fan1实际转速高3位
+    .i_fan2_tach2_real_h           (w_fan_tach_real[2][10:3] ),//addr 0x002F[7:0]    in   BMC寄存 Fan2实际转速高8位 
+    .i_fan2_tach2_real_l           (w_fan_tach_real[2][2:0]  ),//addr 0x0030[7:0]    in   BMC寄存 Fan2实际转速高3位
+    .i_fan3_tach3_real_h           (w_fan_tach_real[3][10:3] ),//addr 0x0031[7:0]    in   BMC寄存 Fan0实际转速高8位
+    .i_fan3_tach3_real_l           (w_fan_tach_real[3][2:0]  ),//addr 0x0032[7:0]    in   BMC寄存 Fan0实际转速高3位
     /*
     .fan_tach1_byte2               (fan_tach1_byte2          ),//addr 0x0020[7:0]    in
     .fan_tach1_byte1               (fan_tach1_byte1          ),//addr 0x0021[7:0]    in
