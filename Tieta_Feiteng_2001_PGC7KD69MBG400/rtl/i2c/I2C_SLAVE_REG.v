@@ -71,11 +71,16 @@ module I2C_SLAVE_REG
 	input             pal_mcio15_cable_id0,
 	input             pal_mcio16_cable_id1,
 	input             pal_mcio16_cable_id0,
+
+    input             ocp_prsnt_n         ,
+
+    /* 不使用
 	input             i_ocp1_x16_or_x8    ,
 	input             ocp1_prsnt_n        ,
-	input             ocp2_prsnt_n        ,       
+	input             ocp2_prsnt_n        ,    
+    不使用 */   
 
-//2024-6-14 add for slot_id
+    //2024-6-14 add for slot_id
     input        [7:0]i_i2c_ram_60        ,
     input        [7:0]i_i2c_ram_61        ,
     input        [7:0]i_i2c_ram_62        ,
@@ -575,7 +580,7 @@ assign w_ram_82[7:0] = {cpu0_die3_alloc,cpu0_die2_alloc};
 assign w_ram_83[7:0] = {cpu1_die1_alloc,4'b0};
 assign w_ram_84[7:0] = {4'b0,cpu1_die0_alloc_1};
 assign w_ram_85[7:0] = {cpu1_die3_alloc,cpu1_die2_alloc};
-assign w_ram_86[7:0] = {6'b0,ocp2_prsnt_n,ocp1_prsnt_n};
+assign w_ram_86[7:0] = {7'b0,ocp_prsnt_n};
 
 assign w_ram_C0   	   = mfr_id		;
 assign w_ram_C1  	   = odm_id		;

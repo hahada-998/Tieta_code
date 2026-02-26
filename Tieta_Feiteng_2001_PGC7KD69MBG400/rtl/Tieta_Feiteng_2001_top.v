@@ -164,23 +164,23 @@ module Tieta_Feiteng_2001_top(
     output  o_PAL_OCP_NCSI_CLK_50M_R                /* synthesis LOC  = "C10" */,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // OCP NCSI 时钟 50M 信号
     output  o_PAL_OCP_NCSI_SW_EN_N_R                /* synthesis LOC  = "A7" */,// from  CPLD_S                                       to  RISER_AUX/U89_SGM652321XTS20G/TR                 default 1  // OCP NCSI 开关使能 信号
 
-    // output  o_PAL_OCP1_NCSI_EN_N_R                                             , // 暂不使用
-    // output  o_PAL_OCP2_NCSI_EN_N_R                                             , // 暂不使用
-        
     input   i_PAL_OCP_PRSNT_N                       /* synthesis LOC  = "L6"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP 设备存在 信号
     input   i_PAL_OCP_RISER_CPLD                    /* synthesis LOC  = "B6"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP Riser CPLD 信号
   
     input   i_UART2_PAL_OCP_RX_R                    /* synthesis LOC = "E14"*/,// from  GENZ_168PIN                                   to  CPLD_S                                           default 1  // OCP UART2 接收 信号
     output  o_UART2_PAL_OCP_TX_R                    /* synthesis LOC = "D18"*/,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP UART2 接收 信号    
-    
+    /* end: OCP */
+
     // output  o_PAL_OCP1_SS_CLK_R                     , // 暂不使用
     // output  o_PAL_OCP1_SS_LD_N_R                    , // 暂不使用
     // input   i_PAL_OCP1_SS_DATA_IN_R                 , // 暂不使用
     // output  o_PAL_OCP2_SS_CLK_R                     , // 暂不使用
     // output  o_PAL_OCP2_SS_LD_N_R                    , // 暂不使用
     // input   i_PAL_OCP2_SS_DATA_IN_R                 , // 暂不使用
-    /* end: OCP */
 
+    // output  o_PAL_OCP1_NCSI_EN_N_R                  , // 暂不使用
+    // output  o_PAL_OCP2_NCSI_EN_N_R                  , // 暂不使用
+    
     /* begin: GPIO CPU0/1 D0/D1相关信号 */
     // 信号不使用, 保留接口
     input   i_CPU1_D0_GPIO_PORT0_R                   /* synthesis LOC = "F3"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 GPIO 端口0 信号
@@ -633,16 +633,16 @@ wire                            pal_riser2_pe_wake_n                            
 
 wire                            cpu_nvme0_prsnt_n                                   ;
 wire                            cpu_nvme1_prsnt_n                                   ;
-wire                            cpu_nvme2_prsnt_n                                   ;
-wire                            cpu_nvme3_prsnt_n                                   ;
+// wire                            cpu_nvme2_prsnt_n                                   ; // 不使用 
+// wire                            cpu_nvme3_prsnt_n                                   ; // 不使用 
 wire                            cpu_nvme4_prsnt_n                                   ;
 wire                            cpu_nvme5_prsnt_n                                   ;
 wire                            cpu_nvme6_prsnt_n                                   ;
 wire                            cpu_nvme7_prsnt_n                                   ;
 wire                            cpu_nvme10_prsnt_n                                  ;
 wire                            cpu_nvme11_prsnt_n                                  ;
-wire                            cpu_nvme12_prsnt_n                                  ;
-wire                            cpu_nvme13_prsnt_n                                  ;
+// wire                            cpu_nvme12_prsnt_n                                  ; // 不使用 
+// wire                            cpu_nvme13_prsnt_n                                  ; // 不使用 
 wire                            cpu_nvme14_prsnt_n                                  ;
 wire                            cpu_nvme15_prsnt_n                                  ;
 wire                            cpu_nvme16_prsnt_n                                  ;
@@ -717,14 +717,15 @@ wire                            bmc_extrst_uid                                  
 // wire                            pal_bp7_prsnt_n                                     ; // 未使用
 // wire                            pal_bp8_prsnt_n                                     ; // 未使用
 
-// wire                            pal_gpu_fan4_prsnt                                  ; // 未使用
-// wire                            pal_gpu_fan3_prsnt                                  ; // 未使用
-// wire                            pal_gpu_fan2_prsnt                                  ; // 未使用
-// wire                            pal_gpu_fan1_prsnt                                  ; // 未使用
-// wire                            pal_gpu_fan4_foo                                    ; // 未使用
-// wire                            pal_gpu_fan3_foo                                    ; // 未使用
-// wire                            pal_gpu_fan2_foo                                    ; // 未使用
-// wire                            pal_gpu_fan1_foo                                    ; // 未使用
+// wire                            pal_gpu_fan4_prsnt                                  ; // 不使用
+// wire                            pal_gpu_fan3_prsnt                                  ; // 不使用
+// wire                            pal_gpu_fan2_prsnt                                  ; // 不使用
+// wire                            pal_gpu_fan1_prsnt                                  ; // 不使用
+
+// wire                            pal_gpu_fan4_foo                                    ; // 不使用
+// wire                            pal_gpu_fan3_foo                                    ; // 不使用
+// wire                            pal_gpu_fan2_foo                                    ; // 不使用
+// wire                            pal_gpu_fan1_foo                                    ; // 不使用
 
 wire                            board_id7                                           ;
 wire                            board_id6                                           ;
@@ -765,8 +766,8 @@ wire                            riser_prsnt_det_7                               
 
 wire [7:0]                      sw                                                  ; // 拨码开关
 
+/* 不使用
 wire [3:0]                      w_pal_ocp1_prsnt_n                                  ;
-
 wire                            ocp_prsent_b7_n                                     ;
 wire                            ocp_prsent_b6_n                                     ;
 wire                            ocp_prsent_b5_n                                     ;
@@ -775,6 +776,8 @@ wire                            ocp_prsent_b3_n                                 
 wire                            ocp_prsent_b2_n                                     ;
 wire                            ocp_prsent_b1_n                                     ;
 wire                            ocp_prsent_b0_n                                     ;
+不使用 */
+
 wire                            cpu0_pcie1_b26_1                                    ;
 wire                            cpu0_pcie1_a26_1                                    ;
 wire                            cpu0_pcie1_b26_2                                    ;
@@ -875,9 +878,9 @@ wire                            pfr_bmc_fw1_rst_n                               
 //wire pal_emmc_en_pwr_r         ; // 未使用
 //wire pal_p5v_vga_rear_en_r     ; // 未使用
 //wire pal_p5v_usb_rear_up_en_r  ; // 未使用
-wire                            rom_bmc_ma_rst                                      ; // 主CPLD BMC下发 addr 0x0007[1]  
-wire                            rom_bmc_bk_rst                                      ; // 主CPLD BMC下发 addr 0x0007[0]  
-wire [1:0]                      bmcctl_uart_sw                                      ; // 主CPLD BMC下发 addr 0x0016[7:6] 
+wire                            rom_bmc_ma_rst                                      ; // MCPLD BMC下发 addr 0x0007[1]  
+wire                            rom_bmc_bk_rst                                      ; // MCPLD BMC下发 addr 0x0007[0]  
+wire [1:0]                      bmcctl_uart_sw                                      ; // MCPLD BMC下发 addr 0x0016[7:6] 
 wire                            bmcctl_uart_sw_en                                   ;
 wire [15:0]                     mb_cpld2_ver                                        ;
 
@@ -887,9 +890,9 @@ wire                            db_i_fan_sns_alert                              
 wire                            db_i_p12v_stby_sns_alert                            ;
 
 wire                            db_i_pal_lcd_card_in                                ;
-wire                            rom_mux_bios_bmc_sel                                ; // 主CPLD BMC下发 addr 0x0007[6]
-wire                            rom_mux_bios_bmc_en                                 ; // 主CPLD BMC下发 addr 0x0007[7]
-wire                            test_bat_en                                         ; // 主CPLD BMC下发 addr 0x0008[7] 
+wire                            rom_mux_bios_bmc_sel                                ; // MCPLD BMC下发 addr 0x0007[6]
+wire                            rom_mux_bios_bmc_en                                 ; // MCPLD BMC下发 addr 0x0007[7]
+wire                            test_bat_en                                         ; // MCPLD BMC下发 addr 0x0008[7] 
 wire                            rst_n                                               ;
 
 wire [7:0]                      usb_en                                              ;
@@ -897,8 +900,8 @@ wire [39:0]                     pfr_to_led                                      
 wire                            pal_rtc_intb                                        ;
 wire                            pgd_p1v8_stby_dly30ms                               ;
 wire                            pgd_p1v8_stby_dly32ms                               ;
-wire                            vga2_dis                                            ; // 主CPLD addr 0x0010[3] 
-wire                            pal_vga_sel_n                                       ;
+// wire                            vga2_dis                                            ; // MCPLD BMC下发 addr 0x0010[3] 不使用
+// wire                            pal_vga_sel_n                                       ;  MCPLD 不使用
 wire                            db_front_vga_cable_prsnt_n                          ;
 wire                            db_i_pal_ocp2_fan_foo                               ;
 wire                            db_i_pal_ocp2_fan_prsnt_n                           ;
@@ -908,6 +911,8 @@ wire [7:0]                      bios_post_code                                  
 wire [7:0]                      bios_post_rate                                      ;
 wire [7:0]                      bios_post_phase                                     ;
 
+
+/* 不使用
 wire                            ocp1_prsnt_n                                        ;
 wire                            ocp2_prsnt_n                                        ;
 wire [5:0]                      ocp1_pvti_ss_count                                  ;
@@ -920,6 +925,8 @@ wire [7:0]                      ocp2_pvti_byte3                                 
 wire [7:0]                      ocp2_pvti_byte2                                     ;
 wire [7:0]                      ocp2_pvti_byte1                                     ;
 wire [7:0]                      ocp2_pvti_byte0                                     ;
+不使用*/
+
 wire                            pal_ocp1_ncsi_en                                    ;
 wire                            pal_ocp2_ncsi_en                                    ;
 wire                            pal_ocp_ncsi_sw_en                                  ;
@@ -995,6 +1002,7 @@ wire                            db_i_riser_prsnt_det_11                         
 wire                            db_i_riser_prsnt_det_10                             ;
 wire                            db_i_pal_riser1_prsnt_n                             ;
 wire                            db_i_pal_riser2_prsnt_n                             ;
+wire                            db_i_pal_ocp_prsnt_n                                ;
 wire                            i_j21_a28_riser_id1                                 ;
 wire                            i_j21_a10_riser_id0                                 ;
 wire                            i_j22_a28_riser_id1                                 ;
@@ -1136,7 +1144,7 @@ PGM_DEBOUNCE #(.SIGCNT(1), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
                   })             
 );
 
-PGM_DEBOUNCE #(.SIGCNT(14), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
+PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
     .clk(clk_50m),
     .rst(~pon_reset_n),
     .timer_tick(1'b1),
@@ -1154,7 +1162,8 @@ PGM_DEBOUNCE #(.SIGCNT(14), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
 			i_RISER_PRSNT_DET_11            ,//11 J74 B28
 			i_RISER_PRSNT_DET_10            ,//12 J25 B28
 			i_PAL_RISER1_PRSNT_N            ,//13
-			i_PAL_RISER2_PRSNT_N             //14
+			i_PAL_RISER2_PRSNT_N            ,//14
+            i_PAL_OCP_PRSNT_N                //15 
         }),             
     .dout({
 			db_riser_prsnt_det_2            ,//01 J20 B28
@@ -1170,7 +1179,8 @@ PGM_DEBOUNCE #(.SIGCNT(14), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
 			db_i_riser_prsnt_det_11         ,//11 J74 B28
 			db_i_riser_prsnt_det_10         ,//12 J25 B28
 			db_i_pal_riser1_prsnt_n         ,//13
-			db_i_pal_riser2_prsnt_n          //14
+			db_i_pal_riser2_prsnt_n         ,//14
+            db_i_pal_ocp_prsnt_n             //15
       }) 
 );
 
@@ -1308,7 +1318,7 @@ assign scpld_to_mcpld_p2s_data[416:409] = bios_post_code[7:0]            ;
 assign scpld_to_mcpld_p2s_data[408:401] = bios_post_phase[7:0]           ;
 assign scpld_to_mcpld_p2s_data[400:393] = bios_post_rate[7:0]            ;
 assign scpld_to_mcpld_p2s_data[392]     = bios_read_flag                 ;
-assign scpld_to_mcpld_p2s_data[391:384] = 8'b0                           ; // 信号直接传入MCPLD使用{pal_bp8_prsnt_n,pal_bp7_prsnt_n,pal_bp6_prsnt_n,pal_bp5_prsnt_n,pal_bp4_prsnt_n,pal_bp3_prsnt_n,pal_bp2_prsnt_n,pal_bp1_prsnt_n};//led_to_pfr[7:0];
+assign scpld_to_mcpld_p2s_data[391:384] = 8'b0                           ; // 预留, 不使用 原{pal_bp8_prsnt_n,pal_bp7_prsnt_n,pal_bp6_prsnt_n,pal_bp5_prsnt_n,pal_bp4_prsnt_n,pal_bp3_prsnt_n,pal_bp2_prsnt_n,pal_bp1_prsnt_n}
 assign scpld_to_mcpld_p2s_data[383]     = 1'b0 /*USB2_LCD_ALERT*/        ;
 assign scpld_to_mcpld_p2s_data[382]     = 1'b0 /*VGA2_OC_ALERT */        ;
 assign scpld_to_mcpld_p2s_data[381]     = i_PAL_UPD72020_2_ALART         ;//PAL_UPD72020_2_ALART 1'b0
@@ -1317,14 +1327,15 @@ assign scpld_to_mcpld_p2s_data[379]     = usb_en[1]                      ;
 assign scpld_to_mcpld_p2s_data[378]     = usb_en[0]                      ;
 assign scpld_to_mcpld_p2s_data[377]     = 1'b0 /*DSD_UART_PRSNT_N*/      ;
 assign scpld_to_mcpld_p2s_data[376]     = pfr_pe_wake_n                  ;
-assign scpld_to_mcpld_p2s_data[375:368] = ocp2_pvti_byte3                ;       
-assign scpld_to_mcpld_p2s_data[367:360] = ocp2_pvti_byte2                ;             
-assign scpld_to_mcpld_p2s_data[359:352] = ocp2_pvti_byte1                ;
-assign scpld_to_mcpld_p2s_data[351:344] = ocp2_pvti_byte0                ;
-assign scpld_to_mcpld_p2s_data[343:336] = ocp1_pvti_byte3                ;
-assign scpld_to_mcpld_p2s_data[335:328] = ocp1_pvti_byte2                ;
-assign scpld_to_mcpld_p2s_data[327:320] = ocp1_pvti_byte1                ;
-assign scpld_to_mcpld_p2s_data[319:312] = ocp1_pvti_byte0                ;
+
+assign scpld_to_mcpld_p2s_data[375:368] = 8'b0 /*ocp2_pvti_byte3*/       ; // 预留, 不使用 原pvt模块解析得到       
+assign scpld_to_mcpld_p2s_data[367:360] = 8'b0 /*ocp2_pvti_byte2*/       ; // 预留, 不使用 原pvt模块解析得到             
+assign scpld_to_mcpld_p2s_data[359:352] = 8'b0 /*ocp2_pvti_byte1*/       ; // 预留, 不使用 原pvt模块解析得到
+assign scpld_to_mcpld_p2s_data[351:344] = 8'b0 /*ocp2_pvti_byte0*/       ; // 预留, 不使用 原pvt模块解析得到
+assign scpld_to_mcpld_p2s_data[343:336] = 8'b0 /*ocp1_pvti_byte3*/       ; // 预留, 不使用 原pvt模块解析得到
+assign scpld_to_mcpld_p2s_data[335:328] = 8'b0 /*ocp1_pvti_byte2*/       ; // 预留, 不使用 原pvt模块解析得到
+assign scpld_to_mcpld_p2s_data[327:320] = 8'b0 /*ocp1_pvti_byte1*/       ; // 预留, 不使用 原pvt模块解析得到
+assign scpld_to_mcpld_p2s_data[319:312] = 8'b0 /*ocp1_pvti_byte0*/       ; // 预留, 不使用 原pvt模块解析得到
 
 assign scpld_to_mcpld_p2s_data[311:308] = board_id                       ; // 传入MCPLD, addr 0x0070[7:4]
 assign scpld_to_mcpld_p2s_data[307:305] = pcb_version                    ; // 传入MCPLD, addr 0x0070[3:1]
@@ -1434,32 +1445,31 @@ assign scpld_to_mcpld_p2s_data[22]      = 1'b0/*cpu_nvme8_prsnt_n*/      ;//CPU0
 assign scpld_to_mcpld_p2s_data[21]      = 1'b0/*cpu_nvme25_prsnt_n*/     ;//CPU0 D1
 assign scpld_to_mcpld_p2s_data[20]      = 1'b0/*cpu_nvme24_prsnt_n*/     ;//CPU0 D1
 
-// OCP 网卡存在信号
-assign scpld_to_mcpld_p2s_data[19]      = 1'b0 /*ocp_prsent_b7_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[18]      = 1'b0 /*ocp_prsent_b6_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[17]      = 1'b0 /*ocp_prsent_b5_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[16]      = 1'b0 /*ocp_prsent_b4_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[15]      = 1'b0 /*ocp_prsent_b3_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[14]      = 1'b0 /*ocp_prsent_b2_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[13]      = 1'b0 /*ocp_prsent_b1_n*/       ; // 未使用
-assign scpld_to_mcpld_p2s_data[12]      = 1'b0 /*ocp_prsent_b0_n*/       ; // 未使用
+// 预留信号（原OCP 网卡存在信号）
+assign scpld_to_mcpld_p2s_data[19]      = 1'b0 /*ocp_prsent_b7_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[18]      = 1'b0 /*ocp_prsent_b6_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[17]      = 1'b0 /*ocp_prsent_b5_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[16]      = 1'b0 /*ocp_prsent_b4_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[15]      = 1'b0 /*ocp_prsent_b3_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[14]      = 1'b0 /*ocp_prsent_b2_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[13]      = 1'b0 /*ocp_prsent_b1_n*/                       ; // 未使用
+assign scpld_to_mcpld_p2s_data[12]      = db_i_pal_ocp_prsnt_n /*ocp_prsent_b0_n*/       ; // 已使用
 
 // Fan 安装状态信号
-assign scpld_to_mcpld_p2s_data[11]      = 1'b0 /*fan8_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[10]      = 1'b0 /*fan7_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[9]       = 1'b0 /*fan6_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[8]       = 1'b0 /*fan5_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[7]       = 1'b0 /*fan4_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[6]       = 1'b0 /*fan3_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[5]       = 1'b0 /*fan2_install_n*/        ;// 未使用
-assign scpld_to_mcpld_p2s_data[4]       = 1'b0 /*fan1_install_n*/        ;// 未使用
+assign scpld_to_mcpld_p2s_data[11]      = 1'b0 /*fan8_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[10]      = 1'b0 /*fan7_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[9]       = 1'b0 /*fan6_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[8]       = 1'b0 /*fan5_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[7]       = 1'b0 /*fan4_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[6]       = 1'b0 /*fan3_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[5]       = 1'b0 /*fan2_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[4]       = 1'b0 /*fan1_install_n*/        ; // 未使用
 
 // 固定标志位
 assign scpld_to_mcpld_p2s_data[3]       = 1'b0                           ; 
 assign scpld_to_mcpld_p2s_data[2]       = 1'b1                           ;
 assign scpld_to_mcpld_p2s_data[1]       = 1'b0                           ; 
 assign scpld_to_mcpld_p2s_data[0]       = 1'b1                           ;
-
 //M CPLD ---> S CPLD
 
 assign p5v_en_r                       = mcpld_to_scpld_data_filter[348]     ; // 主CPLD 上电控制信号
@@ -1485,7 +1495,7 @@ assign rst_i2c_riser2_pca9548_n       = mcpld_to_scpld_data_filter[267]     ; //
 assign rst_i2c_riser1_pca9548_n       = mcpld_to_scpld_data_filter[266]     ; // 主CPLD addr 0x001A
 assign cpu0_d0_bios_over              = mcpld_to_scpld_data_filter[265]     ;
 assign bmc_read_flag                  = mcpld_to_scpld_data_filter[264]     ;
-assign vga2_dis                       = mcpld_to_scpld_data_filter[263]     ;
+// assign vga2_dis                       = mcpld_to_scpld_data_filter[263]     ; // MCPLD BMC下发 addr 0x0010[3] 不使用
 assign pfr_to_led                     = mcpld_to_scpld_data_filter[262:223] ;
 assign pgd_p1v8_stby_dly32ms          = mcpld_to_scpld_data_filter[222]     ;
 assign pgd_p1v8_stby_dly30ms          = mcpld_to_scpld_data_filter[221]     ;
@@ -1615,7 +1625,7 @@ assign mbcpld_to_bmccpld_p2s_data[13:12] = uart_mux_select;//weihe
 assign mbcpld_to_bmccpld_p2s_data[11:4]  = sw                                   ; // 传入BMCCPLD 拨码开关使用
 assign mbcpld_to_bmccpld_p2s_data[3]     = 1'b1 /*DSD_UART_PRSNT_N*/            ; 
 assign mbcpld_to_bmccpld_p2s_data[2]     = rst_pal_extrst_r_n                   ; // 传入BMCCPLD 复位使用
-assign mbcpld_to_bmccpld_p2s_data[1]     = pal_vga_sel_n;
+// assign mbcpld_to_bmccpld_p2s_data[1]     = pal_vga_sel_n                      ; // 不使用, 传入BMCCPLD VGA选择信号, 0表示CPU VGA, 1表示BMC VGA. 目前固定为CPU VGA
 assign mbcpld_to_bmccpld_p2s_data[0]     = t4hz_clk;
 
 
@@ -1788,7 +1798,9 @@ assign sw[5]                = i_SW_6           ;
 assign sw[6]                = i_SW_7           ;
 assign sw[7]                = i_SW_8           ;
 
-
+//------------------------------------------------------------------------------
+// NVME and CABLE ID use the same SGPIO scan chain
+//------------------------------------------------------------------------------
 /*
 pvt_gpi #(
 	  .TOTAL_BIT_COUNT                (48                                     ),
@@ -1865,6 +1877,7 @@ pvt_gpi #(
 //------------------------------------------------------------------------------
 // OCP1 SGPIO SCAN CHAIN
 //------------------------------------------------------------------------------
+/*
 pvt_gpi #(
     .TOTAL_BIT_COUNT          (32                               ),
     .DEFAULT_STATE            (32'h7FFF_FFFE                    ),
@@ -1909,7 +1922,7 @@ assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_
 
 assign w_pal_ocp1_prsnt_n = {ocp_prsent_b3_n,ocp_prsent_b2_n,ocp_prsent_b1_n,ocp_prsent_b0_n};
 assign w_ocp1_x16_prsnt   = ((w_pal_ocp1_prsnt_n == 4'b0100)|(w_pal_ocp1_prsnt_n == 4'b0101)|(w_pal_ocp1_prsnt_n == 4'b0111)|(w_pal_ocp1_prsnt_n == 4'b1100)) ? 1'b1 : 1'b0;
-
+*/
 
 //------------------------------------------------------------------------------
 // I2C Update Start
@@ -1982,7 +1995,7 @@ assign bmc_ready_flag = ~w_bmc_active1_n;
 assign pfr_pe_wake_n = pal_pe_wake_n /*& i_PAL_RISER1_WAKE_N_R*/ ; 
 
 //VGA
-assign pal_vga_sel_n = vga2_dis ? 1'b1 : (db_front_vga_cable_prsnt_n);
+// assign pal_vga_sel_n = vga2_dis ? 1'b1 : (db_front_vga_cable_prsnt_n);
 
 //USB
 assign o_PAL_UPD2_PERST_N_R   = reached_sm_wait_powerok ;
@@ -2320,9 +2333,11 @@ I2C_SLAVE_REG inst_i2c_bios_reg (
     .pal_mcio16_cable_id1     (mb_cb2_cable_id[1]           ),//CPU1 DIE1-L--J39
     .pal_mcio16_cable_id0     (mb_cb2_cable_id[0]           ),
 
-    .i_ocp1_x16_or_x8         (w_ocp1_x16_prsnt             ),
-    .ocp1_prsnt_n             (~ocp1_prsnt_n                ),
-    .ocp2_prsnt_n             (~ocp2_prsnt_n                ),
+    .ocp_prsnt_n              (db_i_pal_ocp_prsnt_n         ),
+
+    // .i_ocp1_x16_or_x8         (w_ocp1_x16_prsnt             ),
+    // .ocp1_prsnt_n             (~ocp1_prsnt_n                ),
+    // .ocp2_prsnt_n             (~ocp2_prsnt_n                ),
 
     .board_id                 (5'h01                        ),//in 0xC6[4:0]    //5'b00011
     .chassis_id               (3'b010                       ),//in 0xC7[2:0]    //2U 3'b010
