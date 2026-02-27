@@ -24,7 +24,6 @@ module bmc_cpld_i2c_ram #(
     input   [1:0]       cpld_pwm_main_type,       //addr 0x0002[6:5]
     input               fan_wdt_sel,              //addr 0x0002[4]
     input               fm_bmc_fan_wdt_feed,      //addr 0x0002[1]  
-    input               ilo_hard_reset,
 
     output              vwire_bmc_wakeup,         //addr 0x0003 [6]
     output              vwire_bmc_sysrst,         //addr 0x0003 [5]

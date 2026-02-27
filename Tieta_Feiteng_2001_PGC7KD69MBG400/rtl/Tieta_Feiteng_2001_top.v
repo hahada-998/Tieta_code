@@ -170,16 +170,6 @@ module Tieta_Feiteng_2001_top(
     input   i_UART2_PAL_OCP_RX_R                    /* synthesis LOC = "E14"*/,// from  GENZ_168PIN                                   to  CPLD_S                                           default 1  // OCP UART2 接收 信号
     output  o_UART2_PAL_OCP_TX_R                    /* synthesis LOC = "D18"*/,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP UART2 接收 信号    
     /* end: OCP */
-
-    // output  o_PAL_OCP1_SS_CLK_R                     , // 暂不使用
-    // output  o_PAL_OCP1_SS_LD_N_R                    , // 暂不使用
-    // input   i_PAL_OCP1_SS_DATA_IN_R                 , // 暂不使用
-    // output  o_PAL_OCP2_SS_CLK_R                     , // 暂不使用
-    // output  o_PAL_OCP2_SS_LD_N_R                    , // 暂不使用
-    // input   i_PAL_OCP2_SS_DATA_IN_R                 , // 暂不使用
-
-    // output  o_PAL_OCP1_NCSI_EN_N_R                  , // 暂不使用
-    // output  o_PAL_OCP2_NCSI_EN_N_R                  , // 暂不使用
     
     /* begin: GPIO CPU0/1 D0/D1相关信号 */
     // 信号不使用, 保留接口
@@ -274,11 +264,9 @@ module Tieta_Feiteng_2001_top(
     /* begin: RISER  */
     output  o_PAL_RISER1_SS_CLK                       /* synthesis LOC = "P19" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行时钟 信号 
     output  o_PAL_RISER1_SS_LD_N                      /* synthesis LOC = "K20" */,// from  CPLD_S                                        to  RISER1/U239_SGM6505HYTQF25F_TR                   default 1  // Riser1 串行信号加载使能 信号                                               
-    // input   i_PAL_RISER1_SS_DATA_IN                   ,// ???未添加???
     
     output  o_PAL_RISER2_SS_CLK                       /* synthesis LOC = "F20"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行时钟 信号                                              
     output  o_PAL_RISER2_SS_LD_N                      /* synthesis LOC = "J20"*/,// from  CPLD_S                                        to  RISER2/U240_SGM6505HYTQF24G_TR                   default 1  // Riser2 串行信号加载使能 信号
-    // input   i_PAL_RISER2_SS_DATA_IN                   ,// ???未添加???
     
     input   i_MB_CB_RISER1_PRSNT0_N                   /* synthesis LOC = "V4"*/ ,// from  RISER1/G64V3421MHR                            to  CPLD_S                                           default 1  // 主板连接器 Riser1 设备存在0 信号
     input   i_MB_CB_RISER2_PRSNT0_N                   /* synthesis LOC = "G16"*/ ,// from  RISER2/G64V3421MHR                            to  CPLD_S                                           default 1  // 主板连接器 Riser2 设备存在0 信号   
@@ -309,15 +297,6 @@ module Tieta_Feiteng_2001_top(
     
     input   i_RISER_MB_PRSNT_R                        /* synthesis LOC = "M17"*/,// from  RISER_MB_PRSNT / J38                          to  CPLD_S                                           default 1  // Riser 主板存在 信号
     /* end: RISER  */
-
-    /* begin: MB CPLD ---> BP CPLD 的 SGPIO*/
-    // output  o_PVT_SS_CLK_R    , // 暂未使用
-    // input   i_PVT_SS_LD_N_R   , // 暂未使用
-    // input   i_PVT_SS_DATI     , // 暂未使用
-    // output  o_PVT_SS_CLK_1_R  , // 暂未使用
-    // input   i_PVT_SS_LD_N_1_R , // 暂未使用
-    // input   i_PVT_SS_DATI_1   , // 暂未使用
-    /* end: MB CPLD ---> BP CPLD 的 SGPIO*/
 
     /* begin: GPU  */
     output  o_CPU_MCIO0_GPU_THROTTLE_N_R	          /* synthesis LOC = "T1"*/ ,// from  CPLD_S                                        to  CPU0_MCIO_0/1 / J18_G97V22312HR                  default 0  // CPU 与 GPU 之间的 “热管理 功耗控制” 边带信号
@@ -491,9 +470,9 @@ module Tieta_Feiteng_2001_top(
     input	i_PAL_EXT_RST_N	                        /* synthesis LOC = "P5"*/,// from  CPLD_S_UART_LED_SW                            to  CPLD_S                                           default 1  // 外部 复位 信号
     // 传入MCPLD, 控制force_reb_in, 与复位相关, 谨慎使用
 
-    // 传入MCPLD, 缺少lom_prsnt_n, 实际未使用
+    // 传入MCPLD, 实际未使用
     input   i_PAL_LOM_FAN_ON_AUX_R                  /* synthesis LOC = "A1" */,// from  RISER_AUX / J16                              to  CPLD_S                                            default 1  // LOM 风扇 开启 辅助 信号
-    // 传入MCPLD, 缺少lom_prsnt_n, 实际未使用
+    // 传入MCPLD, 实际未使用
 
     input   i_FAN_SNS_ALERT                         /* synthesis LOC = "B11"*/,// from  CPLD_S                                       to  FAN_SNS_ALERT / U60                               default 1  // 风扇 传感器 警报 信号
 
@@ -541,28 +520,28 @@ wire                            pll_lock                                        
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 wire                            t40ns_tick                                         ;
 wire                            t1us_tick                                          ;
-wire                            t2us_tick                                          ;
+// wire                            t2us_tick                                          ;
 wire                            t8us_tick                                          ; 
 wire                            t16us_tick                                         ;
-wire                            t32us_tick                                         ;
-wire                            t128us_tick                                        ;
+// wire                            t32us_tick                                         ;
+// wire                            t128us_tick                                        ;
 wire                            t512us_tick                                        ;
-wire                            t1ms_tick                                          ;
+// wire                            t1ms_tick                                          ;
 wire                            t2ms_tick                                          ;
 wire                            t16ms_tick                                         ;
-wire                            t32ms_tick                                         ;
+// wire                            t32ms_tick                                         ;
 wire                            t64ms_tick                                         ;
 wire                            t128ms_tick                                        ;
-wire                            t256ms_tick                                        ;
-wire                            t512ms_tick                                        ;
+// wire                            t256ms_tick                                        ;
+// wire                            t512ms_tick                                        ;
 wire                            t1s_tick                                           ;
-wire                            t8s_tick                                           ;
-wire                            t1hz_clk                                           ;
-wire                            t2p5hz_clk                                         ;
+// wire                            t8s_tick                                           ;
+// wire                            t1hz_clk                                           ;
+// wire                            t2p5hz_clk                                         ;
 wire                            t4hz_clk                                           ;
-wire                            t16khz_clk                                         ;
-wire                            t6m25_clk                                          ;
-wire                            t16m6_clk                                          ;
+// wire                            t16khz_clk                                         ;
+// wire                            t6m25_clk                                          ;
+// wire                            t16m6_clk                                          ;
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 //For pon_reset_inst
@@ -580,7 +559,6 @@ assign	                        pgd_aux_bmc = 1'b1                               
 //For db_inst_amd_cpu_prsnt
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 wire                            reached_sm_wait_powerok                             ;
-wire                            db_i_pal_ocp2_pwrgd                                 ;
 
 wire                            power_supply_on                                     ; // 主CPLD传入, 上电控制信息
 wire                            p5v_en_r                                            ; // 主CPLD传入, 上电控制信息
@@ -755,14 +733,14 @@ wire                            pcb_revision_0                                  
 // wire                            fan2_install_n                                      ; // 未使用
 // wire                            fan1_install_n                                      ; // 未使用
 
-wire                            riser_prsnt_det_0                                   ;
-wire                            riser_prsnt_det_1                                   ;
-wire                            riser_prsnt_det_2                                   ;
-wire                            riser_prsnt_det_3                                   ;
-wire                            riser_prsnt_det_4                                   ;
-wire                            riser_prsnt_det_5                                   ;
-wire                            riser_prsnt_det_6                                   ;
-wire                            riser_prsnt_det_7                                   ;
+// wire                            riser_prsnt_det_0                                   ; // 未使用
+// wire                            riser_prsnt_det_1                                   ; // 未使用
+// wire                            riser_prsnt_det_2                                   ; // 未使用
+// wire                            riser_prsnt_det_3                                   ; // 未使用
+// wire                            riser_prsnt_det_4                                   ; // 未使用
+// wire                            riser_prsnt_det_5                                   ; // 未使用
+// wire                            riser_prsnt_det_6                                   ; // 未使用
+// wire                            riser_prsnt_det_7                                   ; // 未使用
 
 wire [7:0]                      sw                                                  ; // 拨码开关
 
@@ -878,21 +856,18 @@ wire                            pfr_bmc_fw1_rst_n                               
 //wire pal_emmc_en_pwr_r         ; // 未使用
 //wire pal_p5v_vga_rear_en_r     ; // 未使用
 //wire pal_p5v_usb_rear_up_en_r  ; // 未使用
-wire                            rom_bmc_ma_rst                                      ; // MCPLD BMC下发 addr 0x0007[1]  
-wire                            rom_bmc_bk_rst                                      ; // MCPLD BMC下发 addr 0x0007[0]  
-wire [1:0]                      bmcctl_uart_sw                                      ; // MCPLD BMC下发 addr 0x0016[7:6] 
+wire                            rom_bmc_ma_rst                                      ; // MCPLD->SCPLD     BMC下发     addr 0x0007[1]  
+wire                            rom_bmc_bk_rst                                      ; // MCPLD->SCPLD     BMC下发     addr 0x0007[0]  
+wire [1:0]                      bmcctl_uart_sw                                      ; // MCPLD->SCPLD     BMC下发     addr 0x0016[7:6] 
 wire                            bmcctl_uart_sw_en                                   ;
-wire [15:0]                     mb_cpld2_ver                                        ;
+wire [15:0]                     mb_cpld2_ver                                        ; // SCPLD->MCPLD     BMC寄存     addr 0x00FC-0x00FD[7:0] MB CPLD2版本，16位高8位在0x00FC，低8位在0x00FD
 
-// 未使用
-wire                            db_i_dimm_sns_alert                                 ;
-wire                            db_i_fan_sns_alert                                  ;
-wire                            db_i_p12v_stby_sns_alert                            ;
+wire                            db_i_fan_sns_alert                                  ; // SCPLD->MCPLD     BMC寄存     addr 0xA4[1]	          FAN传感器告警信号
+wire                            db_i_p12v_stby_sns_alert                            ; // SCPLD->MCPLD     BMC寄存     addr 0xA4[0]            12V standby电压传感器告警信号
 
-wire                            db_i_pal_lcd_card_in                                ;
-wire                            rom_mux_bios_bmc_sel                                ; // MCPLD BMC下发 addr 0x0007[6]
-wire                            rom_mux_bios_bmc_en                                 ; // MCPLD BMC下发 addr 0x0007[7]
-wire                            test_bat_en                                         ; // MCPLD BMC下发 addr 0x0008[7] 
+wire                            rom_mux_bios_bmc_sel                                ; // MCPLD->SCPLD     BMC下发     addr 0x0007[6]
+wire                            rom_mux_bios_bmc_en                                 ; // MCPLD->SCPLD     BMC下发     addr 0x0007[7]
+wire                            test_bat_en                                         ; // MCPLD->SCPLD     BMC下发     addr 0x0008[7] 
 wire                            rst_n                                               ;
 
 wire [7:0]                      usb_en                                              ;
@@ -900,36 +875,39 @@ wire [39:0]                     pfr_to_led                                      
 wire                            pal_rtc_intb                                        ;
 wire                            pgd_p1v8_stby_dly30ms                               ;
 wire                            pgd_p1v8_stby_dly32ms                               ;
-// wire                            vga2_dis                                            ; // MCPLD BMC下发 addr 0x0010[3] 不使用
-// wire                            pal_vga_sel_n                                       ;  MCPLD 不使用
-wire                            db_front_vga_cable_prsnt_n                          ;
-wire                            db_i_pal_ocp2_fan_foo                               ;
-wire                            db_i_pal_ocp2_fan_prsnt_n                           ;
 
-wire [7:0]                      bios_read_rtc                                       ;
-wire [7:0]                      bios_post_code                                      ;
-wire [7:0]                      bios_post_rate                                      ;
-wire [7:0]                      bios_post_phase                                     ;
+// wire                            vga2_dis                                            ; // 不使用
+// wire                            pal_vga_sel_n                                       ; // 不使用
+// wire                            db_front_vga_cable_prsnt_n                          ; // 不使用
+// wire                            db_i_pal_ocp2_fan_foo                               ; // 不使用
+// wire                            db_i_pal_ocp2_fan_prsnt_n                           ; // 不使用
+
+wire [7:0]                      bios_read_rtc                                       ; // SCPLD            BIOS下发     addr 0x0C             RTC读控制
+wire [7:0]                      bios_post_code                                      ; // SCPLD            BIOS下发     addr 0x0D             POST code
+wire [7:0]                      bios_post_rate                                      ; // SCPLD            BIOS下发     addr 0x0E             POST rate 
+wire [7:0]                      bios_post_phase                                     ; // SCPLD            BIOS下发     addr 0x0F             POST phase
 
 
-/* 不使用
-wire                            ocp1_prsnt_n                                        ;
-wire                            ocp2_prsnt_n                                        ;
-wire [5:0]                      ocp1_pvti_ss_count                                  ;
-wire [5:0]                      ocp2_pvti_ss_count                                  ;
-wire [7:0]                      ocp1_pvti_byte3                                     ;
-wire [7:0]                      ocp1_pvti_byte2                                     ;
-wire [7:0]                      ocp1_pvti_byte1                                     ;
-wire [7:0]                      ocp1_pvti_byte0                                     ;
-wire [7:0]                      ocp2_pvti_byte3                                     ;
-wire [7:0]                      ocp2_pvti_byte2                                     ;
-wire [7:0]                      ocp2_pvti_byte1                                     ;
-wire [7:0]                      ocp2_pvti_byte0                                     ;
-不使用*/
+/* 
+wire                            ocp1_prsnt_n                                        ; // 不使用
+wire                            ocp2_prsnt_n                                        ; // 不使用
+wire [5:0]                      ocp1_pvti_ss_count                                  ; // 不使用
+wire [5:0]                      ocp2_pvti_ss_count                                  ; // 不使用
+wire [7:0]                      ocp1_pvti_byte3                                     ; // 不使用
+wire [7:0]                      ocp1_pvti_byte2                                     ; // 不使用
+wire [7:0]                      ocp1_pvti_byte1                                     ; // 不使用
+wire [7:0]                      ocp1_pvti_byte0                                     ; // 不使用
+wire [7:0]                      ocp2_pvti_byte3                                     ; // 不使用
+wire [7:0]                      ocp2_pvti_byte2                                     ; // 不使用
+wire [7:0]                      ocp2_pvti_byte1                                     ; // 不使用
+wire [7:0]                      ocp2_pvti_byte0                                     ; // 不使用
+*/
 
-wire                            pal_ocp1_ncsi_en                                    ;
-wire                            pal_ocp2_ncsi_en                                    ;
-wire                            pal_ocp_ncsi_sw_en                                  ;
+/*
+wire                            pal_ocp1_ncsi_en                                    ; // 不使用
+wire                            pal_ocp2_ncsi_en                                    ; // 不使用
+*/
+wire                            pal_ocp_ncsi_sw_en                                  ; // MCPLD->SCPLD                                       CP NCSI开关控制信号
 wire                            db_i_lom_fan_on_aux                                 ;
 wire                            riser3_1_prsnt_n                                    ;
 wire                            riser3_2_prsnt_n                                    ;
@@ -952,19 +930,17 @@ wire                            pal_riser4_slot9_pwrgd                          
 wire                            pal_riser4_slot10_pwrgd                             ;// 未使用
 wire                            smb_pehp_cpu1_3v3_alert_n                           ;
 wire                            bios_security_bypass                                ;
-wire                            bios_read_flag                                      ;
+wire                            bios_read_flag                                      ;// 
 wire                            bmc_read_flag                                       ;
 wire                            cpu0_d0_bios_over                                   ;
-wire                            cpu0_temp_over                                      ;
-wire                            cpu1_temp_over                                      ;
+wire                            cpu0_temp_over                                      ;// SCPLD->MCPLD                        CPU0温度过高信号
+wire                            cpu1_temp_over                                      ;// SCPLD->MCPLD                        CPU0温度过高信号
 wire                            db_i_cpu0_d0_temp_over                              ;
 wire                            db_i_cpu0_d1_temp_over                              ;
-// wire                            db_i_cpu0_d2_temp_over                              ; // 不使用
-// wire                            db_i_cpu0_d3_temp_over                              ; // 不使用
+
 wire                            db_i_cpu1_d0_temp_over                              ;
 wire                            db_i_cpu1_d1_temp_over                              ;
-// wire                            db_i_cpu1_d2_temp_over                              ; // 不使用
-// wire                            db_i_cpu1_d3_temp_over                              ; // 不使用
+
 //VPP
 wire [11:0]                     J20_CPU1_MCIO_R_vpp                                 ;
 wire [11:0]                     J19_CPU1_MCIO_R_vpp                                 ;
@@ -988,20 +964,21 @@ wire [port_num-1:0]             ser_data_in                                     
 wire [port_num-1:0]             ser_data_out                                        ;
 wire [port_num-1:0]             i_read_flag                                         ;
 
-wire                            db_riser_prsnt_det_2                                ;
-wire                            db_riser_prsnt_det_3                                ;
-wire                            db_riser_prsnt_det_0                                ;
-wire                            db_riser_prsnt_det_1                                ;
-wire                            db_i_riser_prsnt_det_9                              ;
-wire                            db_i_riser_prsnt_det_8                              ;
-wire                            db_riser_prsnt_det_6                                ;
-wire                            db_riser_prsnt_det_7                                ;
-wire                            db_riser_prsnt_det_4                                ;
-wire                            db_riser_prsnt_det_5                                ;
-wire                            db_i_riser_prsnt_det_11                             ;
-wire                            db_i_riser_prsnt_det_10                             ;
-wire                            db_i_pal_riser1_prsnt_n                             ;
-wire                            db_i_pal_riser2_prsnt_n                             ;
+// wire                            db_riser_prsnt_det_2                                ;
+// wire                            db_riser_prsnt_det_3                                ;
+// wire                            db_riser_prsnt_det_0                                ;
+// wire                            db_riser_prsnt_det_1                                ;
+// wire                            db_i_riser_prsnt_det_9                              ;
+// wire                            db_i_riser_prsnt_det_8                              ;
+// wire                            db_riser_prsnt_det_6                                ;
+// wire                            db_riser_prsnt_det_7                                ;
+// wire                            db_riser_prsnt_det_4                                ;
+// wire                            db_riser_prsnt_det_5                                ;
+// wire                            db_i_riser_prsnt_det_11                             ;
+// wire                            db_i_riser_prsnt_det_10                             ;
+
+wire                            db_i_pal_riser1_prsnt_n                             ; // SCPLD->MCPLD   BMC寄存     addr 0x0080[1]      RISER1插槽存在信号
+wire                            db_i_pal_riser2_prsnt_n                             ; // SCPLD->MCPLD   BMC寄存     addr 0x0080[0]      RISER2插槽存在信号
 wire                            db_i_pal_ocp_prsnt_n                                ;
 wire                            i_j21_a28_riser_id1                                 ;
 wire                            i_j21_a10_riser_id0                                 ;
@@ -1070,166 +1047,157 @@ timer_gen timer_gen_inst(
   .t80ns                            (),
   .t160ns                           (),
   .t1us                             (t1us_tick                  ),
-  .t2us                             (t2us_tick                  ),
+  .t2us                             (                           ),
   .t8us                             (t8us_tick                  ),
   .t16us                            (t16us_tick                 ),
-  .t32us                            (t32us_tick                 ),
-  .t128us                           (t128us_tick                ),
+  .t32us                            (                           ),
+  .t128us                           (                           ),
   .t512us                           (t512us_tick                ),
-  .t1ms                             (t1ms_tick                  ),
+  .t1ms                             (                           ),
   .t2ms                             (t2ms_tick                  ),
   .t16ms                            (t16ms_tick                 ),
-  .t32ms                            (t32ms_tick                 ),
+  .t32ms                            (                           ),
   .t64ms                            (t64ms_tick                 ),
   .t128ms                           (t128ms_tick                ),
-  .t256ms                           (t256ms_tick                ),
-  .t512ms                           (t512ms_tick                ),
+  .t256ms                           (                           ),
+  .t512ms                           (                           ),
   .t1s                              (t1s_tick                   ),
-  .t8s                              (t8s_tick                   ),//YHY 
-  .clk_1hz                          (t1hz_clk                   ),
-  .clk_2p5hz                        (t2p5hz_clk                 ),
+  .t8s                              (                           ),//YHY 
+  .clk_1hz                          (                           ),
+  .clk_2p5hz                        (                           ),
   .clk_4hz                          (t4hz_clk                   ),
-  .clk_16khz                        (t16khz_clk                 ),
-  .clk_6m25                         (t6m25_clk                  )
+  .clk_16khz                        (                           ),
+  .clk_6m25                         (                           )
 );
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 // PWRGOOD DEBOUNCE
 //--------------------------------------------------------------------------------------------------------------------------------------------------
-PGM_DEBOUNCE_N #(.SIGCNT(4), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_pwrgood (
-    .clk			                  (clk_50m),
-    .rst_n		                  (pon_reset_n),
+PGM_DEBOUNCE_N #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_pwrgood (
+    .clk			            (clk_50m),
+    .rst_n		                (pon_reset_n),
     .timer_tick	                (1'b1),
     .din                        ({
-	                              i_PAL_OCP2_PWRGD          ,	//01
-	                              ~i_DIMM_SNS_ALERT         , //02
-	                              ~i_FAN_SNS_ALERT          , //03
-	                              ~i_P12V_STBY_SNS_ALERT      //04
-	                              }),             
-    .dout                       ({
-	                              db_i_pal_ocp2_pwrgd       ,	//01
-	                              db_i_dimm_sns_alert       , //02
-	                              db_i_fan_sns_alert        , //03
-	                              db_i_p12v_stby_sns_alert    //04
-	                              }) 
-);
-
-
-PGM_DEBOUNCE_N #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
-    .clk			                (clk_50m),
-    .rst_n		                (pon_reset_n),
-    .timer_tick	              (t512us_tick),
-    .din                      ({
-	                            i_PAL_LCD_CARD_IN         ,  //01
-	                            i_PAL_LOM_FAN_ON_AUX_R       //02
+	                            ~i_FAN_SNS_ALERT          , //02
+	                            ~i_P12V_STBY_SNS_ALERT      //01
 	                            }),             
-    .dout                     ({
-	                            db_i_pal_lcd_card_in    ,  //01
-	                            db_i_lom_fan_on_aux        //02
+    .dout                       ({
+	                            db_i_fan_sns_alert        , //02
+	                            db_i_p12v_stby_sns_alert    //01
 	                            }) 
 );
+
+PGM_DEBOUNCE_N #(.SIGCNT(1), .NBITS(2'b11), .ENABLE(1'b1)) db_intruder (
+    .clk			            (clk_50m),
+    .rst_n		                (pon_reset_n),
+    .timer_tick	                (t512us_tick),
+    .din                        ({
+	                            i_PAL_LOM_FAN_ON_AUX_R      //02
+	                            }),             
+    .dout                       ({
+	                            db_i_lom_fan_on_aux         //02
+	                            }) 
+);
+
 //------------------------------------------------------------------------------
 // Input debouncers and synchronizers
 //------------------------------------------------------------------------------
 PGM_DEBOUNCE #(.SIGCNT(1), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
-    .clk          (clk_50m                ),
-    .rst          (~pon_reset_n           ),
-    .timer_tick   (t64ms_tick             ),
-    .din          ({
-                  i_PAL_EXT_RST_N                //01    
-                  }),                           
-    .dout         ({
-                  db_pal_ext_rst_n               //01     
-                  })             
+    .clk                        (clk_50m                ),
+    .rst                        (~pon_reset_n           ),
+    .timer_tick                 (t64ms_tick             ),
+    .din                        ({
+                                i_PAL_EXT_RST_N             //01    
+                                }),                           
+    .dout                       ({
+                                db_pal_ext_rst_n            //01     
+                                })             
 );
 
-PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
-    .clk(clk_50m),
-    .rst(~pon_reset_n),
-    .timer_tick(1'b1),
-    .din({
-	        riser_prsnt_det_2               ,//01 J20 B28
-	        riser_prsnt_det_3               ,//02 J19 B28 
-            riser_prsnt_det_0               ,//03 J18 B28
-			riser_prsnt_det_1               ,//04 J17 B28
-			i_RISER_PRSNT_DET_9             ,//05 J29 B28
-			i_RISER_PRSNT_DET_8             ,//06 J16 B28
-			riser_prsnt_det_6               ,//07 J23 B28
-			riser_prsnt_det_7               ,//08 J24 B28
-			riser_prsnt_det_4               ,//09 J21 B28
-			riser_prsnt_det_5               ,//10 J22 B28
-			i_RISER_PRSNT_DET_11            ,//11 J74 B28
-			i_RISER_PRSNT_DET_10            ,//12 J25 B28
-			i_PAL_RISER1_PRSNT_N            ,//13
-			i_PAL_RISER2_PRSNT_N            ,//14
-            i_PAL_OCP_PRSNT_N                //15 
-        }),             
-    .dout({
-			db_riser_prsnt_det_2            ,//01 J20 B28
-	        db_riser_prsnt_det_3            ,//02 J19 B28
-            db_riser_prsnt_det_0            ,//03 J18 B28
-            db_riser_prsnt_det_1            ,//04 J17 B28
-            db_i_riser_prsnt_det_9          ,//05 J29 B28
-            db_i_riser_prsnt_det_8          ,//06 J16 B28
-            db_riser_prsnt_det_6            ,//07 J23 B28
-			db_riser_prsnt_det_7            ,//08 J24 B28
-			db_riser_prsnt_det_4            ,//09 J21 B28
-			db_riser_prsnt_det_5            ,//10 J22 B28
-			db_i_riser_prsnt_det_11         ,//11 J74 B28
-			db_i_riser_prsnt_det_10         ,//12 J25 B28
-			db_i_pal_riser1_prsnt_n         ,//13
-			db_i_pal_riser2_prsnt_n         ,//14
-            db_i_pal_ocp_prsnt_n             //15
-      }) 
+PGM_DEBOUNCE #(.SIGCNT(3), .NBITS(2'b10), .ENABLE(1'b1)) mcio_ab26 (
+    .clk                        (clk_50m),
+    .rst                        (~pon_reset_n),
+    .timer_tick                 (1'b1),
+    .din                        ({
+                                /* 不使用
+	                            riser_prsnt_det_2               ,//01 J20 B28
+	                            riser_prsnt_det_3               ,//02 J19 B28 
+                                riser_prsnt_det_0               ,//03 J18 B28
+		                        riser_prsnt_det_1               ,//04 J17 B28
+		                        i_RISER_PRSNT_DET_9             ,//05 J29 B28
+		                        i_RISER_PRSNT_DET_8             ,//06 J16 B28
+		                        riser_prsnt_det_6               ,//07 J23 B28
+		                        riser_prsnt_det_7               ,//08 J24 B28
+		                        riser_prsnt_det_4               ,//09 J21 B28
+		                        riser_prsnt_det_5               ,//10 J22 B28
+		                        i_RISER_PRSNT_DET_11            ,//11 J74 B28
+		                        i_RISER_PRSNT_DET_10            ,//12 J25 B28
+                                不使用 */
+		                        i_PAL_RISER1_PRSNT_N            ,//13
+		                        i_PAL_RISER2_PRSNT_N            ,//14
+                                i_PAL_OCP_PRSNT_N                //15 
+                                }),             
+    .dout                       ({
+                                /* 不使用
+			                    db_riser_prsnt_det_2            ,//01 J20 B28
+	                            db_riser_prsnt_det_3            ,//02 J19 B28
+                                db_riser_prsnt_det_0            ,//03 J18 B28
+                                db_riser_prsnt_det_1            ,//04 J17 B28
+                                db_i_riser_prsnt_det_9          ,//05 J29 B28
+                                db_i_riser_prsnt_det_8          ,//06 J16 B28
+                                db_riser_prsnt_det_6            ,//07 J23 B28
+			                    db_riser_prsnt_det_7            ,//08 J24 B28
+			                    db_riser_prsnt_det_4            ,//09 J21 B28
+			                    db_riser_prsnt_det_5            ,//10 J22 B28
+			                    db_i_riser_prsnt_det_11         ,//11 J74 B28
+			                    db_i_riser_prsnt_det_10         ,//12 J25 B28
+                                不使用 */
+			                    db_i_pal_riser1_prsnt_n         ,//13
+			                    db_i_pal_riser2_prsnt_n         ,//14
+                                db_i_pal_ocp_prsnt_n             //15
+                                }) 
 );
 
+/* 不使用
 PGM_DEBOUNCE #(.SIGCNT(3), .NBITS (2'b10), .ENABLE(1'b1)) db_pe_wake_inst(
-    .clk                (clk_50m),
-    .timer_tick         (t512us_tick),
-    .rst                (~pon_reset_n),
-    .din                ({	                               
-		                    i_FRONT_VGA_CABLE_PRSNT_N              ,//01
-		                    i_PAL_OCP2_FAN_FOO                     ,//02
-		                    i_PAL_OCP2_FAN_PRSNT_N                  //03
-	                      }),                   
-    .dout                 ({       
-		                    db_front_vga_cable_prsnt_n            ,//01
-		                    db_i_pal_ocp2_fan_foo                 ,//02
-		                    db_i_pal_ocp2_fan_prsnt_n              //03
-	                      })
+    .clk                        (clk_50m),
+    .timer_tick                 (t512us_tick),
+    .rst                        (~pon_reset_n),
+    .din                        ({	                               
+		                        i_FRONT_VGA_CABLE_PRSNT_N       ,//01
+		                        i_PAL_OCP2_FAN_FOO              ,//02
+		                        i_PAL_OCP2_FAN_PRSNT_N           //03
+	                            }),                   
+    .dout                       ({       
+		                        db_front_vga_cable_prsnt_n      ,//01
+		                        db_i_pal_ocp2_fan_foo           ,//02
+		                        db_i_pal_ocp2_fan_prsnt_n        //03
+	                            })
 );
+不使用 */
 
+SYNC_DATA_N #(.SIGCNT(4)) sync_cpu_data_low (
+    .clk                        (clk_50m),
+    .rst_n                      (pon_reset_n),          
+    .din                        ({
+			                    i_CPU0_D0_TEMP_OVER	             , //01
+			                    i_CPU0_D1_TEMP_OVER	             , //02
+			                    i_CPU1_D0_TEMP_OVER			     , //03
+			                    i_CPU1_D1_TEMP_OVER				   //04 
 
-SYNC_DATA_N #(.SIGCNT(8)) sync_cpu_data_low (
-  .clk    (clk_50m),
-  .rst_n  (pon_reset_n),          
-  .din    ({
-			    i_CPU0_D0_TEMP_OVER	             , //01
-			    i_CPU0_D1_TEMP_OVER	             , //02
-			    // i_CPU0_D2_TEMP_OVER			     , //03
-			    // i_CPU0_D3_TEMP_OVER			     , //04
-			    i_CPU1_D0_TEMP_OVER			     , //05
-			    i_CPU1_D1_TEMP_OVER				  //06 
-			    // i_CPU1_D2_TEMP_OVER			     , //07
-			    // i_CPU1_D3_TEMP_OVER			       //08
-		    }), 
+		                        }), 
 			
-  .dout   ({
-			    db_i_cpu0_d0_temp_over	         , //01
-			    db_i_cpu0_d1_temp_over	         , //02
-			    // db_i_cpu0_d2_temp_over			 , //03
-			    // db_i_cpu0_d3_temp_over			 , //04
-			    db_i_cpu1_d0_temp_over			 , //05
-			    db_i_cpu1_d1_temp_over	          //06 
-			    // db_i_cpu1_d2_temp_over			 , //07
-			    // db_i_cpu1_d3_temp_over			   //08
-			})      
+    .dout                       ({
+			                    db_i_cpu0_d0_temp_over	         , //01
+			                    db_i_cpu0_d1_temp_over	         , //02
+			                    db_i_cpu1_d0_temp_over			 , //03
+			                    db_i_cpu1_d1_temp_over	           //04 
+			                    })      
 );
-
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
-// SGPIO Moudule
+// begin: SGPIO Moudule
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 wire sys_hlth_red_blink_n;
 wire sys_hlth_grn_blink_n;
@@ -1308,11 +1276,11 @@ assign scpld_to_mcpld_p2s_data[426]     = db_i_pal_pgd_p1v1              ;
 assign scpld_to_mcpld_p2s_data[425]     = db_i_pal_pgd_p0v8              ;
 assign scpld_to_mcpld_p2s_data[424]     = cpu1_temp_over                 ;
 assign scpld_to_mcpld_p2s_data[423]     = cpu0_temp_over                 ;
-assign scpld_to_mcpld_p2s_data[422]     = db_i_lom_prsnt_n               ;// 1'b0
-assign scpld_to_mcpld_p2s_data[421]     = lom_thermal_trip               ;// 1'b0
-assign scpld_to_mcpld_p2s_data[420]     = db_i_pal_ocp2_fan_prsnt_n      ;
-assign scpld_to_mcpld_p2s_data[419]     = db_i_pal_ocp2_fan_foo          ;
-assign scpld_to_mcpld_p2s_data[418]     = db_i_pal_lcd_card_in           ;
+assign scpld_to_mcpld_p2s_data[422]     = 1'b0 /*db_i_lom_prsnt_n*/      ;// 预留, 不使用 原db_i_lom_prsnt_n
+assign scpld_to_mcpld_p2s_data[421]     = 1'b0 /*lom_thermal_trip*/      ;// 预留, 不使用 原lom_thermal_trip
+assign scpld_to_mcpld_p2s_data[420]     = 1'b0 /*db_i_pal_ocp2_fan_prsnt_n*/;// 预留, 不使用 原db_i_pal_ocp2_fan_prsnt_n
+assign scpld_to_mcpld_p2s_data[419]     = 1'b0 /*db_i_pal_ocp2_fan_foo    */;// 预留, 不使用 原db_i_pal_ocp2_fan_foo
+assign scpld_to_mcpld_p2s_data[418]     = 1'b0 /*db_i_pal_lcd_card_in*/  ; // 预留, 不使用 原db_i_pal_lcd_card_in
 assign scpld_to_mcpld_p2s_data[417]     = i_pal_ifist_prsnt_n            ;
 assign scpld_to_mcpld_p2s_data[416:409] = bios_post_code[7:0]            ;
 assign scpld_to_mcpld_p2s_data[408:401] = bios_post_phase[7:0]           ;
@@ -1363,26 +1331,30 @@ assign scpld_to_mcpld_p2s_data[230:223] = riser1_pvti_byte2              ;
 assign scpld_to_mcpld_p2s_data[222:215] = riser1_pvti_byte1              ;
 assign scpld_to_mcpld_p2s_data[214:207] = riser1_pvti_byte0              ;
 assign scpld_to_mcpld_p2s_data[206:191] = mb_cb_prsnt[15:0]              ;
-assign scpld_to_mcpld_p2s_data[190]     = db_riser_prsnt_det_2           ;
-assign scpld_to_mcpld_p2s_data[189]     = db_riser_prsnt_det_3           ;
-assign scpld_to_mcpld_p2s_data[188]     = db_riser_prsnt_det_0           ;
-assign scpld_to_mcpld_p2s_data[187]     = db_riser_prsnt_det_1           ;
-assign scpld_to_mcpld_p2s_data[186]     = db_i_riser_prsnt_det_9         ;
-assign scpld_to_mcpld_p2s_data[185]     = db_i_riser_prsnt_det_8         ;
-assign scpld_to_mcpld_p2s_data[184]     = db_riser_prsnt_det_6           ;
-assign scpld_to_mcpld_p2s_data[183]     = db_riser_prsnt_det_7           ;
-assign scpld_to_mcpld_p2s_data[182]     = db_riser_prsnt_det_4           ;
-assign scpld_to_mcpld_p2s_data[181]     = db_riser_prsnt_det_5           ;
-assign scpld_to_mcpld_p2s_data[180]     = db_i_riser_prsnt_det_11        ;
-assign scpld_to_mcpld_p2s_data[179]     = db_i_riser_prsnt_det_10        ;
+
+assign scpld_to_mcpld_p2s_data[190]     = 1'b0 /*db_riser_prsnt_det_2   */; // 预留, 不使用 原db_riser_prsnt_det_2
+assign scpld_to_mcpld_p2s_data[189]     = 1'b0 /*db_riser_prsnt_det_3   */; // 预留, 不使用 原db_riser_prsnt_det_3
+assign scpld_to_mcpld_p2s_data[188]     = 1'b0 /*db_riser_prsnt_det_0   */; // 预留, 不使用 原db_riser_prsnt_det_0
+assign scpld_to_mcpld_p2s_data[187]     = 1'b0 /*db_riser_prsnt_det_1   */; // 预留, 不使用 原db_riser_prsnt_det_1
+assign scpld_to_mcpld_p2s_data[186]     = 1'b0 /*db_i_riser_prsnt_det_9 */; // 预留, 不使用 原db_riser_prsnt_det_9
+assign scpld_to_mcpld_p2s_data[185]     = 1'b0 /*db_i_riser_prsnt_det_8 */; // 预留, 不使用 原db_riser_prsnt_det_8
+assign scpld_to_mcpld_p2s_data[184]     = 1'b0 /*db_riser_prsnt_det_6   */; // 预留, 不使用 原db_riser_prsnt_det_6
+assign scpld_to_mcpld_p2s_data[183]     = 1'b0 /*db_riser_prsnt_det_7   */; // 预留, 不使用 原db_riser_prsnt_det_7
+assign scpld_to_mcpld_p2s_data[182]     = 1'b0 /*db_riser_prsnt_det_4   */; // 预留, 不使用 原db_riser_prsnt_det_4
+assign scpld_to_mcpld_p2s_data[181]     = 1'b0 /*db_riser_prsnt_det_5   */; // 预留, 不使用 原db_riser_prsnt_det_5
+assign scpld_to_mcpld_p2s_data[180]     = 1'b0 /*db_i_riser_prsnt_det_11*/; // 预留, 不使用 原db_i_riser_prsnt_det_11
+assign scpld_to_mcpld_p2s_data[179]     = 1'b0 /*db_i_riser_prsnt_det_10*/; // 预留, 不使用 原db_i_riser_prsnt_det_10
+
 assign scpld_to_mcpld_p2s_data[178:135] = nvme_slot_number[43:0]         ;
 assign scpld_to_mcpld_p2s_data[134:115] = riser_ocp_m2_slot_number[19:0] ;
+
 assign scpld_to_mcpld_p2s_data[114]     = db_i_p12v_stby_sns_alert       ; // 传入MCPLD, addr 0xA4[0]	
 assign scpld_to_mcpld_p2s_data[113]     = db_i_fan_sns_alert             ; // 传入MCPLD, addr 0xA4[1]	
-assign scpld_to_mcpld_p2s_data[112]     = db_i_dimm_sns_alert            ; // 传入MCPLD, addr 0xA4[2] 
-assign scpld_to_mcpld_p2s_data[111]     = 1'b0                           ;//20231221 d00412 VB PCA_REVISION_5
-assign scpld_to_mcpld_p2s_data[110]     = 1'b0                           ;//20231221 d00412 VB PCA_REVISION_4
-assign scpld_to_mcpld_p2s_data[109]     = 1'b0                           ;//20231221 d00412 VB PCA_REVISION_3
+assign scpld_to_mcpld_p2s_data[112]     = 1'b0 /*db_i_dimm_sns_alert*/   ; // 传入MCPLD, addr 0xA4[2] 
+
+assign scpld_to_mcpld_p2s_data[111]     = 1'b0                           ; //20231221 d00412 VB PCA_REVISION_5
+assign scpld_to_mcpld_p2s_data[110]     = 1'b0                           ; //20231221 d00412 VB PCA_REVISION_4
+assign scpld_to_mcpld_p2s_data[109]     = 1'b0                           ; //20231221 d00412 VB PCA_REVISION_3
 
 assign scpld_to_mcpld_p2s_data[108]     = 1'b0 /*pal_gpu_fan4_prsnt*/    ;//BOARD_ID4
 assign scpld_to_mcpld_p2s_data[107]     = 1'b0 /*pal_gpu_fan3_prsnt*/    ;//BOARD_ID3
@@ -1403,15 +1375,17 @@ assign scpld_to_mcpld_p2s_data[81]      = pca_revision_1                 ;//PCA_
 assign scpld_to_mcpld_p2s_data[80]      = pca_revision_0                 ;
 
 assign scpld_to_mcpld_p2s_data[79:64]   = mb_cpld2_ver                   ;
-assign scpld_to_mcpld_p2s_data[63]      = i_pal_wdt_rst_n_r              ;
+assign scpld_to_mcpld_p2s_data[63]      = i_pal_wdt_rst_n_r              ; // 1. 传入MCPLD 0x0002[1]; 2. FAN_CONTROL模块复位使用
 assign scpld_to_mcpld_p2s_data[62]      = 1'b0 /*TPM_MODULE_PRSNT_N*/    ;//TPM_PRSNT_N
 assign scpld_to_mcpld_p2s_data[61]      = 1'b0                           ;
 assign scpld_to_mcpld_p2s_data[60]      = 1'b0                           ;//PAL_LCD_PRSNT
 // assign scpld_to_mcpld_p2s_data[59]      = i_PAL_M2_1_SEL_R                 ;//PAL_LCD_BUSY
 assign scpld_to_mcpld_p2s_data[58]      = i_PAL_M2_1_PRSNT_N             ; // 传入MCPLD, addr 0x0015[0]
 assign scpld_to_mcpld_p2s_data[57]      = i_PAL_M2_0_PRSNT_N             ; // 传入MCPLD, addr 0x0015[0]
-assign scpld_to_mcpld_p2s_data[56]      = i_PAL_RISER2_PRSNT_N           ;
-// assign scpld_to_mcpld_p2s_data[55]      = 1'b0 /*PAL_RISER1_PRSNT_N*/    ;
+
+assign scpld_to_mcpld_p2s_data[56]      = db_i_pal_riser2_prsnt_n        ; // 传入MCPLD, addr 0x0080[1]
+assign scpld_to_mcpld_p2s_data[55]      = db_i_pal_riser1_prsnt_n        ; // 传入MCPLD, addr 0x0080[0]
+
 assign scpld_to_mcpld_p2s_data[54]      = riser2_emc_alert_n             ;
 assign scpld_to_mcpld_p2s_data[53]      = riser1_emc_alert_n             ;
 assign scpld_to_mcpld_p2s_data[52]      = db_pal_ext_rst_n               ; // 传入MCPLD, 外部复位信号
@@ -1495,15 +1469,15 @@ assign rst_i2c_riser2_pca9548_n       = mcpld_to_scpld_data_filter[267]     ; //
 assign rst_i2c_riser1_pca9548_n       = mcpld_to_scpld_data_filter[266]     ; // 主CPLD addr 0x001A
 assign cpu0_d0_bios_over              = mcpld_to_scpld_data_filter[265]     ;
 assign bmc_read_flag                  = mcpld_to_scpld_data_filter[264]     ;
-// assign vga2_dis                       = mcpld_to_scpld_data_filter[263]     ; // MCPLD BMC下发 addr 0x0010[3] 不使用
+// assign vga2_dis                       = mcpld_to_scpld_data_filter[263]     ; // MCPLD->SCPLD BMC下发 addr 0x0010[3] 不使用
 assign pfr_to_led                     = mcpld_to_scpld_data_filter[262:223] ;
 assign pgd_p1v8_stby_dly32ms          = mcpld_to_scpld_data_filter[222]     ;
 assign pgd_p1v8_stby_dly30ms          = mcpld_to_scpld_data_filter[221]     ;
 assign bios_security_bypass           = mcpld_to_scpld_data_filter[220]     ;
 assign pal_rtc_intb                   = mcpld_to_scpld_data_filter[219]     ;
 assign pal_ocp_ncsi_sw_en             = mcpld_to_scpld_data_filter[218]     ;
-assign pal_ocp2_ncsi_en               = mcpld_to_scpld_data_filter[217]     ;
-assign pal_ocp1_ncsi_en               = mcpld_to_scpld_data_filter[216]     ;
+// assign pal_ocp2_ncsi_en               = mcpld_to_scpld_data_filter[217]  ; // 主CPLD 不使用
+// assign pal_ocp1_ncsi_en               = mcpld_to_scpld_data_filter[216]  ; // 主CPLD 不使用
 assign pal_pe_wake_n                  = mcpld_to_scpld_data_filter[215]     ;
 assign smb_pehp_cpu1_3v3_alert_n      = mcpld_to_scpld_data_filter[214]     ;
 assign debug_reg_15[1:0]              = mcpld_to_scpld_data_filter[213:212] ;
@@ -1597,7 +1571,7 @@ assign db_i_pal_pgd_p1v8		         = bmccpld_to_mbcpld_s2p_data[46]       ; // �
 assign db_i_pal_pgd_p1v2	             = bmccpld_to_mbcpld_s2p_data[45]       ; // 传入MCPLD 0xA5
 assign db_i_pal_pgd_p1v1		         = bmccpld_to_mbcpld_s2p_data[44]       ; // 传入MCPLD 0xA5
 assign db_i_pal_pgd_p0v8		         = bmccpld_to_mbcpld_s2p_data[43]       ; // 传入MCPLD 0xA5
-assign i_pal_wdt_rst_n_r		         = bmccpld_to_mbcpld_s2p_data[42]       ; // 传入MCPLD 0x0002[1]
+assign i_pal_wdt_rst_n_r		         = bmccpld_to_mbcpld_s2p_data[42]       ; // 1. 传入MCPLD 0x0002[1]; 2. FAN_CONTROL模块复位使用
 assign cpld_date_mmdd	                 = bmccpld_to_mbcpld_s2p_data[41:26]    ; // 未使用
 assign nc_port		                     = bmccpld_to_mbcpld_s2p_data[25]       ; // 未使用
 assign reserve_port                      = bmccpld_to_mbcpld_s2p_data[24:21]    ; // 未使用
@@ -1627,23 +1601,28 @@ assign mbcpld_to_bmccpld_p2s_data[3]     = 1'b1 /*DSD_UART_PRSNT_N*/            
 assign mbcpld_to_bmccpld_p2s_data[2]     = rst_pal_extrst_r_n                   ; // 传入BMCCPLD 复位使用
 // assign mbcpld_to_bmccpld_p2s_data[1]     = pal_vga_sel_n                      ; // 不使用, 传入BMCCPLD VGA选择信号, 0表示CPU VGA, 1表示BMC VGA. 目前固定为CPU VGA
 assign mbcpld_to_bmccpld_p2s_data[0]     = t4hz_clk;
-
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: SGPIO Moudule
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
-// SGPIO Moudule End
+// begin: riser1/riser2 sgpio scan chain
 //--------------------------------------------------------------------------------------------------------------------------------------------------
-wire i_PAL_RISER1_SS_DATA_IN = 1'b1;
-wire i_PAL_RISER2_SS_DATA_IN = 1'b1;
+assign o_RISER1_SWITCH_EN   = 1'bz ;  
+assign o_RISER1_SELECT      = 1'bz ;
+assign o_PAL_RISER1_SS_CLK  = 1'bz ;
+assign o_PAL_RISER1_SS_LD_N = 1'bz ;
+assign o_PAL_RISER2_SS_CLK  = 1'bz ;
+assign o_PAL_RISER2_SS_LD_N = 1'bz ;
 
+/* 不使用
 //PVT
 wire [5:0] mb1_pvti_ss_count;
 wire [5:0] mb2_pvti_ss_count;
-// wire [4:0] riser1_pvti_ss_count;
+wire [4:0] riser1_pvti_ss_count;
 wire [4:0] riser2_pvti_ss_count;
 
-//------------------------------------------------------------------------------
-// RISER1 SGPIO SCAN CHAIN
-//------------------------------------------------------------------------------
+
 pvt_gpi #(
     .TOTAL_BIT_COUNT                (32                                     ),
     .DEFAULT_STATE                  (32'hFF_F3_FF_01                        ),             
@@ -1730,11 +1709,14 @@ assign riser2_id[4]                = riser2_pvti_byte0[3];
 assign riser2_id[5]                = riser2_pvti_byte0[2];
 assign pal_riser2_pwrgd            = riser2_pvti_byte0[1];
 assign pal_riser2_pe_wake_n        = riser2_pvti_byte0[0];
+不使用 */
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: riser1/riser2 sgpio scan chain
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-//------------------------------------------------------------------------------
-// MAIN BOARD SGPIO
-//------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: main board sgpio
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 // CPU NVME 
 assign cpu_nvme0_prsnt_n = i_CPU_NVME0_PRSNT_N;
 assign cpu_nvme1_prsnt_n = i_CPU_NVME1_PRSNT_N;
@@ -1797,11 +1779,15 @@ assign sw[4]                = i_SW_5           ;
 assign sw[5]                = i_SW_6           ;
 assign sw[6]                = i_SW_7           ;
 assign sw[7]                = i_SW_8           ;
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: main board sgpio
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
-// NVME and CABLE ID use the same SGPIO scan chain
-//------------------------------------------------------------------------------
-/*
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: NVME and CABLE ID use the same SGPIO scan chain
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+/* 不使用
 pvt_gpi #(
 	  .TOTAL_BIT_COUNT                (48                                     ),
 	  .DEFAULT_STATE                  (48'h0                                  ),
@@ -1837,7 +1823,15 @@ pvt_gpi #(
 					                   pal_bp5_prsnt_n     ,pal_bp6_prsnt_n     ,pal_bp7_prsnt_n     ,pal_bp8_prsnt_n       //U217 DATA
 					                })					 
 );
-                
+不使用 */
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: NVME use the same SGPIO scan chain
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: OCP PRSENT and CABLE ID SGPIO SCAN CHAIN
+//-------------------------------------------------------------------------------------------------------------------------------------------------- 
+/* 不使用            
 pvt_gpi #(
 	  .TOTAL_BIT_COUNT(48),
 	  .DEFAULT_STATE(48'h0),
@@ -1871,13 +1865,16 @@ pvt_gpi #(
 					          pca_revision_2,pca_revision_1,pca_revision_0,pcb_revision_1,
 					          pcb_revision_0,cpu_nvme25_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme23_prsnt_n //U278 DATA                 				     
 				           })					 
-);             
-*/  
+);   
+不使用*/
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: OCP PRSENT and CABLE ID SGPIO SCAN CHAIN
+//--------------------------------------------------------------------------------------------------------------------------------------------------           
 
-//------------------------------------------------------------------------------
-// OCP1 SGPIO SCAN CHAIN
-//------------------------------------------------------------------------------
-/*
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: OCP1/OCP2 SGPIO SCAN CHAIN
+//-------------------------------------------------------------------------------------------------------------------------------------------------- 
+/* 不使用
 pvt_gpi #(
     .TOTAL_BIT_COUNT          (32                               ),
     .DEFAULT_STATE            (32'h7FFF_FFFE                    ),
@@ -1896,9 +1893,6 @@ pvt_gpi #(
     .par_data                 ({ocp1_pvti_byte3[7:0], ocp1_pvti_byte2[7:0],ocp1_pvti_byte1[7:0], ocp1_pvti_byte0[7:0]})
 );
 
-//------------------------------------------------------------------------------
-// OCP2 SGPIO SCAN CHAIN
-//------------------------------------------------------------------------------
 pvt_gpi #(
     .TOTAL_BIT_COUNT          (32                               ),
     .DEFAULT_STATE            (32'h7FFF_FFFE                    ),
@@ -1922,74 +1916,79 @@ assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_
 
 assign w_pal_ocp1_prsnt_n = {ocp_prsent_b3_n,ocp_prsent_b2_n,ocp_prsent_b1_n,ocp_prsent_b0_n};
 assign w_ocp1_x16_prsnt   = ((w_pal_ocp1_prsnt_n == 4'b0100)|(w_pal_ocp1_prsnt_n == 4'b0101)|(w_pal_ocp1_prsnt_n == 4'b0111)|(w_pal_ocp1_prsnt_n == 4'b1100)) ? 1'b1 : 1'b0;
-*/
+不使用*/
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: OCP1/OCP2 SGPIO SCAN CHAIN
+//-------------------------------------------------------------------------------------------------------------------------------------------------- 
 
-//------------------------------------------------------------------------------
-// I2C Update Start
-//------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: I2C Update Start
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 /*
 wire wb_clk;
 defparam inst_osch.NOM_FREQ = "4.29";
 OSCH inst_osch(
-.STDBY		(1'b0		),
-.OSC		(wb_clk		),
-.SEDSTDBY	(			)
+    .STDBY		(1'b0		            ),
+    .OSC		(wb_clk		            ),
+    .SEDSTDBY	(			            )
 );
 I2C_UPDATE inst_i2c_update_flash_config(
-.wb_clk_i	(wb_clk	),
-.wb_rst_i	(		),
-.wb_cyc_i	(		),
-.wb_stb_i	(		),
-.wb_we_i	(		),
-.wb_adr_i	(		),
-.wb_dat_i	(		),
-.wb_dat_o	(		),
-.wb_ack_o	(		),
-.i2c1_irqo	(						),
-.i2c1_scl	(BMC_I2C3_PAL_S_SCL_R	),
-.i2c1_sda	(BMC_I2C3_PAL_S_SDA_R   )
-
+    .wb_clk_i	(wb_clk	                ),
+    .wb_rst_i	(		                ),
+    .wb_cyc_i	(		                ),
+    .wb_stb_i	(		                ),
+    .wb_we_i	(		                ),
+    .wb_adr_i	(		                ),
+    .wb_dat_i	(		                ),
+    .wb_dat_o	(		                ),
+    .wb_ack_o	(		                ),
+    .i2c1_irqo	(						),
+    .i2c1_scl	(BMC_I2C3_PAL_S_SCL_R	),
+    .i2c1_sda	(BMC_I2C3_PAL_S_SDA_R   )
 ); 
 */
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: I2C Update Start
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
 // LED BOARD CONTROL
 //------------------------------------------------------------------------------
 
-///////////////////////////////////////////////////////////////////////////////////
-//bmc active state
-///////////////////////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// begin: bmc active state
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 wire w_bmc_active1_n;
 
-FanControl#
-(
-.FANNUMBER(1),
-.TIME_OUT0(240),// common is 240s
-.TIME_OUT1(10)  // common is 10s
-) FanControl_m
-(
-.i_clk                 (clk_50m          ),//50MHz
-.i_rst_n               (pon_reset_n      ),
-.i_1uSCE               (t1us_tick        ),
-.i_1000mSCE            (t1s_tick         ),                  
-.i_heartbeat           (i_pal_wdt_rst_n_r),
-.i_max_speed_ctrl      (8'd60            ),//can be decimal 60/65/70/75/80/85/90/95/100
-.i_low_speed_pwr_on    (8'd10            ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
-.i_fan_en_when_s5      (1'b1             ),      
-.i_bmc_ctrl_when_s5    (1'b1             ),      
-.i_pwr_on_st           (1'b1             ),      
-.i_fan_speed_when_s5   (8'd10            ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
-.i_rst_bmc_n           (1'b1             ),      
-.o_bmc_active0_n       (                 ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 
-.o_bmc_active0_rst_n   (                 ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 ; can be reset by i_rst_bmc_n
-.o_wdt_override_pld_sel(                 ),//defaulte 0; bmc die:0; bmc actiev:1 ; related TIME_OUT1 
-.o_bmc_active1_n       (w_bmc_active1_n  ),//defaulte 1; bmc die:1; bmc actiev:0 ; related TIME_OUT1 
-.i_BMC_pwm             (1'b1             ),
-.o_CPLD_pwm            (                 )
+FanControl #(
+    .FANNUMBER             (1                ),
+    .TIME_OUT0             (240              ),// common is 240s
+    .TIME_OUT1             (10               ) // common is 10s
+) FanControl_m (
+    .i_clk                 (clk_50m          ),//50MHz
+    .i_rst_n               (pon_reset_n      ),
+    .i_1uSCE               (t1us_tick        ),
+    .i_1000mSCE            (t1s_tick         ),                  
+    .i_heartbeat           (i_pal_wdt_rst_n_r),//in BMCCPLD传入
+    .i_max_speed_ctrl      (8'd60            ),//can be decimal 60/65/70/75/80/85/90/95/100
+    .i_low_speed_pwr_on    (8'd10            ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
+    .i_fan_en_when_s5      (1'b1             ),      
+    .i_bmc_ctrl_when_s5    (1'b1             ),      
+    .i_pwr_on_st           (1'b1             ),      
+    .i_fan_speed_when_s5   (8'd10            ),//can be decimal 10/15/20/25/30/35/40/45/50/55/60
+    .i_rst_bmc_n           (1'b1             ),      
+    .o_bmc_active0_n       (                 ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 
+    .o_bmc_active0_rst_n   (                 ),//defaulte 0; bmc die:1; bmc actiev:0 ; related TIME_OUT0 ; can be reset by i_rst_bmc_n
+    .o_wdt_override_pld_sel(                 ),//defaulte 0; bmc die:0; bmc actiev:1 ; related TIME_OUT1 
+    .o_bmc_active1_n       (w_bmc_active1_n  ),//defaulte 1; bmc die:1; bmc actiev:0 ; related TIME_OUT1 
+    .i_BMC_pwm             (1'b1             ),
+    .o_CPLD_pwm            (                 )
 );
 
 assign bmc_ready_flag = ~w_bmc_active1_n;
-
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+// end: bmc active state
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 //PE WAKE
 assign pfr_pe_wake_n = pal_pe_wake_n /*& i_PAL_RISER1_WAKE_N_R*/ ; 
@@ -2006,18 +2005,15 @@ assign o_PAL_UPD2_PONRST_N_R  = usb_ponrst_r_n          ;
 assign pal_p3v3_stby_pgd      = i_CPLD_M_S_EXCHANGE_S1  ;
 assign o_CPLD_M_S_EXCHANGE_S2 = i_PAL_PWR_SW_IN_N       ; 
 
-
-//OCPm LOM
-wire   db_i_lom_prsnt_n ; // 未使用
-assign lom_thermal_trip     = ~db_i_lom_prsnt_n ? db_i_lom_fan_on_aux : 1'b0;//1:thermal trip;0:normal
+// OCPm LOM
+// wire  lom_thermal_trip;
+// assign lom_thermal_trip     = ~db_i_lom_prsnt_n ? db_i_lom_fan_on_aux : 1'b0; //1:thermal trip;0:normal
 
 
 //NCSI 
 // assign o_PAL_OCP1_NCSI_EN_N_R      = ~pal_ocp1_ncsi_en  ; //J69
 // assign o_PAL_OCP2_NCSI_EN_N_R      = ~pal_ocp2_ncsi_en  ; //J3 
-// ??? 信号如何赋值 ???
 assign o_PAL_WX1860_NCSI_SW_EN_N_R = ~pal_ocp_ncsi_sw_en; //J54
-// ??? 信号如何赋值 ???
 assign o_PAL_OCP_NCSI_SW_EN_N_R    = ~pal_ocp_ncsi_sw_en; //J53 
 
 
@@ -2190,9 +2186,6 @@ edge_delay #(
   .delay_output  (ocp_main_en_dly50ms)
 );
 
-// assign ocp_aux_50ms_pgd = (ocp_main_en_dly50ms)  ? db_i_pal_ocp2_pwrgd : 1'b1;
-// assign ocp_aux_pgd      = (ocp_main_en		)       ? ocp_aux_50ms_pgd    : db_i_pal_ocp2_pwrgd;
-
 assign o_PAL_OCP1_NCSI_CLK_50M_R   = i_PAL_BMC_NCSI_CLK_50M_R;
 assign o_PAL_OCP_NCSI_CLK_50M_R    = i_PAL_BMC_NCSI_CLK_50M_R;
 assign o_PAL_WX1860_NCSI_CLK_50M_R = i_PAL_BMC_NCSI_CLK_50M_R;
@@ -2254,23 +2247,23 @@ wire [15:0] o_mb_cb_prsnt_bios;
 I2C_SLAVE_REG inst_i2c_bios_reg (
     //system interface
     .rc_reset_n               (pon_reset_n                  ),//in 
-    //.sys_reset_n            (pon_reset_n                  ),//in 
     .clk                      (clk_50m                      ),//in
+
     //I2C interface  
     .reg_addr                 (reg_addr                     ),//in
     .rdata                    (rdata                        ),//output
     .wrdata_en                (wrdata_en                    ),//in
     .wrdata                   (wrdata                       ),//in
     .test_pin                 (                             ),//output
-    .o_usb_en                 (usb_en                       ),//output 0x00
-    .o_bios_read_rtc          (bios_read_rtc[7:0]           ),//output 0x0C
-    .o_bios_post_80           (bios_post_code               ),//output  post_80
-    .o_bios_post_84           (bios_post_rate               ),//output  post_84
-    .o_bios_post_85           (bios_post_phase              ),//output  post_85
-    .o_mb_cb_prsnt            (o_mb_cb_prsnt_bios           ),//output 0x2A,0x2C   
-    .reg1_special_confi       (8'h00                        ),//in 0x29[7:0]
-    .riser_ocp_m2_slot_number (riser_ocp_m2_slot_number     ),//in 0x32[2:0],0x31[7:0],0x30[7:0]
-    .nvme_slot_number         (nvme_slot_number             ),//in 0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
+    .o_usb_en                 (usb_en                       ),// BIOS下发       addr 0x00        USB使能控制 
+    .o_bios_read_rtc          (bios_read_rtc[7:0]           ),// BIOS下发       addr 0x0C        RTC读控制
+    .o_bios_post_80           (bios_post_code               ),// BIOS下发       addr 0x0D        POST code
+    .o_bios_post_84           (bios_post_rate               ),// BIOS下发       addr 0x0E        POST rate 
+    .o_bios_post_85           (bios_post_phase              ),// BIOS下发       addr 0x0F        POST phase
+    .o_mb_cb_prsnt            (o_mb_cb_prsnt_bios           ),// BIOS下发       addr 0x2A,0x2C   CPU0/CPU1 CB存在情况，bit[15:8] CPU1 CB，bit[7:0] CPU0 CB
+    .reg1_special_confi       (8'h00                        ),// BIOS寄存       addr 0x29[7:0]
+    .riser_ocp_m2_slot_number (riser_ocp_m2_slot_number     ),// BIOS寄存       addr 0x32[2:0],0x31[7:0],0x30[7:0]
+    .nvme_slot_number         (nvme_slot_number             ),// BIOS寄存       addr 0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
 
     .i_i2c_ram_60             (8'hff                        ),//CPU0 DIE0-L J1
     .i_i2c_ram_61             (8'hff                        ),//CPU0 DIE0-H J1

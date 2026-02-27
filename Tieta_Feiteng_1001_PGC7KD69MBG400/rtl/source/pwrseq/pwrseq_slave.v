@@ -202,7 +202,7 @@ module pwrseq_slave #(
     output [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_fault_det                 ,          
     output [(NUM_RISER ? NUM_RISER:1)-1:0]      pal_riser_en                    ,          
 
-    output [5:0]                                power_seq_sm                    , 
+    input  [5:0]                                power_seq_sm                    , 
     output reg                                  reached_sm_wait_powerok         , 
 
     output reg                                  pgd_so_far                      ,   

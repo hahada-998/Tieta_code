@@ -772,9 +772,9 @@ wire                                        db_i_pal_cpu1_d1_vph_1v8_pg         
 wire                                        any_aux_vrm_fault                   ;
 wire [`NUM_CPU-1:0]                         cpu_thermtrip_fault_det             ;
 
-wire                                        db_i_dimm_sns_alert                 ;
-wire                                        db_i_fan_sns_alert                  ;
-wire                                        db_i_p12v_stby_sns_alert            ;
+// wire                                        db_i_dimm_sns_alert              ; // 不使用
+wire                                        db_i_fan_sns_alert                  ; // SCPLD->MCPLD    BMC寄存     addr 0xA4[1]    FAN传感器告警信号
+wire                                        db_i_p12v_stby_sns_alert            ; // SCPLD->MCPLD    BMC寄存     addr 0xA4[0]    12V standby电压传感器告警信号
 
 
 
@@ -836,11 +836,11 @@ wire                                        ft_cpu_rst_ok                     ;/
 wire                                        db_i_ps1_dc_ok                    ;// ps dc_ok 后释放CPU_VR的RST
 wire                                        db_i_ps2_dc_ok                    ;// ps dc_ok 后释放CPU_VR的RST
 
-wire [5:0]                                  power_seq_sm                      ;
-wire [5:0]                                  pwrseq_sm_fault_det               ;
+wire [5:0]                                  power_seq_sm                      ;// BMC寄存    addr 0x00A0[5-0]   电源序列状态，6位分别代表不同的电源状态，1：正常；0：异常
+wire [5:0]                                  pwrseq_sm_fault_det               ;// BMC寄存    addr 0x00A1[5-0]   电源序列状态故障检测，6位分别代表不同的电源状态
 
 wire [`NUM_FAN-1:0]                         db_fan_prsnt_n                    ;
-wire                                        ocp_prsent_n                      ;// BMC寄存    addr 0x0072[4]    OCP是否存在，1：存在；0：不存在
+wire                                        ocp_prsent_n                      ;// BMC寄存    addr 0x0072[4]     OCP是否存在，1：存在；0：不存在
 wire                                        fan1_install_n                    ;
 wire                                        fan2_install_n                    ;
 wire                                        fan3_install_n                    ;
@@ -952,39 +952,38 @@ wire                                        pf_blink_code                     ;
 wire                                        ocp_led                           ;
 wire                                        pal_led_nic_act                   ;
 wire                                        uid_led_state                     ;
-wire                                        ilo_hard_reset                    ;
 wire                                        ilo_rstreq_n                      ;
 wire                                        vwire_bmc_nmi                     ;
-wire                                        vwire_bmc_wakeup                  ; // BMC下发 addr 0x0003[6] 系统开机信号输出
+wire                                        vwire_bmc_wakeup                  ; //                     BMC下发      addr 0x0003[6]      系统开机信号输出
 wire                                        s_bmc_wakeup_n                    ;
-wire                                        vwire_bmc_sysrst                  ; // BMC下发 addr 0x0003[5] 系统复位信号输出, 低电平有效
+wire                                        vwire_bmc_sysrst                  ; //                     BMC下发      addr 0x0003[5]      系统复位信号输出, 低电平有效
 wire                                        s_bmc_sysrst_n                    ;
-wire                                        vwire_bmc_shutdown                ; // BMC下发 addr 0x0003[4] 系统关机信号输出, 低电平有效
+wire                                        vwire_bmc_shutdown                ; //                     BMC下发      addr 0x0003[4]      系统关机信号输出, 低电平有效
 wire                                        s_bmc_shutdown                    ;
-wire                                        db_pal_ext_rst_n                  ; // BMC下发 addr 0x0003[2] 外部复位信号输出, 低电平有效
-wire                                        rst_btn_mask                      ; // BMC下发 addr 0x0003[0] 按键屏蔽信号, 低电平有效
-wire                                        bmc_ctrl_shutdown                 ; // BMC下发 addr 0x0004[6] 系统关机控制信号, 低电平有效
+wire                                        db_pal_ext_rst_n                  ; // SCPLD -> MCPLD      BMC下发      addr 0x0003[2]      外部复位信号输出, 低电平有效
+wire                                        rst_btn_mask                      ; //                     BMC下发      addr 0x0003[0]      按键屏蔽信号, 低电平有效
+wire                                        bmc_ctrl_shutdown                 ; //                     BMC下发      addr 0x0004[6]      系统关机控制信号, 低电平有效
 
-wire                                        aux_pcycle                        ; // BMC下发 addr 0x0004[4] AUX辅助电源重启
+wire                                        aux_pcycle                        ; // BMC下发      addr 0x0004[4]      AUX辅助电源重启
 
 wire                                        efuse_power_cycle                 ;
-wire                                        pwrbtn_bl_mask                    ; // BMC下发 addr 0x0004[3] 不使用
-wire                                        vwire_pwrbtn_bl                   ; // BMC下发 addr 0x0004[2] 不使用
+wire                                        pwrbtn_bl_mask                    ; // BMC下发      addr 0x0004[3]      不使用
+wire                                        vwire_pwrbtn_bl                   ; // BMC下发      addr 0x0004[2]      不使用
 wire                                        pwrcap_en                         ;
 wire                                        pwron_denied                      ;
 wire                                        power_wake_r_n                    ;
-wire                                        wol_en                            ; // BMC下发 addr 0x0006[3] Wake-on-LAN功能使能，1：使能；0：不使能
-wire [1:0]                                  sideband_sel                      ; // BMC下发 addr 0x0006[1:0] 侧带信号选择, 00:保留；01:CPU VR温度报警；10:系统温度报警；11:保留
-wire                                        rom_mux_bios_bmc_en               ; // BMC下发 addr 0x0007[7]   ROM芯片BIOS/BMC使能信号, 1：选择BIOS; 0：选择BMC
-wire                                        rom_mux_bios_bmc_sel              ; // BMC下发 addr 0x0007[6]   ROM芯片BIOS/BMC选择信号, 1：选择BIOS; 0：选择BMC
-wire                                        rom_bios_ma_rst                   ; // BMC下发 addr 0x0007[3]   BIOS主复位信号, 低电平有效
-wire                                        rom_bios_bk_rst                   ; // BMC下发 addr 0x0007[2]   BIOS备复位信号, 低电平有效
-wire                                        rom_bmc_bk_rst                    ; // BMC下发 addr 0x0007[1]   BMC备复位信号, 低电平有效
-wire                                        rom_bmc_ma_rst                    ; // BMC下发 addr 0x0007[0]   BMC主复位信号, 低电平有效
-wire                                        bmc_eeprom_wp                     ; // BMC下发 addr 0x0008[5]   BMC EEPROM 写保护信号, 1：写保护；0：不写保护 不使用
-wire                                        bios_eeprom_wp                    ; // BMC下发 addr 0x0008[6]   BIOS EEPROM 写保护信号, 1：写保护；0：不写保护 不使用
-wire                                        cpld_rst_bmc                      ; // BMC下发 addr 0x0008[7]   CPLD复位信号, 低电平有效
-wire                                        power_fault                       ;
+wire                                        wol_en                            ; // BMC下发      addr 0x0006[3]      Wake-on-LAN功能使能，1：使能；0：不使能
+// wire [1:0]                               sideband_sel                      ; // BMC下发      addr 0x0006[1:0]    OCP侧带选择，00：不使能；01：OCP1；10：OCP2；11：OCP3      不使用
+wire                                        rom_mux_bios_bmc_en               ; // BMC下发      addr 0x0007[7]      ROM芯片BIOS/BMC使能信号, 1：选择BIOS; 0：选择BMC
+wire                                        rom_mux_bios_bmc_sel              ; // BMC下发      addr 0x0007[6]      ROM芯片BIOS/BMC选择信号, 1：选择BIOS; 0：选择BMC
+wire                                        rom_bios_ma_rst                   ; // BMC下发      addr 0x0007[3]      BIOS主复位信号, 低电平有效
+wire                                        rom_bios_bk_rst                   ; // BMC下发      addr 0x0007[2]      BIOS备复位信号, 低电平有效
+wire                                        rom_bmc_bk_rst                    ; // BMC下发      addr 0x0007[1]      BMC备复位信号, 低电平有效
+wire                                        rom_bmc_ma_rst                    ; // BMC下发      addr 0x0007[0]      BMC主复位信号, 低电平有效
+wire                                        bmc_eeprom_wp                     ; // BMC下发      addr 0x0008[5]      BMC EEPROM 写保护信号, 1：写保护；0：不写保护               不使用
+wire                                        bios_eeprom_wp                    ; // BMC下发      addr 0x0008[6]      BIOS EEPROM 写保护信号, 1：写保护；0：不写保护              不使用
+wire                                        cpld_rst_bmc                      ; // BMC下发      addr 0x0008[7]      CPLD复位信号, 低电平有效
+wire                                        power_fault                       ; // BMC寄存      addr 0x00A1[6]      电源故障状态，1：有故障；0：无故障
 wire                                        db_gmt_fail_n                     ;
 wire                                        sys_hlth_grn_blink_n              ;
 wire                                        sys_hlth_red_blink_n              ;
@@ -1018,7 +1017,7 @@ wire                                        pwrbtn_mask                   ; // B
 
 wire                                        interlock_broken;
 wire                                        cpu_thermtrip;
-wire [`NUM_CPU-1:0]                         cpu_thermtrip_event;
+wire [`NUM_CPU-1:0]                         cpu_thermtrip_event                 ; // SCPLD->MCPLD    CPU0温度过高报警，1：过高；0：正常
 wire [`NUM_CPU-1:0]                         cpu_thermtrip_fault;
 
 wire                                        pch_pwrbtn;
@@ -1037,11 +1036,11 @@ wire                                        any_non_recov_fault;
 wire [`NUM_PSU-1:0]                         mismatched_ps;
 wire                                        s_cpu_rst_pcie_n;
 wire                                        vwire_cpu_rst_pcie;
-wire                                        db_i_pal_lcd_card_in;
+// wire                                        db_i_pal_lcd_card_in       ; // 未使用   SCPLD -> MCPLD      BMC寄存     addr 0x0015[3]     LCD卡插槽存在信号，0：存在；1：不存在
 wire                                        ifist_prsnt_n;
-wire [7:0]                                  bios_post_code                ; // 已使用   SCPLD -> MCPLD      BMC寄存  addr 0x000D[7:0]   BIOS POST code 状态记录
+wire [7:0]                                  bios_post_code                ; // 已使用   SCPLD -> MCPLD      BMC寄存     addr 0x000D[7:0]   BIOS POST code 状态记录
 wire [7:0]                                  post_led_n                    ; // 未使用   BMC寄存  POST LED 状态       
-// wire                                        vga2_dis                     ; // 未使用   MCPLD -> SCPLD      BMC下发  addr 0x0010[3]     VGA信号控制，1：禁止；0：允许
+// wire                                        vga2_dis                   ; // 未使用   MCPLD -> SCPLD      BMC下发     addr 0x0010[3]     VGA信号控制，1：禁止；0：允许
 wire [`NUM_PSU-1:0]                         s_ps_smb_alert_n;
 wire [`NUM_CPU-1:0]                         qual_cpu_vr_hot_n;
 wire [`NUM_CPU-1:0]                         mem_abcd_hot_alert;
@@ -1063,20 +1062,22 @@ wire                                        riser1_emc_alert_mask;
 wire                                        riser2_emc_alert_mask;
 wire                                        db_riser1_tmp_alert_n;
 wire                                        db_riser2_tmp_alert_n;
-wire                                        pal_riser1_prsnt_n;
-wire                                        pal_riser2_prsnt_n;
-wire                                        db_pal_riser1_prsnt_n       ; // MCPLD IN           BMC寄存     addr 0x0080[1]      Riser2是否存在，1：存在；0：不存在
-wire                                        db_pal_riser2_prsnt_n       ; // MCPLD IN           BMC寄存     addr 0x0080[0]      Riser1是否存在，1：存在；0：不存在
+
+wire                                        pal_riser1_prsnt_n          ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0080[1]      Riser1是否存在，1：存在；0：不存在
+wire                                        pal_riser2_prsnt_n          ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0080[0]      Riser1是否存在，1：存在；0：不存在
+wire                                        db_pal_riser1_prsnt_n       ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0080[1]      Riser2是否存在，1：存在；0：不存在
+wire                                        db_pal_riser2_prsnt_n       ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0080[0]      Riser1是否存在，1：存在；0：不存在
+
 wire                                        ocp_temp_alert_mask  ;
-wire                                        sensor_thermtrip;
+wire                                        sensor_thermtrip            ; // 未使用     SCPLD -> MCPLD                                    传感器过热报警信号，1：过热；0：正常
 wire                                        pal_m2_1_sel_r              ; // 未使用
-wire                                        pal_m2_1_prsnt_n            ; // SCPLD -> MCPLD     BMC寄存     addr 0x0015[2]      m2_1插槽存在信号，0：存在；1：不存在   
-wire                                        pal_m2_0_prsnt_n            ; // SCPLD -> MCPLD     BMC寄存     addr 0x0015[1]      m2_0插槽存在信号，0：存在；1：不存在  
-wire                                        front_m2_card_prsnt         ; //                    BMC寄存     addr 0x0015[0]      前面板M.2是否有卡，1：有卡；0：无卡  
+wire                                        pal_m2_1_prsnt_n            ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0015[2]      m2_1插槽存在信号，0：存在；1：不存在   
+wire                                        pal_m2_0_prsnt_n            ; // 已使用     SCPLD -> MCPLD     BMC寄存     addr 0x0015[1]      m2_0插槽存在信号，0：存在；1：不存在  
+wire                                        front_m2_card_prsnt         ; // 已使用     MCPLD_IN           BMC寄存     addr 0x0015[0]      前面板M.2是否有卡，1：有卡；0：无卡  
 wire [7:0]                                  db_debug_sw;
-wire [7:0]                                  bmc_i2c_rst                 ; // MCPLD -> SCPLD     BMC下发     ddr 0x0019[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
-wire [7:0]                                  bmc_i2c_rst2                ; // MCPLD -> SCPLD     BMC下发     ddr 0x001A[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
-wire [7:0]                                  bmc_i2c_rst3                ; // MCPLD -> SCPLD     BMC下发     ddr 0x001B[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
+wire [7:0]                                  bmc_i2c_rst                 ; // 已使用     MCPLD -> SCPLD     BMC下发     ddr 0x0019[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
+wire [7:0]                                  bmc_i2c_rst2                ; // 已使用     MCPLD -> SCPLD     BMC下发     ddr 0x001A[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
+wire [7:0]                                  bmc_i2c_rst3                ; // 已使用     MCPLD -> SCPLD     BMC下发     ddr 0x001B[7:0]     I2C复位信号，每位控制一个I2C总线的复位，1：复位；0：不复位
 wire                                        rst_i2c0_mux_n;
 wire                                        rst_i2c3_mux_n;
 wire                                        rst_i2c13_mux_n;
@@ -1112,26 +1113,26 @@ wire [1:0]                                  bmcctl_uart_sw                ; // M
 wire                                        fan_dbg_mode;
 wire [15:0]                                 mb_cpld2_ver;
 
-wire [7:0]                                  i2c_ram_1050;
-wire [7:0]                                  i2c_ram_1051;
-wire [7:0]                                  i2c_ram_1052;
-wire [7:0]                                  i2c_ram_1053;
-wire [7:0]                                  i2c_ram_1054;
-wire [7:0]                                  i2c_ram_1055;
-wire [7:0]                                  i2c_ram_1056;
-wire [7:0]                                  i2c_ram_1057;
-wire [7:0]                                  i2c_ram_1058;
+wire [7:0]                                  i2c_ram_1050                 ;  // MCPLD             BMC下发    addr 0x1050
+wire [7:0]                                  i2c_ram_1051                 ;  // MCPLD             BMC下发    addr 0x1051    
+wire [7:0]                                  i2c_ram_1052                 ;  // MCPLD             BMC下发    addr 0x1052    
+wire [7:0]                                  i2c_ram_1053                 ;  // MCPLD             BMC下发    addr 0x1053    
+wire [7:0]                                  i2c_ram_1054                 ;  // MCPLD             BMC下发    addr 0x1054    
+wire [7:0]                                  i2c_ram_1055                 ;  // MCPLD             BMC下发    addr 0x1055    
+wire [7:0]                                  i2c_ram_1056                 ;  // MCPLD             BMC下发    addr 0x1056    
+wire [7:0]                                  i2c_ram_1057                 ;  // MCPLD             BMC下发    addr 0x1057    
+wire [7:0]                                  i2c_ram_1058                 ;  // MCPLD             BMC下发    addr 0x1058    
 
-wire                                        pca_revision_0;
-wire                                        pca_revision_1;
-wire                                        pca_revision_2;
-wire                                        pcb_revision_0;
-wire                                        pcb_revision_1;
-wire [15:0]                                 bmc_cpld_version;
+wire                                        pca_revision_0                ; // SCPLD -> MCPLD    BMC寄存           
+wire                                        pca_revision_1                ; // SCPLD -> MCPLD    BMC寄存           
+wire                                        pca_revision_2                ; // SCPLD -> MCPLD    BMC寄存           
+wire                                        pcb_revision_0                ; // SCPLD -> MCPLD    BMC寄存    addr 0xF1[1]            PCB版本，1：A0版本；0：B0版本     
+wire                                        pcb_revision_1                ; // SCPLD -> MCPLD    BMC寄存    addr 0xF1[0]            PCB版本，1：A0版本；0：B0版本
+wire [15:0]                                 bmc_cpld_version              ; // SCPLD -> MCPLD    BMC寄存    addr 0x00FA-0x00FB[7:0] BMC CPLD版本，16位高8位在0x00FA，低8位在0x00FB
 
 wire [2:0]                                  db_chassis_id;
 
-wire [2:0]                                  chassis_id;
+wire [2:0]                                  chassis_id;     
 wire [1:0]                                  mb_class_id;
 wire [3:0]                                  led_custom_mode;
 wire                                        mb_t1hz_clk;
@@ -1172,94 +1173,105 @@ wire [7:0]                                  s_ocp2_act_n;
 wire [7:0]                                  s_ocp2_link_n;
 
 /* 
-不使用
-wire                                        ocp2_pvt_link_spdb_p5_n;       
-wire                                        ocp2_pvt_act_p5_n;             
-wire                                        ocp2_pvt_link_spda_p6_n;      
-wire                                        ocp2_pvt_link_spdb_p6_n;       
-wire                                        ocp2_pvt_act_p6_n;             
-wire                                        ocp2_pvt_link_spda_p7_n;      
-wire                                        ocp2_pvt_link_spdb_p7_n;       
-wire                                        ocp2_pvt_act_p7_n;             
-wire                                        ocp2_pvt_act_p2_n;             
-wire                                        ocp2_pvt_link_spda_p3_n;       
-wire                                        ocp2_pvt_link_spdb_p3_n;       
-wire                                        ocp2_pvt_act_p3_n;             
-wire                                        ocp2_pvt_link_spda_p4_n;       
-wire                                        ocp2_pvt_link_spdb_p4_n;       
-wire                                        ocp2_pvt_act_p4_n;             
-wire                                        ocp2_pvt_link_spda_p5_n;       
-wire                                        ocp2_pvt_link_spda_p0_n;       
-wire                                        ocp2_pvt_link_spdb_p0_n;       
-wire                                        ocp2_pvt_act_p0_n;             
-wire                                        ocp2_pvt_link_spda_p1_n;       
-wire                                        ocp2_pvt_link_spdb_p1_n;       
-wire                                        ocp2_pvt_act_p1_n;             
-wire                                        ocp2_pvt_link_spda_p2_n;       
-wire                                        ocp2_pvt_link_spdb_p2_n;       
-wire                                        ocp2_pvt_prsntb0_n;            
-wire                                        ocp2_pvt_prsntb1_n;            
-wire                                        ocp2_pvt_prsntb2_n;            
-wire                                        ocp2_pvt_prsntb3_n;           
-wire                                        ocp2_pvt_wake_n;               
-wire                                        ocp2_pvt_temp_warn_n;         
-wire                                        ocp2_pvt_temp_crit_n;          
-wire                                        ocp2_pvt_fan_on_aux;           
-wire                                        ocp_pvt_link_spdb_p5_n;        
-wire                                        ocp_pvt_act_p5_n;              
-wire                                        ocp_pvt_link_spda_p6_n;        
-wire                                        ocp_pvt_link_spdb_p6_n;        
-wire                                        ocp_pvt_act_p6_n;              
-wire                                        ocp_pvt_link_spda_p7_n;        
-wire                                        ocp_pvt_link_spdb_p7_n;       
-wire                                        ocp_pvt_act_p7_n;              
-wire                                        ocp_pvt_act_p2_n;              
-wire                                        ocp_pvt_link_spda_p3_n;        
-wire                                        ocp_pvt_link_spdb_p3_n;        
-wire                                        ocp_pvt_act_p3_n;              
-wire                                        ocp_pvt_link_spda_p4_n;        
-wire                                        ocp_pvt_link_spdb_p4_n;        
-wire                                        ocp_pvt_act_p4_n;              
-wire                                        ocp_pvt_link_spda_p5_n;        
-wire                                        ocp_pvt_link_spda_p0_n;        
-wire                                        ocp_pvt_link_spdb_p0_n;        
-wire                                        ocp_pvt_act_p0_n;              
-wire                                        ocp_pvt_link_spda_p1_n;        
-wire                                        ocp_pvt_link_spdb_p1_n;        
-wire                                        ocp_pvt_act_p1_n;              
-wire                                        ocp_pvt_link_spda_p2_n;        
-wire                                        ocp_pvt_link_spdb_p2_n;        
-wire                                        ocp_pvt_prsntb0_n;             
-wire                                        ocp_pvt_prsntb1_n;             
-wire                                        ocp_pvt_prsntb2_n;             
-wire                                        ocp_pvt_prsntb3_n;             
-wire                                        ocp_pvt_wake_n;               
-wire                                        ocp_pvt_temp_warn_n;           
-wire                                        ocp_pvt_temp_crit_n;           
-wire                                        ocp_pvt_fan_on_aux;
-wire                                        db_ocp_pvt_fan_on_aux;
-wire                                        db_ocp2_pvt_fan_on_aux;
-不使用
+wire                                        ocp2_pvt_link_spdb_p5_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p5_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p6_n; // SCPLD->MCPLD     OCP网口状态信息    不使用      
+wire                                        ocp2_pvt_link_spdb_p6_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p6_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p7_n; // SCPLD->MCPLD     OCP网口状态信息    不使用      
+wire                                        ocp2_pvt_link_spdb_p7_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p7_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_act_p2_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p3_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spdb_p3_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p3_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p4_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spdb_p4_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p4_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p5_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spda_p0_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spdb_p0_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p0_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p1_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spdb_p1_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_act_p1_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp2_pvt_link_spda_p2_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_link_spdb_p2_n; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp2_pvt_prsntb0_n     ; // SCPLD->MCPLD     OCP网口状态信息    不使用            
+wire                                        ocp2_pvt_prsntb1_n     ; // SCPLD->MCPLD     OCP网口状态信息    不使用            
+wire                                        ocp2_pvt_prsntb2_n     ; // SCPLD->MCPLD     OCP网口状态信息    不使用            
+wire                                        ocp2_pvt_prsntb3_n     ; // SCPLD->MCPLD     OCP网口状态信息    不使用           
+wire                                        ocp2_pvt_wake_n        ; // SCPLD->MCPLD     OCP网口状态信息    不使用               
+wire                                        ocp2_pvt_temp_warn_n   ; // SCPLD->MCPLD     OCP网口状态信息    不使用         
+wire                                        ocp2_pvt_temp_crit_n   ; // SCPLD->MCPLD     OCP网口状态信息    不使用          
+wire                                        ocp2_pvt_fan_on_aux    ; // SCPLD->MCPLD     OCP网口状态信息    不使用           
+wire                                        ocp_pvt_link_spdb_p5_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p5_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p6_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p6_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p6_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p7_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p7_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用       
+wire                                        ocp_pvt_act_p7_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_act_p2_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p3_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p3_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p3_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p4_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p4_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p4_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p5_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spda_p0_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p0_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p0_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p1_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p1_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_act_p1_n       ; // SCPLD->MCPLD     OCP网口状态信息    不使用              
+wire                                        ocp_pvt_link_spda_p2_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_link_spdb_p2_n ; // SCPLD->MCPLD     OCP网口状态信息    不使用        
+wire                                        ocp_pvt_prsntb0_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp_pvt_prsntb1_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp_pvt_prsntb2_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp_pvt_prsntb3_n      ; // SCPLD->MCPLD     OCP网口状态信息    不使用             
+wire                                        ocp_pvt_wake_n         ; // SCPLD->MCPLD     OCP网口状态信息    不使用               
+wire                                        ocp_pvt_temp_warn_n    ; // SCPLD->MCPLD     OCP网口状态信息    不使用           
+wire                                        ocp_pvt_temp_crit_n    ; // SCPLD->MCPLD     OCP网口状态信息    不使用           
+wire                                        ocp_pvt_fan_on_aux     ; // SCPLD->MCPLD     OCP网口状态信息    不使用
+wire                                        db_ocp_pvt_fan_on_aux  ; // SCPLD->MCPLD     OCP网口状态信息    不使用
+wire                                        db_ocp2_pvt_fan_on_aux ; // SCPLD->MCPLD     OCP网口状态信息    不使用
 */
 
-wire                                        pal_ocp1_ncsi_en;
-wire                                        pal_ocp2_ncsi_en;
-wire                                        pal_ocp_ncsi_sw_en;
+/*
+wire                                        pal_ocp1_ncsi_en       ; // MCPLD->SCPLD     OCP NCSI开关使能信号    不使用
+wire                                        pal_ocp2_ncsi_en       ; // MCPLD->SCPLD     OCP NCSI开关使能信号    不使用
+*/
+wire                                        pal_ocp_ncsi_sw_en     ; // MCPLD->SCPLD     OCP NCSI开关使能信号    已使用
 
-wire                                        auxint; 
-wire                                        pme_event;
-wire                                        pfr_pe_wake_n;     
-wire                                        db_pme_source_all;
+/*
+wire                                        auxint                ;  // MCPLD            BMC_INIT相关           不使用
+*/
+
+/*
+wire                                        pme_event             ; // MCPLD             CPU_WAKE相关           不使用
+wire                                        pfr_pe_wake_n         ; // MCPLD             CPU_WAKE相关           不使用     
+wire                                        db_pme_source_all     ; // MCPLD             CPU_WAKE相关           不使用
+*/
+
 wire                                        dsd_uart_prsnt_n             ; // 不使用        SCPLD -> MCPLD   
 wire                                        db_i_dsd_uart_prsnt_n;
-wire                                        db_i_leakage_prsnt_n;
-wire                                        db_i_break_det_do_n;
-wire                                        db_i_leakage_det_do_n;
 
-wire                                        db_i_pal_ocp1_fan_foo      ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[5]      OCP1风扇是否异常， 1：异常；0：正常
-wire                                        db_i_pal_ocp1_fan_prsnt_n  ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[4]      OCP1风扇存在信号， 1：存在；0：不存在
-wire                                        db_i_pal_ocp2_fan_foo      ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[7]      OCP2风扇是否异常， 1：异常；0：正常
-wire                                        db_i_pal_ocp2_fan_prsnt_n  ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[6]      OCP2风扇存在信号， 1：存在；0：不存在
+/*
+wire                                        db_i_leakage_prsnt_n       ; // MCPLD_IN        BMC寄存     addr 0x001D[3]      漏电检测信号，1：有漏电；0：无漏电
+wire                                        db_i_break_det_do_n        ; // MCPLD_IN        BMC寄存     addr 0x001D[3]      漏电检测信号，1：有漏电；0：无漏电
+wire                                        db_i_leakage_det_do_n      ; // MCPLD_IN        BMC寄存     addr 0x001D[3]      漏电检测信号，1：有漏电；0：无漏电
+*/
+
+/*
+wire                                        db_i_pal_ocp1_fan_foo      ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[5]      OCP1风扇是否异常， 1：异常；0：正常    不使用
+wire                                        db_i_pal_ocp1_fan_prsnt_n  ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[4]      OCP1风扇存在信号， 1：存在；0：不存在  不使用
+wire                                        db_i_pal_ocp2_fan_foo      ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[7]      OCP2风扇是否异常， 1：异常；0：正常    不使用
+wire                                        db_i_pal_ocp2_fan_prsnt_n  ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[6]      OCP2风扇存在信号， 1：存在；0：不存在  不使用
+*/
 
 /*
 wire                                        pal_gpu_fan1_foo           ; // SCPLD->MCPLD    BMC寄存     addr 0x0056[3]      GPU风扇4是否异常， 1：异常；0：正常    不使用
@@ -1267,16 +1279,16 @@ wire                                        pal_gpu_fan2_foo           ; // SCPL
 wire                                        pal_gpu_fan3_foo           ; // SCPLD->MCPLD    BMC寄存     addr 0x0056[1]      GPU风扇2是否异常， 1：异常；0：正常    不使用
 wire                                        pal_gpu_fan4_foo           ; // SCPLD->MCPLD    BMC寄存     addr 0x0056[0]      GPU风扇1是否异常， 1：异常；0：正常    不使用
 
-wire                                        pal_gpu_fan4_prsnt;
-wire                                        pal_gpu_fan3_prsnt;
-wire                                        pal_gpu_fan2_prsnt;
-wire                                        pal_gpu_fan1_prsnt;
+wire                                        pal_gpu_fan4_prsnt         ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[0]      GPU风扇4存在信号， 1：存在；0：不存在  不使用
+wire                                        pal_gpu_fan3_prsnt         ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[0]      GPU风扇4存在信号， 1：存在；0：不存在  不使用
+wire                                        pal_gpu_fan2_prsnt         ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[0]      GPU风扇4存在信号， 1：存在；0：不存在  不使用
+wire                                        pal_gpu_fan1_prsnt         ; // SCPLD->MCPLD    BMC寄存     addr 0x0057[0]      GPU风扇4存在信号， 1：存在；0：不存在  不使用
 */
 
 wire                                        lom_thermal_trip;
 wire                                        lom_prsnt_n;
-wire                                        cpu0_temp_over;
-wire                                        cpu1_temp_over;
+wire                                        cpu0_temp_over             ; // SCPLD->MCPLD    CPU0温度过高报警，1：过高；0：正常
+wire                                        cpu1_temp_over             ; // SCPLD->MCPLD    CPU1温度过高报警，1：过高；0：正常
 wire                                        bmc_pgd_p0v8_stby;
 wire                                        bmc_pgd_p1v1_stby;
 wire                                        bmc_pgd_p1v2_stby;
@@ -1400,24 +1412,24 @@ wire [5:0]                                  riser3_slot8_id               ; // �
 wire [5:0]                                  riser4_slot9_id               ; // 未使用   SCPLD -> MCPLD
 wire [5:0]                                  riser4_slot10_id              ; // 未使用   SCPLD -> MCPLD
 
-wire                                        db_riser_prsnt_det_2          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_3          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_0          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_1          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_i_riser_prsnt_det_9        ; // 未使用   SCPLD -> MCPLD
-wire                                        db_i_riser_prsnt_det_8        ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_6          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_7          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_4          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_riser_prsnt_det_5          ; // 未使用   SCPLD -> MCPLD
-wire                                        db_i_riser_prsnt_det_11       ; // 未使用   SCPLD -> MCPLD
-wire                                        db_i_riser_prsnt_det_10       ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_2          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_3          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_0          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_1          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_i_riser_prsnt_det_9        ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_i_riser_prsnt_det_8        ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_6          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_7          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_4          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_riser_prsnt_det_5          ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_i_riser_prsnt_det_11       ; // 未使用   SCPLD -> MCPLD
+// wire                                        db_i_riser_prsnt_det_10       ; // 未使用   SCPLD -> MCPLD
 
 wire [1:0]                                  db_bp_aux_pg                  ; // 已使用   MCPLD IN
 wire [7:0]                                  bp_int                        ; // 未使用
 
-wire [1:0]                                  bp_prsnt                      ; // 已使用                    BMC寄存   addr 0x0071[1:0]    8个背板是否存在，1：存在；0：不存在
-wire [1:0]                                  bp_cpu_1p2p                   ; // 已使用                    BMC寄存   addr 0x0071[3:2]    cpu背板1P2P配置，1：1P2P；0：2P2P
+wire [1:0]                                  bp_prsnt                      ; // 已使用                       BMC寄存   addr 0x0071[1:0]    8个背板是否存在，1：存在；0：不存在
+wire [1:0]                                  bp_cpu_1p2p                   ; // 已使用                       BMC寄存   addr 0x0071[3:2]    cpu背板1P2P配置，1：1P2P；0：2P2P
 
 wire [31:0]                                 AUX_BP_type                   ; // 未使用   MCPLD -> SCPLD
 wire [127:0]                                pcie_detect                   ; // 未使用   MCPLD -> SCPLD
@@ -1426,8 +1438,8 @@ wire [7:0]                                  pcie_detect_int               ; // �
 wire [15:0]                                 o_mb_cb_prsnt_bmc             ; // 未使用   MCPLD -> SCPLD
 wire [7:0]                                  debug_reg_15                  ; // 未使用   MCPLD -> SCPLD
 wire [15:0]                                 mb_cb_prsnt                   ; // 未使用   SCPLD -> MCPLD
-wire [19:0]                                 riser_ocp_m2_slot_number      ; // 未使用   SCPLD -> MCPLD    0x30[7:0],0x31[7:0],0x32[2:0]
-wire [43:0]                                 nvme_slot_number              ; // 未使用   SCPLD -> MCPLD    0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
+wire [19:0]                                 riser_ocp_m2_slot_number      ; // 未使用   SCPLD -> MCPLD             addr 0x30[7:0],0x31[7:0],0x32[2:0]
+wire [43:0]                                 nvme_slot_number              ; // 未使用   SCPLD -> MCPLD             addr 0x37[6:0],0x36[7:0],0x35[7:0],0x34[7:0],0x33[7:0],0x32[7:3]
 
 wire gmt_fail_n = 1'b1;
 //d00412 end
@@ -1731,7 +1743,7 @@ PGM_DEBOUNCE #(.SIGCNT(2), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_psu (
 );
 
 // 风扇/OCP/NVME等在位信号消抖
-PGM_DEBOUNCE #(.SIGCNT(45), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
+PGM_DEBOUNCE #(.SIGCNT(41), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
     .clk            (clk_50m),
     .timer_tick     (t512us_tick),
     .rst            (~pon_reset_n),
@@ -1778,11 +1790,11 @@ PGM_DEBOUNCE #(.SIGCNT(45), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
 		            i_INTRUDER_CABLE_INST_N   ,//40
 		            i_PAL_OCP1_FAN_PRSNT_N    ,//41
 		            i_PAL_BMC_CARD_PRSNT_N    ,//46
-		            dsd_uart_prsnt_n          ,//47
-		            i_LEAKAGE_PRSNT_N         ,//48
-		            i_BREAK_DET_DO_N          ,//49
-		            i_LEAKAGE_DET_DO_N        ,//50
-		            i_PAL_OCP1_FAN_FOO         //51
+		            dsd_uart_prsnt_n           //47
+		            // i_LEAKAGE_PRSNT_N         ,//48
+		            // i_BREAK_DET_DO_N          ,//49
+		            // i_LEAKAGE_DET_DO_N        ,//50
+		            // i_PAL_OCP1_FAN_FOO         //51
 	                }),                   
     .dout           ({
                     db_fan_prsnt_n[0]         ,//1
@@ -1827,11 +1839,11 @@ PGM_DEBOUNCE #(.SIGCNT(45), .NBITS (2'b10), .ENABLE(1'b1)) db_inst_prsnt(
 		            db_i_intruder_cable_inst_n,//40
 		            db_i_pal_ocp1_fan_prsnt_n ,//41
 		            db_i_pal_bmc_card_prsnt_n ,//46 // 未使用
-		            db_i_dsd_uart_prsnt_n     ,//47
-		            db_i_leakage_prsnt_n      ,//48
-		            db_i_break_det_do_n       ,//49
-		            db_i_leakage_det_do_n     ,//50
-		            db_i_pal_ocp1_fan_foo      //51
+		            db_i_dsd_uart_prsnt_n      //47
+		            // db_i_leakage_prsnt_n      ,//48
+		            // db_i_break_det_do_n       ,//49
+		            // db_i_leakage_det_do_n     ,//50
+		            // db_i_pal_ocp1_fan_foo      //51
 	                })
 );
 
@@ -2311,9 +2323,9 @@ assign  cpu1_temp_over                = scpld_to_mcpld_data_filter[420]    ;
 assign  cpu0_temp_over                = scpld_to_mcpld_data_filter[419]    ;
 assign  lom_prsnt_n                   = scpld_to_mcpld_data_filter[418]    ;
 assign  lom_thermal_trip              = scpld_to_mcpld_data_filter[417]    ;
-assign  db_i_pal_ocp2_fan_prsnt_n     = scpld_to_mcpld_data_filter[416]    ;
-assign  db_i_pal_ocp2_fan_foo         = scpld_to_mcpld_data_filter[415]    ;
-assign  db_i_pal_lcd_card_in          = scpld_to_mcpld_data_filter[414]    ;
+// assign  db_i_pal_ocp2_fan_prsnt_n     = scpld_to_mcpld_data_filter[416] ; // 未使用
+// assign  db_i_pal_ocp2_fan_foo         = scpld_to_mcpld_data_filter[415] ; // 未使用
+// assign  db_i_pal_lcd_card_in          = scpld_to_mcpld_data_filter[414] ; // 未使用
 assign  ifist_prsnt_n                 = scpld_to_mcpld_data_filter[413]    ; // 未使用
 assign  bios_post_code[7:0]           = scpld_to_mcpld_data_filter[412:405]; 
 assign  bios_post_phase[7:0]          = scpld_to_mcpld_data_filter[404:397];
@@ -2421,6 +2433,8 @@ assign  riser1_pvti_byte2             = scpld_to_mcpld_data_filter[226:219];
 assign  riser1_pvti_byte1             = scpld_to_mcpld_data_filter[218:211];
 assign  riser1_pvti_byte0             = scpld_to_mcpld_data_filter[210:203];
 assign  mb_cb_prsnt[15:0]             = scpld_to_mcpld_data_filter[202:187];
+
+/* 预留 不使用
 assign  db_riser_prsnt_det_2          = scpld_to_mcpld_data_filter[186];
 assign  db_riser_prsnt_det_3          = scpld_to_mcpld_data_filter[185];
 assign  db_riser_prsnt_det_0          = scpld_to_mcpld_data_filter[184];
@@ -2431,13 +2445,18 @@ assign  db_riser_prsnt_det_6          = scpld_to_mcpld_data_filter[180];
 assign  db_riser_prsnt_det_7          = scpld_to_mcpld_data_filter[179];
 assign  db_riser_prsnt_det_4          = scpld_to_mcpld_data_filter[178];
 assign  db_riser_prsnt_det_5          = scpld_to_mcpld_data_filter[177];
+预留 不使用*/
+
 assign  db_i_riser_prsnt_det_11       = scpld_to_mcpld_data_filter[176];
 assign  db_i_riser_prsnt_det_10       = scpld_to_mcpld_data_filter[175];
+
 assign  nvme_slot_number[43:0]        = scpld_to_mcpld_data_filter[174:131];
 assign  riser_ocp_m2_slot_number[19:0]= scpld_to_mcpld_data_filter[130:111];
+
 assign  db_i_p12v_stby_sns_alert      = scpld_to_mcpld_data_filter[110];
 assign  db_i_fan_sns_alert            = scpld_to_mcpld_data_filter[109];
-assign  db_i_dimm_sns_alert           = scpld_to_mcpld_data_filter[108];
+// assign  db_i_dimm_sns_alert           = scpld_to_mcpld_data_filter[108]; // 不使用
+
 assign  board_id7                     = scpld_to_mcpld_data_filter[107];
 assign  board_id6                     = scpld_to_mcpld_data_filter[106];
 assign  board_id5                     = scpld_to_mcpld_data_filter[105];
@@ -2565,9 +2584,9 @@ assign mcpld_to_scpld_p2s_data[225]     = pgd_p1v8_stby_dly30ms      ;
 assign mcpld_to_scpld_p2s_data[224]     = bios_security_bypass       ;
 assign mcpld_to_scpld_p2s_data[223]     = i_PAL_RTC_INTB             ;
 assign mcpld_to_scpld_p2s_data[222]     = pal_ocp_ncsi_sw_en         ;
-assign mcpld_to_scpld_p2s_data[221]     = pal_ocp2_ncsi_en           ;
-assign mcpld_to_scpld_p2s_data[220]     = pal_ocp1_ncsi_en           ;
-// assign mcpld_to_scpld_p2s_data[219]     = i_PAL_PE_WAKE_N_R          ; // 未使用
+// assign mcpld_to_scpld_p2s_data[221]     = pal_ocp2_ncsi_en        ; // 预留, 未使用
+// assign mcpld_to_scpld_p2s_data[220]     = pal_ocp1_ncsi_en        ; // 预留, 未使用
+// assign mcpld_to_scpld_p2s_data[219]     = i_PAL_PE_WAKE_N_R       ; // 预留, 未使用
 assign mcpld_to_scpld_p2s_data[218]     = i_SMB_PEHP_CPU1_3V3_ALERT_N;
 assign mcpld_to_scpld_p2s_data[217:216] = debug_reg_15[1:0]          ;
 assign mcpld_to_scpld_p2s_data[215]     =  rom_mux_bios_bmc_en       ;
@@ -2683,7 +2702,7 @@ power_button power_button_inst  (
     .sys_sw_in_n           (db_sys_sw_in_n                    ), // in 物理开关输入，0：按下；1：松开
     .gmt_shutdown          (s_bmc_shutdown                    ), // in BMC下发关机
     .gmt_wakeup_n          (s_bmc_wakeup_n                    ), // in BMC下发开机
-    .cpu_thermtrip         (cpu_thermtrip                     ),
+    .cpu_thermtrip         (cpu_thermtrip                     ), // in CPU热关机信号
     .temp_deadly           (1'b0                              ),
     .interlock_broken      (interlock_broken                  ),
     .st_steady_pwrok       (st_steady_pwrok                   ),
@@ -2972,7 +2991,7 @@ pwrseq_master #(
                                                                            // 功能：CPU下电
     .REBOOT_FLAG                            (reboot_flag                ), // 输出：CPU重启
                                                                            // 功能：CPU重启 
-    .Power_WAKE_R_N                         (power_wake_r_n             ), // 输入：CPU输入的wake信号
+    .Power_WAKE_R_N                         (1'b1/*power_wake_r_n*/     ), // 输入：CPU输入的wake信号
                                                                            // 功能：上电退出s5
     .pch_sys_reset_n                        (pch_sys_reset_n            ), // 输入：南桥复位       YHY  ADD //force_reb & pch_sys_reset_n
                                                                            // 功能：复位下电
@@ -3421,8 +3440,9 @@ end
 // OCP1/OCP2/AUX7 PEWAK
 // BMC    PAL_BMC_PE_WAKE_N, not used in G2 yet.
 //------------------------------------------------------------------------------
+/* 不使用
 pme_filter pme_filter_inst (
-  .clk              (clk_50m         ),//in
+  .clk              (clk_50m          ),//in
   .t1hz_tick        (t1s_tick         ),//in
   .pgoodaux         (pon_reset_db_n   ),//in
   .pme_source_or_all(~pfr_pe_wake_n   ),//in ���е��ӿ�������wake�źţ�����pme_filter��1��Ч  
@@ -3432,6 +3452,7 @@ pme_filter pme_filter_inst (
 );
 
 assign power_wake_r_n = (!db_pme_source_all || power_supply_on || !wol_en) ? 1'b1 : 1'b0;  //ADD YHY
+不使用*/
 
 //------------------------------------------------------------------------------
 // UID logic
@@ -3882,9 +3903,9 @@ thermal thermal_inst (
   .st_steady_pwrok        (st_steady_pwrok    ),
   .cpu_vr_hot_n           (2'b11              ),
   .mem_vr_hot_n           (4'b1111            ),
-  .cpu_thermtrip_in       (cpu_thermtrip_event),
+  .cpu_thermtrip_in       (cpu_thermtrip_event),// in CPU热关机事件，拉高有效
   .thermtrip_ena          (1'b1               ),
-  .emc_alert_n            (1'b1               ),//all_emc_alert_n
+  .emc_alert_n            (1'b1               ),// in all_emc_alert_n
   .lom_temp_dead          (1'b0               ),
   .lom_prsnt_n            (1'b1               ),
   .aroc_temp_dead         (1'b0               ),
@@ -3893,7 +3914,7 @@ thermal thermal_inst (
   .pch_pltrst_n           (1'b1               ),
   .qual_cpu_vr_hot_n      (qual_cpu_vr_hot_n  ),
   .qual_mem_vr_hot_n      (                   ),
-  .or_all_cpu_thermtrip   (cpu_thermtrip      ),
+  .or_all_cpu_thermtrip   (cpu_thermtrip      ),// out CPU热关机事件，拉高有效
   .sensor_thermtrip       (sensor_thermtrip   ),
   .qual_cpu_ab_alert      (mem_abcd_hot_alert ),
   .qual_cpu_cd_alert      (mem_efgh_hot_alert )
@@ -4052,12 +4073,12 @@ assign pf_class0_b1  = {any_aux_vrm_fault         ,
                         p3v3_stby_bp_fault_det
 						};
 //0xA4	
-assign pf_class0_b2  = { keep_alive_on_fault,
-                         4'b0,
-                         db_i_dimm_sns_alert      ,
-		                     ~db_i_fan_sns_alert      ,   
-                         db_i_p12v_stby_sns_alert
-						 };  
+assign pf_class0_b2  = {keep_alive_on_fault,
+                        4'b0,
+                        1'b0, /*db_i_dimm_sns_alert*/,
+		                ~db_i_fan_sns_alert      ,   
+                        db_i_p12v_stby_sns_alert
+						};  
 //0xA5
 assign pf_class0_b3  = {3'b0                      , 
                         ~bmc_pgd_p3v3_stby        ,      
@@ -4089,14 +4110,12 @@ assign pf_class1_b1  = {cpu_thermtrip_fault_det[1],
 //0xA8
 assign pf_class2_b0  = {6'b0,
                         i_CPU0_VR8_CAT_FLT        ,
-                        i_CPU0_VR_ALERT_N_R
-                        // ~i_PAL_CPU0_VR_OD           
+                        i_CPU0_VR_ALERT_N_R        
                         }; 
 //0xA9						
 assign pf_class2_b1  = {6'b0,
                         i_CPU1_VR8_CAT_FLT        ,
-                        ~i_CPU1_VR_ALERT_N_R 
-                        // ~i_PAL_CPU1_VR_OD          
+                        ~i_CPU1_VR_ALERT_N_R          
 						};
 //0xAA Riser
 assign pf_class4_b0  = {8'b0};
@@ -4120,6 +4139,7 @@ assign o_PAL_BMC_SRST_R   = bmc_extrst_uid ; //ilo_hard_reset ? 1'b0 : 1'b1; UID
 
 
 //BMC INTERRUPT
+/* 不使用
 reg auxint_n_r;
 always @(posedge clk_50m or negedge pgd_aux_system)
  begin
@@ -4132,6 +4152,7 @@ always @(posedge clk_50m or negedge pgd_aux_system)
  end
 
 assign o_PAL_BMC_INT_N = auxint_n_r;
+不使用*/
 
 //------------------------------------------------------------------------------
 // BMC Logic End
@@ -4234,9 +4255,12 @@ assign front_m2_card_prsnt    = ~(pal_m2_0_prsnt_n & pal_m2_1_prsnt_n);
 
 
 //NCSI Switch
+assign pal_ocp_ncsi_sw_en = pgd_aux_system ; // OCP NCSI开关使能信号，拉高使能
+/*
 assign pal_ocp1_ncsi_en   = pgd_aux_system ? (sideband_sel == 2'b01) : 1'b0; //OCP1
 assign pal_ocp2_ncsi_en   = pgd_aux_system ? (sideband_sel == 2'b10) : 1'b0; //OCP2
 assign pal_ocp_ncsi_sw_en = pgd_aux_system ? (sideband_sel == 2'b11) : 1'b0; //OCP3
+*/
 
 
 //OCP
@@ -4299,7 +4323,7 @@ I2C_UPDATE inst_i2c_update_flash_config(
 );
 */ 
 
-wire [15:0]                             mb_cpld1_ver            ; 
+wire [15:0]                             mb_cpld1_ver            ; //BMC寄存     addr 0x00FE-0x00FF[7:0]     CPLD1版本，16位高8位在0x00FE，低8位在0x00FF
 assign                                  mb_cpld1_ver = 16'h01A1 ;
 
 bmc_cpld_i2c_ram #(
@@ -4340,7 +4364,7 @@ bmc_cpld_i2c_ram #(
     .bmc_uid_update                (bmc_uid_update           ),//addr 0x0005[7]      out  BMC下发 UID LED 更新信号，1：更新；0：不更新 reserved
 
     .wol_en                        (wol_en                   ),//addr 0x0006[3]      out  BMC下发 Wake-on-LAN功能使能，1：使能；0：不使能
-    .sideband_sel                  (sideband_sel[1:0]        ),//addr 0x0006[1:0]    out  BMC下发 OCP侧带选择，00：不使能；01：OCP1；10：OCP2；11：OCP3
+    // .sideband_sel                  (sideband_sel[1:0]        ),//addr 0x0006[1:0]    out  BMC下发 OCP侧带选择，00：不使能；01：OCP1；10：OCP2；11：OCP3
 
     .rom_mux_bios_bmc_en           (rom_mux_bios_bmc_en      ),//addr 0x0007[7]      out  BMC下发 ROM BIOS/BMC 使能信号
     .rom_mux_bios_bmc_sel          (rom_mux_bios_bmc_sel     ),//addr 0x0007[6]      out  BMC下发 ROM BIOS/BMC 选择信号
@@ -4441,10 +4465,10 @@ bmc_cpld_i2c_ram #(
     // .pal_gpu_fan2_foo              (pal_gpu_fan2_foo         ),//addr 0x0056[1]      in   BMC寄存 GPU风扇2是否异常， 1：异常；0：正常
     // .pal_gpu_fan1_foo              (pal_gpu_fan1_foo         ),//addr 0x0056[0]      in   BMC寄存 GPU风扇1是否异常， 1：异常；0：正常
 
-    .ocp2_fan_foo                  (db_i_pal_ocp2_fan_foo    ) ,//addr 0x0057[7]     in   BMC寄存 OCP2风扇是否异常， 1：异常；0：正常
-    .ocp2_fan_prsnt                (~db_i_pal_ocp2_fan_prsnt_n),//addr 0x0057[6]     in   BMC寄存 OCP2风扇是否存在， 1：存在；0：不存在
-    .ocp1_fan_foo                  (db_i_pal_ocp1_fan_foo    ) ,//addr 0x0057[5]     in   BMC寄存 OCP1风扇是否异常， 1：异常；0：正常
-    .ocp1_fan_prsnt                (~db_i_pal_ocp1_fan_prsnt_n),//addr 0x0057[4]     in   BMC寄存 OCP1风扇是否存在， 1：存在；0：不存在
+    // .ocp2_fan_foo                  (db_i_pal_ocp2_fan_foo    ) ,//addr 0x0057[7]     in   BMC寄存 OCP2风扇是否异常， 1：异常；0：正常
+    // .ocp2_fan_prsnt                (~db_i_pal_ocp2_fan_prsnt_n),//addr 0x0057[6]     in   BMC寄存 OCP2风扇是否存在， 1：存在；0：不存在
+    // .ocp1_fan_foo                  (db_i_pal_ocp1_fan_foo    ) ,//addr 0x0057[5]     in   BMC寄存 OCP1风扇是否异常， 1：异常；0：正常
+    // .ocp1_fan_prsnt                (~db_i_pal_ocp1_fan_prsnt_n),//addr 0x0057[4]     in   BMC寄存 OCP1风扇是否存在， 1：存在；0：不存在
     
     .fan_prsnt                     (~db_fan_prsnt_n[7:0]     ),//addr 0x0058[7:0]    in   BMC寄存 8个风扇是否存在，1：存在；0：不存在
 
@@ -4452,7 +4476,7 @@ bmc_cpld_i2c_ram #(
     .gpu_fan_prsnt                 ({~pal_gpu_fan4_prsnt,
                                      ~pal_gpu_fan3_prsnt,
                                      ~pal_gpu_fan2_prsnt,
-                                     ~pal_gpu_fan1_prsnt}    ),//addr 0x0059[3:0]    in   BMC寄存 4个GPU风扇是否存在，1：存在；0：不存在
+                                     ~pal_gpu_fan1_prsnt}    ),//addr 0x0059[3:0]    in    BMC寄存 4个GPU风扇是否存在，1：存在；0：不存在
     */
 
     .board2_type                   (bmc_card_type            ),//addr 0x0070[7:4]    in    BMC寄存 2号板卡类型，0x0：未知；0x1：CPU；0x2：GPU；0x3：NVMe；0x4：Riser；0x5-0xF：保留
@@ -4497,35 +4521,37 @@ bmc_cpld_i2c_ram #(
     // .cpu_nvme25_prsnt_n         (~db_cpu_nvme25_prsnt_n   ),//addr 0x0092[0]      in    BMC寄存 CPU NVMe25是否存在，1：存在；0：不存在
 
     .power_on_off                  (power_on_off             ),//addr 0x00A0[6]      in    BMC寄存 电源开关状态，1：开；0：关
-    .power_seq_sm                  (power_seq_sm[5:0]        ),//addr 0x00A0[5-0]    in
+    .power_seq_sm                  (power_seq_sm[5:0]        ),//addr 0x00A0[5-0]    in    BMC寄存 电源序列状态，6位分别代表不同的电源状态，1：正常；0：异常
 
-    .power_fault                   (power_fault              ),//addr 0x00A1[6]      in
-    .pwrseq_sm_fault_det           (pwrseq_sm_fault_det[5:0] ),//addr 0x00A1[5-0]    in
+    .power_fault                   (power_fault              ),//addr 0x00A1[6]      in    BMC寄存 电源故障状态，1：有故障；0：无故障
+    .pwrseq_sm_fault_det           (pwrseq_sm_fault_det[5:0] ),//addr 0x00A1[5-0]    in    BMC寄存 电源序列状态故障检测，6位分别代表不同的电源状态
 
-    .pf_class0_b0                  (pf_class0_b0[7:0]        ),//addr 0x00A2[7-0]    in
-    .pf_class0_b1                  (pf_class0_b1[7:0]        ),//addr 0x00A3[7-0]    in
-    .pf_class0_b2                  (pf_class0_b2[7:0]        ),//addr 0x00A4[7-0]    in
-    .pf_class0_b3                  (pf_class0_b3[7:0]        ),//addr 0x00A5[7-0]    in
-    .pf_class1_b0                  (pf_class1_b0[7:0]        ),//addr 0x00A6[7-0]    in
-    .pf_class1_b1                  (pf_class1_b1[7:0]        ),//addr 0x00A7[7-0]    in
-    .pf_class2_b0                  (pf_class2_b0[7:0]        ),//addr 0x00A8[7-0]    in
-    .pf_class2_b1                  (pf_class2_b1[7:0]        ),//addr 0x00A9[7-0]    in
-    .pf_class4_b0                  (pf_class4_b0[7:0]        ),//addr 0x00AA[7-0]    in
-    .pf_class5_b0                  (pf_class5_b0[7:0]        ),//addr 0x00AC[7-0]    in
-    .pf_class6_b0                  (pf_class6_b0[7:0]        ),//addr 0x00AD[7-0]    in
-    .pf_class9_b0                  (pf_class9_b0[7:0]        ),//addr 0x00AE[7-0]    in
-    .pf_classa_b0                  (pf_classa_b0[7:0]        ),//addr 0x00AF[4]      in
+    .pf_class0_b0                  (pf_class0_b0[7:0]        ),//addr 0x00A2[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class0_b1                  (pf_class0_b1[7:0]        ),//addr 0x00A3[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class0_b2                  (pf_class0_b2[7:0]        ),//addr 0x00A4[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class0_b3                  (pf_class0_b3[7:0]        ),//addr 0x00A5[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class1_b0                  (pf_class1_b0[7:0]        ),//addr 0x00A6[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class1_b1                  (pf_class1_b1[7:0]        ),//addr 0x00A7[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class2_b0                  (pf_class2_b0[7:0]        ),//addr 0x00A8[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class2_b1                  (pf_class2_b1[7:0]        ),//addr 0x00A9[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class4_b0                  (pf_class4_b0[7:0]        ),//addr 0x00AA[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class5_b0                  (pf_class5_b0[7:0]        ),//addr 0x00AC[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class6_b0                  (pf_class6_b0[7:0]        ),//addr 0x00AD[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_class9_b0                  (pf_class9_b0[7:0]        ),//addr 0x00AE[7-0]    in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
+    .pf_classa_b0                  (pf_classa_b0[7:0]        ),//addr 0x00AF[4]      in    BMC寄存 电源故障分类0，子类0-7，8位代表不同的故障类型;
 
-    .pdt_line                      (8'h00                    ),//addr 0x00C2[7:0]    in
-    .pdt_gen                       (8'h06                    ),//addr 0x00C3[7:0]    in
-    .server_id                     (8'h21                    ),//addr 0x00C5[7:0]    in
-    .board_id                      (8'h01                    ),//addr 0x00C6[7:0]    in
+    .pdt_line                      (8'h00                    ),//addr 0x00C2[7:0]    in    BMC寄存 产品代码
+    .pdt_gen                       (8'h06                    ),//addr 0x00C3[7:0]    in    BMC寄存 产品代码
+    .server_id                     (8'h21                    ),//addr 0x00C5[7:0]    in    BMC寄存 产品代码
+    .board_id                      (8'h01                    ),//addr 0x00C6[7:0]    in    BMC寄存 产品代码
 
-    .pcb_rev   				             ({1'b0,pcb_revision_1,pcb_revision_0}),//addr 0xF1[2-0]  in
+    .pcb_rev   				       ({1'b0,
+                                    pcb_revision_1,
+                                    pcb_revision_0}          ),//addr 0xF1[2-0]      in     BMC寄存 PCB版本
 
-    .bmc_cpld_version              (bmc_cpld_version[15:0]   ),//addr 0x00FA-0x00FB[7:0]    in
-    .mb_cpld2_ver                  (mb_cpld2_ver[15:0]       ),//addr 0x00FC-0x00FD[7:0]    in
-    .mb_cpld1_ver                  (mb_cpld1_ver[15:0]       ),//addr 0x00FE-0x00FF[7:0]    in
+    .bmc_cpld_version              (bmc_cpld_version[15:0]   ),//addr 0x00FA-0x00FB[7:0]    in      BMC寄存 BMC CPLD版本，16位高8位在0x00FA，低8位在0x00FB
+    .mb_cpld2_ver                  (mb_cpld2_ver[15:0]       ),//addr 0x00FC-0x00FD[7:0]    in      BMC寄存 MB CPLD2版本，16位高8位在0x00FC，低8位在0x00FD
+    .mb_cpld1_ver                  (mb_cpld1_ver[15:0]       ),//addr 0x00FE-0x00FF[7:0]    in      BMC寄存 MB CPLD1版本，16位高8位在0x00FE，低8位在0x00FF
 
     .i2c_ram_1050                  (i2c_ram_1050             ),//addr 0x1050[7:0]    out        
     .i2c_ram_1051                  (i2c_ram_1051             ),//addr 0x1051[7:0]    out
@@ -4535,9 +4561,8 @@ bmc_cpld_i2c_ram #(
     .i2c_ram_1055                  (i2c_ram_1055             ),//addr 0x1055[7:0]    in
     .i2c_ram_1056                  (i2c_ram_1056             ),//addr 0x1056[7:0]    in
     .i2c_ram_1057                  (i2c_ram_1057             ),//addr 0x1057[7:0]    in
-    .i2c_ram_1058                  (i2c_ram_1058             ),//addr 0x1058[7:0]    in
+    .i2c_ram_1058                  (i2c_ram_1058             ) //addr 0x1058[7:0]    in
 
-    .ilo_hard_reset                (ilo_hard_reset           ) //in
 );
 
 // BMC下发CPU软关机中断信号
@@ -4587,4 +4612,7 @@ assign o_CPU1_D0_SOFT_SHUTDOWN_INT_N = soft_shutdown;
 assign  o_CPLD_M_S_EXCHANGE_S3_R = 1'bz;
 assign  o_CPLD_M_S_EXCHANGE_S4_R = 1'bz;
 assign  o_CPLD_M_S_EXCHANGE_S5_R = 1'bz;
+
+assign  o_PAL_RISER2_SELECT      = 1'bz;
+assign  o_PAL_RISER2_SWITCH_EN   = 1'bz;
 endmodule

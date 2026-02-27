@@ -5,7 +5,6 @@
 module I2C_SLAVE_REG 
 (
     input             rc_reset_n,
-	//input			  sys_reset_n,
     input             clk,
 
     input       [7:0] reg_addr,
