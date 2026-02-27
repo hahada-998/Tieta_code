@@ -6,66 +6,57 @@ module Tieta_Feiteng_1001_top(
 //  系统时钟 
 // =============================================================================
 input  i_CLK_PAL_IN_25M                       /* synthesis LOC = "K19"*/,// from  CPLD_M_PWR/OSC3/U26_AU5424GB_DNR               to  CPLD_M                                        default 0  // CPLD_M的25MHz时钟输入
-// input  i_BMC_JTAGM_NTRST_R                 /* synthesis LOC = "A2"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // BMC JTAG复位信号输入                         新增
-
-
-// =============================================================================
-//  I2C  
-// =============================================================================
-// 未使用, 专用管脚I2C在线升级使用
-// input  i_BMC_I2C9_PAL_M_SCL_R                 /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
-// inout  io_BMC_I2C9_PAL_M_SDA_R                /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
-input  i_BMC_I2C9_PAL_M_SCL1_R                /* synthesis LOC = "B2"*/ ,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL1信号输入              新增
-inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "B3"*/ ,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA1电源良好信号输入       新增
-
-
-// =============================================================================
-//  CPLD 芯片初始信号接口 
-// =============================================================================
-// input  i_PAL_M_PROGRAM_N                   /* synthesis LOC = "D13"*/,
-// input  i_PAL_M_INITN                       /* synthesis LOC = "C17"*/,
-// input  i_PAL_M_DONE                        /* synthesis LOC = "A19"*/,
-
-
-// =============================================================================
-//  主/从SPI配置接口
-// =============================================================================
-// ??? 从SPI配置接口的使能信号 ???
-// input  i_PAL_M_SN                             /* synthesis LOC = "Y20"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M   
-
-// ???不使用???
-// output o_CPU0_SB_EN_R                         /* synthesis LOC = "V16"*/ ,
-
-// ??? 主从SPI的使能引脚???
-// output o_CPU1_SB_EN_R                         /* synthesis LOC = "W2"*/  , // from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/SB_EN             default 1  // CPU1    南桥使能信号                     
-
-// CPU0/1 SCP从Flash启动信号输出
-// 未使用, ??? 主/从SPI配置接口的数据位 ??? 
-// output o_FT_CPU0_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W20"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/REV9              default 1  // CPU0 SCP从Flash启动信号
-// output o_FT_CPU1_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W8"*/,// from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/REV9              default 1  // CPU1 SCP从Flash启动信号
-
-// 未使用
-// ??? 主/从SPI配置接口的数据位 ???
-// input  i_CPU0_D1_PWR_CTR0_R                   /* synthesis LOC = "Y6"*/ , // from  CPU0_GPIO2/D1_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号0
-// input  i_CPU0_D1_PWR_CTR1_R                   /* synthesis LOC = "Y18"*/, // from  CPU0_GPIO2/D1_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号1
-// input  i_CPU1_D0_PWR_CTR0_R                   /* synthesis LOC = "W9"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号0
-// input  i_CPU1_D0_PWR_CTR1_R                   /* synthesis LOC = "Y8"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号1
-// input  i_CPU1_D1_PWR_CTR0_R                   /* synthesis LOC = "Y5"*/ ,// from  CPU1_GPIO2/D1_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU1 D1 区域电源控制信号0
-// input  i_CPU1_D1_PWR_CTR1_R                   /* synthesis LOC = "W3"*/ ,// from  CPU1_GPIO2/D1_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU1 D1 区域电源控制信号1
-
 
 // =============================================================================
 //  JTAG  
 // =============================================================================
 /* begin: JTAG BMC和插座二选一 */
-// 未使用, 专用管脚JTAG使用
-// input  i_PAL_M_JTAGEN                      /* synthesis LOC = "C13"*/,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // 主JTAG使能信号输入                           新增
 // output o_PAL_TDO                           /* synthesis LOC = "E8"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDO测试数据输出信号输出                       新增
 // input  i_PAL_TDI                           /* synthesis LOC = "C7"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TDI测试数据输入信号输入                       新增
 // input  i_PAL_TCK                           /* synthesis LOC = "C9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TCK测试时钟信号输入
 // input  i_PAL_TMS                           /* synthesis LOC = "D9"*/ ,// from  GENZ_168PIN/BMC 或者 JTAG插座                   to  CPLD_M                                        default 1  // TMS测试模式选择信号输入
 /* end: JTAG BMC和插座二选一 */
 
+// =============================================================================
+//  I2C  
+// =============================================================================
+// 专用管脚I2C在线升级使用(当前未例化IP核, 仅仅预留管脚)
+// input  i_BMC_I2C9_PAL_M_SCL_R              /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
+// inout  io_BMC_I2C9_PAL_M_SDA_R             /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
+// BMC的I2C读写调试接口
+input  i_BMC_I2C9_PAL_M_SCL1_R                /* synthesis LOC = "B2"*/ ,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL1信号输入              新增
+inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "B3"*/ ,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA1电源良好信号输入       新增
+
+// =============================================================================
+//  CPLD 芯片初始信号接口
+// =============================================================================
+input  i_PAL_M_PROGRAM_N                      /* synthesis LOC = "D13"*/,
+input  i_PAL_M_INITN                          /* synthesis LOC = "C17"*/,
+input  i_PAL_M_DONE                           /* synthesis LOC = "A19"*/,
+input  i_PAL_M_JTAGEN                         /* synthesis LOC = "C13"*/, 
+input  i_PAL_M_SN                             /* synthesis LOC = "Y20"*/,  
+input  i_BMC_JTAGM_NTRST_R                    /* synthesis LOC = "A2"*/ ,
+
+// =============================================================================
+//  主/从SPI配置接口（调整为通用GPIO使用）
+// =============================================================================
+// 主/从SPI的使能引脚, 复用为CPU0/1的SB使能信号输出, 反向输入到CPU GPIO口, 由CPU控制主从SPI的使能信号（暂不使用, 写死）
+output o_CPU0_SB_EN_R                         /* synthesis LOC = "V16"*/, // from  CPLD_M                                       to  CPU0_GPIO1/SB_EN             default 0  // CPU0 
+output o_CPU1_SB_EN_R                         /* synthesis LOC = "W2"*/ , // from  CPLD_M                                       to  CPU1_GPIO1/SB_EN             default 0  // CPU1                     
+
+// 主/从SPI配置接口的数据位, 复用为CPU0/1 SCP从Flash启动信号输出（暂不使用, 写死）
+output o_FT_CPU0_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W20"*/, // from  CPLD_M                                       to  CPU0_GPIO1/REV9              default 1  // CPU0 SCP从Flash启动信号
+output o_FT_CPU1_SCP_BOOT_FROM_FLASH_R        /* synthesis LOC = "W8"*/ , // from  CPLD_M                                       to  CPU1_GPIO1/REV9              default 1  // CPU1 SCP从Flash启动信号
+
+// 主/从SPI配置接口的数据位, 复用为CPU0/1的电源控制信号输出（暂不使用, CPU重启下电相关）
+input  i_CPU0_D0_PWR_CTR0_R                   /* synthesis LOC = "Y13"*/, // form  CPU0_GPIO1/D0_PWR_CTR[0]                     to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号0（cpu的状态反馈, 解除重上电）
+input  i_CPU0_D0_PWR_CTR1_R                   /* synthesis LOC = "U11"*/, // from  CPU0_GPIO1/D0_PWR_CTR[1]                     to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号1（cpu的状态反馈, 控制重上电）
+input  i_CPU0_D1_PWR_CTR0_R                   /* synthesis LOC = "Y6"*/ , // from  CPU0_GPIO2/D1_PWR_CTR[0]                     to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号0
+input  i_CPU0_D1_PWR_CTR1_R                   /* synthesis LOC = "Y18"*/, // from  CPU0_GPIO2/D1_PWR_CTR[1]                     to  CPLD_M                                       default 1  // CPU0 D1 区域电源控制信号1
+input  i_CPU1_D0_PWR_CTR0_R                   /* synthesis LOC = "W9"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[0]                     to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号0
+input  i_CPU1_D0_PWR_CTR1_R                   /* synthesis LOC = "Y8"*/ , // from  CPU1_GPIO1/D0_PWR_CTR[1]                     to  CPLD_M                                       default 1  // CPU1 D0 区域电源控制信号1
+input  i_CPU1_D1_PWR_CTR0_R                   /* synthesis LOC = "Y5"*/ , // from  CPU1_GPIO2/D1_PWR_CTR[0]                     to  CPLD_M                                       default 1  // CPU1 D1 区域电源控制信号0
+input  i_CPU1_D1_PWR_CTR1_R                   /* synthesis LOC = "W3"*/ , // from  CPU1_GPIO2/D1_PWR_CTR[1]                     to  CPLD_M                                       default 1  // CPU1 D1 区域电源控制信号1
 
 // =============================================================================
 //  BMC 相关信号 
@@ -77,26 +68,26 @@ input  i_PAL_BMCUID_BUTTON_R                  /* synthesis LOC = "B6"*/ ,// from
 input  i_PAL_BMC_CARD_PRSNT_N                 /* synthesis LOC = "G5"*/ ,// from  BMC/GENZ_168PIN                                to  CPLD_M                                       default 0  // BMC卡存在信号输入
 
 // BMC 预留信号（不使用, 仅仅滤波暂存）
-input  i_BMC_RESERVE_19                       /* synthesis LOC = "H4"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号18, I2C总线的仲裁请求信号输出
-input  i_BMC_RESERVE_18                       /* synthesis LOC = "B14"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号18, I2C总线的仲裁请求信号输出
-input  i_BMC_RESERVE_17                       /* synthesis LOC = "B13"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号17                               新增
-input  i_BMC_RESERVE_16                       /* synthesis LOC = "G13"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号16                               新增
-input  i_BMC_RESERVE_15                       /* synthesis LOC = "B12"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号15                               新增
-input  i_BMC_RESERVE_14                       /* synthesis LOC = "B11"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号14                               新增
-input  i_BMC_RESERVE_13                       /* synthesis LOC = "F11"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号13                               新增
-input  i_BMC_RESERVE_12                       /* synthesis LOC = "B15"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号12                               新增
-input  i_BMC_RESERVE_11                       /* synthesis LOC = "B16"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号11                               新增
-input  i_BMC_RESERVE_10                       /* synthesis LOC = "F14"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号10                               新增
-input  i_BMC_RESERVE_9                        /* synthesis LOC = "G15"*/,// from  GENZ_168PIN_J98/BMC                            to  CPLD_M                                        default 1  // BMC 保留信号9                                新增
-input  i_BMC_RESERVE_8                        /* synthesis LOC = "J5"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号8                                新增
-input  i_BMC_RESERVE_7                        /* synthesis LOC = "E4"*/,// from  GENZ_168PIN_J98/BMC                            to  CPLD_M                                        default 1  // BMC 保留信号7
-input  i_BMC_RESERVE_6                        /* synthesis LOC = "H6"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号6
-input  i_BMC_RESERVE_5                        /* synthesis LOC = "E7"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号5
-input  i_BMC_RESERVE_4                        /* synthesis LOC = "F8"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号4
-input  i_BMC_RESERVE_3                        /* synthesis LOC = "C15"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号3
-input  i_BMC_RESERVE_2                        /* synthesis LOC = "D6"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号2
-input  i_BMC_RESERVE_1                        /* synthesis LOC = "F4"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                           default 1  // BMC 保留信号1
-input  i_BMC_RESERVE_0                        /* synthesis LOC = "G4"*/,// from  CPLD_M                                        to  GENZ_168PIN_J98_5653E5/GND_29                default 1  // BMC 保留信号0
+input  i_BMC_RESERVE_19                       /* synthesis LOC = "H4"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号19 
+input  i_BMC_RESERVE_18                       /* synthesis LOC = "B14"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号18
+input  i_BMC_RESERVE_17                       /* synthesis LOC = "B13"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号17                               
+input  i_BMC_RESERVE_16                       /* synthesis LOC = "G13"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号16                               
+input  i_BMC_RESERVE_15                       /* synthesis LOC = "B12"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号15                               
+input  i_BMC_RESERVE_14                       /* synthesis LOC = "B11"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号14                               
+input  i_BMC_RESERVE_13                       /* synthesis LOC = "F11"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号13                               
+input  i_BMC_RESERVE_12                       /* synthesis LOC = "B15"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号12                               
+input  i_BMC_RESERVE_11                       /* synthesis LOC = "B16"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号11                               
+input  i_BMC_RESERVE_10                       /* synthesis LOC = "F14"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号10                               
+input  i_BMC_RESERVE_9                        /* synthesis LOC = "G15"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号9                                
+input  i_BMC_RESERVE_8                        /* synthesis LOC = "J5"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号8                                
+input  i_BMC_RESERVE_7                        /* synthesis LOC = "E4"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号7
+input  i_BMC_RESERVE_6                        /* synthesis LOC = "H6"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号6
+input  i_BMC_RESERVE_5                        /* synthesis LOC = "E7"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号5
+input  i_BMC_RESERVE_4                        /* synthesis LOC = "F8"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号4
+input  i_BMC_RESERVE_3                        /* synthesis LOC = "C15"*/,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号3
+input  i_BMC_RESERVE_2                        /* synthesis LOC = "D6"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号2
+input  i_BMC_RESERVE_1                        /* synthesis LOC = "F4"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号1
+input  i_BMC_RESERVE_0                        /* synthesis LOC = "G4"*/ ,// from  CPLD_M                                         to  GENZ_168PIN_J98/BMC                          default 1  // BMC 保留信号0
 
 // =============================================================================
 //  CPLD_M 与 CPLD_S 之间的交换信号
@@ -114,70 +105,72 @@ output o_CPLD_M_S_EXCHANGE_S5_R               /* synthesis LOC = "B17"*/,// from
 // =============================================================================
 //  SGPIO 信号, CPLD_S -> CPLD_M, CPLD_M -> CPLD_S, CPU0_D1 -> CPLD_M
 // =============================================================================
-output o_CPLD_M_S_SGPIO_CLK_R                 /* synthesis LOC = "D14"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO时钟信号输出
-output o_CPLD_M_S_SGPIO_LD_N_R                /* synthesis LOC = "F18"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO负载使能信号输出
-output o_CPLD_M_S_SGPIO_MOSI_R                /* synthesis LOC = "F15"*/,// from  CPLD_M                                         to  CPU_VR8_Controler                           default 1  // S_SGPIO 主设备MOSI信号输出
-input  i_CPLD_M_S_SGPIO_MISO                  /* synthesis LOC = "D15"*/,// from  CPLD_S                                        to  CPLD_M                                       default 1  // CPLD_S到CPLD_M的SGPIO MISO信号输入
+output o_CPLD_M_S_SGPIO_CLK_R                 /* synthesis LOC = "D14"*/,// from  CPLD_M                                        to  CPLD_S                                        default 1  // CPLD_M到CPLD_S的SGPIO时钟信号输出
+output o_CPLD_M_S_SGPIO_LD_N_R                /* synthesis LOC = "F18"*/,// from  CPLD_M                                        to  CPLD_S                                        default 1  // CPLD_M到CPLD_S的SGPIO负载使能信号输出
+output o_CPLD_M_S_SGPIO_MOSI_R                /* synthesis LOC = "F15"*/,// from  CPLD_M                                        to  CPLD_S                                        default 1  // S_SGPIO 主设备MOSI信号输出
+input  i_CPLD_M_S_SGPIO_MISO                  /* synthesis LOC = "D15"*/,// from  CPLD_S                                        to  CPLD_M                                        default 1  // CPLD_S到CPLD_M的SGPIO MISO信号输入
 
 // 不使用 (MCU的SGPIO信号)
-output o_CPLD_M_S_SGPIO1_CLK_R                /* synthesis LOC = "E19"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1时钟信号输出
-output o_CPLD_M_S_SGPIO1_LD_N_R               /* synthesis LOC = "F16"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1负载使能信号输出
-output o_CPLD_M_S_SGPIO1_MOSI_R               /* synthesis LOC = "D19"*/,// from  CPLD_M                                        to  CPLD_S                                       default 1  // CPLD_M到CPLD_S的SGPIO1 MOSI信号输出
-input  i_CPLD_M_S_SGPIO1_MISO                 /* synthesis LOC = "D12"*/,// from  CPLD_S                                        to  CPLD_M                                       default 1  // CPLD_S到CPLD_M的SGPIO1 MISO信号输入
+output o_CPLD_M_S_SGPIO1_CLK_R                /* synthesis LOC = "E19"*/,// from  CPLD_M                                        to  CPLD_B                                        default 1  // CPLD_M到CPLD_S的SGPIO1时钟信号输出
+output o_CPLD_M_S_SGPIO1_LD_N_R               /* synthesis LOC = "F16"*/,// from  CPLD_M                                        to  CPLD_B                                        default 1  // CPLD_M到CPLD_S的SGPIO1负载使能信号输出
+output o_CPLD_M_S_SGPIO1_MOSI_R               /* synthesis LOC = "D19"*/,// from  CPLD_M                                        to  CPLD_B                                        default 1  // CPLD_M到CPLD_S的SGPIO1 MOSI信号输出
+input  i_CPLD_M_S_SGPIO1_MISO                 /* synthesis LOC = "D12"*/,// from  CPLD_B                                        to  CPLD_M                                        default 1  // CPLD_S到CPLD_M的SGPIO1 MISO信号输入
 
-// 不使用
-// output o_CPU0_D1_SPI0_SCK                     /* synthesis LOC = "V12"*/,// from  CPU0_GPIO2/D1_SPIO_SCK                        to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 SCK信号 
-// output o_CPU0_D1_SPI0_CS                      /* synthesis LOC = "R13"*/,// from  CPU0_GPIO2/D1_SPIO_CSN0                       to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 片选信号 
-// output o_CPU0_D1_SPI0_MOSI                    /* synthesis LOC = "P14"*/,// from  CPLD_M                                        to  U192/TPM                                     default 1  // CPU0 D1 区域SPI0 MOSI信号
-// input  i_CPU0_D1_SPI0_MISO_R                  /* synthesis LOC = "P10"*/,// from  CPU0_GPIO2/D1_SPI0_MISO                       to  CPLD_M                                       default 1  // CPU0 D1 区域SPI0 MISO信号
+// 不使用（CPU输入SPI信号）
+output o_CPU0_D1_SPI0_SCK                     /* synthesis LOC = "V12"*/,// from  CPU0_GPIO2/D1_SPIO_SCK                        to  CPLD_M                                        default 1  // CPU0 D1 区域SPI0 SCK信号 
+output o_CPU0_D1_SPI0_CS                      /* synthesis LOC = "R13"*/,// from  CPU0_GPIO2/D1_SPIO_CSN0                       to  CPLD_M                                        default 1  // CPU0 D1 区域SPI0 片选信号 
+output o_CPU0_D1_SPI0_MOSI                    /* synthesis LOC = "P14"*/,// from  CPLD_M                                        to  CPU0_GPIO2/D1_SPIO_MOSI                       default 1  // CPU0 D1 区域SPI0 MOSI信号
+input  i_CPU0_D1_SPI0_MISO_R                  /* synthesis LOC = "P10"*/,// from  CPU0_GPIO2/D1_SPI0_MISO                       to  CPLD_M                                        default 1  // CPU0 D1 区域SPI0 MISO信号
 
 // =============================================================================
 //  BP CPLD单线协议数据传输, 解析board_id
 // =============================================================================
 // 辅助电源模块 电源良好信号
-inout  io_PAL_BP1_PWR_ON_R                    /* synthesis LOC = "L19"*/,// from  CPLD_M                                         to  BP_AUX_PWR/J84_PAL_BP1_PWR_ON_R              default 1  // BP1辅助电源开启信号输出                       新增
-inout  io_PAL_BP2_PWR_ON_R                    /* synthesis LOC = "U1"*/ ,// from  CPLD_M                                         to  REAR_BP_AUX_PWR/J86_1338_201/A1              default 1  // 后置背板电源开启信号输入输出           
-
+inout  io_PAL_BP1_PWR_ON_R                    /* synthesis LOC = "L19"*/,// from  CPLD_M                                         to  BP_AUX_PWR/J84                               default 1  // BP1辅助电源开启信号输出                       新增
+inout  io_PAL_BP2_PWR_ON_R                    /* synthesis LOC = "U1"*/ ,// from  CPLD_M                                         to  REAR_BP_AUX_PWR/J86                          default 1  // 后置背板电源开启信号输入输出           
 
 // =============================================================================
 //  电源上下电管理信号
 // =============================================================================
-// 未使用
-input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K6"*/ ,// from  RISER_AUX/J16                                  to  CPLD_M                                       default 1  // 主模块电源良好信号输入(未使用)
+// RISER_AUX电的PWR_OK, 未使用, 滤波后接入BMC寄存
+input  i_PAL_MAIN_PWR_OK                      /* synthesis LOC = "K6"*/  ,// from  RISER_AUX/J16                                 to  CPLD_M                                       default 1  // 主模块电源良好信号输入(未使用)
 
 // BP的辅助电源模块 电源良好信号输入
-input  i_PAL_BP1_AUX_PG                       /* synthesis LOC = "R16"*/ ,// from  CPLD_M                                         to  BP_AUX_PWR/J84_PAL_BP1_AUX_PG                default 1  // BP1辅助电源良好信号输入                       接入寄存器
-input  i_PAL_BP2_AUX_PG                       /* synthesis LOC = "F9"*/ ,// from  BP_AUX_PWR/J86_PAL_BP2_AUX_PG                  to  CPLD_M                                       default 1  // 辅助电源良好信号输入                          接入寄存器
+input  i_PAL_BP1_AUX_PG                       /* synthesis LOC = "R16"*/ ,// from  CPLD_M                                        to  BP_AUX_PWR/J84_PAL_BP1_AUX_PG                default 1  // BP1辅助电源良好信号输入                       接入寄存器
+input  i_PAL_BP2_AUX_PG                       /* synthesis LOC = "F9"*/  ,// from  BP_AUX_PWR/J86_PAL_BP2_AUX_PG                 to  CPLD_M                                       default 1  // 辅助电源良好信号输入                          接入寄存器
 
-// 主供电模块 电源开启信号
-output o_PAL_PS1_P12V_ON_R                    /* synthesis LOC = "K20"*/ ,// from  CPLD_M                                         to  PSU_MISC2                                    default 1  // PS1 12V开启信号输入（反向）
-output o_PAL_PS2_P12V_ON_R                    /* synthesis LOC = "C3"*/  ,// from  CPLD_M                                         to  PSU_MISC2/PAL_PS2_P12V_ON_R                  default 1  // PS2 12V开启信号输入
-output o_PAL_P12V_DISCHARGE_R                 /* synthesis LOC = "L1"*/  ,// from  CPLD_M                                         to  PSU_MISC2/PAL_P12V_DISCHARGE                 default 1  // 12V放电信号输出         
+// LOM 电源使能信号, 写死为1
+output o_PAL_PWR_LOM_EN_R                     /* synthesis LOC = "E3"*/ ,// from  CPLD_M                                         to  MPMOS_CIRCUTT/U156                           default 1  // LOM电源使能信号输出
 
-// Riser 电源使能信号
-output o_PAL_P12V_RISER1_VIN_EN_R             /* synthesis LOC = "A17"*/ ,// from  CPLD_M                                         to  P12_RISER1_VIN                               default 1  // 12V Riser1输入使能信号输入                   同时上电 
-output o_PAL_P12V_RISER2_VIN_EN_R             /* synthesis LOC = "A13"*/ ,// from  CPLD_M                                         to  P12_RISER2_VIN                               default 1  // 12V Riser2输入使能信号输入                   同时上电 
-output o_PAL_RISER1_PWR_EN_R                  /* synthesis LOC = "U20"*/,// from  CPLD_M                                         to  RISER1/J1_G64V3421MHR/8633B&RS53319/EN       default 1  // Riser1电源使能信号输出                       同时上电
-output o_PAL_RISER2_PWR_EN_R                  /* synthesis LOC = "F1"*/ ,// from  CPLD_M                                         to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源使能信号输出                       同时上电
+// 主供电模块 电源开启信号; 3. SM_EN_TELEM 状态上电使能
+output o_PAL_PS1_P12V_ON_R                    /* synthesis LOC = "K20"*/ ,// from  CPLD_M                                        to  PSU_MISC2                                    default 1  // PS1 12V开启信号输入（反向）
+output o_PAL_PS2_P12V_ON_R                    /* synthesis LOC = "C3"*/  ,// from  CPLD_M                                        to  PSU_MISC2/PAL_PS2_P12V_ON_R                  default 1  // PS2 12V开启信号输入
+output o_PAL_P12V_DISCHARGE_R                 /* synthesis LOC = "L1"*/  ,// from  CPLD_M                                        to  PSU_MISC2/PAL_P12V_DISCHARGE                 default 1  // 12V放电信号输出         
 
-output o_PAL_RISER2_SELECT                    /* synthesis LOC = "T20"*/ ,// from  CPLD_M                                         to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源选择信号输出                       同时上电
-output o_PAL_RISER2_SWITCH_EN                 /* synthesis LOC = "M14"*/ ,// from  CPLD_M                                         to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源开关使能信号输出                       同时上电
+// PVCC_HPMOS_CPU 电源使能信号; 3. SM_EN_TELEM 状态上电使能
+output o_PAL_PVCC_HPMOS_CPU_EN_R              /* synthesis LOC = "G19"*/ , // from  CPLD_M                                       to  PVCC_HPMOS_CPU/U156                           default 1  // PVCC_HPMOS_CPU电源使能信号输入（反向）         同时上电
 
-// PVCC_HPMOS_CPU 电源使能信号
-output o_PAL_PVCC_HPMOS_CPU_EN_R              /* synthesis LOC = "G19"*/,
+// Riser 电源使能信号; 4. SM_EN_MAIN_EFUSE 状态上电使能
+output o_PAL_P12V_RISER1_VIN_EN_R             /* synthesis LOC = "A17"*/ ,// from  CPLD_M                                        to  P12_RISER1_VIN                               default 1  // 12V Riser1输入使能信号输入                   同时上电 
+output o_PAL_P12V_RISER2_VIN_EN_R             /* synthesis LOC = "A13"*/ ,// from  CPLD_M                                        to  P12_RISER2_VIN                               default 1  // 12V Riser2输入使能信号输入                   同时上电 
+output o_PAL_RISER1_PWR_EN_R                  /* synthesis LOC = "U20"*/ ,// from  CPLD_M                                        to  RISER1/J1_G64V3421MHR/8633B&RS53319/EN       default 1  // Riser1电源使能信号输出                       同时上电
+output o_PAL_RISER2_PWR_EN_R                  /* synthesis LOC = "F1"*/  ,// from  CPLD_M                                        to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源使能信号输出                       同时上电
 
-// LOM 电源使能信号
-output o_PAL_PWR_LOM_EN_R                     /* synthesis LOC = "E3"*/ ,// from  CPLD_M                                        to  RISER_AUX/J16                                default 1  // LOM电源使能信号输出
+// Riser 电源选择信号, 暂时不使用
+output o_PAL_RISER2_SELECT                    /* synthesis LOC = "T20"*/ ,// from  CPLD_M                                        to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源选择信号输出                       同时上电
+output o_PAL_RISER2_SWITCH_EN                 /* synthesis LOC = "M14"*/ ,// from  CPLD_M                                        to  RISER2/U240_SGM6505HYTQF24G_TR               default 1  // Riser2电源开关使能信号输出                       同时上电
 
-// ？其他电源管理信号？
-output o_PAL_UPD_VCC_3V3_EN_R                 /* synthesis LOC = "H20"*/ ,// from  CPLD_M                                        to  WX1860_POL_U82_JW7111SSOTBTRPBF/EN           default 1  // 3v3转1v1电源使能信号输出            新增
-output o_P5V_USB_MB_UP_EN_R                   /* synthesis LOC = "E20"*/ ,// from  CPLD_M                                        to  REAR USB3.0/J15_AUSB0072_P304A01             default 1  // 5V USB主板上电使能信号输出            新增
-output o_P5V_USB_MB_DOWN_EN_R                 /* synthesis LOC = "C20"*/ ,// from  CPLD_M                                        to  REAR USB3.0/J15_AUSB0072_P304A02             default 1  // 5V USB主板下电使能信号输出            新增
+// USB P5V信号; 5. SM_EN_5V0 状态上电使能
+output o_P5V_USB_MB_UP_EN_R                   /* synthesis LOC = "E20"*/,// from  CPLD_M                                         to  REAR USB3.0/J15_AUSB0072_P304A01             default 1  // 5V USB主板上电使能信号输出            新增
+output o_P5V_USB_MB_DOWN_EN_R                 /* synthesis LOC = "C20"*/,// from  CPLD_M                                         to  REAR USB3.0/J15_AUSB0072_P304A02             default 1  // 5V USB主板下电使能信号输出            新增
 
-// 12V 主供电模块 电源滤波信号
-output o_PAL_P12V_CPU0_VIN_EN_R               /* synthesis LOC = "N18"*/ ,// from  CURRENT_DET0/P12V_CPU0_VIN                     to  CPLD_M                                       default 1  // 12V CPU0输入使能信号输入（反向）               新增
-input  i_PAL_P12V_CPU0_VIN_FLTB               /* synthesis LOC = "K18"*/ ,// from  CURRENT_DET0/P12V_CPU0_FLTB                   to  CPLD_M                                       default 1  // 12V CPU0输入电源滤波信号输入                   新增
-input  i_PAL_P12V_CPU0_VIN_PG                 /* synthesis LOC = "K16"*/ ,// from  CURRENT_DET0/P12V_CPU0_VIN                    to  CPLD_M                                       default 1  // 12V CPU0输入电源良好信号输入                   新增
+// UPD_VCC_3V3电压; 6. SM_EN_3V3 状态上电使能
+output o_PAL_UPD_VCC_3V3_EN_R                 /* synthesis LOC = "H20"*/,// from  CPLD_M                                         to  WX1860_POL_U82_JW7111SSOTBTRPBF/EN           default 1  // 3v3转1v1电源使能信号输出            新增
+
+// 12V 主供电模块 电源滤波信号 4. SM_EN_MAIN_EFUSE 状态上电使能
+output o_PAL_P12V_CPU0_VIN_EN_R               /* synthesis LOC = "N18"*/,// from  CURRENT_DET0/P12V_CPU0_VIN                     to  CPLD_M                                       default 1  // 12V CPU0输入使能信号输入（反向）               新增
+input  i_PAL_P12V_CPU0_VIN_FLTB               /* synthesis LOC = "K18"*/,// from  CURRENT_DET0/P12V_CPU0_FLTB                    to  CPLD_M                                       default 1  // 12V CPU0输入电源滤波信号输入                   新增
+input  i_PAL_P12V_CPU0_VIN_PG                 /* synthesis LOC = "K16"*/,// from  CURRENT_DET0/P12V_CPU0_VIN                     to  CPLD_M                                       default 1  // 12V CPU0输入电源良好信号输入                   新增
 
 output o_PAL_P12V_CPU1_VIN_EN_R               /* synthesis LOC = "M1"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                     to  CPLD_M                                       default 1  // 12V CPU1输入使能信号输入（反向）               新增
 input  i_PAL_P12V_CPU1_VIN_FLTB               /* synthesis LOC = "P3"*/ ,// from  CURRENT_DET0/P12V_CPU1_FLTB                   to  CPLD_M                                       default 1  // 12V CPU1输入电源滤波信号输入                   新增
@@ -373,14 +366,14 @@ output  o_CPU1_D1_PEU_PREST_3_N_R              /* synthesis LOC = "W5"*/, // fro
 
 // ??? CPU0/1 D0和D1区域 PCIe链路复位信号输入, 点灯观察还是??? 
 input  i_CPU0_D0_PCIE_RST                     /* synthesis LOC = "T13"*/,// form  CPU0_GPIO1/D0_PCIE_RST                        to  CPLD_M                                       default 1  // CPU0 D0 区域 VDD_IO_P1V8 电源中断 PCIe 链路复位信号
-input  i_CPU1_D0_PCIE_RST                     /* synthesis LOC = "P7"*/,// from  CPU1_GPIO1/D0_PCIE_RST                        to  CPLD_M                                       default 1  // CPU1 D0 区域 PCIe 链路复位信号
+input  i_CPU1_D0_PCIE_RST                     /* synthesis LOC = "P7"*/ ,// from  CPU1_GPIO1/D0_PCIE_RST                        to  CPLD_M                                       default 1  // CPU1 D0 区域 PCIe 链路复位信号
 input  i_CPU0_D1_PCIE_RST                     /* synthesis LOC = "P12"*/, // from  CPU0_GPIO2/D1_PCIE_RST                        to  CPLD_M                                       default 1  // CPU0 D1 区域 VDD_IO_P1V8 电源中断 PCIe 链路复位信号
-input  i_CPU1_D1_PCIE_RST                     /* synthesis LOC = "T7"*/,// from  CPU1_GPIO2/D1_PCIE_RST                        to  CPLD_M                                       default 1  // CPU1 D1 区域PCIE复位信号
+input  i_CPU1_D1_PCIE_RST                     /* synthesis LOC = "T7"*/ ,// from  CPU1_GPIO2/D1_PCIE_RST                        to  CPLD_M                                       default 1  // CPU1 D1 区域PCIE复位信号
 
-input  i_CPU0_D0_CRU_RST_OK                   /* synthesis LOC = "U9"*/,// form  CPU0_GPIO1/D0_CRU_RST_OK                      to  CPLD_M                                       default 0  // CPU0 D0 区域CRU复位完成信input  i_CPU0_D0_BIOS_OVER                    /* synthesis LOC = "U10"*/,// from  CPU0_GPIO1/D0_UART2_RXD                       to  CPLD_M                                       default 0  // CPU0 D0 区域BIOS超时信号
+input  i_CPU0_D0_CRU_RST_OK                   /* synthesis LOC = "U9"*/ ,// form  CPU0_GPIO1/D0_CRU_RST_OK                      to  CPLD_M                                       default 0  // CPU0 D0 区域CRU复位完成信input  i_CPU0_D0_BIOS_OVER                    /* synthesis LOC = "U10"*/,// from  CPU0_GPIO1/D0_UART2_RXD                       to  CPLD_M                                       default 0  // CPU0 D0 区域BIOS超时信号
 input  i_CPU0_D1_CRU_RST_OK                   /* synthesis LOC = "R12"*/, // from  CPU0_GPIO2/D1_CRU_RST_OK                      to  CPLD_M                                       default 1  // CPU0 D1 区域CRU复位完成信号
 input  i_CPU1_D0_CRU_RST_OK                   /* synthesis LOC = "R6"*/ ,// form  CPU1_GPIO1/D0_CRU_RST_OK                      to  CPLD_M                                       default 1  // CPU1 D0 区域CRU复位完成信号
-input  i_CPU1_D1_CRU_RST_OK                   /* synthesis LOC = "V6"*/,// form  CPU1_GPIO2/D1_CRU_RST_OK                      to  CPLD_M                                       default 1  // CPU1 D1 区域CRU复位完成信号
+input  i_CPU1_D1_CRU_RST_OK                   /* synthesis LOC = "V6"*/ ,// form  CPU1_GPIO2/D1_CRU_RST_OK                      to  CPLD_M                                       default 1  // CPU1 D1 区域CRU复位完成信号
 // ??? CPU0/1 D0和D1区域 PCIe链路复位信号输入, 点灯观察还是??? 
 
 // ??? 暂时不使用, 先注释 ???
@@ -515,7 +508,6 @@ output o_CPU1_D0_SE_RECOVERY_R                /* synthesis LOC = "W10"*/,// from
 output o_CPU0_I2C_TRAN_EN_R                   /* synthesis LOC = "Y1"*/,// from  CPLD_M                                        to  U213/214_RS0302YH8                           default 1  // CPU0    I2C传输使能信号（CPU 与 DDR 之间的 I2C 电平转换电路）
 output o_CPU1_I2C_TRAN_EN_R                   /* synthesis LOC = "W1"*/,// from  CPLD_M                                        to  U217/218_RS0302YH8                           default 1  // CPU1    I2C传输使能信号（CPU 与 DDR 之间的 I2C 电平转换电路）
 
-
 // CPU1 D0 区域软关机中断信号
 output o_CPU0_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "R11" */,// from  CPLD_M                                        to  S5000C32_3200_C/CPU0_GPIO1/D0_UART2_TXD      default 0  // CPU0 D0 区域软关机中断信号 , 触发系统软关机流程
 output o_CPU1_D0_SOFT_SHUTDOWN_INT_N          /* synthesis LOC = "T8"*/, // from  CPLD_M                                        to  S5000C32_3200_C/CPU1_GPIO1/D0_UART2_TXD      default 0  // CPU1 D0 区域软关机中断信号 , 触发系统软关机流程
@@ -548,11 +540,6 @@ input  i_CPU0_VR8_CAT_FLT                     /* synthesis LOC = "K17"*/ ,// fro
 input  i_CPU0_VR_ALERT_N_R                    /* synthesis LOC = "G17"*/ ,// from  CPU_VR8_Controler/I2C_VR_ALERT_N              to  CPLD_M                                       default 1  // CPU0 电压调节器告警信号输入             新增       
 input  i_CPU1_VR8_CAT_FLT                     /* synthesis LOC = "U4"*/  ,// from  CPU_VR8_Controler/VR_FAULT                    to  CPLD_M                                       default 1  // CPU1 VR8 CAT故障信号输入                    
 input  i_CPU1_VR_ALERT_N_R                    /* synthesis LOC = "D2"*/  ,// from  CPU_VR8_Controler/I2C_VR_ALERT_N              to  CPLD_M                                       default 1  // CPU1电压调节器告警信号输入             新增   
-
-// CPU0/1 D0/D1 区域电源控制信号输入
-input  i_CPU0_D0_PWR_CTR0_R                   /* synthesis LOC = "Y13"*/, // form  CPU0_GPIO1/D0_PWR_CTR[0]                      to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号0（cpu的状态反馈, 解除重上电）
-input  i_CPU0_D0_PWR_CTR1_R                   /* synthesis LOC = "U11"*/, // from  CPU0_GPIO1/D0_PWR_CTR[1]                      to  CPLD_M                                       default 1  // CPU0 D0 区域电源控制信号1（cpu的状态反馈, 控制重上电）
-
 
 // CPU0/1 D0 区域内存电源中断初始化信号输入
 // ???未使用???
@@ -589,153 +576,133 @@ input  i_CPU1_D0_DOWN_GPIO8_RST_N             /* synthesis LOC = "R7"*/   // fro
 线网, 寄存器, 参数声明
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 // clks & resets
-parameter                                   PEAVEY_SUPPORT       = 1'b1 ;  
-wire                                        done_booting_delayed = 1'b1 ; // 不使用, 系统booting_done, 来自BMC, 默认写1
-wire                                        clk_50m                     ; // 系统时钟
-wire                                        clk_25m                     ; // 不使用
-wire                                        pll_lock                    ;
-wire                                        pon_reset_n                 ; // 使用  , 全局复位
-wire                                        pon_reset_db_n              ; // 不使用, 复位
-wire                                        pgd_aux_system              ; // 不使用, 复位
-wire                                        pgd_aux_system_sasd         ; // 不使用, 复位
-wire                                        pgd_aux_bmc          = 1'b1 ; // 不使用, BMC_PDG, 来自BMC, 默认写1
-wire                                        reached_sm_wait_powerok     ; // 不使用, 传给从使用
-wire                                        cpld_ready                  ; // 不使用, 复位
+parameter                                   PEAVEY_SUPPORT       = 1'b1         ;  
+wire                                        done_booting_delayed = 1'b1         ; // 系统booting_done, 来自BMC, 默认写1
+wire                                        clk_50m                             ; // 系统时钟
+wire                                        clk_25m                             ; 
+wire                                        pll_lock                            ;
+wire                                        pon_reset_n                         ; // 全局复位
+wire                                        pon_reset_db_n                      ; // 未使用, 复位
+wire                                        pgd_aux_system                      ; // 未使用, 复位
+wire                                        pgd_aux_system_sasd                 ; // 未使用, 复位
+wire                                        pgd_aux_bmc          = 1'b1         ; // 未使用, BMC_PDG, 来自BMC, 默认写1
+wire                                        reached_sm_wait_powerok             ; // 未使用, 传给从使用
+wire                                        cpld_ready                          ; // 未使用, 复位
 
 // tick 定时脉冲; clk 频率时钟
-wire                                        t40ns_tick                  ;
-wire                                        t80ns_tick                  ;
-wire                                        t160ns_tick                 ;
-wire                                        t1us_tick                   ;
-wire                                        t2us_tick                   ;  
-wire                                        t8us_tick                   ;
-wire                                        t16us_tick                  ;
-wire                                        t32us_tick                  ;
-wire                                        t128us_tick                 ;
-wire                                        t512us_tick                 ;
-wire                                        t1ms_tick                   ;
-wire                                        t2ms_tick                   ;
-wire                                        t16ms_tick                  ;
-wire                                        t32ms_tick                  ;
-wire                                        t64ms_tick                  ;
-wire                                        t128ms_tick                 ;
-wire                                        t256ms_tick                 ;
-wire                                        t512ms_tick                 ;
-wire                                        t1s_tick                    ;
-wire                                        t8s_tick                    ;
-wire                                        t0p5hz_clk                  ;
-wire                                        t1hz_clk                    ;
-wire                                        t2p5hz_clk                  ;
-wire                                        t4hz_clk                    ;
-wire                                        t16khz_clk                  ;
-wire                                        t6m25_clk                   ;
+wire                                        t40ns_tick                          ;
+wire                                        t80ns_tick                          ;
+wire                                        t160ns_tick                         ;
+wire                                        t1us_tick                           ;
+wire                                        t2us_tick                           ;  
+wire                                        t8us_tick                           ;
+wire                                        t16us_tick                          ;
+wire                                        t32us_tick                          ;
+wire                                        t128us_tick                         ;
+wire                                        t512us_tick                         ;
+wire                                        t1ms_tick                           ;
+wire                                        t2ms_tick                           ;
+wire                                        t16ms_tick                          ;
+wire                                        t32ms_tick                          ;
+wire                                        t64ms_tick                          ;
+wire                                        t128ms_tick                         ;
+wire                                        t256ms_tick                         ;
+wire                                        t512ms_tick                         ;
+wire                                        t1s_tick                            ;
+wire                                        t8s_tick                            ;
+wire                                        t0p5hz_clk                          ;
+wire                                        t1hz_clk                            ;
+wire                                        t2p5hz_clk                          ;
+wire                                        t4hz_clk                            ;
+wire                                        t16khz_clk                          ;
+wire                                        t6m25_clk                           ;
 
 // 辅电源使能信号
 // 1. SM_OFF_STANDBY 状态上电使能
-wire                                        ocp_aux_en                  ; // 不使用
-wire                                        cpu_bios_en                 ; // 不使用
+wire                                        ocp_aux_en                          ; // 未使用
+wire                                        cpu_bios_en                         ; 
 // 2. SM_EN_5V_STBY 状态上电使能
-wire                                        p5v_stby_en_r               ;
+wire                                        p5v_stby_en_r                       ;
 // 3. SM_EN_TELEM 状态上电使能
-wire                                        pvcc_hpmos_cpu_en_r         ;
+wire                                        pvcc_hpmos_cpu_en_r                 ;
 // 4. SM_EN_MAIN_EFUSE 状态上电使能
-wire                                        power_supply_on             ; 
-wire                                        ocp_main_en                 ; // 不使用 
-wire                                        pal_main_efuse_en           ; // 不使用
-wire                                        p12v_bp_rear_en             ; // 不使用 
-wire                                        p12v_bp_front_en            ; // 不使用
+wire                                        power_supply_on                     ; 
+wire                                        ocp_main_en                         ; // 未使用 
+wire                                        pal_main_efuse_en                   ; // 未使用
+wire                                        p12v_bp_rear_en                     ;  
+wire                                        p12v_bp_front_en                    ; 
 // 5. SM_EN_5V 状态上电使能
-wire                                        p5v_en_r                    ;
+wire                                        p5v_en_r                            ;
 // 6. SM_EN_3V3 状态上电使能
-wire                                        p3v3_en_r                    ;
+wire                                        p3v3_en_r                           ;
 
 // 主电源使能信号
 // 1. SM_EN_VDD 状态上电使能
-wire                                        cpu0_vdd_core_en_r          ;
-wire                                        cpu1_vdd_core_en_r          ;
+wire                                        cpu0_vdd_core_en_r                  ;
+wire                                        cpu1_vdd_core_en_r                  ;
 // 2. SM_EN_P1V8 状态上电使能
-wire                                        cpu0_p1v8_en_r              ;
-wire                                        cpu1_p1v8_en_r              ;
+wire                                        cpu0_p1v8_en_r                      ;
+wire                                        cpu1_p1v8_en_r                      ;
 // 3. SM_EN_P2V5_VPP 状态上电使能
-wire                                        cpu0_vddq_en_r              ;
-wire                                        cpu1_vddq_en_r              ;
-wire                                        cpu0_ddr_vdd_en_r           ;
-wire                                        cpu1_ddr_vdd_en_r           ;
-wire                                        cpu0_pll_p1v8_en_r          ;
-wire                                        cpu1_pll_p1v8_en_r          ;
+wire                                        cpu0_vddq_en_r                      ;
+wire                                        cpu1_vddq_en_r                      ;
+wire                                        cpu0_ddr_vdd_en_r                   ;
+wire                                        cpu1_ddr_vdd_en_r                   ;
+wire                                        cpu0_pll_p1v8_en_r                  ;
+wire                                        cpu1_pll_p1v8_en_r                  ;
 // 4. SM_EN_P0V8 状态上电使能
-wire                                        cpu0_d0_vp_p0v9_en_r        ;
-wire                                        cpu0_d1_vp_p0v9_en_r        ;
-wire                                        cpu0_d0_vph_p1v8_en_r       ;
-wire                                        cpu0_d1_vph_p1v8_en_r       ;
-wire                                        cpu1_d0_vp_p0v9_en_r        ;
-wire                                        cpu1_d1_vp_p0v9_en_r        ;
-wire                                        cpu1_d0_vph_p1v8_en_r       ;
-wire                                        cpu1_d1_vph_p1v8_en_r       ;
+wire                                        cpu0_d0_vp_p0v9_en_r                ;
+wire                                        cpu0_d1_vp_p0v9_en_r                ;
+wire                                        cpu0_d0_vph_p1v8_en_r               ;
+wire                                        cpu0_d1_vph_p1v8_en_r               ;
+wire                                        cpu1_d0_vp_p0v9_en_r                ;
+wire                                        cpu1_d1_vp_p0v9_en_r                ;
+wire                                        cpu1_d0_vph_p1v8_en_r               ;
+wire                                        cpu1_d1_vph_p1v8_en_r               ;
 
 // CPLD控制复位输出
-wire                                        pex_reset_n                 ; // 传到从cpld
-wire                                        usb_ponrst_r_n              ; // 不使用
-wire                                        usb_perst_r_n               ; // 不使用
+wire                                        pex_reset_n                         ; // 已使用   MCPLD->SCPLD               复位信号输出
+wire                                        usb_ponrst_r_n                      ; // 已使用   MCPLD->SCPLD               USB复位信号输出
+wire                                        usb_perst_r_n                       ; // 已使用   MCPLD->SCPLD               USB复位信号输出
 
 // PCIE复位信号输入, 滤波后输出给cpu_por_n使用
-wire                                        db_i_cpu0_rst_vpp_i2c_n             ;// 不使用(写入寄存器)    
-wire                                        db_i_cpu1_rst_vpp_i2c_n             ;// 不使用(写入寄存器)
+wire                                        db_i_cpu0_rst_vpp_i2c_n             ; // 未使用   MCPLD_IN                   未使用(写入寄存器)    
+wire                                        db_i_cpu1_rst_vpp_i2c_n             ; // 未使用   MCPLD_IN                   未使用(写入寄存器)
 wire                                        db_i_cpu0_d0_cru_rst_ok             ;    
 wire                                        db_i_cpu0_d1_cru_rst_ok             ;    
 wire                                        db_i_cpu1_d0_cru_rst_ok             ;    
 wire                                        db_i_cpu1_d1_cru_rst_ok             ;
-wire                                        db_i_cpu0_d0_pcie_rst               ; // 不使用(写入寄存器)       
-wire                                        db_i_cpu1_d0_pcie_rst               ; // 不使用(写入寄存器)      
-wire                                        db_i_cpu0_d1_pcie_rst               ; // 不使用(写入寄存器)      
-wire                                        db_i_cpu1_d1_pcie_rst               ; // 不使用(写入寄存器)
-// wire                                        db_i_cpu0_d0_peu_prest_0_n_r        ;
-// wire                                        db_i_cpu0_d0_peu_prest_1_n_r        ; 
-// wire                                        db_i_cpu0_d0_peu_prest_2_n_r        ; 
-// wire                                        db_i_cpu0_d0_peu_prest_3_n_r        ; 
-// wire                                        db_i_cpu0_d1_peu_prest_0_n_r        ;
-// wire                                        db_i_cpu0_d1_peu_prest_1_n_r        ;
-// wire                                        db_i_cpu0_d1_peu_prest_2_n_r        ;
-// wire                                        db_i_cpu0_d1_peu_prest_3_n_r        ;
-// wire                                        db_i_cpu1_d0_peu_prest_0_n_r        ;   
-// wire                                        db_i_cpu1_d0_peu_prest_1_n_r        ; 
-// wire                                        db_i_cpu1_d0_peu_prest_2_n_r        ; 
-// wire                                        db_i_cpu1_d0_peu_prest_3_n_r        ; 
-// wire                                        db_i_cpu1_d1_peu_prest_0_n_r        ;
-// wire                                        db_i_cpu1_d1_peu_prest_1_n_r        ;
-// wire                                        db_i_cpu1_d1_peu_prest_2_n_r        ;
-// wire                                        db_i_cpu1_d1_peu_prest_3_n_r        ;
+wire                                        db_i_cpu0_d0_pcie_rst               ; // 已使用   MCPLD_IN                    未使用(写入寄存器)       
+wire                                        db_i_cpu1_d0_pcie_rst               ; // 已使用   MCPLD_IN                    未使用(写入寄存器)      
+wire                                        db_i_cpu0_d1_pcie_rst               ; // 已使用   MCPLD_IN                    未使用(写入寄存器)      
+wire                                        db_i_cpu1_d1_pcie_rst               ; // 已使用   MCPLD_IN                    未使用(写入寄存器)
 
-wire                                        db_i_cpu_peu_prest_n_r              ;
-wire                                        cpu_por_n                           ;
-
+wire                                        cpu_por_n                           ; // 已使用   MCPLD_OUT                   CPU上电复位信号输出
 
 // 电源模块PG状态输入信号
-wire                                        db_i_pal_ocp1_pwrgd                 ;// 不使用, 写死为1
-wire                                        db_i_pal_dimm_efuse_pg              ;// 不使用, 写死为1
-wire                                        db_i_pal_cpu1_dimm_pwrgd_f          ;// 不使用, 写死为1
-wire                                        db_i_pal_p3v3_stby_bp_pgd           ;
-wire                                        db_i_pal_cpu0_dimm_pwrgd_f          ;// 不使用, 写死为1
-wire                                        db_i_pal_p3v3_stby_pgd              ;// CPLD的3V3 standby电源PG输入, 来自3V3 standby电源, 传给从使用 
-wire                                        db_i_pal_fan_efuse_pg               ;// 不使用
-wire                                        db_i_pal_bp2_aux_pg                 ;// 已使用   MCPLD IN 
-wire                                        db_i_pal_bp1_aux_pg                 ;// 已使用   MCPLD IN 
+wire                                        db_i_pal_cpu1_dimm_pwrgd_f          ; // 已使用   MCPLD_IN                    ?这个信号放efuse信号使用?      
+wire                                        db_i_pal_cpu0_dimm_pwrgd_f          ; // 已使用   MCPLD_IN                    ?这个信号放efuse信号使用?      
 
-wire                                        db_i_pal_p12v_fan3_pg               ;// BMC寄存    addr 0x0020[7]    Fan0 12V电压是否正常，1：正常；0：异常
-wire                                        db_i_pal_p12v_fan2_pg               ;// BMC寄存    addr 0x0020[5]    Fan0 12V电压是否正常，1：正常；0：异常
-wire                                        db_i_pal_p12v_fan1_pg               ;// BMC寄存    addr 0x0020[3]    Fan0 12V电压是否正常，1：正常；0：异常
-wire                                        db_i_pal_p12v_fan0_pg               ;// BMC寄存    addr 0x0020[1]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p3v3_stby_bp_pgd           ; // 已使用   MCPLD_IN                    CPLD的3v3_STBY_PGD信号输入
+wire                                        db_i_pal_p3v3_stby_pgd              ; // 已使用   MCPLD_IN                    CPLD的3v3_STBY_PGD信号输入
 
-wire                                        db_i_pal_pgd_88se9230_p1v8          ;// 不使用, 写死为1
-wire                                        db_i_pal_pgd_88se9230_vdd1v0        ;// 不使用, 写死为1
-wire                                        db_i_p1v8_stby_cpld_pg              ;// 不使用, 写死为1
+wire                                        db_i_pal_bp2_aux_pg                 ; // 已使用   MCPLD IN 
+wire                                        db_i_pal_bp1_aux_pg                 ; // 已使用   MCPLD IN 
+wire [1:0]                                  db_bp_aux_pg                        ; // 已使用   MCPLD IN
 
-wire                                        db_i_pal_p5v_stby_pgd               ;// 
+wire                                        db_i_pal_p12v_fan3_pg               ; // BMC寄存    addr 0x0020[7]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan2_pg               ; // BMC寄存    addr 0x0020[5]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan1_pg               ; // BMC寄存    addr 0x0020[3]    Fan0 12V电压是否正常，1：正常；0：异常
+wire                                        db_i_pal_p12v_fan0_pg               ; // BMC寄存    addr 0x0020[1]    Fan0 12V电压是否正常，1：正常；0：异常
 
-wire                                        db_i_pal_pgd_p12v_stby_droop        ;// 
-wire                                        db_i_pal_pgd_p12v_droop             ;// 
-wire                                        db_i_pal_front_bp_efuse_pg          ;// 不使用, 写死为1
-wire                                        db_i_pal_reat_bp_efuse_pg  		    ;// 
+wire                                        db_i_pal_pgd_88se9230_p1v8          ; // 未使用   MCPLD IN   
+wire                                        db_i_pal_pgd_88se9230_vdd1v0        ; // 未使用   MCPLD IN   
+wire                                        db_i_p1v8_stby_cpld_pg              ; // 未使用   MCPLD IN
+wire                                        db_i_pal_p5v_stby_pgd               ; // 已使用   MCPLD IN 
+wire                                        db_i_pal_pgd_p12v_stby_droop        ; // 已使用   MCPLD IN
+wire                                        db_i_pal_pgd_p12v_droop             ; // 已使用   MCPLD IN
+
+wire                                        db_i_pal_reat_bp_efuse_pg  		    ; // 已使用   MCPLD IN
 
 wire                                        db_i_pal_p5v0_pgd                   ;//  
 
@@ -1099,13 +1066,11 @@ wire                                        tpm_rst                     ; //    
 wire                                        tpm_prsnt_n                 ; // SCPLD -> MCPLD     BMC寄存       addr 0x001D[6]      不使用
 wire                                        db_tpm_prsnt_n              ; // SCPLD -> MCPLD     BMC寄存       addr 0x001D[6]      不使用
 wire                                        db_i_intruder_cable_inst_n  ; //                    BMC寄存        addr 0x001D[4]     入侵线缆是否连接，1：连接；0：未连接
-// wire db_i_pal_cpu1_dimm_pwrgd_f;
 wire [`NUM_CPU-1:0]                         s_vr_cpu_i2c_alert_n;
 
-wire                                        db_i_pal_bmc_card_prsnt_n     ; // 未使用
-wire                                        db_i_pal_cpu0_dimm_pwrgd_f;
+wire                                        db_i_pal_bmc_card_prsnt_n     ; // MCPLD_IN                                           BMC_CARD_PRSNT, 未使用
 wire                                        rst_pal_extrst_r_n;
-wire                                        db_i_pal_bmcuid_button_r      ; // UID 按键输入信号
+wire                                        db_i_pal_bmcuid_button_r      ; // MCPLD_IN                                           UID 按键输入信号
 wire                                        bmc_extrst_uid;
 wire                                        test_bat_en;
 wire                                        i_pal_wdt_rst_n_r;
@@ -1113,15 +1078,15 @@ wire [1:0]                                  bmcctl_uart_sw                ; // M
 wire                                        fan_dbg_mode;
 wire [15:0]                                 mb_cpld2_ver;
 
-wire [7:0]                                  i2c_ram_1050                 ;  // MCPLD             BMC下发    addr 0x1050
-wire [7:0]                                  i2c_ram_1051                 ;  // MCPLD             BMC下发    addr 0x1051    
-wire [7:0]                                  i2c_ram_1052                 ;  // MCPLD             BMC下发    addr 0x1052    
-wire [7:0]                                  i2c_ram_1053                 ;  // MCPLD             BMC下发    addr 0x1053    
-wire [7:0]                                  i2c_ram_1054                 ;  // MCPLD             BMC下发    addr 0x1054    
-wire [7:0]                                  i2c_ram_1055                 ;  // MCPLD             BMC下发    addr 0x1055    
-wire [7:0]                                  i2c_ram_1056                 ;  // MCPLD             BMC下发    addr 0x1056    
-wire [7:0]                                  i2c_ram_1057                 ;  // MCPLD             BMC下发    addr 0x1057    
-wire [7:0]                                  i2c_ram_1058                 ;  // MCPLD             BMC下发    addr 0x1058    
+wire [7:0]                                  i2c_ram_1050                  ; // MCPLD             BMC下发    addr 0x1050
+wire [7:0]                                  i2c_ram_1051                  ; // MCPLD             BMC下发    addr 0x1051    
+wire [7:0]                                  i2c_ram_1052                  ; // MCPLD             BMC下发    addr 0x1052    
+wire [7:0]                                  i2c_ram_1053                  ; // MCPLD             BMC下发    addr 0x1053    
+wire [7:0]                                  i2c_ram_1054                  ; // MCPLD             BMC下发    addr 0x1054    
+wire [7:0]                                  i2c_ram_1055                  ; // MCPLD             BMC下发    addr 0x1055    
+wire [7:0]                                  i2c_ram_1056                  ; // MCPLD             BMC下发    addr 0x1056    
+wire [7:0]                                  i2c_ram_1057                  ; // MCPLD             BMC下发    addr 0x1057    
+wire [7:0]                                  i2c_ram_1058                  ; // MCPLD             BMC下发    addr 0x1058    
 
 wire                                        pca_revision_0                ; // SCPLD -> MCPLD    BMC寄存           
 wire                                        pca_revision_1                ; // SCPLD -> MCPLD    BMC寄存           
@@ -1323,6 +1288,16 @@ wire                                        db_pal_upd72020_1_alart       ; // �
 wire                                        db_pal_upd72020_2_alart       ; // 未使用
 wire                                        db_vga2_oc_alert              ; // 未使用
 wire                                        db_usb2_lcd_alert             ; // 未使用
+
+wire                                        db_cpu0_d0_pwr_ctr0_r         ; // 暂未使用
+wire                                        db_cpu0_d0_pwr_ctr1_r         ; // 暂未使用
+wire                                        db_cpu0_d1_pwr_ctr0_r         ; // 暂未使用
+wire                                        db_cpu0_d1_pwr_ctr1_r         ; // 暂未使用
+wire                                        db_cpu1_d0_pwr_ctr0_r         ; // 暂未使用
+wire                                        db_cpu1_d0_pwr_ctr1_r         ; // 暂未使用
+wire                                        db_cpu1_d1_pwr_ctr0_r         ; // 暂未使用
+wire                                        db_cpu1_d1_pwr_ctr1_r         ; // 暂未使用
+
 wire                                        pgd_p1v8_stby_dly32ms;
 wire                                        pgd_p1v8_stby_dly30ms;
 wire                                        bios_read_flag                ; // 已使用   SCPLD -> MCPLD    BMC寄存   addr 0x0013[7]      BIOS读取标志，1：正在读取；0：未读取
@@ -1425,7 +1400,7 @@ wire [5:0]                                  riser4_slot10_id              ; // �
 // wire                                        db_i_riser_prsnt_det_11       ; // 未使用   SCPLD -> MCPLD
 // wire                                        db_i_riser_prsnt_det_10       ; // 未使用   SCPLD -> MCPLD
 
-wire [1:0]                                  db_bp_aux_pg                  ; // 已使用   MCPLD IN
+
 wire [7:0]                                  bp_int                        ; // 未使用
 
 wire [1:0]                                  bp_prsnt                      ; // 已使用                       BMC寄存   addr 0x0071[1:0]    8个背板是否存在，1：存在；0：不存在
@@ -1516,44 +1491,60 @@ PGM_DEBOUNCE #(.SIGCNT(15), .NBITS(2'b10), .ENABLE(1'b1)) db_inst_button (
     .timer_tick     (t64ms_tick                 ),
     .din            ({
                     i_CPLD_M_S_EXCHANGE_S2_R /*| pwrbtn_mask */,//01 
-                    debug_sw1                                  ,//03
-                    debug_sw2                                  ,//04
-                    debug_sw3                                  ,//05
-                    debug_sw4	                                 ,//06
-                    debug_sw5	                                 ,//07
-		            debug_sw6                                  ,//08
-		            debug_sw7                                  ,//09
-		            debug_sw8                                  ,//10
-		            i_PAL_BMCUID_BUTTON_R                      ,//11
-		            chassis_id0_n                              ,//13
-		            chassis_id1_n                              ,//14
-                    i_PAL_USB_UPD1_OCI1B                     ,//17   
-                    i_PAL_USB_UPD1_OCI2B                     ,//18  
-
-		            pal_upd72020_1_alart                     ,//19 // 不使用
-		            pal_upd72020_2_alart                     ,//20 // 不使用
-		            vga2_oc_alert                            ,//21
-		            usb2_lcd_alert                            //22
+                    debug_sw1                                  ,//02
+                    debug_sw2                                  ,//03
+                    debug_sw3                                  ,//04
+                    debug_sw4	                               ,//05
+                    debug_sw5	                               ,//06
+		            debug_sw6                                  ,//07
+		            debug_sw7                                  ,//08
+		            debug_sw8                                  ,//09
+		            i_PAL_BMCUID_BUTTON_R                      ,//10
+		            chassis_id0_n                              ,//11
+		            chassis_id1_n                              ,//12
+                    i_PAL_USB_UPD1_OCI1B                       ,//13   
+                    i_PAL_USB_UPD1_OCI2B                       ,//14  
+		            pal_upd72020_1_alart                       ,//15 // 不使用
+		            pal_upd72020_2_alart                       ,//16 // 不使用
+		            vga2_oc_alert                              ,//17
+		            usb2_lcd_alert                             ,//18
+                    i_CPU0_D0_PWR_CTR0_R                       ,//19                   
+                    i_CPU0_D0_PWR_CTR1_R                       ,//20                   
+                    i_CPU0_D1_PWR_CTR0_R                       ,//21                   
+                    i_CPU0_D1_PWR_CTR1_R                       ,//22                   
+                    i_CPU1_D0_PWR_CTR0_R                       ,//23                   
+                    i_CPU1_D0_PWR_CTR1_R                       ,//24                   
+                    i_CPU1_D1_PWR_CTR0_R                       ,//25                   
+                    i_CPU1_D1_PWR_CTR1_R                        //26
+                    
                   }),                           
       .dout       ({
-                    db_sys_sw_in_n                           ,//01 
-		            db_debug_sw[0]                           ,//03
-		            db_debug_sw[1]                           ,//04
-		            db_debug_sw[2]                           ,//05
-		            db_debug_sw[3]                           ,//06
-		            db_debug_sw[4]                           ,//07
-		            db_debug_sw[5]                           ,//08
-		            db_debug_sw[6]                           ,//09
-		            db_debug_sw[7]                           ,//10
-		            db_i_pal_bmcuid_button_r                 ,//11
-		            db_chassis_id[0]                         ,//13
-		            db_chassis_id[1]                         ,//14
-                    db_i_pal_usb_upd1_oci1b                  ,//17
-                    db_i_pal_usb_upd1_oci2b                  ,//18
-		                db_pal_upd72020_1_alart                  ,//19
-		                db_pal_upd72020_2_alart                  ,//20
-		                db_vga2_oc_alert                         ,//21
-		                db_usb2_lcd_alert                         //22                    
+                    db_sys_sw_in_n                            ,//01  
+		            db_debug_sw[0]                            ,//02
+		            db_debug_sw[1]                            ,//03
+		            db_debug_sw[2]                            ,//04
+		            db_debug_sw[3]                            ,//05
+		            db_debug_sw[4]                            ,//06
+		            db_debug_sw[5]                            ,//07
+		            db_debug_sw[6]                            ,//08
+		            db_debug_sw[7]                            ,//09
+		            db_i_pal_bmcuid_button_r                  ,//10
+		            db_chassis_id[0]                          ,//11
+		            db_chassis_id[1]                          ,//12
+                    db_i_pal_usb_upd1_oci1b                   ,//13   
+                    db_i_pal_usb_upd1_oci2b                   ,//14  
+		            db_pal_upd72020_1_alart                   ,//15 // 不使用
+		            db_pal_upd72020_2_alart                   ,//16 // 不使用
+		            db_vga2_oc_alert                          ,//17
+		            db_usb2_lcd_alert                         ,//18  
+                    db_cpu0_d0_pwr_ctr0_r                     ,//19          
+                    db_cpu0_d0_pwr_ctr1_r                     ,//20          
+                    db_cpu0_d1_pwr_ctr0_r                     ,//21          
+                    db_cpu0_d1_pwr_ctr1_r                     ,//22          
+                    db_cpu1_d0_pwr_ctr0_r                     ,//23          
+                    db_cpu1_d0_pwr_ctr1_r                     ,//24          
+                    db_cpu1_d1_pwr_ctr0_r                     ,//25          
+                    db_cpu1_d1_pwr_ctr1_r                      //26
                   })             
 );
 
@@ -1565,20 +1556,25 @@ wire  i_PAL_CPU0_PCIE_P1V8_PG = 1'b1;
 wire  i_PAL_CPU1_PCIE_P1V8_PG = 1'b1;
 wire  i_PAL_CPU0_PCIE_P0V9_PG = 1'b1;
 wire  i_PAL_CPU1_PCIE_P0V9_PG = 1'b1;
-wire  i_PAL_FAN_EFUSE_PG      = 1'b1;
 wire  i_PAL_FRONT_BP_EFUSE_PG = 1'b1;
-wire  i_PAL_OCP1_PWRGD        = 1'b1;
-wire  i_PAL_DIMM_EFUSE_PG     = 1'b1;
+
 wire  i_PAL_P5V_PGD           = 1'b1;
+
+
+wire  db_i_pal_main_pwr_ok          ;
+wire  db_i_pal_p12v_cpu1_vin_pg     ;
+wire  db_i_pal_p12v_cpu0_vin_pg     ;
+
 
 assign  db_bp_aux_pg = {db_i_pal_bp2_aux_pg, db_i_pal_bp1_aux_pg     };
 
-PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
+PGM_DEBOUNCE #(.SIGCNT(52), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
     .clk           (clk_50m                    ),
     .rst           (~pon_reset_n               ),
     .timer_tick    (1'b1                       ),
     .din           (
                     {
+                    i_PAL_MAIN_PWR_OK                   ,// 51 未使用
                     i_PAL_P12V_CPU1_VIN_PG              ,// 50
                     i_PAL_P12V_CPU0_VIN_PG              ,// 49
                     i_PAL_CPU0_D0_VP_0V9_PG             ,// 48
@@ -1589,14 +1585,13 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
                     i_PAL_CPU1_D1_VP_0V9_PG             ,// 43
                     i_PAL_CPU1_D0_VPH_1V8_PG            ,// 42
                     i_PAL_CPU1_D1_VPH_1V8_PG            ,// 41
-                    i_PAL_BP2_AUX_PG                    ,// 40 不使用, 可以接入BMC寄存器中存储
-                    i_PAL_BP1_AUX_PG                    ,// 39 不使用, 可以接入BMC寄存器中存储
+                    i_PAL_BP2_AUX_PG                    ,// 40
+                    i_PAL_BP1_AUX_PG                    ,// 39
                     i_PAL_P12V_FAN3_PG                  ,// 38
                     i_PAL_P12V_FAN2_PG                  ,// 37
                     i_PAL_P12V_FAN1_PG                  ,// 36
                     i_PAL_P12V_FAN0_PG                  ,// 35
-                    i_PAL_VCC_1V1_PG                    ,// 34
-                    i_PAL_FRONT_BP_EFUSE_PG             ,// 33 不使用 写死1                               
+                    i_PAL_VCC_1V1_PG                    ,// 34                              
                     i_PAL_CPU1_VDD_VCORE_P0V8_PG        ,// 32                            
                     i_PAL_CPU0_PLL_P1V8_PG              ,// 31                            
                     i_PAL_CPU0_VDDQ_P1V1_PG 		    ,// 30 	                        
@@ -1607,15 +1602,12 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
                     i_PAL_CPU1_PCIE_P1V8_PG             ,// 25 不使用 写死1       
                     i_PAL_CPU0_PCIE_P0V9_PG   		    ,// 24 不使用 写死1        
                     i_PAL_CPU1_PCIE_P0V9_PG             ,// 23 不使用 写死1
-    	            i_PAL_FAN_EFUSE_PG                  ,// 22 不使用 写死1
     	            i_PAL_CPU1_DDR_VDD_PG               ,// 21
     	            i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 20
     	            i_PAL_CPU1_VDDQ_P1V1_PG             ,// 19
     	            i_PAL_CPU1_P1V8_PG                  ,// 18
     	            i_PAL_CPU1_PLL_P1V8_PG              ,// 17
                     i_PAL_P5V_STBY_PGD                  ,// 16
-                    i_PAL_OCP1_PWRGD                    ,// 15 不使用 写死1
-                    i_PAL_DIMM_EFUSE_PG                 ,// 14 不使用 写死1
                     i_PAL_P5V_PGD                       ,// 13 不使用 写死1
                     i_PAL_PGD_P12V_STBY_DROOP           ,// 12
     	            i_PAL_PGD_P12V_DROOP                ,// 11
@@ -1625,8 +1617,8 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
     	            ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,// 07
                     i_PAL_CPU1_DIMM_PWRGD_F             ,// 06
     	            i_PAL_P3V3_STBY_PGD                 ,// 05
-                    i_PAL_PGD_88SE9230_VDD1V0           ,// 04
-                    i_PAL_PGD_88SE9230_P1V8             ,// 03
+                    i_PAL_PGD_88SE9230_VDD1V0           ,// 04 未使用
+                    i_PAL_PGD_88SE9230_P1V8             ,// 03 未使用
                     i_PAL_CPU0_DIMM_PWRGD_F             ,// 02
                     i_P1V8_STBY_CPLD_PG                 ,// 01              
     	            i_PAL_P3V3_STBY_PGD                  // 00 
@@ -1634,6 +1626,7 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
                     ),
     .dout           (
                     {
+                    db_i_pal_main_pwr_ok                ,// 51 未使用
                     db_i_pal_p12v_cpu1_vin_pg           ,// 50
                     db_i_pal_p12v_cpu0_vin_pg           ,// 49
                     db_i_pal_cpu0_d0_vp_0v9_pg          ,// 48
@@ -1650,8 +1643,7 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
                     db_i_pal_p12v_fan2_pg               ,// 37
                     db_i_pal_p12v_fan1_pg               ,// 36
                     db_i_pal_p12v_fan0_pg               ,// 35
-                    db_i_pal_vcc_1v1_pg                 ,// 34
-                    db_i_pal_front_bp_efuse_pg          ,// 33 不使用    
+                    db_i_pal_vcc_1v1_pg                 ,// 34 
                     db_i_pal_cpu1_vdd_core_pg           ,// 32           
                     db_i_pal_cpu0_pll_p1v8_pg			,// 31                                               
                     db_i_pal_cpu0_vddq_pg			    ,// 30 	         
@@ -1662,15 +1654,12 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
                     db_i_pal_cpu1_pcie_p1v8_pg 	        ,// 25 不使用           			
                     db_i_pal_cpu0_pcie_p0v9_pg          ,// 24 不使用    
                     db_i_pal_cpu1_pcie_p0v9_pg          ,// 23 不使用
-                    db_i_pal_fan_efuse_pg               ,// 22 不使用 写死1
 		            db_i_pal_cpu1_ddr_vdd_pg            ,// 21
 		            db_i_pal_cpu0_vdd_core_pg           ,// 20
 		            db_i_pal_cpu1_vddq_pg               ,// 19
 		            db_i_pal_cpu1_p1v8_pg               ,// 18
 		            db_i_pal_cpu1_pll_p1v8_pg           ,// 17
 		            db_i_pal_p5v_stby_pgd               ,// 16
-		            db_i_pal_ocp1_pwrgd                 ,// 15 不使用
-		            db_i_pal_dimm_efuse_pg              ,// 14 不使用
 		            db_i_pal_p5v0_pgd                   ,// 13 不使用
 		            db_i_pal_pgd_p12v_stby_droop        ,// 12
 		            db_i_pal_pgd_p12v_droop             ,// 11
@@ -1680,8 +1669,8 @@ PGM_DEBOUNCE #(.SIGCNT(51), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
 		            db_ps_dcok[1]                       ,// 07
 		            db_i_pal_cpu1_dimm_pwrgd_f          ,// 06
 		            db_i_pal_p3v3_stby_bp_pgd           ,// 05
-		            db_i_pal_pgd_88se9230_vdd1v0        ,// 04
-		            db_i_pal_pgd_88se9230_p1v8          ,// 03
+		            db_i_pal_pgd_88se9230_vdd1v0        ,// 04 未使用
+		            db_i_pal_pgd_88se9230_p1v8          ,// 03 未使用
 		            db_i_pal_cpu0_dimm_pwrgd_f          ,// 02
 		            db_i_p1v8_stby_cpld_pg              ,// 01           
 		            db_i_pal_p3v3_stby_pgd               // 00 
@@ -2122,6 +2111,7 @@ wire                db_i_cpu1_tmp_alert_n           ;
 wire                db_i_cpu01_timer_force_start    ;
 wire                db_i_cpu0_d0_memory_power_int_n ;
 wire                db_i_cpu1_d0_memory_power_int_n ;
+
 wire                db_i_cpu0_d0_gpio_port0_r       ;
 wire                db_i_cpu0_d0_gpio_port1_r       ;
 wire                db_i_cpu0_d0_gpio_port2_r       ;
@@ -2133,7 +2123,6 @@ wire                db_i_cpu0_d0_gpio_port7_r       ;
 wire                db_i_cpu0_d0_down_gpio8_rst_n   ;
 wire                db_i_cpu0_d0_gpio_port9_r       ;
 wire                db_i_cpu0_d0_gpio_port10_r      ;
-wire                db_i_cpu1_d0_gpio_port4_r       ;
 
 wire                db_i_bmc_reserve_19             ;
 wire                db_i_bmc_reserve_18             ;
@@ -2157,7 +2146,7 @@ wire                db_i_bmc_reserve_1              ;
 wire                db_i_bmc_reserve_0              ;
 
 // 未使用信号, 接入消抖处理
-PGM_DEBOUNCE #(.SIGCNT(43), .NBITS(2'b11), .ENABLE(1'b1)) db_unused (
+PGM_DEBOUNCE #(.SIGCNT(42), .NBITS(2'b11), .ENABLE(1'b1)) db_unused (
     .clk            (clk_50m                    ),
     .rst            (~pon_reset_n               ),
     .timer_tick     (1'b1                       ),
@@ -2183,7 +2172,7 @@ PGM_DEBOUNCE #(.SIGCNT(43), .NBITS(2'b11), .ENABLE(1'b1)) db_unused (
                     i_CPU0_D0_DOWN_GPIO8_RST_N   ,// 23 未使用
                     i_CPU0_D0_GPIO_PORT9_R       ,// 22 未使用
                     i_CPU0_D0_GPIO_PORT10_R      ,// 21 未使用
-                    i_CPU1_D0_GPIO_PORT4_R       ,// 20 未使用
+                    // i_CPU1_D0_GPIO_PORT4_R       ,// 20 未使用
                     i_BMC_RESERVE_19             ,// 19 未使用
                     i_BMC_RESERVE_18             ,// 18 未使用
                     i_BMC_RESERVE_17             ,// 17 未使用
@@ -2227,7 +2216,7 @@ PGM_DEBOUNCE #(.SIGCNT(43), .NBITS(2'b11), .ENABLE(1'b1)) db_unused (
                     db_i_cpu0_d0_down_gpio8_rst_n  ,// 23 未使用
                     db_i_cpu0_d0_gpio_port9_r      ,// 22 未使用
                     db_i_cpu0_d0_gpio_port10_r     ,// 21 未使用
-                    db_i_cpu1_d0_gpio_port4_r      ,// 20 未使用
+                    // db_i_cpu1_d0_gpio_port4_r      ,// 20 未使用
                     db_i_bmc_reserve_19            ,// 19 未使用
                     db_i_bmc_reserve_18            ,// 18 未使用
                     db_i_bmc_reserve_17            ,// 17 未使用
@@ -2570,7 +2559,7 @@ assign mcpld_to_scpld_p2s_data[306:299] = i2c_ram_1053               ;
 assign mcpld_to_scpld_p2s_data[298:291] = i2c_ram_1052               ;
 assign mcpld_to_scpld_p2s_data[290:283] = i2c_ram_1051               ;
 assign mcpld_to_scpld_p2s_data[282:275] = i2c_ram_1050               ;
-assign mcpld_to_scpld_p2s_data[274]     = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
+assign mcpld_to_scpld_p2s_data[274]     = db_i_pal_reat_bp_efuse_pg  ;
 assign mcpld_to_scpld_p2s_data[273]     = rst_i2c0_mux_n             ;
 assign mcpld_to_scpld_p2s_data[272]     = pal_led_nic_act            ;
 assign mcpld_to_scpld_p2s_data[271]     = rst_i2c_riser2_pca9548_n   ;
@@ -2616,7 +2605,7 @@ assign mcpld_to_scpld_p2s_data[19]      =  sys_hlth_red_blink_n      ;
 assign mcpld_to_scpld_p2s_data[18]      =  sys_hlth_grn_blink_n      ;
 assign mcpld_to_scpld_p2s_data[17]      =  led_uid                   ;
 assign mcpld_to_scpld_p2s_data[16]      =  power_supply_on           ;
-assign mcpld_to_scpld_p2s_data[15]      =  ocp_main_en               ;
+assign mcpld_to_scpld_p2s_data[15]      =  ocp_main_en               ; // 未使用
 assign mcpld_to_scpld_p2s_data[14]      =  ocp_aux_en                ; // 未使用
 assign mcpld_to_scpld_p2s_data[13]      =  pex_reset_n               ;
 assign mcpld_to_scpld_p2s_data[12]      =  reached_sm_wait_powerok   ;
@@ -2714,7 +2703,7 @@ power_button power_button_inst  (
 assign interlock_broken = 1'b0;
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
-CPU 重启
+CPU 重启, ??? 需讨论 ??? 
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 reg                         cpu_reboot                      ; // CPU 重启信号
 reg                         cpu_reboot_S                    ; 
@@ -2940,9 +2929,9 @@ pwrseq_master #(
     .force_pwrbtn_n                         (force_pwrbtn_n             ), // 输出：强制电源按钮信号（低电平有效，送至 PSU，当前未使用）
                                                                            // 备用功能：故障下电后，强制 PCH 切换到 S5 状态，确保彻底断电
 
-    .cpu_reboot                             (cpu_reboot_S               ), // 输入：CPU重启  
-    .cpu_reboot_x                           (cpu_reboot_x               ), // 输入：CPU重启   
-    .cpu_power_off                          (cpu_power_off              ), // 输入：CPU下电  
+    .cpu_reboot                             (1'b1 /*cpu_reboot_S*/      ), // 输入：CPU重启  
+    .cpu_reboot_x                           (1'b1 /*cpu_reboot_x*/      ), // 输入：CPU重启   
+    .cpu_power_off                          (1'b1 /*cpu_power_off*/     ), // 输入：CPU下电  
     
     .xr_ps_en                               (1'b1                       ), // 输入：XR 电源使能信号（1=使能，0=禁用）
 
@@ -3015,24 +3004,6 @@ pwrseq_master #(
                                                                           // 功能：开机过程中点亮指示灯，告知用户“系统正在上电，请勿操作”
 );
 
-/*
-assign db_i_cpu_peu_prest_n_r = db_i_cpu0_d0_peu_prest_0_n_r &
-                                db_i_cpu0_d0_peu_prest_1_n_r &
-                                db_i_cpu0_d0_peu_prest_2_n_r &
-                                db_i_cpu0_d0_peu_prest_3_n_r &
-                                db_i_cpu0_d1_peu_prest_0_n_r &
-                                db_i_cpu0_d1_peu_prest_1_n_r &
-                                db_i_cpu0_d1_peu_prest_2_n_r &
-                                db_i_cpu0_d1_peu_prest_3_n_r &
-                                db_i_cpu1_d0_peu_prest_0_n_r &
-                                db_i_cpu1_d0_peu_prest_1_n_r &
-                                db_i_cpu1_d0_peu_prest_2_n_r &
-                                db_i_cpu1_d0_peu_prest_3_n_r &
-                                db_i_cpu1_d1_peu_prest_0_n_r &
-                                db_i_cpu1_d1_peu_prest_1_n_r &
-                                db_i_cpu1_d1_peu_prest_2_n_r &
-                                db_i_cpu1_d1_peu_prest_3_n_r ;
-*/
 // 复位信号
 assign o_CPU0_D0_PEU_PREST_0_N_R = pex_reset_n;
 assign o_CPU0_D0_PEU_PREST_1_N_R = pex_reset_n;
@@ -3087,13 +3058,13 @@ pwrseq_slave #(
     // 2. `SM_EN_5V_STBY 状态上电使能
     .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	     ),
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    .dimm_efuse_pg			                (1'b1/*db_i_pal_dimm_efuse_pg*/), // 不使用, 写死1  
-    .fan_efuse_pg			                (db_i_pal_fan_efuse_pg	     ), // 不使用, 写死1
-    .pgd_main_efuse                         (1'b1                        ), // 不使用, 写死1  
+    .dimm_efuse_pg			                (1'b1                        ), // 写死1  
+    .fan_efuse_pg			                (1'b1               	     ), // 写死1
+    .pgd_main_efuse                         (1'b1                        ), // 写死1  
     .pgd_p12v                               (db_i_pal_pgd_p12v_droop     ),  
     .pgd_p12v_stby_droop                    (db_i_pal_pgd_p12v_stby_droop),  
     .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg   ),
-    .front_bp_efuse_pg      	            (db_i_pal_front_bp_efuse_pg  ),
+    .front_bp_efuse_pg      	            (1'b1                        ), // 写死1 
     .p12v_cpu1_vin_pg                       (db_i_pal_p12v_cpu1_vin_pg   ),
     .p12v_cpu0_vin_pg                       (db_i_pal_p12v_cpu0_vin_pg   ),
     // 5. SM_EN_5V 状态上电使能
@@ -3176,10 +3147,9 @@ pwrseq_slave #(
     .cpu1_d1_vph_p1v8_en_r                  (cpu1_d1_vph_p1v8_en_r      ),  //out
     
     // 复位信号输出
-    // .cpu_peu_prest_n_r                      (db_i_cpu_peu_prest_n_r         ),  //in
-    .cpu_por_n                              (cpu_por_n                      ),  //out
-    .usb_ponrst_r_n                         (usb_ponrst_r_n                 ),  //out 不使用
-    .pex_reset_r_n                          (pex_reset_n                    ),  //out 不使用
+    .cpu_por_n                              (cpu_por_n                      ),  // out
+    .usb_ponrst_r_n                         (usb_ponrst_r_n                 ),  // out      MCPLD->SCPLD           USB复位信号输出
+    .pex_reset_r_n                          (pex_reset_n                    ),  // out      MCPLD->SCPLD           USB复位信号输出
     
     // 故障检测信号
     .p5v_stby_fault_det		                (p5v_stby_fault_det	            ),
@@ -3469,27 +3439,27 @@ wire [7:0]                w_uid_led_ctl           ; // BMC下发 addr 0x0009[7:0
 UID_Function#(
     .LONG_PRESS               (4'd5                       )
 )UID_Function_u0(
-    .i_clk                    (clk_50m		              ),//input Clk
+    .i_clk                    (clk_50m		              ), //input Clk
     .i_1mSEC                  (t1ms_tick	              ),
     .i_20mSEC                 (t32ms_tick	              ),
-    .i_rst_n                  (pon_reset_n	              ),//Global rst,Active Low
-    .i_clr_flag_short         (~w_uid_btn_evt_wc          ),//Use the same signal on common design
-    .i_clr_flag_long          (~w_uid_rstbmc_evt_wc       ),//Use the same signal on common design 
+    .i_rst_n                  (pon_reset_n	              ), //Global rst,Active Low
+    .i_clr_flag_short         (~w_uid_btn_evt_wc          ), //Use the same signal on common design
+    .i_clr_flag_long          (~w_uid_rstbmc_evt_wc       ), //Use the same signal on common design 
     .i_UID_BMC_BTN_N          (1'b1                       ),
-    .i_UID_BTN_RP_CPLD_N      (db_i_pal_bmcuid_button_r   ),//i_UID_BTN_CPLD_N
-    .i_UID_BTN_FP_CPLD_N      (1'b1                       ),//not used    
+    .i_UID_BTN_RP_CPLD_N      (db_i_pal_bmcuid_button_r   ), //i_UID_BTN_CPLD_N
+    .i_UID_BTN_FP_CPLD_N      (1'b1                       ), //not used    
 
     //Output Signal
-    .o_BMC_UID_CPLD_N         (                           ),// reserved, bmc control uid led via i2c
+    .o_BMC_UID_CPLD_N         (                           ), // reserved, bmc control uid led via i2c
     .o_BMC_EXTRST_CPLD_OUT_N  (bmc_extrst_uid	          ),
     .o_UID_BTN_short_pos      (uid_btn_all_invert         ),
 
     .o_uid_button_long        (uid_button_long_evt        ),
     .o_uid_button_short       (uid_button_short_evt       ),
 
-    .i_uid_valid              (1'b0                       ),//reserved
-    .i_uid_status             (8'h00                      ),//reserved
-    .o_uid_act_st             (                           ) //reserved
+    .i_uid_valid              (1'b0                       ), //reserved
+    .i_uid_status             (8'h00                      ), //reserved
+    .o_uid_act_st             (                           )  //reserved
 );
 
 //bmc control uid led when bmc active, or uid button will control uid led when bmc die;
@@ -3679,8 +3649,8 @@ assign w_aux_num_aux1      = 3'b001;
 assign w_aux_num_aux2      = 3'b010;
 
 // MB_CPLD 输出的数据格式
-assign w_pal_bp1_pwr_on_r = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
-assign w_pal_bp2_pwr_on_r = db_i_pal_front_bp_efuse_pg | db_i_pal_reat_bp_efuse_pg;
+assign w_pal_bp1_pwr_on_r = db_i_pal_reat_bp_efuse_pg;
+assign w_pal_bp2_pwr_on_r = db_i_pal_reat_bp_efuse_pg;
 
 assign w_mb_to_bp_aux1_data = {w_aux_rsvd_bit15_10,w_mb_type,w_aux_rsvd_bit7_4,w_aux_num_aux1,w_pal_bp1_pwr_on_r};
 assign w_mb_to_bp_aux2_data = {w_aux_rsvd_bit15_10,w_mb_type,w_aux_rsvd_bit7_4,w_aux_num_aux2,w_pal_bp2_pwr_on_r};
@@ -3745,29 +3715,32 @@ UART_MASTER #(.NBIT_IN(16), .NBIT_OUT(16), .BPS_COUNT_NUM(48), .START_COUNT_NUM(
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
 复位与电源管理
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
-// CPU 超频背板使能信号，低电平有效, 不使用
-assign o_CPU0_SB_EN_R              = 1'b0;
-assign o_CPU1_SB_EN_R              = 1'b0;
 // LOM 供电使能信号，高电平有效，始终使能
 assign o_PAL_PWR_LOM_EN_R          = 1'b1;
+
+// CK44_PWRDN_N 信号， 高电平有效
+assign o_CK440_SS_EN_R             = 1'b1; // ???直接写死???
+assign o_PAL_CK440_PWRDN_N_R       = 1'b1;
+
 // 88SE9230 供电使能信号，高电平有效
 assign o_PWR_88SE9230_P1V8_EN_R    = 1'b1;
 assign o_PWR_88SE9230_P1V0_EN_R    = 1'b1;
-// CPU PLL 1.8V 使能信号
+
+// CPLD P1V8_STBY 使能信号
 assign o_P1V8_STBY_CPLD_EN_R       = 1'b1;
-// CK44_PWRDN_N 信号， 高电平有效
-assign o_CK440_SS_EN_R             = 1'b1; // !!! 直接写死!!!
-assign o_PAL_CK440_PWRDN_N_R       = 1'b1;
+
+// CPU 超频背板使能信号，低电平有效, 不使用
+assign o_CPU0_SB_EN_R              = 1'b0;
+assign o_CPU1_SB_EN_R              = 1'b0;
+
 // CPU SE Recovery 使能信号，高电平有效, 不使用
 assign o_CPU0_D0_SE_RECOVERY_R     = 1'b0; // 不使用
 assign o_CPU1_D1_SE_RECOVERY_R     = 1'b0; // 不使用
-// assign o_CPU0_D2_SE_RECOVERY_R = 1'b0; // 不使用
-// assign o_CPU0_D3_SE_RECOVERY_R = 1'b0; // 不使用
+
 
 assign o_CPU0_D1_SE_RECOVERY_R     = 1'b0;
 assign o_CPU1_D0_SE_RECOVERY_R     = 1'b0;
-// assign o_CPU1_D2_SE_RECOVERY_R = 1'b0; // 不使用
-// assign o_CPU1_D3_SE_RECOVERY_R = 1'b0; // 不使用
+
 
 // 辅电源
 // 1. SM_OFF_STANDBY 状态上电使能
@@ -4219,8 +4192,8 @@ assign bmc_read_flag_1          = fan_wdt_sel ? bmc_read_flag: 1'b1     ;
 
 assign o_CPLD_M_S_EXCHANGE_S1_R = i_PAL_P3V3_STBY_PGD;
 
-assign o_CPU0_POR_N_R = cpu_por_n;
-assign o_CPU1_POR_N_R = cpu_por_n;//& cpu1_pwr_ctrl_en;//20231121
+assign o_CPU0_POR_N_R = cpu_por_n ;
+assign o_CPU1_POR_N_R = cpu_por_n ; 
 
 assign ft_cpu_rst_ok  =	ft_cpu0_rst_ok & ft_cpu1_rst_ok;
 assign ft_cpu0_rst_ok = db_i_cpu0_d0_cru_rst_ok & db_i_cpu0_d1_cru_rst_ok ;
@@ -4262,27 +4235,6 @@ assign pal_ocp2_ncsi_en   = pgd_aux_system ? (sideband_sel == 2'b10) : 1'b0; //O
 assign pal_ocp_ncsi_sw_en = pgd_aux_system ? (sideband_sel == 2'b11) : 1'b0; //OCP3
 */
 
-
-//OCP
-wire ocp_aux_50ms_pgd;
-wire ocp_main_en_dly50ms;
-wire ocp_aux_pgd;
-edge_delay #(
-  .CNTR_NBITS    (5)
-) ocp_main_en_delay_inst (
-  .clk           (clk_50m		),
-  .reset         (~pon_reset_n	),
-  .cnt_size      (5'h19		),
-  .cnt_step      (t2ms_tick	),
-  .signal_in     (ocp_main_en),
-  .delay_output  (ocp_main_en_dly50ms)
-);
-
-// assign ocp1_prsnt_n = ocp_prsent_b3_n & ocp_prsent_b2_n & ocp_prsent_b1_n & ocp_prsent_b0_n;
-// assign ocp2_prsnt_n = ocp_prsent_b4_n & ocp_prsent_b5_n & ocp_prsent_b6_n & ocp_prsent_b7_n;
-
-assign ocp_aux_50ms_pgd       = (ocp_main_en_dly50ms)  ? db_i_pal_ocp1_pwrgd : 1'b1                ;
-assign ocp_aux_pgd            = (ocp_main_en		)  ? ocp_aux_50ms_pgd    : db_i_pal_ocp1_pwrgd ; 
 
 
 assign pfr_vpp_alert = i_SMB_PEHP_CPU0_3V3_ALERT_N & i_SMB_PEHP_CPU1_3V3_ALERT_N;
@@ -4615,4 +4567,11 @@ assign  o_CPLD_M_S_EXCHANGE_S5_R = 1'bz;
 
 assign  o_PAL_RISER2_SELECT      = 1'bz;
 assign  o_PAL_RISER2_SWITCH_EN   = 1'bz;
+
+// 不使用
+assign  o_FT_CPU0_SCP_BOOT_FROM_FLASH_R = 1'bz;
+assign  o_FT_CPU1_SCP_BOOT_FROM_FLASH_R = 1'bz;
+
+// 如何控制
+assign  o_PAL_SYS_EEPROM_BYPASS_N_R = 1'bz;
 endmodule

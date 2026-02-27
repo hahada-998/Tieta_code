@@ -5,23 +5,22 @@ module Tieta_Feiteng_2001_top(
     // 系统时钟
     input   i_CLK_C42_IN_25M                        /* synthesis LOC = "U1" */,// from  PLL                                          to  CPLD_S                                           default 1  // 25M 时钟 信号 CK440
                                                         
-    output  o_PAL_BMC_SS_CLK                        /* synthesis LOC = "L17" */,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC 串行时钟 信号
-    output	o_PAL_BMC_SS_LOAD_N	                    /* synthesis LOC = "M16"*/ ,// from  CPLD_S                                        to  GENZ_168PIN/J98_5653E5-001H1020T                 default 0  // “PCH（平台控制器中心）向 BMC（基板管理控制器）发送的串行信号加载使能信号 
-    output	o_PAL_BMC_SS_DATA_OUT	                /* synthesis LOC = "M15"*/ ,// from  CPLD_S                                        to  GENZ_168PIN/J98_5653E5-001H1020T                 default 0  // “PCH（平台控制器中心）向 BMC（基板管理控制器）发送的串行数据信号”
-    input   i_PAL_BMC_SS_DATA_IN                    /* synthesis LOC = "N17" */,// from  GENZ_168PIN                                  to  CPLD_S                                           default 1  // BMC 串行数据 输入 信号                                      
+    output  o_PAL_BMC_SS_CLK                        /* synthesis LOC = "L17" */,// from  CPLD_S                                      to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC 串行时钟 信号
+    output	o_PAL_BMC_SS_LOAD_N	                    /* synthesis LOC = "M16"*/ ,// from  CPLD_S                                      to  GENZ_168PIN/J98_5653E5-001H1020T                 default 0  // “PCH（平台控制器中心）向 BMC（基板管理控制器）发送的串行信号加载使能信号 
+    output	o_PAL_BMC_SS_DATA_OUT	                /* synthesis LOC = "M15"*/ ,// from  CPLD_S                                      to  GENZ_168PIN/J98_5653E5-001H1020T                 default 0  // “PCH（平台控制器中心）向 BMC（基板管理控制器）发送的串行数据信号”
+    input   i_PAL_BMC_SS_DATA_IN                    /* synthesis LOC = "N17" */,// from  GENZ_168PIN/J98_5653E5-001H1020T            to  CPLD_S                                           default 1  // BMC 串行数据 输入 信号                                      
                                             
     /* begin: JTAG 接口*/
     // 专用引脚暂不使用
-    // input   i_PAL_S_DONE                            /* synthesis LOC = "A19"*/,// from  S_DONE / J32                                 to  CPLD_S                                           default 1  // PAL S DONE 信号
-    // input   i_PAL_S_INITN                           /* synthesis LOC = "C17"*/,// from  S_INITN / J31                                to  CPLD_S                                           default 1  // PAL S INITN 信号
-    // input   i_PAL_S_JTAGEN                          /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
-    // input   i_PAL_S_PROGRAM_N                       /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                            to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
-    // input   i_PAL_S_SN                              /* synthesis LOC = "Y20"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                 to  CPLD_S                                           default 1  // S_SN 信号 UPD1/UPD2 序列号 信号
-    // output  i_PAL2_TDO                              /* synthesis LOC = "E8"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    // input   i_PAL2_TDI                              /* synthesis LOC = "C7"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    // input   i_PAL2_TCK                              /* synthesis LOC = "C9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    // input   i_PAL2_TMS                              /* synthesis LOC = "D9"*/,// from  JTAG_TDO / J12                                to  CPLD_S                                           default 1  // PAL2 TDO 信号
-    
+    // input   i_PAL_S_DONE                         /* synthesis LOC = "A19"*/,// from  S_DONE / J32                                 to  CPLD_S                                           default 1  // PAL S DONE 信号
+    // input   i_PAL_S_INITN                        /* synthesis LOC = "C17"*/,// from  S_INITN / J31                                to  CPLD_S                                           default 1  // PAL S INITN 信号
+    // input   i_PAL_S_JTAGEN                       /* synthesis LOC = "C13"*/,// from  JTAG_EN / J11                                to  CPLD_S                                            default 1  // PAL S JTAGEN 信号
+    // input   i_PAL_S_PROGRAM_N                    /* synthesis LOC = "D13"*/,// from  S_PROGRAM_N / J13                            to  CPLD_S                                            default 1  // PAL S PROGRAM_N 信号
+    // input   i_PAL_S_SN                           /* synthesis LOC = "Y20"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                 to  CPLD_S                                           default 1  // S_SN 信号 UPD1/UPD2 序列号 信号
+    // output  i_PAL2_TDO                           /* synthesis LOC = "E8"*/ ,// from  JTAG_TDO / J12                               to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TDI                           /* synthesis LOC = "C7"*/ ,// from  JTAG_TDO / J12                               to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TCK                           /* synthesis LOC = "C9"*/ ,// from  JTAG_TDO / J12                               to  CPLD_S                                           default 1  // PAL2 TDO 信号
+    // input   i_PAL2_TMS                           /* synthesis LOC = "D9"*/ ,// from  JTAG_TDO / J12                               to  CPLD_S                                           default 1  // PAL2 TDO 信号
     /* end: JTAG 接口*/
 
     /* begin: I2C 接口*/
