@@ -703,16 +703,14 @@ wire                                        db_i_pal_pgd_p12v_stby_droop        
 wire                                        db_i_pal_pgd_p12v_droop             ; // 已使用   MCPLD IN
 
 wire                                        db_i_pal_reat_bp_efuse_pg  		    ; // 已使用   MCPLD IN
+wire                                        db_i_pal_p5v0_pgd                   ; // 已使用   写死处理
+wire                                        db_i_pal_vcc_1v1_pg                 ; // 已使用   MCPLD_IN
 
-wire                                        db_i_pal_p5v0_pgd                   ;//  
+wire                                        db_i_pal_cpu1_vdd_core_pg           ; // 已使用   MCPLD IN   
+wire                                        db_i_pal_cpu0_vdd_core_pg           ; // 已使用   MCPLD IN
 
-wire                                        db_i_pal_vcc_1v1_pg                 ;// 新增
-
-wire                                        db_i_pal_cpu1_vdd_core_pg           ;//    
-wire                                        db_i_pal_cpu0_vdd_core_pg           ;// 
-
-wire                                        db_i_pal_cpu1_p1v8_pg               ;// 
-wire                                        db_i_pal_cpu0_p1v8_pg  		        ;//  
+wire                                        db_i_pal_cpu1_p1v8_pg               ; // 已使用   MCPLD IN
+wire                                        db_i_pal_cpu0_p1v8_pg  		        ; // 已使用   MCPLD IN
 
 wire                                        db_i_pal_cpu1_vddq_pg               ;// 
 wire                                        db_i_pal_cpu0_vddq_pg			          ;//  	
@@ -1608,7 +1606,7 @@ PGM_DEBOUNCE #(.SIGCNT(52), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
     	            i_PAL_CPU1_P1V8_PG                  ,// 18
     	            i_PAL_CPU1_PLL_P1V8_PG              ,// 17
                     i_PAL_P5V_STBY_PGD                  ,// 16
-                    i_PAL_P5V_PGD                       ,// 13 不使用 写死1
+                    i_PAL_P5V_PGD                       ,// 13 已使用 写死1
                     i_PAL_PGD_P12V_STBY_DROOP           ,// 12
     	            i_PAL_PGD_P12V_DROOP                ,// 11
                     i_PAL_PS1_ACFAIL & i_PAL_PS1_PRSNT  ,// 10
@@ -3845,7 +3843,7 @@ pwrcap #(
   .ddr_pwrcap_throttle (4'b0                                    ),//in                         
   .dimm_alert          ({mem_efgh_hot_alert, mem_abcd_hot_alert}),//in, from thermal_inst        
   .ddr_pwrcap_assert_ch(                                        ),//X86�͸�cpu,����ûȥ��,//out
-  .vdd3_pgood          (db_i_pal_p5v_pgd                        ),//in                  
+  .vdd3_pgood          (db_i_pal_p5v0_pgd                       ),//in                  
   .onehz_clk           (t1hz_clk                                ),//in                  
   .pwrcap_en           (1'b0                                    ),//����pwrcap_grn����ʹ��                                 
   .pwrcap_denied       (1'b0                                    ),//����pwrcap_amb����ʹ�� pwron_denied                                
@@ -3871,7 +3869,7 @@ thermal thermal_inst (
   .clk                    (clk_50m           ),
   .pgd_p3v3_stby_async    (pon_reset_db_n     ),
   .pgd_aux_system         (pgd_aux_system     ),
-  .pgd_p3v3               (db_i_pal_p5v_pgd   ),
+  .pgd_p3v3               (db_i_pal_p5v0_pgd  ),
   .pch_sys_pwrok          (1'b1               ),
   .st_steady_pwrok        (st_steady_pwrok    ),
   .cpu_vr_hot_n           (2'b11              ),
