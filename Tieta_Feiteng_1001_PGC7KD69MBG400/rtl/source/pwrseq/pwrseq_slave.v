@@ -195,12 +195,13 @@ module pwrseq_slave #(
     // HDD backplane
     input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_prsnt_n                   ,          
     input  [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_pgd                       ,          
-    output [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_fault_det                 ,           
+    output [(NUM_HD_BP ? NUM_HD_BP:1)-1:0]      hd_bp_fault_det                 ,      
+
     // Riser card
-    input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_prsnt_n                   ,          
-    input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_pgd                       ,          
-    output [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_fault_det                 ,          
-    output [(NUM_RISER ? NUM_RISER:1)-1:0]      pal_riser_en                    ,          
+    // input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_prsnt_n                   ,          
+    // input  [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_pgd                       ,          
+    // output [(NUM_RISER ? NUM_RISER:1)-1:0]      riser_fault_det                 ,          
+    // output [(NUM_RISER ? NUM_RISER:1)-1:0]      pal_riser_en                    ,          
 
     input  [5:0]                                power_seq_sm                    , 
     output reg                                  reached_sm_wait_powerok         , 
@@ -232,10 +233,11 @@ wire    p12v_main_fault                        ;
 wire    opt_aux_fault                          ;
 
 wire    any_pex_fault_det                      ;
+
 // Riser
-wire    reg_riser_chk_en                       ;
-wire    riser_pgd_so_far                       ;
-wire    riser_mod_fault                        ;
+// wire    reg_riser_chk_en                       ;
+// wire    riser_pgd_so_far                       ;
+// wire    riser_mod_fault                        ;
 
 
 reg     reg_p5v_stby_en_r		                   ;
@@ -1648,7 +1650,7 @@ endgenerate
 // Riser card subsystem
 // - Handles riser card card related power monitoring and fault detection
 //------------------------------------------------------------------------------
-
+/*
 edge_delay #(.CNTR_NBITS(2)) riser_pwr_en_check_inst (
   .clk           (clk   ),
   .reset         (reset ),
@@ -1687,6 +1689,7 @@ else begin
   assign riser_fault_det  = 1'b0;
 end
 endgenerate
+*/
 
 //------------------------------------------------------------------------------
 // Aux rails to check

@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1413</data>
+                    <data>1211</data>
                     <data>0</data>
                 </row>
             </table>
@@ -267,7 +267,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1413</data>
+                    <data>1211</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -337,7 +337,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -356,7 +356,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -375,7 +375,45 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_BOARD_ID2</data>
+            <data>input</data>
+            <data>Y6</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_BOARD_ID3</data>
+            <data>input</data>
+            <data>W6</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -394,7 +432,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -413,7 +451,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -432,7 +470,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -451,7 +489,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -470,7 +508,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -489,7 +527,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -508,7 +546,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -527,7 +565,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -546,7 +584,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -565,7 +603,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -584,7 +622,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -603,7 +641,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -622,7 +660,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -641,7 +679,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -660,7 +698,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -679,7 +717,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -698,7 +736,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -717,7 +755,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -736,7 +774,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -755,7 +793,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -774,7 +812,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -793,7 +831,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -812,7 +850,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -831,7 +869,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -850,7 +888,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -869,7 +907,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -888,7 +926,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -907,7 +945,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -926,7 +964,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -945,7 +983,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -964,7 +1002,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -983,7 +1021,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1002,7 +1040,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1021,7 +1059,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1040,7 +1078,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1059,7 +1097,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1078,7 +1116,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1097,7 +1135,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1116,7 +1154,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1135,7 +1173,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1154,7 +1192,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1173,7 +1211,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1192,7 +1230,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1211,7 +1249,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1230,7 +1268,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1249,7 +1287,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1268,7 +1306,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1287,7 +1325,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1306,7 +1344,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1325,7 +1363,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1344,7 +1382,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1363,7 +1401,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1382,7 +1420,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1401,7 +1439,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1420,7 +1458,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1439,7 +1477,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1458,7 +1496,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1477,7 +1515,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1496,7 +1534,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1515,7 +1553,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1534,7 +1572,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1553,7 +1591,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1572,7 +1610,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1591,7 +1629,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1610,7 +1648,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1629,7 +1667,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1648,7 +1686,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1667,7 +1705,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1686,7 +1724,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1705,7 +1743,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1724,7 +1762,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1743,7 +1781,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1762,7 +1800,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1781,7 +1819,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1800,7 +1838,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1819,7 +1857,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1838,7 +1876,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1857,7 +1895,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1876,7 +1914,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1895,7 +1933,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1914,7 +1952,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1933,7 +1971,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1952,7 +1990,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1971,7 +2009,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1990,7 +2028,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2009,7 +2047,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2028,7 +2066,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2047,7 +2085,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2066,7 +2104,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2085,7 +2123,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2104,7 +2142,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2123,7 +2161,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2142,7 +2180,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2161,7 +2199,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2180,7 +2218,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2199,7 +2237,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2218,7 +2256,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2237,7 +2275,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2256,7 +2294,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2275,7 +2313,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2294,7 +2332,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2313,7 +2351,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2332,7 +2370,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2351,7 +2389,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2370,7 +2408,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2389,7 +2427,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2408,7 +2446,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2427,7 +2465,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2446,7 +2484,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2465,7 +2503,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2484,7 +2522,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2503,7 +2541,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2522,7 +2560,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2541,7 +2579,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2560,7 +2598,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2579,7 +2617,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2598,7 +2636,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2617,7 +2655,102 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_S_DONE</data>
+            <data>input</data>
+            <data>A19</data>
+            <data>BANK0</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_S_INITN</data>
+            <data>input</data>
+            <data>C17</data>
+            <data>BANK0</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_S_JTAGEN</data>
+            <data>input</data>
+            <data>C13</data>
+            <data>BANK0</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_S_PROGRAM_N</data>
+            <data>input</data>
+            <data>D13</data>
+            <data>BANK0</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_S_SN</data>
+            <data>input</data>
+            <data>Y20</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2636,7 +2769,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2655,7 +2788,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2674,7 +2807,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2693,7 +2826,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2712,7 +2845,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2731,7 +2864,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2750,7 +2883,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2769,7 +2902,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2788,7 +2921,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2807,7 +2940,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2826,7 +2959,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2845,7 +2978,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2864,7 +2997,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2883,7 +3016,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2902,7 +3035,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2921,7 +3054,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2940,7 +3073,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2959,7 +3092,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2978,7 +3111,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2997,7 +3130,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3016,7 +3149,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3035,7 +3168,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3054,7 +3187,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3073,7 +3206,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3092,7 +3225,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3111,7 +3244,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3130,7 +3263,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3149,7 +3282,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3168,7 +3301,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3187,7 +3320,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3206,7 +3339,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3225,7 +3358,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -5080,6 +5213,25 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_PAL_TPM_DRQ1_N</data>
+            <data>output</data>
+            <data>W2</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_PAL_UART4_OCP_DEBUG_TX</data>
             <data>output</data>
             <data>L3</data>
@@ -6168,9 +6320,9 @@
             <data>IOBS_0_224</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0P/INIT_FLAG_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_S_INITN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>D11</data>
@@ -6204,18 +6356,18 @@
             <data>IOBS_0_159</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12N/RSTN</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_S_PROGRAM_N</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>C13</data>
             <data>IOBS_0_158</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12P/JTAGEN</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_S_JTAGEN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>C11</data>
@@ -6330,9 +6482,9 @@
             <data>IOBS_0_225</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0N/CFG_DONE</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_S_DONE</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>D8</data>
@@ -7518,9 +7670,9 @@
             <data>IOBS_156_61</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31N/MISO_SO</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_BOARD_ID2</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>W20</data>
@@ -7797,9 +7949,9 @@
             <data>IOBR_156_222</data>
             <data>BANK2</data>
             <data>DIFFI_B2_1P/FCSI_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_S_SN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>T16</data>
@@ -7833,9 +7985,9 @@
             <data>IOBR_156_30</data>
             <data>BANK2</data>
             <data>DIFFI_B2_39P/FCS_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_PAL_TPM_DRQ1_N</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>T7</data>
@@ -7905,9 +8057,9 @@
             <data>IOBR_156_60</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31P/CFG_CLK</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_BOARD_ID3</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>N4</data>
@@ -8675,23 +8827,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>236</data>
+            <data>202</data>
             <data>592</data>
-            <data>40</data>
+            <data>35</data>
             <row>
                 <data>FF</data>
-                <data>609</data>
+                <data>494</data>
                 <data>3552</data>
-                <data>18</data>
+                <data>14</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>612</data>
+                <data>476</data>
                 <data>2368</data>
-                <data>26</data>
+                <data>21</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>612</data>
+                    <data>476</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8711,23 +8863,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>353</data>
+            <data>286</data>
             <data>888</data>
-            <data>40</data>
+            <data>33</data>
             <row>
                 <data>FF</data>
-                <data>852</data>
+                <data>759</data>
                 <data>5328</data>
-                <data>16</data>
+                <data>15</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>924</data>
+                <data>716</data>
                 <data>3552</data>
-                <data>27</data>
+                <data>21</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>924</data>
+                    <data>716</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8759,9 +8911,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>279</data>
+            <data>287</data>
             <data>336</data>
-            <data>84</data>
+            <data>86</data>
             <row>
                 <data>IOBD</data>
                 <data>19</data>
@@ -8770,15 +8922,15 @@
             </row>
             <row>
                 <data>IOBR</data>
-                <data>34</data>
+                <data>37</data>
                 <data>42</data>
-                <data>81</data>
+                <data>89</data>
             </row>
             <row>
                 <data>IOBS</data>
-                <data>226</data>
+                <data>231</data>
                 <data>273</data>
-                <data>83</data>
+                <data>85</data>
             </row>
         </row>
         <row>
@@ -8843,21 +8995,21 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>127</data>
+            <data>131</data>
             <data>252</data>
-            <data>51</data>
+            <data>52</data>
         </row>
         <row>
             <data>IOLDLY</data>
-            <data>35</data>
+            <data>38</data>
             <data>84</data>
-            <data>42</data>
+            <data>46</data>
         </row>
         <row>
             <data>IOL</data>
-            <data>279</data>
+            <data>287</data>
             <data>336</data>
-            <data>84</data>
+            <data>86</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -8964,15 +9116,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1536</data>
-            <data>1461</data>
+            <data>1192</data>
+            <data>1253</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>279</data>
+            <data>287</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9055,54 +9207,8 @@
             </row>
             <row>
                 <data>db_inst_pwrgood(PGM_DEBOUNCE_N)</data>
-                <data>19</data>
-                <data>18</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>db_intruder(PGM_DEBOUNCE_N_1)</data>
-                <data>7</data>
-                <data>6</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>db_pe_wake_inst(PGM_DEBOUNCE_2)</data>
-                <data>5</data>
-                <data>5</data>
+                <data>14</data>
+                <data>12</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9124,8 +9230,8 @@
             </row>
             <row>
                 <data>inst_cmu_to_mb_s2p(s2p_master)</data>
-                <data>68</data>
-                <data>80</data>
+                <data>67</data>
+                <data>78</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9147,8 +9253,8 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>161</data>
-                <data>72</data>
+                <data>148</data>
+                <data>73</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9171,6 +9277,29 @@
                     <data>w_cpu0_die0_alloc(pcie_dync_alloc)</data>
                     <data>2</data>
                     <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>w_cpu0_die1_alloc_1(pcie_dync_alloc)</data>
+                    <data>0</data>
+                    <data>1</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9400,7 +9529,7 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_p2s(p2s_slave)</data>
-                <data>115</data>
+                <data>77</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9423,8 +9552,8 @@
             </row>
             <row>
                 <data>mcio_ab26(PGM_DEBOUNCE_1)</data>
-                <data>4</data>
-                <data>3</data>
+                <data>12</data>
+                <data>15</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9491,75 +9620,6 @@
                 <data>0</data>
             </row>
             <row>
-                <data>pvt_gpi_ocp1_inst(pvt_gpi_1)</data>
-                <data>43</data>
-                <data>37</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>pvt_gpi_riser1_inst(pvt_gpi)</data>
-                <data>10</data>
-                <data>7</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>pvt_gpi_riser2_inst(pvt_gpi)</data>
-                <data>21</data>
-                <data>16</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
                 <data>sync_cpu_data_low(SYNC_DATA_N)</data>
                 <data>0</data>
                 <data>8</data>
@@ -9585,53 +9645,7 @@
             <row>
                 <data>timer_gen_inst(timer_gen)</data>
                 <data>39</data>
-                <data>34</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u1(UART_MASTER)</data>
-                <data>65</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u2(UART_MASTER)</data>
-                <data>65</data>
-                <data>47</data>
+                <data>33</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9676,7 +9690,7 @@
             </row>
             <row>
                 <data>uart_master_u5(UART_MASTER)</data>
-                <data>66</data>
+                <data>65</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9699,29 +9713,6 @@
             </row>
             <row>
                 <data>uart_master_u6(UART_MASTER)</data>
-                <data>66</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u7(UART_MASTER)</data>
                 <data>65</data>
                 <data>47</data>
                 <data>0</data>
@@ -9745,7 +9736,7 @@
             </row>
             <row>
                 <data>uart_master_u10(UART_MASTER)</data>
-                <data>66</data>
+                <data>65</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9768,7 +9759,7 @@
             </row>
             <row>
                 <data>uart_master_u11(UART_MASTER)</data>
-                <data>65</data>
+                <data>66</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9828,10 +9819,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:9s</data>
-            <data>0h:0m:19s</data>
-            <data>0h:0m:12s</data>
-            <data>571</data>
+            <data>0h:0m:7s</data>
+            <data>0h:0m:17s</data>
+            <data>0h:0m:11s</data>
+            <data>561</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -10716,6 +10707,15 @@
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_THROTTLE_RISER2_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TPM_DRQ1_N' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TPM_DRQ1_N' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_PAL_TPM_DRQ1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+        </row>
+        <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_UART4_OCP_DEBUG_TX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
@@ -10975,465 +10975,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_USB2_SW_SEL_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BMC_I2C3_PAL_S_SCL1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID6' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_BOARD_ID7' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CABLE_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CHASSIS_ID0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CHASSIS_ID1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CLK_C42_IN_25M' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_EXCHANGE_S1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_EXCHANGE_S3' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_EXCHANGE_S4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_EXCHANGE_S5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO1_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO1_LD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO1_MOSI' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO_LD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPLD_M_S_SGPIO_MOSI' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D0_I2C1_PE_STRAP_SCL' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D0_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D0_UART_SOUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D1_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_D1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO0_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO0_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO2_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO2_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO3_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_MCIO3_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU0_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT2_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT3_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT4_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT5_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT6_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT7_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT9_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_GPIO_PORT10_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_I2C1_PE_STRAP_SCL' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D0_UART_SOUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D1_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_D1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO0_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO0_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO2_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO2_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO3_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_MCIO3_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU1_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME0_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME4_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME5_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME6_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME7_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME10_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME11_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME14_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME15_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME16_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_CPU_NVME17_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_DB9_TOD_UART_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_DB_UART_RX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_FAN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_JACK_CPU0_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_JACK_CPU0_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_JACK_CPU1_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_JACK_CPU1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_LEAR_CPU0_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_MB_CB_RISER1_PRSNT0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_MB_CB_RISER2_PRSNT0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_P5V_USB2_OCI2B' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_P12V_RISER1_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_P12V_RISER2_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_P12V_STBY_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_BMC_NCSI_CLK_50M_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_BMC_SS_DATA_IN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_BMC_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_BMC_UART4_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_EXT_RST_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU1_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU1_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU2_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU2_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU3_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU3_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU4_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_GPU4_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_LOM_FAN_ON_AUX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_M2_0_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_M2_1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_OCP_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_OCP_RISER_CPLD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_RISER1_VIN_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_RISER1_VIN_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_RISER2_VIN_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_RISER2_VIN_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_STBY_EFUSE_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_P12V_STBY_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_PGD_USB_UPD1_P1V1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_PGD_USB_UPD2_P1V1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_PWR_SW_IN_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER1_MODE_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER1_WAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER1_WIDTH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER2_MODE_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER2_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER2_WAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER2_WIDTH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_RISER4_PWR_PGD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UART4_OCP_DEBUG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD1_PEWAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD1_SMIB_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD2_PEWAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD2_SMIB_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD72020_1_ALART' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PAL_UPD72020_2_ALART' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PCA_REVISION_0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PCA_REVISION_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PCA_REVISION_2' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PCB_REVISION_0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PCB_REVISION_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PEX_USB1_PPON0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PEX_USB1_PPON1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PEX_USB2_PPON0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_PEX_USB2_PPON1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_REAR_BP_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_RISER_AUX_TOD_UART1_RXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_RISER_AUX_TOD_UART2_RXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_RISER_MB_PRSNT_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_Riser1_TOD_UART_RXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_Riser2_TOD_UART_RXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_2' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_3' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_6' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_7' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_SW_8' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_UART0_CPU_LOG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'i_UART2_PAL_OCP_RX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="6">ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/place_route/ports_defalut_attribute.txt(line number:0)] to confirm.</data>

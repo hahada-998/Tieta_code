@@ -1,7 +1,7 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v
-Size: 319753bytes
-Last modified time: 2026/02/11 17:36:54
+Size: 342572bytes
+Last modified time: 2026/03/02 22:50:14
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
 Size: 1528bytes
 Last modified time: 2026/02/09 19:29:17
@@ -66,8 +66,8 @@ Last modified time: 2021/02/10 09:29:54
 Size: 8743bytes
 Last modified time: 2025/09/02 21:32:58
 23. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/bmc_cpld_i2c_ram.v
-Size: 48551bytes
-Last modified time: 2026/02/09 20:58:01
+Size: 55327bytes
+Last modified time: 2026/03/02 15:24:40
 24. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/psu.v
 Size: 12372bytes
 Last modified time: 2026/02/09 19:25:10
@@ -75,11 +75,11 @@ Last modified time: 2026/02/09 19:25:10
 Size: 10000bytes
 Last modified time: 2026/02/09 19:25:35
 26. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_master.v
-Size: 46615bytes
-Last modified time: 2026/02/11 16:11:51
+Size: 45534bytes
+Last modified time: 2026/03/02 22:08:10
 27. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave.v
-Size: 84377bytes
-Last modified time: 2026/02/11 17:30:46
+Size: 84406bytes
+Last modified time: 2026/03/02 14:30:38
 28. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/timer_gen_50mhz.v
 Size: 5887bytes
 Last modified time: 2026/02/09 20:21:58
@@ -118,11 +118,11 @@ Last modified time: 2025/12/30 10:07:31
 
 Constraints:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc
-Size: 96638bytes
-Last modified time: 2026/02/11 15:51:22
+Size: 105177bytes
+Last modified time: 2026/03/02 16:13:02
 
 Physical Constraint Editor (Post-Map):
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/device_map/Tieta_Feiteng_1001_top.pcf
-Size: 23958bytes
-Last modified time: 2026/02/11 11:22:42
+Size: 24927bytes
+Last modified time: 2026/03/02 22:49:56
 

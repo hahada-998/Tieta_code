@@ -1,4 +1,4 @@
-##### Written on 2026/02/11 11:35:06 ################################################
+##### Written on 2026/03/02 21:49:09 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,7 +13,7 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 0 critical warning(s), 531 warning(s), out of 1119 constraint(s)
+Found 0 error(s), 0 critical warning(s), 381 warning(s), out of 1311 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
@@ -21,6 +21,15 @@ Constraints With Issues(infos):
 Other Issues(infos):
 ********************************************
 
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA1_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA1_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -174,15 +183,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_P5V_USB2_EN' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_P5V_USB2_EN' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_P5V_USB2_EN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_DATA_OUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_LOAD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_UART1_RX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_UART1_RX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -399,157 +399,7 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_USB2_SW_SEL_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_USB2_SW_SEL_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_USB2_SW_SEL_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BMC_I2C3_PAL_S_SCL1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID6' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_BOARD_ID7' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CABLE_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CHASSIS_ID0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CHASSIS_ID1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CLK_C42_IN_25M' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_EXCHANGE_S1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_EXCHANGE_S3' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_EXCHANGE_S4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_EXCHANGE_S5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO1_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO1_LD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO1_MOSI' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO_CLK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO_LD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPLD_M_S_SGPIO_MOSI' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D0_I2C1_PE_STRAP_SCL' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D0_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D0_UART_SOUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D1_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_D1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO0_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO0_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO2_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO2_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO3_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_MCIO3_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU0_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT2_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT3_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT4_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT5_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT6_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT7_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT9_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_GPIO_PORT10_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_I2C1_PE_STRAP_SCL' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D0_UART_SOUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D1_TEMP_OVER' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_D1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO0_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO0_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO2_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO2_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO3_CABLE_ID0_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_MCIO3_CABLE_ID1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU1_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME0_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME4_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME5_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME6_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME7_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME10_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME11_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME14_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME15_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME16_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_CPU_NVME17_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_DB9_TOD_UART_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_DB_UART_RX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_FAN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_JACK_CPU0_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_JACK_CPU0_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_JACK_CPU1_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_JACK_CPU1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_LEAR_CPU0_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_MB_CB_RISER1_PRSNT0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_MB_CB_RISER2_PRSNT0_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_P5V_USB2_OCI2B' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_P12V_RISER1_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_P12V_RISER2_VIN_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_P12V_STBY_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_BMC_NCSI_CLK_50M_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_BMC_SS_DATA_IN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_BMC_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_BMC_UART4_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_EXT_RST_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU1_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU1_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU2_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU2_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU3_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU3_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU4_EFUSE_OC' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_GPU4_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_LOM_FAN_ON_AUX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_M2_0_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_M2_1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_OCP_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_OCP_RISER_CPLD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_RISER1_VIN_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_RISER1_VIN_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_RISER2_VIN_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_RISER2_VIN_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_STBY_EFUSE_FLTB' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_P12V_STBY_EFUSE_PG' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_PGD_USB_UPD1_P1V1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_PGD_USB_UPD2_P1V1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_PWR_SW_IN_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER1_MODE_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER1_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER1_WAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PEX_USB1_PPON1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER1_WIDTH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER2_MODE_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER2_PRSNT_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER2_WAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER2_WIDTH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_RISER4_PWR_PGD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UART4_OCP_DEBUG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD1_PEWAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD1_SMIB_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD2_PEWAKE_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD2_SMIB_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD72020_1_ALART' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PAL_UPD72020_2_ALART' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PCA_REVISION_0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PCA_REVISION_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PCA_REVISION_2' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PCB_REVISION_0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PCB_REVISION_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PEX_USB1_PPON0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PEX_USB2_PPON0' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_PEX_USB2_PPON1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_REAR_BP_SNS_ALERT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_RISER_AUX_TOD_UART1_RXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_RISER_AUX_TOD_UART2_RXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_RISER_MB_PRSNT_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_Riser1_TOD_UART_RXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_Riser2_TOD_UART_RXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_1' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_2' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_3' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_4' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_5' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_6' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_7' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_SW_8' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_UART0_CPU_LOG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:i_UART2_PAL_OCP_RX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
 

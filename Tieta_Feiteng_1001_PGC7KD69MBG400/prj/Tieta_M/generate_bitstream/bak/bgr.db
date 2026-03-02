@@ -171,7 +171,7 @@
                     </column_headers>
                     <row>
                         <data>Hexadecimal Value Of Feature Control Settings</data>
-                        <data>20902</data>
+                        <data>28943</data>
                     </row>
                 </table>
             </table_container>
@@ -204,7 +204,7 @@
             <data>0h:0m:6s</data>
             <data>0h:0m:6s</data>
             <data>0h:0m:8s</data>
-            <data>415</data>
+            <data>417</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

@@ -308,7 +308,7 @@ wire [7:0] w_ram_003C;
 wire [7:0] w_ram_003D;
 wire [7:0] w_ram_003E;
 wire [7:0] w_ram_003F;
-/* w_ran_0033~w_ram_003F 预留风扇转速寄存器
+w_ran_0033~w_ram_003F 预留风扇转速寄存器 */
 
 wire [7:0] w_ram_0050;
 wire [7:0] w_ram_0052;
@@ -660,16 +660,16 @@ assign w_ram_0052 = {6'b0,psu_smb_alert_n[1:0]};
 assign w_ram_0053 = {6'b0,ps_fail[1:0]};
 assign w_ram_0054 = {6'b0,ps_dcok[1:0]};
 // assign w_ram_0056 = {4'b0,pal_gpu_fan4_foo,pal_gpu_fan3_foo,pal_gpu_fan2_foo,pal_gpu_fan1_foo};
-assign w_ram_0057 = {ocp2_fan_foo,ocp2_fan_prsnt,ocp1_fan_foo,ocp1_fan_prsnt,ocp2_fan_on_aux,ocp_fan_on_aux,2'b0};
+assign w_ram_0057 = {ocp2_fan_foo,ocp2_fan_prsnt,ocp1_fan_foo,ocp1_fan_prsnt,/*ocp2_fan_on_aux,ocp_fan_on_aux*/4'b0};
 assign w_ram_0058 = fan_prsnt;
 // assign w_ram_0059 = {4'b0,gpu_fan_prsnt[3:0]};
 assign w_ram_0070 = {board2_type,board2_pcb_rev,1'b0};
 assign w_ram_0071 = {4'b0, bp_cpu_1p2p, bp_prsnt};
 assign w_ram_0072 = {/*ocp2_fan_on_aux,ocp2_prsnt,ocp_fan_on_aux,*/3'b0, ocp_prsnt,4'b0};
 assign w_ram_0080 = {6'b0,riser2_prsnt,riser1_prsnt};
-assign w_ram_0090 = {cpu_nvme0_prsnt_n,cpu_nvme1_prsnt_n,cpu_nvme2_prsnt_n,cpu_nvme3_prsnt_n,cpu_nvme4_prsnt_n,cpu_nvme5_prsnt_n,cpu_nvme6_prsnt_n,cpu_nvme7_prsnt_n};
-assign w_ram_0091 = {cpu_nvme8_prsnt_n,cpu_nvme9_prsnt_n,cpu_nvme10_prsnt_n,cpu_nvme11_prsnt_n,cpu_nvme12_prsnt_n,cpu_nvme13_prsnt_n,cpu_nvme14_prsnt_n,cpu_nvme15_prsnt_n};
-assign w_ram_0092 = {cpu_nvme16_prsnt_n,cpu_nvme17_prsnt_n,cpu_nvme18_prsnt_n,cpu_nvme19_prsnt_n,cpu_nvme22_prsnt_n,cpu_nvme23_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme25_prsnt_n};
+assign w_ram_0090 = {cpu_nvme0_prsnt_n,cpu_nvme1_prsnt_n,2'b0/*cpu_nvme2_prsnt_n,cpu_nvme3_prsnt_n*/,cpu_nvme4_prsnt_n,cpu_nvme5_prsnt_n,cpu_nvme6_prsnt_n,cpu_nvme7_prsnt_n};
+assign w_ram_0091 = {/*cpu_nvme8_prsnt_n,cpu_nvme9_prsnt_n,*/2'b0, cpu_nvme10_prsnt_n,cpu_nvme11_prsnt_n,/*cpu_nvme12_prsnt_n,cpu_nvme13_prsnt_n,*/2'b0, cpu_nvme14_prsnt_n,cpu_nvme15_prsnt_n};
+assign w_ram_0092 = {cpu_nvme16_prsnt_n,cpu_nvme17_prsnt_n,6'b0/*cpu_nvme18_prsnt_n,cpu_nvme19_prsnt_n,cpu_nvme22_prsnt_n,cpu_nvme23_prsnt_n,cpu_nvme24_prsnt_n,cpu_nvme25_prsnt_n*/};
 assign w_ram_00A0 = {st_steady_pwrok, power_on_off, power_seq_sm};
 assign w_ram_00A1 = {1'b0,power_fault,pwrseq_sm_fault_det};
 assign w_ram_00A2 = pf_class0_b0;

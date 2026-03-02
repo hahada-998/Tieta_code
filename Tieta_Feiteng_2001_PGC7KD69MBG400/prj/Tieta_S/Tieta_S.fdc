@@ -1,6 +1,39 @@
 create_clock -name {i_CLK_C42_IN_25M} [get_ports {i_CLK_C42_IN_25M}] -period {40} -waveform {0.000 20.000}
 create_generated_clock -name {clk_50m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout0}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {2} -duty_cycle {50.000}
 create_generated_clock -name {clk_25m} -source [get_pins {pll_inst/clkin1}] [get_pins {pll_inst/clkout1}] -master_clock [get_clocks i_CLK_C42_IN_25M] -multiply_by {1} -duty_cycle {50.000}
+define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_LOC} {L17}
+define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_LOC} {M16}
+define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_LOC} {M15}
+define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_LOC} {N17}
+define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_BUS_KEEPER} {NONE}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_LOC} {C9}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TCK} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_LOC} {C7}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TDI} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_LOC} {E8}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TDO} {PAP_IO_STANDARD} {LVCMOS33}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_DIRECTION} {INPUT}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_LOC} {D9}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_VCCIO} {3.3}
+# define_attribute {p:i_PAL2_TMS} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_DIRECTION} {INOUT}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_LOC} {V8}
 define_attribute {p:io_BMC_I2C3_PAL_S_SDA1_R} {PAP_IO_VCCIO} {3.3}
@@ -205,18 +238,9 @@ define_attribute {p:o_P5V_USB2_EN} {PAP_IO_DIRECTION} {OUTPUT}
 define_attribute {p:o_P5V_USB2_EN} {PAP_IO_LOC} {M14}
 define_attribute {p:o_P5V_USB2_EN} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:o_P5V_USB2_EN} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_DIRECTION} {OUTPUT}
-define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_LOC} {L17}
-define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:o_PAL_BMC_SS_CLK} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_DIRECTION} {OUTPUT}
-define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_LOC} {M15}
-define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:o_PAL_BMC_SS_DATA_OUT} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_DIRECTION} {OUTPUT}
-define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_LOC} {M16}
-define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:o_PAL_BMC_SS_LOAD_N} {PAP_IO_STANDARD} {LVCMOS33}
+
+
+
 define_attribute {p:o_PAL_BMC_UART1_RX} {PAP_IO_DIRECTION} {OUTPUT}
 define_attribute {p:o_PAL_BMC_UART1_RX} {PAP_IO_LOC} {E17}
 define_attribute {p:o_PAL_BMC_UART1_RX} {PAP_IO_VCCIO} {3.3}
@@ -857,30 +881,10 @@ define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_LOC} {T8}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_STANDARD} {LVCMOS33}
-# define_attribute {p:i_PAL2_TCK} {PAP_IO_DIRECTION} {INPUT}
-# define_attribute {p:i_PAL2_TCK} {PAP_IO_LOC} {C9}
-# define_attribute {p:i_PAL2_TCK} {PAP_IO_VCCIO} {3.3}
-# define_attribute {p:i_PAL2_TCK} {PAP_IO_STANDARD} {LVCMOS33}
-# define_attribute {p:i_PAL2_TDI} {PAP_IO_DIRECTION} {INPUT}
-# define_attribute {p:i_PAL2_TDI} {PAP_IO_LOC} {C7}
-# define_attribute {p:i_PAL2_TDI} {PAP_IO_VCCIO} {3.3}
-# define_attribute {p:i_PAL2_TDI} {PAP_IO_STANDARD} {LVCMOS33}
-# define_attribute {p:i_PAL2_TDO} {PAP_IO_DIRECTION} {INPUT}
-# define_attribute {p:i_PAL2_TDO} {PAP_IO_LOC} {E8}
-# define_attribute {p:i_PAL2_TDO} {PAP_IO_VCCIO} {3.3}
-# define_attribute {p:i_PAL2_TDO} {PAP_IO_STANDARD} {LVCMOS33}
-# define_attribute {p:i_PAL2_TMS} {PAP_IO_DIRECTION} {INPUT}
-# define_attribute {p:i_PAL2_TMS} {PAP_IO_LOC} {D9}
-# define_attribute {p:i_PAL2_TMS} {PAP_IO_VCCIO} {3.3}
-# define_attribute {p:i_PAL2_TMS} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_LOC} {F17}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_STANDARD} {LVCMOS33}
-define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_DIRECTION} {INPUT}
-define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_LOC} {N17}
-define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_VCCIO} {3.3}
-define_attribute {p:i_PAL_BMC_SS_DATA_IN} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_PAL_BMC_UART1_TX} {PAP_IO_DIRECTION} {INPUT}
 define_attribute {p:i_PAL_BMC_UART1_TX} {PAP_IO_LOC} {D16}
 define_attribute {p:i_PAL_BMC_UART1_TX} {PAP_IO_VCCIO} {3.3}
@@ -1169,3 +1173,195 @@ define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_STANDARD} {LVCMOS33}
 # define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_LOC} {D11}
 # define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_VCCIO} {3.3}
 # define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:o_PAL_TPM_DRQ1_N} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:o_PAL_TPM_DRQ1_N} {PAP_IO_LOC} {W2}
+define_attribute {p:o_PAL_TPM_DRQ1_N} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:o_PAL_TPM_DRQ1_N} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID0} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID2} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_BOARD_ID2} {PAP_IO_LOC} {Y6}
+define_attribute {p:i_BOARD_ID2} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_BOARD_ID2} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_BOARD_ID2} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID3} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_BOARD_ID3} {PAP_IO_LOC} {W6}
+define_attribute {p:i_BOARD_ID3} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_BOARD_ID3} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_BOARD_ID3} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID4} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID5} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID6} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_BOARD_ID7} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CABLE_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CHASSIS_ID0_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CHASSIS_ID1_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CLK_C42_IN_25M} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_EXCHANGE_S1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_EXCHANGE_S3} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_EXCHANGE_S4} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_EXCHANGE_S5} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO1_CLK} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO1_LD_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO1_MOSI} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO_CLK} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO_LD_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPLD_M_S_SGPIO_MOSI} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D0_I2C1_PE_STRAP_SCL} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D0_TEMP_OVER} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D0_UART1_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D0_UART_SOUT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D1_TEMP_OVER} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_D1_UART1_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO0_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO0_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO2_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO2_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO3_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_MCIO3_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU0_VIN_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT2_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT3_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT4_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT5_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT6_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT7_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT9_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_GPIO_PORT10_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_I2C1_PE_STRAP_SCL} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_TEMP_OVER} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_UART1_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D0_UART_SOUT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D1_TEMP_OVER} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_D1_UART1_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO0_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO0_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO2_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO2_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO3_CABLE_ID0_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_MCIO3_CABLE_ID1_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU1_VIN_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME0_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME1_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME4_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME5_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME6_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME7_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME10_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME11_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME14_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME15_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME16_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_CPU_NVME17_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_DB9_TOD_UART_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_DBG_CPU0_UART1_RX_CONN_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_DBG_PAL_BMC_UART1_RX_CONN_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_DB_UART_RX_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_FAN_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_JACK_CPU0_D0_UART_SIN} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_JACK_CPU0_UART1_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_JACK_CPU1_D0_UART_SIN} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_JACK_CPU1_UART1_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_LEAR_CPU0_UART1_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_MB_CB_RISER1_PRSNT0_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_MB_CB_RISER2_PRSNT0_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_P5V_USB2_OCI2B} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_P12V_RISER1_VIN_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_P12V_RISER2_VIN_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_P12V_STBY_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_BMC_NCSI_CLK_50M_R} {PAP_IO_BUS_KEEPER} {NONE}
+
+define_attribute {p:i_PAL_BMC_UART1_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_BMC_UART4_TX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_EXT_RST_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU1_EFUSE_OC} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU1_EFUSE_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU2_EFUSE_OC} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU2_EFUSE_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU3_EFUSE_OC} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU3_EFUSE_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU4_EFUSE_OC} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_GPU4_EFUSE_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_LOM_FAN_ON_AUX_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_M2_0_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_M2_1_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_OCP_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_OCP_RISER_CPLD} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_RISER1_VIN_FLTB} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_RISER1_VIN_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_RISER2_VIN_FLTB} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_RISER2_VIN_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_STBY_EFUSE_FLTB} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_P12V_STBY_EFUSE_PG} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_PGD_USB_UPD1_P1V1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_PGD_USB_UPD2_P1V1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_PWR_SW_IN_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER1_MODE_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER1_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER1_WAKE_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER1_WIDTH_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER2_MODE_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER2_PRSNT_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER2_WAKE_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER2_WIDTH_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_RISER4_PWR_PGD} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_S_DONE} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_S_DONE} {PAP_IO_LOC} {A19}
+define_attribute {p:i_PAL_S_DONE} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_S_DONE} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_S_DONE} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_S_INITN} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_S_INITN} {PAP_IO_LOC} {C17}
+define_attribute {p:i_PAL_S_INITN} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_S_INITN} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_S_INITN} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_LOC} {C13}
+define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_S_JTAGEN} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_LOC} {D13}
+define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_S_PROGRAM_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_S_SN} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_PAL_S_SN} {PAP_IO_LOC} {Y20}
+define_attribute {p:i_PAL_S_SN} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_PAL_S_SN} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_PAL_S_SN} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UART4_OCP_DEBUG_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD1_PEWAKE_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD1_SMIB_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD2_PEWAKE_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD2_SMIB_N} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD72020_1_ALART} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PAL_UPD72020_2_ALART} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PCA_REVISION_0} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PCA_REVISION_1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PCA_REVISION_2} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PCB_REVISION_0} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PCB_REVISION_1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PEX_USB1_PPON0} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PEX_USB1_PPON1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PEX_USB2_PPON0} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_PEX_USB2_PPON1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_REAR_BP_SNS_ALERT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_RISER_AUX_TOD_UART1_RXD} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_RISER_AUX_TOD_UART2_RXD} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_RISER_MB_PRSNT_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_Riser1_TOD_UART_RXD_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_Riser2_TOD_UART_RXD_R} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_1} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_2} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_3} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_4} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_5} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_6} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_7} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_SW_8} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:i_UART2_PAL_OCP_RX_R} {PAP_IO_BUS_KEEPER} {NONE}

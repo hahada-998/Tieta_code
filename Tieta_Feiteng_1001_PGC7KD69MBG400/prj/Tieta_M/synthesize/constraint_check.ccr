@@ -1,4 +1,4 @@
-##### Written on 2026/02/11 17:37:27 ################################################
+##### Written on 2026/03/02 22:50:49 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,7 +13,7 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 0 critical warning(s), 325 warning(s), out of 1316 constraint(s)
+Found 0 error(s), 0 critical warning(s), 385 warning(s), out of 1424 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
@@ -348,4 +348,64 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_0_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_1_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_2_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_PEU_PREST_3_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_0_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_1_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_2_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_PEU_PREST_3_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_MOSI' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_MOSI' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_MOSI' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_SCK' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_SCK' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_SCK' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_SB_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_SB_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_SB_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_SB_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU0_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_FT_CPU1_SCP_BOOT_FROM_FLASH_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
 

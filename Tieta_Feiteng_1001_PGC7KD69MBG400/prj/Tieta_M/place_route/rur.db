@@ -178,7 +178,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1838</data>
+                    <data>1496</data>
                     <data>0</data>
                 </row>
                 <row>
@@ -192,6 +192,19 @@
                     <data>CLKOUT</data>
                     <data>ntclkbufg_1</data>
                     <data>2</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>clkbufgs_6</data>
+                    <data>USSMBUF_83_138</data>
+                    <data>CLKIN</data>
+                    <data>genblk1[0].fan_pwm_tach_m/w_clk_1s_pos</data>
+                    <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/N0/gateop_perm</data>
+                    <data>Z</data>
+                    <data>CLMS_87_157</data>
+                    <data>CLKOUT</data>
+                    <data>ntussmbuf_ot_0</data>
+                    <data>44</data>
                     <data>0</data>
                 </row>
             </table>
@@ -214,10 +227,10 @@
                     <data>pll_inst/u_pll_e2/goppll</data>
                     <data>PLL_11_20</data>
                     <data>CLKFB</data>
-                    <data>_GND215</data>
+                    <data>_GND213</data>
                     <data> - </data>
                     <data> - </data>
-                    <data>GND_215</data>
+                    <data>GND_213</data>
                     <data>Z</data>
                     <data>HARD0N1_6_19</data>
                 </row>
@@ -248,7 +261,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1838</data>
+                    <data>1496</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -314,6 +327,25 @@
             <data>i_BMC_I2C9_PAL_M_SCL1_R</data>
             <data>input</data>
             <data>B2</data>
+            <data>BANK0</data>
+            <data>1.8</data>
+            <data>LVCMOS18</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_BMC_JTAGM_NTRST_R</data>
+            <data>input</data>
+            <data>A2</data>
             <data>BANK0</data>
             <data>1.8</data>
             <data>LVCMOS18</data>
@@ -1109,82 +1141,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D0_PEU_PREST_0_N_R</data>
-            <data>input</data>
-            <data>U10</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_D0_PEU_PREST_1_N_R</data>
-            <data>input</data>
-            <data>U12</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_D0_PEU_PREST_2_N_R</data>
-            <data>input</data>
-            <data>Y12</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_D0_PEU_PREST_3_N_R</data>
-            <data>input</data>
-            <data>W11</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>i_CPU0_D0_PWR_CTR0_R</data>
             <data>input</data>
             <data>Y13</data>
@@ -1261,9 +1217,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D1_PEU_PREST_0_N_R</data>
+            <data>i_CPU0_D1_PWR_CTR0_R</data>
             <data>input</data>
-            <data>Y17</data>
+            <data>Y6</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1280,9 +1236,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D1_PEU_PREST_1_N_R</data>
+            <data>i_CPU0_D1_PWR_CTR1_R</data>
             <data>input</data>
-            <data>W19</data>
+            <data>Y18</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1299,9 +1255,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D1_PEU_PREST_2_N_R</data>
+            <data>i_CPU0_D1_SPI0_MISO_R</data>
             <data>input</data>
-            <data>V15</data>
+            <data>P10</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1318,9 +1274,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU0_D1_PEU_PREST_3_N_R</data>
+            <data>i_CPU0_RST_VPP_I2C_N</data>
             <data>input</data>
-            <data>Y19</data>
+            <data>T10</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1489,9 +1445,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU1_D0_PEU_PREST_0_N_R</data>
+            <data>i_CPU1_D0_PWR_CTR0_R</data>
             <data>input</data>
-            <data>Y10</data>
+            <data>W9</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1508,47 +1464,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU1_D0_PEU_PREST_1_N_R</data>
+            <data>i_CPU1_D0_PWR_CTR1_R</data>
             <data>input</data>
-            <data>Y9</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU1_D0_PEU_PREST_2_N_R</data>
-            <data>input</data>
-            <data>V14</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU1_D0_PEU_PREST_3_N_R</data>
-            <data>input</data>
-            <data>Y16</data>
+            <data>Y8</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1603,9 +1521,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU1_D1_PEU_PREST_0_N_R</data>
+            <data>i_CPU1_D1_PWR_CTR0_R</data>
             <data>input</data>
-            <data>Y4</data>
+            <data>Y5</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1622,9 +1540,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU1_D1_PEU_PREST_1_N_R</data>
+            <data>i_CPU1_D1_PWR_CTR1_R</data>
             <data>input</data>
-            <data>W4</data>
+            <data>W3</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1641,28 +1559,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_CPU1_D1_PEU_PREST_2_N_R</data>
+            <data>i_CPU1_RST_VPP_I2C_N</data>
             <data>input</data>
-            <data>Y3</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU1_D1_PEU_PREST_3_N_R</data>
-            <data>input</data>
-            <data>W5</data>
+            <data>W6</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -2914,6 +2813,120 @@
             <data>NA</data>
         </row>
         <row>
+            <data>i_PAL_MAIN_PWR_OK</data>
+            <data>input</data>
+            <data>K6</data>
+            <data>BANK4</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_M_DONE</data>
+            <data>input</data>
+            <data>A19</data>
+            <data>BANK0</data>
+            <data>1.8</data>
+            <data>LVCMOS18</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_M_INITN</data>
+            <data>input</data>
+            <data>C17</data>
+            <data>BANK0</data>
+            <data>1.8</data>
+            <data>LVCMOS18</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_M_JTAGEN</data>
+            <data>input</data>
+            <data>C13</data>
+            <data>BANK0</data>
+            <data>1.8</data>
+            <data>LVCMOS18</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_M_PROGRAM_N</data>
+            <data>input</data>
+            <data>D13</data>
+            <data>BANK0</data>
+            <data>1.8</data>
+            <data>LVCMOS18</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_PAL_M_SN</data>
+            <data>input</data>
+            <data>Y20</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>i_PAL_P12V_CPU0_VIN_FLTB</data>
             <data>input</data>
             <data>K18</data>
@@ -3978,6 +3991,82 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_CPU0_D0_PEU_PREST_0_N_R</data>
+            <data>output</data>
+            <data>U10</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D0_PEU_PREST_1_N_R</data>
+            <data>output</data>
+            <data>U12</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D0_PEU_PREST_2_N_R</data>
+            <data>output</data>
+            <data>Y12</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D0_PEU_PREST_3_N_R</data>
+            <data>output</data>
+            <data>W11</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_CPU0_D0_SE_RECOVERY_R</data>
             <data>output</data>
             <data>W12</data>
@@ -4016,9 +4105,142 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_CPU0_D1_PEU_PREST_0_N_R</data>
+            <data>output</data>
+            <data>Y17</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_PEU_PREST_1_N_R</data>
+            <data>output</data>
+            <data>W19</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_PEU_PREST_2_N_R</data>
+            <data>output</data>
+            <data>V15</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_PEU_PREST_3_N_R</data>
+            <data>output</data>
+            <data>Y19</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_CPU0_D1_SE_RECOVERY_R</data>
             <data>output</data>
             <data>T14</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_SPI0_CS</data>
+            <data>output</data>
+            <data>R13</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_SPI0_MOSI</data>
+            <data>output</data>
+            <data>P14</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU0_D1_SPI0_SCK</data>
+            <data>output</data>
+            <data>V12</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4111,9 +4333,104 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_CPU0_SB_EN_R</data>
+            <data>output</data>
+            <data>V16</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_CPU1_D0123_SOCKET_ID_R</data>
             <data>output</data>
             <data>W16</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D0_PEU_PREST_0_N_R</data>
+            <data>output</data>
+            <data>Y10</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D0_PEU_PREST_1_N_R</data>
+            <data>output</data>
+            <data>Y9</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D0_PEU_PREST_2_N_R</data>
+            <data>output</data>
+            <data>V14</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D0_PEU_PREST_3_N_R</data>
+            <data>output</data>
+            <data>Y16</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4152,6 +4469,82 @@
             <data>o_CPU1_D0_SOFT_SHUTDOWN_INT_N</data>
             <data>output</data>
             <data>T8</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D1_PEU_PREST_0_N_R</data>
+            <data>output</data>
+            <data>Y4</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D1_PEU_PREST_1_N_R</data>
+            <data>output</data>
+            <data>W4</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D1_PEU_PREST_2_N_R</data>
+            <data>output</data>
+            <data>Y3</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_D1_PEU_PREST_3_N_R</data>
+            <data>output</data>
+            <data>W5</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4247,6 +4640,63 @@
             <data>o_CPU1_POR_N_R</data>
             <data>output</data>
             <data>V9</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_SB_EN_R</data>
+            <data>output</data>
+            <data>W2</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_FT_CPU0_SCP_BOOT_FROM_FLASH_R</data>
+            <data>output</data>
+            <data>W20</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_FT_CPU1_SCP_BOOT_FROM_FLASH_R</data>
+            <data>output</data>
+            <data>W8</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -5498,6 +5948,25 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_PAL_RISER2_SELECT</data>
+            <data>output</data>
+            <data>T20</data>
+            <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_PAL_RISER2_SWITCH_EN</data>
             <data>output</data>
             <data>M14</data>
@@ -5875,9 +6344,9 @@
             <data>IOBS_0_31</data>
             <data>BANK0</data>
             <data>DIFFIO_B0_39N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_BMC_JTAGM_NTRST_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>A1</data>
@@ -6244,9 +6713,9 @@
             <data>IOBS_0_224</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0P/INIT_FLAG_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_M_INITN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>D11</data>
@@ -6280,18 +6749,18 @@
             <data>IOBS_0_159</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12N/RSTN</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_M_PROGRAM_N</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>C13</data>
             <data>IOBS_0_158</data>
             <data>BANK0</data>
             <data>DIFFI_B0_12P/JTAGEN</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_M_JTAGEN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>C11</data>
@@ -6406,9 +6875,9 @@
             <data>IOBS_0_225</data>
             <data>BANK0</data>
             <data>DIFFI_B0_0N/CFG_DONE</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_M_DONE</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>D8</data>
@@ -7063,9 +7532,9 @@
             <data>IOBS_116_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_33P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_PAL_RISER2_SELECT</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>U20</data>
@@ -7234,8 +7703,8 @@
             <data>IOBS_156_115</data>
             <data>BANK2</data>
             <data>DIFFI_B2_21N</data>
-            <data>i_CPU0_D0_PEU_PREST_3_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D0_PEU_PREST_3_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7270,8 +7739,8 @@
             <data>IOBS_156_91</data>
             <data>BANK2</data>
             <data>DIFFI_B2_25N/CLK0N_B2</data>
-            <data>i_CPU1_D0_PEU_PREST_1_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D0_PEU_PREST_1_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7288,9 +7757,9 @@
             <data>IOBS_156_85</data>
             <data>BANK2</data>
             <data>DIFFI_B2_27N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU1_D0_PWR_CTR1_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>U9</data>
@@ -7324,9 +7793,9 @@
             <data>IOBS_156_117</data>
             <data>BANK2</data>
             <data>DIFFI_B2_20N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU0_RST_VPP_I2C_N</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>R14</data>
@@ -7342,8 +7811,8 @@
             <data>IOBS_156_211</data>
             <data>BANK2</data>
             <data>DIFFI_B2_3N</data>
-            <data>i_CPU0_D1_PEU_PREST_1_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D1_PEU_PREST_1_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7369,9 +7838,9 @@
             <data>IOBS_156_201</data>
             <data>BANK2</data>
             <data>DIFFI_B2_6N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_CPU0_SB_EN_R</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>U14</data>
@@ -7387,9 +7856,9 @@
             <data>IOBS_156_189</data>
             <data>BANK2</data>
             <data>DIFFI_B2_8N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_CPU0_D1_SPI0_CS</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>W17</data>
@@ -7540,9 +8009,9 @@
             <data>IOBS_156_55</data>
             <data>BANK2</data>
             <data>DIFFI_B2_33N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU1_D1_PWR_CTR0_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>R8</data>
@@ -7558,8 +8027,8 @@
             <data>IOBS_156_49</data>
             <data>BANK2</data>
             <data>DIFFI_B2_35N</data>
-            <data>i_CPU1_D1_PEU_PREST_0_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D1_PEU_PREST_0_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7576,8 +8045,8 @@
             <data>IOBS_156_37</data>
             <data>BANK2</data>
             <data>DIFFI_B2_37N</data>
-            <data>i_CPU1_D1_PEU_PREST_2_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D1_PEU_PREST_2_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7594,35 +8063,35 @@
             <data>IOBS_156_61</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31N/MISO_SO</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU0_D1_PWR_CTR0_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>W20</data>
             <data>IOBS_156_223</data>
             <data>BANK2</data>
             <data>DIFFI_B2_1N/MOSI_SI</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_FT_CPU0_SCP_BOOT_FROM_FLASH_R</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>P14</data>
             <data>IOBR_156_212</data>
             <data>BANK2</data>
             <data>DIFFI_B2_2P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_CPU0_D1_SPI0_MOSI</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>Y19</data>
             <data>IOBR_156_210</data>
             <data>BANK2</data>
             <data>DIFFI_B2_3P</data>
-            <data>i_CPU0_D1_PEU_PREST_3_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D1_PEU_PREST_3_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7639,17 +8108,17 @@
             <data>IOBR_156_204</data>
             <data>BANK2</data>
             <data>DIFFI_B2_5P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU0_D1_PWR_CTR1_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>V15</data>
             <data>IOBR_156_200</data>
             <data>BANK2</data>
             <data>DIFFI_B2_6P</data>
-            <data>i_CPU0_D1_PEU_PREST_2_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D1_PEU_PREST_2_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7657,8 +8126,8 @@
             <data>IOBR_156_198</data>
             <data>BANK2</data>
             <data>DIFFI_B2_7P</data>
-            <data>i_CPU1_D0_PEU_PREST_2_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D0_PEU_PREST_2_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7675,8 +8144,8 @@
             <data>IOBR_156_186</data>
             <data>BANK2</data>
             <data>DIFFI_B2_9P</data>
-            <data>i_CPU0_D1_PEU_PREST_0_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D1_PEU_PREST_0_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7693,8 +8162,8 @@
             <data>IOBR_156_180</data>
             <data>BANK2</data>
             <data>DIFFI_B2_11P</data>
-            <data>i_CPU1_D0_PEU_PREST_3_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D0_PEU_PREST_3_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7720,8 +8189,8 @@
             <data>IOBR_156_152</data>
             <data>BANK2</data>
             <data>DIFFI_B2_14P</data>
-            <data>i_CPU0_D0_PEU_PREST_1_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D0_PEU_PREST_1_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7738,9 +8207,9 @@
             <data>IOBR_156_146</data>
             <data>BANK2</data>
             <data>DIFFI_B2_16P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_CPU0_D1_SPI0_SCK</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>Y13</data>
@@ -7765,8 +8234,8 @@
             <data>IOBR_156_120</data>
             <data>BANK2</data>
             <data>DIFFI_B2_19P/CLK1P_B2</data>
-            <data>i_CPU0_D0_PEU_PREST_2_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D0_PEU_PREST_2_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7792,8 +8261,8 @@
             <data>IOBR_156_110</data>
             <data>BANK2</data>
             <data>DIFFI_B2_22P</data>
-            <data>i_CPU0_D0_PEU_PREST_0_N_R</data>
-            <data>input</data>
+            <data>o_CPU0_D0_PEU_PREST_0_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7801,8 +8270,8 @@
             <data>IOBR_156_108</data>
             <data>BANK2</data>
             <data>DIFFI_B2_23P</data>
-            <data>i_CPU1_D0_PEU_PREST_0_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D0_PEU_PREST_0_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7810,18 +8279,18 @@
             <data>IOBR_156_92</data>
             <data>BANK2</data>
             <data>DIFFI_B2_24P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU0_D1_SPI0_MISO_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>W9</data>
             <data>IOBR_156_90</data>
             <data>BANK2</data>
             <data>DIFFI_B2_25P/CLK0P_B2</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU1_D0_PWR_CTR0_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>V9</data>
@@ -7837,9 +8306,9 @@
             <data>IOBR_156_84</data>
             <data>BANK2</data>
             <data>DIFFI_B2_27P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_FT_CPU1_SCP_BOOT_FROM_FLASH_R</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>V8</data>
@@ -7873,9 +8342,9 @@
             <data>IOBR_156_222</data>
             <data>BANK2</data>
             <data>DIFFI_B2_1P/FCSI_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_M_SN</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>T16</data>
@@ -7909,9 +8378,9 @@
             <data>IOBR_156_30</data>
             <data>BANK2</data>
             <data>DIFFI_B2_39P/FCS_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_CPU1_SB_EN_R</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>T7</data>
@@ -7927,8 +8396,8 @@
             <data>IOBR_156_54</data>
             <data>BANK2</data>
             <data>DIFFI_B2_33P</data>
-            <data>i_CPU1_D1_PEU_PREST_3_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D1_PEU_PREST_3_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7945,8 +8414,8 @@
             <data>IOBR_156_48</data>
             <data>BANK2</data>
             <data>DIFFI_B2_35P</data>
-            <data>i_CPU1_D1_PEU_PREST_1_N_R</data>
-            <data>input</data>
+            <data>o_CPU1_D1_PEU_PREST_1_N_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7963,9 +8432,9 @@
             <data>IOBR_156_36</data>
             <data>BANK2</data>
             <data>DIFFI_B2_37P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU1_D1_PWR_CTR1_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>P7</data>
@@ -7981,9 +8450,9 @@
             <data>IOBR_156_60</data>
             <data>BANK2</data>
             <data>DIFFI_B2_31P/CFG_CLK</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_CPU1_RST_VPP_I2C_N</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>N4</data>
@@ -8269,9 +8738,9 @@
             <data>IOBS_62_0</data>
             <data>BANK4</data>
             <data>DIFFI_B4_3P</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_PAL_MAIN_PWR_OK</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>L1</data>
@@ -8751,35 +9220,35 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>359</data>
+            <data>335</data>
             <data>592</data>
-            <data>61</data>
+            <data>57</data>
             <row>
                 <data>FF</data>
-                <data>762</data>
+                <data>635</data>
                 <data>3552</data>
-                <data>22</data>
+                <data>18</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1020</data>
+                <data>936</data>
                 <data>2368</data>
-                <data>44</data>
+                <data>40</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>845</data>
+                    <data>760</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>163</data>
+                    <data>166</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>12</data>
+                    <data>10</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8787,23 +9256,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>510</data>
+            <data>435</data>
             <data>888</data>
-            <data>58</data>
+            <data>49</data>
             <row>
                 <data>FF</data>
-                <data>1179</data>
+                <data>997</data>
                 <data>5328</data>
-                <data>23</data>
+                <data>19</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1366</data>
+                <data>1243</data>
                 <data>3552</data>
-                <data>39</data>
+                <data>35</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>1217</data>
+                    <data>1100</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8821,13 +9290,13 @@
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>125</data>
+                    <data>133</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>24</data>
+                    <data>10</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8835,9 +9304,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>284</data>
+            <data>308</data>
             <data>336</data>
-            <data>85</data>
+            <data>92</data>
             <row>
                 <data>IOBD</data>
                 <data>21</data>
@@ -8846,15 +9315,15 @@
             </row>
             <row>
                 <data>IOBR</data>
-                <data>30</data>
+                <data>40</data>
                 <data>42</data>
-                <data>72</data>
+                <data>96</data>
             </row>
             <row>
                 <data>IOBS</data>
-                <data>233</data>
+                <data>247</data>
                 <data>273</data>
-                <data>86</data>
+                <data>91</data>
             </row>
         </row>
         <row>
@@ -8895,9 +9364,9 @@
         </row>
         <row>
             <data>HARD0N1</data>
-            <data>146</data>
+            <data>135</data>
             <data>936</data>
-            <data>16</data>
+            <data>15</data>
         </row>
         <row>
             <data>IOCKBRG</data>
@@ -8919,21 +9388,21 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>132</data>
+            <data>138</data>
             <data>252</data>
-            <data>53</data>
+            <data>55</data>
         </row>
         <row>
             <data>IOLDLY</data>
-            <data>47</data>
+            <data>41</data>
             <data>84</data>
-            <data>56</data>
+            <data>49</data>
         </row>
         <row>
             <data>IOL</data>
-            <data>284</data>
+            <data>308</data>
             <data>336</data>
-            <data>85</data>
+            <data>92</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -9003,9 +9472,9 @@
         </row>
         <row>
             <data>USSMBUF</data>
-            <data>0</data>
+            <data>1</data>
             <data>8</data>
-            <data>0</data>
+            <data>13</data>
             <row>
                 <data>USSMBUF as Bypass</data>
                 <data>0</data>
@@ -9040,15 +9509,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_1001_top</data>
-            <data>2062</data>
-            <data>1941</data>
+            <data>1860</data>
+            <data>1632</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>284</data>
+            <data>308</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9059,7 +9528,7 @@
             <data>1</data>
             <data>0</data>
             <data>2</data>
-            <data>0</data>
+            <data>1</data>
             <row>
                 <data>Edge_Detect_u3(Edge_Detect1)</data>
                 <data>0</data>
@@ -9085,7 +9554,7 @@
             </row>
             <row>
                 <data>UID_Function_u0(UID_Function)</data>
-                <data>50</data>
+                <data>49</data>
                 <data>30</data>
                 <data>0</data>
                 <data>0</data>
@@ -9177,8 +9646,8 @@
             </row>
             <row>
                 <data>bmc_cpld_i2c_ram_u0(bmc_cpld_i2c_ram)</data>
-                <data>483</data>
-                <data>376</data>
+                <data>477</data>
+                <data>320</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9199,7 +9668,7 @@
                 <data>0</data>
                 <row>
                     <data>i2c_slave_bmc_u0(i2c_slave_bmc)</data>
-                    <data>215</data>
+                    <data>214</data>
                     <data>168</data>
                     <data>0</data>
                     <data>0</data>
@@ -9268,9 +9737,55 @@
                 <data>0</data>
             </row>
             <row>
+                <data>db_bp_pgood_fault(PGM_DEBOUNCE_N)</data>
+                <data>24</data>
+                <data>24</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
+                <data>db_fan_ctrl_inst1(PGM_DEBOUNCE_6)</data>
+                <data>16</data>
+                <data>20</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
                 <data>db_inst_button(PGM_DEBOUNCE)</data>
-                <data>18</data>
-                <data>15</data>
+                <data>30</data>
+                <data>25</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9292,8 +9807,8 @@
             </row>
             <row>
                 <data>db_inst_cpu_rail(PGM_DEBOUNCE_1)</data>
-                <data>184</data>
-                <data>180</data>
+                <data>208</data>
+                <data>204</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9315,8 +9830,8 @@
             </row>
             <row>
                 <data>db_inst_prsnt(PGM_DEBOUNCE_3)</data>
-                <data>111</data>
-                <data>90</data>
+                <data>116</data>
+                <data>95</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9383,32 +9898,9 @@
                 <data>0</data>
             </row>
             <row>
-                <data>edge_delay_cpu_gpio_ok(edge_delay)</data>
-                <data>7</data>
-                <data>5</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
                 <data>genblk1[0].fan_pwm_tach_m(fan_pwm_tach)</data>
-                <data>12</data>
-                <data>11</data>
+                <data>44</data>
+                <data>61</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9429,6 +9921,75 @@
                 <data>0</data>
                 <row>
                     <data>Edge_Detect_u0(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u1(Edge_Detect)</data>
+                    <data>2</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u2(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u3(Edge_Detect)</data>
                     <data>0</data>
                     <data>2</data>
                     <data>0</data>
@@ -9473,11 +10034,57 @@
                     <data>0</data>
                     <data>0</data>
                 </row>
+                <row>
+                    <data>fan_pwm_cnt_u1(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u2(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
             </row>
             <row>
                 <data>genblk1[1].fan_pwm_tach_m(fan_pwm_tach)</data>
-                <data>12</data>
-                <data>9</data>
+                <data>42</data>
+                <data>57</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9496,6 +10103,52 @@
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
+                <row>
+                    <data>Edge_Detect_u2(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u3(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
                 <row>
                     <data>fan_pwm_cnt_u0(fan_counter)</data>
                     <data>9</data>
@@ -9519,10 +10172,56 @@
                     <data>0</data>
                     <data>0</data>
                 </row>
+                <row>
+                    <data>fan_pwm_cnt_u1(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u2(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_p2s(p2s_slave)</data>
-                <data>52</data>
+                <data>49</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9545,8 +10244,8 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_s2p(s2p_master)</data>
-                <data>253</data>
-                <data>413</data>
+                <data>153</data>
+                <data>219</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9585,29 +10284,6 @@
                 <data>0</data>
                 <data>0</data>
                 <data>1</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>pme_filter_inst(pme_filter)</data>
-                <data>2</data>
-                <data>3</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9660,8 +10336,8 @@
             </row>
             <row>
                 <data>pwrseq_master_inst(pwrseq_master)</data>
-                <data>137</data>
-                <data>85</data>
+                <data>105</data>
+                <data>68</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9680,52 +10356,6 @@
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
-                <row>
-                    <data>edge_detect_button_ne_inst(edge_detect)</data>
-                    <data>1</data>
-                    <data>1</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>edge_detect_ne_inst(edge_detect)</data>
-                    <data>1</data>
-                    <data>2</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
                 <row>
                     <data>sb_thermtrip_delay_inst(edge_delay_1)</data>
                     <data>4</data>
@@ -9752,8 +10382,8 @@
             </row>
             <row>
                 <data>pwrseq_slave_inst(pwrseq_slave)</data>
-                <data>226</data>
-                <data>172</data>
+                <data>147</data>
+                <data>124</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9888,55 +10518,9 @@
                     <data>0</data>
                 </row>
                 <row>
-                    <data>cpu0_d0_vph_p1v8_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
                     <data>cpu0_d0_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_d1_vp_p0v9_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9958,31 +10542,8 @@
                 </row>
                 <row>
                     <data>cpu0_d1_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_d1_vph_p1v8_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10004,31 +10565,8 @@
                 </row>
                 <row>
                     <data>cpu0_d1_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_ddr_vdd_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10050,31 +10588,8 @@
                 </row>
                 <row>
                     <data>cpu0_ddr_vdd_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_p1v8_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10096,31 +10611,8 @@
                 </row>
                 <row>
                     <data>cpu0_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_pll_p1v8_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10142,31 +10634,8 @@
                 </row>
                 <row>
                     <data>cpu0_pll_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_vdd_core_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10188,31 +10657,8 @@
                 </row>
                 <row>
                     <data>cpu0_vdd_core_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu0_vddq_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10234,31 +10680,8 @@
                 </row>
                 <row>
                     <data>cpu0_vddq_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu1_d0_vp_p0v9_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10280,31 +10703,8 @@
                 </row>
                 <row>
                     <data>cpu1_d0_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu1_d0_vph_p1v8_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10326,8 +10726,8 @@
                 </row>
                 <row>
                     <data>cpu1_d0_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10372,30 +10772,7 @@
                 </row>
                 <row>
                     <data>cpu1_d1_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu1_d1_vph_p1v8_en_r_inst(edge_delay_1)</data>
-                    <data>4</data>
+                    <data>9</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10418,8 +10795,8 @@
                 </row>
                 <row>
                     <data>cpu1_d1_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10464,7 +10841,7 @@
                 </row>
                 <row>
                     <data>cpu1_ddr_vdd_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>2</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10510,7 +10887,7 @@
                 </row>
                 <row>
                     <data>cpu1_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>2</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10556,7 +10933,7 @@
                 </row>
                 <row>
                     <data>cpu1_pll_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>2</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10602,30 +10979,7 @@
                 </row>
                 <row>
                     <data>cpu1_vdd_core_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>cpu1_vddq_en_r_check_inst(edge_delay_1)</data>
-                    <data>4</data>
+                    <data>2</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10648,8 +11002,8 @@
                 </row>
                 <row>
                     <data>cpu1_vddq_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
-                    <data>3</data>
+                    <data>2</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -10786,7 +11140,7 @@
                 </row>
                 <row>
                     <data>p5v_stby_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>5</data>
+                    <data>3</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10949,7 +11303,7 @@
             <row>
                 <data>sync_data_low(SYNC_DATA_N)</data>
                 <data>0</data>
-                <data>6</data>
+                <data>2</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -11017,7 +11371,7 @@
             </row>
             <row>
                 <data>uart_master_u1(UART_MASTER)</data>
-                <data>78</data>
+                <data>80</data>
                 <data>57</data>
                 <data>0</data>
                 <data>0</data>
@@ -11077,10 +11431,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
+            <data>0h:0m:10s</data>
             <data>0h:0m:12s</data>
-            <data>0h:0m:13s</data>
-            <data>0h:0m:16s</data>
-            <data>421</data>
+            <data>0h:0m:14s</data>
+            <data>414</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -11105,6 +11459,12 @@
         </row>
         <row>
             <data message="4">Finish printing congestion info.</data>
+        </row>
+        <row>
+            <data message="4">Design net genblk1[0].fan_pwm_tach_m/w_clk_1s_pos is routed by general path.</data>
+        </row>
+        <row>
+            <data message="6">Route-2036: The clock path from genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/N0/gateop:Z to clkbufgs_6:CLKIN is routed by SRB.</data>
         </row>
         <row>
             <data message="4">Design net nt_i_CLK_PAL_IN_25M is routed by general path.</data>

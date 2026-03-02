@@ -178,7 +178,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1413</data>
+                    <data>1218</data>
                     <data>0</data>
                 </row>
             </table>
@@ -201,10 +201,10 @@
                     <data>pll_inst/u_pll_e2/goppll</data>
                     <data>PLL_11_20</data>
                     <data>CLKFB</data>
-                    <data>_GND126</data>
+                    <data>_GND114</data>
                     <data> - </data>
                     <data> - </data>
-                    <data>GND_126</data>
+                    <data>GND_114</data>
                     <data>Z</data>
                     <data>HARD0N1_6_19</data>
                 </row>
@@ -235,7 +235,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1413</data>
+                    <data>1218</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -305,26 +305,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
-            <data>input</data>
-            <data>C11</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -343,7 +324,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -362,7 +343,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -381,7 +362,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -400,7 +381,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -419,7 +400,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -438,7 +419,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -457,7 +438,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -476,7 +457,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -495,7 +476,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -514,7 +495,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -533,7 +514,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -552,7 +533,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -571,7 +552,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -590,7 +571,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -609,7 +590,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -628,7 +609,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -647,7 +628,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -666,7 +647,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -685,7 +666,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -704,7 +685,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -723,7 +704,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -742,7 +723,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -761,7 +742,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -780,7 +761,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -799,7 +780,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -818,7 +799,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -837,7 +818,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -856,7 +837,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -875,7 +856,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -894,7 +875,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -913,7 +894,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -932,7 +913,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -951,7 +932,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -970,7 +951,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -989,7 +970,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1008,7 +989,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1027,7 +1008,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1046,7 +1027,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1065,7 +1046,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1084,7 +1065,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1103,7 +1084,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1122,7 +1103,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1141,7 +1122,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1160,7 +1141,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1179,7 +1160,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1198,7 +1179,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1217,7 +1198,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1236,7 +1217,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1255,7 +1236,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1274,7 +1255,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1293,7 +1274,7 @@
             <data>1.8</data>
             <data>LVCMOS18</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1312,7 +1293,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1331,7 +1312,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1350,7 +1331,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1369,7 +1350,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1388,7 +1369,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1407,7 +1388,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1426,7 +1407,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1445,7 +1426,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1464,7 +1445,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1483,7 +1464,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1502,7 +1483,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1521,7 +1502,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1540,7 +1521,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1559,7 +1540,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1578,7 +1559,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1597,7 +1578,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1616,7 +1597,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1635,7 +1616,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1654,7 +1635,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1673,7 +1654,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1692,7 +1673,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1711,7 +1692,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1730,7 +1711,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1749,7 +1730,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1768,7 +1749,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1787,7 +1768,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1806,7 +1787,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1825,7 +1806,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1844,7 +1825,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1863,7 +1844,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1882,7 +1863,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1901,7 +1882,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1920,7 +1901,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1939,7 +1920,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -1958,83 +1939,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL2_TCK</data>
-            <data>input</data>
-            <data>C9</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL2_TDI</data>
-            <data>input</data>
-            <data>C7</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL2_TDO</data>
-            <data>input</data>
-            <data>E8</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL2_TMS</data>
-            <data>input</data>
-            <data>D9</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2053,7 +1958,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2072,7 +1977,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2091,7 +1996,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2110,7 +2015,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2129,7 +2034,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2148,7 +2053,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2167,7 +2072,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2186,7 +2091,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2205,7 +2110,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2224,7 +2129,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2243,7 +2148,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2262,7 +2167,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2281,7 +2186,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2300,7 +2205,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2319,7 +2224,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2338,7 +2243,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2357,7 +2262,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2376,7 +2281,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2395,7 +2300,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2414,7 +2319,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2433,7 +2338,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2452,7 +2357,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2471,7 +2376,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2490,7 +2395,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2509,7 +2414,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2528,7 +2433,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2547,7 +2452,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2566,7 +2471,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2585,7 +2490,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2604,7 +2509,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2623,7 +2528,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2642,7 +2547,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2661,7 +2566,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2680,7 +2585,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2699,7 +2604,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2718,7 +2623,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2737,7 +2642,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2756,7 +2661,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2775,7 +2680,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2794,7 +2699,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2813,7 +2718,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2832,7 +2737,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2851,7 +2756,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2870,7 +2775,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2889,7 +2794,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2908,7 +2813,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2927,7 +2832,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2946,7 +2851,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2965,7 +2870,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -2984,7 +2889,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3003,7 +2908,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3022,7 +2927,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3041,7 +2946,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3060,7 +2965,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3079,7 +2984,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3098,7 +3003,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3117,7 +3022,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3136,7 +3041,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3155,7 +3060,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3174,7 +3079,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3193,7 +3098,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3212,7 +3117,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3231,7 +3136,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3250,7 +3155,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3269,7 +3174,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3288,7 +3193,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3307,7 +3212,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3326,7 +3231,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3345,7 +3250,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3364,7 +3269,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3383,7 +3288,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3402,7 +3307,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3421,7 +3326,7 @@
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLUP</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -3448,25 +3353,6 @@
             <data>NA</data>
             <data>OFF</data>
             <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
-            <data>input</data>
-            <data>D11</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>PULLUP</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
             <data>YES</data>
             <data>NA</data>
         </row>
@@ -5295,6 +5181,25 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_PAL_TPM_DRQ1_N</data>
+            <data>output</data>
+            <data>W2</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_PAL_UART4_OCP_DEBUG_TX</data>
             <data>output</data>
             <data>L3</data>
@@ -6257,9 +6162,9 @@
             <data>IOBS_0_63</data>
             <data>BANK0</data>
             <data>DIFFI_B0_30N/TDI</data>
-            <data>i_PAL2_TDI</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C8</data>
@@ -6284,9 +6189,9 @@
             <data>IOBS_0_93</data>
             <data>BANK0</data>
             <data>DIFFI_B0_24N/TMS</data>
-            <data>i_PAL2_TMS</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>F10</data>
@@ -6356,9 +6261,9 @@
             <data>IOBS_0_92</data>
             <data>BANK0</data>
             <data>DIFFI_B0_24P/TCK</data>
-            <data>i_PAL2_TCK</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>D12</data>
@@ -6392,9 +6297,9 @@
             <data>IOBS_0_123</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18N/SDA/CLK0N_B0</data>
-            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C12</data>
@@ -6437,9 +6342,9 @@
             <data>IOBS_0_122</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18P/SCL/CLK0P_B0</data>
-            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>G8</data>
@@ -6572,9 +6477,9 @@
             <data>IOBS_0_62</data>
             <data>BANK0</data>
             <data>DIFFI_B0_30P/TDO</data>
-            <data>i_PAL2_TDO</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C10</data>
@@ -8048,9 +7953,9 @@
             <data>IOBR_156_30</data>
             <data>BANK2</data>
             <data>DIFFI_B2_39P/FCS_N</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>o_PAL_TPM_DRQ1_N</data>
+            <data>output</data>
+            <data>YES</data>
         </row>
         <row>
             <data>T7</data>
@@ -8890,35 +8795,35 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>277</data>
+            <data>241</data>
             <data>592</data>
-            <data>47</data>
+            <data>41</data>
             <row>
                 <data>FF</data>
-                <data>604</data>
+                <data>533</data>
                 <data>3552</data>
-                <data>18</data>
+                <data>16</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>710</data>
+                <data>575</data>
                 <data>2368</data>
-                <data>30</data>
+                <data>25</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>598</data>
+                    <data>453</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>94</data>
+                    <data>112</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>18</data>
+                    <data>10</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8926,23 +8831,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>386</data>
+            <data>319</data>
             <data>888</data>
-            <data>44</data>
+            <data>36</data>
             <row>
                 <data>FF</data>
-                <data>857</data>
+                <data>727</data>
                 <data>5328</data>
-                <data>17</data>
+                <data>14</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1047</data>
+                <data>830</data>
                 <data>3552</data>
-                <data>30</data>
+                <data>24</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>938</data>
+                    <data>740</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8960,13 +8865,13 @@
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>101</data>
+                    <data>78</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>8</data>
+                    <data>12</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8974,9 +8879,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>292</data>
+            <data>287</data>
             <data>336</data>
-            <data>87</data>
+            <data>86</data>
             <row>
                 <data>IOBD</data>
                 <data>19</data>
@@ -8985,15 +8890,15 @@
             </row>
             <row>
                 <data>IOBR</data>
-                <data>36</data>
+                <data>37</data>
                 <data>42</data>
-                <data>86</data>
+                <data>89</data>
             </row>
             <row>
                 <data>IOBS</data>
-                <data>237</data>
+                <data>231</data>
                 <data>273</data>
-                <data>87</data>
+                <data>85</data>
             </row>
         </row>
         <row>
@@ -9034,9 +8939,9 @@
         </row>
         <row>
             <data>HARD0N1</data>
-            <data>59</data>
+            <data>47</data>
             <data>936</data>
-            <data>7</data>
+            <data>6</data>
         </row>
         <row>
             <data>IOCKBRG</data>
@@ -9058,9 +8963,9 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>137</data>
+            <data>131</data>
             <data>252</data>
-            <data>55</data>
+            <data>52</data>
         </row>
         <row>
             <data>IOLDLY</data>
@@ -9070,9 +8975,9 @@
         </row>
         <row>
             <data>IOL</data>
-            <data>292</data>
+            <data>287</data>
             <data>336</data>
-            <data>87</data>
+            <data>86</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -9179,15 +9084,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1536</data>
-            <data>1461</data>
+            <data>1193</data>
+            <data>1260</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>292</data>
+            <data>287</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9270,54 +9175,8 @@
             </row>
             <row>
                 <data>db_inst_pwrgood(PGM_DEBOUNCE_N)</data>
-                <data>19</data>
-                <data>18</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>db_intruder(PGM_DEBOUNCE_N_1)</data>
-                <data>7</data>
-                <data>6</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>db_pe_wake_inst(PGM_DEBOUNCE_2)</data>
-                <data>5</data>
-                <data>5</data>
+                <data>14</data>
+                <data>12</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9362,8 +9221,8 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>161</data>
-                <data>72</data>
+                <data>140</data>
+                <data>73</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9386,6 +9245,29 @@
                     <data>w_cpu0_die0_alloc(pcie_dync_alloc)</data>
                     <data>2</data>
                     <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>w_cpu0_die1_alloc_1(pcie_dync_alloc)</data>
+                    <data>0</data>
+                    <data>1</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9569,8 +9451,8 @@
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_s2p(s2p_slave)</data>
-                <data>255</data>
-                <data>413</data>
+                <data>256</data>
+                <data>415</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9615,7 +9497,7 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_p2s(p2s_slave)</data>
-                <data>115</data>
+                <data>85</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9638,8 +9520,8 @@
             </row>
             <row>
                 <data>mcio_ab26(PGM_DEBOUNCE_1)</data>
-                <data>4</data>
-                <data>3</data>
+                <data>12</data>
+                <data>15</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9706,75 +9588,6 @@
                 <data>0</data>
             </row>
             <row>
-                <data>pvt_gpi_ocp1_inst(pvt_gpi_1)</data>
-                <data>43</data>
-                <data>37</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>pvt_gpi_riser1_inst(pvt_gpi)</data>
-                <data>10</data>
-                <data>7</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>pvt_gpi_riser2_inst(pvt_gpi)</data>
-                <data>21</data>
-                <data>16</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
                 <data>sync_cpu_data_low(SYNC_DATA_N)</data>
                 <data>0</data>
                 <data>8</data>
@@ -9799,54 +9612,8 @@
             </row>
             <row>
                 <data>timer_gen_inst(timer_gen)</data>
-                <data>39</data>
-                <data>34</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u1(UART_MASTER)</data>
-                <data>65</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u2(UART_MASTER)</data>
-                <data>65</data>
-                <data>47</data>
+                <data>41</data>
+                <data>35</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9891,7 +9658,7 @@
             </row>
             <row>
                 <data>uart_master_u5(UART_MASTER)</data>
-                <data>66</data>
+                <data>65</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9914,29 +9681,6 @@
             </row>
             <row>
                 <data>uart_master_u6(UART_MASTER)</data>
-                <data>66</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u7(UART_MASTER)</data>
                 <data>65</data>
                 <data>47</data>
                 <data>0</data>
@@ -9960,7 +9704,7 @@
             </row>
             <row>
                 <data>uart_master_u10(UART_MASTER)</data>
-                <data>66</data>
+                <data>65</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9983,7 +9727,7 @@
             </row>
             <row>
                 <data>uart_master_u11(UART_MASTER)</data>
-                <data>65</data>
+                <data>66</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -10043,10 +9787,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
+            <data>0h:0m:7s</data>
             <data>0h:0m:9s</data>
             <data>0h:0m:10s</data>
-            <data>0h:0m:12s</data>
-            <data>388</data>
+            <data>375</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
