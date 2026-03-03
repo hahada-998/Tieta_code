@@ -125,7 +125,7 @@ module Tieta_Feiteng_1001_top(
     // =============================================================================
     //  BP CPLD单线协议数据传输, 解析board_id
     // =============================================================================
-    // 辅助电源模块 电源良好信号
+    // 背板电源良好信号
     inout  io_PAL_BP1_PWR_ON_R                    /* synthesis LOC = "L19"*/,// from  CPLD_M                                         to  BP_AUX_PWR/J84                               default 1  // BP1辅助电源开启信号输出                       新增
     inout  io_PAL_BP2_PWR_ON_R                    /* synthesis LOC = "U1"*/ ,// from  CPLD_M                                         to  REAR_BP_AUX_PWR/J86                          default 1  // 后置背板电源开启信号输入输出           
 
@@ -173,20 +173,20 @@ module Tieta_Feiteng_1001_top(
     input  i_PAL_P12V_CPU0_VIN_PG                 /* synthesis LOC = "K16"*/,// from  CURRENT_DET0/P12V_CPU0_VIN                     to  CPLD_M                                       default 1  // 12V CPU0输入电源良好信号输入                   新增
 
     output o_PAL_P12V_CPU1_VIN_EN_R               /* synthesis LOC = "M1"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                     to  CPLD_M                                       default 1  // 12V CPU1输入使能信号输入（反向）               新增
-    input  i_PAL_P12V_CPU1_VIN_FLTB               /* synthesis LOC = "P3"*/ ,// from  CURRENT_DET0/P12V_CPU1_FLTB                   to  CPLD_M                                       default 1  // 12V CPU1输入电源滤波信号输入                   新增
-    input  i_PAL_P12V_CPU1_VIN_PG                 /* synthesis LOC = "P2"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                    to  CPLD_M                                       default 1  // 12V CPU1输入电源良好信号输入                   新增
+    input  i_PAL_P12V_CPU1_VIN_FLTB               /* synthesis LOC = "P3"*/ ,// from  CURRENT_DET0/P12V_CPU1_FLTB                    to  CPLD_M                                       default 1  // 12V CPU1输入电源滤波信号输入                   新增
+    input  i_PAL_P12V_CPU1_VIN_PG                 /* synthesis LOC = "P2"*/ ,// from  CURRENT_DET0/P12V_CPU1_VIN                     to  CPLD_M                                       default 1  // 12V CPU1输入电源良好信号输入                   新增
 
     // 12V PGD压降信号输入 / 12V 待机PGD压降信号输入
-    input  i_PAL_PGD_P12V_DROOP                   /* synthesis LOC = "N4"*/,// from  P12V_DROOP                                     to  CPLD_M                                       default 1  // 12V PGD压降信号输入
+    input  i_PAL_PGD_P12V_DROOP                   /* synthesis LOC = "N4"*/ ,// from  P12V_DROOP                                     to  CPLD_M                                       default 1  // 12V PGD压降信号输入
     input  i_PAL_PGD_P12V_STBY_DROOP              /* synthesis LOC = "P4"*/ ,// from  P12V_DROOP                                     to  CPLD_M                                       default 1  // 12V待机PGD压降信号输入
 
     // 12V 风扇供电模块 电源良好信号
     output o_PAL_P12V_FAN0_EN_R                   /* synthesis LOC = "B20"*/ ,// from  CPLD_M                                        to  FAN_PWR                                      default 1  // 12V风扇0使能信号输入                              // 新增
-    input  i_PAL_P12V_FAN0_PG                     /* synthesis LOC = "F13"*/ ,// from  FAN_PWR/PAL_P12V_FAN0_PG                       to  CPLD_M                                       default 1  // 12V风扇0电源良好信号输入                          // 新增
-    input  i_PAL_P12V_FAN0_FLTB                   /* synthesis LOC = "C14"*/ ,// from  FAN_PWR/PAL_P12V_FAN0_FLTB                     to  CPLD_M                                       default 1  // 12V风扇0故障信号输入                             // 新增
+    input  i_PAL_P12V_FAN0_PG                     /* synthesis LOC = "F13"*/ ,// from  FAN_PWR/PAL_P12V_FAN0_PG                      to  CPLD_M                                       default 1  // 12V风扇0电源良好信号输入                          // 新增
+    input  i_PAL_P12V_FAN0_FLTB                   /* synthesis LOC = "C14"*/ ,// from  FAN_PWR/PAL_P12V_FAN0_FLTB                    to  CPLD_M                                       default 1  // 12V风扇0故障信号输入                             // 新增
 
     output o_PAL_P12V_FAN1_EN_R                   /* synthesis LOC = "P19"*/ ,// from  CPLD_M                                        to  FAN_PWR                                      default 1  // 12V风扇1使能信号输入                              // 新增
-    input  i_PAL_P12V_FAN1_PG                     /* synthesis LOC = "M16"*/ ,// from  FAN_PWR/PAL_P12V_FAN1_PG                       to  CPLD_M                                       default 1  // 12V风扇1电源良好信号输入                          // 新增
+    input  i_PAL_P12V_FAN1_PG                     /* synthesis LOC = "M16"*/ ,// from  FAN_PWR/PAL_P12V_FAN1_PG                      to  CPLD_M                                       default 1  // 12V风扇1电源良好信号输入                          // 新增
     input  i_PAL_P12V_FAN1_FLTB                   /* synthesis LOC = "L7"*/ ,// from  FAN_PWR/PAL_P12V_FAN1_FLTB                     to  CPLD_M                                       default 1  // 12V风扇1故障信号输入                             // 新增
 
     output o_PAL_P12V_FAN2_EN_R                   /* synthesis LOC = "V19"*/ ,// from  CPLD_M                                        to  FAN_PWR                                      default 1  // 12V风扇2使能信号输入                              // 新增
@@ -619,16 +619,13 @@ wire                                        t6m25_clk                           
 
 // 辅电源使能信号
 // 1. SM_OFF_STANDBY 状态上电使能
-wire                                        ocp_aux_en                          ; // 未使用
 wire                                        cpu_bios_en                         ; 
 // 2. SM_EN_5V_STBY 状态上电使能
 wire                                        p5v_stby_en_r                       ;
 // 3. SM_EN_TELEM 状态上电使能
 wire                                        pvcc_hpmos_cpu_en_r                 ;
 // 4. SM_EN_MAIN_EFUSE 状态上电使能
-wire                                        power_supply_on                     ; 
-wire                                        ocp_main_en                         ; // 未使用 
-wire                                        pal_main_efuse_en                   ; // 未使用
+wire                                        power_supply_on                     ;  
 wire                                        p12v_bp_rear_en                     ;  
 wire                                        p12v_bp_front_en                    ; 
 // 5. SM_EN_5V 状态上电使能
@@ -721,11 +718,6 @@ wire                                        db_i_pal_cpu0_ddr_vdd_pg  		    ; //
 wire                                        db_i_pal_cpu1_pll_p1v8_pg           ; // 已使用   MCPLD IN        
 wire                                        db_i_pal_cpu0_pll_p1v8_pg			; // 已使用   MCPLD IN
 
-wire                                        db_i_pal_cpu0_pcie_p1v8_pg  		; // 不使用   写死       	
-wire                                        db_i_pal_cpu1_pcie_p1v8_pg 	        ; // 不使用   写死           			
-wire                                        db_i_pal_cpu0_pcie_p0v9_pg          ; // 不使用   写死    
-wire                                        db_i_pal_cpu1_pcie_p0v9_pg          ; // 不使用   写死
-
 wire                                        db_i_pal_cpu0_d0_vp_0v9_pg          ; // 已使用   MCPLD IN
 wire                                        db_i_pal_cpu0_d1_vp_0v9_pg          ; // 已使用   MCPLD IN
 wire                                        db_i_pal_cpu0_d0_vph_1v8_pg         ; // 已使用   MCPLD IN 
@@ -747,15 +739,12 @@ wire                                        p3v3_stby_fault_det                 
 wire                                        p3v3_stby_bp_fault_det              ; // BMC寄存   MCPLD                addr 0x00A3[0]   3.3V standby电压背板故障检测，1：有故障；0：没有故障
 
 wire                                        main_efuse_fault_det                ; // BMC寄存   MCPLD                addr 0x00A2[7]   12V内存电压efuse故障检测，1：有故障；0：没有故障
-wire                                        p12v_fan_efuse_fault_det            ; // BMC寄存   MCPLD                addr 0x00A2[6]   12V风扇电压efuse故障检测，1：有故障；0：没有故障
 wire                                        p12v_cpu0_vin_fault_det             ; // BMC寄存   MCPLD                addr 0x00A2[5]   12V CPU0输入电压故障检测，1：有故障；0：没有故障
 wire                                        p12v_cpu1_vin_fault_det             ; // BMC寄存   MCPLD                addr 0x00A2[4]   12V CPU1输入电压故障检测，1：有故障；0：没有故障
-wire                                        p12v_dimm_efuse_fault_det           ; // BMC寄存   MCPLD                addr 0x00A2[3]   12V内存电压efuse故障检测，1：有故障；0：没有故障
 
 wire                                        p12v_front_bp_efuse_fault_det       ;
 wire                                        p12v_reat_bp_efuse_fault_det        ;       
-wire                                        p12v_fault_det                      ; // 未使用
-wire                                        p12v_stby_droop_fault_det           ; // 未使用
+wire                                        p12v_fault_det                      ; // BMC寄存
 
 wire                                        p5v_fault_det                       ;
 wire                                        p3v3_fault_det                      ; // 未使用
@@ -773,11 +762,6 @@ wire                                        cpu0_ddr_vdd_fault_det              
 wire                                        cpu1_ddr_vdd_fault_det              ;
 wire                                        cpu0_pll_p1v8_fault_det             ;
 wire                                        cpu1_pll_p1v8_fault_det             ;
-              
-wire                                        cpu1_pcie_p1v8_fault_det            ;// 不使用
-wire                                        cpu0_pcie_p1v8_fault_det            ;// 不使用
-wire                                        cpu1_pcie_p0v9_fault_det            ;// 不使用 
-wire                                        cpu0_pcie_p0v9_fault_det            ;// 不使用 
 
 wire                                        cpu0_d0_vp_p0v9_fault_det           ;// 未使用
 wire                                        cpu0_d1_vp_p0v9_fault_det           ;// 未使用
@@ -919,13 +903,13 @@ wire                                        pch_sys_reset                      ;
 wire                                        pch_sys_reset_n                    ; // SCPLD传入 外部复位信号, 低电平有效
 wire                                        rst_bmc_n;
 wire [`NUM_IO-1:0]                          rst_io_n;
-wire [`NUM_PSU-1:0]                         xr_ps_enable                        ; // 不使用
-wire [`NUM_PSU-1:0]                         db_ps_prsnt_n                       ; // BMC寄存   addr 0x0050[1:0]   电源是否存在，1：存在；0：不存在PS存在信号输入, PSU电源模块强相关
-wire [`NUM_PSU-1:0]                         db_ps_acok                          ; // BMC寄存   addr 0x0053[1:0]   电源ACOK信号，1：正常；0：电源PS直流电源正常信号输入, PSU电源模块强相关
-wire [`NUM_PSU-1:0]                         db_ps_dcok                          ; // BMC寄存   addr 0x0054[1:0]   电源DCOK信号，1：正常；0：电源PS交流电源正常信号输入, PSU电源模块强相关
-wire [`NUM_PSU-1:0]                         ps_on_dly_n                         ; // PS_ON输出
-wire [`NUM_PSU-1:0]                         ps_on_n                             ; // PS_ON输出
-wire [`NUM_PSU-1:0]                         ps_fail                             ; // !!!不使用 
+wire [`NUM_PSU-1:0]                         xr_ps_enable                       ; // 不使用
+wire [`NUM_PSU-1:0]                         db_ps_prsnt_n                      ; // BMC寄存   addr 0x0050[1:0]   电源是否存在，1：存在；0：不存在PS存在信号输入, PSU电源模块强相关
+wire [`NUM_PSU-1:0]                         db_ps_acok                         ; // BMC寄存   addr 0x0053[1:0]   电源ACOK信号，1：正常；0：电源PS直流电源正常信号输入, PSU电源模块强相关
+wire [`NUM_PSU-1:0]                         db_ps_dcok                         ; // BMC寄存   addr 0x0054[1:0]   电源DCOK信号，1：正常；0：电源PS交流电源正常信号输入, PSU电源模块强相关
+wire [`NUM_PSU-1:0]                         ps_on_dly_n                        ; // PS_ON输出
+wire [`NUM_PSU-1:0]                         ps_on_n                            ; // PS_ON输出
+wire [`NUM_PSU-1:0]                         ps_fail                            ; // !!!不使用 
 wire [7:0]                                  hd_bp_fault_det;
 wire                                        ps_caution;
 wire                                        ps_critical                   ; // !!!不使用 
@@ -1506,10 +1490,6 @@ PG信号信号消抖
 wire  i_PAL_FRONT_BP_EFUSE_PG = 1'b1;
 
 wire  i_PAL_P5V_PGD           = 1'b1;
-wire  i_PAL_CPU0_PCIE_P1V8_PG = 1'b1;
-wire  i_PAL_CPU1_PCIE_P1V8_PG = 1'b1;
-wire  i_PAL_CPU0_PCIE_P0V9_PG = 1'b1;
-wire  i_PAL_CPU1_PCIE_P0V9_PG = 1'b1;
 
 
 wire  db_i_pal_main_pwr_ok          ;
@@ -1519,113 +1499,105 @@ wire  db_i_pal_p12v_cpu0_vin_pg     ;
 
 assign  db_bp_aux_pg = {db_i_pal_bp2_aux_pg, db_i_pal_bp1_aux_pg     };
 
-PGM_DEBOUNCE #(.SIGCNT(52), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
+PGM_DEBOUNCE #(.SIGCNT(48), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_cpu_rail (
     .clk           (clk_50m                    ),
     .rst           (~pon_reset_n               ),
     .timer_tick    (1'b1                       ),
     .din           (
                     {
-                    i_PAL_MAIN_PWR_OK                   ,// 51 未使用
-                    i_PAL_P12V_CPU1_VIN_PG              ,// 50
-                    i_PAL_P12V_CPU0_VIN_PG              ,// 49
-                    i_PAL_CPU0_D0_VP_0V9_PG             ,// 48
-                    i_PAL_CPU0_D1_VP_0V9_PG             ,// 47
-                    i_PAL_CPU0_D0_VPH_1V8_PG            ,// 46
-                    i_PAL_CPU0_D1_VPH_1V8_PG            ,// 45
-                    i_PAL_CPU1_D0_VP_0V9_PG             ,// 44
-                    i_PAL_CPU1_D1_VP_0V9_PG             ,// 43
-                    i_PAL_CPU1_D0_VPH_1V8_PG            ,// 42
-                    i_PAL_CPU1_D1_VPH_1V8_PG            ,// 41
-                    i_PAL_BP2_AUX_PG                    ,// 40
-                    i_PAL_BP1_AUX_PG                    ,// 39
-                    i_PAL_P12V_FAN3_PG                  ,// 38
-                    i_PAL_P12V_FAN2_PG                  ,// 37
-                    i_PAL_P12V_FAN1_PG                  ,// 36
-                    i_PAL_P12V_FAN0_PG                  ,// 35
-                    i_PAL_VCC_1V1_PG                    ,// 34                              
-                    i_PAL_CPU1_VDD_VCORE_P0V8_PG        ,// 32                            
-                    i_PAL_CPU0_PLL_P1V8_PG              ,// 31                            
-                    i_PAL_CPU0_VDDQ_P1V1_PG 		    ,// 30 	                        
-                    i_PAL_CPU0_P1V8_PG   			    ,// 29          
-                    i_PAL_CPU0_DDR_VDD_PG   			,// 28         
-                    i_PAL_REAT_BP_EFUSE_PG   			,// 27        
-                    i_PAL_CPU0_PCIE_P1V8_PG             ,// 26 不使用 写死1       
-                    i_PAL_CPU1_PCIE_P1V8_PG             ,// 25 不使用 写死1       
-                    i_PAL_CPU0_PCIE_P0V9_PG   		    ,// 24 不使用 写死1        
-                    i_PAL_CPU1_PCIE_P0V9_PG             ,// 23 不使用 写死1
-    	            i_PAL_CPU1_DDR_VDD_PG               ,// 21
-    	            i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 20
-    	            i_PAL_CPU1_VDDQ_P1V1_PG             ,// 19
-    	            i_PAL_CPU1_P1V8_PG                  ,// 18
-    	            i_PAL_CPU1_PLL_P1V8_PG              ,// 17
-                    i_PAL_P5V_STBY_PGD                  ,// 16
-                    i_PAL_P5V_PGD                       ,// 13 已使用 写死1
-                    i_PAL_PGD_P12V_STBY_DROOP           ,// 12
-    	            i_PAL_PGD_P12V_DROOP                ,// 11
-                    i_PAL_PS1_ACFAIL & i_PAL_PS1_PRSNT  ,// 10
-    	            i_PAL_PS2_ACFAIL & i_PAL_PS2_PRSNT  ,// 09
-    	            ~i_PAL_PS1_DCOK  & i_PAL_PS1_PRSNT  ,// 08
-    	            ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,// 07
-                    i_PAL_CPU1_DIMM_PWRGD_F             ,// 06
-    	            i_PAL_P3V3_STBY_PGD                 ,// 05
-                    i_PAL_PGD_88SE9230_VDD1V0           ,// 04 未使用
-                    i_PAL_PGD_88SE9230_P1V8             ,// 03 未使用
-                    i_PAL_CPU0_DIMM_PWRGD_F             ,// 02
-                    i_P1V8_STBY_CPLD_PG                 ,// 01              
-    	            i_PAL_P3V3_STBY_PGD                  // 00 
+                    i_PAL_MAIN_PWR_OK                   ,// 44 未使用
+                    i_PAL_P12V_CPU1_VIN_PG              ,// 43
+                    i_PAL_P12V_CPU0_VIN_PG              ,// 42
+                    i_PAL_CPU0_D0_VP_0V9_PG             ,// 41
+                    i_PAL_CPU0_D1_VP_0V9_PG             ,// 40
+                    i_PAL_CPU0_D0_VPH_1V8_PG            ,// 39
+                    i_PAL_CPU0_D1_VPH_1V8_PG            ,// 38
+                    i_PAL_CPU1_D0_VP_0V9_PG             ,// 37
+                    i_PAL_CPU1_D1_VP_0V9_PG             ,// 36
+                    i_PAL_CPU1_D0_VPH_1V8_PG            ,// 35
+                    i_PAL_CPU1_D1_VPH_1V8_PG            ,// 34
+                    i_PAL_BP2_AUX_PG                    ,// 33
+                    i_PAL_BP1_AUX_PG                    ,// 32
+                    i_PAL_P12V_FAN3_PG                  ,// 31
+                    i_PAL_P12V_FAN2_PG                  ,// 30
+                    i_PAL_P12V_FAN1_PG                  ,// 29
+                    i_PAL_P12V_FAN0_PG                  ,// 28
+                    i_PAL_VCC_1V1_PG                    ,// 27                              
+                    i_PAL_CPU1_VDD_VCORE_P0V8_PG        ,// 26                            
+                    i_PAL_CPU0_PLL_P1V8_PG              ,// 25                            
+                    i_PAL_CPU0_VDDQ_P1V1_PG 		    ,// 24 	                        
+                    i_PAL_CPU0_P1V8_PG   			    ,// 23          
+                    i_PAL_CPU0_DDR_VDD_PG   			,// 22         
+                    i_PAL_REAT_BP_EFUSE_PG   			,// 21        
+    	            i_PAL_CPU1_DDR_VDD_PG               ,// 20
+    	            i_PAL_CPU0_VDD_VCORE_P0V8_PG        ,// 19
+    	            i_PAL_CPU1_VDDQ_P1V1_PG             ,// 18
+    	            i_PAL_CPU1_P1V8_PG                  ,// 17
+    	            i_PAL_CPU1_PLL_P1V8_PG              ,// 16
+                    i_PAL_P5V_STBY_PGD                  ,// 15
+                    i_PAL_P5V_PGD                       ,// 14 已使用 写死1
+                    i_PAL_PGD_P12V_STBY_DROOP           ,// 13
+    	            i_PAL_PGD_P12V_DROOP                ,// 12
+                    i_PAL_PS1_ACFAIL & i_PAL_PS1_PRSNT  ,// 11
+    	            i_PAL_PS2_ACFAIL & i_PAL_PS2_PRSNT  ,// 10
+    	            ~i_PAL_PS1_DCOK  & i_PAL_PS1_PRSNT  ,// 09
+    	            ~i_PAL_PS2_DCOK  & i_PAL_PS2_PRSNT  ,// 08
+                    i_PAL_CPU1_DIMM_PWRGD_F             ,// 07
+    	            i_PAL_P3V3_STBY_PGD                 ,// 06
+                    i_PAL_PGD_88SE9230_VDD1V0           ,// 05 未使用
+                    i_PAL_PGD_88SE9230_P1V8             ,// 04 未使用
+                    i_PAL_CPU0_DIMM_PWRGD_F             ,// 03
+                    i_P1V8_STBY_CPLD_PG                 ,// 02              
+    	            i_PAL_P3V3_STBY_PGD                  // 01 
                     }
                     ),
     .dout           (
                     {
-                    db_i_pal_main_pwr_ok                ,// 51 未使用
-                    db_i_pal_p12v_cpu1_vin_pg           ,// 50
-                    db_i_pal_p12v_cpu0_vin_pg           ,// 49
-                    db_i_pal_cpu0_d0_vp_0v9_pg          ,// 48
-                    db_i_pal_cpu0_d1_vp_0v9_pg          ,// 47
-                    db_i_pal_cpu0_d0_vph_1v8_pg         ,// 46
-                    db_i_pal_cpu0_d1_vph_1v8_pg         ,// 45
-                    db_i_pal_cpu1_d0_vp_0v9_pg          ,// 44
-                    db_i_pal_cpu1_d1_vp_0v9_pg          ,// 43
-                    db_i_pal_cpu1_d0_vph_1v8_pg         ,// 42
-                    db_i_pal_cpu1_d1_vph_1v8_pg         ,// 41                             
-                    db_i_pal_bp2_aux_pg                 ,// 40 
-                    db_i_pal_bp1_aux_pg                 ,// 39 
-                    db_i_pal_p12v_fan3_pg               ,// 38
-                    db_i_pal_p12v_fan2_pg               ,// 37
-                    db_i_pal_p12v_fan1_pg               ,// 36
-                    db_i_pal_p12v_fan0_pg               ,// 35
-                    db_i_pal_vcc_1v1_pg                 ,// 34 
-                    db_i_pal_cpu1_vdd_core_pg           ,// 32           
-                    db_i_pal_cpu0_pll_p1v8_pg			,// 31                                               
-                    db_i_pal_cpu0_vddq_pg			    ,// 30 	         
-                    db_i_pal_cpu0_p1v8_pg  		        ,// 29                             			
-                    db_i_pal_cpu0_ddr_vdd_pg  		    ,// 28         
-                    db_i_pal_reat_bp_efuse_pg  		    ,// 27        
-                    db_i_pal_cpu0_pcie_p1v8_pg  		,// 26 不使用       	
-                    db_i_pal_cpu1_pcie_p1v8_pg 	        ,// 25 不使用           			
-                    db_i_pal_cpu0_pcie_p0v9_pg          ,// 24 不使用    
-                    db_i_pal_cpu1_pcie_p0v9_pg          ,// 23 不使用
-		            db_i_pal_cpu1_ddr_vdd_pg            ,// 21
-		            db_i_pal_cpu0_vdd_core_pg           ,// 20
-		            db_i_pal_cpu1_vddq_pg               ,// 19
-		            db_i_pal_cpu1_p1v8_pg               ,// 18
-		            db_i_pal_cpu1_pll_p1v8_pg           ,// 17
-		            db_i_pal_p5v_stby_pgd               ,// 16
-		            db_i_pal_p5v0_pgd                   ,// 13 不使用
-		            db_i_pal_pgd_p12v_stby_droop        ,// 12
-		            db_i_pal_pgd_p12v_droop             ,// 11
-		            db_ps_acok[0]                       ,// 10
-		            db_ps_acok[1]                       ,// 09
-		            db_ps_dcok[0]                       ,// 08
-		            db_ps_dcok[1]                       ,// 07
-		            db_i_pal_cpu1_dimm_pwrgd_f          ,// 06
-		            db_i_pal_p3v3_stby_bp_pgd           ,// 05
-		            db_i_pal_pgd_88se9230_vdd1v0        ,// 04 未使用
-		            db_i_pal_pgd_88se9230_p1v8          ,// 03 未使用
-		            db_i_pal_cpu0_dimm_pwrgd_f          ,// 02
-		            db_i_p1v8_stby_cpld_pg              ,// 01           
-		            db_i_pal_p3v3_stby_pgd               // 00 
-		                })		 
+                    db_i_pal_main_pwr_ok                ,// 44 未使用
+                    db_i_pal_p12v_cpu1_vin_pg           ,// 43
+                    db_i_pal_p12v_cpu0_vin_pg           ,// 42
+                    db_i_pal_cpu0_d0_vp_0v9_pg          ,// 41
+                    db_i_pal_cpu0_d1_vp_0v9_pg          ,// 40
+                    db_i_pal_cpu0_d0_vph_1v8_pg         ,// 39
+                    db_i_pal_cpu0_d1_vph_1v8_pg         ,// 38
+                    db_i_pal_cpu1_d0_vp_0v9_pg          ,// 37
+                    db_i_pal_cpu1_d1_vp_0v9_pg          ,// 36
+                    db_i_pal_cpu1_d0_vph_1v8_pg         ,// 35
+                    db_i_pal_cpu1_d1_vph_1v8_pg         ,// 34   
+                    db_i_pal_bp2_aux_pg                 ,// 33
+                    db_i_pal_bp1_aux_pg                 ,// 32
+                    db_i_pal_p12v_fan3_pg               ,// 31
+                    db_i_pal_p12v_fan2_pg               ,// 30
+                    db_i_pal_p12v_fan1_pg               ,// 29
+                    db_i_pal_p12v_fan0_pg               ,// 28
+                    db_i_pal_vcc_1v1_pg                 ,// 27                  
+                    db_i_pal_cpu1_vdd_core_pg           ,// 26                  
+                    db_i_pal_cpu0_pll_p1v8_pg			,// 25                                                    
+                    db_i_pal_cpu0_vddq_pg			    ,// 24 	                
+                    db_i_pal_cpu0_p1v8_pg  		        ,// 23                       			
+                    db_i_pal_cpu0_ddr_vdd_pg  		    ,// 22         
+                    db_i_pal_reat_bp_efuse_pg  		    ,// 21        
+		            db_i_pal_cpu1_ddr_vdd_pg            ,// 20
+		            db_i_pal_cpu0_vdd_core_pg           ,// 19
+		            db_i_pal_cpu1_vddq_pg               ,// 18
+		            db_i_pal_cpu1_p1v8_pg               ,// 17
+		            db_i_pal_cpu1_pll_p1v8_pg           ,// 16
+		            db_i_pal_p5v_stby_pgd               ,// 15
+		            db_i_pal_p5v0_pgd                   ,// 14 已使用 写死1
+		            db_i_pal_pgd_p12v_stby_droop        ,// 13
+		            db_i_pal_pgd_p12v_droop             ,// 12
+		            db_ps_acok[0]                       ,// 11
+		            db_ps_acok[1]                       ,// 10
+		            db_ps_dcok[0]                       ,// 09
+		            db_ps_dcok[1]                       ,// 08
+		            db_i_pal_cpu1_dimm_pwrgd_f          ,// 07
+		            db_i_pal_p3v3_stby_bp_pgd           ,// 06
+		            db_i_pal_pgd_88se9230_vdd1v0        ,// 05 未使用
+		            db_i_pal_pgd_88se9230_p1v8          ,// 04 未使用
+		            db_i_pal_cpu0_dimm_pwrgd_f          ,// 03
+		            db_i_p1v8_stby_cpld_pg              ,// 02              
+		            db_i_pal_p3v3_stby_pgd               // 01 
+		            })		 
 );
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -2567,8 +2539,8 @@ assign mcpld_to_scpld_p2s_data[19]      =  sys_hlth_red_blink_n      ;
 assign mcpld_to_scpld_p2s_data[18]      =  sys_hlth_grn_blink_n      ;
 assign mcpld_to_scpld_p2s_data[17]      =  led_uid                   ;
 assign mcpld_to_scpld_p2s_data[16]      =  power_supply_on           ;
-assign mcpld_to_scpld_p2s_data[15]      =  ocp_main_en               ; // 未使用
-assign mcpld_to_scpld_p2s_data[14]      =  ocp_aux_en                ; // 未使用
+assign mcpld_to_scpld_p2s_data[15]      =  1'b0/*ocp_main_en*/       ; // 未使用
+assign mcpld_to_scpld_p2s_data[14]      =  1'b0/*ocp_aux_en*/        ; // 未使用
 assign mcpld_to_scpld_p2s_data[13]      =  pex_reset_n               ;
 assign mcpld_to_scpld_p2s_data[12]      =  reached_sm_wait_powerok   ;
 assign mcpld_to_scpld_p2s_data[11]      =  usb_ponrst_r_n            ;
@@ -2643,7 +2615,7 @@ assign riser1_pwr_cable_prsnt_n[3]      = riser1_pvti_byte2[6];//4GPU POWER CANL
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 power_button power_button_inst  (                 
     .clk                   (clk_50m                           ),
-    .reset                 (~pon_reset_n/*~pgd_aux_system*/   ),
+    .reset                 (/*~pon_reset_n*/~pgd_aux_system   ),
     .t1s                   (t1s_tick                          ),
     .gpo_pwr_btn_mask      (1'b1/*pwrbtn_mask*/               ), // in addr 0x0004[1] 暂时排除pwrbtn_mask影响
     .xreg_pwr_btn_passthru (pwrbtn_bl_mask                    ), // in addr 0x0004[3] 不使用
@@ -2899,7 +2871,7 @@ pwrseq_master #(
 
     .allow_recovery                         (1'b0                       ), // 输入：允许故障恢复信号（1=允许自动恢复，0=禁止）
                                                                            // 功能：此处固定为 0：故障后不自动重试，需人工或 BMC 干预，避免反复故障
-    .keep_alive_on_fault                    (keep_alive_on_fault        ), // 输入：故障时保持上电信号（来自前文定义，控制故障后是否下电）
+    .keep_alive_on_fault                    (1'b0/*keep_alive_on_fault*/), // 输入：故障时保持上电信号（来自前文定义，控制故障后是否下电）
 
     .pgd_raw                                (pgd_raw                    ), // 输出：原始电源好信号（送至电源按钮指示灯，当前未使用）
                                                                            // 备用功能：指示灯显示电源好状态，方便现场排查
@@ -3011,18 +2983,15 @@ pwrseq_slave #(
     .t64ms                                  (t64ms_tick                 ),
     .t1s                                    (t1s_tick                   ),
 
-    .keep_alive_on_fault                    (1'b1/*keep_alive_on_fault*/        ),
+    .keep_alive_on_fault                    (1'b0/*keep_alive_on_fault*/        ),
 
-    // PGOOD 输入信号
-    // stby电不受状态机控制
+    // 辅电和IP的电源PG信号
+    // 1. stby电不受状态机控制
     .p3v3_stby_bp_pg                        (db_i_pal_p3v3_stby_bp_pgd   ),  
     .p3v3_stby_pg                           (db_i_pal_p3v3_stby_pgd      ),  
     // 2. `SM_EN_5V_STBY 状态上电使能
     .p5v_stby_pgd			                (db_i_pal_p5v_stby_pgd	     ),
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    .dimm_efuse_pg			                (1'b1                        ), // 写死1  
-    .fan_efuse_pg			                (1'b1               	     ), // 写死1
-    .pgd_main_efuse                         (1'b1                        ), // 写死1  
     .pgd_p12v                               (db_i_pal_pgd_p12v_droop     ),  
     .pgd_p12v_stby_droop                    (db_i_pal_pgd_p12v_stby_droop),  
     .reat_bp_efuse_pg                       (db_i_pal_reat_bp_efuse_pg   ),
@@ -3035,7 +3004,8 @@ pwrseq_slave #(
     .p3v3_pgd                               (1'b1                        ), // 不使用, 写死1
     // 7. SM_EN_1V1 状态上电使能
     .p1v1_pgd                               (db_i_pal_vcc_1v1_pg         ), 
-    // 主电源使能信号
+
+    // 主电源PG信号
     // 1. SM_EN_VDD 状态上电使能
     .cpu1_vdd_core_pg		                (db_i_pal_cpu1_vdd_core_pg   ),
     .cpu0_vdd_core_pg			            (db_i_pal_cpu0_vdd_core_pg   ),
@@ -3050,10 +3020,6 @@ pwrseq_slave #(
     .cpu1_ddr_vdd_pg	                    (db_i_pal_cpu1_ddr_vdd_pg	 ),
     .cpu0_ddr_vdd_pg                        (db_i_pal_cpu0_ddr_vdd_pg    ),
     // 4. SM_EN_P0V8 状态上电使能
-    .cpu0_pcie_p1v8_pg		                (db_i_pal_cpu0_pcie_p1v8_pg  ),  
-    .cpu1_pcie_p1v8_pg		                (db_i_pal_cpu1_pcie_p1v8_pg  ),    
-    .cpu0_pcie_p0v9_pg		                (db_i_pal_cpu0_pcie_p0v9_pg  ),
-    .cpu1_pcie_p0v9_pg		                (db_i_pal_cpu1_pcie_p0v9_pg  ), 
     .cpu0_d0_vp_0v9_pg                      (db_i_pal_cpu0_d0_vp_0v9_pg  ),
     .cpu0_d1_vp_0v9_pg                      (db_i_pal_cpu0_d1_vp_0v9_pg  ),
     .cpu0_d0_vph_1v8_pg                     (db_i_pal_cpu0_d0_vph_1v8_pg ),
@@ -3065,7 +3031,6 @@ pwrseq_slave #(
 
     // 上电使能信号
     // 1. SM_OFF_STANDBY 状态上电使能
-    .ocp_aux_en				                (ocp_aux_en			         ), //out
     .cpu_bios_en                            (cpu_bios_en                 ), //out
     // 2. SM_EN_5V_STBY 状态上电使能
     .p5v_stby_en_r                          (p5v_stby_en_r               ), //out
@@ -3073,8 +3038,6 @@ pwrseq_slave #(
     .pvcc_hpmos_cpu_en_r                    (pvcc_hpmos_cpu_en_r         ), //out
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
     .power_supply_on                        (power_supply_on             ), //out
-    .ocp_main_en				            (ocp_main_en			     ), //out
-    .pal_main_efuse_en                      (pal_main_efuse_en           ), //out
     .p12v_bp_front_en                       (p12v_bp_front_en            ), //out
     .p12v_bp_rear_en                        (p12v_bp_rear_en             ), //out
     // 5. SM_EN_5V 状态上电使能
@@ -3121,12 +3084,9 @@ pwrseq_slave #(
     
     .p12v_front_bp_efuse_fault_det          (p12v_front_bp_efuse_fault_det  ),
     .p12v_reat_bp_efuse_fault_det	        (p12v_reat_bp_efuse_fault_det	),
-    .p12v_fan_efuse_fault_det		        (p12v_fan_efuse_fault_det	    ),
-    .p12v_dimm_efuse_fault_det              (p12v_dimm_efuse_fault_det	    ),
     .p12v_cpu1_vin_fault_det                (p12v_cpu1_vin_fault_det        ),
     .p12v_cpu0_vin_fault_det                (p12v_cpu0_vin_fault_det        ),
     .p12v_fault_det                         (p12v_fault_det                 ),//out
-    .p12v_stby_droop_fault_det              (p12v_stby_droop_fault_det      ),//out
 
     .p5v_fault_det		                    (p5v_fault_det	                ),
     .p3v3_fault_det                         (p3v3_fault_det                 ),
@@ -3144,11 +3104,6 @@ pwrseq_slave #(
     .cpu1_ddr_vdd_fault_det	                (cpu1_ddr_vdd_fault_det	        ),
     .cpu0_pll_p1v8_fault_det	            (cpu0_pll_p1v8_fault_det        ),
     .cpu1_pll_p1v8_fault_det	            (cpu1_pll_p1v8_fault_det        ),
-              
-    .cpu1_pcie_p1v8_fault_det               (cpu1_pcie_p1v8_fault_det       ),// 不使用
-    .cpu0_pcie_p1v8_fault_det               (cpu0_pcie_p1v8_fault_det       ),// 不使用
-    .cpu1_pcie_p0v9_fault_det               (cpu1_pcie_p0v9_fault_det       ),// 不使用 
-    .cpu0_pcie_p0v9_fault_det               (cpu0_pcie_p0v9_fault_det       ),// 不使用 
 
     .cpu0_d0_vp_p0v9_fault_det              (cpu0_d0_vp_p0v9_fault_det      ),
     .cpu0_d1_vp_p0v9_fault_det              (cpu0_d1_vp_p0v9_fault_det      ),
@@ -3951,10 +3906,10 @@ assign debug_mode_led = (~db_debug_sw[7]) ? db_debug_sw[3] : 1'b1;//0:LED For De
 //------------------------------------------------------------------------------
 //0xA2
 assign pf_class0_b0  = {main_efuse_fault_det,
-                        p12v_fan_efuse_fault_det,
+                        1'b0,
                         p12v_cpu0_vin_fault_det,
                         p12v_cpu1_vin_fault_det,
-                        p12v_dimm_efuse_fault_det,
+                        1'b0,
                         p5v_fault_det,
 						p12v_front_bp_efuse_fault_det,
 						p12v_reat_bp_efuse_fault_det
@@ -3986,8 +3941,7 @@ assign pf_class1_b0  = {cpu_thermtrip_fault_det[0],
                         cpu0_p1v8_fault_det       ,
                         cpu0_pll_p1v8_fault_det   ,
                         cpu0_ddr_vdd_fault_det    ,
-			            cpu0_pcie_p0v9_fault_det  ,
-			            cpu0_pcie_p1v8_fault_det  ,
+			            2'b0                      ,
                         cpu0_vddq_fault_det       ,
 						cpu0_vdd_core_fault_det
 						};
@@ -3996,8 +3950,7 @@ assign pf_class1_b1  = {cpu_thermtrip_fault_det[1],
                         cpu1_p1v8_fault_det       ,
                         cpu1_pll_p1v8_fault_det   ,
                         cpu1_ddr_vdd_fault_det    ,
-                        cpu1_pcie_p0v9_fault_det  ,
-                        cpu1_pcie_p1v8_fault_det  ,      
+                        2'b0                      ,     
                         cpu1_vddq_fault_det       ,
 						cpu1_vdd_core_fault_det   
 						};

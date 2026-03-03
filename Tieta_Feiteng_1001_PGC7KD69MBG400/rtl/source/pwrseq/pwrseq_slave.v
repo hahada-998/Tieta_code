@@ -38,15 +38,12 @@ module pwrseq_slave #(
     input                                       keep_alive_on_fault             ,   
  
     // PGOOD 输入信号
-    // stby电不受状态机控制
+    // 1、`SM_EN_3V3_STBY 电不受状态机控制
     input                                       p3v3_stby_bp_pg                 ,
     input                                       p3v3_stby_pg                    ,
     // 2. `SM_EN_5V_STBY 状态上电使能
     input                                       p5v_stby_pgd		                ,
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    input                                       dimm_efuse_pg		                , // 不使用, 写死1
-    input                                       fan_efuse_pg		                , // 不使用, 写死1
-    input                                       pgd_main_efuse                  , // 不使用, 写死1
     input                                       pgd_p12v                        ,
     input                                       pgd_p12v_stby_droop             ,
     input                                       reat_bp_efuse_pg                ,
@@ -74,10 +71,6 @@ module pwrseq_slave #(
     input                                       cpu1_ddr_vdd_pg	                ,
     input                                       cpu0_ddr_vdd_pg                 ,
     // 4. SM_EN_P0V8 状态上电使能
-    input                                       cpu0_pcie_p1v8_pg	              ,
-    input                                       cpu1_pcie_p1v8_pg	              ,
-    input                                       cpu0_pcie_p0v9_pg	              ,
-    input                                       cpu1_pcie_p0v9_pg	              ,
     input                                       cpu0_d0_vp_0v9_pg               ,
     input                                       cpu0_d1_vp_0v9_pg               ,
     input                                       cpu0_d0_vph_1v8_pg              ,
@@ -88,17 +81,14 @@ module pwrseq_slave #(
     input                                       cpu1_d1_vph_1v8_pg              ,
 
     // 上电使能信号
-    // 1. `SM_OFF_STANDBY/`SM_PS_ON 状态上电使能
-    output reg                                  ocp_aux_en		                  ,		                
+    // 1. SM_OFF_STANDBY/`SM_PS_ON 状态上电使能                
     output reg                                  cpu_bios_en                     ,                        
-    // 2. `SM_EN_5V_STBY 状态上电使能
+    // 2. SM_EN_5V_STBY 状态上电使能
     output                                      p5v_stby_en_r                   ,             
-    // 3. `SM_EN_TELEM 状态上电使能
+    // 3. SM_EN_TELEM 状态上电使能
     output                                      pvcc_hpmos_cpu_en_r             ,             
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    output                                      power_supply_on                 ,                    
-    output reg                                  ocp_main_en				              ,           
-    output                                      pal_main_efuse_en               ,                    
+    output                                      power_supply_on                 ,                                                 
     output                                      p12v_bp_front_en                ,                    
     output                                      p12v_bp_rear_en                 ,                    
     // 5. SM_EN_5V 状态上电使能
@@ -131,8 +121,7 @@ module pwrseq_slave #(
     output                                      cpu1_d0_vph_p1v8_en_r           ,
     output                                      cpu1_d1_vph_p1v8_en_r           ,
     
-    // 复位信号输出
-    // input                                       cpu_peu_prest_n_r               ,               
+    // 复位信号输出        
     output                                      cpu_por_n                       ,                    
     output  reg                                 usb_ponrst_r_n                  ,                    
     output                                      pex_reset_r_n                   ,                    
@@ -144,13 +133,10 @@ module pwrseq_slave #(
     output                                      p3v3_stby_fault_det              ,      
     
     output                                      p12v_front_bp_efuse_fault_det   ,       
-    output                                      p12v_reat_bp_efuse_fault_det	  ,      
-    output                                      p12v_fan_efuse_fault_det		    ,    
-    output                                      p12v_dimm_efuse_fault_det       , 
+    output                                      p12v_reat_bp_efuse_fault_det	  ,        
     output                                      p12v_cpu1_vin_fault_det         ,
     output                                      p12v_cpu0_vin_fault_det         ,  
     output                                      p12v_fault_det                  ,       
-    output                                      p12v_stby_droop_fault_det       ,    
 
     output                                      p5v_fault_det		                ,    
     output                                      p3v3_fault_det                  ,
@@ -168,11 +154,6 @@ module pwrseq_slave #(
     output                                      cpu1_ddr_vdd_fault_det	        ,        
     output                                      cpu0_pll_p1v8_fault_det	        ,    
     output                                      cpu1_pll_p1v8_fault_det	        ,    
-          
-    output                                      cpu1_pcie_p1v8_fault_det        ,       
-    output                                      cpu0_pcie_p1v8_fault_det        ,       
-    output                                      cpu1_pcie_p0v9_fault_det        ,       
-    output                                      cpu0_pcie_p0v9_fault_det        ,   
         
     output                                      cpu0_d0_vp_p0v9_fault_det        ,       
     output                                      cpu0_d1_vp_p0v9_fault_det        ,       
@@ -227,8 +208,6 @@ wire    st_aux_fail_recovery                   ;
 wire    st_critical_fail                       ;
 wire    st_en_5v                               ;
 wire    st_disable_main_efuse                  ;
-wire    p12v_main_fault                        ;
-
 // Aux rails
 wire    opt_aux_fault                          ;
 
@@ -248,8 +227,6 @@ reg     reg_power_supply_on	                   ;
 reg     reg_p12v_en                            ;
 
 // main e-fuse
-reg     reg_main_efuse_en                      ;
-
 reg     reg_p5v_en_r		                       ;
 
 reg     reg_p3v3_en_r		                       ;
@@ -268,12 +245,6 @@ reg     reg_cpu0_ddr_vdd_en_r		               ;
 reg     reg_cpu1_ddr_vdd_en_r		               ;
 reg     reg_cpu0_vddq_en_r	                   ;
 reg     reg_cpu1_vddq_en_r	                   ;
-
-reg     reg_cpu0_pcie_p0v9_en_r	               ;
-reg     reg_cpu1_pcie_p0v9_en_r		             ;
-reg     reg_cpu0_pcie_p1v8_en_r		             ;
-reg     reg_cpu1_pcie_p1v8_en_r                ;
-
 
 reg     reg_cpu0_d0_vp_p0v9_en_r               ;
 reg     reg_cpu0_d1_vp_p0v9_en_r               ;
@@ -315,10 +286,6 @@ assign cpu1_ddr_vdd_en_r	   =  reg_cpu1_ddr_vdd_en_r   & ( ~cpu1_ddr_vdd_fault_d
 assign cpu0_vddq_en_r	       =  reg_cpu0_vddq_en_r      & ( ~cpu0_vddq_fault_det      | keep_alive_on_fault );
 assign cpu1_vddq_en_r	       =  reg_cpu1_vddq_en_r      & ( ~cpu1_vddq_fault_det      | keep_alive_on_fault );
 
-assign cpu0_pcie_p0v9_en_r	 =  reg_cpu0_pcie_p0v9_en_r   & ( ~cpu0_pcie_p0v9_fault_det | keep_alive_on_fault );
-assign cpu1_pcie_p0v9_en_r	 =  reg_cpu1_pcie_p0v9_en_r   & ( ~cpu1_pcie_p0v9_fault_det | keep_alive_on_fault );
-assign cpu0_pcie_p1v8_en_r	 =  reg_cpu0_pcie_p1v8_en_r   & ( ~cpu0_pcie_p1v8_fault_det | keep_alive_on_fault );
-assign cpu1_pcie_p1v8_en_r	 =  reg_cpu1_pcie_p1v8_en_r   & ( ~cpu1_pcie_p1v8_fault_det | keep_alive_on_fault );
 assign cpu0_d0_vp_p0v9_en_r  =  reg_cpu0_d0_vp_p0v9_en_r  & (~cpu0_d0_vp_p0v9_fault_det  | keep_alive_on_fault);
 assign cpu0_d1_vp_p0v9_en_r  =  reg_cpu0_d1_vp_p0v9_en_r  & (~cpu0_d1_vp_p0v9_fault_det  | keep_alive_on_fault);
 assign cpu0_d0_vph_p1v8_en_r =  reg_cpu0_d0_vph_p1v8_en_r & (~cpu0_d0_vph_p1v8_fault_det| keep_alive_on_fault);
@@ -356,7 +323,6 @@ assign st_disable_main_efuse= (power_seq_sm == `SM_DISABLE_MAIN_EFUSE);
 //------------------------------------------------------------------------------
 always @(posedge clk or posedge reset) begin
     if (reset) begin
-        ocp_aux_en                 <= 1'b0;
         cpu_bios_en                <= 1'b0;
 
         reg_p5v_stby_en_r          <= 1'b0;  
@@ -364,8 +330,7 @@ always @(posedge clk or posedge reset) begin
         reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
 
         reg_power_supply_on        <= 1'b0;
-        reg_main_efuse_en          <= 1'b0;
-        ocp_main_en                <= 1'b0;
+
         reg_p12v_en                <= 1'b0;
 
         reg_p5v_en_r               <= 1'b0;   
@@ -387,11 +352,6 @@ always @(posedge clk or posedge reset) begin
         reg_cpu0_vddq_en_r         <= 1'b0;
         reg_cpu1_vddq_en_r         <= 1'b0;
 
-
-        reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
-        reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
-        reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
-        reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
         reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
         reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
         reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
@@ -411,7 +371,6 @@ always @(posedge clk or posedge reset) begin
     else if (t1us) begin
         case (power_seq_sm)
             `SM_RESET_STATE : begin
-                ocp_aux_en                 <= 1'b0;
                 cpu_bios_en                <= 1'b0;
 
                 reg_p5v_stby_en_r          <= 1'b0; 
@@ -419,8 +378,7 @@ always @(posedge clk or posedge reset) begin
                 reg_pvcc_hpmos_cpu_en_r    <= 1'b0;
 
                 reg_power_supply_on        <= 1'b0;
-                reg_main_efuse_en          <= 1'b0;
-                ocp_main_en                <= 1'b0;
+
                 reg_p12v_en                <= 1'b0;
 
                 reg_p5v_en_r               <= 1'b0; 
@@ -442,10 +400,6 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu0_vddq_en_r         <= 1'b0;
                 reg_cpu1_vddq_en_r         <= 1'b0;
 
-                reg_cpu0_pcie_p0v9_en_r    <= 1'b0;
-                reg_cpu1_pcie_p0v9_en_r    <= 1'b0;
-                reg_cpu0_pcie_p1v8_en_r    <= 1'b0;
-                reg_cpu1_pcie_p1v8_en_r    <= 1'b0;
                 reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
                 reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
                 reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
@@ -463,10 +417,6 @@ always @(posedge clk or posedge reset) begin
                 reached_sm_wait_powerok    <= 1'b0; 
             end
 
-            `SM_OFF_STANDBY : begin
-	              ocp_aux_en                 <= 1'b1;  
-            end
-
             `SM_PS_ON : begin
                 cpu_bios_en                <= 1'b1;
             end
@@ -481,8 +431,6 @@ always @(posedge clk or posedge reset) begin
 
             `SM_EN_MAIN_EFUSE : begin
                 reg_power_supply_on        <= 1'b1;
-		            ocp_main_en                <= 1'b1;
-		            reg_main_efuse_en          <= 1'b1;
 		            reg_p12v_en                <= 1'b1;
             end
 
@@ -518,11 +466,6 @@ always @(posedge clk or posedge reset) begin
             end
 
             `SM_EN_CPU_VP : begin          
-                reg_cpu0_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
-                reg_cpu1_pcie_p0v9_en_r    <= 1'b1; // 实际不使用
-                reg_cpu0_pcie_p1v8_en_r    <= 1'b1; // 实际不使用
-                reg_cpu1_pcie_p1v8_en_r    <= 1'b1; // 实际不使用
-
                 reg_cpu0_d0_vp_p0v9_en_r   <= 1'b1;
                 reg_cpu0_d1_vp_p0v9_en_r   <= 1'b1;
                 reg_cpu0_d0_vph_p1v8_en_r  <= 1'b1;
@@ -546,17 +489,8 @@ always @(posedge clk or posedge reset) begin
             `SM_WAIT_POWEROK : begin
                 reached_sm_wait_powerok    <= 1'b1;      
             end
-
-            `SM_CRITICAL_FAIL : begin
-            	  reg_main_efuse_en          <= 1'b0;       
-            end
 	  
             `SM_DISABLE_CPU_VP : begin
-                reg_cpu0_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
-                reg_cpu1_pcie_p0v9_en_r    <= 1'b0; // 实际不使用
-                reg_cpu0_pcie_p1v8_en_r    <= 1'b0; // 实际不使用
-                reg_cpu1_pcie_p1v8_en_r    <= 1'b0; // 实际不使用
-
                 reg_cpu0_d0_vp_p0v9_en_r   <= 1'b0;
                 reg_cpu0_d1_vp_p0v9_en_r   <= 1'b0;
                 reg_cpu0_d0_vph_p1v8_en_r  <= 1'b0;
@@ -600,8 +534,6 @@ always @(posedge clk or posedge reset) begin
 
             `SM_DISABLE_MAIN_EFUSE : begin
                 reg_power_supply_on        <= 1'b0;
-                ocp_main_en                <= 1'b0;
-                reg_main_efuse_en          <= 1'b0;
                 reg_p12v_en                <= 1'b0;
             end
 
@@ -663,12 +595,12 @@ assign pal_efuse_pcycle = aux_pcycle & ok_to_reset_aux;
 wire p5v_stby_en_r_check;
 
 edge_delay #(.CNTR_NBITS(2)) p5v_stby_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (p5v_stby_en_r),
-  .delay_output  (p5v_stby_en_r_check)
+  .clk              (clk                   ),
+  .reset            (reset                 ),
+  .cnt_size         (2'b10                 ),
+  .cnt_step         (t64ms                 ),
+  .signal_in        (p5v_stby_en_r         ),
+  .delay_output     (p5v_stby_en_r_check   )
 );
 
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p5v_stby_fault_detect_inst (
@@ -755,37 +687,27 @@ wire   p12v_stby_en;
 wire   p12v_stby_en_check;
 assign p12v_stby_en = 1'b1;
 edge_delay #(.CNTR_NBITS(2)) p12v_stby_en_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (p12v_stby_en),
-  .delay_output  (p12v_stby_en_check)
+    .clk              (clk),
+    .reset            (reset),
+    .cnt_size         (2'b10),
+    .cnt_step         (t64ms),
+    .signal_in        (p12v_stby_en),
+    .delay_output     (p12v_stby_en_check)
 );
 
 generate begin : _P12V_FAULT_DETECT_
-fault_detectB_chklive #(.NUMBER_OF_VRM(3)) p12_fault_detect_inst (
- .clk              (clk),
- .reset            (reset),
- .vrm_enable       ({pal_main_efuse_en,
-                     pal_main_efuse_en,
-                    (p12v_stby_en && p12v_stby_en_check)}),
- .vrm_pgood        ({pgd_main_efuse,
-                     pgd_p12v,
-                     pgd_p12v_stby_droop}),
- .vrm_chklive_en   ({st_en_5v,
-                     st_en_5v,
-                     p12v_stby_en_check}),
- .vrm_chklive_dis  ({st_disable_main_efuse,
-                     st_disable_main_efuse,  
-                     ~p12v_stby_en_check}),   
- .critical_fail    (st_critical_fail),
- .fault_clear      (fault_clear),
- .lock             (any_pwr_fault_det),
- .any_vrm_fault    (p12v_main_fault),
- .vrm_fault        ({main_efuse_fault_det,
-                     p12v_fault_det,
-                     p12v_stby_droop_fault_det})
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12_fault_detect_inst (
+    .clk              (clk),
+    .reset            (reset),
+    .vrm_enable       (p12v_stby_en && p12v_stby_en_check),
+    .vrm_pgood        (pgd_p12v && pgd_p12v_stby_droop),
+    .vrm_chklive_en   (p12v_stby_en_check),
+    .vrm_chklive_dis  (~p12v_stby_en_check),   
+    .critical_fail    (st_critical_fail),
+    .fault_clear      (fault_clear),
+    .lock             (any_pwr_fault_det),
+    .any_vrm_fault    (),
+    .vrm_fault        (p12v_fault_det)
 );
 end
 endgenerate
@@ -804,34 +726,6 @@ edge_delay #(.CNTR_NBITS(2)) power_supply_on_check_inst (
   .signal_in        (power_supply_on          ),
   .delay_output     (power_supply_on_check    )
 );
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_fan_efuse_fault_detect_inst (
-  .clk              (clk                      ), //in
-  .reset            (reset                    ), //in
-  .vrm_enable       (power_supply_on && power_supply_on_check), //in
-  .vrm_pgood        (fan_efuse_pg             ), //in
-  .vrm_chklive_en   (power_supply_on_check    ), //in
-  .vrm_chklive_dis  (~power_supply_on_check   ), //in
-  .critical_fail    (st_critical_fail         ), //in
-  .fault_clear      (fault_clear              ), //in
-  .lock             (any_pwr_fault_det        ), //in
-  .any_vrm_fault    (                         ), //out
-  .vrm_fault        (p12v_fan_efuse_fault_det )	 //out
-); 
-  
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_dimm_efuse_fault_detect_inst (
-  .clk              (clk                      ), //in
-  .reset            (reset                    ), //in
-  .vrm_enable       (power_supply_on && power_supply_on_check), //in
-  .vrm_pgood        (dimm_efuse_pg            ), //in
-  .vrm_chklive_en   (power_supply_on_check    ), //in
-  .vrm_chklive_dis  (~power_supply_on_check   ), //in
-  .critical_fail    (st_critical_fail         ), //in
-  .fault_clear      (fault_clear              ), //in
-  .lock             (any_pwr_fault_det        ), //in
-  .any_vrm_fault    (                         ), //out
-  .vrm_fault        (p12v_dimm_efuse_fault_det)	 //out
-);   
 
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu1_vin_fault_detect_inst (
   .clk              (clk                      ), //in
@@ -1475,114 +1369,6 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_d1_vph_p1v8_fault_detect_inst (
 );
 
 //------------------------------------------------------------------------------
-// CPU0_PCIE_P0V9 & CPU1_PCIE_P0V9 Fault detect 
-//------------------------------------------------------------------------------
-wire cpu0_pcie_p0v9_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu0_pcie_p0v9_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu0_pcie_p0v9_en_r),
-  .delay_output  (cpu0_pcie_p0v9_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_pcie_p0v9_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu0_pcie_p0v9_en_r && cpu0_pcie_p0v9_en_r_check),	//in
-  .vrm_pgood        (cpu0_pcie_p0v9_pg),						//in
-  .vrm_chklive_en   (cpu0_pcie_p0v9_en_r_check),					//in
-  .vrm_chklive_dis  (~cpu0_pcie_p0v9_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu0_pcie_p0v9_fault_det)			//out
-);
-
-wire cpu1_pcie_p0v9_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu1_pcie_p0v9_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu1_pcie_p0v9_en_r),
-  .delay_output  (cpu1_pcie_p0v9_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_pcie_p0v9_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu1_pcie_p0v9_en_r && cpu1_pcie_p0v9_en_r_check),	//in
-  .vrm_pgood        (cpu1_pcie_p0v9_pg),						//in
-  .vrm_chklive_en   (cpu1_pcie_p0v9_en_r_check),						//in
-  .vrm_chklive_dis  (~cpu1_pcie_p0v9_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu1_pcie_p0v9_fault_det)			//out
-);
-
-
-//------------------------------------------------------------------------------
-// CPU0_PCIE_P1V8 & CPU1_PCIE_P1V8 Fault detect 
-//------------------------------------------------------------------------------
-wire cpu0_pcie_p1v8_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu0_pcie_p1v8_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu0_pcie_p1v8_en_r),
-  .delay_output  (cpu0_pcie_p1v8_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu0_pcie_p1v8_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu0_pcie_p1v8_en_r && cpu0_pcie_p1v8_en_r_check),	//in
-  .vrm_pgood        (cpu0_pcie_p1v8_pg),						//in
-  .vrm_chklive_en   (cpu0_pcie_p1v8_en_r_check),					//in
-  .vrm_chklive_dis  (~cpu0_pcie_p1v8_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu0_pcie_p1v8_fault_det)			//out
-);
-
-wire cpu1_pcie_p1v8_en_r_check;
-
-edge_delay #(.CNTR_NBITS(2)) cpu1_pcie_p1v8_en_r_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (cpu1_pcie_p1v8_en_r),
-  .delay_output  (cpu1_pcie_p1v8_en_r_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) cpu1_pcie_p1v8_fault_det_inst (
-  .clk              (clk),								//in
-  .reset            (reset),							//in
-  .vrm_enable       (cpu1_pcie_p1v8_en_r && cpu1_pcie_p1v8_en_r_check),	//in
-  .vrm_pgood        (cpu1_pcie_p1v8_pg),						//in
-  .vrm_chklive_en   (cpu1_pcie_p1v8_en_r_check),						//in
-  .vrm_chklive_dis  (~cpu1_pcie_p1v8_en_r_check),					//in
-  .critical_fail    (st_critical_fail),					//in
-  .fault_clear      (fault_clear),						//in
-  .lock             (any_pwr_fault_det),				//in
-  .any_vrm_fault    (),									//out
-  .vrm_fault        (cpu1_pcie_p1v8_fault_det)			//out
-);
-
-
-//------------------------------------------------------------------------------
 // THERMTRIP_DETECT
 //------------------------------------------------------------------------------
 wire   cpupwrok_en;
@@ -1709,41 +1495,41 @@ wire                                      aux_fault                   ;
 assign any_aux_vrm_fault = aux_fault;
 
 // fault_vec_mapping
-assign fault_vec[0]  = p5v_stby_fault_det            ;  
-assign fault_vec[1]  = p3v3_stby_bp_fault_det        ;  
-assign fault_vec[2]  = main_efuse_fault_det          ; // 未使用 
-assign fault_vec[3]  = p3v3_stby_fault_det           ;  
+assign fault_vec[0]  = p5v_stby_fault_det             ;  
+assign fault_vec[1]  = p3v3_stby_bp_fault_det         ;  
+assign fault_vec[2]  = 1'b0                           ; // 未使用 
+assign fault_vec[3]  = p3v3_stby_fault_det            ;  
 
-assign fault_vec[4]  = p12v_front_bp_efuse_fault_det ;  
-assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det  ;
-assign fault_vec[6]  = p12v_fan_efuse_fault_det      ; // 未使用
-assign fault_vec[7]  = p12v_dimm_efuse_fault_det     ;
-assign fault_vec[8]  = p12v_cpu1_vin_fault_det       ;
-assign fault_vec[9]  = p12v_cpu0_vin_fault_det       ;
-assign fault_vec[10] = p12v_fault_det                ;  
-assign fault_vec[11] = p12v_stby_droop_fault_det     ;
+assign fault_vec[4]  = p12v_front_bp_efuse_fault_det  ;  
+assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det   ;
+assign fault_vec[6]  = 1'b0       ; // 未使用
+assign fault_vec[7]  = 1'b0      ;
+assign fault_vec[8]  = p12v_cpu1_vin_fault_det        ;
+assign fault_vec[9]  = p12v_cpu0_vin_fault_det        ;
+assign fault_vec[10] = p12v_fault_det                 ;  
+assign fault_vec[11] = 1'b0      ;
 
-assign fault_vec[12] = p5v_fault_det                 ;
-assign fault_vec[13] = p3v3_fault_det                ;
-assign fault_vec[14] = vcc_1v1_fault_det             ;
+assign fault_vec[12] = p5v_fault_det                  ;
+assign fault_vec[13] = p3v3_fault_det                 ;
+assign fault_vec[14] = vcc_1v1_fault_det              ;
 
-assign fault_vec[15] = cpu0_vdd_core_fault_det       ;  
-assign fault_vec[16] = cpu1_vdd_core_fault_det       ;
+assign fault_vec[15] = cpu0_vdd_core_fault_det        ;  
+assign fault_vec[16] = cpu1_vdd_core_fault_det        ;
 
-assign fault_vec[17] = cpu0_p1v8_fault_det           ;  
-assign fault_vec[18] = cpu1_p1v8_fault_det           ;
+assign fault_vec[17] = cpu0_p1v8_fault_det            ;  
+assign fault_vec[18] = cpu1_p1v8_fault_det            ;
 
-assign fault_vec[19] = cpu0_vddq_fault_det           ;  
-assign fault_vec[20] = cpu1_vddq_fault_det           ;
-assign fault_vec[21] = cpu0_ddr_vdd_fault_det        ;  
-assign fault_vec[22] = cpu1_ddr_vdd_fault_det        ;
-assign fault_vec[23] = cpu0_pll_p1v8_fault_det       ;  
-assign fault_vec[24] = cpu1_pll_p1v8_fault_det       ;
+assign fault_vec[19] = cpu0_vddq_fault_det            ;  
+assign fault_vec[20] = cpu1_vddq_fault_det            ;
+assign fault_vec[21] = cpu0_ddr_vdd_fault_det         ;  
+assign fault_vec[22] = cpu1_ddr_vdd_fault_det         ;
+assign fault_vec[23] = cpu0_pll_p1v8_fault_det        ;  
+assign fault_vec[24] = cpu1_pll_p1v8_fault_det        ;
 
-assign fault_vec[25] =  cpu1_pcie_p1v8_fault_det     ;  
-assign fault_vec[26] =  cpu0_pcie_p1v8_fault_det     ;
-assign fault_vec[27] =  cpu1_pcie_p0v9_fault_det     ;  
-assign fault_vec[28] =  cpu0_pcie_p0v9_fault_det     ;
+assign fault_vec[25] =  cpu1_pcie_p1v8_fault_det      ;  
+assign fault_vec[26] =  cpu0_pcie_p1v8_fault_det      ;
+assign fault_vec[27] =  cpu1_pcie_p0v9_fault_det      ;  
+assign fault_vec[28] =  cpu0_pcie_p0v9_fault_det      ;
 
 assign fault_vec[29] =  cpu0_d0_vp_p0v9_fault_det     ;  
 assign fault_vec[30] =  cpu0_d1_vp_p0v9_fault_det     ;
@@ -1760,14 +1546,15 @@ assign fault_vec[39] = 1'b0;  // RSVD
 
 
 // Mask each fault with the corresponding bits
-generate for (i = 0; i < FAULT_VEC_SIZE; i = i + 1) begin : _fault_vec_block_
-  assign any_recov_fault_vec[i]     = fault_vec[i] & RECOV_FAULT_MASK[i];
-  assign any_lim_recov_fault_vec[i] = fault_vec[i] & LIM_RECOV_FAULT_MASK[i];
-  assign any_non_recov_fault_vec[i] = fault_vec[i] & NON_RECOV_FAULT_MASK[i];
-end
+generate 
+    for (i = 0; i < FAULT_VEC_SIZE; i = i + 1)begin : _fault_vec_block_
+        assign any_recov_fault_vec[i]     = fault_vec[i] & RECOV_FAULT_MASK[i];
+        assign any_lim_recov_fault_vec[i] = fault_vec[i] & LIM_RECOV_FAULT_MASK[i];
+        assign any_non_recov_fault_vec[i] = fault_vec[i] & NON_RECOV_FAULT_MASK[i];
+    end
 endgenerate
 
-assign any_recov_fault_c     = |any_recov_fault_vec;
+assign any_recov_fault_c     = |any_recov_fault_vec    ;
 assign any_lim_recov_fault_c = |any_lim_recov_fault_vec;
 assign any_non_recov_fault_c = |any_non_recov_fault_vec;
 
@@ -1780,7 +1567,7 @@ always @(posedge clk or posedge reset) begin
   end
   else begin
     any_pwr_fault_det   <= any_recov_fault_c | any_lim_recov_fault_c | any_non_recov_fault_c;
-    any_recov_fault     <= any_recov_fault_c;
+    any_recov_fault     <= any_recov_fault_c    ;
     any_lim_recov_fault <= any_lim_recov_fault_c;
     any_non_recov_fault <= any_non_recov_fault_c;
   end

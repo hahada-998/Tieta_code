@@ -24504,3 +24504,857 @@
 [Debug] [2026-3-2 22:57:06] Send back reponse of cmd heart beat
 [Debug] [2026-3-2 22:57:06] connection thread 000000000000627Crun observer finish, send back observer result, send back data size is 3c
 [Info] [2026-3-2 22:57:06] Send data to thread 000000000000627C
+[Info] [2026-3-3 10:21:49] /***************************Start jtagserver***************************/
+[Info] [2026-3-3 10:21:49] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-3 10:21:49] Version: 187561
+[Debug] [2026-3-3 10:21:51] Add a new user_thread, thread id is 00000000000034F0
+[Debug] [2026-3-3 10:21:51] After adding, map size is : 1
+[Debug] [2026-3-3 10:21:51] socket thread id is 00000000000034F0 and socket type is 9/r/n
+[Debug] [2026-3-3 10:21:51] Add a new user_thread, thread id is 00000000000026E8
+[Debug] [2026-3-3 10:21:51] After adding, map size is : 2
+[Debug] [2026-3-3 10:21:51] socket thread id is 00000000000026E8 and socket type is 9/r/nsocket thread id is 00000000000034F0 and socket type is 9/r/n
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0 try initiate it's pack handler and request handler
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0 initiate it's pack handler and request handler which socket type is 57 successfully
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:21:51] Send back reponse of cmd check version information
+[Info] [2026-3-3 10:21:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:21:51] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:21:51] connection thread 00000000000034F0run cmd, cmd id :40010cmd name : get_cable_paras
+[Debug] [2026-3-3 10:21:52] Send back reponse of cmd get_cable_paras
+[Debug] [2026-3-3 10:21:52] connection thread 00000000000034F0send back response, cmd id :40010cmd name : get_cable_paras
+[Info] [2026-3-3 10:21:52] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:21:52] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:21:52] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:21:52] connection thread 00000000000034F0run cmd, cmd id :20001cmd name : Open config cable
+[Error] [2026-3-3 10:21:53] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:53] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:54] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] Hardware handler is invalid
+[Debug] [2026-3-3 10:21:55] Send back reponse of cmd Open config cable
+[Debug] [2026-3-3 10:21:55] connection thread 00000000000034F0send back response, cmd id :20001cmd name : Open config cable
+[Info] [2026-3-3 10:21:55] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:21:55] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:21:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:21:55] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 60
+[Info] [2026-3-3 10:21:55] Send data to thread 00000000000034F0
+[Error] [2026-3-3 10:21:55] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:55] Cable is disonnect.
+[Error] [2026-3-3 10:21:56] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:56] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:56] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:56] Cable is disonnect.
+[Debug] [2026-3-3 10:21:57] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:21:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:21:57] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 60
+[Info] [2026-3-3 10:21:57] Send data to thread 00000000000034F0
+[Error] [2026-3-3 10:21:59] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:59] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:59] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:21:59] Cable is disonnect.
+[Debug] [2026-3-3 10:22:00] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:00] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:00] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 60
+[Info] [2026-3-3 10:22:00] Send data to thread 00000000000034F0
+[Error] [2026-3-3 10:22:02] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:02] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:02] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:02] Cable is disonnect.
+[Debug] [2026-3-3 10:22:03] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:03] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:03] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 60
+[Info] [2026-3-3 10:22:03] Send data to thread 00000000000034F0
+[Error] [2026-3-3 10:22:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] Cable is disonnect.
+[Debug] [2026-3-3 10:22:05] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:22:05] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:22:05] connection thread 00000000000034F0run cmd, cmd id :20001cmd name : Open config cable
+[Error] [2026-3-3 10:22:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:07] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:07] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-3 10:22:07] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Debug] [2026-3-3 10:22:07] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:22:07] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:22:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0902c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0502c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0902c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0502c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0902c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0502c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0902c0
+[Debug] [2026-3-3 10:22:07] status_value is 1c0502c0
+[Debug] [2026-3-3 10:22:07] Send back reponse of cmd Open config cable
+[Debug] [2026-3-3 10:22:07] connection thread 00000000000034F0send back response, cmd id :4e21cmd name : Open config cable
+[Info] [2026-3-3 10:22:07] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:07] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:07] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:07] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:09] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:09] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:09] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:12] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:12] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:12] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:21] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:21] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:24] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:24] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:24] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:27] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:27] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:27] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:27] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:30] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:30] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:30] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:30] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:33] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:33] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:33] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:33] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:36] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:36] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:36] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:39] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:39] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:39] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:42] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:42] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:42] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:42] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:45] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:45] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:48] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:48] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:48] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:51] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:22:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:22:51] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:22:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:52] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:22:52] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:22:52] connection thread 00000000000034F0run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-3 10:22:52] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:22:52] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:22:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:22:52] status_value is 1c0902c0
+[Debug] [2026-3-3 10:22:54] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:54] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:54] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:54] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:55] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:55] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:55] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:56] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:56] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:56] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:57] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:57] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:57] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:58] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:58] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:58] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:22:59] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:22:59] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:22:59] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:00] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:00] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:00] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:01] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:01] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:01] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:02] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:02] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:02] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:04] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:04] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:04] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:05] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:05] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:05] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:06] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:06] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:06] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:07] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:07] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:08] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:08] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:09] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:09] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:10] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:10] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:10] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:11] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:11] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:11] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:12] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:12] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:23:13] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-3 10:23:13] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:13] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:13] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:13] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:13] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:13] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:13] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:13] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:14] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:14] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:15] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:15] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:15] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:23:15] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-3 10:23:15] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:15] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:15] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:15] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:15] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:15] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:15] Send back reponse of cmd get info message
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-3 10:23:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:15] Feature Control value is 28943
+[Debug] [2026-3-3 10:23:15] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:15] status_value is 1409efd0
+[Debug] [2026-3-3 10:23:15] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:15] status_value is 1409efd0
+[Debug] [2026-3-3 10:23:15] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:15] Send back reponse of cmd Program CTL
+[Debug] [2026-3-3 10:23:15] connection thread 00000000000034F0send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-3 10:23:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:19] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:23:19] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:23:19] connection thread 00000000000034F0run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-3 10:23:19] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:20] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:20] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:20] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:20] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:20] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:21] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:21] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:22] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:22] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:22] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:23] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:23] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:23] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:24] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:24] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:24] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:25] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:25] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:25] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:27] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:27] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:27] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:28] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:28] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:28] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:29] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:29] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:29] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:30] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:30] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:30] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:31] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:31] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:31] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:32] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:32] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:32] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:34] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:34] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:34] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:35] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:35] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:35] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:36] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:36] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:37] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:37] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:38] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:38] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:39] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:39] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:41] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:41] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:41] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:42] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:42] connection thread 00000000000034F0send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:42] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:23:43] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-3 10:23:43] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:43] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:43] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:43] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:43] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:43] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:44] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:44] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0502c0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] Socket connection 00000000000034F0recvive data
+[Debug] [2026-3-3 10:23:45] Socket connection 00000000000034F0 start to handle complete buff
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-3 10:23:45] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:45] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-3 10:23:45] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:45] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:45] the idcode from the scanning is: 0x0
+[Debug] [2026-3-3 10:23:45] status_value is 1c0902c0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd get info message
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:45] Feature Control value is 28943
+[Debug] [2026-3-3 10:23:45] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:45] status_value is 1409efd0
+[Debug] [2026-3-3 10:23:45] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:45] status_value is 1409efd0
+[Debug] [2026-3-3 10:23:45] status_value is 1405efd0
+[Debug] [2026-3-3 10:23:45] Send back reponse of cmd Program CTL
+[Debug] [2026-3-3 10:23:45] connection thread 00000000000034F0send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-3 10:23:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:48] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:48] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:48] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:51] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:51] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:54] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:54] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:23:57] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:23:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:23:57] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:23:57] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:00] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:00] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:00] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:00] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:03] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:03] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:03] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:03] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:06] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:06] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:06] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:06] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:09] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:09] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:09] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:12] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:12] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:12] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:21] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:21] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:24] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:24] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:24] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:27] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:27] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:27] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:27] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:30] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:30] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:30] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:30] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:33] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:33] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:33] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:33] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:36] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:36] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:36] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:39] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:39] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:39] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:42] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:42] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:42] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:42] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:45] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:45] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:48] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:48] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:48] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:51] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:51] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:54] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:54] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:24:57] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:24:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:24:57] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:24:57] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:00] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:00] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:00] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:00] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:03] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:03] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:03] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:03] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:06] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:06] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:06] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:06] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:09] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:09] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:09] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:12] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:12] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:12] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:21] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:21] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:24] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:24] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:24] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:27] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:27] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:27] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:27] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:30] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:30] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:30] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:30] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:33] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:33] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:33] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:33] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:36] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:36] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:36] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:39] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:39] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:39] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:42] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:42] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:42] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:42] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:45] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:45] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:48] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:48] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:48] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:51] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:51] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:54] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:54] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:25:57] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:25:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:25:57] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:25:57] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:00] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:00] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:00] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:00] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:03] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:03] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:03] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:03] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:06] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:06] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:06] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:06] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:09] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:09] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:09] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:12] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:12] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:12] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:21] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:21] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:24] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:24] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:24] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:27] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:27] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:27] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:27] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:30] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:30] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:30] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:30] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:33] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:33] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:33] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:33] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:36] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:36] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:36] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:39] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:39] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:39] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:42] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:42] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:42] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:42] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:45] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:45] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:45] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:48] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:48] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:48] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:51] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:51] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:51] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:54] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:54] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:54] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:26:57] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:26:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:26:57] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:26:57] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:00] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:00] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:00] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:00] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:03] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:03] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:03] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:03] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:06] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:06] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:06] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:06] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:09] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:09] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:09] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:09] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:12] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:12] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:12] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:12] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:15] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:15] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:15] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:15] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:18] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:18] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:18] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:18] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:21] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:21] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:21] Send data to thread 00000000000034F0
+[Debug] [2026-3-3 10:27:24] connection thread 00000000000034F0run observer
+[Debug] [2026-3-3 10:27:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-3 10:27:24] connection thread 00000000000034F0run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-3 10:27:24] Send data to thread 00000000000034F0

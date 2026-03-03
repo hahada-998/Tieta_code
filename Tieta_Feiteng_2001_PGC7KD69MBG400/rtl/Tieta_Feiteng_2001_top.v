@@ -269,11 +269,6 @@ module Tieta_Feiteng_2001_top(
     input   i_PEX_USB2_PPON0                          /* synthesis LOC = "G7"*/,// from  PEX_USB_UPD720201_2 / U41_XUSB2104LACGR        to  CPLD_S                                           default 1  // PEX USB2 PPON0 信号
     output  o_USB2_SW_SEL_R                           /* synthesis LOC = "A18"*/,// from  CPLD_S                                        to  USB2_SWITCH / U256_DIO5000QN10                   default 1  // USB2 切换 选择 信号
     // 未使用
-
-    output  o_PAL_GPU1_EFUSE_EN_R                     /* synthesis LOC  = "Y2" */,// from  CPLD_S                                       to  GPU1_PWR                                         default 1  // GPU1 EFUSE 使能 信号                                            
-    output  o_PAL_GPU2_EFUSE_EN_R                     /* synthesis LOC  = "C20" */,// from  CPLD_S                                       to  GPU2_PWR                                         default 1  // GPU2 EFUSE 使能 信号                
-    output  o_PAL_GPU3_EFUSE_EN_R                     /* synthesis LOC  = "Y3 "*/,// from  CPLD_S                                       to  GPU3_PWR                                         default 1  // GPU3 EFUSE 使能 信号                                     
-    output  o_PAL_GPU4_EFUSE_EN_R                     /* synthesis LOC  = "C19 "*/,// from  CPLD_S                                       to  GPU4_PWR                                         default 1  // GPU4 EFUSE 使能 信号                                         
     /* end:   CPU芯片的MCIO信号相关 */
 
     /* begin: RISER  */
@@ -342,7 +337,8 @@ module Tieta_Feiteng_2001_top(
     /* begin: 电源上下电相关信号 还有其他的en*/
     input   i_PAL_PWR_SW_IN_N                         /* synthesis LOC  = "N5"*/ ,// from  CPLD_S_UART_LED_SW                            to  CPLD_S                                           default 1  // 电源开关 输入 信号
 
-    // 未使用 
+    // 未使用
+    // ！！！接入主CPLD 
     input   i_PAL_P12V_STBY_EFUSE_PG                  /* synthesis LOC = "F8"*/,// from  CURRENT_DET1 / P12V_STBY                      to  CPLD_S                                           default 1  // 12V 待机 EFUSE 电源良好 信号
     input   i_PAL_P12V_STBY_EFUSE_FLTB                /* synthesis LOC = "E7"*/,// from  CURRENT_DET1 / P12V_STBY                      to  CPLD_S                                           default 1  // 12V 待机 EFUSE 故障 信号    
     output  o_PAL_P12V_STBY_EFUSE_EN_R                /* synthesis LOC = "B8"*/,// from  CPLD_S                                        to  CURRENT_DET1 / P12V_STBY                         default 1  // 12V 待机 EFUSE 使能 信号                                            
@@ -357,14 +353,20 @@ module Tieta_Feiteng_2001_top(
     // 未使用
 
     // 未使用 
+    // !!! 接入主CPLD
+    output  o_PAL_GPU1_EFUSE_EN_R                     /* synthesis LOC  = "Y2" */,// from  CPLD_S                                       to  GPU1_PWR                                         default 1  // GPU1 EFUSE 使能 信号                                            
     input   i_PAL_GPU1_EFUSE_OC	                      /* synthesis LOC = "V3" */,// from  GPU1_PWR                                      to  CPLD_S                                           default 1  // GPU1 EFUSE 过温保护 信号
     input   i_PAL_GPU1_EFUSE_PG	                      /* synthesis LOC = "U4" */,// from  GPU1_PWR                                      to  CPLD_S                                           default 1  // GPU1 EFUSE 电源良好 信号
+    output  o_PAL_GPU2_EFUSE_EN_R                     /* synthesis LOC  = "C20" */,// from  CPLD_S                                       to  GPU2_PWR                                         default 1  // GPU2 EFUSE 使能 信号                
     input   i_PAL_GPU2_EFUSE_OC	                      /* synthesis LOC = "T17" */,// from  GPU2_PWR                                      to  CPLD_S                                           default 1  // GPU2 EFUSE 过温保护 信号
     input   i_PAL_GPU2_EFUSE_PG	                      /* synthesis LOC = "R17" */,// from  GPU2_PWR                                      to  CPLD_S                                           default 1  // GPU2 EFUSE 电源良好 信号
+    output  o_PAL_GPU3_EFUSE_EN_R                     /* synthesis LOC  = "Y3 "*/,// from  CPLD_S                                       to  GPU3_PWR                                         default 1  // GPU3 EFUSE 使能 信号                                     
     input   i_PAL_GPU3_EFUSE_OC	                      /* synthesis LOC = "W4" */,// from  GPU3_PWR                                      to  CPLD_S                                           default 1  // GPU3 EFUSE 过温保护 信号
     input   i_PAL_GPU3_EFUSE_PG	                      /* synthesis LOC = "W3" */,// from  GPU3_PWR                                      to  CPLD_S                                           default 1  // GPU3 EFUSE 电源良好 信号
     input   i_PAL_GPU4_EFUSE_OC	                      /* synthesis LOC = "D12" */,// from  GPU4_PWR                                      to  CPLD_S                                           default 1  // GPU4 EFUSE 过温保护 信号
     input   i_PAL_GPU4_EFUSE_PG	                      /* synthesis LOC = "A11" */,// from  GPU4_PWR                                      to  CPLD_S                                           default 1  // GPU4 EFUSE 电源良好 信号
+    output  o_PAL_GPU4_EFUSE_EN_R                     /* synthesis LOC  = "C19 "*/,// from  CPLD_S                                       to  GPU4_PWR                                         default 1  // GPU4 EFUSE 使能 信号                                         
+
     // 未使用 
 
     // 未使用 
@@ -1208,8 +1210,6 @@ SYNC_DATA_N #(.SIGCNT(4)) sync_cpu_data_low (
 wire sys_hlth_red_blink_n;
 wire sys_hlth_grn_blink_n;
 wire led_uid             ;
-wire ocp_main_en         ;
-wire ocp_aux_en          ;
 wire pex_reset_n         ;
 wire t4hz_test_mcpld     ;
 wire [5:0] power_seq_sm  ;
@@ -1529,8 +1529,8 @@ assign sys_hlth_red_blink_n           = mcpld_to_scpld_data_filter[15] ; // 从C
 assign sys_hlth_grn_blink_n           = mcpld_to_scpld_data_filter[14] ; // 从CPLD addr 0x000B[0]
 assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主CPLD 控制UID点灯
 assign power_supply_on                = mcpld_to_scpld_data_filter[12] ; // 主CPLD power_supply电/p12v_efuse电
-assign ocp_main_en                    = mcpld_to_scpld_data_filter[11] ;
-assign ocp_aux_en                     = mcpld_to_scpld_data_filter[10] ;
+// assign ocp_main_en                 = mcpld_to_scpld_data_filter[11] ; // 预留, 不使用
+// assign ocp_aux_en                  = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
 assign pex_reset_n                    = mcpld_to_scpld_data_filter[9]  ;
 assign reached_sm_wait_powerok        = mcpld_to_scpld_data_filter[8]  ; // 主CPLD 状态机跳转
 assign usb_ponrst_r_n                 = mcpld_to_scpld_data_filter[7]  ; // 主CPLD 跟随CPU_REST一起复位
@@ -2181,39 +2181,17 @@ assign o_PAL_CK440_OE_N_R      = 1'b0 ; // ???是否打开???
 // assign PAL_UPD2_P1V0_EN        = 1'b1;//20240518 d00412 VB CHANGE
 // assign o_M2_2_SW_SEL_R         = pal_m2_0_sel_lv33_r ? 1'b0 : 1'b1;//sw[0];//1'b1;//20240518 d00412 VB CHANGE
 // assign o_M2_1_SW_SEL_R         = i_PAL_M2_1_SEL_R      ? 1'b0 : 1'b1;//sw[0];//20240518 d00412 VB CHANGE
-assign o_PAL_GPU4_EFUSE_EN_R   = power_supply_on;//20240518 d00412 VB CHANGE
 
 assign o_MCIO11_RISER1_PERST2_N    = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_RISER1_SLOT_PERST_N_R = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_RISER2_SLOT_PERST_N_R = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_M2_0_PERST_N_R        = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_M2_1_PERST_N_R        = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
-//OCP
-// wire ocp_aux_50ms_pgd;
-wire ocp_main_en_dly50ms;
-// wire ocp_aux_pgd;
-
-edge_delay #(
-  .CNTR_NBITS    (5)
-) ocp_main_en_delay_inst (
-  .clk           (clk_50m		),
-  .reset         (~pon_reset_n	),
-  .cnt_size      (5'h19		),
-  .cnt_step      (t2ms_tick	),
-  .signal_in     (ocp_main_en),
-  .delay_output  (ocp_main_en_dly50ms)
-);
 
 assign o_PAL_OCP1_NCSI_CLK_50M_R   = i_PAL_BMC_NCSI_CLK_50M_R;
 assign o_PAL_OCP_NCSI_CLK_50M_R    = i_PAL_BMC_NCSI_CLK_50M_R;
 assign o_PAL_WX1860_NCSI_CLK_50M_R = i_PAL_BMC_NCSI_CLK_50M_R;
 
-// assign o_PAL_OCP2_PERST1_N_R     = reached_sm_wait_powerok ; // 不使用
-// assign o_PAL_OCP2_PERST0_N_R     = reached_sm_wait_powerok ; // 不使用
-// assign o_PAL_OCP2_NCSI_CLK_50M_R = i_PAL_BMC_NCSI_CLK_50M_R; // 不使用
-// assign o_PAL_OCP2_STBY_PWR_EN_R  = ocp_aux_en              ; // 不使用
-// assign o_PAL_OCP2_MAIN_PWR_EN_R  = ocp_main_en             ; // 不使用
-// assign o_PAL_OCP2_HP_SW_EN_R     = 1'b0                    ; // 不使用
 
 
 
