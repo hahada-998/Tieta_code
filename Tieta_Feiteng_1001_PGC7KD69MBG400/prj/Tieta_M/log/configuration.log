@@ -9590,3 +9590,4 @@ Cable index 0:USB Cable II/fffffffffffffffe
 [Debug] [2026-3-6 17:44:38] Log::Print : Feature Control value is : 0x00028943
 [Debug] [2026-3-6 17:44:38] COMMAND[Program CTL] execute successfully, takes 0.2 secs.
 [Debug] [2026-3-6 17:44:38] Log::Print : COMMAND[Program CTL] execute successfully, takes 0.2 secs.
+[Info] [2026-3-6 18:05:56] /***************************End Configration***************************/
