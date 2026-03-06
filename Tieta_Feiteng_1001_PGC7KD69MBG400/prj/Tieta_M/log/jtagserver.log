@@ -120035,3 +120035,1792 @@
 [Debug] [2026-3-6 16:47:51] Send back reponse of cmd heart beat
 [Debug] [2026-3-6 16:47:51] connection thread 0000000000002118run observer finish, send back observer result, send back data size is 3c
 [Info] [2026-3-6 16:47:51] Send data to thread 0000000000002118
+[Info] [2026-3-6 17:44:03] /***************************Start jtagserver***************************/
+[Info] [2026-3-6 17:44:03] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-6 17:44:03] Version: 187561
+[Debug] [2026-3-6 17:44:04] Add a new user_thread, thread id is 00000000000030D8
+[Debug] [2026-3-6 17:44:04] After adding, map size is : 1
+[Debug] [2026-3-6 17:44:04] socket thread id is 00000000000030D8 and socket type is 9/r/n
+[Debug] [2026-3-6 17:44:04] Add a new user_thread, thread id is 0000000000001F48
+[Debug] [2026-3-6 17:44:04] After adding, map size is : 2
+[Debug] [2026-3-6 17:44:04] socket thread id is 0000000000001F48 and socket type is 9/r/nsocket thread id is 00000000000030D8 and socket type is 9/r/n
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8 try initiate it's pack handler and request handler
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8 initiate it's pack handler and request handler which socket type is 57 successfully
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:04] Send back reponse of cmd check version information
+[Info] [2026-3-6 17:44:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:04] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:04] connection thread 00000000000030D8run cmd, cmd id :40010cmd name : get_cable_paras
+[Debug] [2026-3-6 17:44:05] Send back reponse of cmd get_cable_paras
+[Debug] [2026-3-6 17:44:05] connection thread 00000000000030D8send back response, cmd id :40010cmd name : get_cable_paras
+[Info] [2026-3-6 17:44:05] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:05] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:05] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:05] connection thread 00000000000030D8run cmd, cmd id :20001cmd name : Open config cable
+[Error] [2026-3-6 17:44:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:05] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:06] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:06] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-6 17:44:06] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Debug] [2026-3-6 17:44:06] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:06] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:06] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:06] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:06] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:06] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:06] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:06] Send back reponse of cmd Open config cable
+[Debug] [2026-3-6 17:44:06] connection thread 00000000000030D8send back response, cmd id :4e21cmd name : Open config cable
+[Info] [2026-3-6 17:44:06] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:16] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:16] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:16] connection thread 00000000000030D8run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-6 17:44:16] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:16] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:16] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:16] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:16] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:16] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:17] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:17] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:17] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:18] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:18] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:18] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:19] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:20] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:20] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:21] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:21] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:21] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:22] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:22] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:23] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:23] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:23] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:24] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:24] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:24] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:25] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:25] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:26] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:26] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:26] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:27] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:27] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:27] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:28] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:28] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:29] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:29] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:29] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:30] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:30] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:30] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:31] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:31] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:32] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:32] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:32] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:33] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:33] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:33] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:34] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:34] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:35] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:35] connection thread 00000000000030D8send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:35] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:36] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:36] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:36] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:36] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:36] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:36] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-6 17:44:36] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:36] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:36] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:36] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-6 17:44:36] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:36] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:36] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:36] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:36] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:36] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:36] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:36] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:36] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:36] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:37] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Socket connection 00000000000030D8recvive data
+[Debug] [2026-3-6 17:44:38] Socket connection 00000000000030D8 start to handle complete buff
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-6 17:44:38] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:38] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-6 17:44:38] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:38] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:38] the idcode from the scanning is: 0x0
+[Debug] [2026-3-6 17:44:38] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd get info message
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:38] Feature Control value is 28943
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1409efd0
+[Debug] [2026-3-6 17:44:38] status_value is 1405efd0
+[Debug] [2026-3-6 17:44:38] Send back reponse of cmd Program CTL
+[Debug] [2026-3-6 17:44:38] connection thread 00000000000030D8send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-6 17:44:38] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:44:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:44:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:44:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:44:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:45:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:45:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:45:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:45:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:46:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:46:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:46:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:46:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:47:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:47:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:47:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:47:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:48:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:48:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:48:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:48:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:49:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:49:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:49:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:49:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:50:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:50:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:50:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:50:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:51:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:51:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:51:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:51:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:52:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:52:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:52:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:52:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:53:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:53:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:53:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:53:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:54:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:54:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:54:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:54:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:55:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:55:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:55:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:55:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:56:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:56:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:56:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:56:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:57:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:57:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:57:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:57:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:58:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:58:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:58:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:58:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 17:59:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 17:59:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 17:59:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 17:59:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:00:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:00:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:00:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:00:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:01:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:01:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:01:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:01:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:55] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:02:58] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:02:58] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:02:58] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:02:58] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:01] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:01] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:01] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:01] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:04] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:04] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:04] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:04] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:07] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:07] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:07] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:07] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:10] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:10] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:10] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:10] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:13] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:13] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:13] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:13] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:16] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:16] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:16] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:16] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:19] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:19] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:19] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:22] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:22] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:22] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:22] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:25] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:25] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:25] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:25] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:28] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:28] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:28] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:28] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:31] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:31] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:31] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:31] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:34] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:34] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:34] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:34] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:37] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:37] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:37] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:37] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:40] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:40] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:40] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:40] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:43] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:43] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:43] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:43] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:46] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:46] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:46] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:46] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:49] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:49] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:49] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:49] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:52] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:52] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:52] Send data to thread 00000000000030D8
+[Debug] [2026-3-6 18:03:55] connection thread 00000000000030D8run observer
+[Debug] [2026-3-6 18:03:55] Send back reponse of cmd heart beat
+[Debug] [2026-3-6 18:03:55] connection thread 00000000000030D8run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-6 18:03:55] Send data to thread 00000000000030D8

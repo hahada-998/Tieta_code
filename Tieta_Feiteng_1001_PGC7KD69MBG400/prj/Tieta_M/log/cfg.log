@@ -19,3 +19,7 @@ This device configure situation (done bit): 1
 PGC7KD
 This device configure situation (done bit): 1
 COMMAND[Open config cable] execute successfully, takes 2.3 secs.
+COMMAND[Program EFlash] execute finish, takes 20.4 secs.
+COMMAND[Verify EFlash] execute successfully, takes 2.0 secs.
+Feature Control value is : 0x00028943
+COMMAND[Program CTL] execute successfully, takes 0.2 secs.
