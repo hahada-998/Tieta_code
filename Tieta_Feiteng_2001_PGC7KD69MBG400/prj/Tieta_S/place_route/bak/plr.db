@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1218</data>
+                    <data>1208</data>
                     <data>0</data>
                 </row>
             </table>
@@ -267,7 +267,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1218</data>
+                    <data>1208</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -8827,23 +8827,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>205</data>
+            <data>194</data>
             <data>592</data>
-            <data>35</data>
+            <data>33</data>
             <row>
                 <data>FF</data>
-                <data>533</data>
+                <data>473</data>
                 <data>3552</data>
-                <data>16</data>
+                <data>14</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>453</data>
+                <data>494</data>
                 <data>2368</data>
-                <data>20</data>
+                <data>21</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>453</data>
+                    <data>494</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8863,23 +8863,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>292</data>
+            <data>289</data>
             <data>888</data>
             <data>33</data>
             <row>
                 <data>FF</data>
-                <data>727</data>
+                <data>777</data>
                 <data>5328</data>
-                <data>14</data>
+                <data>15</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>740</data>
+                <data>699</data>
                 <data>3552</data>
-                <data>21</data>
+                <data>20</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>740</data>
+                    <data>699</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9117,7 +9117,7 @@
         <row>
             <data>Tieta_Feiteng_2001_top</data>
             <data>1193</data>
-            <data>1260</data>
+            <data>1250</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
@@ -9230,8 +9230,8 @@
             </row>
             <row>
                 <data>inst_cmu_to_mb_s2p(s2p_master)</data>
-                <data>68</data>
-                <data>80</data>
+                <data>67</data>
+                <data>78</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9253,7 +9253,7 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>140</data>
+                <data>148</data>
                 <data>73</data>
                 <data>0</data>
                 <data>0</data>
@@ -9483,8 +9483,8 @@
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_s2p(s2p_slave)</data>
-                <data>256</data>
-                <data>415</data>
+                <data>254</data>
+                <data>411</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9529,7 +9529,7 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_p2s(p2s_slave)</data>
-                <data>85</data>
+                <data>77</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9644,8 +9644,8 @@
             </row>
             <row>
                 <data>timer_gen_inst(timer_gen)</data>
-                <data>41</data>
-                <data>35</data>
+                <data>39</data>
+                <data>33</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9819,10 +9819,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:8s</data>
-            <data>0h:0m:17s</data>
-            <data>0h:0m:11s</data>
-            <data>559</data>
+            <data>0h:0m:7s</data>
+            <data>0h:0m:15s</data>
+            <data>0h:0m:9s</data>
+            <data>561</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

@@ -130,14 +130,15 @@ module Tieta_Feiteng_2001_top(
     
     input   i_DB9_TOD_UART_RX                         /* synthesis LOC  = "U9"*/,// from  PPS TOD / U88_TPT75176HL1_S01R                to  CPLD_S                                           default 1  // DB9 TOD UART 接收 信号
     output  o_DB9_TOD_UART_TX                         /* synthesis LOC  = "P12" */,// from  CPLD_S                                      to  PPS TOD / U88_TPT75176HL1_S01R                  default 1  // DB9 TOD UART 发送 信号
-    
+
     input   i_UART0_CPU_LOG_RX                        /* synthesis LOC = "F16"*/,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 UART 日志 接收 信号
     output  o_UART0_CPU_LOG_TX                        /* synthesis LOC = "F14"*/,// from  CPLD_S                                      to  CPU0_UART / J614                                 default 1  // CPU0 UART 日志 发送 信号                                                
-    
+
     input   i_RISER_AUX_TOD_UART1_RXD                 /* synthesis LOC = "V12"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
     output  o_RISER_AUX_TOD_UART1_TXD                 /* synthesis LOC = "T11"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
     input   i_RISER_AUX_TOD_UART2_RXD                 /* synthesis LOC = "U12"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
     output  o_RISER_AUX_TOD_UART2_TXD                 /* synthesis LOC = "U11"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
+    
     // 未使用
     // 串口这里需要梳理一下
     /* end: UART 接口 */
@@ -176,11 +177,11 @@ module Tieta_Feiteng_2001_top(
 
     /* begin: OCP */
     input   i_PAL_BMC_NCSI_CLK_50M_R                /* synthesis LOC = "F17"*/ ,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S_UART_LED_SW                               default 1  // BMC NCSI 时钟 50M 信号
-    output  o_PAL_WX1860_NCSI_CLK_50M_R             /* synthesis LOC = "K19"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // WX1860 NCSI 时钟 50M 信号                                                    
-    output  o_PAL_WX1860_NCSI_SW_EN_N_R             /* synthesis LOC = "W18"*/,// from  CPLD_S                                       to  U38 -- U20WX1869A2                               default 1  // WX1860 NCSI 开关使能 信号
+    output  o_PAL_WX1860_NCSI_CLK_50M_R             /* synthesis LOC = "K19"*/ ,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // WX1860 NCSI 时钟 50M 信号                                                    
+    output  o_PAL_WX1860_NCSI_SW_EN_N_R             /* synthesis LOC = "W18"*/ ,// from  CPLD_S                                       to  U38 -- U20WX1869A2                               default 1  // WX1860 NCSI 开关使能 信号
 
     output  o_PAL_OCP_NCSI_CLK_50M_R                /* synthesis LOC  = "C10" */,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // OCP NCSI 时钟 50M 信号
-    output  o_PAL_OCP_NCSI_SW_EN_N_R                /* synthesis LOC  = "A7" */,// from  CPLD_S                                       to  RISER_AUX/U89_SGM652321XTS20G/TR                 default 1  // OCP NCSI 开关使能 信号
+    output  o_PAL_OCP_NCSI_SW_EN_N_R                /* synthesis LOC  = "A7" */ ,// from  CPLD_S                                       to  RISER_AUX/U89_SGM652321XTS20G/TR                 default 1  // OCP NCSI 开关使能 信号
 
     input   i_PAL_OCP_PRSNT_N                       /* synthesis LOC  = "L6"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP 设备存在 信号
     input   i_PAL_OCP_RISER_CPLD                    /* synthesis LOC  = "B6"*/,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP Riser CPLD 信号
@@ -224,7 +225,6 @@ module Tieta_Feiteng_2001_top(
 
     input   i_BOARD_ID0                              /* synthesis LOC = "T16"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID0 信号
     input   i_BOARD_ID1                              /* synthesis LOC = "W12"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID1 信号
-    // 未使用 !!! Y6, W6 引脚冲突 !!! s
     input   i_BOARD_ID2                              /* synthesis LOC = "Y6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID2 信号
     input   i_BOARD_ID3                              /* synthesis LOC = "W6"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID3 信号
     input   i_BOARD_ID4                              /* synthesis LOC = "P18"*/ ,// from  CPLD_S                                         to  BMC                                              default 0  // 主板 ID4 信号
@@ -1210,7 +1210,7 @@ SYNC_DATA_N #(.SIGCNT(4)) sync_cpu_data_low (
 wire sys_hlth_red_blink_n;
 wire sys_hlth_grn_blink_n;
 wire led_uid             ;
-wire pex_reset_n         ;
+
 wire t4hz_test_mcpld     ;
 wire [5:0] power_seq_sm  ;
 
@@ -1484,8 +1484,8 @@ assign bmc_read_flag                  = mcpld_to_scpld_data_filter[264]     ;
 
 // begin: 上下电调试使用
 // assign vga2_dis                       = mcpld_to_scpld_data_filter[263]     ; // MCPLD->SCPLD BMC下发 addr 0x0010[3] 不使用
-wire power_fault;
-assign power_fault                    = mcpld_to_scpld_data_filter[263];
+wire any_pwr_fault_det;
+assign any_pwr_fault_det                    = mcpld_to_scpld_data_filter[263];
 // end: 上下电调试使用
 
 assign pfr_to_led                     = mcpld_to_scpld_data_filter[262:223] ;
@@ -1531,7 +1531,16 @@ assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主C
 assign power_supply_on                = mcpld_to_scpld_data_filter[12] ; // 主CPLD power_supply电/p12v_efuse电
 // assign ocp_main_en                 = mcpld_to_scpld_data_filter[11] ; // 预留, 不使用
 // assign ocp_aux_en                  = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
-assign pex_reset_n                    = mcpld_to_scpld_data_filter[9]  ;
+// assign pex_reset_n                 = mcpld_to_scpld_data_filter[9]  ; // 预留, 不使用
+
+
+// begin: z02665 0305 上下电调试使用
+wire   pal_cpu1_p1v8_pg;
+wire   pal_cpu0_p1v8_pg;
+assign pal_cpu1_p1v8_pg                = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
+assign pal_cpu0_p1v8_pg                = mcpld_to_scpld_data_filter[9]  ; // 预留, 不使用
+// end: z02665 0305 上下电调试使用
+
 assign reached_sm_wait_powerok        = mcpld_to_scpld_data_filter[8]  ; // 主CPLD 状态机跳转
 assign usb_ponrst_r_n                 = mcpld_to_scpld_data_filter[7]  ; // 主CPLD 跟随CPU_REST一起复位
 assign t4hz_test_mcpld                = mcpld_to_scpld_data_filter[6]  ;
@@ -2038,48 +2047,70 @@ assign o_PAL_OCP_NCSI_SW_EN_N_R    = ~pal_ocp_ncsi_sw_en; //J53
 //LED
 // assign o_LED1_N               = t1hz_clk             ;
 // assign o_LED2_N               = mcpld_scpld_t1hz_clk ;
-// assign o_LED3_N               = power_fault          ;
+// assign o_LED3_N               = any_pwr_fault_det          ;
 assign o_LED1_N               = ~power_seq_sm[0];
 assign o_LED2_N               = ~power_seq_sm[1];
 assign o_LED3_N               = ~power_seq_sm[2];
 assign o_LED4_N               = ~power_seq_sm[3];
 assign o_LED5_N               = ~power_seq_sm[4];
 assign o_LED6_N               = ~power_seq_sm[5];
-assign o_LED7_N               = mcpld_scpld_t1hz_clk  ;//1'b1            ;
-assign o_LED8_N               = power_fault           ;  
+assign o_LED7_N               = ~(pal_cpu1_p1v8_pg & pal_cpu0_p1v8_pg)  ;//1'b1            ;
+assign o_LED8_N               = mcpld_scpld_t1hz_clk           ;  
 
 assign o_PAL_LED_HEL_GR_R     = sys_hlth_grn_blink_n  ;
 assign o_PAL_LED_HEL_RED_R    = sys_hlth_red_blink_n  ;
 
+
+// begin: z02665 0305上下点调试使用
+assign o_CPU1_D0_UART1_RX       = pal_cpu1_p1v8_pg & i_JACK_CPU1_UART1_RX ;
+assign o_JACK_CPU0_UART1_TX     = pal_cpu0_p1v8_pg & i_CPU0_D0_UART1_TX   ;
+// end: z02665 0305上下点调试使用
+
+
 //UART
-assign o_JACK_CPU1_D0_UART_SOUT = i_CPU1_D0_UART_SOUT    ;
-assign o_CPU1_D0_UART_SIN       = i_JACK_CPU1_D0_UART_SIN;
-assign o_JACK_CPU1_UART1_TX     = i_CPU1_D0_UART1_TX     ;
-assign o_CPU1_D0_UART1_RX       = i_JACK_CPU1_UART1_RX   ;
+assign o_JACK_CPU1_D0_UART_SOUT = 1'bz; // i_CPU1_D0_UART_SOUT    ;
+assign o_CPU1_D0_UART_SIN       = 1'bz; // i_JACK_CPU1_D0_UART_SIN;
+assign o_JACK_CPU1_UART1_TX     = 1'bz; // i_CPU1_D0_UART1_TX     ;
 
 
-assign o_JACK_CPU0_D0_UART_SOUT = i_CPU0_D0_UART_SOUT    ;
-assign o_CPU0_D0_UART_SIN       = i_JACK_CPU0_D0_UART_SIN;
 
-assign o_PAL_BMC_UART1_RX       = i_CPU0_D0_UART1_TX     ;
-assign o_JACK_CPU0_UART1_TX     = i_CPU0_D0_UART1_TX     ;
-assign o_CPU0_D0_UART1_RX       = (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX : i_JACK_CPU0_UART1_RX;
+assign o_JACK_CPU0_D0_UART_SOUT = 1'bz; // i_CPU0_D0_UART_SOUT    ;
+assign o_CPU0_D0_UART_SIN       = 1'bz; // i_JACK_CPU0_D0_UART_SIN;
+
+assign o_PAL_BMC_UART1_RX       = 1'bz; // i_CPU0_D0_UART1_TX     ;
+
+assign o_CPU0_D0_UART1_RX       = 1'bz; // i_JACK_CPU0_UART1_RX   ; // 写死
+                                // (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX : i_JACK_CPU0_UART1_RX;
                                 // (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX   :
                                 // (bmcctl_uart_sw == 2'b10) ? i_PAL_UART4_OCP2_RXD : i_JACK_CPU0_UART1_RX;
 
-assign o_PAL_UART4_OCP_DEBUG_TX = i_PAL_BMC_UART4_TX      ;
-assign o_PAL_BMC_UART4_RX       = i_PAL_UART4_OCP_DEBUG_RX;
+assign o_PAL_UART4_OCP_DEBUG_TX = 1'bz; // i_PAL_BMC_UART4_TX      ;
+assign o_PAL_BMC_UART4_RX       = 1'bz; // i_PAL_UART4_OCP_DEBUG_RX;
+
+// begin: z02665 0305 调试使用
+assign o_CPU0_D1_UART1_RX = 1'bz;
+assign o_CPU1_D1_UART1_RX = 1'bz;
+assign o_DB_UART_TX_R     = 1'bz;
+assign o_DBG_CPU0_UART1_TX_CONN_R = 1'bz;
+assign o_DBG_PAL_BMC_UART1_TX_CONN_R = 1'bz;
+assign o_LEAR_CPU0_UART1_TX = 1'bz;
+assign o_Riser1_TOD_UART_TXD_R = 1'bz;
+assign o_Riser2_TOD_UART_TXD_R = 1'bz;
+assign o_DB9_TOD_UART_TX = 1'bz;
+assign o_UART0_CPU_LOG_TX = 1'bz;
+assign o_RISER_AUX_TOD_UART1_TXD = 1'bz;
+assign o_RISER_AUX_TOD_UART2_TXD = 1'bz;
+// end: z02665 0305 调试使用
 
 // assign CPU0_D0_UART1_RX     = sw[7] ? JACK_CPU0_UART1_RX : PAL_BMC_UART1_TX;
 // assign o_PAL_BMC_UART2_RX       = i_PAL_UART2_LCD_RX      ;
 // assign o_PAL_UART2_LCD_TX       = i_PAL_BMC_UART2_TX      ;
 
+
+
+
 //UID
 assign o_PAL_LED_UID_R          = ~led_uid             ;
-
-//M.2
-// assign PAL_M2_PERST_N_R         = pex_reset_n          ;
-// assign PAL_88SE9230_RST_N_R     = pex_reset_n          ;
 
 //Thermal Trip*/
 assign cpu0_temp_over           = db_i_cpu0_d0_temp_over | db_i_cpu0_d1_temp_over /*| db_i_cpu0_d2_temp_over | db_i_cpu0_d3_temp_over*/;
@@ -2104,59 +2135,24 @@ assign o_RST_I2C12_MUX_N_R          = rst_i2c12_mux_n         ;
 assign o_RST_I2C11_MUX_N_R          = rst_i2c11_mux_n         ; 
 assign o_RST_I2C4_1_MUX_N_R         = rst_i2c4_1_mux_n        ; 
 assign o_RST_I2C_BMC_9548_MUX_N_R   = rst_i2c10_mux_n         ; 
-//assign RST_I2C_RISER1_PCA9548_N_R = rst_i2c_riser1_pca9548_n;
-//assign RST_I2C_RISER2_PCA9548_N_R = rst_i2c_riser2_pca9548_n;
 assign o_CPU0_RISER1_9548_RST_N_R   = rst_i2c_riser1_pca9548_n;
 assign o_CPU1_RISER2_9548_RST_N_R   = rst_i2c_riser2_pca9548_n;
-//CLK BUFFER
-// assign PAL_DB2000_3_OE_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_2_OE_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_2_OE12_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_2_OE10_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_3_OE12_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_3_OE11_N_R = 1'b0;//VB CHANGE
-// assign PAL_DB2000_2_OE5_N_R = 1'b0;
-// assign PAL_DB2000_2_OE6_N_R = 1'b0;
-// assign PAL_DB2000_3_OE6_N_R = 1'b0;
-// assign PAL_DB2000_3_OE8_N_R = 1'b0;
-// assign PAL_UPD1_P1V0_EN_R = 1'b1;
-// assign PAL_CK440_OE0_N_R = 1'b0;
-// assign PAL_CK440_OE1_N_R = 1'b0;
-// assign PAL_DB2000_1_OE11_N_R = 1'b0;
-// assign PAL_DB2000_1_OE10_N_R = 1'b0;
-// assign PAL_DB2000_3_OE10_N_R = 1'b0;
-// assign PAL_DB2000_3_OE7_N_R = 1'b0;
-// assign PAL_DB2000_3_OE5_N_R = 1'b0;
-// assign PAL_DB2000_3_OE9_N_R = 1'b0;
-// assign PAL_DB2000_1_OE5_N_R = 1'b0;
-// assign PAL_DB2000_1_OE6_N_R = 1'b0;
-// assign PAL_DB2000_1_OE9_N_R = 1'b0;
-// assign PAL_DB2000_2_OE9_N_R = 1'b0;
 
-assign o_PAL_P1V1_STBY_EN_R       = p1v1_en_r        ;
-assign o_PAL_M2_PWR_EN_R          = p3v3_en_r        ;
+
+assign o_PAL_P12V_STBY_EFUSE_EN_R = power_supply_on  ; // 实际逻辑不控制
+assign o_PAL_GPU1_EFUSE_EN_R      = power_supply_on  ;
+assign o_PAL_GPU2_EFUSE_EN_R      = power_supply_on  ;
+assign o_PAL_GPU3_EFUSE_EN_R      = power_supply_on  ;
+assign o_PAL_GPU4_EFUSE_EN_R      = power_supply_on  ;
+
 assign o_P5V_USB2_EN              = p5v_en_r         ;
-assign o_PAL_P12V_STBY_EFUSE_EN_R = power_supply_on  ; 
+assign o_PAL_M2_PWR_EN_R          = p3v3_en_r        ;
+assign o_PAL_P1V1_STBY_EN_R       = p1v1_en_r        ;
 
-
-//assign PAL_CK440_OE4_N_R = 1'b0;
-//assign PAL_DB2000_1_OE12_N_R = 1'b0;
-//assign PAL_DB2000_2_OE8_N_R = 1'b0;
-//assign PAL_DB2000_2_OE11_N_R = 1'b0;
-//assign PAL_CK440_OE6_N_R = 1'b0;
-//assign PAL_DB2000_2_OE7_N_R = 1'b0;
-//assign PAL_CK440_OE5_N_R = 1'b0;
-//assign PAL_DB2000_1_OE7_N_R = 1'b0;
-//assign PAL_CK440_OE3_N_R = 1'b0;
-//assign PAL_CK440_OE2_N_R  = 1'b0;
-assign PAL_USB2_L_REDRIVER_EN_R = 1'b1;
-//assign PAL_DB2000_1_OE8_N_R  = 1'b0;
-
-assign o_PAL_RISER4_PWR_EN_R     = 1'b1       ; // ???写死???
-assign o_PAL_UPD1_P3V3_EN_R      = 1'b1       ; // ???写死???
-assign o_PAL_UPD2_P3V3_EN_R      = 1'b1       ; // ???写死???
-assign o_PAL_UPD1_P1V1_EN_R      = 1'b1       ; // ???写死???
-assign o_PAL_UPD2_P1V1_EN_R      = 1'b1       ; // ???写死???
+assign o_PAL_UPD1_P3V3_EN_R      = p3v3_en_r       ;
+assign o_PAL_UPD2_P3V3_EN_R      = p3v3_en_r       ;
+assign o_PAL_UPD1_P1V1_EN_R      = p1v1_en_r       ;
+assign o_PAL_UPD2_P1V1_EN_R      = p1v1_en_r       ;
 
 // assign PAL_M2_SEL_R            = 1'b1         ; // 不使用
 // assign PAL_GPU_PWR_EN_R        = 1'b1         ; // 不使用
@@ -2164,18 +2160,18 @@ assign o_PAL_UPD2_P1V1_EN_R      = 1'b1       ; // ???写死???
 // assign PAL_OCP2_FAN_PWR_EN_R   = 1'b1         ; // 不使用
 assign o_PAL_TEST_BAT_EN       = test_bat_en  ; // 主CPLD addr 0x0008[7] 
 // assign PAL_OCP2_AUXPWR_ON_R    = 1'b1         ; // 不使用
-assign o_PAL_DB2000_1_PD_R     = 1'b1         ;
-assign o_PAL_DB800_1_PD_R      = 1'b1         ;
-// assign o_PAL_DB2000_2_PD_R     = 1'b1; // 不使用
-// assign o_PAL_DB2000_3_PD_R     = 1'b1; // 不使用
-assign o_PAL_SPI_SELECT_R      = ~rom_mux_bios_bmc_sel;
-assign o_PAL_SPI_SWITCH_EN_R   = rom_mux_bios_bmc_en  ;
-assign o_USB2_LCD_EN_R         = 1'b1                 ;//20240517 d00412 VB CHANGE
-assign o_LEAR_USB3_1_EN_R      = 1'b1                 ;//20240518 d00412 VB CHANGE
+assign o_PAL_DB2000_1_PD_R     = 1'b1                 ;
+assign o_PAL_DB800_1_PD_R      = 1'b1                 ;
 
-assign o_PAL_DB800_1_OE_N_R    = 1'b1 ;
-assign o_PAL_DB2000_1_OE_N_R   = 1'b1 ;
-assign o_PAL_CK440_OE_N_R      = 1'b0 ; // ???是否打开???
+assign o_PAL_SPI_SELECT_R      = 1'b1                 ; // 由BMC控制; ~rom_mux_bios_bmc_sel
+assign o_PAL_SPI_SWITCH_EN_R   = 1'b0                 ; // 由BMC控制; rom_mux_bios_bmc_en
+
+assign o_USB2_LCD_EN_R         = 1'b1                 ;
+assign o_LEAR_USB3_1_EN_R      = 1'b1                 ;
+
+assign o_PAL_DB800_1_OE_N_R    = 1'b0 ;
+assign o_PAL_DB2000_1_OE_N_R   = 1'b0 ;
+assign o_PAL_CK440_OE_N_R      = 1'b0 ;
 
 // assign LEAR_USB3_2_EN_R        = 1'b1;//20240518 d00412 VB CHANGE
 // assign PAL_UPD2_P1V0_EN        = 1'b1;//20240518 d00412 VB CHANGE
@@ -2841,10 +2837,7 @@ assign  o_PAL_THROTTLE_RISER1_R = 1'b0;
 assign  o_PAL_THROTTLE_RISER2_R = 1'b0;
 // 未使用
 
-assign  o_PAL_GPU1_EFUSE_EN_R   = power_supply_on;
-assign  o_PAL_GPU2_EFUSE_EN_R   = power_supply_on;
-assign  o_PAL_GPU3_EFUSE_EN_R   = power_supply_on;
-assign  o_PAL_GPU4_EFUSE_EN_R   = power_supply_on;
+
 
 
 // 未使用, ???信号作用???

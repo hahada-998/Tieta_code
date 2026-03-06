@@ -47,7 +47,6 @@ module pwrseq_slave #(
     input                                       pgd_p12v                        ,
     input                                       pgd_p12v_stby_droop             ,
     input                                       reat_bp_efuse_pg                ,
-    input                                       front_bp_efuse_pg               , // 不使用, 写死1
     input                                       p12v_cpu1_vin_pg                ,
     input                                       p12v_cpu0_vin_pg                ,
     // 5. SM_EN_5V 状态上电使能
@@ -88,9 +87,8 @@ module pwrseq_slave #(
     // 3. SM_EN_TELEM 状态上电使能
     output                                      pvcc_hpmos_cpu_en_r             ,             
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
-    output                                      power_supply_on                 ,                                                 
-    output                                      p12v_bp_front_en                ,                    
-    output                                      p12v_bp_rear_en                 ,                    
+    output                                      power_supply_on                 ,                                                                    
+    output                                      p12v_bp_rear_en_r               ,                    
     // 5. SM_EN_5V 状态上电使能
     output                                      p5v_en_r                        ,                          
     // 6. SM_EN_3V3 状态上电使能
@@ -121,22 +119,21 @@ module pwrseq_slave #(
     output                                      cpu1_d0_vph_p1v8_en_r           ,
     output                                      cpu1_d1_vph_p1v8_en_r           ,
     
-    // 复位信号输出        
+    // 复位信号输出 
     output                                      cpu_por_n                       ,                    
-    output  reg                                 usb_ponrst_r_n                  ,                    
-    output                                      pex_reset_r_n                   ,                    
+    output  reg                                 usb_ponrst_r_n                  ,                                      
     
     // 故障检测信号
-    output                                      p5v_stby_fault_det		           ,     
-    output                                      p3v3_stby_bp_fault_det           ,      
-    output                                      main_efuse_fault_det             ,      
-    output                                      p3v3_stby_fault_det              ,      
-    
-    output                                      p12v_front_bp_efuse_fault_det   ,       
+        
+    output                                      p3v3_stby_bp_fault_det          ,         
+    output                                      p3v3_stby_fault_det             , 
+    output                                      p5v_stby_fault_det		          , 
+    output                                      p12v_fault_det                  ,      
+       
     output                                      p12v_reat_bp_efuse_fault_det	  ,        
     output                                      p12v_cpu1_vin_fault_det         ,
     output                                      p12v_cpu0_vin_fault_det         ,  
-    output                                      p12v_fault_det                  ,       
+      
 
     output                                      p5v_fault_det		                ,    
     output                                      p3v3_fault_det                  ,
@@ -255,7 +252,6 @@ reg     reg_cpu1_d1_vp_p0v9_en_r               ;
 reg     reg_cpu1_d0_vph_p1v8_en_r              ;
 reg     reg_cpu1_d1_vph_p1v8_en_r              ;
 
-reg     reg_pex_reset_r_n                      ;
 reg     reg_cpu_por_n	                         ;
 
 
@@ -264,8 +260,7 @@ assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_
 assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r ;
 
 assign power_supply_on	     =  reg_power_supply_on ;  
-assign p12v_bp_front_en      =  reg_p12v_en & ( ~p12v_front_bp_efuse_fault_det  | keep_alive_on_fault);
-assign p12v_bp_rear_en       =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
+assign p12v_bp_rear_en_r     =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
 
 assign p5v_en_r            	 =  reg_p5v_en_r            & ( ~p5v_fault_det            | keep_alive_on_fault );
 
@@ -295,7 +290,6 @@ assign cpu1_d1_vp_p0v9_en_r  =  reg_cpu1_d1_vp_p0v9_en_r  & (~cpu1_d1_vp_p0v9_fa
 assign cpu1_d0_vph_p1v8_en_r =  reg_cpu1_d0_vph_p1v8_en_r & (~cpu1_d0_vph_p1v8_fault_det| keep_alive_on_fault);
 assign cpu1_d1_vph_p1v8_en_r =  reg_cpu1_d1_vph_p1v8_en_r & (~cpu1_d1_vph_p1v8_fault_det| keep_alive_on_fault);
 
-assign pex_reset_r_n	       =  reg_pex_reset_r_n       ;
 assign cpu_por_n	           =  reg_cpu_por_n           ;
 
 
@@ -364,7 +358,6 @@ always @(posedge clk or posedge reset) begin
         
 	      reg_cpu_por_n              <= 1'b0;      
         usb_ponrst_r_n             <= 1'b0;
-	      reg_pex_reset_r_n          <= 1'b0;
 	      
         reached_sm_wait_powerok    <= 1'b0;   
     end
@@ -409,7 +402,6 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_d0_vph_p1v8_en_r  <= 1'b0;
                 reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
 
-                reg_pex_reset_r_n          <= 1'b0;
 	              usb_ponrst_r_n             <= 1'b0;
 
                 reg_cpu_por_n              <= 1'b0;
@@ -477,8 +469,7 @@ always @(posedge clk or posedge reset) begin
             end  
          
             `PEX_RESET : begin  
-                // 此信号不使用, 此状态实际是等待PUE复位释放        
-                reg_pex_reset_r_n          <= 1'b1; 
+                // 此状态实际是等待PUE/PCIE信号复位释放        
             end 
      
             `SM_CPU_RESET : begin          
@@ -529,7 +520,7 @@ always @(posedge clk or posedge reset) begin
 	          end
 
             `SM_DISABLE_5V : begin
-                reg_p5v_en_r               <= 1'b1;
+                reg_p5v_en_r               <= 1'b0;
             end
 
             `SM_DISABLE_MAIN_EFUSE : begin
@@ -571,7 +562,7 @@ end
 //   the corresponding EN signal immediately.
 //------------------------------------------------------------------------------
 // Main e-fuse
-assign pal_main_efuse_en = reg_main_efuse_en & (~main_efuse_fault_det | keep_alive_on_fault);
+// assign pal_main_efuse_en = reg_main_efuse_en & (~main_efuse_fault_det | keep_alive_on_fault);
 
 
 //------------------------------------------------------------------------------
@@ -583,11 +574,63 @@ assign pal_main_efuse_en = reg_main_efuse_en & (~main_efuse_fault_det | keep_ali
 assign pal_efuse_pcycle = aux_pcycle & ok_to_reset_aux;
 
 //------------------------------------------------------------------------------
-// Aux (P5V_STBY) fault detect
-// - P5V_STBY can be enabled while system in standby so need to check if it
-//   comes up. It takes time to ramp so we'll give it ~120ms to do it.
-//------------------------------------------------------------------------------                       
-    
+// P3V3_STBY Fault detect 
+//------------------------------------------------------------------------------
+wire   p3v3_stby_en;
+wire   p3v3_stby_en_check;
+assign p3v3_stby_en = 1'b1;
+
+edge_delay #(.CNTR_NBITS(2)) p3v3_stby_en_check_inst (
+    .clk              (clk                               ),
+    .reset            (reset                             ),
+    .cnt_size         (2'b10                             ),
+    .cnt_step         (t64ms                             ),
+    .signal_in        (p3v3_stby_en                      ),
+    .delay_output     (p3v3_stby_en_check                )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_stby_fault_detect_inst (
+    .clk              (clk                               ),//in
+    .reset            (reset                             ),//in
+    .vrm_enable       (p3v3_stby_en && p3v3_stby_en_check),//in
+    .vrm_pgood        (p3v3_stby_pg                      ),//in
+    .vrm_chklive_en   (p3v3_stby_en_check                ),//in
+    .vrm_chklive_dis  (~p3v3_stby_en_check               ),//in
+    .critical_fail    (st_critical_fail                  ),//in
+    .fault_clear      (fault_clear                       ),//in
+    .lock             (any_pwr_fault_det                 ),//in
+    .any_vrm_fault    (                                  ),//out
+    .vrm_fault        (p3v3_stby_fault_det               ) //out
+);
+
+//------------------------------------------------------------------------------
+// P3V3_STBY_BP Fault detect 
+//------------------------------------------------------------------------------
+wire   p3v3_stby_bp_en;
+wire   p3v3_stby_bp_en_check;
+assign p3v3_stby_bp_en = 1'b1;
+edge_delay #(.CNTR_NBITS(2)) p3v3_stby_bp_en_check_inst (
+    .clk              (clk                              ),
+    .reset            (reset                            ),
+    .cnt_size         (2'b10                            ),
+    .cnt_step         (t64ms                            ),
+    .signal_in        (p3v3_stby_bp_en                  ),
+    .delay_output     (p3v3_stby_bp_en_check            )
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_stby_bp_fault_detect_inst (
+    .clk              (clk                                     ),//in
+    .reset            (reset                                   ),//in
+    .vrm_enable       (p3v3_stby_bp_en && p3v3_stby_bp_en_check),//in
+    .vrm_pgood        (p3v3_stby_bp_pg                         ),//in
+    .vrm_chklive_en   (p3v3_stby_bp_en_check                   ),//in
+    .vrm_chklive_dis  (~p3v3_stby_bp_en_check                  ),//in
+    .critical_fail    (st_critical_fail                        ),//in
+    .fault_clear      (fault_clear                             ),//in
+    .lock             (any_pwr_fault_det                       ),//in
+    .any_vrm_fault    (                                        ),//out
+    .vrm_fault        (p3v3_stby_bp_fault_det                  ) //out
+);
     
 //------------------------------------------------------------------------------
 // P5V_STBY Fault detect 
@@ -604,77 +647,20 @@ edge_delay #(.CNTR_NBITS(2)) p5v_stby_en_r_check_inst (
 );
 
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p5v_stby_fault_detect_inst (
-  .clk              (clk),
-  .reset            (reset),
+  .clk              (clk                                ),
+  .reset            (reset                              ),
   .vrm_enable       (p5v_stby_en_r & p5v_stby_en_r_check),
-  .vrm_pgood        (p5v_stby_pgd),
-  .vrm_chklive_en   (p5v_stby_en_r_check),
-  .vrm_chklive_dis  (~p5v_stby_en_r_check),
-  .critical_fail    (st_critical_fail),
-  .fault_clear      (fault_clear),
-  .lock             (any_pwr_fault_det),
+  .vrm_pgood        (p5v_stby_pgd                       ),
+  .vrm_chklive_en   (p5v_stby_en_r_check                ),
+  .vrm_chklive_dis  (~p5v_stby_en_r_check               ),
+  .critical_fail    (st_critical_fail                   ),
+  .fault_clear      (fault_clear                        ),
+  .lock             (any_pwr_fault_det                  ),
   .any_vrm_fault    (),
-  .vrm_fault        (p5v_stby_fault_det)
-);
-
-//------------------------------------------------------------------------------
-// P3V3_STBY Fault detect 
-//------------------------------------------------------------------------------
-wire   p3v3_stby_en;
-wire   p3v3_stby_en_check;
-assign p3v3_stby_en = 1'b1;
-edge_delay #(.CNTR_NBITS(2)) p3v3_stby_en_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (p3v3_stby_en),
-  .delay_output  (p3v3_stby_en_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_stby_fault_detect_inst (
-  .clk              (clk  ),							 //in
-  .reset            (reset),							 //in
-  .vrm_enable       (p3v3_stby_en && p3v3_stby_en_check),//in
-  .vrm_pgood        (p3v3_stby_pg                      ),//in
-  .vrm_chklive_en   (p3v3_stby_en_check                ),//in
-  .vrm_chklive_dis  (~p3v3_stby_en_check               ),//in
-  .critical_fail    (st_critical_fail                  ),//in
-  .fault_clear      (fault_clear                       ),//in
-  .lock             (any_pwr_fault_det                 ),//in
-  .any_vrm_fault    (),								     //out
-  .vrm_fault        (p3v3_stby_fault_det               ) //out
+  .vrm_fault        (p5v_stby_fault_det                 )
 );
 
 
-//------------------------------------------------------------------------------
-// P3V3_STBY_BP Fault detect 
-//------------------------------------------------------------------------------
-wire   p3v3_stby_bp_en;
-wire   p3v3_stby_bp_en_check;
-assign p3v3_stby_bp_en = 1'b1;
-edge_delay #(.CNTR_NBITS(2)) p3v3_stby_bp_en_check_inst (
-  .clk           (clk),
-  .reset         (reset),
-  .cnt_size      (2'b10),
-  .cnt_step      (t64ms),
-  .signal_in     (p3v3_stby_bp_en),
-  .delay_output  (p3v3_stby_bp_en_check)
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_stby_bp_fault_detect_inst (
-  .clk              (clk  ),							 //in
-  .reset            (reset),							 //in
-  .vrm_enable       (p3v3_stby_bp_en && p3v3_stby_bp_en_check),//in
-  .vrm_pgood        (p3v3_stby_bp_pg                         ),//in
-  .vrm_chklive_en   (p3v3_stby_bp_en_check                   ),//in
-  .vrm_chklive_dis  (~p3v3_stby_bp_en_check                  ),//in
-  .critical_fail    (st_critical_fail                        ),//in
-  .fault_clear      (fault_clear                             ),//in
-  .lock             (any_pwr_fault_det                       ),//in
-  .any_vrm_fault    (),								           //out
-  .vrm_fault        (p3v3_stby_bp_fault_det                  ) //out
-);
 //------------------------------------------------------------------------------
 // Main 12V fault detect
 // - Efuse (all platform)
@@ -683,23 +669,21 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p3v3_stby_bp_fault_detect_inst (
 // - If there's a brownout warning, a drop in pgd_p12v_stby_droop will cause
 //   a brownout fault. No need to set p12v_stby_droop_fault_det.
 //------------------------------------------------------------------------------
-wire   p12v_stby_en;
 wire   p12v_stby_en_check;
-assign p12v_stby_en = 1'b1;
 edge_delay #(.CNTR_NBITS(2)) p12v_stby_en_check_inst (
     .clk              (clk),
     .reset            (reset),
     .cnt_size         (2'b10),
     .cnt_step         (t64ms),
-    .signal_in        (p12v_stby_en),
+    .signal_in        (power_supply_on),
     .delay_output     (p12v_stby_en_check)
 );
 
-generate begin : _P12V_FAULT_DETECT_
+
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12_fault_detect_inst (
     .clk              (clk),
     .reset            (reset),
-    .vrm_enable       (p12v_stby_en && p12v_stby_en_check),
+    .vrm_enable       (power_supply_on && p12v_stby_en_check),
     .vrm_pgood        (pgd_p12v && pgd_p12v_stby_droop),
     .vrm_chklive_en   (p12v_stby_en_check),
     .vrm_chklive_dis  (~p12v_stby_en_check),   
@@ -709,15 +693,12 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12_fault_detect_inst (
     .any_vrm_fault    (),
     .vrm_fault        (p12v_fault_det)
 );
-end
-endgenerate
 
 
 //------------------------------------------------------------------------------
 // P12V_EFFUSE Fault detect 
 //------------------------------------------------------------------------------
 wire power_supply_on_check;
-
 edge_delay #(.CNTR_NBITS(2)) power_supply_on_check_inst (
   .clk              (clk                      ),
   .reset            (reset                    ),
@@ -726,20 +707,6 @@ edge_delay #(.CNTR_NBITS(2)) power_supply_on_check_inst (
   .signal_in        (power_supply_on          ),
   .delay_output     (power_supply_on_check    )
 );
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu1_vin_fault_detect_inst (
-  .clk              (clk                      ), //in
-  .reset            (reset                    ), //in
-  .vrm_enable       (power_supply_on && power_supply_on_check), //in
-  .vrm_pgood        (p12v_cpu1_vin_pg         ), //in
-  .vrm_chklive_en   (power_supply_on_check    ), //in
-  .vrm_chklive_dis  (~power_supply_on_check   ), //in
-  .critical_fail    (st_critical_fail         ), //in
-  .fault_clear      (fault_clear              ), //in
-  .lock             (any_pwr_fault_det        ), //in
-  .any_vrm_fault    (                         ), //out
-  .vrm_fault        (p12v_cpu1_vin_fault_det  )	 //out
-);  
 
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu0_vin_fault_fault_detect_inst (
   .clk              (clk                      ), //in
@@ -755,52 +722,37 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu0_vin_fault_fault_detect_inst
   .vrm_fault        (p12v_cpu0_vin_fault_det  )	 //out
 );  
 
-//------------------------------------------------------------------------------
-// P12V_BP_FRONT Fault detect 
-//------------------------------------------------------------------------------  
-wire p12v_bp_front_en_check;
-
-edge_delay #(.CNTR_NBITS(2)) p12v_bp_front_en_check_inst (
-  .clk              (clk                      ),
-  .reset            (reset                    ),
-  .cnt_size         (2'b10                    ),
-  .cnt_step         (t64ms                    ),
-  .signal_in        (p12v_bp_front_en         ),
-  .delay_output     (p12v_bp_front_en_check   )
-);
-
-fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_front_bp_efuse_fault_detect_inst (
-  .clk              (clk                      ),								//in
-  .reset            (reset                    ),							//in
-  .vrm_enable       (p12v_bp_front_en & p12v_bp_front_en_check),//in
-  .vrm_pgood        (front_bp_efuse_pg                        ),//in
-  .vrm_chklive_en   (p12v_bp_front_en_check                   ),//in
-  .vrm_chklive_dis  (~p12v_bp_front_en_check                  ),//in
-  .critical_fail    (st_critical_fail                         ),//in
-  .fault_clear      (fault_clear                              ),//in
-  .lock             (any_pwr_fault_det                        ),//in
-  .any_vrm_fault    (),									        //out
-  .vrm_fault        (p12v_front_bp_efuse_fault_det            )	//out
-);   
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_cpu1_vin_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (p12v_cpu1_vin_pg         ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_cpu1_vin_fault_det  )	 //out
+);    
 
 //------------------------------------------------------------------------------
 // P12V_BP_REAR Fault detect 
 //------------------------------------------------------------------------------
 wire p12v_bp_rear_en_check;  
-
 edge_delay #(.CNTR_NBITS(2)) p12v_bp_rear_en_check_inst (
-  .clk           (clk   ),
-  .reset         (reset ),
-  .cnt_size      (2'b10 ),
-  .cnt_step      (t64ms ),
-  .signal_in     (p12v_bp_rear_en            ),
-  .delay_output  (p12v_bp_rear_en_check      )
+  .clk              (clk   ),
+  .reset            (reset ),
+  .cnt_size         (2'b10 ),
+  .cnt_step         (t64ms ),
+  .signal_in        (p12v_bp_rear_en_r          ),
+  .delay_output     (p12v_bp_rear_en_check      )
 );
 
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_reat_bp_efuse_fault_detect_inst (
   .clk              (clk),								//in
   .reset            (reset),							//in
-  .vrm_enable       (p12v_bp_rear_en & p12v_bp_rear_en_check),			//in
+  .vrm_enable       (p12v_bp_rear_en_r & p12v_bp_rear_en_check),			//in
   .vrm_pgood        (reat_bp_efuse_pg),							//in
   .vrm_chklive_en   (p12v_bp_rear_en_check),					//in
   .vrm_chklive_dis  (~p12v_bp_rear_en_check),					//in
@@ -815,7 +767,6 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_reat_bp_efuse_fault_detect_inst 
 // P5V Fault detect 
 //------------------------------------------------------------------------------
 wire p5v_en_r_check;
-
 edge_delay #(.CNTR_NBITS(2)) p5v_en_r_check_inst (
   .clk           (clk),
   .reset         (reset),
@@ -1495,50 +1446,53 @@ wire                                      aux_fault                   ;
 assign any_aux_vrm_fault = aux_fault;
 
 // fault_vec_mapping
-assign fault_vec[0]  = p5v_stby_fault_det             ;  
-assign fault_vec[1]  = p3v3_stby_bp_fault_det         ;  
-assign fault_vec[2]  = 1'b0                           ; // 未使用 
-assign fault_vec[3]  = p3v3_stby_fault_det            ;  
+assign fault_vec[0]  = 1'b0; // p3v3_stby_fault_det            ;  
+assign fault_vec[1]  = 1'b0; // p3v3_stby_bp_fault_det         ;  
+assign fault_vec[2]  = 1'b0; // p5v_stby_fault_det             ; 
+assign fault_vec[3]  = 1'b0; // p12v_fault_det                 ;  
 
-assign fault_vec[4]  = p12v_front_bp_efuse_fault_det  ;  
-assign fault_vec[5]  = p12v_reat_bp_efuse_fault_det   ;
-assign fault_vec[6]  = 1'b0       ; // 未使用
-assign fault_vec[7]  = 1'b0      ;
-assign fault_vec[8]  = p12v_cpu1_vin_fault_det        ;
-assign fault_vec[9]  = p12v_cpu0_vin_fault_det        ;
-assign fault_vec[10] = p12v_fault_det                 ;  
-assign fault_vec[11] = 1'b0      ;
+assign fault_vec[4]  = 1'b0; // p12v_cpu0_vin_fault_det        ;  
+assign fault_vec[5]  = 1'b0; // p12v_cpu1_vin_fault_det        ;
+assign fault_vec[6]  = 1'b0; // p12v_reat_bp_efuse_fault_det   ;
 
-assign fault_vec[12] = p5v_fault_det                  ;
-assign fault_vec[13] = p3v3_fault_det                 ;
-assign fault_vec[14] = vcc_1v1_fault_det              ;
 
-assign fault_vec[15] = cpu0_vdd_core_fault_det        ;  
-assign fault_vec[16] = cpu1_vdd_core_fault_det        ;
 
-assign fault_vec[17] = cpu0_p1v8_fault_det            ;  
-assign fault_vec[18] = cpu1_p1v8_fault_det            ;
+assign fault_vec[7]  = 1'b0; // p5v_fault_det                  ; // 1'b0      ;
+assign fault_vec[8]  = 1'b0; // p12v_cpu1_vin_fault_det        ;
+assign fault_vec[9]  = 1'b0; // p12v_cpu0_vin_fault_det        ;
+assign fault_vec[10] = 1'b0; // p12v_fault_det                 ;  
+assign fault_vec[11] = 1'b0; // 1'b0      ;
 
-assign fault_vec[19] = cpu0_vddq_fault_det            ;  
-assign fault_vec[20] = cpu1_vddq_fault_det            ;
-assign fault_vec[21] = cpu0_ddr_vdd_fault_det         ;  
-assign fault_vec[22] = cpu1_ddr_vdd_fault_det         ;
-assign fault_vec[23] = cpu0_pll_p1v8_fault_det        ;  
-assign fault_vec[24] = cpu1_pll_p1v8_fault_det        ;
+assign fault_vec[12] = 1'b0; // p5v_fault_det                  ;
+assign fault_vec[13] = 1'b0; // p3v3_fault_det                 ;
+assign fault_vec[14] = 1'b0; // vcc_1v1_fault_det              ;
 
-assign fault_vec[25] =  cpu1_pcie_p1v8_fault_det      ;  
-assign fault_vec[26] =  cpu0_pcie_p1v8_fault_det      ;
-assign fault_vec[27] =  cpu1_pcie_p0v9_fault_det      ;  
-assign fault_vec[28] =  cpu0_pcie_p0v9_fault_det      ;
+assign fault_vec[15] = 1'b0; // cpu0_vdd_core_fault_det        ;  
+assign fault_vec[16] = 1'b0; // cpu1_vdd_core_fault_det        ;
 
-assign fault_vec[29] =  cpu0_d0_vp_p0v9_fault_det     ;  
-assign fault_vec[30] =  cpu0_d1_vp_p0v9_fault_det     ;
-assign fault_vec[31] =  cpu0_d0_vph_p1v8_fault_det    ;  
-assign fault_vec[32] =  cpu0_d1_vph_p1v8_fault_det    ;
-assign fault_vec[33] =  cpu1_d0_vp_p0v9_fault_det     ;  
-assign fault_vec[34] =  cpu1_d1_vp_p0v9_fault_det     ;
-assign fault_vec[35] =  cpu1_d0_vph_p1v8_fault_det    ;  
-assign fault_vec[36] =  cpu1_d1_vph_p1v8_fault_det    ;
+assign fault_vec[17] = 1'b0; // cpu0_p1v8_fault_det            ;  
+assign fault_vec[18] = 1'b0; // cpu1_p1v8_fault_det            ;
+
+assign fault_vec[19] = 1'b0; // cpu0_vddq_fault_det            ;  
+assign fault_vec[20] = 1'b0; // cpu1_vddq_fault_det            ;
+assign fault_vec[21] = 1'b0; // cpu0_ddr_vdd_fault_det         ;  
+assign fault_vec[22] = 1'b0; // cpu1_ddr_vdd_fault_det         ;
+assign fault_vec[23] = 1'b0; // cpu0_pll_p1v8_fault_det        ;  
+assign fault_vec[24] = 1'b0; // cpu1_pll_p1v8_fault_det        ;
+
+assign fault_vec[25] =  1'b0 ; /*cpu1_pcie_p1v8_fault_det*/       
+assign fault_vec[26] =  1'b0 ; /*cpu0_pcie_p1v8_fault_det*/     
+assign fault_vec[27] =  1'b0 ; /*cpu1_pcie_p0v9_fault_det*/       
+assign fault_vec[28] =  1'b0 ; /*cpu0_pcie_p0v9_fault_det*/     
+
+assign fault_vec[29] =  1'b0 ;// cpu0_d0_vp_p0v9_fault_det     ;  
+assign fault_vec[30] =  1'b0 ;// cpu0_d1_vp_p0v9_fault_det     ;
+assign fault_vec[31] =  1'b0 ;// cpu0_d0_vph_p1v8_fault_det    ;  
+assign fault_vec[32] =  1'b0 ;// cpu0_d1_vph_p1v8_fault_det    ;
+assign fault_vec[33] =  1'b0 ;// cpu1_d0_vp_p0v9_fault_det     ;  
+assign fault_vec[34] =  1'b0 ;// cpu1_d1_vp_p0v9_fault_det     ;
+assign fault_vec[35] =  1'b0 ;// cpu1_d0_vph_p1v8_fault_det    ;  
+assign fault_vec[36] =  1'b0 ;// cpu1_d1_vph_p1v8_fault_det    ;
 
 assign fault_vec[37] = 1'b0;  // RSVD
 assign fault_vec[38] = 1'b0;  // RSVD

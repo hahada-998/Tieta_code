@@ -301,7 +301,7 @@ Pin
 GRS_N;1
 
 Inst
-N86_7;GTP_LUT4
+N83_7;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -310,7 +310,7 @@ I2;1
 I3;1
 
 Inst
-N86_8;GTP_LUT5
+N83_8;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -320,7 +320,34 @@ I3;1
 I4;1
 
 Inst
-N293;GTP_LUT4
+N288;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N289;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N290;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N293_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N311[0];GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -329,13 +356,7 @@ I2;1
 I3;1
 
 Inst
-N296_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N314[0];GTP_LUT4
+N595_5;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -344,34 +365,31 @@ I2;1
 I3;1
 
 Inst
-N625_5;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N626;GTP_LUT2
+N598;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-N679_0;GTP_LUT2
+N693_0;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-N680_0;GTP_LUT2
+N694_0;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
+
+Inst
+any_pwr_fault_det_inv;GTP_LUT1
+Pin
+Z;2
+I0;1
 
 Inst
 db_inst_pwrgood/N4_1;GTP_LUT3
@@ -1930,6 +1948,24 @@ CLK;1
 D;1
 
 Inst
+mcpld_to_scpld_data_filter[9];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+mcpld_to_scpld_data_filter[10];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
 mcpld_to_scpld_data_filter[12];GTP_DFF_CE
 Pin
 Q;2
@@ -2093,15 +2129,6 @@ D;1
 
 Inst
 mcpld_to_scpld_data_filter[33];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-mcpld_to_scpld_data_filter[34];GTP_DFF_CE
 Pin
 Q;2
 C;1
@@ -2750,15 +2777,6 @@ D;1
 
 Inst
 mcpld_to_scpld_data_filter[198];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-mcpld_to_scpld_data_filter[211];GTP_DFF_CE
 Pin
 Q;2
 C;1
@@ -3523,24 +3541,6 @@ CLK;1
 D;1
 
 Inst
-mcpld_to_scpld_data_filter[343];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-mcpld_to_scpld_data_filter[344];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
 mcpld_to_scpld_data_filter[345];GTP_DFF_CE
 Pin
 Q;2
@@ -3596,19 +3596,21 @@ O;2
 I;1
 
 Inst
-o_CPU0_D0_UART1_RX_obuf;GTP_OUTBUF
+o_CPU0_D0_UART1_RX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_CPU0_D0_UART_SIN_obuf;GTP_OUTBUF
+o_CPU0_D0_UART_SIN_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_CPU0_D1_UART1_RX;GTP_OUTBUFT
+o_CPU0_D1_UART1_RX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
@@ -3627,13 +3629,14 @@ O;2
 I;1
 
 Inst
-o_CPU1_D0_UART_SIN_obuf;GTP_OUTBUF
+o_CPU1_D0_UART_SIN_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_CPU1_D1_UART1_RX;GTP_OUTBUFT
+o_CPU1_D1_UART1_RX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
@@ -3682,38 +3685,39 @@ O;2
 I;1
 
 Inst
-o_DB9_TOD_UART_TX;GTP_OUTBUFT
+o_DB9_TOD_UART_TX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_DBG_CPU0_UART1_TX_CONN_R;GTP_OUTBUFT
+o_DBG_CPU0_UART1_TX_CONN_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_DBG_PAL_BMC_UART1_TX_CONN_R;GTP_OUTBUFT
+o_DBG_PAL_BMC_UART1_TX_CONN_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_DB_UART_TX_R;GTP_OUTBUFT
+o_DB_UART_TX_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_JACK_CPU0_D0_UART_SOUT_obuf;GTP_OUTBUF
+o_JACK_CPU0_D0_UART_SOUT_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
 o_JACK_CPU0_UART1_TX_obuf;GTP_OUTBUF
@@ -3722,19 +3726,21 @@ O;2
 I;1
 
 Inst
-o_JACK_CPU1_D0_UART_SOUT_obuf;GTP_OUTBUF
+o_JACK_CPU1_D0_UART_SOUT_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_JACK_CPU1_UART1_TX_obuf;GTP_OUTBUF
+o_JACK_CPU1_UART1_TX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_LEAR_CPU0_UART1_TX;GTP_OUTBUFT
+o_LEAR_CPU0_UART1_TX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
@@ -3861,16 +3867,18 @@ O;2
 I;1
 
 Inst
-o_PAL_BMC_UART1_RX_obuf;GTP_OUTBUF
+o_PAL_BMC_UART1_RX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
-o_PAL_BMC_UART4_RX_obuf;GTP_OUTBUF
+o_PAL_BMC_UART4_RX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
 o_PAL_CK440_OE_N_R_obuf;GTP_OUTBUF
@@ -4133,10 +4141,11 @@ I;1
 T;1
 
 Inst
-o_PAL_UART4_OCP_DEBUG_TX_obuf;GTP_OUTBUF
+o_PAL_UART4_OCP_DEBUG_TX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
 o_PAL_UPD1_P1V1_EN_R_obuf;GTP_OUTBUF
@@ -4213,14 +4222,14 @@ I;1
 T;1
 
 Inst
-o_RISER_AUX_TOD_UART1_TXD;GTP_OUTBUFT
+o_RISER_AUX_TOD_UART1_TXD_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_RISER_AUX_TOD_UART2_TXD;GTP_OUTBUFT
+o_RISER_AUX_TOD_UART2_TXD_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
@@ -4281,21 +4290,21 @@ O;2
 I;1
 
 Inst
-o_Riser1_TOD_UART_TXD_R;GTP_OUTBUFT
+o_Riser1_TOD_UART_TXD_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_Riser2_TOD_UART_TXD_R;GTP_OUTBUFT
+o_Riser2_TOD_UART_TXD_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
 T;1
 
 Inst
-o_UART0_CPU_LOG_TX;GTP_OUTBUFT
+o_UART0_CPU_LOG_TX_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
@@ -4342,6 +4351,24 @@ CLK;1
 D;1
 
 Inst
+power_seq_sm[0]_inv;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+power_seq_sm[1]_inv;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+power_seq_sm[2]_inv;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
 power_seq_sm[3]_inv;GTP_LUT1
 Pin
 Z;2
@@ -4355,12 +4382,6 @@ I0;1
 
 Inst
 power_seq_sm[5]_inv;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-rom_mux_bios_bmc_sel_inv;GTP_LUT1
 Pin
 Z;2
 I0;1
@@ -13664,6 +13685,71 @@ I3;1
 I4;1
 
 Inst
+inst_i2c_bios_reg/N587_114[2]_5_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_6;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_8_lutcollapse;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_9;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_11;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_14;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_16;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+inst_i2c_bios_reg/N587_114[2]_17;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 inst_i2c_bios_reg/N922_4_lutcollapse;GTP_LUT5
 Pin
 Z;2
@@ -13714,7 +13800,7 @@ I3;1
 I4;1
 
 Inst
-inst_i2c_bios_reg/N1057_4;GTP_LUT5
+inst_i2c_bios_reg/N1057_7;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -31876,72 +31962,7 @@ I0;1
 I1;1
 
 Inst
-inst_scpld_to_mcpld_p2s/N42_242_3;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_243;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_245_lutcollapse;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_246;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_248;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_251;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_253;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_254;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-inst_scpld_to_mcpld_p2s/N42_1025_inv;GTP_LUT5
+inst_scpld_to_mcpld_p2s/N42_1006_inv;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -32949,19 +32970,13 @@ I0;1
 I1;1
 
 Inst
-timer_gen_inst/N72_14_3;GTP_LUT3
+timer_gen_inst/N80_4;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
-
-Inst
-timer_gen_inst/N80;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
+I3;1
 
 Inst
 timer_gen_inst/N121;GTP_LUT4
@@ -32978,21 +32993,6 @@ Pin
 Z;2
 I0;1
 I1;1
-
-Inst
-timer_gen_inst/clk_1hz;GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-timer_gen_inst/clk_1hz_inv;GTP_LUT1
-Pin
-Z;2
-I0;1
 
 Inst
 timer_gen_inst/clk_4hz;GTP_DFF_C
@@ -33246,14 +33246,6 @@ D;1
 
 Inst
 timer_gen_inst/t128ms;GTP_DFF_C
-Pin
-Q;2
-C;1
-CLK;1
-D;1
-
-Inst
-timer_gen_inst/t512ms;GTP_DFF_C
 Pin
 Q;2
 C;1
@@ -34899,7 +34891,7 @@ I2;1
 I3;1
 
 Inst
-uart_master_u5/curr_state_fsm[2:0]_55;GTP_LUT5
+uart_master_u5/curr_state_fsm[2:0]_52;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34909,7 +34901,7 @@ I3;1
 I4;1
 
 Inst
-uart_master_u5/curr_state_fsm[2:0]_64;GTP_LUT5
+uart_master_u5/curr_state_fsm[2:0]_59;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -36728,7 +36720,7 @@ I1;1
 I2;1
 
 Inst
-uart_master_u10/N395_11;GTP_LUT4
+uart_master_u10/N395_5;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -36737,7 +36729,7 @@ I2;1
 I3;1
 
 Inst
-uart_master_u10/N395_13;GTP_LUT5
+uart_master_u10/N395_7;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -39767,8 +39759,8 @@ D;1
 P;1
 
 Net
-N86;
-N626;
+N83;
+N598;
 _N0;
 _N1;
 _N3_inv;
@@ -39812,13 +39804,10 @@ _N1351;
 _N1352;
 _N1353;
 _N1354;
-_N3076;
-_N3077;
-_N3079;
-_N3080;
-_N3085;
-_N3887;
-_N3892;
+_N3125;
+_N3130;
+_N3876;
+_N3881;
 bios_read_rtc[0];
 bmccpld_to_mbcpld_s2p_data[1];
 bmccpld_to_mbcpld_s2p_data[2];
@@ -40026,6 +40015,8 @@ mcpld_to_scpld_data_filter[2];
 mcpld_to_scpld_data_filter[3];
 mcpld_to_scpld_data_filter[4];
 mcpld_to_scpld_data_filter[5];
+mcpld_to_scpld_data_filter[9];
+mcpld_to_scpld_data_filter[10];
 mcpld_to_scpld_data_filter[13];
 mcpld_to_scpld_data_filter[28];
 mcpld_to_scpld_data_filter[29];
@@ -40033,7 +40024,6 @@ mcpld_to_scpld_data_filter[30];
 mcpld_to_scpld_data_filter[31];
 mcpld_to_scpld_data_filter[32];
 mcpld_to_scpld_data_filter[33];
-mcpld_to_scpld_data_filter[34];
 mcpld_to_scpld_data_filter[35];
 mcpld_to_scpld_data_filter[36];
 mcpld_to_scpld_data_filter[37];
@@ -40111,6 +40101,7 @@ mcpld_to_scpld_data_filter[213];
 mcpld_to_scpld_data_filter[215];
 mcpld_to_scpld_data_filter[218];
 mcpld_to_scpld_data_filter[220];
+mcpld_to_scpld_data_filter[263];
 mcpld_to_scpld_data_filter[264];
 mcpld_to_scpld_data_filter[265];
 mcpld_to_scpld_data_filter[269];
@@ -40199,6 +40190,8 @@ mcpld_to_scpld_s2p_data[8];
 mcpld_to_scpld_s2p_data[9];
 mcpld_to_scpld_s2p_data[11];
 mcpld_to_scpld_s2p_data[12];
+mcpld_to_scpld_s2p_data[13];
+mcpld_to_scpld_s2p_data[14];
 mcpld_to_scpld_s2p_data[16];
 mcpld_to_scpld_s2p_data[17];
 mcpld_to_scpld_s2p_data[18];
@@ -40218,7 +40211,6 @@ mcpld_to_scpld_s2p_data[34];
 mcpld_to_scpld_s2p_data[35];
 mcpld_to_scpld_s2p_data[36];
 mcpld_to_scpld_s2p_data[37];
-mcpld_to_scpld_s2p_data[38];
 mcpld_to_scpld_s2p_data[39];
 mcpld_to_scpld_s2p_data[40];
 mcpld_to_scpld_s2p_data[41];
@@ -40291,7 +40283,6 @@ mcpld_to_scpld_s2p_data[199];
 mcpld_to_scpld_s2p_data[200];
 mcpld_to_scpld_s2p_data[201];
 mcpld_to_scpld_s2p_data[202];
-mcpld_to_scpld_s2p_data[215];
 mcpld_to_scpld_s2p_data[216];
 mcpld_to_scpld_s2p_data[217];
 mcpld_to_scpld_s2p_data[219];
@@ -40376,8 +40367,6 @@ mcpld_to_scpld_s2p_data[343];
 mcpld_to_scpld_s2p_data[344];
 mcpld_to_scpld_s2p_data[345];
 mcpld_to_scpld_s2p_data[346];
-mcpld_to_scpld_s2p_data[347];
-mcpld_to_scpld_s2p_data[348];
 mcpld_to_scpld_s2p_data[349];
 mcpld_to_scpld_s2p_data[350];
 mcpld_to_scpld_s2p_data[351];
@@ -40396,7 +40385,6 @@ nt_i_CPLD_M_S_SGPIO_MOSI;
 nt_i_CPU0_D0_I2C1_PE_STRAP_SCL;
 nt_i_CPU0_D0_TEMP_OVER;
 nt_i_CPU0_D0_UART1_TX;
-nt_i_CPU0_D0_UART_SOUT;
 nt_i_CPU0_D1_TEMP_OVER;
 nt_i_CPU0_MCIO0_CABLE_ID0_R;
 nt_i_CPU0_MCIO0_CABLE_ID1_R;
@@ -40405,8 +40393,6 @@ nt_i_CPU0_MCIO2_CABLE_ID1_R;
 nt_i_CPU0_MCIO3_CABLE_ID0_R;
 nt_i_CPU0_MCIO3_CABLE_ID1_R;
 nt_i_CPU1_D0_TEMP_OVER;
-nt_i_CPU1_D0_UART1_TX;
-nt_i_CPU1_D0_UART_SOUT;
 nt_i_CPU1_D1_TEMP_OVER;
 nt_i_CPU1_MCIO0_CABLE_ID0_R;
 nt_i_CPU1_MCIO0_CABLE_ID1_R;
@@ -40427,17 +40413,12 @@ nt_i_CPU_NVME15_PRSNT_N;
 nt_i_CPU_NVME16_PRSNT_N;
 nt_i_CPU_NVME17_PRSNT_N;
 nt_i_FAN_SNS_ALERT;
-nt_i_JACK_CPU0_D0_UART_SIN;
-nt_i_JACK_CPU0_UART1_RX;
-nt_i_JACK_CPU1_D0_UART_SIN;
 nt_i_JACK_CPU1_UART1_RX;
 nt_i_MB_CB_RISER1_PRSNT0_N;
 nt_i_MB_CB_RISER2_PRSNT0_N;
 nt_i_P12V_STBY_SNS_ALERT;
 nt_i_PAL_BMC_NCSI_CLK_50M_R;
 nt_i_PAL_BMC_SS_DATA_IN;
-nt_i_PAL_BMC_UART1_TX;
-nt_i_PAL_BMC_UART4_TX;
 nt_i_PAL_EXT_RST_N;
 nt_i_PAL_M2_0_PRSNT_N;
 nt_i_PAL_M2_1_PRSNT_N;
@@ -40449,7 +40430,6 @@ nt_i_PAL_RISER1_WIDTH_R;
 nt_i_PAL_RISER2_MODE_R;
 nt_i_PAL_RISER2_PRSNT_N;
 nt_i_PAL_RISER2_WIDTH_R;
-nt_i_PAL_UART4_OCP_DEBUG_RX;
 nt_i_PAL_UPD72020_1_ALART;
 nt_i_PAL_UPD72020_2_ALART;
 nt_i_PCA_REVISION_0;
@@ -40477,14 +40457,21 @@ nt_io_MCIO_PWR_EN8_R;
 nt_o_CPLD_M_S_SGPIO1_MISO_R;
 nt_o_CPLD_M_S_SGPIO_MISO_R;
 nt_o_CPU0_D0_UART1_RX;
+nt_o_CPU0_D0_UART_SIN;
 nt_o_CPU0_D1_UART1_RX;
 nt_o_CPU0_RISER1_9548_RST_N_R;
+nt_o_CPU1_D0_UART1_RX;
+nt_o_CPU1_D0_UART_SIN;
 nt_o_CPU1_D1_UART1_RX;
 nt_o_CPU1_RISER2_9548_RST_N_R;
 nt_o_DB9_TOD_UART_TX;
 nt_o_DBG_CPU0_UART1_TX_CONN_R;
 nt_o_DBG_PAL_BMC_UART1_TX_CONN_R;
 nt_o_DB_UART_TX_R;
+nt_o_JACK_CPU0_D0_UART_SOUT;
+nt_o_JACK_CPU0_UART1_TX;
+nt_o_JACK_CPU1_D0_UART_SOUT;
+nt_o_JACK_CPU1_UART1_TX;
 nt_o_LEAR_CPU0_UART1_TX;
 nt_o_LED1_N;
 nt_o_LED2_N;
@@ -40504,6 +40491,8 @@ nt_o_P5V_USB2_EN;
 nt_o_PAL_BMC_SS_CLK;
 nt_o_PAL_BMC_SS_DATA_OUT;
 nt_o_PAL_BMC_SS_LOAD_N;
+nt_o_PAL_BMC_UART1_RX;
+nt_o_PAL_BMC_UART4_RX;
 nt_o_PAL_CPU1_I3C_SPD_SEL;
 nt_o_PAL_GPU4_EFUSE_EN_R;
 nt_o_PAL_LED_HEL_GR_R;
@@ -40511,19 +40500,18 @@ nt_o_PAL_LED_HEL_RED_R;
 nt_o_PAL_LED_PWRBTN_AMB_R;
 nt_o_PAL_LED_PWRBTN_GR_R;
 nt_o_PAL_LED_UID_R;
-nt_o_PAL_M2_PWR_EN_R;
 nt_o_PAL_OCP_NCSI_SW_EN_N_R;
-nt_o_PAL_P1V1_STBY_EN_R;
 nt_o_PAL_RISER1_SS_CLK;
 nt_o_PAL_RISER1_SS_LD_N;
 nt_o_PAL_RISER2_SS_CLK;
 nt_o_PAL_RISER2_SS_LD_N;
 nt_o_PAL_RST_TCM_N_R;
-nt_o_PAL_SPI_SELECT_R;
-nt_o_PAL_SPI_SWITCH_EN_R;
 nt_o_PAL_TEST_BAT_EN;
 nt_o_PAL_TPM_DRQ1_N;
+nt_o_PAL_UART4_OCP_DEBUG_TX;
 nt_o_PAL_UPD1_PERST_N_R;
+nt_o_PAL_UPD2_P1V1_EN_R;
+nt_o_PAL_UPD2_P3V3_EN_R;
 nt_o_PAL_UPD2_PONRST_N_R;
 nt_o_RISER1_SELECT;
 nt_o_RISER1_SWITCH_EN;
@@ -40544,11 +40532,8 @@ nt_o_UART0_CPU_LOG_TX;
 nt_o_UART2_PAL_OCP_TX_R;
 o_CPLD_M_S_EXCHANGE_S2;
 o_CPLD_M_S_SGPIO_MISO_R;
-o_CPU0_D0_UART1_RX;
-o_CPU0_D0_UART_SIN;
 o_CPU0_RISER1_9548_RST_N_R;
 o_CPU1_D0_UART1_RX;
-o_CPU1_D0_UART_SIN;
 o_CPU1_RISER2_9548_RST_N_R;
 o_CPU_MCIO0_GPU_THROTTLE_N_R;
 o_CPU_MCIO2_GPU_THROTTLE_N_R;
@@ -40556,10 +40541,7 @@ o_CPU_MCIO3_GPU_THROTTLE_N_R;
 o_CPU_MCIO5_GPU_THROTTLE_N_R;
 o_CPU_MCIO7_GPU_THROTTLE_N_R;
 o_CPU_MCIO8_GPU_THROTTLE_N_R;
-o_JACK_CPU0_D0_UART_SOUT;
 o_JACK_CPU0_UART1_TX;
-o_JACK_CPU1_D0_UART_SOUT;
-o_JACK_CPU1_UART1_TX;
 o_LED1_N;
 o_LED2_N;
 o_LED3_N;
@@ -40573,8 +40555,6 @@ o_P5V_USB2_EN;
 o_PAL_BMC_SS_CLK;
 o_PAL_BMC_SS_DATA_OUT;
 o_PAL_BMC_SS_LOAD_N;
-o_PAL_BMC_UART1_RX;
-o_PAL_BMC_UART4_RX;
 o_PAL_CK440_OE_N_R;
 o_PAL_CPU0_I3C_SPD_SEL;
 o_PAL_CPU1_I3C_SPD_SEL;
@@ -40609,7 +40589,6 @@ o_PAL_SPI_SWITCH_EN_R;
 o_PAL_TEST_BAT_EN;
 o_PAL_THROTTLE_RISER1_R;
 o_PAL_THROTTLE_RISER2_R;
-o_PAL_UART4_OCP_DEBUG_TX;
 o_PAL_UPD1_P1V1_EN_R;
 o_PAL_UPD1_P3V3_EN_R;
 o_PAL_UPD1_PERST_N_R;
@@ -40652,7 +40631,6 @@ pon_reset_n;
 reg_addr[0];
 reg_addr[1];
 reg_addr[2];
-reg_addr_2__1;
 reg_addr[3];
 reg_addr[4];
 reg_addr[5];
@@ -40797,6 +40775,12 @@ inst_pcie/slot_number_nvme [54];
 inst_pcie/slot_number_nvme [55];
 inst_pcie/slot_number_nvme [56];
 inst_pcie/slot_number_nvme [57];
+inst_scpld_to_mcpld_p2s/cnt [0];
+inst_scpld_to_mcpld_p2s/cnt [1];
+inst_scpld_to_mcpld_p2s/cnt [2];
+inst_scpld_to_mcpld_p2s/cnt [3];
+inst_scpld_to_mcpld_p2s/cnt [5];
+inst_scpld_to_mcpld_p2s/cnt_5__1;
 uart_master_u3/N332;
 uart_master_u3/curr_state [0];
 uart_master_u3/curr_state [1];
@@ -40870,7 +40854,7 @@ db_inst_button/N39;
 db_inst_button/N44;
 db_inst_button/N45 [0];
 db_inst_button/N45 [1];
-db_inst_button/_N3795;
+db_inst_button/_N3794;
 db_inst_button/cnt[0] [0];
 db_inst_button/cnt[0] [1];
 db_inst_button/equal [0];
@@ -40886,8 +40870,8 @@ db_inst_pwrgood/N96;
 db_inst_pwrgood/N97 [0];
 db_inst_pwrgood/N97 [1];
 db_inst_pwrgood/N97 [2];
+db_inst_pwrgood/_N3795;
 db_inst_pwrgood/_N3796;
-db_inst_pwrgood/_N3797;
 db_inst_pwrgood/cnt[0] [0];
 db_inst_pwrgood/cnt[0] [1];
 db_inst_pwrgood/cnt[0] [2];
@@ -41172,19 +41156,6 @@ inst_cmu_to_mb_s2p/_N285;
 inst_cmu_to_mb_s2p/_N286;
 inst_cmu_to_mb_s2p/_N287;
 inst_cmu_to_mb_s2p/_N288;
-inst_cmu_to_mb_s2p/_N3138;
-inst_cmu_to_mb_s2p/_N3139;
-inst_cmu_to_mb_s2p/_N3140;
-inst_cmu_to_mb_s2p/_N3141;
-inst_cmu_to_mb_s2p/_N3142;
-inst_cmu_to_mb_s2p/_N3143;
-inst_cmu_to_mb_s2p/_N3144;
-inst_cmu_to_mb_s2p/_N3145;
-inst_cmu_to_mb_s2p/_N3146;
-inst_cmu_to_mb_s2p/_N3147;
-inst_cmu_to_mb_s2p/_N3148;
-inst_cmu_to_mb_s2p/_N3149;
-inst_cmu_to_mb_s2p/_N3150;
 inst_cmu_to_mb_s2p/_N3151;
 inst_cmu_to_mb_s2p/_N3152;
 inst_cmu_to_mb_s2p/_N3153;
@@ -41202,8 +41173,21 @@ inst_cmu_to_mb_s2p/_N3164;
 inst_cmu_to_mb_s2p/_N3165;
 inst_cmu_to_mb_s2p/_N3166;
 inst_cmu_to_mb_s2p/_N3167;
-inst_cmu_to_mb_s2p/_N3397;
-inst_cmu_to_mb_s2p/_N3398;
+inst_cmu_to_mb_s2p/_N3168;
+inst_cmu_to_mb_s2p/_N3169;
+inst_cmu_to_mb_s2p/_N3170;
+inst_cmu_to_mb_s2p/_N3171;
+inst_cmu_to_mb_s2p/_N3172;
+inst_cmu_to_mb_s2p/_N3173;
+inst_cmu_to_mb_s2p/_N3174;
+inst_cmu_to_mb_s2p/_N3175;
+inst_cmu_to_mb_s2p/_N3176;
+inst_cmu_to_mb_s2p/_N3177;
+inst_cmu_to_mb_s2p/_N3178;
+inst_cmu_to_mb_s2p/_N3179;
+inst_cmu_to_mb_s2p/_N3180;
+inst_cmu_to_mb_s2p/_N3395;
+inst_cmu_to_mb_s2p/_N3396;
 inst_cmu_to_mb_s2p/cnt [0];
 inst_cmu_to_mb_s2p/cnt[0]_inv;
 inst_cmu_to_mb_s2p/cnt [1];
@@ -41605,6 +41589,11 @@ inst_i2c_bios_reg/_N1327;
 inst_i2c_bios_reg/_N1328;
 inst_i2c_bios_reg/_N1329;
 inst_i2c_bios_reg/_N1330;
+inst_i2c_bios_reg/_N3119;
+inst_i2c_bios_reg/_N3120;
+inst_i2c_bios_reg/_N3122;
+inst_i2c_bios_reg/_N3123;
+inst_i2c_bios_reg/_N3128;
 inst_i2c_bios_reg/cpu0_die0_alloc [0];
 inst_i2c_bios_reg/cpu0_die0_alloc [1];
 inst_i2c_bios_reg/cpu0_die1_alloc_1 [0];
@@ -41633,6 +41622,7 @@ inst_i2c_bios_reg/o_usb_en [4];
 inst_i2c_bios_reg/o_usb_en [5];
 inst_i2c_bios_reg/o_usb_en [6];
 inst_i2c_bios_reg/o_usb_en [7];
+inst_i2c_bios_reg/reg_addr_2__1;
 inst_i2c_bios_reg/reg_addr_6__3;
 inst_i2c_inf/N29;
 inst_i2c_inf/N37;
@@ -41681,15 +41671,15 @@ inst_i2c_inf/_N346;
 inst_i2c_inf/_N419;
 inst_i2c_inf/_N1653;
 inst_i2c_inf/_N2863;
-inst_i2c_inf/_N3093;
-inst_i2c_inf/_N3098;
-inst_i2c_inf/_N3275;
-inst_i2c_inf/_N3679;
+inst_i2c_inf/_N3091;
+inst_i2c_inf/_N3096;
+inst_i2c_inf/_N3286;
+inst_i2c_inf/_N3672;
+inst_i2c_inf/_N3797;
 inst_i2c_inf/_N3798;
-inst_i2c_inf/_N3799;
-inst_i2c_inf/_N3880;
-inst_i2c_inf/_N3900;
-inst_i2c_inf/_N4057;
+inst_i2c_inf/_N3869;
+inst_i2c_inf/_N3889;
+inst_i2c_inf/_N4058;
 inst_i2c_inf/_N4064;
 inst_i2c_inf/_N4067;
 inst_i2c_inf/_N4068;
@@ -41754,8 +41744,8 @@ inst_mb_to_cmu_p2s/_N511;
 inst_mb_to_cmu_p2s/_N516;
 inst_mb_to_cmu_p2s/_N517;
 inst_mb_to_cmu_p2s/_N518;
+inst_mb_to_cmu_p2s/_N3847;
 inst_mb_to_cmu_p2s/_N3848;
-inst_mb_to_cmu_p2s/_N3849;
 inst_mb_to_cmu_p2s/cnt [0];
 inst_mb_to_cmu_p2s/cnt [1];
 inst_mb_to_cmu_p2s/cnt [2];
@@ -42306,21 +42296,9 @@ inst_mcpld_to_scpld_s2p/_N330;
 inst_mcpld_to_scpld_s2p/_N331;
 inst_mcpld_to_scpld_s2p/_N332;
 inst_mcpld_to_scpld_s2p/_N333;
-inst_mcpld_to_scpld_s2p/_N3195;
-inst_mcpld_to_scpld_s2p/_N3196;
-inst_mcpld_to_scpld_s2p/_N3197;
-inst_mcpld_to_scpld_s2p/_N3198;
-inst_mcpld_to_scpld_s2p/_N3199;
-inst_mcpld_to_scpld_s2p/_N3200;
-inst_mcpld_to_scpld_s2p/_N3201;
-inst_mcpld_to_scpld_s2p/_N3202;
-inst_mcpld_to_scpld_s2p/_N3203;
-inst_mcpld_to_scpld_s2p/_N3204;
-inst_mcpld_to_scpld_s2p/_N3205;
-inst_mcpld_to_scpld_s2p/_N3206;
-inst_mcpld_to_scpld_s2p/_N3207;
 inst_mcpld_to_scpld_s2p/_N3208;
 inst_mcpld_to_scpld_s2p/_N3209;
+inst_mcpld_to_scpld_s2p/_N3210;
 inst_mcpld_to_scpld_s2p/_N3211;
 inst_mcpld_to_scpld_s2p/_N3212;
 inst_mcpld_to_scpld_s2p/_N3213;
@@ -42333,7 +42311,6 @@ inst_mcpld_to_scpld_s2p/_N3219;
 inst_mcpld_to_scpld_s2p/_N3220;
 inst_mcpld_to_scpld_s2p/_N3221;
 inst_mcpld_to_scpld_s2p/_N3222;
-inst_mcpld_to_scpld_s2p/_N3223;
 inst_mcpld_to_scpld_s2p/_N3224;
 inst_mcpld_to_scpld_s2p/_N3225;
 inst_mcpld_to_scpld_s2p/_N3226;
@@ -42352,8 +42329,21 @@ inst_mcpld_to_scpld_s2p/_N3238;
 inst_mcpld_to_scpld_s2p/_N3239;
 inst_mcpld_to_scpld_s2p/_N3240;
 inst_mcpld_to_scpld_s2p/_N3241;
-inst_mcpld_to_scpld_s2p/_N3535;
-inst_mcpld_to_scpld_s2p/_N3536;
+inst_mcpld_to_scpld_s2p/_N3242;
+inst_mcpld_to_scpld_s2p/_N3243;
+inst_mcpld_to_scpld_s2p/_N3244;
+inst_mcpld_to_scpld_s2p/_N3245;
+inst_mcpld_to_scpld_s2p/_N3246;
+inst_mcpld_to_scpld_s2p/_N3247;
+inst_mcpld_to_scpld_s2p/_N3248;
+inst_mcpld_to_scpld_s2p/_N3249;
+inst_mcpld_to_scpld_s2p/_N3250;
+inst_mcpld_to_scpld_s2p/_N3251;
+inst_mcpld_to_scpld_s2p/_N3252;
+inst_mcpld_to_scpld_s2p/_N3253;
+inst_mcpld_to_scpld_s2p/_N3254;
+inst_mcpld_to_scpld_s2p/_N3540;
+inst_mcpld_to_scpld_s2p/_N3541;
 inst_mcpld_to_scpld_s2p/cnt [0];
 inst_mcpld_to_scpld_s2p/cnt [1];
 inst_mcpld_to_scpld_s2p/cnt [2];
@@ -42927,8 +42917,8 @@ inst_pcie/_N1518;
 inst_pcie/_N1519;
 inst_pcie/_N1520;
 inst_pcie/_N1521;
-inst_pcie/_N3244;
-inst_pcie/_N3426;
+inst_pcie/_N3257;
+inst_pcie/_N3431;
 inst_scpld_to_mcpld_p2s/N569;
 inst_scpld_to_mcpld_p2s/N570 [1];
 inst_scpld_to_mcpld_p2s/N570 [2];
@@ -43038,17 +43028,9 @@ inst_scpld_to_mcpld_p2s/_N728;
 inst_scpld_to_mcpld_p2s/_N733;
 inst_scpld_to_mcpld_p2s/_N734;
 inst_scpld_to_mcpld_p2s/_N737;
-inst_scpld_to_mcpld_p2s/_N3082;
-inst_scpld_to_mcpld_p2s/_N3087;
-inst_scpld_to_mcpld_p2s/_N3948;
-inst_scpld_to_mcpld_p2s/cnt [0];
-inst_scpld_to_mcpld_p2s/cnt [1];
-inst_scpld_to_mcpld_p2s/cnt [2];
+inst_scpld_to_mcpld_p2s/_N3944;
 inst_scpld_to_mcpld_p2s/cnt_2_;
-inst_scpld_to_mcpld_p2s/cnt [3];
 inst_scpld_to_mcpld_p2s/cnt [4];
-inst_scpld_to_mcpld_p2s/cnt [5];
-inst_scpld_to_mcpld_p2s/cnt_5__1;
 inst_scpld_to_mcpld_p2s/cnt [6];
 inst_scpld_to_mcpld_p2s/cnt [7];
 inst_scpld_to_mcpld_p2s/cnt [8];
@@ -43073,9 +43055,9 @@ mcio_ab26/N140 [1];
 mcio_ab26/N145;
 mcio_ab26/N146 [0];
 mcio_ab26/N146 [1];
+mcio_ab26/_N3799;
 mcio_ab26/_N3800;
 mcio_ab26/_N3801;
-mcio_ab26/_N3802;
 mcio_ab26/cnt[0] [0];
 mcio_ab26/cnt[0] [1];
 mcio_ab26/cnt[1] [0];
@@ -43120,7 +43102,6 @@ timer_gen_inst/N37 [14];
 timer_gen_inst/N54;
 timer_gen_inst/N58;
 timer_gen_inst/N74;
-timer_gen_inst/N78;
 timer_gen_inst/N80;
 timer_gen_inst/N121;
 timer_gen_inst/N127 [1];
@@ -43144,12 +43125,11 @@ timer_gen_inst/_N300;
 timer_gen_inst/_N301;
 timer_gen_inst/_N302;
 timer_gen_inst/_N303;
-timer_gen_inst/_N3253;
-timer_gen_inst/_N3794;
-timer_gen_inst/_N3829;
-timer_gen_inst/_N3833;
-timer_gen_inst/_N3860;
-timer_gen_inst/clk_1hz_inv;
+timer_gen_inst/_N3266;
+timer_gen_inst/_N3793;
+timer_gen_inst/_N3834;
+timer_gen_inst/_N3838;
+timer_gen_inst/_N3864;
 timer_gen_inst/nsec_tmr [0];
 timer_gen_inst/nsec_tmr[0]_inv;
 timer_gen_inst/nsec_tmr [1];
@@ -43175,7 +43155,6 @@ timer_gen_inst/sec_tmr [13];
 timer_gen_inst/sec_tmr [14];
 timer_gen_inst/t32us_e;
 timer_gen_inst/t64ms_tick;
-timer_gen_inst/t512ms;
 timer_gen_inst/usec_tmr [0];
 timer_gen_inst/usec_tmr [1];
 timer_gen_inst/usec_tmr [2];
@@ -43235,18 +43214,18 @@ uart_master_u3/_N246;
 uart_master_u3/_N247;
 uart_master_u3/_N248;
 uart_master_u3/_N249;
-uart_master_u3/_N2888;
-uart_master_u3/_N3283;
-uart_master_u3/_N3284;
-uart_master_u3/_N3285;
-uart_master_u3/_N3286;
-uart_master_u3/_N3288;
+uart_master_u3/_N2892;
+uart_master_u3/_N3294;
+uart_master_u3/_N3295;
+uart_master_u3/_N3296;
+uart_master_u3/_N3297;
+uart_master_u3/_N3299;
+uart_master_u3/_N3802;
 uart_master_u3/_N3803;
 uart_master_u3/_N3804;
-uart_master_u3/_N3805;
-uart_master_u3/_N3912;
-uart_master_u3/_N3943;
-uart_master_u3/_N4034;
+uart_master_u3/_N3901;
+uart_master_u3/_N3921;
+uart_master_u3/_N4006;
 uart_master_u3/bps_count_bit [0];
 uart_master_u3/bps_count_bit [1];
 uart_master_u3/bps_count_bit [2];
@@ -43332,18 +43311,18 @@ uart_master_u5/_N252;
 uart_master_u5/_N253;
 uart_master_u5/_N254;
 uart_master_u5/_N255;
-uart_master_u5/_N2901;
-uart_master_u5/_N3301;
-uart_master_u5/_N3302;
-uart_master_u5/_N3303;
-uart_master_u5/_N3304;
-uart_master_u5/_N3306;
+uart_master_u5/_N2905;
+uart_master_u5/_N3312;
+uart_master_u5/_N3313;
+uart_master_u5/_N3314;
+uart_master_u5/_N3315;
+uart_master_u5/_N3317;
+uart_master_u5/_N3805;
 uart_master_u5/_N3806;
 uart_master_u5/_N3807;
-uart_master_u5/_N3808;
-uart_master_u5/_N3917;
-uart_master_u5/_N3941;
-uart_master_u5/_N4040;
+uart_master_u5/_N3906;
+uart_master_u5/_N3948;
+uart_master_u5/_N4036;
 uart_master_u5/bps_count_bit [0];
 uart_master_u5/bps_count_bit [1];
 uart_master_u5/bps_count_bit [2];
@@ -43429,18 +43408,18 @@ uart_master_u6/_N258;
 uart_master_u6/_N259;
 uart_master_u6/_N260;
 uart_master_u6/_N261;
-uart_master_u6/_N2914;
-uart_master_u6/_N3315;
-uart_master_u6/_N3316;
-uart_master_u6/_N3317;
-uart_master_u6/_N3318;
-uart_master_u6/_N3320;
+uart_master_u6/_N2918;
+uart_master_u6/_N3326;
+uart_master_u6/_N3327;
+uart_master_u6/_N3328;
+uart_master_u6/_N3329;
+uart_master_u6/_N3331;
+uart_master_u6/_N3808;
 uart_master_u6/_N3809;
 uart_master_u6/_N3810;
-uart_master_u6/_N3811;
-uart_master_u6/_N3875;
-uart_master_u6/_N3950;
-uart_master_u6/_N4020;
+uart_master_u6/_N3911;
+uart_master_u6/_N3946;
+uart_master_u6/_N4012;
 uart_master_u6/bps_count_bit [0];
 uart_master_u6/bps_count_bit [1];
 uart_master_u6/bps_count_bit [2];
@@ -43527,17 +43506,17 @@ uart_master_u10/_N265;
 uart_master_u10/_N266;
 uart_master_u10/_N267;
 uart_master_u10/_N2944;
-uart_master_u10/_N3328;
-uart_master_u10/_N3329;
-uart_master_u10/_N3330;
-uart_master_u10/_N3331;
-uart_master_u10/_N3333;
+uart_master_u10/_N3339;
+uart_master_u10/_N3340;
+uart_master_u10/_N3341;
+uart_master_u10/_N3342;
+uart_master_u10/_N3344;
+uart_master_u10/_N3811;
 uart_master_u10/_N3812;
 uart_master_u10/_N3813;
-uart_master_u10/_N3814;
-uart_master_u10/_N3856;
-uart_master_u10/_N3954;
-uart_master_u10/_N4048;
+uart_master_u10/_N3916;
+uart_master_u10/_N3950;
+uart_master_u10/_N4042;
 uart_master_u10/bps_count_bit [0];
 uart_master_u10/bps_count_bit [1];
 uart_master_u10/bps_count_bit [2];
@@ -43625,17 +43604,17 @@ uart_master_u11/_N271;
 uart_master_u11/_N272;
 uart_master_u11/_N273;
 uart_master_u11/_N2974;
-uart_master_u11/_N3342;
-uart_master_u11/_N3343;
-uart_master_u11/_N3344;
-uart_master_u11/_N3345;
-uart_master_u11/_N3347;
+uart_master_u11/_N3353;
+uart_master_u11/_N3354;
+uart_master_u11/_N3355;
+uart_master_u11/_N3356;
+uart_master_u11/_N3358;
+uart_master_u11/_N3814;
 uart_master_u11/_N3815;
 uart_master_u11/_N3816;
-uart_master_u11/_N3817;
-uart_master_u11/_N3870;
-uart_master_u11/_N3956;
-uart_master_u11/_N4014;
+uart_master_u11/_N3858;
+uart_master_u11/_N3952;
+uart_master_u11/_N4026;
 uart_master_u11/bps_count_bit [0];
 uart_master_u11/bps_count_bit [1];
 uart_master_u11/bps_count_bit [2];
@@ -43723,17 +43702,17 @@ uart_master_u12/_N277;
 uart_master_u12/_N278;
 uart_master_u12/_N279;
 uart_master_u12/_N2839;
-uart_master_u12/_N3360;
-uart_master_u12/_N3361;
-uart_master_u12/_N3362;
-uart_master_u12/_N3363;
-uart_master_u12/_N3365;
+uart_master_u12/_N3083;
+uart_master_u12/_N3084;
+uart_master_u12/_N3085;
+uart_master_u12/_N3086;
+uart_master_u12/_N3088;
+uart_master_u12/_N3817;
 uart_master_u12/_N3818;
 uart_master_u12/_N3819;
-uart_master_u12/_N3820;
-uart_master_u12/_N3905;
-uart_master_u12/_N3952;
-uart_master_u12/_N4006;
+uart_master_u12/_N3894;
+uart_master_u12/_N3954;
+uart_master_u12/_N4018;
 uart_master_u12/bps_count_bit [0];
 uart_master_u12/bps_count_bit [1];
 uart_master_u12/bps_count_bit [2];
@@ -43787,7 +43766,7 @@ FanControl_m/m_WDT3/_N313;
 FanControl_m/m_WDT3/_N314;
 FanControl_m/m_WDT3/_N315;
 FanControl_m/m_WDT3/_N316;
-FanControl_m/m_WDT3/_N3971;
+FanControl_m/m_WDT3/_N3967;
 FanControl_m/m_WDT3/r_WDT_cnt_clk_dly1;
 FanControl_m/m_WDT3/r_WDT_cnt_clk_dly2;
 FanControl_m/m_WDT3/r_WDT_cnt_clr_dly1;

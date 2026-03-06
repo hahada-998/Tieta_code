@@ -1,27 +1,75 @@
 
-o_UART0_CPU_LOG_TX (GTP_OUTBUFT)
-                  I
+o_PAL_LED_PWRBTN_AMB_R (GTP_OUTBUFT)
+                      I
 
-o_RISER_AUX_TOD_UART1_TXD (GTP_OUTBUFT)
-                         I
+o_PAL_BMC_UART1_RX_tri (GTP_OUTBUFT)
+                      I
 
-o_RISER_AUX_TOD_UART2_TXD (GTP_OUTBUFT)
-                         I
+o_N0_100M_tri (GTP_OUTBUFT)
+             I
+
+o_JACK_CPU1_D0_UART_SOUT_tri (GTP_OUTBUFT)
+                            I
+
+o_CPU0_D0_UART1_RX_tri (GTP_OUTBUFT)
+                      I
+
+o_CPLD_M_S_SGPIO1_MISO_R (GTP_OUTBUFT)
+                        I
+
+o_PAL_UART4_OCP_DEBUG_TX_tri (GTP_OUTBUFT)
+                            I
+
+o_PAL_RISER2_SS_LD_N_tri (GTP_OUTBUFT)
+                        I
+
+o_PAL_RISER1_SS_LD_N_tri (GTP_OUTBUFT)
+                        I
+
+o_CPU0_D0_UART_SIN_tri (GTP_OUTBUFT)
+                      I
 
 o_RISER1_SWITCH_EN_tri (GTP_OUTBUFT)
                       I
 
-o_DBG_CPU0_UART1_TX_CONN_R (GTP_OUTBUFT)
+o_PAL_RST_TCM_N_R (GTP_OUTBUFT)
+                 I
+
+o_PAL_RISER2_SS_CLK_tri (GTP_OUTBUFT)
+                       I
+
+o_PAL_CK440_OE_N_R_obuf (GTP_OUTBUF)
+                       I
+
+o_PAL_DB800_1_OE_N_R_obuf (GTP_OUTBUF)
+                         I
+
+o_CPU1_D0_UART_SIN_tri (GTP_OUTBUFT)
+                      I
+
+o_PAL_SPI_SWITCH_EN_R_obuf (GTP_OUTBUF)
                           I
 
-o_DBG_PAL_BMC_UART1_TX_CONN_R (GTP_OUTBUFT)
-                             I
+o_PAL_THROTTLE_RISER1_R_obuf (GTP_OUTBUF)
+                            I
 
-o_DB_UART_TX_R (GTP_OUTBUFT)
-              I
+o_PAL_THROTTLE_RISER2_R_obuf (GTP_OUTBUF)
+                            I
 
-o_Riser2_TOD_UART_TXD_R (GTP_OUTBUFT)
-                       I
+o_RISER1_SELECT_tri (GTP_OUTBUFT)
+                   I
+
+o_DB9_TOD_UART_TX_tri (GTP_OUTBUFT)
+                     I
+
+o_PAL_LED_PWRBTN_GR_R (GTP_OUTBUFT)
+                     I
+
+o_PAL_BMC_UART4_RX_tri (GTP_OUTBUFT)
+                      I
+
+o_N1_ACT_tri (GTP_OUTBUFT)
+            I
 
 o_N1_1000M_tri (GTP_OUTBUFT)
               I
@@ -32,71 +80,62 @@ o_N1_100M_tri (GTP_OUTBUFT)
 o_N0_ACT_tri (GTP_OUTBUFT)
             I
 
-o_PAL_CK440_OE_N_R_obuf (GTP_OUTBUF)
-                       I
-
-o_PAL_THROTTLE_RISER2_R_obuf (GTP_OUTBUF)
-                            I
-
-o_PAL_THROTTLE_RISER1_R_obuf (GTP_OUTBUF)
-                            I
-
-o_PAL_RISER1_SS_LD_N_tri (GTP_OUTBUFT)
-                        I
-
 o_N0_1000M_tri (GTP_OUTBUFT)
               I
-
-o_N1_ACT_tri (GTP_OUTBUFT)
-            I
-
-o_PAL_LED_PWRBTN_GR_R (GTP_OUTBUFT)
-                     I
-
-o_UART2_PAL_OCP_TX_R (GTP_OUTBUFT)
-                    I
-
-o_Riser1_TOD_UART_TXD_R (GTP_OUTBUFT)
-                       I
-
-o_RISER1_SELECT_tri (GTP_OUTBUFT)
-                   I
 
 o_PAL_TPM_DRQ1_N_tri (GTP_OUTBUFT)
                     I
 
-o_PAL_RST_TCM_N_R (GTP_OUTBUFT)
-                 I
+o_LEAR_CPU0_UART1_TX_tri (GTP_OUTBUFT)
+                        I
 
-o_PAL_RISER2_SS_CLK_tri (GTP_OUTBUFT)
-                       I
+o_CPU0_D1_UART1_RX_tri (GTP_OUTBUFT)
+                      I
 
 o_PAL_RISER1_SS_CLK_tri (GTP_OUTBUFT)
                        I
 
-o_PAL_LED_PWRBTN_AMB_R (GTP_OUTBUFT)
-                      I
+o_PAL_DB2000_1_OE_N_R_obuf (GTP_OUTBUF)
+                          I
 
-o_N0_100M_tri (GTP_OUTBUFT)
-             I
+o_JACK_CPU1_UART1_TX_tri (GTP_OUTBUFT)
+                        I
 
-o_LEAR_CPU0_UART1_TX (GTP_OUTBUFT)
+o_JACK_CPU0_D0_UART_SOUT_tri (GTP_OUTBUFT)
+                            I
+
+o_DB_UART_TX_R_tri (GTP_OUTBUFT)
+                  I
+
+o_DBG_PAL_BMC_UART1_TX_CONN_R_tri (GTP_OUTBUFT)
+                                 I
+
+o_DBG_CPU0_UART1_TX_CONN_R_tri (GTP_OUTBUFT)
+                              I
+
+o_UART2_PAL_OCP_TX_R (GTP_OUTBUFT)
                     I
 
-o_DB9_TOD_UART_TX (GTP_OUTBUFT)
-                 I
+o_UART0_CPU_LOG_TX_tri (GTP_OUTBUFT)
+                      I
 
-o_CPU1_D1_UART1_RX (GTP_OUTBUFT)
-                  I
+o_Riser2_TOD_UART_TXD_R_tri (GTP_OUTBUFT)
+                           I
 
-o_CPU0_D1_UART1_RX (GTP_OUTBUFT)
-                  I
+o_RISER_AUX_TOD_UART2_TXD_tri (GTP_OUTBUFT)
+                             I
 
-o_CPLD_M_S_SGPIO1_MISO_R (GTP_OUTBUFT)
-                        I
+o_RISER_AUX_TOD_UART1_TXD_tri (GTP_OUTBUFT)
+                             I
 
-o_PAL_RISER2_SS_LD_N_tri (GTP_OUTBUFT)
-                        I
+o_CPU1_D1_UART1_RX_tri (GTP_OUTBUFT)
+                      I
+
+o_Riser1_TOD_UART_TXD_R_tri (GTP_OUTBUFT)
+                           I
+
+N17_1_7 (GTP_LUT5CARRY)
+       I4
 
 N17_1_1 (GTP_LUT5CARRY)
        I4
@@ -116,26 +155,11 @@ N17_1_5 (GTP_LUT5CARRY)
 N17_1_6 (GTP_LUT5CARRY)
        I4
 
-N17_1_7 (GTP_LUT5CARRY)
+N17_1_9 (GTP_LUT5CARRY)
        I4
 
 N17_1_8 (GTP_LUT5CARRY)
        I4
-
-N17_1_9 (GTP_LUT5CARRY)
-       I4
-
-N570_4_7 (GTP_LUT5CARRY)
-        I4
-
-N570_4_5 (GTP_LUT5CARRY)
-        I4
-
-N570_4_8 (GTP_LUT5CARRY)
-        I4
-
-N570_4_6 (GTP_LUT5CARRY)
-        I4
 
 N570_4_2 (GTP_LUT5CARRY)
         I4
@@ -146,25 +170,37 @@ N570_4_3 (GTP_LUT5CARRY)
 N570_4_4 (GTP_LUT5CARRY)
         I4
 
-N19_1_5 (GTP_LUT5CARRY)
+N570_4_5 (GTP_LUT5CARRY)
+        I4
+
+N570_4_6 (GTP_LUT5CARRY)
+        I4
+
+N570_4_7 (GTP_LUT5CARRY)
+        I4
+
+N570_4_8 (GTP_LUT5CARRY)
+        I4
+
+N19_1_4 (GTP_LUT5CARRY)
        I4
 
 N19_1_6 (GTP_LUT5CARRY)
        I4
 
+N19_1_5 (GTP_LUT5CARRY)
+       I4
+
+N19_1_2 (GTP_LUT5CARRY)
+       I4
+
 N19_1_3 (GTP_LUT5CARRY)
-       I4
-
-N19_1_4 (GTP_LUT5CARRY)
-       I4
-
-N19_1_1 (GTP_LUT5CARRY)
        I4
 
 N19_1_7 (GTP_LUT5CARRY)
        I4
 
-N19_1_2 (GTP_LUT5CARRY)
+N19_1_1 (GTP_LUT5CARRY)
        I4
 
 u_pll_e2 (GTP_PLL_E2)
@@ -206,39 +242,6 @@ u_pll_e2 (GTP_PLL_E2)
         RSTODIV3
         STDBY
 
-N145_1_4 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
-N145_1_2 (GTP_LUT5CARRY)
-        I4
-
-N145_1_1 (GTP_LUT5CARRY)
-        I4
-
-N145_1_3 (GTP_LUT5CARRY)
-        I4
-
-N145_1_2 (GTP_LUT5CARRY)
-        I4
-
-N145_1_3 (GTP_LUT5CARRY)
-        I4
-
-N145_1_4 (GTP_LUT5CARRY)
-        I4
-
-N145_1_1 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
 N145_1_1 (GTP_LUT5CARRY)
         I4
 
@@ -250,6 +253,63 @@ N145_1_2 (GTP_LUT5CARRY)
 
 N145_1_3 (GTP_LUT5CARRY)
         I4
+
+N145_1_5 (GTP_LUT5CARRY)
+        I4
+
+N145_1_3 (GTP_LUT5CARRY)
+        I4
+
+N145_1_5 (GTP_LUT5CARRY)
+        I4
+
+N145_1_2 (GTP_LUT5CARRY)
+        I4
+
+N145_1_1 (GTP_LUT5CARRY)
+        I4
+
+N145_1_4 (GTP_LUT5CARRY)
+        I4
+
+N145_1_4 (GTP_LUT5CARRY)
+        I4
+
+N145_1_1 (GTP_LUT5CARRY)
+        I4
+
+N145_1_5 (GTP_LUT5CARRY)
+        I4
+
+N145_1_2 (GTP_LUT5CARRY)
+        I4
+
+N145_1_3 (GTP_LUT5CARRY)
+        I4
+
+N37_1_9 (GTP_LUT5CARRY)
+       I4
+
+N37_1_8 (GTP_LUT5CARRY)
+       I4
+
+N37_1_7 (GTP_LUT5CARRY)
+       I4
+
+N37_1_6 (GTP_LUT5CARRY)
+       I4
+
+N37_1_3 (GTP_LUT5CARRY)
+       I4
+
+N37_1_4 (GTP_LUT5CARRY)
+       I4
+
+N37_1_5 (GTP_LUT5CARRY)
+       I4
+
+N37_1_2 (GTP_LUT5CARRY)
+       I4
 
 N27_1_3 (GTP_LUT5CARRY)
        I4
@@ -263,88 +323,19 @@ N27_1_5 (GTP_LUT5CARRY)
 N27_1_4 (GTP_LUT5CARRY)
        I4
 
-N37_1_2 (GTP_LUT5CARRY)
-       I4
-
-N37_1_3 (GTP_LUT5CARRY)
-       I4
-
-N37_1_4 (GTP_LUT5CARRY)
-       I4
-
-N37_1_5 (GTP_LUT5CARRY)
-       I4
-
-N37_1_6 (GTP_LUT5CARRY)
-       I4
-
-N37_1_7 (GTP_LUT5CARRY)
-       I4
-
-N37_1_8 (GTP_LUT5CARRY)
-       I4
-
-N37_1_9 (GTP_LUT5CARRY)
-       I4
-
-N37_1_10 (GTP_LUT5CARRY)
+N37_1_11 (GTP_LUT5CARRY)
         I4
 
-N37_1_11 (GTP_LUT5CARRY)
+N37_1_14 (GTP_LUT5CARRY)
+        I4
+
+N37_1_10 (GTP_LUT5CARRY)
         I4
 
 N37_1_12 (GTP_LUT5CARRY)
         I4
 
 N37_1_13 (GTP_LUT5CARRY)
-        I4
-
-N37_1_14 (GTP_LUT5CARRY)
-        I4
-
-N145_1_4 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
-N145_1_3 (GTP_LUT5CARRY)
-        I4
-
-N145_1_2 (GTP_LUT5CARRY)
-        I4
-
-N145_1_1 (GTP_LUT5CARRY)
-        I4
-
-N145_1_4 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
-N145_1_1 (GTP_LUT5CARRY)
-        I4
-
-N145_1_3 (GTP_LUT5CARRY)
-        I4
-
-N145_1_2 (GTP_LUT5CARRY)
-        I4
-
-N145_1_5 (GTP_LUT5CARRY)
-        I4
-
-N145_1_1 (GTP_LUT5CARRY)
-        I4
-
-N145_1_3 (GTP_LUT5CARRY)
-        I4
-
-N145_1_2 (GTP_LUT5CARRY)
-        I4
-
-N145_1_4 (GTP_LUT5CARRY)
         I4
 
 N312_4_2 (GTP_LUT5CARRY)
@@ -365,31 +356,76 @@ N312_4_6 (GTP_LUT5CARRY)
 N312_4_7 (GTP_LUT5CARRY)
         I4
 
-N47_1_2 (GTP_LUT5CARRY)
-       I4
+N145_1_3 (GTP_LUT5CARRY)
+        I4
 
-N47_1_3 (GTP_LUT5CARRY)
-       I4
+N145_1_5 (GTP_LUT5CARRY)
+        I4
 
-N47_1_4 (GTP_LUT5CARRY)
+N145_1_4 (GTP_LUT5CARRY)
+        I4
+
+N145_1_2 (GTP_LUT5CARRY)
+        I4
+
+N145_1_1 (GTP_LUT5CARRY)
+        I4
+
+N145_1_4 (GTP_LUT5CARRY)
+        I4
+
+N145_1_5 (GTP_LUT5CARRY)
+        I4
+
+N145_1_3 (GTP_LUT5CARRY)
+        I4
+
+N145_1_1 (GTP_LUT5CARRY)
+        I4
+
+N145_1_2 (GTP_LUT5CARRY)
+        I4
+
+N145_1_1 (GTP_LUT5CARRY)
+        I4
+
+N145_1_3 (GTP_LUT5CARRY)
+        I4
+
+N145_1_5 (GTP_LUT5CARRY)
+        I4
+
+N145_1_2 (GTP_LUT5CARRY)
+        I4
+
+N145_1_4 (GTP_LUT5CARRY)
+        I4
+
+N47_1_8 (GTP_LUT5CARRY)
        I4
 
 N47_1_5 (GTP_LUT5CARRY)
        I4
 
-N47_1_6 (GTP_LUT5CARRY)
-       I4
-
 N47_1_7 (GTP_LUT5CARRY)
        I4
 
-N47_1_8 (GTP_LUT5CARRY)
+N47_1_6 (GTP_LUT5CARRY)
        I4
 
-N45_1_3 (GTP_LUT5CARRY)
+N47_1_4 (GTP_LUT5CARRY)
+       I4
+
+N47_1_3 (GTP_LUT5CARRY)
+       I4
+
+N47_1_2 (GTP_LUT5CARRY)
        I4
 
 N45_1_2 (GTP_LUT5CARRY)
+       I4
+
+N45_1_3 (GTP_LUT5CARRY)
        I4
 
 N45_1_4 (GTP_LUT5CARRY)

@@ -184,8 +184,8 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1746</data>
-            <data>2335</data>
+            <data>1747</data>
+            <data>2334</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
@@ -838,14 +838,14 @@
         </row>
         <row>
             <data>no_input_delay</data>
-            <data>85</data>
+            <data>76</data>
             <table_container>
                 <table id="no_input_delay_detailed_report" title="no_input_delay" column_number="1" tree="">
                     <column_headers>
                         <data>Issues</data>
                     </column_headers>
                     <row>
-                        <data>There are 85 input ports with no input delay specified.</data>
+                        <data>There are 76 input ports with no input delay specified.</data>
                         <row>
                             <data>io_CPU0_D0_I2C1_PE_STRAP_SDA</data>
                         </row>
@@ -895,9 +895,6 @@
                             <data>i_CPU0_D0_UART1_TX</data>
                         </row>
                         <row>
-                            <data>i_CPU0_D0_UART_SOUT</data>
-                        </row>
-                        <row>
                             <data>i_CPU0_D1_TEMP_OVER</data>
                         </row>
                         <row>
@@ -920,12 +917,6 @@
                         </row>
                         <row>
                             <data>i_CPU1_D0_TEMP_OVER</data>
-                        </row>
-                        <row>
-                            <data>i_CPU1_D0_UART1_TX</data>
-                        </row>
-                        <row>
-                            <data>i_CPU1_D0_UART_SOUT</data>
                         </row>
                         <row>
                             <data>i_CPU1_D1_TEMP_OVER</data>
@@ -988,15 +979,6 @@
                             <data>i_FAN_SNS_ALERT</data>
                         </row>
                         <row>
-                            <data>i_JACK_CPU0_D0_UART_SIN</data>
-                        </row>
-                        <row>
-                            <data>i_JACK_CPU0_UART1_RX</data>
-                        </row>
-                        <row>
-                            <data>i_JACK_CPU1_D0_UART_SIN</data>
-                        </row>
-                        <row>
                             <data>i_JACK_CPU1_UART1_RX</data>
                         </row>
                         <row>
@@ -1013,12 +995,6 @@
                         </row>
                         <row>
                             <data>i_PAL_BMC_SS_DATA_IN</data>
-                        </row>
-                        <row>
-                            <data>i_PAL_BMC_UART1_TX</data>
-                        </row>
-                        <row>
-                            <data>i_PAL_BMC_UART4_TX</data>
                         </row>
                         <row>
                             <data>i_PAL_EXT_RST_N</data>
@@ -1052,9 +1028,6 @@
                         </row>
                         <row>
                             <data>i_PAL_RISER2_WIDTH_R</data>
-                        </row>
-                        <row>
-                            <data>i_PAL_UART4_OCP_DEBUG_RX</data>
                         </row>
                         <row>
                             <data>i_PAL_UPD72020_1_ALART</data>
@@ -1630,7 +1603,7 @@
                 <data>50.0000MHz</data>
                 <data>0.0000</data>
                 <data>10.0000</data>
-                <data>2335</data>
+                <data>2334</data>
                 <data>0</data>
                 <data>i_CLK_C42_IN_25M</data>
                 <data>{ pll_inst/u_pll_e2/CLKOUT0 }</data>
@@ -1686,11 +1659,11 @@
             <data>13.341</data>
             <data>0.000</data>
             <data>0</data>
-            <data>6653</data>
+            <data>6650</data>
             <data>0.304</data>
             <data>0.000</data>
             <data>0</data>
-            <data>6653</data>
+            <data>6650</data>
         </row>
     </table>
     <table id="synthesize_report_clock_network" title="Clock Network" column_number="1" tree="">
@@ -1708,11 +1681,11 @@
                             <row>
                                 <data file_id="../ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.v" line_number="254">pll_inst/u_pll_e2/CLKIN1 (2.344, 2.344, 2.294, 2.294)</data>
                                 <row>
-                                    <data>clk_50m (50.00MHZ) (drive 2335 loads)</data>
+                                    <data>clk_50m (50.00MHZ) (drive 2334 loads)</data>
                                     <row>
                                         <data file_id="../ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.v" line_number="254">pll_inst/u_pll_e2/CLKOUT0 (2.809, 2.809, 2.736, 2.736)</data>
                                         <row>
-                                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m (net)</data>
+                                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m (net)</data>
                                             <row>
                                                 <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clk_dly1/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
@@ -7195,6 +7168,12 @@
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[8]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
+                                                <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[9]/CLK (4.157, 4.157, 4.084, 4.084)</data>
+                                            </row>
+                                            <row>
+                                                <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[10]/CLK (4.157, 4.157, 4.084, 4.084)</data>
+                                            </row>
+                                            <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[12]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
@@ -7250,9 +7229,6 @@
                                             </row>
                                             <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[33]/CLK (4.157, 4.157, 4.084, 4.084)</data>
-                                            </row>
-                                            <row>
-                                                <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[34]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[35]/CLK (4.157, 4.157, 4.084, 4.084)</data>
@@ -7471,9 +7447,6 @@
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[198]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
-                                                <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[211]/CLK (4.157, 4.157, 4.084, 4.084)</data>
-                                            </row>
-                                            <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[212]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
@@ -7487,9 +7460,6 @@
                                             </row>
                                             <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[220]/CLK (4.157, 4.157, 4.084, 4.084)</data>
-                                            </row>
-                                            <row>
-                                                <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[263]/CLK (4.157, 4.157, 4.084, 4.084)</data>
                                             </row>
                                             <row>
                                                 <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1223">mcpld_to_scpld_data_filter[264]/CLK (4.157, 4.157, 4.084, 4.084)</data>
@@ -8746,7 +8716,7 @@
             <data>13.341</data>
             <data>0.000</data>
             <data>0</data>
-            <data>4409</data>
+            <data>4407</data>
         </row>
     </table>
     <table id="synthesize_report_timing_hold" title="Hold Summary" column_number="6">
@@ -8764,7 +8734,7 @@
             <data>0.304</data>
             <data>0.000</data>
             <data>0</data>
-            <data>4409</data>
+            <data>4407</data>
         </row>
     </table>
     <table id="synthesize_report_timing_recovery" title="Recovery Summary" column_number="6">
@@ -8782,7 +8752,7 @@
             <data>15.973</data>
             <data>0.000</data>
             <data>0</data>
-            <data>2244</data>
+            <data>2243</data>
         </row>
     </table>
     <table id="synthesize_report_timing_removal" title="Removal Summary" column_number="6">
@@ -8800,7 +8770,7 @@
             <data>3.570</data>
             <data>0.000</data>
             <data>0</data>
-            <data>2244</data>
+            <data>2243</data>
         </row>
     </table>
     <table id="synthesize_report_timing_mpw" title="Minimum Pulse Width Summary" column_number="5">
@@ -8816,7 +8786,7 @@
             <data>9.380</data>
             <data>0.000</data>
             <data>0</data>
-            <data>2335</data>
+            <data>2334</data>
         </row>
     </table>
     <table id="synthesize_report_timing_path_setup" title="Setup Path Summary" column_number="17">
@@ -8935,11 +8905,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -8963,7 +8933,7 @@
                             <data>0.963</data>
                             <data>5.551</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2247">wrdata[2]</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2216">wrdata[2]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -9171,11 +9141,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -9309,11 +9279,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -9337,7 +9307,7 @@
                             <data>0.963</data>
                             <data>5.551</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2247">wrdata[2]</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2216">wrdata[2]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -9545,11 +9515,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -9683,11 +9653,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -9711,7 +9681,7 @@
                             <data>0.963</data>
                             <data>5.551</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2247">wrdata[2]</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="2216">wrdata[2]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -9919,11 +9889,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10078,11 +10048,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10106,7 +10076,7 @@
                             <data>0.000</data>
                             <data>4.565</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="543">t1s_tick</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="545">t1s_tick</data>
                         </row>
                         <row>
                             <data> </data>
@@ -10194,11 +10164,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10332,11 +10302,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10448,11 +10418,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10586,11 +10556,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10614,7 +10584,7 @@
                             <data>0.000</data>
                             <data>4.565</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1542">bmccpld_to_mbcpld_s2p_data[42]</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="1551">bmccpld_to_mbcpld_s2p_data[42]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -10702,11 +10672,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10768,7 +10738,7 @@
         <row>
             <data>15.973</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clk_dly1/P</data>
             <data/>
@@ -10861,11 +10831,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -10889,7 +10859,7 @@
                             <data>0.000</data>
                             <data>4.588</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -10909,7 +10879,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.492</data>
                             <data> </data>
@@ -11001,11 +10971,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11046,7 +11016,7 @@
         <row>
             <data>15.973</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clk_dly2/P</data>
             <data/>
@@ -11139,11 +11109,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11167,7 +11137,7 @@
                             <data>0.000</data>
                             <data>4.588</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -11187,7 +11157,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.492</data>
                             <data> </data>
@@ -11279,11 +11249,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11324,7 +11294,7 @@
         <row>
             <data>15.973</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clr_dly1/P</data>
             <data/>
@@ -11417,11 +11387,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11445,7 +11415,7 @@
                             <data>0.000</data>
                             <data>4.588</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -11465,7 +11435,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.492</data>
                             <data> </data>
@@ -11557,11 +11527,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>24.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11623,7 +11593,7 @@
         <row>
             <data>3.570</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clk_dly1/P</data>
             <data/>
@@ -11716,11 +11686,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11744,7 +11714,7 @@
                             <data>0.000</data>
                             <data>4.565</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -11764,7 +11734,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.469</data>
                             <data> </data>
@@ -11856,11 +11826,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -11901,7 +11871,7 @@
         <row>
             <data>3.570</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clk_dly2/P</data>
             <data/>
@@ -11994,11 +11964,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -12022,7 +11992,7 @@
                             <data>0.000</data>
                             <data>4.565</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -12042,7 +12012,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.469</data>
                             <data> </data>
@@ -12134,11 +12104,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -12179,7 +12149,7 @@
         <row>
             <data>3.570</data>
             <data>1</data>
-            <data>2244</data>
+            <data>2243</data>
             <data file_id="../../../rtl/common/pon_reset.v" line_number="46">pon_reset_inst/reset1_reg[2]/CLK</data>
             <data file_id="../../../rtl/common/WDT.v" line_number="64">FanControl_m/m_WDT3/r_WDT_cnt_clr_dly1/P</data>
             <data/>
@@ -12272,11 +12242,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -12300,7 +12270,7 @@
                             <data>0.000</data>
                             <data>4.565</data>
                             <data> </data>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="555">pon_reset_n</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="557">pon_reset_n</data>
                         </row>
                         <row>
                             <data> </data>
@@ -12320,7 +12290,7 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2244)</data>
+                            <data>net (fanout=2243)</data>
                             <data>2.904</data>
                             <data>7.469</data>
                             <data> </data>
@@ -12412,11 +12382,11 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=2335)</data>
+                            <data>net (fanout=2334)</data>
                             <data>1.348</data>
                             <data>4.157</data>
                             <data/>
-                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="520">clk_50m</data>
+                            <data file_id="../../../rtl/Tieta_Feiteng_2001_top.v" line_number="522">clk_50m</data>
                         </row>
                         <row>
                             <data></data>
@@ -12500,10 +12470,10 @@
         </column_headers>
         <comment>
             <data>
-Total LUTs: 1746 of 5920 (29.49%)
+Total LUTs: 1747 of 5920 (29.51%)
 	LUTs as dram: 0 of 3552 (0.00%)
-	LUTs as logic: 1746
-Total Registers: 2335 of 8880 (26.30%)
+	LUTs as logic: 1747
+Total Registers: 2334 of 8880 (26.28%)
 Total Latches: 0
 
 DRM9K:
@@ -12518,7 +12488,7 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data>GTP_DFF_CE                </data>
-            <data>2001</data>
+            <data>2000</data>
         </row>
         <row>
             <data>GTP_DFF_E                   </data>
@@ -12542,11 +12512,11 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data>GTP_LUT1                    </data>
-            <data>23</data>
+            <data>22</data>
         </row>
         <row>
             <data>GTP_LUT2                    </data>
-            <data>44</data>
+            <data>47</data>
         </row>
         <row>
             <data>GTP_LUT3                   </data>
@@ -12554,7 +12524,7 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data>GTP_LUT4                   </data>
-            <data>958</data>
+            <data>957</data>
         </row>
         <row>
             <data>GTP_LUT5                   </data>
@@ -12594,11 +12564,11 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data>GTP_OUTBUF                </data>
-            <data>88</data>
+            <data>79</data>
         </row>
         <row>
             <data>GTP_OUTBUFT               </data>
-            <data>30</data>
+            <data>39</data>
         </row>
     </table>
     <table id="synthesize_constraint_files" title="Constraint Files Read" column_number="2">
@@ -12622,9 +12592,9 @@ Total I/O ports = 287 of 336 (85.42%)
             <data>RAM(GB)</data>
         </column_headers>
         <row>
+            <data>0h:0m:7s</data>
+            <data>0h:0m:8s</data>
             <data>0h:0m:9s</data>
-            <data>0h:0m:10s</data>
-            <data>0h:0m:11s</data>
             <data>271</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
@@ -15259,12 +15229,6 @@ Total I/O ports = 287 of 336 (85.42%)
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[6]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[9]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[10]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[11]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
@@ -15275,6 +15239,9 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[27]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[34]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[91]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
@@ -15589,6 +15556,9 @@ Total I/O ports = 287 of 336 (85.42%)
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[210]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
+            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[211]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[214]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
@@ -15725,6 +15695,9 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[262]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[263]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v(line number: 1223)] Instance 'mcpld_to_scpld_data_filter[268]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
@@ -16663,9 +16636,6 @@ Total I/O ports = 287 of 336 (85.42%)
             <data message="5">Timing-4086: Port 'i_CPU0_D0_UART1_TX' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
-            <data message="5">Timing-4086: Port 'i_CPU0_D0_UART_SOUT' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
             <data message="5">Timing-4086: Port 'i_CPU0_D1_TEMP_OVER' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
@@ -16688,12 +16658,6 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_CPU1_D0_TEMP_OVER' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_CPU1_D0_UART1_TX' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_CPU1_D0_UART_SOUT' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_CPU1_D1_TEMP_OVER' is not constrained, it is treated as combinational input.</data>
@@ -16756,15 +16720,6 @@ Total I/O ports = 287 of 336 (85.42%)
             <data message="5">Timing-4086: Port 'i_FAN_SNS_ALERT' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
-            <data message="5">Timing-4086: Port 'i_JACK_CPU0_D0_UART_SIN' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_JACK_CPU0_UART1_RX' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_JACK_CPU1_D0_UART_SIN' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
             <data message="5">Timing-4086: Port 'i_JACK_CPU1_UART1_RX' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
@@ -16781,12 +16736,6 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_PAL_BMC_SS_DATA_IN' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_PAL_BMC_UART1_TX' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_PAL_BMC_UART4_TX' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_PAL_EXT_RST_N' is not constrained, it is treated as combinational input.</data>
@@ -16820,9 +16769,6 @@ Total I/O ports = 287 of 336 (85.42%)
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_PAL_RISER2_WIDTH_R' is not constrained, it is treated as combinational input.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'i_PAL_UART4_OCP_DEBUG_RX' is not constrained, it is treated as combinational input.</data>
         </row>
         <row>
             <data message="5">Timing-4086: Port 'i_PAL_UPD72020_1_ALART' is not constrained, it is treated as combinational input.</data>

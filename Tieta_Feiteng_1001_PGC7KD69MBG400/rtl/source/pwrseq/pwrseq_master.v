@@ -11,25 +11,20 @@
 `include "pwrseq_define.v"
 
 module pwrseq_master #(
-    parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         ,
-    parameter WDT_NBITS                             = 10                        ,
+    parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         , // 最大有限回复次数 
+    parameter WDT_NBITS                             = 10                        , // 看门狗计数器位宽
 
-    parameter P3V3_VCC_WATCHDOG_TIOMEOUT_VAL        = 2                         ,
-    parameter PON_WATCHDOG_TIMEOUT_VAL              = 112                       ,
-    parameter PSU_WATCHDOG_TIMEOUT_VAL              = 10                        ,
-    parameter EFUSE_WATCHDOG_TIMEOUT_VAL            = 137                       ,
-    parameter PCH_WATCHDOG_TIMEOUT_VAL              = 1000                      ,
-    parameter DSW_PWROK_TIMEOUT_VAL                 = 10                        ,
-    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 34                        ,
+    parameter PON_WATCHDOG_TIMEOUT_VAL              = 25                        , // 主电/EFUSE设备电源上电时间
+
+    parameter DSW_PWROK_TIMEOUT_VAL                 = 12                        ,
+    parameter DSW1_PWROK_TIMEOUT_VAL                = 12                        ,
+    parameter DSW2_PWROK_TIMEOUT_VAL                = 12                        ,
+
+    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 100                       ,
     
-    
-    parameter VCORE_WATCHDOG_TIMEOUT_VAL            = PON_WATCHDOG_TIMEOUT_VAL  ,
-    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 2                         ,
-    parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = PDN_WATCHDOG_TIMEOUT_VAL  ,
-    parameter DISABLE_INTEL_VCCIN_TIMEOUT_VAL       = PDN_WATCHDOG_TIMEOUT_VAL  ,
-    parameter DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL = PDN_WATCHDOG_TIMEOUT_VAL  ,
-    parameter DISABLE_3V3_TIMEOUT_VAL               = PDN_WATCHDOG_TIMEOUT_VAL  ,
-    parameter DISABLE_3V3_TIMEOUT_FAULT_VAL         = PDN_WATCHDOG_TIMEOUT_VAL  ,
+    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 12                         ,
+    parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = 12                         ,
+
     
     parameter PF_ON_WAIT_COMPLETE_VAL               = 33                        ,
     parameter PO_ON_WAIT_COMPLETE_VAL               = 1                         ,
@@ -43,18 +38,17 @@ module pwrseq_master #(
     // -----------------------------------------------------------
     // 1. 时钟与复位接口（模块时序基准与初始化）
     // -----------------------------------------------------------
-    input            clk,                     // clock
-    input            reset,                   // reset
+    input            clk,                   
+    input            reset,                 
 
     // -----------------------------------------------------------
     // 2. 定时脉冲接口（模块内部时序控制与计时基准）
     // -----------------------------------------------------------
-    input            t1us,                    // 10ns pulse every 1us
-    input            t512us,                  // 10ns pulse every 512us
+    input            t1us,                    
+    input            t512us,                  
     input            t256ms,                  // 10ns pulse every 256ms
-    input            t512ms,                  // 10ns pulse every 500ms
-    input            sequence_tick,           // tick used for wdt timeout during power-up/down states
-    input            psu_on_tick,             // tick used for wdt timeout during PS on state
+    input            t512ms,                  
+    input            sequence_tick,           
 
      // -----------------------------------------------------------
     // 3. 物理按键信号; 南桥状态和控制信息; 
@@ -87,6 +81,9 @@ module pwrseq_master #(
 
     // 点灯观察使用
     output reg       pgd_raw,  
+
+    // CPU的PCIE解复位输入
+    input            cpu_pcie_rst,
 
     // -----------------------------------------------------------
     // 4. 电源S5上电控制 来自? BMC or PWR_SEQ_SLAVE ?
@@ -148,16 +145,16 @@ reg  [WDT_NBITS-1:0]                    wdt_counter                 ;
 wire                                    wdt_tick                    ;
 reg  [5:0]                              power_seq_sm_last           ;
 wire                                    wdt_counter_clr             ;
-reg                                     dsw_pwrok_timeout           ;
-reg                                     pch_watchdog_timeout        ;
+
 reg                                     pon_watchdog_timeout        ;
-reg                                     psu_watchdog_timeout        ;
-reg                                     efuse_watchdog_timeout      ;
-reg                                     vcore_watchdog_timeout      ;
+reg                                     dsw_pwrok_timeout           ;
+reg                                     dsw1_pwrok_timeout          ;
+reg                                     dsw2_pwrok_timeout          ;
+
 reg                                     pdn_watchdog_timeout        ;
-reg                                     disable_intel_vccin_timeout ;
-reg                                     disable_3v3_timeout         ;
+
 reg                                     pon_65ms_watchdog_timeout   ;
+
 reg                                     pf_on_wait_complete         ;
 reg                                     po_on_wait_complete         ;
 reg                                     s5_devices_on_wait_complete ;
@@ -191,26 +188,36 @@ reg                                     lim_recov_retry_clr         ;
 wire                                    lim_recov_retry_max         ;
 
 // Misc
+// 热跳变和状态清零
 reg                                     off_state                   ;
 wire                                    pch_thermtrip_n_delay       ;
 reg                                     fault_clear_ns              ;
 
 // State transition
 // 各状态跳转使能信号
-reg                                     pchdsw_state_trans_en       ;
-reg                                     pchdsw_critical_fail_en     ;
-reg                                     pch_state_trans_en          ;
-reg                                     pch_critical_fail_en        ;
-reg                                     pwrup_state_trans_en        ;
+reg                                     pwron_state_trans_en        ;
 reg                                     pwron_critical_fail_en      ;
-reg                                     psu_critical_fail_en        ;
-reg                                     efuse_critical_fail_en      ;
+
+reg                                     pchdsw_state_trans_en       ;
+reg                                     pchdsw1_state_trans_en      ;
+reg                                     pchdsw2_state_trans_en      ;
+reg                                     pchdsw_critical_fail_en     ;
+reg                                     pchdsw1_critical_fail_en    ;
+reg                                     pchdsw2_critical_fail_en    ;
+
+reg                                     pon_rst_65ms_trans_en       ; 
 reg                                     wait_steady_pwrok_fail_en   ;
 
 wire                                    rt_critical_fail_check      ;
 wire                                    rt_normal_pwr_down          ;
 
+
+//------------------------------------------------------------------------------
+// 状态监控, “状态超时标志信号” 信号, 供状态机跳转使用
+// 各类挂死的超时标志, 达到阈值时置位，直到下次清零
+//------------------------------------------------------------------------------
 // SM states
+// 状态记录
 assign st_off_standby        = (power_seq_sm == `SM_OFF_STANDBY)         ; // S5待机状态
 assign st_ps_on              = (power_seq_sm == `SM_PS_ON)               ; // PSU上电状态
 assign st_steady_pwrok       = (power_seq_sm == `SM_STEADY_PWROK)        ; // 稳定PWROK状态
@@ -219,15 +226,11 @@ assign st_halt_power_cycle   = (power_seq_sm == `SM_HALT_POWER_CYCLE)    ; // �
 assign st_disable_main_efuse = (power_seq_sm == `SM_DISABLE_MAIN_EFUSE)  ; // 禁用主E-fuse状态
 
 
-//------------------------------------------------------------------------------
-// Watchdog logic
 // 生成看门狗计时器时钟脉冲
-//------------------------------------------------------------------------------
-assign wdt_tick = (off_state) ? t256ms       : // S5 待机使用 256ms 计时
-                  (st_ps_on)  ? psu_on_tick  : // PSU 上电使用 32ms 上电计时
-                                sequence_tick; // 其余状态使用 2ms 计时
+assign wdt_tick = (off_state) ? t256ms        : // S5待机使用 256ms 计时
+                                sequence_tick; // 上电状态使用 2ms 计时
 
-// Clear counter - generates a 1us pulse on entry to new state
+// 状态机状态变化时, 看门狗计数器清零
 always @(posedge clk or posedge reset) begin
     if (reset)
         power_seq_sm_last <= `SM_RESET_STATE;
@@ -235,9 +238,9 @@ always @(posedge clk or posedge reset) begin
         power_seq_sm_last <= power_seq_sm;
 end
 
-assign wdt_counter_clr = (power_seq_sm_last != power_seq_sm);
+assign wdt_counter_clr = (power_seq_sm_last != power_seq_sm) ? 1'b1 : 1'b0;
 
-// Counter
+// 上电延时计时器
 always @(posedge clk or posedge reset) begin
     if (reset)
         wdt_counter <= {WDT_NBITS{1'b0}};
@@ -247,72 +250,51 @@ always @(posedge clk or posedge reset) begin
         wdt_counter <= wdt_counter + 1'b1;
 end
 
-// Timeout flags
-// - Used for waiting on power-up/down sequence states
+// 上电延时超时标志
 always @(posedge clk or posedge reset) begin
     if (reset) begin
-        dsw_pwrok_timeout           <= 1'b0;
-        pch_watchdog_timeout        <= 1'b0;
         pon_watchdog_timeout        <= 1'b0;
-        psu_watchdog_timeout        <= 1'b0;
-        efuse_watchdog_timeout      <= 1'b0;
-        vcore_watchdog_timeout      <= 1'b0;
+
+        dsw_pwrok_timeout           <= 1'b0;
+        dsw1_pwrok_timeout          <= 1'b0;
+        dsw2_pwrok_timeout          <= 1'b0;
+ 
         pon_65ms_watchdog_timeout   <= 1'b0;
         pdn_watchdog_timeout        <= 1'b0;
-        disable_intel_vccin_timeout <= 1'b0;
-        disable_3v3_timeout         <= 1'b0;
+  
     end
     else if (wdt_counter_clr) begin
-        dsw_pwrok_timeout           <= 1'b0;
-        pch_watchdog_timeout        <= 1'b0;
         pon_watchdog_timeout        <= 1'b0;
-        psu_watchdog_timeout        <= 1'b0;
-        efuse_watchdog_timeout      <= 1'b0;
-        vcore_watchdog_timeout      <= 1'b0;
+
+        dsw_pwrok_timeout           <= 1'b0;
+        dsw1_pwrok_timeout          <= 1'b0;
+        dsw2_pwrok_timeout          <= 1'b0;
+
         pon_65ms_watchdog_timeout   <= 1'b0;
         pdn_watchdog_timeout        <= 1'b0;
-        disable_intel_vccin_timeout <= 1'b0;
-        disable_3v3_timeout         <= 1'b0;
+
     end
     else if (wdt_tick) begin
-        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL)                                        
-          dsw_pwrok_timeout <= 1'b1;                                                           
-
-        if (wdt_counter == PCH_WATCHDOG_TIMEOUT_VAL)                                         
-         pch_watchdog_timeout <= 1'b1;                                                        
-
         if (wdt_counter == PON_WATCHDOG_TIMEOUT_VAL)                                      
-          pon_watchdog_timeout <= 1'b1;                                                        
+            pon_watchdog_timeout <= 1'b1;  
 
-        if (wdt_counter == PSU_WATCHDOG_TIMEOUT_VAL)                                        
-          psu_watchdog_timeout <= 1'b1;                                                        
-
-        if (wdt_counter == EFUSE_WATCHDOG_TIMEOUT_VAL)                                      
-          efuse_watchdog_timeout <= 1'b1;                                                      
-
-        if (wdt_counter == VCORE_WATCHDOG_TIMEOUT_VAL)                                         
-          vcore_watchdog_timeout <= 1'b1;                                                      
-
+        if (wdt_counter == DSW_PWROK_TIMEOUT_VAL)                                        
+            dsw_pwrok_timeout <= 1'b1;   
+        if (wdt_counter == DSW1_PWROK_TIMEOUT_VAL)                                       
+            dsw1_pwrok_timeout <= 1'b1;   
+        if (wdt_counter == DSW2_PWROK_TIMEOUT_VAL)    
+            dsw2_pwrok_timeout <= 1'b1;                                                      
+                                                                                                                                                                                                                   
         if (wdt_counter == PON_65MS_WATCHDOG_TIMEOUT_VAL)                                      
-          pon_65ms_watchdog_timeout <= 1'b1;                                                   
+            pon_65ms_watchdog_timeout <= 1'b1;    
 
         if (((wdt_counter == PDN_WATCHDOG_TIMEOUT_VAL)       && !power_fault) ||              
             ((wdt_counter == PDN_WATCHDOG_TIMEOUT_FAULT_VAL) &&  power_fault))                
-          pdn_watchdog_timeout <= 1'b1;                                                       
-
-        if (((wdt_counter == DISABLE_INTEL_VCCIN_TIMEOUT_VAL)       && !power_fault) ||       
-            ((wdt_counter == DISABLE_INTEL_VCCIN_TIMEOUT_FAULT_VAL) &&  power_fault))         
-          disable_intel_vccin_timeout <= 1'b1;                                                
-
-        if (((wdt_counter == DISABLE_3V3_TIMEOUT_VAL)       && !power_fault) ||               
-            ((wdt_counter == DISABLE_3V3_TIMEOUT_FAULT_VAL) &&  power_fault))                 
-          disable_3v3_timeout <= 1'b1;                                                        
+            pdn_watchdog_timeout <= 1'b1;                                                         
     end                                                                                     
 end                                                                                       
                                                                                          
-// Complete flags                                                                         
-// - Used for holding off actions form occurring until enough time has passed 
-// 生成各等待完成标志            
+// 生成各等待完成标志; DC_COMPLETE, PO_COMPLETE, S5_DEVICES_COMPLETE           
 always @(posedge clk or posedge reset) begin                                              
     if (reset) begin                                                                        
         dc_on_wait_complete         <= 1'b0;                                                  
@@ -344,19 +326,17 @@ end
 // during interlock_broken case.
 // 生成 pf_on_wait_complete 标志
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    pf_on_wait_complete <= 1'b0;
-  else if (t1us && !off_state)
-    pf_on_wait_complete <= 1'b0;
-  else if (t1us && (wdt_counter == PF_ON_WAIT_COMPLETE_VAL))
-    pf_on_wait_complete <= 1'b1;
+    if (reset)
+        pf_on_wait_complete <= 1'b0;
+    else if (t1us && !off_state)
+        pf_on_wait_complete <= 1'b0;
+    else if (t1us && (wdt_counter == PF_ON_WAIT_COMPLETE_VAL))
+        pf_on_wait_complete <= 1'b1;
 end
 
 
 //------------------------------------------------------------------------------
 // turn_system_on
-// - Asserts when system is requested to turn on and have satisfied all
-//   required conditions for turn on.
 // 系统开机控制使能信号, 已经写死
 //------------------------------------------------------------------------------
 reg  [2:0]              r_pwrbtn_1s_cnt     ; // 计数到 4 秒 （0..4）
@@ -368,9 +348,9 @@ always @(posedge clk or posedge reset) begin
         r_pwrbtn_1s_cnt <= 3'd0;
     else begin
         // 每512ms采样一次按键状态
-        if(t256ms) begin
+        if(t512ms) begin
             if ((~pch_pwrbtn_n) && st_steady_pwrok) begin
-                // 按下且处于运行稳定态，计数递增直到 4
+                // 按下且处于运行稳定态，计数递增直到 6
                 if (r_pwrbtn_1s_cnt < 3'd7)
                     r_pwrbtn_1s_cnt <= r_pwrbtn_1s_cnt + 3'd1;
                 else
@@ -386,7 +366,7 @@ end
 always @(posedge clk or posedge reset) begin
     if (reset) 
         r_Pwrbtn_long   <= 1'b0;
-    else if(t256ms && (~pch_pwrbtn_n) && st_steady_pwrok && (r_pwrbtn_1s_cnt == 3'd7))
+    else if(t512ms && (~pch_pwrbtn_n) && st_steady_pwrok && (r_pwrbtn_1s_cnt == 3'd7))
         // 每512ms采样一次按键状态
         r_Pwrbtn_long <= 1'b1;
     else if(assert_button_clr)
@@ -445,12 +425,12 @@ end
 
 // halt_power_cycle 状态下物理按键保持
 always @(posedge clk or posedge reset) begin
-  if (reset)
-    assert_physical_button <= 1'b0;
-  else if (assert_button_clr)
-    assert_physical_button <= 1'b0;
-  else if ((sys_sw_in_n_ne  |  Power_WAKE_R_N_ne |  cpu_reboot_ne ) && st_halt_power_cycle)
-    assert_physical_button <= 1'b1;
+    if (reset)
+        assert_physical_button <= 1'b0;
+    else if (assert_button_clr)
+        assert_physical_button <= 1'b0;
+    else if ((sys_sw_in_n_ne  |  Power_WAKE_R_N_ne |  cpu_reboot_ne ) && st_halt_power_cycle)
+        assert_physical_button <= 1'b1;
 end
 
 
@@ -633,14 +613,20 @@ end
 // Asserts when SM is ready to move to the next VRD enablement
 always @(posedge clk or posedge reset) begin
     if (reset) begin
-        pchdsw_state_trans_en <= 1'b0; // 主电源组上电看门狗超时使能
-        pch_state_trans_en    <= 1'b0; // 南桥上电看门狗超时使能
-        pwrup_state_trans_en  <= 1'b0; // 辅电源组上电看门狗超时使能
+        pwron_state_trans_en  <= 1'b0; 
+        pchdsw_state_trans_en <= 1'b0; 
+        pchdsw1_state_trans_en<= 1'b0; 
+        pchdsw2_state_trans_en<= 1'b0; 
+        
+        pon_rst_65ms_trans_en <= 1'b0; // PON 65ms看门狗超时使能
     end
     else begin
-        pchdsw_state_trans_en <= dsw_pwrok_timeout    & pgd_so_far;
-        pch_state_trans_en    <= pch_watchdog_timeout & pgd_so_far;
-        pwrup_state_trans_en  <= pon_watchdog_timeout & pgd_so_far;
+        pwron_state_trans_en  <= pon_watchdog_timeout      & pgd_so_far; 
+        pchdsw_state_trans_en <= dsw_pwrok_timeout         & pgd_so_far;
+        pchdsw1_state_trans_en<= dsw1_pwrok_timeout        & pgd_so_far;
+        pchdsw2_state_trans_en<= dsw2_pwrok_timeout        & pgd_so_far; 
+        
+        pon_rst_65ms_trans_en <= pon_65ms_watchdog_timeout & pgd_so_far; // PON 65ms看门狗超时使能
     end
 end
 
@@ -648,26 +634,29 @@ end
 always @(posedge clk or posedge reset) begin
     if(reset) begin
         pchdsw_critical_fail_en   <= 1'b0;
-        pch_critical_fail_en      <= 1'b0;
+        pchdsw1_critical_fail_en  <= 1'b0;
+        pchdsw2_critical_fail_en  <= 1'b0;
+
         pwron_critical_fail_en    <= 1'b0;
-        psu_critical_fail_en      <= 1'b0;
-        efuse_critical_fail_en    <= 1'b0;
+
         wait_steady_pwrok_fail_en <= 1'b0;
     end
     else if(keep_alive_on_fault) begin
         pchdsw_critical_fail_en   <= 1'b0;
-        pch_critical_fail_en      <= 1'b0;
+        pchdsw1_critical_fail_en  <= 1'b0;
+        pchdsw2_critical_fail_en  <= 1'b0;
+
         pwron_critical_fail_en    <= 1'b0;
-        psu_critical_fail_en      <= 1'b0;
-        efuse_critical_fail_en    <= 1'b0; // EFUSE上电看门狗超时使能
+
         wait_steady_pwrok_fail_en <= 1'b0;
     end
     else begin
-        pchdsw_critical_fail_en   <= (dsw_pwrok_timeout          & ~pgd_so_far) | any_pwr_fault_det;
-        pch_critical_fail_en      <= (pch_watchdog_timeout       & ~pgd_so_far) | any_pwr_fault_det;
         pwron_critical_fail_en    <= (pon_watchdog_timeout       & ~pgd_so_far) | any_pwr_fault_det;
-        psu_critical_fail_en      <= (psu_watchdog_timeout       & ~pgd_so_far) | any_pwr_fault_det;
-        efuse_critical_fail_en    <= (efuse_watchdog_timeout     & ~pgd_so_far) | any_pwr_fault_det;
+
+        pchdsw_critical_fail_en   <= (dsw_pwrok_timeout          & ~pgd_so_far) | any_pwr_fault_det;
+        pchdsw1_critical_fail_en  <= (dsw1_pwrok_timeout         & ~pgd_so_far) | any_pwr_fault_det;
+        pchdsw2_critical_fail_en  <= (dsw2_pwrok_timeout         & ~pgd_so_far) | any_pwr_fault_det;
+        
         wait_steady_pwrok_fail_en <= (pon_65ms_watchdog_timeout  & ~pgd_so_far) | any_pwr_fault_det;
     end
 end
@@ -762,7 +751,7 @@ always @(*) begin
                 state_ns = `SM_DISABLE_S5_DEVICES;
                 po_failure_detected_set = 1'b1;
             end
-            else if (pwrup_state_trans_en) begin
+            else if (pwron_state_trans_en) begin
                 state_ns = `SM_OFF_STANDBY;
             end
         end
@@ -789,18 +778,17 @@ always @(*) begin
                 assert_button_clr = 1'b1;
                 fault_clear_ns    = 1'b1;
             end
-
-            // 开启 off_state 信号
+            // 开启 off_state 信号, 等待按钮触发上电
             off_state = 1'b1;
         end
     
         // 3. PSU 上电状态
         `SM_PS_ON : begin
-            if(psu_critical_fail_en)begin
+            if(pwron_critical_fail_en)begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if (psu_watchdog_timeout && pgd_so_far) begin  
+            else if (pwron_state_trans_en) begin  
                 state_ns = `SM_EN_5V_STBY;
             end
         end
@@ -812,7 +800,7 @@ always @(*) begin
               state_ns = `SM_CRITICAL_FAIL;
               po_failure_detected_set = 1'b1;
             end
-            else if (pwrup_state_trans_en) begin
+            else if (pwron_state_trans_en) begin
               state_ns = `SM_EN_TELEM;
             end
         end
@@ -824,7 +812,7 @@ always @(*) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
           end
-          else if(pwrup_state_trans_en) begin
+          else if(pwron_state_trans_en) begin
                 state_ns = `SM_EN_MAIN_EFUSE;
           end
         end
@@ -832,11 +820,11 @@ always @(*) begin
         `SM_EN_MAIN_EFUSE : begin
             // - BL, called after `SM_EN_P3V3_VCC` state. Go to enabling PCH rails next.
             // - Non-BL, part of power-on sequence.
-            if (efuse_critical_fail_en) begin
+            if (pwron_critical_fail_en) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if (efuse_watchdog_timeout && pgd_so_far) begin
+            else if (pwron_state_trans_en) begin
                 state_ns = `SM_EN_5V;
             end
         end
@@ -846,27 +834,27 @@ always @(*) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if (pwrup_state_trans_en ) begin
+            else if (pwron_state_trans_en ) begin
                 state_ns = `SM_EN_3V3;
             end
         end
 
         `SM_EN_3V3 : begin
-            if (pch_critical_fail_en) begin
+            if (pwron_critical_fail_en) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if (pch_state_trans_en) begin
+            else if (pwron_state_trans_en) begin
                 state_ns =  `SM_EN_1V1;
             end
         end
 
         `SM_EN_1V1 : begin
-            if (pch_critical_fail_en) begin
+            if (pwron_critical_fail_en) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if (pch_state_trans_en) begin
+            else if (pwron_state_trans_en) begin
                 state_ns =  `SM_EN_CPU_CORE;
             end
         end
@@ -883,51 +871,51 @@ always @(*) begin
         end
 
         `SM_EN_CPU_P1V8 : begin
-          if (pchdsw_critical_fail_en) begin
+          if (pchdsw1_critical_fail_en) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
           end
-          else if (pchdsw_state_trans_en) begin
+          else if (pchdsw1_state_trans_en) begin
                 state_ns = `SM_EN_CPU_DDR     ;
           end
         end
 
         `SM_EN_CPU_DDR : begin
-            if (pchdsw_critical_fail_en) begin
+            if (pchdsw2_critical_fail_en) begin
                   state_ns = `SM_CRITICAL_FAIL;
                   po_failure_detected_set = 1'b1;
             end
-            else if (pchdsw_state_trans_en) begin
+            else if (pchdsw2_state_trans_en) begin
                   state_ns = `SM_EN_CPU_VP;   
             end
         end                                   
 	
         `SM_EN_CPU_VP : begin                   
-            if (pchdsw_critical_fail_en) begin    
+            if (pchdsw2_critical_fail_en) begin    
                 state_ns = `SM_CRITICAL_FAIL;       
                 po_failure_detected_set = 1'b1;    
             end                                  
-            else if (pchdsw_state_trans_en) begin             
+            else if (pchdsw2_state_trans_en) begin             
                 state_ns = `PEX_RESET;            
             end                                  
         end	
        
         `PEX_RESET  : begin                   
-            if(pchdsw_critical_fail_en)begin    
+            if(pchdsw2_critical_fail_en)begin    
                 state_ns = `SM_CRITICAL_FAIL;       
                 po_failure_detected_set = 1'b1;    
             end                                  
-            else if (pchdsw_state_trans_en) begin            
+            else if (pchdsw2_state_trans_en) begin            
                 state_ns = `SM_CPU_RESET;            
             end                                  
         end
        
         `SM_CPU_RESET    : begin                   
-             if (pchdsw_critical_fail_en) begin    
+             if (pchdsw2_critical_fail_en) begin    
                  state_ns = `SM_CRITICAL_FAIL;       
                  po_failure_detected_set = 1'b1;    
              end                                  
-             else if (pchdsw_state_trans_en) begin      
+             else if (pchdsw2_state_trans_en) begin      
                  state_ns = `SM_WAIT_POWEROK;            
              end                                  
         end		                        
@@ -938,7 +926,7 @@ always @(*) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 po_failure_detected_set = 1'b1;
             end
-            else if(pon_65ms_watchdog_timeout && pgd_so_far) begin
+            else if(pon_rst_65ms_trans_en) begin
                 state_ns = `SM_STEADY_PWROK;
                 POWER_DOWN_FLAG_clr = 1'b1;
             end
@@ -946,22 +934,29 @@ always @(*) begin
 
         // 6. 上电稳定运行状态
         `SM_STEADY_PWROK : begin
+            // 故障关机判断, 包括上电过程中的任何故障以及运行时的关键故障
             if (rt_critical_fail_store)begin  
                 state_ns = `SM_CRITICAL_FAIL;
                 rt_failure_detected_set = 1'b1;
             end
-            else if(rt_normal_pwr_down || r_Pwrbtn_long)begin  
+            // 运行时热跳变或正常关机触发
+            else if(rt_normal_pwr_down)begin  
                 state_ns = `SM_CRITICAL_FAIL;  	
                 pch_thermtrip_FLAG_SET = 1'b1;            
             end
+            // CPU重启触发
             else if (~cpu_power_off) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 CPU_OFF_FLAG_SET = 1'b1;
             end
-
+            // PCH复位触发
             else if (~pch_sys_reset_n) begin
                 state_ns = `SM_CRITICAL_FAIL;
                 REBOOT_FLAG_SET = 1'b1;
+            end
+            // BL平台特殊处理, 长按开机按钮触发关机
+            else if(r_Pwrbtn_long)begin  
+                state_ns = `SM_CRITICAL_FAIL;  	          
             end
             // 有限恢复相关状态flag清除
             lim_recov_retry_clr = 1'b1;
@@ -970,8 +965,10 @@ always @(*) begin
         // 下电状态
         // 1. 故障下电开始
         `SM_CRITICAL_FAIL : begin
-            state_ns = `SM_DISABLE_CPU_VP;
-            assert_button_clr = 1'b1;
+            // if (pdn_watchdog_timeout) begin
+                state_ns = `SM_DISABLE_CPU_VP;
+                assert_button_clr = 1'b1;
+            // end
         end
 
         // 2. CPU 主电源组下电序列                                   
@@ -1001,13 +998,13 @@ always @(*) begin
     
         // 3. 辅电下电
         `SM_DISABLE_1V1 : begin
-            if (disable_3v3_timeout) begin
+            if (pdn_watchdog_timeout) begin
                 state_ns = `SM_DISABLE_3V3;
             end
         end
 
         `SM_DISABLE_3V3 : begin
-            if (disable_3v3_timeout) begin
+            if (pdn_watchdog_timeout) begin
                 state_ns = `SM_DISABLE_5V;
             end
         end
