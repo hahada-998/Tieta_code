@@ -78,30 +78,30 @@ module Tieta_Feiteng_2001_top(
     // 已使用
     input   i_CPU0_D0_UART_SOUT                      /* synthesis LOC = "F1"*/ ,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART 发送 信号
     output  o_CPU0_D0_UART_SIN                       /* synthesis LOC = "E1"*/ ,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPU0_UART / J614                                 default 1  // CPU0 D0 UART 接收 信号
-    input   i_JACK_CPU0_D0_UART_SIN                  /* synthesis LOC = "F9"*/ ,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 JACK UART 接收 信号
-    output  o_JACK_CPU0_D0_UART_SOUT                 /* synthesis LOC = "B10"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
+    input   i_JACK_CPU0_D0_UART_SIN                  /* synthesis LOC = "F9"*/ ,// from  CPU0_UART / J614                               to  CPLD_S                                           default 1  // CPU0 JACK UART 接收 信号
+    output  o_JACK_CPU0_D0_UART_SOUT                 /* synthesis LOC = "B10"*/,// from  CPLD_S                                         to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
     
     input   i_CPU1_D0_UART_SOUT                      /* synthesis LOC = "G5"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART 发送 信号
     output  o_CPU1_D0_UART_SIN                       /* synthesis LOC = "C3"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPU1_UART / J613                                 default 1  // CPU1 D0 UART 接收 信号
-    input   i_JACK_CPU1_D0_UART_SIN                  /* synthesis LOC = "F11"*/,// from  CPU1_UART / J613                             to  CPLD_S                                           default 1  // CPU1 JACK UART 接收 信号
-    output  o_JACK_CPU1_D0_UART_SOUT                 /* synthesis LOC = "F12"*/,// from  CPLD_S                                       to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
+    input   i_JACK_CPU1_D0_UART_SIN                  /* synthesis LOC = "F11"*/,// from  CPU1_UART / J613                               to  CPLD_S                                           default 1  // CPU1 JACK UART 接收 信号
+    output  o_JACK_CPU1_D0_UART_SOUT                 /* synthesis LOC = "F12"*/,// from  CPLD_S                                         to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
 
     input   i_CPU0_D0_UART1_TX                       /* synthesis LOC = "F2"*/ ,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D0 UART1 发送 信号
     output  o_CPU0_D0_UART1_RX                       /* synthesis LOC = "G2"*/ ,// from  CPLD_S                                         to  CPU0_GPIO1 / U1_S5000C_32_3200_C                 default 1  // CPU0 D0 UART1 接收 信号
-    input   i_PAL_BMC_UART1_TX                       /* synthesis LOC = "D16"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S                                           default 1  // BMC UART1 发送 信号
-    output	o_PAL_BMC_UART1_RX	                     /* synthesis LOC = "E17"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC UART1 接收 信号
-    input   i_JACK_CPU0_UART1_RX                     /* synthesis LOC = "K6"*/ ,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART1 接收 信号
-    output  o_JACK_CPU0_UART1_TX                     /* synthesis LOC = "E6"*/ ,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
+    input   i_PAL_BMC_UART1_TX                       /* synthesis LOC = "D16"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T               to  CPLD_S                                           default 1  // BMC UART1 发送 信号
+    output	o_PAL_BMC_UART1_RX	                     /* synthesis LOC = "E17"*/,// from  CPLD_S                                         to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC UART1 接收 信号
+    input   i_JACK_CPU0_UART1_RX                     /* synthesis LOC = "K6"*/ ,// from  CPLD_S                                         to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART1 接收 信号
+    output  o_JACK_CPU0_UART1_TX                     /* synthesis LOC = "E6"*/ ,// from  CPLD_S                                         to  CPU0_UART / J614                                 default 1  // CPU0 JACK UART 发送 信号
     
     input   i_CPU1_D0_UART1_TX                       /* synthesis LOC = "C4"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D0 UART1 发送 信号  
     output  o_CPU1_D0_UART1_RX                       /* synthesis LOC = "F6"*/ ,// from  CPLD_S                                         to  CPU1_GPIO1 / U2_S5000C_32_3200_C                 default 1  // CPU1 D0 UART1 接收 信号
-    input   i_JACK_CPU1_UART1_RX                     /* synthesis LOC = "D5"*/ ,// from  CPU1_UART / J613                             to  CPLD_S                                           default 1  // CPU1 JACK UART1 接收 信号
-    output  o_JACK_CPU1_UART1_TX	                 /* synthesis LOC = "B5"*/ ,// from  CPLD_S                                       to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
+    input   i_JACK_CPU1_UART1_RX                     /* synthesis LOC = "D5"*/ ,// from  CPU1_UART / J613                               to  CPLD_S                                           default 1  // CPU1 JACK UART1 接收 信号
+    output  o_JACK_CPU1_UART1_TX	                 /* synthesis LOC = "B5"*/ ,// from  CPLD_S                                         to  CPU1_UART / J613                                 default 1  // CPU1 JACK UART 发送 信号
     
     input   i_PAL_UART4_OCP_DEBUG_RX                 /* synthesis LOC = "L5"*/ ,// from  RISER_AUX/J16                                 to  CPLD_S                                           default 1  // OCP 调试 UART4 接收 信号  
     output  o_PAL_UART4_OCP_DEBUG_TX                 /* synthesis LOC = "L3"*/ ,// from  CPLD_S                                        to  RISER_AUX/J16                                    default 1  // OCP 调试 UART4 发送 信号
-    input   i_PAL_BMC_UART4_TX                       /* synthesis LOC = "G14"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC UART4 发送 信号    
-    output  o_PAL_BMC_UART4_RX                       /* synthesis LOC = "H17"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S                                           default 1  // BMC UART4 接收 信号
+    input   i_PAL_BMC_UART4_TX                       /* synthesis LOC = "G14"*/,// from  CPLD_S                                        to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // BMC UART4 发送 信号    
+    output  o_PAL_BMC_UART4_RX                       /* synthesis LOC = "H17"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T              to  CPLD_S                                           default 1  // BMC UART4 接收 信号
     // 已使用
 
     // 未使用
@@ -911,6 +911,8 @@ wire [7:0]                      ocp2_pvti_byte1                                 
 wire [7:0]                      ocp2_pvti_byte0                                     ; // 不使用
 */
 
+wire                            led_pwrbtn_gr_r                                     ; // MCPLD->SCPLD                                      电源灯控制
+wire                            led_pwrbtn_amb_r                                    ; // MCPLD->SCPLD                                      电源灯控制
 /*
 wire                            pal_ocp1_ncsi_en                                    ; // 不使用
 wire                            pal_ocp2_ncsi_en                                    ; // 不使用
@@ -1210,6 +1212,7 @@ SYNC_DATA_N #(.SIGCNT(4)) sync_cpu_data_low (
 wire sys_hlth_red_blink_n;
 wire sys_hlth_grn_blink_n;
 wire led_uid             ;
+wire pex_reset_n         ;
 
 wire t4hz_test_mcpld     ;
 wire [5:0] power_seq_sm  ;
@@ -1494,8 +1497,14 @@ assign pgd_p1v8_stby_dly30ms          = mcpld_to_scpld_data_filter[221]     ;
 assign bios_security_bypass           = mcpld_to_scpld_data_filter[220]     ;
 assign pal_rtc_intb                   = mcpld_to_scpld_data_filter[219]     ;
 assign pal_ocp_ncsi_sw_en             = mcpld_to_scpld_data_filter[218]     ;
+
+// begin: add by z02665 20260307 电源灯换到SCPLD控制
 // assign pal_ocp2_ncsi_en               = mcpld_to_scpld_data_filter[217]  ; // 主CPLD 不使用
 // assign pal_ocp1_ncsi_en               = mcpld_to_scpld_data_filter[216]  ; // 主CPLD 不使用
+assign led_pwrbtn_gr_r                = mcpld_to_scpld_data_filter[217]  ;
+assign led_pwrbtn_amb_r               = mcpld_to_scpld_data_filter[216]  ;
+// end: add by z02665 20260307 电源灯换到SCPLD控制
+
 assign pal_pe_wake_n                  = mcpld_to_scpld_data_filter[215]     ;
 assign smb_pehp_cpu1_3v3_alert_n      = mcpld_to_scpld_data_filter[214]     ;
 assign debug_reg_15[1:0]              = mcpld_to_scpld_data_filter[213:212] ;
@@ -1531,14 +1540,12 @@ assign led_uid                        = mcpld_to_scpld_data_filter[13] ; // 主C
 assign power_supply_on                = mcpld_to_scpld_data_filter[12] ; // 主CPLD power_supply电/p12v_efuse电
 // assign ocp_main_en                 = mcpld_to_scpld_data_filter[11] ; // 预留, 不使用
 // assign ocp_aux_en                  = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
-// assign pex_reset_n                 = mcpld_to_scpld_data_filter[9]  ; // 预留, 不使用
+assign pex_reset_n                 = mcpld_to_scpld_data_filter[9]  ; // 预留, 不使用
 
 
 // begin: z02665 0305 上下电调试使用
-wire   pal_cpu1_p1v8_pg;
-wire   pal_cpu0_p1v8_pg;
-assign pal_cpu1_p1v8_pg                = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
-assign pal_cpu0_p1v8_pg                = mcpld_to_scpld_data_filter[9]  ; // 预留, 不使用
+wire   pal_cpu01_p1v8_pg;
+assign pal_cpu01_p1v8_pg                = mcpld_to_scpld_data_filter[10] ; // 预留, 不使用
 // end: z02665 0305 上下电调试使用
 
 assign reached_sm_wait_powerok        = mcpld_to_scpld_data_filter[8]  ; // 主CPLD 状态机跳转
@@ -2044,7 +2051,7 @@ assign o_PAL_WX1860_NCSI_SW_EN_N_R = ~pal_ocp_ncsi_sw_en; //J54
 assign o_PAL_OCP_NCSI_SW_EN_N_R    = ~pal_ocp_ncsi_sw_en; //J53 
 
 
-//LED
+// LED
 // assign o_LED1_N               = t1hz_clk             ;
 // assign o_LED2_N               = mcpld_scpld_t1hz_clk ;
 // assign o_LED3_N               = any_pwr_fault_det          ;
@@ -2054,38 +2061,39 @@ assign o_LED3_N               = ~power_seq_sm[2];
 assign o_LED4_N               = ~power_seq_sm[3];
 assign o_LED5_N               = ~power_seq_sm[4];
 assign o_LED6_N               = ~power_seq_sm[5];
-assign o_LED7_N               = ~(pal_cpu1_p1v8_pg & pal_cpu0_p1v8_pg)  ;//1'b1            ;
+assign o_LED7_N               = ~pal_cpu01_p1v8_pg  ;//1'b1            ;
 assign o_LED8_N               = mcpld_scpld_t1hz_clk           ;  
+
+assign o_PAL_LED_PWRBTN_GR_R  = led_pwrbtn_gr_r       ;
+assign o_PAL_LED_PWRBTN_AMB_R = led_pwrbtn_amb_r      ;
 
 assign o_PAL_LED_HEL_GR_R     = sys_hlth_grn_blink_n  ;
 assign o_PAL_LED_HEL_RED_R    = sys_hlth_red_blink_n  ;
 
-
-// begin: z02665 0305上下点调试使用
-assign o_CPU1_D0_UART1_RX       = pal_cpu1_p1v8_pg & i_JACK_CPU1_UART1_RX ;
-assign o_JACK_CPU0_UART1_TX     = pal_cpu0_p1v8_pg & i_CPU0_D0_UART1_TX   ;
-// end: z02665 0305上下点调试使用
-
-
 //UART
-assign o_JACK_CPU1_D0_UART_SOUT = 1'bz; // i_CPU1_D0_UART_SOUT    ;
-assign o_CPU1_D0_UART_SIN       = 1'bz; // i_JACK_CPU1_D0_UART_SIN;
-assign o_JACK_CPU1_UART1_TX     = 1'bz; // i_CPU1_D0_UART1_TX     ;
+// begin: mod by z02665 20260304 BIOS串口打印使用
+assign o_CPU1_D0_UART1_RX       = pal_cpu01_p1v8_pg ? i_JACK_CPU1_UART1_RX : 1'bz;
+assign o_JACK_CPU0_UART1_TX     = pal_cpu01_p1v8_pg ? i_CPU0_D0_UART1_TX   : 1'bz;
+// begin: mod by z02665 20260304 BIOS串口打印使用
+
+assign o_JACK_CPU1_D0_UART_SOUT = pal_cpu01_p1v8_pg ? i_CPU1_D0_UART_SOUT     : 1'bz;
+assign o_CPU1_D0_UART_SIN       = pal_cpu01_p1v8_pg ? i_JACK_CPU1_D0_UART_SIN : 1'bz;
+assign o_JACK_CPU1_UART1_TX     = pal_cpu01_p1v8_pg ? i_CPU1_D0_UART1_TX      : 1'bz;
 
 
 
-assign o_JACK_CPU0_D0_UART_SOUT = 1'bz; // i_CPU0_D0_UART_SOUT    ;
-assign o_CPU0_D0_UART_SIN       = 1'bz; // i_JACK_CPU0_D0_UART_SIN;
+assign o_JACK_CPU0_D0_UART_SOUT = pal_cpu01_p1v8_pg ? i_CPU0_D0_UART_SOUT     : 1'bz;
+assign o_CPU0_D0_UART_SIN       = pal_cpu01_p1v8_pg ? i_JACK_CPU0_D0_UART_SIN : 1'bz;
 
-assign o_PAL_BMC_UART1_RX       = 1'bz; // i_CPU0_D0_UART1_TX     ;
+assign o_PAL_BMC_UART1_RX       = pal_cpu01_p1v8_pg ? i_CPU0_D0_UART1_TX : 1'bz;
 
-assign o_CPU0_D0_UART1_RX       = 1'bz; // i_JACK_CPU0_UART1_RX   ; // 写死
+assign o_CPU0_D0_UART1_RX       = pal_cpu01_p1v8_pg ? i_JACK_CPU0_UART1_RX : 1'bz; // 写死
                                 // (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX : i_JACK_CPU0_UART1_RX;
                                 // (bmcctl_uart_sw == 2'b01) ? i_PAL_BMC_UART1_TX   :
                                 // (bmcctl_uart_sw == 2'b10) ? i_PAL_UART4_OCP2_RXD : i_JACK_CPU0_UART1_RX;
 
-assign o_PAL_UART4_OCP_DEBUG_TX = 1'bz; // i_PAL_BMC_UART4_TX      ;
-assign o_PAL_BMC_UART4_RX       = 1'bz; // i_PAL_UART4_OCP_DEBUG_RX;
+assign o_PAL_UART4_OCP_DEBUG_TX = pal_cpu01_p1v8_pg ? i_PAL_BMC_UART4_TX       : 1'bz;
+assign o_PAL_BMC_UART4_RX       = pal_cpu01_p1v8_pg ? i_PAL_UART4_OCP_DEBUG_RX : 1'bz;
 
 // begin: z02665 0305 调试使用
 assign o_CPU0_D1_UART1_RX = 1'bz;
@@ -2117,8 +2125,13 @@ assign cpu0_temp_over           = db_i_cpu0_d0_temp_over | db_i_cpu0_d1_temp_ove
 assign cpu1_temp_over           = db_i_cpu1_d0_temp_over | db_i_cpu1_d1_temp_over /*| db_i_cpu1_d2_temp_over | db_i_cpu1_d3_temp_over*/;
 
 //DDR5 SPD
-assign o_PAL_CPU0_I3C_SPD_SEL       = cpu0_d0_bios_over ? 1'b0 : 1'b1;
-assign o_PAL_CPU1_I3C_SPD_SEL       = cpu0_d0_bios_over ? 1'b0 : 1'b1;
+// assign o_PAL_CPU0_I3C_SPD_SEL       = cpu0_d0_bios_over ? 1'b0 : 1'b1;
+// assign o_PAL_CPU1_I3C_SPD_SEL       = cpu0_d0_bios_over ? 1'b0 : 1'b1;
+
+// begin:  mod by z02665 20260307 d00412 VB CHANGE, DDR5 SPD
+assign o_PAL_CPU0_I3C_SPD_SEL       = 1'b0;
+assign o_PAL_CPU1_I3C_SPD_SEL       = 1'b0;
+// end: mod by z02665 20260307 d00412 VB CHANGE, DDR5 SPD
 
 //TPM
 assign o_PAL_RST_TPM_N_R            = tpm_rst ? 1'b0 : reached_sm_wait_powerok;
@@ -2181,8 +2194,8 @@ assign o_PAL_CK440_OE_N_R      = 1'b0 ;
 assign o_MCIO11_RISER1_PERST2_N    = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_RISER1_SLOT_PERST_N_R = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
 assign o_PAL_RISER2_SLOT_PERST_N_R = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
-assign o_PAL_M2_0_PERST_N_R        = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
-assign o_PAL_M2_1_PERST_N_R        = reached_sm_wait_powerok;//20240518 d00412 VB CHANGE
+assign o_PAL_M2_0_PERST_N_R        = pex_reset_n            ;//20240518 d00412 VB CHANGE
+assign o_PAL_M2_1_PERST_N_R        = pex_reset_n            ;//20240518 d00412 VB CHANGE
 
 assign o_PAL_OCP1_NCSI_CLK_50M_R   = i_PAL_BMC_NCSI_CLK_50M_R;
 assign o_PAL_OCP_NCSI_CLK_50M_R    = i_PAL_BMC_NCSI_CLK_50M_R;

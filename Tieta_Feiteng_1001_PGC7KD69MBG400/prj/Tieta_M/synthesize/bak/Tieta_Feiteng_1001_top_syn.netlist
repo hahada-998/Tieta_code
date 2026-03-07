@@ -369,7 +369,7 @@ I3;1
 I4;1
 
 Inst
-N726_mux7_5;GTP_LUT5
+N729_mux7_5;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -379,7 +379,7 @@ I3;1
 I4;1
 
 Inst
-N726_mux28_32;GTP_LUT4
+N729_mux28_32;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -388,7 +388,7 @@ I2;1
 I3;1
 
 Inst
-N726_mux28_33;GTP_LUT4
+N729_mux28_33;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -397,17 +397,7 @@ I2;1
 I3;1
 
 Inst
-N726_mux28_35;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N726_mux28_36;GTP_LUT5
+N729_mux28_35;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -417,7 +407,7 @@ I3;1
 I4;1
 
 Inst
-N726_mux28_37;GTP_LUT5
+N729_mux28_36;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -427,7 +417,7 @@ I3;1
 I4;1
 
 Inst
-N726_mux28_38;GTP_LUT5
+N729_mux28_37;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -437,7 +427,7 @@ I3;1
 I4;1
 
 Inst
-N728_mux8;GTP_LUT5
+N729_mux28_38;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -447,7 +437,7 @@ I3;1
 I4;1
 
 Inst
-N728_mux16;GTP_LUT5
+N731_mux8;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -457,33 +447,7 @@ I3;1
 I4;1
 
 Inst
-N728_mux19;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N728_mux24;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N728_mux24_2_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N728_mux28_3;GTP_LUT5
+N731_mux16;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -493,7 +457,33 @@ I3;1
 I4;1
 
 Inst
-N734_mux4;GTP_LUT5
+N731_mux19;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N731_mux24;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N731_mux24_2_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N731_mux28_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -503,16 +493,7 @@ I3;1
 I4;1
 
 Inst
-N734_mux7_4;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N734_mux11;GTP_LUT5
+N737_mux4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -522,7 +503,16 @@ I3;1
 I4;1
 
 Inst
-N734_mux15;GTP_LUT5
+N737_mux7_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N737_mux11;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -532,7 +522,7 @@ I3;1
 I4;1
 
 Inst
-N734_mux19;GTP_LUT5
+N737_mux15;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -542,7 +532,7 @@ I3;1
 I4;1
 
 Inst
-N736_mux12;GTP_LUT5
+N737_mux19;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -552,15 +542,7 @@ I3;1
 I4;1
 
 Inst
-N737_2;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N737_2_2;GTP_LUT5
+N739_mux12;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -570,31 +552,15 @@ I3;1
 I4;1
 
 Inst
-N800_1;GTP_LUT1
+N740_2;GTP_LUT3
 Pin
 Z;2
 I0;1
+I1;1
+I2;1
 
 Inst
-N804_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N808_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N812_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N986_5;GTP_LUT5M
+N740_2_2;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -602,10 +568,33 @@ I1;1
 I2;1
 I3;1
 I4;1
-ID;1
 
 Inst
-N986_8;GTP_LUT5M
+N783_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N787_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N791_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N795_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N969_6;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -616,7 +605,26 @@ I4;1
 ID;1
 
 Inst
-N986_76;GTP_LUT4
+N969_10;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+N969_63;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N969_80;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -625,7 +633,15 @@ I2;1
 I3;1
 
 Inst
-N986_78;GTP_LUT4
+N969_83;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N969_85;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -634,7 +650,7 @@ I2;1
 I3;1
 
 Inst
-N1014_1_1;GTP_LUT5
+N969_89;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -644,68 +660,7 @@ I3;1
 I4;1
 
 Inst
-N1032_2;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1033_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1091;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1152_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N1153_1;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N1154;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1173;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1174;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1178_inv;GTP_LUT1
-Pin
-Z;2
-I0;1
-
-Inst
-N1190_mux7_2_2_lutcollapse;GTP_LUT5
+N997_1_1;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -715,7 +670,14 @@ I3;1
 I4;1
 
 Inst
-N1190_mux7_2_3;GTP_LUT3
+N1015_2;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1016_3;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -723,7 +685,53 @@ I1;1
 I2;1
 
 Inst
-N1190_mux8_lutcollapse;GTP_LUT5
+N1074;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1135_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N1136_1;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N1137;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1156;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1157;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1161_inv;GTP_LUT1
+Pin
+Z;2
+I0;1
+
+Inst
+N1173_mux7_2_2_lutcollapse;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -733,7 +741,25 @@ I3;1
 I4;1
 
 Inst
-N1190_mux13_2;GTP_LUT4
+N1173_mux7_2_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1173_mux8_lutcollapse;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1173_mux13_2;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -742,7 +768,7 @@ I2;1
 I3;1
 
 Inst
-N1190_mux13_2_3;GTP_LUT3
+N1173_mux13_2_3;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -750,7 +776,7 @@ I1;1
 I2;1
 
 Inst
-N1192_0_1;GTP_LUT5CARRY
+N1175_0_1;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -763,7 +789,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_2;GTP_LUT5CARRY
+N1175_0_2;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -776,7 +802,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_3;GTP_LUT5CARRY
+N1175_0_3;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -789,7 +815,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_4;GTP_LUT5CARRY
+N1175_0_4;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -802,7 +828,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_5;GTP_LUT5CARRY
+N1175_0_5;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -815,7 +841,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_6;GTP_LUT5CARRY
+N1175_0_6;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -828,7 +854,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_7;GTP_LUT5CARRY
+N1175_0_7;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -841,7 +867,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_8;GTP_LUT5CARRY
+N1175_0_8;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -854,7 +880,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_9;GTP_LUT5CARRY
+N1175_0_9;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -867,7 +893,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_10;GTP_LUT5CARRY
+N1175_0_10;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -880,7 +906,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_11;GTP_LUT5CARRY
+N1175_0_11;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -893,7 +919,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_12;GTP_LUT5CARRY
+N1175_0_12;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -906,7 +932,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_13;GTP_LUT5CARRY
+N1175_0_13;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -919,7 +945,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_14;GTP_LUT5CARRY
+N1175_0_14;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -932,7 +958,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_15;GTP_LUT5CARRY
+N1175_0_15;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -945,7 +971,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_16;GTP_LUT5CARRY
+N1175_0_16;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -958,7 +984,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_17;GTP_LUT5CARRY
+N1175_0_17;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -971,7 +997,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_18;GTP_LUT5CARRY
+N1175_0_18;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -984,7 +1010,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_19;GTP_LUT5CARRY
+N1175_0_19;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -997,7 +1023,7 @@ I4;1
 ID;1
 
 Inst
-N1192_0_20;GTP_LUT5CARRY
+N1175_0_20;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1010,7 +1036,7 @@ I4;1
 ID;1
 
 Inst
-N1199_mux3;GTP_LUT4
+N1182_mux3;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -1019,17 +1045,7 @@ I2;1
 I3;1
 
 Inst
-N1199_mux9;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1203_0;GTP_LUT5
+N1182_mux9;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -1039,34 +1055,7 @@ I3;1
 I4;1
 
 Inst
-N1204_2;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1204_28;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1205_0;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-N1328_3_5;GTP_LUT5
+N1186_0;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -1076,24 +1065,7 @@ I3;1
 I4;1
 
 Inst
-N1328_4;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1329_3_5;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1335;GTP_LUT4
+N1187_2;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -1102,285 +1074,14 @@ I2;1
 I3;1
 
 Inst
-N1339;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1339_2;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1339_7_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1339_8_2;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1339_10_2;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1340_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1340_4;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1346_3;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1346_4;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1347_3;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1348_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1348_3_5;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1351;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1352;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1353;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1354_4;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1364_6;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1364_8;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1378;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-N1379[0]_0;GTP_LUT2
+N1187_28;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-N1379[1]_0;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1416[0]_0;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1501_0;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-N1504_0_3;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-N1505[0];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[1];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[2];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[3];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[4];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[5];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[6];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1505[7];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-N1559;GTP_LUT5M
+N1188_0;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -1391,7 +1092,296 @@ I4;1
 ID;1
 
 Inst
-N1573_0_1;GTP_LUT5CARRY
+N1316;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1316_3_5;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1318;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1318_2;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1318_7_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1318_8_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1318_10_2;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1320_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1320_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1321_3;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1321_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1322_3;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1323_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1323_3_5;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1326;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1328_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1336_6;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1336_8;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1361;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+N1362[0]_0;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1362[1]_0;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1399[0]_0;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1484_0;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+N1487_0_3;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+N1488[0];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[1];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[2];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[3];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[4];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[5];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[6];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1488[7];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+N1546;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+N1559_0_1;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1404,7 +1394,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_2;GTP_LUT5CARRY
+N1559_0_2;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1417,7 +1407,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_3;GTP_LUT5CARRY
+N1559_0_3;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1430,7 +1420,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_4;GTP_LUT5CARRY
+N1559_0_4;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1443,7 +1433,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_5;GTP_LUT5CARRY
+N1559_0_5;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1456,7 +1446,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_6;GTP_LUT5CARRY
+N1559_0_6;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1469,7 +1459,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_7;GTP_LUT5CARRY
+N1559_0_7;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1482,7 +1472,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_8;GTP_LUT5CARRY
+N1559_0_8;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1495,7 +1485,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_9;GTP_LUT5CARRY
+N1559_0_9;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1508,7 +1498,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_10;GTP_LUT5CARRY
+N1559_0_10;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1521,7 +1511,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_11;GTP_LUT5CARRY
+N1559_0_11;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1534,7 +1524,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_12;GTP_LUT5CARRY
+N1559_0_12;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1547,7 +1537,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_13;GTP_LUT5CARRY
+N1559_0_13;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1560,7 +1550,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_14;GTP_LUT5CARRY
+N1559_0_14;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1573,7 +1563,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_15;GTP_LUT5CARRY
+N1559_0_15;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1586,7 +1576,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_16;GTP_LUT5CARRY
+N1559_0_16;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1599,7 +1589,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_17;GTP_LUT5CARRY
+N1559_0_17;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1612,7 +1602,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_18;GTP_LUT5CARRY
+N1559_0_18;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1625,7 +1615,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_19;GTP_LUT5CARRY
+N1559_0_19;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1638,7 +1628,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_20;GTP_LUT5CARRY
+N1559_0_20;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1651,7 +1641,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_21;GTP_LUT5CARRY
+N1559_0_21;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1664,7 +1654,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_22;GTP_LUT5CARRY
+N1559_0_22;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1677,7 +1667,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_23;GTP_LUT5CARRY
+N1559_0_23;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1690,7 +1680,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_24;GTP_LUT5CARRY
+N1559_0_24;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1703,7 +1693,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_25;GTP_LUT5CARRY
+N1559_0_25;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1716,7 +1706,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_26;GTP_LUT5CARRY
+N1559_0_26;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1729,7 +1719,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_27;GTP_LUT5CARRY
+N1559_0_27;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1742,7 +1732,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_28;GTP_LUT5CARRY
+N1559_0_28;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -1755,7 +1745,7 @@ I4;1
 ID;1
 
 Inst
-N1573_0_29;GTP_LUT5CARRY
+N1559_0_29;GTP_LUT5CARRY
 Pin
 COUT;2
 Z;2
@@ -2045,7 +2035,7 @@ I1;1
 I2;1
 
 Inst
-db_fan_ctrl_inst1/N144_4;GTP_LUT5
+db_fan_ctrl_inst1/N416_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -2154,7 +2144,7 @@ D;1
 P;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_21;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_29;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -2162,7 +2152,6 @@ I1;1
 I2;1
 I3;1
 I4;1
-ID;1
 
 Inst
 i_BMC_I2C9_PAL_M_SCL1_R_ibuf;GTP_INBUF
@@ -3507,7 +3496,34 @@ I3;1
 I4;1
 
 Inst
-it_37_7;GTP_LUT5
+it_37_7;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+it_37_inv;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+it_38_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+it_38_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3517,7 +3533,7 @@ I3;1
 I4;1
 
 Inst
-it_37_inv;GTP_LUT5
+it_38_7;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3527,27 +3543,7 @@ I3;1
 I4;1
 
 Inst
-it_38_4_lutcollapse;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-it_38_6;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-it_38_8_lutcollapse;GTP_LUT5
+it_38_inv;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3566,7 +3562,16 @@ I2;1
 I3;1
 
 Inst
-it_39_8;GTP_LUT5
+it_39_6;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+it_39_9;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3586,16 +3591,15 @@ I3;1
 I4;1
 
 Inst
-it_40_3;GTP_LUT4
+it_40_4;GTP_LUT3
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
-I3;1
 
 Inst
-it_40_5;GTP_LUT5
+it_40_6;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3615,7 +3619,16 @@ I3;1
 I4;1
 
 Inst
-it_41_4;GTP_LUT5
+it_41_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+it_41_6;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -3866,10 +3879,11 @@ I;1
 T;1
 
 Inst
-o_P1V8_STBY_CPLD_EN_R_obuf;GTP_OUTBUF
+o_P1V8_STBY_CPLD_EN_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
 o_P5V_USB_MB_DOWN_EN_R_obuf;GTP_OUTBUF
@@ -4161,10 +4175,11 @@ I;1
 T;1
 
 Inst
-o_PAL_P5V_STBY_EN_R_obuf;GTP_OUTBUF
+o_PAL_P5V_STBY_EN_R_tri;GTP_OUTBUFT
 Pin
 O;2
 I;1
+T;1
 
 Inst
 o_PAL_P12V_CPU0_VIN_EN_R_obuf;GTP_OUTBUF
@@ -5668,6 +5683,16 @@ I3;1
 I4;1
 
 Inst
+UID_Function_u0/N10_2_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
 UID_Function_u0/N186_1_1;GTP_LUT5CARRY
 Pin
 COUT;2
@@ -5759,6 +5784,13 @@ I4;1
 ID;1
 
 Inst
+UID_Function_u0/N208;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 UID_Function_u0/N213_mux7;GTP_LUT5
 Pin
 Z;2
@@ -5787,7 +5819,7 @@ I2;1
 I3;1
 
 Inst
-UID_Function_u0/N221_mux8;GTP_LUT5
+UID_Function_u0/N221_mux7_5;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -6033,15 +6065,7 @@ I1;1
 I2;1
 
 Inst
-UID_Function_u0/N451_5;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-UID_Function_u0/N452_2[0];GTP_LUT4
+UID_Function_u0/N451_5;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -6050,11 +6074,22 @@ I2;1
 I3;1
 
 Inst
-UID_Function_u0/N455;GTP_LUT2
+UID_Function_u0/N452_2[0];GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+UID_Function_u0/N455;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N0_5;GTP_LUT3
@@ -6218,23 +6253,34 @@ CLK;1
 D;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_0;GTP_LUT3
+UID_Function_u0/r_cnt_time[8:0]_0;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
+I3;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_3;GTP_LUT3
+UID_Function_u0/r_cnt_time[8:0]_3;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
+I3;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_5_3;GTP_LUT5
+UID_Function_u0/r_cnt_time[8:0]_6;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+UID_Function_u0/r_cnt_time[8:0]_9_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -6244,36 +6290,32 @@ I3;1
 I4;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_92;GTP_LUT3
+UID_Function_u0/r_cnt_time[8:0]_57_3;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
+I3;1
+I4;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_186;GTP_LUT3
+UID_Function_u0/r_cnt_time[8:0]_158;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
+I3;1
 
 Inst
-UID_Function_u0/r_cnt_time[8:0]_230;GTP_LUT3
+UID_Function_u0/r_cnt_time[8:0]_202;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
-
-Inst
-UID_Function_u0/r_cnt_time[8:0]_320;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
+I3;1
 
 Inst
 UID_Function_u0/r_cnt_time[8];GTP_DFF_CE
@@ -6493,16 +6535,6 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_25[2];GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
 bmc_cpld_i2c_ram_u0/N417_25[3];GTP_LUT5
 Pin
 Z;2
@@ -6535,6 +6567,17 @@ ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_25[7]_2;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_26[2];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -6624,6 +6667,14 @@ I3;1
 I4;1
 
 Inst
+bmc_cpld_i2c_ram_u0/N417_44[2];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
 bmc_cpld_i2c_ram_u0/N417_45[0];GTP_LUT5M
 Pin
 Z;2
@@ -6636,16 +6687,6 @@ ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_45[1];GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_45[2];GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -6688,6 +6729,17 @@ Z;2
 I0;1
 I1;1
 S;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_46[2];GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_46[3];GTP_LUT5M
@@ -6800,7 +6852,7 @@ I1;1
 S;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_52[2];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_53[0];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -6811,7 +6863,7 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_53[0];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_53[2];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -6855,15 +6907,12 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_54[2];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_54[2];GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
 I1;1
-I2;1
-I3;1
-I4;1
-ID;1
+S;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_54[3];GTP_LUT5M
@@ -6962,7 +7011,7 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_58[2];GTP_LUT5
+bmc_cpld_i2c_ram_u0/N417_58[2];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -6970,6 +7019,7 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_58[3];GTP_LUT5M
@@ -6981,6 +7031,16 @@ I2;1
 I3;1
 I4;1
 ID;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_58[4];GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_61[0];GTP_LUT5M
@@ -7095,15 +7155,12 @@ I1;1
 S;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_62[4];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_62[4];GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
 I1;1
-I2;1
-I3;1
-I4;1
-ID;1
+S;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_66[0]_1;GTP_LUT5
@@ -7283,6 +7340,16 @@ I4;1
 ID;1
 
 Inst
+bmc_cpld_i2c_ram_u0/N417_79[6];GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
 bmc_cpld_i2c_ram_u0/N417_82[0];GTP_LUT5
 Pin
 Z;2
@@ -7315,16 +7382,6 @@ ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_84[5];GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_84[7];GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -7486,6 +7543,187 @@ I1;1
 I2;1
 I3;1
 I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_1;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_10_8;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_10_9;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_11;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_13;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_14;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_15;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_18;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_25_2;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_28;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_30_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_33;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_47_10;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_47_11;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_47_14;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_47_15;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_48;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_52;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_57_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_58_3;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_97[5]_61;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_97[6];GTP_LUT5M
@@ -7652,6 +7890,17 @@ I4;1
 ID;1
 
 Inst
+bmc_cpld_i2c_ram_u0/N417_99[7];GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
 bmc_cpld_i2c_ram_u0/N417_100[0];GTP_MUX2LUT6
 Pin
 Z;2
@@ -7685,6 +7934,14 @@ S;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_100[4];GTP_MUX2LUT6
+Pin
+Z;2
+I0;1
+I1;1
+S;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_100[6];GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
@@ -7736,13 +7993,14 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_103_4_;GTP_LUT4
+bmc_cpld_i2c_ram_u0/N417_106[0];GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_106[1];GTP_LUT5
@@ -7755,7 +8013,28 @@ I3;1
 I4;1
 
 Inst
+bmc_cpld_i2c_ram_u0/N417_106[2];GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
 bmc_cpld_i2c_ram_u0/N417_106[3];GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_106[4];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -7855,6 +8134,17 @@ ID;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_111[5];GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+bmc_cpld_i2c_ram_u0/N417_111[6];GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -8141,6 +8431,15 @@ I3;1
 I4;1
 
 Inst
+bmc_cpld_i2c_ram_u0/N417_121[5];GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
 bmc_cpld_i2c_ram_u0/N417_124[0];GTP_LUT4
 Pin
 Z;2
@@ -8228,15 +8527,12 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_125[6];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_125[6];GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
 I1;1
-I2;1
-I3;1
-I4;1
-ID;1
+S;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_125[7]_2;GTP_LUT5
@@ -8292,7 +8588,7 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_127[5];GTP_MUX2LUT6
+bmc_cpld_i2c_ram_u0/N417_126[6];GTP_MUX2LUT7
 Pin
 Z;2
 I0;1
@@ -8300,15 +8596,12 @@ I1;1
 S;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_127[6];GTP_LUT5M
+bmc_cpld_i2c_ram_u0/N417_127[5];GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
 I1;1
-I2;1
-I3;1
-I4;1
-ID;1
+S;1
 
 Inst
 bmc_cpld_i2c_ram_u0/N417_128[4]_1;GTP_LUT5M
@@ -8553,32 +8846,7 @@ I0;1
 I1;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_163[2];GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_1;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_10_7;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_10_8;GTP_LUT5
+bmc_cpld_i2c_ram_u0/N417_162[4];GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -8588,211 +8856,7 @@ I3;1
 I4;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_11;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_13;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_14;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_15;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_18;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_26_2;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_29;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_30_1;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_33;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_47_10;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_47_11;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_47_14;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_47_15;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_48;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_52;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_53;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_55;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_58;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_59_3;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_60_3;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_63_3;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_65_3;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_163[4]_66;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_164[4];GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/N417_167[1];GTP_LUT5
+bmc_cpld_i2c_ram_u0/N417_165[1];GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -8951,17 +9015,16 @@ I2;1
 I3;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N591_4;GTP_LUT5
+bmc_cpld_i2c_ram_u0/N672_3;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
-I4;1
 
 Inst
-bmc_cpld_i2c_ram_u0/N672_4;GTP_LUT5
+bmc_cpld_i2c_ram_u0/N672_6;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -10308,42 +10371,6 @@ CLK;1
 D;1
 
 Inst
-bmc_cpld_i2c_ram_u0/r_reg_0021[0];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-bmc_cpld_i2c_ram_u0/r_reg_0021[1];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-bmc_cpld_i2c_ram_u0/r_reg_0021[2];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
-bmc_cpld_i2c_ram_u0/r_reg_0021[3];GTP_DFF_CE
-Pin
-Q;2
-C;1
-CE;1
-CLK;1
-D;1
-
-Inst
 bmc_cpld_i2c_ram_u0/r_reg_1050[0];GTP_DFF_PE
 Pin
 Q;2
@@ -11260,7 +11287,7 @@ I1;1
 I2;1
 
 Inst
-db_fan_ctrl_inst1/N153_4;GTP_LUT5
+db_fan_ctrl_inst1/N425_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11270,7 +11297,7 @@ I3;1
 I4;1
 
 Inst
-db_fan_ctrl_inst1/N159[0]_1;GTP_LUT4
+db_fan_ctrl_inst1/N431[0]_1;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -11279,17 +11306,7 @@ I2;1
 I3;1
 
 Inst
-db_fan_ctrl_inst1/N159[1]_1;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-db_fan_ctrl_inst1/N168_4;GTP_LUT5
+db_fan_ctrl_inst1/N431[1]_1;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11299,16 +11316,7 @@ I3;1
 I4;1
 
 Inst
-db_fan_ctrl_inst1/N174[0]_1;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-db_fan_ctrl_inst1/N174[1]_1;GTP_LUT5
+db_fan_ctrl_inst1/N440_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11318,7 +11326,16 @@ I3;1
 I4;1
 
 Inst
-db_fan_ctrl_inst1/N183_4;GTP_LUT5
+db_fan_ctrl_inst1/N446[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N446[1]_1;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11328,16 +11345,7 @@ I3;1
 I4;1
 
 Inst
-db_fan_ctrl_inst1/N189[0]_1;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-db_fan_ctrl_inst1/N189[1]_1;GTP_LUT5
+db_fan_ctrl_inst1/N455_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11347,7 +11355,7 @@ I3;1
 I4;1
 
 Inst
-db_fan_ctrl_inst1/N195[0]_1;GTP_LUT4
+db_fan_ctrl_inst1/N461[0]_1;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -11356,7 +11364,142 @@ I2;1
 I3;1
 
 Inst
-db_fan_ctrl_inst1/N195[1]_1;GTP_LUT5
+db_fan_ctrl_inst1/N461[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N476[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N476[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N530_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N545_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N551[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N551[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N560_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N566[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N566[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N575_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N581[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N581[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+db_fan_ctrl_inst1/N587[0]_1;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+db_fan_ctrl_inst1/N587[1]_1;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -11430,6 +11573,78 @@ D;1
 
 Inst
 db_fan_ctrl_inst1/cnt[3][1];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[8][0];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[8][1];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[9][0];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[9][1];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[10][0];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[10][1];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[11][0];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+db_fan_ctrl_inst1/cnt[11][1];GTP_DFF_CE
 Pin
 Q;2
 C;1
@@ -11559,6 +11774,134 @@ P;1
 
 Inst
 db_fan_ctrl_inst1/mInst[3].out_i_ce_mux[3];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+db_fan_ctrl_inst1/mInst[8].nxt[8];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[8].nxt_s1[8];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[8].out_i[8];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[8].out_i_ce_mux[8];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+db_fan_ctrl_inst1/mInst[9].nxt[9];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[9].nxt_s1[9];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[9].out_i[9];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[9].out_i_ce_mux[9];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+db_fan_ctrl_inst1/mInst[10].nxt[10];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[10].nxt_s1[10];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[10].out_i[10];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[10].out_i_ce_mux[10];GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+db_fan_ctrl_inst1/mInst[11].nxt[11];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[11].nxt_s1[11];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[11].out_i[11];GTP_DFF_P
+Pin
+Q;2
+CLK;1
+D;1
+P;1
+
+Inst
+db_fan_ctrl_inst1/mInst[11].out_i_ce_mux[11];GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -15770,16 +16113,6 @@ I2;1
 I3;1
 
 Inst
-db_inst_prsnt/N1190[1]_1;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
 db_inst_prsnt/N1199_2;GTP_LUT3
 Pin
 Z;2
@@ -16409,6 +16742,16 @@ C;1
 CE;1
 CLK;1
 D;1
+
+Inst
+db_inst_prsnt/cnt[3][1:0]_2;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 db_inst_prsnt/cnt[3][1];GTP_DFF_CE
@@ -17414,6 +17757,16 @@ I2;1
 I3;1
 
 Inst
+db_inst_psu/N91[1]_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
 db_inst_psu/N96;GTP_LUT4
 Pin
 Z;2
@@ -17449,16 +17802,6 @@ C;1
 CE;1
 CLK;1
 D;1
-
-Inst
-db_inst_psu/cnt[0][1:0]_2;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
 
 Inst
 db_inst_psu/cnt[0][1];GTP_DFF_CE
@@ -18187,7 +18530,17 @@ CLK;1
 D;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_28;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_32;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_36;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18198,7 +18551,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_32;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_43;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18209,7 +18562,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_38;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_47;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18218,36 +18571,6 @@ I2;1
 I3;1
 I4;1
 ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_49;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_51;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_52;GTP_MUX2LUT6
-Pin
-Z;2
-I0;1
-I1;1
-S;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N42_53;GTP_LUT5M
@@ -18261,7 +18584,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_55;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_64;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -18269,47 +18592,6 @@ I1;1
 I2;1
 I3;1
 I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_57;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_59;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_62;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_63;GTP_MUX2LUT6
-Pin
-Z;2
-I0;1
-I1;1
-S;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N42_66;GTP_LUT5M
@@ -18323,7 +18605,15 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_69;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_67;GTP_MUX2LUT6
+Pin
+Z;2
+I0;1
+I1;1
+S;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_68;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18334,23 +18624,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_70;GTP_MUX2LUT6
-Pin
-Z;2
-I0;1
-I1;1
-S;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_71;GTP_MUX2LUT7
-Pin
-Z;2
-I0;1
-I1;1
-S;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_74;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_70;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18359,6 +18633,26 @@ I2;1
 I3;1
 I4;1
 ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_72;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_74;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N42_77;GTP_LUT5M
@@ -18391,7 +18685,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_84;GTP_LUT5
+inst_mcpld_to_scpld_p2s/N42_84;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18399,6 +18693,7 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N42_85;GTP_MUX2LUT6
@@ -18417,7 +18712,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_90;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_89;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18428,7 +18723,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_93;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_92;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18439,7 +18734,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_94;GTP_MUX2LUT6
+inst_mcpld_to_scpld_p2s/N42_93;GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
@@ -18447,7 +18742,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_97;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_96;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18458,7 +18753,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_100;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_99;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -18466,10 +18761,9 @@ I1;1
 I2;1
 I3;1
 I4;1
-ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_101;GTP_MUX2LUT6
+inst_mcpld_to_scpld_p2s/N42_100;GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
@@ -18477,7 +18771,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_102;GTP_MUX2LUT7
+inst_mcpld_to_scpld_p2s/N42_101;GTP_MUX2LUT7
 Pin
 Z;2
 I0;1
@@ -18485,7 +18779,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_107;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_105;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18496,7 +18790,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_109;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_108;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18505,6 +18799,14 @@ I2;1
 I3;1
 I4;1
 ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_109;GTP_MUX2LUT6
+Pin
+Z;2
+I0;1
+I1;1
+S;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N42_112;GTP_LUT5M
@@ -18537,29 +18839,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_119;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_122;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_123;GTP_MUX2LUT6
+inst_mcpld_to_scpld_p2s/N42_117;GTP_MUX2LUT7
 Pin
 Z;2
 I0;1
@@ -18567,7 +18847,58 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_124;GTP_MUX2LUT7
+inst_mcpld_to_scpld_p2s/N42_122_2;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_122_3;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_124;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_127;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_130;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_131;GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
@@ -18575,7 +18906,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_128;GTP_LUT5
+inst_mcpld_to_scpld_p2s/N42_134;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18583,9 +18914,10 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_131;GTP_LUT5
+inst_mcpld_to_scpld_p2s/N42_137;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18593,9 +18925,10 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_132;GTP_MUX2LUT6
+inst_mcpld_to_scpld_p2s/N42_138;GTP_MUX2LUT6
 Pin
 Z;2
 I0;1
@@ -18603,60 +18936,7 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_136;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_139;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_143;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_145;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_147;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-inst_mcpld_to_scpld_p2s/N42_148;GTP_MUX2LUT6
+inst_mcpld_to_scpld_p2s/N42_139;GTP_MUX2LUT7
 Pin
 Z;2
 I0;1
@@ -18664,7 +18944,35 @@ I1;1
 S;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N42_296;GTP_LUT5M
+inst_mcpld_to_scpld_p2s/N42_143;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_146;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_147;GTP_MUX2LUT6
+Pin
+Z;2
+I0;1
+I1;1
+S;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_151;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -18675,7 +18983,7 @@ I4;1
 ID;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N52_5;GTP_LUT5
+inst_mcpld_to_scpld_p2s/N42_154;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -18685,13 +18993,64 @@ I3;1
 I4;1
 
 Inst
-inst_mcpld_to_scpld_p2s/N569;GTP_LUT4
+inst_mcpld_to_scpld_p2s/N42_158;GTP_LUT5M
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_160;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_162;GTP_LUT5M
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+ID;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N42_163;GTP_MUX2LUT6
+Pin
+Z;2
+I0;1
+I1;1
+S;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N52_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+inst_mcpld_to_scpld_p2s/N569;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 inst_mcpld_to_scpld_p2s/N570_0_inv;GTP_LUT2
@@ -23786,7 +24145,7 @@ I1;1
 I2;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_25;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_25;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23795,7 +24154,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_26;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_26;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23804,7 +24163,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_27;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_27;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23813,7 +24172,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_28;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_28;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23822,7 +24181,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_29;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_29;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23831,7 +24190,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_30;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_30;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23840,7 +24199,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_31;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_31;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23849,7 +24208,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_32;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_32;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23858,7 +24217,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_33;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_33;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23867,7 +24226,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_34;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_34;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23876,7 +24235,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_35;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_35;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23885,7 +24244,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_36;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_36;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23894,7 +24253,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_37;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_37;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23903,7 +24262,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_38;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_38;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23912,7 +24271,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_39;GTP_LUT4
+inst_scpld_to_mcpld_s2p/ND6[72]_39;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -23921,17 +24280,7 @@ I2;1
 I3;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_41;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_42;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_41;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23941,7 +24290,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_43;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_42;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23951,7 +24300,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_44;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_43;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23961,7 +24310,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_45;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_44;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23971,7 +24320,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_46;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_45;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23981,7 +24330,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_47;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_46;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -23991,7 +24340,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_48;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_47;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24001,7 +24350,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_49;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_48;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24011,7 +24360,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_50;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_49;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24021,7 +24370,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_51;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_50;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24031,7 +24380,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_52;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_51;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24041,7 +24390,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_53;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_52;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24051,7 +24400,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_54;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_53;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24061,7 +24410,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_55;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_54;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24071,7 +24420,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_56;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_55;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24081,7 +24430,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_57;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_56;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24091,7 +24440,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_58;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_57;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24101,7 +24450,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_59;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_58;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24111,7 +24460,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_60;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_59;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24121,7 +24470,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_61;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_60;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24131,7 +24480,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_62;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_61;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24141,7 +24490,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_63;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_62;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24151,7 +24500,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_64;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_63;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24161,7 +24510,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_65;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_64;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24171,7 +24520,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_66;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_65;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24181,7 +24530,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_67;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_66;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24191,7 +24540,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_68;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_67;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24201,7 +24550,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_69;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_68;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24211,7 +24560,7 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_70;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_69;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -24221,7 +24570,17 @@ I3;1
 I4;1
 
 Inst
-inst_scpld_to_mcpld_s2p/ND6[70]_71;GTP_LUT5
+inst_scpld_to_mcpld_s2p/ND6[72]_70;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+inst_scpld_to_mcpld_s2p/ND6[72]_71;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -33946,7 +34305,14 @@ I4;1
 ID;1
 
 Inst
-pwrseq_master_inst/N111_1_2;GTP_LUT5
+pwrseq_master_inst/N119_16_3;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N119_17;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -33956,30 +34322,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N111_3_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_master_inst/N111_6;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-pwrseq_master_inst/N111_14;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_master_inst/N111_15;GTP_LUT5
+pwrseq_master_inst/N119_18;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -33989,7 +34332,24 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N111_16;GTP_LUT5
+pwrseq_master_inst/N119_20;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_master_inst/N119_21;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_master_inst/N173_4;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -33999,48 +34359,21 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N111_17;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-pwrseq_master_inst/N165_4;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-pwrseq_master_inst/N169;GTP_LUT2
+pwrseq_master_inst/N177;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-pwrseq_master_inst/N257;GTP_LUT2
+pwrseq_master_inst/N265;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-pwrseq_master_inst/N258;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-pwrseq_master_inst/N261;GTP_LUT2
+pwrseq_master_inst/N266;GTP_LUT2
 Pin
 Z;2
 I0;1
@@ -34054,6 +34387,13 @@ I0;1
 I1;1
 
 Inst
+pwrseq_master_inst/N268;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 pwrseq_master_inst/N269;GTP_LUT2
 Pin
 Z;2
@@ -34061,14 +34401,58 @@ I0;1
 I1;1
 
 Inst
-pwrseq_master_inst/N275;GTP_LUT2
+pwrseq_master_inst/N277;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
 
 Inst
-pwrseq_master_inst/N346_3;GTP_LUT5
+pwrseq_master_inst/N279;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N281;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N283;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N285;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N684;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_master_inst/N685[0]_1;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/N689_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34078,7 +34462,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N667;GTP_LUT4
+pwrseq_master_inst/N697_3;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -34087,14 +34471,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_master_inst/N668[0]_1;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-pwrseq_master_inst/N672_2;GTP_LUT3
+pwrseq_master_inst/N705_3;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34102,28 +34479,15 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/N680_4;GTP_LUT5
+pwrseq_master_inst/N721_4;GTP_LUT3
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
-I3;1
-I4;1
 
 Inst
-pwrseq_master_inst/N715_3;GTP_LUT5M
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-ID;1
-
-Inst
-pwrseq_master_inst/N794_1;GTP_LUT5
+pwrseq_master_inst/N721_5;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34133,24 +34497,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N795_4;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_master_inst/N795_5;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_master_inst/N795_6;GTP_LUT5
+pwrseq_master_inst/N766_3_2;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34160,25 +34507,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N954_7;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_master_inst/N954_9_3;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_master_inst/N954_11_3;GTP_LUT5
+pwrseq_master_inst/N819_1;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34188,7 +34517,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/N954_12;GTP_LUT3
+pwrseq_master_inst/N820_4;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34196,14 +34525,26 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/N954_18;GTP_LUT2
+pwrseq_master_inst/N820_5;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
+I2;1
+I3;1
 
 Inst
-pwrseq_master_inst/N971_4;GTP_LUT4
+pwrseq_master_inst/N820_6;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/N1001_4;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -34248,6 +34589,60 @@ I3;1
 I4;1
 
 Inst
+pwrseq_master_inst/dsw2_pwrok_timeout;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/dsw2_pwrok_timeout_ce_mux;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/dsw3_pwrok_timeout;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/dsw3_pwrok_timeout_ce_mux;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/dsw_pwrok_timeout;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/dsw_pwrok_timeout_ce_mux;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
 pwrseq_master_inst/fault_clear;GTP_DFF_C
 Pin
 Q;2
@@ -34256,7 +34651,7 @@ CLK;1
 D;1
 
 Inst
-pwrseq_master_inst/fault_clear_ns_1;GTP_LUT2
+pwrseq_master_inst/fault_clear_ns_1_1;GTP_LUT2
 Pin
 Z;2
 I0;1
@@ -34279,6 +34674,54 @@ CLK;1
 D;1
 
 Inst
+pwrseq_master_inst/pchdsw2_critical_fail_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/pchdsw2_state_trans_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/pchdsw3_critical_fail_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/pchdsw3_state_trans_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/pchdsw_critical_fail_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_master_inst/pchdsw_state_trans_en;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
 pwrseq_master_inst/pdn_watchdog_timeout;GTP_DFF_C
 Pin
 Q;2
@@ -34287,13 +34730,14 @@ CLK;1
 D;1
 
 Inst
-pwrseq_master_inst/pdn_watchdog_timeout_ce_mux;GTP_LUT4
+pwrseq_master_inst/pdn_watchdog_timeout_ce_mux;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
 pwrseq_master_inst/po_failure_detected;GTP_DFF_C
@@ -34304,7 +34748,7 @@ CLK;1
 D;1
 
 Inst
-pwrseq_master_inst/po_failure_detected_277;GTP_LUT1
+pwrseq_master_inst/po_failure_detected_335;GTP_LUT1
 Pin
 Z;2
 I0;1
@@ -34321,7 +34765,14 @@ I4;1
 ID;1
 
 Inst
-pwrseq_master_inst/po_failure_detected_set_4;GTP_LUT5
+pwrseq_master_inst/po_failure_detected_set_2;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/po_failure_detected_set_10;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -34329,52 +34780,10 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
-pwrseq_master_inst/po_failure_detected_set_8;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_master_inst/pon_65ms_watchdog_timeout;GTP_DFF_C
-Pin
-Q;2
-C;1
-CLK;1
-D;1
-
-Inst
-pwrseq_master_inst/pon_65ms_watchdog_timeout_ce_mux;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-pwrseq_master_inst/pon_rst_65ms_trans_en;GTP_DFF_C
-Pin
-Q;2
-C;1
-CLK;1
-D;1
-
-Inst
-pwrseq_master_inst/pon_watchdog_timeout;GTP_DFF_C
-Pin
-Q;2
-C;1
-CLK;1
-D;1
-
-Inst
-pwrseq_master_inst/pon_watchdog_timeout_ce_mux;GTP_LUT5
+pwrseq_master_inst/po_failure_detected_set_14;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34462,7 +34871,7 @@ CLK;1
 D;1
 
 Inst
-pwrseq_master_inst/r_Pwrbtn_long_ce_mux;GTP_LUT5
+pwrseq_master_inst/r_Pwrbtn_long_ce_mux;GTP_LUT5M
 Pin
 Z;2
 I0;1
@@ -34470,6 +34879,7 @@ I1;1
 I2;1
 I3;1
 I4;1
+ID;1
 
 Inst
 pwrseq_master_inst/r_Pwrbtn_long_flag;GTP_DFF
@@ -34506,18 +34916,12 @@ CLK;1
 D;1
 
 Inst
-pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/N29;GTP_LUT2
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/N14_2;GTP_LUT3
 Pin
 Z;2
 I0;1
 I1;1
-
-Inst
-pwrseq_master_inst/state_fsm[5:0]_13;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
+I2;1
 
 Inst
 pwrseq_master_inst/state_fsm[5:0]_31;GTP_LUT5
@@ -34594,47 +34998,58 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_67;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-pwrseq_master_inst/state_fsm[5:0]_71;GTP_LUT4
+pwrseq_master_inst/state_fsm[5:0]_71;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_76;GTP_LUT4
+pwrseq_master_inst/state_fsm[5:0]_74;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_76;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_81;GTP_LUT4
+pwrseq_master_inst/state_fsm[5:0]_77;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_81;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_86;GTP_LUT4
+pwrseq_master_inst/state_fsm[5:0]_86;GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+I4;1
 
 Inst
 pwrseq_master_inst/state_fsm[5:0]_91;GTP_LUT4
@@ -34666,15 +35081,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_121;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_master_inst/state_fsm[5:0]_178_3;GTP_LUT5
+pwrseq_master_inst/state_fsm[5:0]_215_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34684,16 +35091,7 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_242_2;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_master_inst/state_fsm[5:0]_242_4;GTP_LUT5
+pwrseq_master_inst/state_fsm[5:0]_262_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -34703,7 +35101,60 @@ I3;1
 I4;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_257;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_262_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_262_5;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_262_7;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_265;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_280;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_281;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_283;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34711,7 +35162,16 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_258;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_286_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_287;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34719,7 +35179,16 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_259;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_290;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_292_2;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34727,7 +35196,31 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_260;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_298;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_299;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_308;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_309;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34735,7 +35228,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_261;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_310;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34743,7 +35236,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_262;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_311;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34751,7 +35244,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_263;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_312;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34759,7 +35252,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_264;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_313;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -34767,7 +35260,39 @@ I1;1
 I2;1
 
 Inst
-pwrseq_master_inst/state_fsm[5:0]_265;GTP_LUT3
+pwrseq_master_inst/state_fsm[5:0]_314;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_315;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_316;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_317;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_master_inst/state_fsm[5:0]_318;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35036,14 +35561,6 @@ CLK;1
 D;1
 
 Inst
-pwrseq_master_inst/wait_steady_pwrok_fail_en;GTP_DFF_C
-Pin
-Q;2
-C;1
-CLK;1
-D;1
-
-Inst
 pwrseq_master_inst/wdt_counter[0];GTP_DFF_CE
 Pin
 Q;2
@@ -35274,7 +35791,7 @@ I0;1
 I1;1
 
 Inst
-pwrseq_slave_inst/N842;GTP_LUT4
+pwrseq_slave_inst/N674_3;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -35283,7 +35800,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_slave_inst/N929;GTP_LUT4
+pwrseq_slave_inst/N860;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -35292,7 +35809,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_slave_inst/N1103;GTP_LUT4
+pwrseq_slave_inst/N950;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -35301,7 +35818,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_slave_inst/N1190;GTP_LUT4
+pwrseq_slave_inst/N1130;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -35310,23 +35827,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_slave_inst/N2929;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_slave_inst/N3099;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-pwrseq_slave_inst/N3117;GTP_LUT4
+pwrseq_slave_inst/N1220;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -35335,7 +35836,7 @@ I2;1
 I3;1
 
 Inst
-pwrseq_slave_inst/N3118_1[0]_1;GTP_LUT3
+pwrseq_slave_inst/N3019;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35343,7 +35844,34 @@ I1;1
 I2;1
 
 Inst
-pwrseq_slave_inst/N3118_1[1]_1;GTP_LUT3
+pwrseq_slave_inst/N3198;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_slave_inst/N3288;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_slave_inst/N3307;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_slave_inst/N3308_1[0]_1;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35351,7 +35879,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_slave_inst/N3118_1[2]_1;GTP_LUT3
+pwrseq_slave_inst/N3308_1[1]_1;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35359,7 +35887,7 @@ I1;1
 I2;1
 
 Inst
-pwrseq_slave_inst/N3118_1[3]_1;GTP_LUT3
+pwrseq_slave_inst/N3308_1[2]_1;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35367,7 +35895,15 @@ I1;1
 I2;1
 
 Inst
-pwrseq_slave_inst/N3118_1[4]_1;GTP_LUT3
+pwrseq_slave_inst/N3308_1[3]_1;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+pwrseq_slave_inst/N3308_1[4]_1;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -35816,12 +36352,11 @@ I0;1
 I1;1
 
 Inst
-pwrseq_slave_inst/p3v3_stby_fault_detect_inst/N14_2;GTP_LUT3
+pwrseq_slave_inst/p3v3_stby_fault_detect_inst/N29;GTP_LUT2
 Pin
 Z;2
 I0;1
 I1;1
-I2;1
 
 Inst
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/N21;GTP_LUT5
@@ -36093,6 +36628,15 @@ CLK;1
 D;1
 
 Inst
+pwrseq_slave_inst/reg_pex_reset_r_n;GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
 pwrseq_slave_inst/reg_pvcc_hpmos_cpu_en_r;GTP_DFF_CE
 Pin
 Q;2
@@ -36100,6 +36644,24 @@ C;1
 CE;1
 CLK;1
 D;1
+
+Inst
+pwrseq_slave_inst/usb_ponrst_r_n;GTP_DFF_C
+Pin
+Q;2
+C;1
+CLK;1
+D;1
+
+Inst
+pwrseq_slave_inst/usb_ponrst_r_n_ce_mux;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 sync_data_high1/dout[4];GTP_DFF_P
@@ -37503,7 +38065,14 @@ I2;1
 I3;1
 
 Inst
-uart_master_u1/N445_3;GTP_LUT3
+uart_master_u1/N445_1;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+uart_master_u1/N445_6;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -37661,6 +38230,14 @@ I0;1
 I1;1
 I2;1
 I3;1
+
+Inst
+uart_master_u1/curr_state_fsm[2:0]_63;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
 
 Inst
 uart_master_u1/curr_state_reg[0];GTP_DFF_P
@@ -38553,14 +39130,6 @@ I1;1
 I2;1
 
 Inst
-uart_master_u2/N371_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
 uart_master_u2/N393_5;GTP_LUT5
 Pin
 Z;2
@@ -38590,7 +39159,15 @@ I2;1
 I3;1
 
 Inst
-uart_master_u2/N423_3;GTP_LUT5
+uart_master_u2/N423_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+uart_master_u2/N423_8;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -38643,14 +39220,7 @@ I2;1
 I3;1
 
 Inst
-uart_master_u2/N445_2;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
-uart_master_u2/N445_6;GTP_LUT3
+uart_master_u2/N445_3;GTP_LUT3
 Pin
 Z;2
 I0;1
@@ -38741,6 +39311,13 @@ CLK;1
 D;1
 
 Inst
+uart_master_u2/curr_state_fsm[2:0]_5;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 uart_master_u2/curr_state_fsm[2:0]_6;GTP_LUT4
 Pin
 Z;2
@@ -38824,21 +39401,6 @@ I0;1
 I1;1
 I2;1
 I3;1
-
-Inst
-uart_master_u2/curr_state_fsm[2:0]_64;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-uart_master_u2/curr_state_fsm[2:0]_65;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
 
 Inst
 uart_master_u2/curr_state_reg[1];GTP_DFF_C
@@ -39377,7 +39939,14 @@ I3;1
 I4;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7_5;GTP_LUT4
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7_2;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7_6;GTP_LUT4
 Pin
 Z;2
 I0;1
@@ -42977,6 +43546,22 @@ CLK;1
 D;1
 
 Inst
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/N14_3_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/N29;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/_fault_detect_[0].chklive_en[0];GTP_DFF_C
 Pin
 Q;2
@@ -44895,22 +45480,6 @@ CLK;1
 D;1
 
 Inst
-pwrseq_slave_inst/p3v3_stby_fault_detect_inst/N14_3_3;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-pwrseq_slave_inst/p3v3_stby_fault_detect_inst/N29;GTP_LUT2
-Pin
-Z;2
-I0;1
-I1;1
-
-Inst
 pwrseq_slave_inst/p3v3_stby_fault_detect_inst/_fault_detect_[0].vrm_fault[0];GTP_DFF_C
 Pin
 Q;2
@@ -45240,6 +45809,13 @@ CLK;1
 D;1
 
 Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N2;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N30_3;GTP_LUT3
 Pin
 Z;2
@@ -45404,16 +45980,6 @@ I0;1
 I1;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_1_2;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_1_7;GTP_LUT5
 Pin
 Z;2
@@ -45424,41 +45990,7 @@ I3;1
 I4;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_1_8;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_5_3;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_8_2;GTP_LUT3
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_11_4;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_13;GTP_LUT5
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -45466,34 +45998,6 @@ I1;1
 I2;1
 I3;1
 I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_14;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N458_17;GTP_LUT5
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
-I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N461_1;GTP_LUT2
@@ -45503,13 +46007,75 @@ I0;1
 I1;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_3;GTP_LUT4
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_2_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_4;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_5_2;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_8_4;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_10_3;GTP_LUT4
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_13_3;GTP_LUT3
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490_13_4;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
+
+Inst
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N493_1;GTP_LUT5
+Pin
+Z;2
+I0;1
+I1;1
+I2;1
+I3;1
+I4;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N541_5;GTP_LUT5M
@@ -45563,7 +46129,7 @@ I4;1
 ID;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N581_3;GTP_LUT5
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N581_2;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -45573,7 +46139,7 @@ I3;1
 I4;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N643;GTP_LUT5
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N675_3;GTP_LUT5
 Pin
 Z;2
 I0;1
@@ -45581,15 +46147,6 @@ I1;1
 I2;1
 I3;1
 I4;1
-
-Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N675_2;GTP_LUT4
-Pin
-Z;2
-I0;1
-I1;1
-I2;1
-I3;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N709;GTP_LUT3
@@ -45741,12 +46298,14 @@ CLK;1
 D;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out_ce_mux[0];GTP_LUT3
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out_ce_mux[0];GTP_LUT5
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
+I3;1
+I4;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out_ce_mux[1];GTP_LUT4
@@ -46432,14 +46991,13 @@ CLK;1
 D;1
 
 Inst
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_data_in_lock_ce_mux;GTP_LUT5
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_data_in_lock_ce_mux;GTP_LUT4
 Pin
 Z;2
 I0;1
 I1;1
 I2;1
 I3;1
-I4;1
 
 Inst
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_data_in_lock_inv;GTP_INV
@@ -46785,90 +47343,89 @@ N73;
 N74;
 N75;
 N524;
-N986;
-N986_7;
-N986_9;
-N1014;
-N1032;
-N1033;
-N1173;
-N1178_inv;
-N1203;
-N1204[0];
-N1204[1];
-N1204[2];
-N1204[3];
-N1204[4];
-N1204[5];
-N1204[6];
-N1204[7];
-N1204[8];
-N1204[9];
-N1204[10];
-N1204[11];
-N1204[12];
-N1204[13];
-N1204[14];
-N1204[15];
-N1204[16];
-N1204[17];
-N1204[18];
-N1204[19];
-N1204[20];
-N1205;
-N1335;
-N1339;
-N1346;
-N1351;
-N1352;
-N1353;
-N1354;
-N1364;
-N1378;
-N1379[0];
-N1379[1];
-N1416[0];
-N1416[1];
-N1416[2];
-N1416[3];
-N1416[4];
-N1416[5];
-N1416[6];
-N1416[7];
-N1416[8];
-N1416[9];
-N1416[10];
-N1416[11];
-N1416[12];
-N1416[13];
-N1416[14];
-N1416[15];
-N1416[16];
-N1416[17];
-N1416[18];
-N1416[19];
-N1416[20];
-N1416[21];
-N1416[22];
-N1416[23];
-N1416[24];
-N1416[25];
-N1416[26];
-N1416[27];
-N1416[28];
-N1416[29];
-N1420;
-N1501_0;
-N1504;
-N1505[0];
-N1505[1];
-N1505[2];
-N1505[3];
-N1505[4];
-N1505[5];
-N1505[6];
-N1505[7];
-N1559;
+N969_6;
+N969_43;
+N969_54;
+N969_55;
+N997;
+N1015;
+N1016;
+N1156;
+N1161_inv;
+N1186;
+N1187[0];
+N1187[1];
+N1187[2];
+N1187[3];
+N1187[4];
+N1187[5];
+N1187[6];
+N1187[7];
+N1187[8];
+N1187[9];
+N1187[10];
+N1187[11];
+N1187[12];
+N1187[13];
+N1187[14];
+N1187[15];
+N1187[16];
+N1187[17];
+N1187[18];
+N1187[19];
+N1187[20];
+N1188;
+N1316;
+N1318;
+N1321;
+N1326;
+N1328;
+N1336;
+N1361;
+N1362[0];
+N1362[1];
+N1399[0];
+N1399[1];
+N1399[2];
+N1399[3];
+N1399[4];
+N1399[5];
+N1399[6];
+N1399[7];
+N1399[8];
+N1399[9];
+N1399[10];
+N1399[11];
+N1399[12];
+N1399[13];
+N1399[14];
+N1399[15];
+N1399[16];
+N1399[17];
+N1399[18];
+N1399[19];
+N1399[20];
+N1399[21];
+N1399[22];
+N1399[23];
+N1399[24];
+N1399[25];
+N1399[26];
+N1399[27];
+N1399[28];
+N1399[29];
+N1403;
+N1484_0;
+N1487;
+N1488[0];
+N1488[1];
+N1488[2];
+N1488[3];
+N1488[4];
+N1488[5];
+N1488[6];
+N1488[7];
+N1546;
 _N0;
 _N1;
 _N2;
@@ -46885,22 +47442,6 @@ _N229;
 _N331;
 _N349;
 _N361;
-_N1376;
-_N1377;
-_N1378;
-_N1379;
-_N1380;
-_N1381;
-_N1382;
-_N1383;
-_N1384;
-_N1385;
-_N1386;
-_N1387;
-_N1388;
-_N1389;
-_N1390;
-_N1391;
 _N1392;
 _N1393;
 _N1394;
@@ -46913,13 +47454,22 @@ _N1400;
 _N1401;
 _N1402;
 _N1403;
-_N1557;
-_N1558;
-_N1559;
-_N1560;
-_N1561;
-_N1562;
-_N1563;
+_N1404;
+_N1405;
+_N1406;
+_N1407;
+_N1408;
+_N1409;
+_N1410;
+_N1411;
+_N1412;
+_N1413;
+_N1414;
+_N1415;
+_N1416;
+_N1417;
+_N1418;
+_N1419;
 _N1564;
 _N1565;
 _N1566;
@@ -46932,65 +47482,72 @@ _N1572;
 _N1573;
 _N1574;
 _N1575;
-_N1738;
-_N1759;
-_N1761;
-_N1762;
-_N1764;
-_N1765;
-_N1767;
-_N1768;
-_N1769;
-_N11161;
-_N11162;
-_N11166;
-_N11171;
-_N11176;
-_N11183;
-_N11236;
-_N11238;
-_N11242;
-_N11248;
-_N11258;
-_N11276;
-_N11279;
-_N11287;
-_N11289;
-_N11291;
-_N11292;
-_N11298;
-_N11427;
+_N1576;
+_N1577;
+_N1578;
+_N1579;
+_N1580;
+_N1581;
+_N1582;
+_N1756;
+_N1784;
+_N1786;
+_N1787;
+_N1789;
+_N1790;
+_N1791;
+_N1792;
+_N1793;
+_N1794;
+_N11219;
+_N11307;
+_N11312;
+_N11317;
+_N11318;
+_N11324;
+_N11330;
+_N11376;
+_N11412;
+_N11413;
+_N11418;
+_N11419;
 _N11430;
-_N11432;
-_N12195;
-_N12229;
-_N12230;
-_N12437;
-_N12476;
-_N12509;
-_N12519;
-_N12521;
-_N12553;
+_N11505;
+_N11508;
+_N11510;
+_N12308;
+_N12339;
+_N12340;
+_N12538;
+_N12560;
+_N12617;
+_N12650;
 _N12690;
-_N12707;
-_N12728;
-_N12766;
-_N12767;
-_N12812;
-_N12849;
-_N12850;
-_N12874;
-_N12918;
-_N12919;
-_N12921;
+_N12800;
+_N12813;
+_N12814;
+_N12829;
+_N12830;
+_N12848;
+_N12860;
+_N12861;
+_N12884;
 _N12922;
-_N12923;
-_N12924;
+_N12930;
+_N12948;
 _N12949;
-_N13037;
-_N13039;
-_N13130;
-_N13150;
+_N12951;
+_N12952;
+_N12953;
+_N12954;
+_N13009;
+_N13094;
+_N13102;
+_N13106;
+_N13107;
+_N13176;
+_N13271;
+_N13296;
 aux_pcycle;
 bmc_ctrl_shutdown;
 bmc_i2c_rst2[0];
@@ -47068,6 +47625,10 @@ db_debug_sw[0];
 db_debug_sw[5];
 db_debug_sw[7];
 db_i_dsd_uart_prsnt_n;
+db_i_fan0_prsnt_n;
+db_i_fan1_prsnt_n;
+db_i_fan2_prsnt_n;
+db_i_fan3_prsnt_n;
 db_i_front_pal_intruder;
 db_i_intruder_cable_inst_n;
 db_i_pal_bmcuid_button_r;
@@ -47080,6 +47641,7 @@ db_i_pal_cpu0_d0_vph_1v8_pg;
 db_i_pal_cpu0_d1_vp_0v9_pg;
 db_i_pal_cpu0_d1_vph_1v8_pg;
 db_i_pal_cpu0_ddr_vdd_pg;
+db_i_pal_cpu0_p1v8_pg;
 db_i_pal_cpu0_pll_p1v8_pg;
 db_i_pal_cpu0_vdd_core_pg;
 db_i_pal_cpu0_vddq_pg;
@@ -47088,6 +47650,7 @@ db_i_pal_cpu1_d0_vph_1v8_pg;
 db_i_pal_cpu1_d1_vp_0v9_pg;
 db_i_pal_cpu1_d1_vph_1v8_pg;
 db_i_pal_cpu1_ddr_vdd_pg;
+db_i_pal_cpu1_p1v8_pg;
 db_i_pal_cpu1_pll_p1v8_pg;
 db_i_pal_cpu1_vdd_core_pg;
 db_i_pal_cpu1_vddq_pg;
@@ -47323,8 +47886,7 @@ mcpld_to_scpld_p2s_data[6];
 mcpld_to_scpld_p2s_data[7];
 mcpld_to_scpld_p2s_data[8];
 mcpld_to_scpld_p2s_data[10];
-mcpld_to_scpld_p2s_data[13];
-mcpld_to_scpld_p2s_data[14];
+mcpld_to_scpld_p2s_data[11];
 mcpld_to_scpld_p2s_data[17];
 mcpld_to_scpld_p2s_data[18];
 mcpld_to_scpld_p2s_data[19];
@@ -47390,6 +47952,10 @@ nt_i_CPU1_D0_BIOS_OVER;
 nt_i_CPU1_RST_VPP_I2C_N;
 nt_i_CPU1_VR8_CAT_FLT;
 nt_i_CPU1_VR_ALERT_N_R;
+nt_i_FAN0_PRSNT_N;
+nt_i_FAN1_PRSNT_N;
+nt_i_FAN2_PRSNT_N;
+nt_i_FAN3_PRSNT_N;
 nt_i_FAN_TACH_4_D;
 nt_i_FAN_TACH_5_D;
 nt_i_FAN_TACH_6_D;
@@ -47463,6 +48029,8 @@ nt_o_CPU1_D0123_SOCKET_ID_R;
 nt_o_CPU1_POR_N_R;
 nt_o_FT_CPU0_SCP_BOOT_FROM_FLASH_R;
 nt_o_FT_CPU1_SCP_BOOT_FROM_FLASH_R;
+nt_o_P1V8_STBY_CPLD_EN_R;
+nt_o_PAL_88SE9230_RST_N_R;
 nt_o_PAL_BMC_SRST_R;
 nt_o_PAL_CPU0_D0_VPH_1V8_EN;
 nt_o_PAL_CPU0_D0_VP_0V9_EN;
@@ -47502,10 +48070,6 @@ nt_o_PAL_FAN_NRML_LED3_R;
 nt_o_PAL_P3V3_STBY_RST_R;
 nt_o_PAL_P5V_STBY_EN_R;
 nt_o_PAL_P12V_DISCHARGE_R;
-nt_o_PAL_P12V_FAN0_EN_R;
-nt_o_PAL_P12V_FAN1_EN_R;
-nt_o_PAL_P12V_FAN2_EN_R;
-nt_o_PAL_P12V_FAN3_EN_R;
 nt_o_PAL_PVCC_HPMOS_CPU_EN_R;
 nt_o_PAL_REAT_BP_EFUSE_EN_R;
 nt_o_PAL_RISER2_PWR_EN_R;
@@ -47538,7 +48102,6 @@ o_CPU1_PE1_RST_N_R;
 o_CPU1_PE2_RST_N_R;
 o_CPU1_POR_N_R;
 o_CPU1_SB_EN_R;
-o_P1V8_STBY_CPLD_EN_R;
 o_P5V_USB_MB_DOWN_EN_R;
 o_P5V_USB_MB_UP_EN_R;
 o_PAL_88SE9230_RST_N_R;
@@ -47579,7 +48142,6 @@ o_PAL_FAN_NRML_LED0_R;
 o_PAL_FAN_NRML_LED1_R;
 o_PAL_FAN_NRML_LED2_R;
 o_PAL_FAN_NRML_LED3_R;
-o_PAL_P5V_STBY_EN_R;
 o_PAL_P12V_CPU0_VIN_EN_R;
 o_PAL_P12V_CPU1_VIN_EN_R;
 o_PAL_P12V_FAN0_EN_R;
@@ -47966,7 +48528,8 @@ inst_mcpld_to_scpld_p2s/cnt [3];
 inst_mcpld_to_scpld_p2s/cnt [4];
 inst_mcpld_to_scpld_p2s/cnt [5];
 psu_inst/st_ps_on;
-pwrseq_master_inst/N150;
+pwrseq_master_inst/N158;
+pwrseq_master_inst/N985;
 pwrseq_master_inst/st_critical_fail;
 pwrseq_master_inst/st_off_standby;
 pwrseq_master_inst/st_steady_pwrok;
@@ -47993,13 +48556,12 @@ pwrseq_master_inst/state_reg [26];
 pwrseq_master_inst/state_reg [27];
 pwrseq_master_inst/state_reg [28];
 pwrseq_master_inst/state_reg [29];
+pwrseq_slave_inst/N3104;
 pwrseq_slave_inst/reg_p3v3_en_r;
 pwrseq_slave_inst/reg_p5v_en_r;
 pwrseq_slave_inst/st_reset_state;
 pwrseq_slave_inst/st_reset_state_inv;
 uart_master_u1/N394;
-uart_master_u1/N504 [2];
-uart_master_u1/N504 [4];
 uart_master_u1/_N0_inv;
 uart_master_u1/curr_state [0];
 uart_master_u1/curr_state [1];
@@ -48009,7 +48571,6 @@ uart_master_u1/curr_state_reg [1];
 uart_master_u1/curr_state_reg [2];
 uart_master_u1/curr_state_reg [3];
 uart_master_u1/curr_state_reg [4];
-uart_master_u1/curr_state_reg [5];
 uart_master_u1/curr_state_reg [6];
 uart_master_u1/curr_state_reg [7];
 uart_master_u2/N394;
@@ -48041,8 +48602,8 @@ UID_Function_u0/N186 [4];
 UID_Function_u0/N186 [5];
 UID_Function_u0/N186 [6];
 UID_Function_u0/N186 [7];
+UID_Function_u0/N208;
 UID_Function_u0/N216;
-UID_Function_u0/N221;
 UID_Function_u0/N226 [1];
 UID_Function_u0/N226 [2];
 UID_Function_u0/N226 [3];
@@ -48065,35 +48626,36 @@ UID_Function_u0/N443;
 UID_Function_u0/N451;
 UID_Function_u0/N452 [0];
 UID_Function_u0/N455;
-UID_Function_u0/_N416;
-UID_Function_u0/_N440;
-UID_Function_u0/_N470;
-UID_Function_u0/_N1412;
-UID_Function_u0/_N1413;
-UID_Function_u0/_N1414;
-UID_Function_u0/_N1415;
-UID_Function_u0/_N1416;
-UID_Function_u0/_N1417;
-UID_Function_u0/_N1420;
-UID_Function_u0/_N1421;
-UID_Function_u0/_N1422;
-UID_Function_u0/_N1423;
-UID_Function_u0/_N1424;
-UID_Function_u0/_N1425;
-UID_Function_u0/_N3057;
-UID_Function_u0/_N3097;
-UID_Function_u0/_N3157;
-UID_Function_u0/_N3208;
-UID_Function_u0/_N3284;
-UID_Function_u0/_N3324;
-UID_Function_u0/_N3376;
-UID_Function_u0/_N11300;
-UID_Function_u0/_N11305;
-UID_Function_u0/_N12239;
-UID_Function_u0/_N12240;
-UID_Function_u0/_N12579;
-UID_Function_u0/_N13021;
-UID_Function_u0/_N13050;
+UID_Function_u0/_N443;
+UID_Function_u0/_N471;
+UID_Function_u0/_N489;
+UID_Function_u0/_N501;
+UID_Function_u0/_N1434;
+UID_Function_u0/_N1435;
+UID_Function_u0/_N1436;
+UID_Function_u0/_N1437;
+UID_Function_u0/_N1438;
+UID_Function_u0/_N1439;
+UID_Function_u0/_N1442;
+UID_Function_u0/_N1443;
+UID_Function_u0/_N1444;
+UID_Function_u0/_N1445;
+UID_Function_u0/_N1446;
+UID_Function_u0/_N1447;
+UID_Function_u0/_N3104;
+UID_Function_u0/_N3177;
+UID_Function_u0/_N3213;
+UID_Function_u0/_N3261;
+UID_Function_u0/_N3312;
+UID_Function_u0/_N3363;
+UID_Function_u0/_N3415;
+UID_Function_u0/_N11378;
+UID_Function_u0/_N11383;
+UID_Function_u0/_N12348;
+UID_Function_u0/_N12349;
+UID_Function_u0/_N12712;
+UID_Function_u0/_N13160;
+UID_Function_u0/_N13182;
 UID_Function_u0/r_cnt_100ms [0];
 UID_Function_u0/r_cnt_100ms [1];
 UID_Function_u0/r_cnt_100ms [2];
@@ -48135,7 +48697,6 @@ bmc_cpld_i2c_ram_u0/N537;
 bmc_cpld_i2c_ram_u0/N546;
 bmc_cpld_i2c_ram_u0/N555;
 bmc_cpld_i2c_ram_u0/N564;
-bmc_cpld_i2c_ram_u0/N591;
 bmc_cpld_i2c_ram_u0/N672;
 bmc_cpld_i2c_ram_u0/N753;
 bmc_cpld_i2c_ram_u0/N762;
@@ -48163,183 +48724,176 @@ bmc_cpld_i2c_ram_u0/N1391 [3];
 bmc_cpld_i2c_ram_u0/N1391 [4];
 bmc_cpld_i2c_ram_u0/N1391 [5];
 bmc_cpld_i2c_ram_u0/N1437_1_inv;
-bmc_cpld_i2c_ram_u0/_N1428;
-bmc_cpld_i2c_ram_u0/_N1429;
-bmc_cpld_i2c_ram_u0/_N1430;
-bmc_cpld_i2c_ram_u0/_N1431;
-bmc_cpld_i2c_ram_u0/_N1432;
-bmc_cpld_i2c_ram_u0/_N1578;
-bmc_cpld_i2c_ram_u0/_N1579;
-bmc_cpld_i2c_ram_u0/_N1580;
-bmc_cpld_i2c_ram_u0/_N1581;
-bmc_cpld_i2c_ram_u0/_N1979;
-bmc_cpld_i2c_ram_u0/_N1980;
-bmc_cpld_i2c_ram_u0/_N1981;
-bmc_cpld_i2c_ram_u0/_N1982;
-bmc_cpld_i2c_ram_u0/_N1983;
-bmc_cpld_i2c_ram_u0/_N1984;
-bmc_cpld_i2c_ram_u0/_N1985;
-bmc_cpld_i2c_ram_u0/_N1986;
-bmc_cpld_i2c_ram_u0/_N2043;
-bmc_cpld_i2c_ram_u0/_N2052;
-bmc_cpld_i2c_ram_u0/_N2053;
-bmc_cpld_i2c_ram_u0/_N2054;
-bmc_cpld_i2c_ram_u0/_N2055;
-bmc_cpld_i2c_ram_u0/_N2056;
-bmc_cpld_i2c_ram_u0/_N2099;
-bmc_cpld_i2c_ram_u0/_N2100;
-bmc_cpld_i2c_ram_u0/_N2101;
-bmc_cpld_i2c_ram_u0/_N2102;
-bmc_cpld_i2c_ram_u0/_N2103;
-bmc_cpld_i2c_ram_u0/_N2105;
-bmc_cpld_i2c_ram_u0/_N2106;
-bmc_cpld_i2c_ram_u0/_N2110;
-bmc_cpld_i2c_ram_u0/_N2111;
-bmc_cpld_i2c_ram_u0/_N2112;
-bmc_cpld_i2c_ram_u0/_N2113;
-bmc_cpld_i2c_ram_u0/_N2114;
-bmc_cpld_i2c_ram_u0/_N2172;
-bmc_cpld_i2c_ram_u0/_N2235;
-bmc_cpld_i2c_ram_u0/_N2236;
-bmc_cpld_i2c_ram_u0/_N2239;
-bmc_cpld_i2c_ram_u0/_N2259;
-bmc_cpld_i2c_ram_u0/_N2260;
-bmc_cpld_i2c_ram_u0/_N2261;
-bmc_cpld_i2c_ram_u0/_N2263;
+bmc_cpld_i2c_ram_u0/_N1450;
+bmc_cpld_i2c_ram_u0/_N1451;
+bmc_cpld_i2c_ram_u0/_N1452;
+bmc_cpld_i2c_ram_u0/_N1453;
+bmc_cpld_i2c_ram_u0/_N1454;
+bmc_cpld_i2c_ram_u0/_N1603;
+bmc_cpld_i2c_ram_u0/_N1604;
+bmc_cpld_i2c_ram_u0/_N1605;
+bmc_cpld_i2c_ram_u0/_N1606;
+bmc_cpld_i2c_ram_u0/_N2008;
+bmc_cpld_i2c_ram_u0/_N2009;
+bmc_cpld_i2c_ram_u0/_N2010;
+bmc_cpld_i2c_ram_u0/_N2011;
+bmc_cpld_i2c_ram_u0/_N2012;
+bmc_cpld_i2c_ram_u0/_N2013;
+bmc_cpld_i2c_ram_u0/_N2014;
+bmc_cpld_i2c_ram_u0/_N2015;
+bmc_cpld_i2c_ram_u0/_N2072;
+bmc_cpld_i2c_ram_u0/_N2081;
+bmc_cpld_i2c_ram_u0/_N2082;
+bmc_cpld_i2c_ram_u0/_N2083;
+bmc_cpld_i2c_ram_u0/_N2084;
+bmc_cpld_i2c_ram_u0/_N2085;
+bmc_cpld_i2c_ram_u0/_N2128;
+bmc_cpld_i2c_ram_u0/_N2129;
+bmc_cpld_i2c_ram_u0/_N2131;
+bmc_cpld_i2c_ram_u0/_N2132;
+bmc_cpld_i2c_ram_u0/_N2134;
+bmc_cpld_i2c_ram_u0/_N2135;
+bmc_cpld_i2c_ram_u0/_N2138;
+bmc_cpld_i2c_ram_u0/_N2139;
+bmc_cpld_i2c_ram_u0/_N2140;
+bmc_cpld_i2c_ram_u0/_N2141;
+bmc_cpld_i2c_ram_u0/_N2142;
+bmc_cpld_i2c_ram_u0/_N2143;
+bmc_cpld_i2c_ram_u0/_N2201;
+bmc_cpld_i2c_ram_u0/_N2264;
 bmc_cpld_i2c_ram_u0/_N2265;
-bmc_cpld_i2c_ram_u0/_N2267;
 bmc_cpld_i2c_ram_u0/_N2268;
-bmc_cpld_i2c_ram_u0/_N2270;
-bmc_cpld_i2c_ram_u0/_N2271;
-bmc_cpld_i2c_ram_u0/_N2272;
-bmc_cpld_i2c_ram_u0/_N2273;
-bmc_cpld_i2c_ram_u0/_N2274;
-bmc_cpld_i2c_ram_u0/_N2275;
-bmc_cpld_i2c_ram_u0/_N2276;
-bmc_cpld_i2c_ram_u0/_N2307;
-bmc_cpld_i2c_ram_u0/_N2308;
-bmc_cpld_i2c_ram_u0/_N2315;
-bmc_cpld_i2c_ram_u0/_N2316;
-bmc_cpld_i2c_ram_u0/_N2317;
-bmc_cpld_i2c_ram_u0/_N2323;
-bmc_cpld_i2c_ram_u0/_N2328;
-bmc_cpld_i2c_ram_u0/_N2331;
-bmc_cpld_i2c_ram_u0/_N2332;
-bmc_cpld_i2c_ram_u0/_N2333;
-bmc_cpld_i2c_ram_u0/_N2334;
-bmc_cpld_i2c_ram_u0/_N2335;
+bmc_cpld_i2c_ram_u0/_N2282;
+bmc_cpld_i2c_ram_u0/_N2288;
+bmc_cpld_i2c_ram_u0/_N2289;
+bmc_cpld_i2c_ram_u0/_N2292;
+bmc_cpld_i2c_ram_u0/_N2294;
+bmc_cpld_i2c_ram_u0/_N2296;
+bmc_cpld_i2c_ram_u0/_N2297;
+bmc_cpld_i2c_ram_u0/_N2298;
+bmc_cpld_i2c_ram_u0/_N2299;
+bmc_cpld_i2c_ram_u0/_N2300;
+bmc_cpld_i2c_ram_u0/_N2301;
+bmc_cpld_i2c_ram_u0/_N2302;
+bmc_cpld_i2c_ram_u0/_N2303;
+bmc_cpld_i2c_ram_u0/_N2304;
+bmc_cpld_i2c_ram_u0/_N2305;
 bmc_cpld_i2c_ram_u0/_N2336;
 bmc_cpld_i2c_ram_u0/_N2337;
-bmc_cpld_i2c_ram_u0/_N2338;
+bmc_cpld_i2c_ram_u0/_N2344;
+bmc_cpld_i2c_ram_u0/_N2345;
 bmc_cpld_i2c_ram_u0/_N2352;
-bmc_cpld_i2c_ram_u0/_N2356;
+bmc_cpld_i2c_ram_u0/_N2354;
+bmc_cpld_i2c_ram_u0/_N2357;
 bmc_cpld_i2c_ram_u0/_N2360;
 bmc_cpld_i2c_ram_u0/_N2361;
+bmc_cpld_i2c_ram_u0/_N2362;
 bmc_cpld_i2c_ram_u0/_N2363;
+bmc_cpld_i2c_ram_u0/_N2364;
 bmc_cpld_i2c_ram_u0/_N2365;
 bmc_cpld_i2c_ram_u0/_N2366;
-bmc_cpld_i2c_ram_u0/_N2387;
-bmc_cpld_i2c_ram_u0/_N2388;
+bmc_cpld_i2c_ram_u0/_N2367;
+bmc_cpld_i2c_ram_u0/_N2381;
+bmc_cpld_i2c_ram_u0/_N2385;
 bmc_cpld_i2c_ram_u0/_N2389;
 bmc_cpld_i2c_ram_u0/_N2390;
-bmc_cpld_i2c_ram_u0/_N2391;
 bmc_cpld_i2c_ram_u0/_N2392;
-bmc_cpld_i2c_ram_u0/_N2393;
 bmc_cpld_i2c_ram_u0/_N2394;
 bmc_cpld_i2c_ram_u0/_N2395;
-bmc_cpld_i2c_ram_u0/_N2397;
-bmc_cpld_i2c_ram_u0/_N2398;
-bmc_cpld_i2c_ram_u0/_N2399;
+bmc_cpld_i2c_ram_u0/_N2396;
+bmc_cpld_i2c_ram_u0/_N2416;
+bmc_cpld_i2c_ram_u0/_N2417;
+bmc_cpld_i2c_ram_u0/_N2418;
+bmc_cpld_i2c_ram_u0/_N2419;
+bmc_cpld_i2c_ram_u0/_N2420;
+bmc_cpld_i2c_ram_u0/_N2421;
+bmc_cpld_i2c_ram_u0/_N2422;
+bmc_cpld_i2c_ram_u0/_N2423;
+bmc_cpld_i2c_ram_u0/_N2424;
+bmc_cpld_i2c_ram_u0/_N2426;
 bmc_cpld_i2c_ram_u0/_N2427;
 bmc_cpld_i2c_ram_u0/_N2428;
-bmc_cpld_i2c_ram_u0/_N2429;
-bmc_cpld_i2c_ram_u0/_N2430;
-bmc_cpld_i2c_ram_u0/_N2432;
-bmc_cpld_i2c_ram_u0/_N2433;
-bmc_cpld_i2c_ram_u0/_N2434;
-bmc_cpld_i2c_ram_u0/_N2468;
-bmc_cpld_i2c_ram_u0/_N2507;
-bmc_cpld_i2c_ram_u0/_N2508;
-bmc_cpld_i2c_ram_u0/_N2515;
-bmc_cpld_i2c_ram_u0/_N2524;
-bmc_cpld_i2c_ram_u0/_N2531;
-bmc_cpld_i2c_ram_u0/_N2532;
-bmc_cpld_i2c_ram_u0/_N2533;
-bmc_cpld_i2c_ram_u0/_N2534;
-bmc_cpld_i2c_ram_u0/_N2535;
-bmc_cpld_i2c_ram_u0/_N2555;
-bmc_cpld_i2c_ram_u0/_N2557;
-bmc_cpld_i2c_ram_u0/_N2572;
-bmc_cpld_i2c_ram_u0/_N2576;
-bmc_cpld_i2c_ram_u0/_N2578;
-bmc_cpld_i2c_ram_u0/_N2614;
-bmc_cpld_i2c_ram_u0/_N2615;
-bmc_cpld_i2c_ram_u0/_N2616;
-bmc_cpld_i2c_ram_u0/_N2617;
-bmc_cpld_i2c_ram_u0/_N2618;
-bmc_cpld_i2c_ram_u0/_N2619;
-bmc_cpld_i2c_ram_u0/_N2620;
-bmc_cpld_i2c_ram_u0/_N2621;
-bmc_cpld_i2c_ram_u0/_N2622;
-bmc_cpld_i2c_ram_u0/_N2623;
-bmc_cpld_i2c_ram_u0/_N2625;
-bmc_cpld_i2c_ram_u0/_N2626;
-bmc_cpld_i2c_ram_u0/_N2675;
-bmc_cpld_i2c_ram_u0/_N2677;
-bmc_cpld_i2c_ram_u0/_N2678;
-bmc_cpld_i2c_ram_u0/_N2679;
-bmc_cpld_i2c_ram_u0/_N2681;
-bmc_cpld_i2c_ram_u0/_N2682;
-bmc_cpld_i2c_ram_u0/_N2684;
-bmc_cpld_i2c_ram_u0/_N2685;
-bmc_cpld_i2c_ram_u0/_N2686;
-bmc_cpld_i2c_ram_u0/_N2687;
-bmc_cpld_i2c_ram_u0/_N2688;
-bmc_cpld_i2c_ram_u0/_N2689;
-bmc_cpld_i2c_ram_u0/_N2690;
-bmc_cpld_i2c_ram_u0/_N2691;
-bmc_cpld_i2c_ram_u0/_N2692;
-bmc_cpld_i2c_ram_u0/_N2693;
-bmc_cpld_i2c_ram_u0/_N2694;
-bmc_cpld_i2c_ram_u0/_N2695;
-bmc_cpld_i2c_ram_u0/_N2696;
-bmc_cpld_i2c_ram_u0/_N2697;
-bmc_cpld_i2c_ram_u0/_N2699;
-bmc_cpld_i2c_ram_u0/_N2700;
-bmc_cpld_i2c_ram_u0/_N2701;
-bmc_cpld_i2c_ram_u0/_N2702;
-bmc_cpld_i2c_ram_u0/_N2703;
+bmc_cpld_i2c_ram_u0/_N2456;
+bmc_cpld_i2c_ram_u0/_N2457;
+bmc_cpld_i2c_ram_u0/_N2458;
+bmc_cpld_i2c_ram_u0/_N2459;
+bmc_cpld_i2c_ram_u0/_N2461;
+bmc_cpld_i2c_ram_u0/_N2462;
+bmc_cpld_i2c_ram_u0/_N2463;
+bmc_cpld_i2c_ram_u0/_N2497;
+bmc_cpld_i2c_ram_u0/_N2536;
+bmc_cpld_i2c_ram_u0/_N2537;
+bmc_cpld_i2c_ram_u0/_N2544;
+bmc_cpld_i2c_ram_u0/_N2553;
+bmc_cpld_i2c_ram_u0/_N2560;
+bmc_cpld_i2c_ram_u0/_N2561;
+bmc_cpld_i2c_ram_u0/_N2562;
+bmc_cpld_i2c_ram_u0/_N2563;
+bmc_cpld_i2c_ram_u0/_N2564;
+bmc_cpld_i2c_ram_u0/_N2566;
+bmc_cpld_i2c_ram_u0/_N2584;
+bmc_cpld_i2c_ram_u0/_N2586;
+bmc_cpld_i2c_ram_u0/_N2601;
+bmc_cpld_i2c_ram_u0/_N2605;
+bmc_cpld_i2c_ram_u0/_N2643;
+bmc_cpld_i2c_ram_u0/_N2644;
+bmc_cpld_i2c_ram_u0/_N2645;
+bmc_cpld_i2c_ram_u0/_N2646;
+bmc_cpld_i2c_ram_u0/_N2647;
+bmc_cpld_i2c_ram_u0/_N2648;
+bmc_cpld_i2c_ram_u0/_N2649;
+bmc_cpld_i2c_ram_u0/_N2650;
+bmc_cpld_i2c_ram_u0/_N2651;
+bmc_cpld_i2c_ram_u0/_N2652;
+bmc_cpld_i2c_ram_u0/_N2654;
+bmc_cpld_i2c_ram_u0/_N2655;
+bmc_cpld_i2c_ram_u0/_N2704;
 bmc_cpld_i2c_ram_u0/_N2706;
+bmc_cpld_i2c_ram_u0/_N2707;
+bmc_cpld_i2c_ram_u0/_N2708;
+bmc_cpld_i2c_ram_u0/_N2710;
+bmc_cpld_i2c_ram_u0/_N2711;
+bmc_cpld_i2c_ram_u0/_N2713;
+bmc_cpld_i2c_ram_u0/_N2714;
+bmc_cpld_i2c_ram_u0/_N2715;
+bmc_cpld_i2c_ram_u0/_N2716;
+bmc_cpld_i2c_ram_u0/_N2717;
+bmc_cpld_i2c_ram_u0/_N2718;
+bmc_cpld_i2c_ram_u0/_N2719;
+bmc_cpld_i2c_ram_u0/_N2720;
+bmc_cpld_i2c_ram_u0/_N2721;
+bmc_cpld_i2c_ram_u0/_N2722;
 bmc_cpld_i2c_ram_u0/_N2723;
 bmc_cpld_i2c_ram_u0/_N2724;
 bmc_cpld_i2c_ram_u0/_N2725;
+bmc_cpld_i2c_ram_u0/_N2726;
 bmc_cpld_i2c_ram_u0/_N2727;
-bmc_cpld_i2c_ram_u0/_N2748;
-bmc_cpld_i2c_ram_u0/_N2750;
+bmc_cpld_i2c_ram_u0/_N2728;
+bmc_cpld_i2c_ram_u0/_N2729;
+bmc_cpld_i2c_ram_u0/_N2730;
+bmc_cpld_i2c_ram_u0/_N2731;
+bmc_cpld_i2c_ram_u0/_N2732;
+bmc_cpld_i2c_ram_u0/_N2734;
+bmc_cpld_i2c_ram_u0/_N2735;
 bmc_cpld_i2c_ram_u0/_N2752;
 bmc_cpld_i2c_ram_u0/_N2753;
 bmc_cpld_i2c_ram_u0/_N2754;
+bmc_cpld_i2c_ram_u0/_N2776;
+bmc_cpld_i2c_ram_u0/_N2777;
+bmc_cpld_i2c_ram_u0/_N2778;
+bmc_cpld_i2c_ram_u0/_N2779;
+bmc_cpld_i2c_ram_u0/_N2780;
 bmc_cpld_i2c_ram_u0/_N2781;
-bmc_cpld_i2c_ram_u0/_N2787;
-bmc_cpld_i2c_ram_u0/_N2788;
-bmc_cpld_i2c_ram_u0/_N2789;
-bmc_cpld_i2c_ram_u0/_N2790;
-bmc_cpld_i2c_ram_u0/_N2791;
-bmc_cpld_i2c_ram_u0/_N2792;
-bmc_cpld_i2c_ram_u0/_N2794;
-bmc_cpld_i2c_ram_u0/_N2811;
-bmc_cpld_i2c_ram_u0/_N2812;
-bmc_cpld_i2c_ram_u0/_N2813;
-bmc_cpld_i2c_ram_u0/_N2814;
-bmc_cpld_i2c_ram_u0/_N2815;
+bmc_cpld_i2c_ram_u0/_N2782;
+bmc_cpld_i2c_ram_u0/_N2783;
 bmc_cpld_i2c_ram_u0/_N2816;
 bmc_cpld_i2c_ram_u0/_N2817;
 bmc_cpld_i2c_ram_u0/_N2818;
-bmc_cpld_i2c_ram_u0/_N2835;
-bmc_cpld_i2c_ram_u0/_N2836;
-bmc_cpld_i2c_ram_u0/_N2837;
-bmc_cpld_i2c_ram_u0/_N2838;
-bmc_cpld_i2c_ram_u0/_N2839;
+bmc_cpld_i2c_ram_u0/_N2819;
+bmc_cpld_i2c_ram_u0/_N2820;
+bmc_cpld_i2c_ram_u0/_N2821;
+bmc_cpld_i2c_ram_u0/_N2822;
+bmc_cpld_i2c_ram_u0/_N2823;
 bmc_cpld_i2c_ram_u0/_N2840;
 bmc_cpld_i2c_ram_u0/_N2841;
 bmc_cpld_i2c_ram_u0/_N2842;
@@ -48348,73 +48902,86 @@ bmc_cpld_i2c_ram_u0/_N2844;
 bmc_cpld_i2c_ram_u0/_N2845;
 bmc_cpld_i2c_ram_u0/_N2846;
 bmc_cpld_i2c_ram_u0/_N2847;
-bmc_cpld_i2c_ram_u0/_N2848;
-bmc_cpld_i2c_ram_u0/_N2849;
-bmc_cpld_i2c_ram_u0/_N2850;
+bmc_cpld_i2c_ram_u0/_N2864;
+bmc_cpld_i2c_ram_u0/_N2865;
+bmc_cpld_i2c_ram_u0/_N2866;
 bmc_cpld_i2c_ram_u0/_N2867;
 bmc_cpld_i2c_ram_u0/_N2868;
 bmc_cpld_i2c_ram_u0/_N2869;
 bmc_cpld_i2c_ram_u0/_N2870;
-bmc_cpld_i2c_ram_u0/_N2891;
-bmc_cpld_i2c_ram_u0/_N2892;
-bmc_cpld_i2c_ram_u0/_N2893;
-bmc_cpld_i2c_ram_u0/_N2894;
+bmc_cpld_i2c_ram_u0/_N2871;
+bmc_cpld_i2c_ram_u0/_N2872;
+bmc_cpld_i2c_ram_u0/_N2873;
+bmc_cpld_i2c_ram_u0/_N2874;
+bmc_cpld_i2c_ram_u0/_N2875;
+bmc_cpld_i2c_ram_u0/_N2876;
+bmc_cpld_i2c_ram_u0/_N2877;
+bmc_cpld_i2c_ram_u0/_N2878;
+bmc_cpld_i2c_ram_u0/_N2879;
+bmc_cpld_i2c_ram_u0/_N2896;
 bmc_cpld_i2c_ram_u0/_N2897;
+bmc_cpld_i2c_ram_u0/_N2898;
 bmc_cpld_i2c_ram_u0/_N2899;
-bmc_cpld_i2c_ram_u0/_N2900;
-bmc_cpld_i2c_ram_u0/_N2901;
 bmc_cpld_i2c_ram_u0/_N2902;
-bmc_cpld_i2c_ram_u0/_N2903;
-bmc_cpld_i2c_ram_u0/_N2905;
-bmc_cpld_i2c_ram_u0/_N2906;
-bmc_cpld_i2c_ram_u0/_N2907;
-bmc_cpld_i2c_ram_u0/_N2908;
-bmc_cpld_i2c_ram_u0/_N2909;
-bmc_cpld_i2c_ram_u0/_N2910;
-bmc_cpld_i2c_ram_u0/_N2912;
 bmc_cpld_i2c_ram_u0/_N2920;
 bmc_cpld_i2c_ram_u0/_N2921;
-bmc_cpld_i2c_ram_u0/_N2927;
+bmc_cpld_i2c_ram_u0/_N2922;
+bmc_cpld_i2c_ram_u0/_N2923;
+bmc_cpld_i2c_ram_u0/_N2926;
+bmc_cpld_i2c_ram_u0/_N2928;
+bmc_cpld_i2c_ram_u0/_N2929;
 bmc_cpld_i2c_ram_u0/_N2930;
 bmc_cpld_i2c_ram_u0/_N2931;
 bmc_cpld_i2c_ram_u0/_N2932;
-bmc_cpld_i2c_ram_u0/_N2933;
 bmc_cpld_i2c_ram_u0/_N2934;
+bmc_cpld_i2c_ram_u0/_N2935;
 bmc_cpld_i2c_ram_u0/_N2936;
 bmc_cpld_i2c_ram_u0/_N2937;
 bmc_cpld_i2c_ram_u0/_N2938;
-bmc_cpld_i2c_ram_u0/_N2943;
-bmc_cpld_i2c_ram_u0/_N10915;
-bmc_cpld_i2c_ram_u0/_N11184;
-bmc_cpld_i2c_ram_u0/_N11194;
-bmc_cpld_i2c_ram_u0/_N11196;
-bmc_cpld_i2c_ram_u0/_N11198;
-bmc_cpld_i2c_ram_u0/_N11201;
-bmc_cpld_i2c_ram_u0/_N11212;
-bmc_cpld_i2c_ram_u0/_N11216;
-bmc_cpld_i2c_ram_u0/_N11230;
-bmc_cpld_i2c_ram_u0/_N11231;
-bmc_cpld_i2c_ram_u0/_N11235;
-bmc_cpld_i2c_ram_u0/_N11241;
-bmc_cpld_i2c_ram_u0/_N11243;
-bmc_cpld_i2c_ram_u0/_N11246;
-bmc_cpld_i2c_ram_u0/_N12242;
-bmc_cpld_i2c_ram_u0/_N12243;
-bmc_cpld_i2c_ram_u0/_N12244;
-bmc_cpld_i2c_ram_u0/_N12245;
-bmc_cpld_i2c_ram_u0/_N12246;
-bmc_cpld_i2c_ram_u0/_N12247;
-bmc_cpld_i2c_ram_u0/_N12248;
-bmc_cpld_i2c_ram_u0/_N12429;
-bmc_cpld_i2c_ram_u0/_N12443;
-bmc_cpld_i2c_ram_u0/_N12605;
-bmc_cpld_i2c_ram_u0/_N12606;
-bmc_cpld_i2c_ram_u0/_N12609;
-bmc_cpld_i2c_ram_u0/_N12651;
-bmc_cpld_i2c_ram_u0/_N12889;
+bmc_cpld_i2c_ram_u0/_N2939;
+bmc_cpld_i2c_ram_u0/_N2941;
+bmc_cpld_i2c_ram_u0/_N2942;
+bmc_cpld_i2c_ram_u0/_N2949;
+bmc_cpld_i2c_ram_u0/_N2956;
+bmc_cpld_i2c_ram_u0/_N2959;
+bmc_cpld_i2c_ram_u0/_N2960;
+bmc_cpld_i2c_ram_u0/_N2961;
+bmc_cpld_i2c_ram_u0/_N2962;
+bmc_cpld_i2c_ram_u0/_N2963;
+bmc_cpld_i2c_ram_u0/_N2965;
+bmc_cpld_i2c_ram_u0/_N2966;
+bmc_cpld_i2c_ram_u0/_N2967;
+bmc_cpld_i2c_ram_u0/_N2972;
+bmc_cpld_i2c_ram_u0/_N10986;
+bmc_cpld_i2c_ram_u0/_N11163;
+bmc_cpld_i2c_ram_u0/_N11172;
+bmc_cpld_i2c_ram_u0/_N11173;
+bmc_cpld_i2c_ram_u0/_N11175;
+bmc_cpld_i2c_ram_u0/_N11177;
+bmc_cpld_i2c_ram_u0/_N11180;
+bmc_cpld_i2c_ram_u0/_N11190;
+bmc_cpld_i2c_ram_u0/_N11195;
+bmc_cpld_i2c_ram_u0/_N11209;
+bmc_cpld_i2c_ram_u0/_N11210;
+bmc_cpld_i2c_ram_u0/_N11214;
+bmc_cpld_i2c_ram_u0/_N11220;
+bmc_cpld_i2c_ram_u0/_N12351;
+bmc_cpld_i2c_ram_u0/_N12352;
+bmc_cpld_i2c_ram_u0/_N12353;
+bmc_cpld_i2c_ram_u0/_N12354;
+bmc_cpld_i2c_ram_u0/_N12355;
+bmc_cpld_i2c_ram_u0/_N12356;
+bmc_cpld_i2c_ram_u0/_N12357;
+bmc_cpld_i2c_ram_u0/_N12581;
+bmc_cpld_i2c_ram_u0/_N12592;
+bmc_cpld_i2c_ram_u0/_N12643;
+bmc_cpld_i2c_ram_u0/_N12644;
+bmc_cpld_i2c_ram_u0/_N12647;
 bmc_cpld_i2c_ram_u0/_N12890;
-bmc_cpld_i2c_ram_u0/_N13072;
-bmc_cpld_i2c_ram_u0/_N13137;
+bmc_cpld_i2c_ram_u0/_N13032;
+bmc_cpld_i2c_ram_u0/_N13197;
+bmc_cpld_i2c_ram_u0/_N13232;
+bmc_cpld_i2c_ram_u0/_N13274;
 bmc_cpld_i2c_ram_u0/bios_eeprom_wp;
 bmc_cpld_i2c_ram_u0/bmc_i2c_rst2 [3];
 bmc_cpld_i2c_ram_u0/bmc_i2c_rst2 [4];
@@ -48449,7 +49016,6 @@ bmc_cpld_i2c_ram_u0/fan_wdt_timeout_cnt [5];
 bmc_cpld_i2c_ram_u0/fan_wdt_timeout_r [0];
 bmc_cpld_i2c_ram_u0/fan_wdt_timeout_r [1];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N3;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_I2C_state_reg[9]_;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_scl_in;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_addr_hit;
@@ -48537,8 +49103,8 @@ db_alert_inst1/N91 [1];
 db_alert_inst1/N96;
 db_alert_inst1/N97 [0];
 db_alert_inst1/N97 [1];
-db_alert_inst1/_N12262;
-db_alert_inst1/_N12263;
+db_alert_inst1/_N12371;
+db_alert_inst1/_N12372;
 db_alert_inst1/cnt[0] [0];
 db_alert_inst1/cnt[0] [1];
 db_alert_inst1/cnt[1] [0];
@@ -48563,10 +49129,10 @@ db_bp_pgood_fault/N475;
 db_bp_pgood_fault/N476 [0];
 db_bp_pgood_fault/N476 [1];
 db_bp_pgood_fault/N476 [2];
-db_bp_pgood_fault/_N12264;
-db_bp_pgood_fault/_N12265;
-db_bp_pgood_fault/_N12266;
-db_bp_pgood_fault/_N12267;
+db_bp_pgood_fault/_N12373;
+db_bp_pgood_fault/_N12374;
+db_bp_pgood_fault/_N12375;
+db_bp_pgood_fault/_N12376;
 db_bp_pgood_fault/cnt[0] [0];
 db_bp_pgood_fault/cnt[0] [1];
 db_bp_pgood_fault/cnt[0] [2];
@@ -48591,22 +49157,38 @@ db_bp_pgood_fault/nxt_s1 [0];
 db_bp_pgood_fault/nxt_s1 [1];
 db_bp_pgood_fault/nxt_s1 [2];
 db_bp_pgood_fault/nxt_s1 [3];
-db_fan_ctrl_inst1/N158;
-db_fan_ctrl_inst1/N159 [0];
-db_fan_ctrl_inst1/N159 [1];
-db_fan_ctrl_inst1/N173;
-db_fan_ctrl_inst1/N174 [0];
-db_fan_ctrl_inst1/N174 [1];
-db_fan_ctrl_inst1/N188;
-db_fan_ctrl_inst1/N189 [0];
-db_fan_ctrl_inst1/N189 [1];
-db_fan_ctrl_inst1/N194;
-db_fan_ctrl_inst1/N195 [0];
-db_fan_ctrl_inst1/N195 [1];
-db_fan_ctrl_inst1/_N12268;
-db_fan_ctrl_inst1/_N12269;
-db_fan_ctrl_inst1/_N12270;
-db_fan_ctrl_inst1/_N12271;
+db_fan_ctrl_inst1/N430;
+db_fan_ctrl_inst1/N431 [0];
+db_fan_ctrl_inst1/N431 [1];
+db_fan_ctrl_inst1/N445;
+db_fan_ctrl_inst1/N446 [0];
+db_fan_ctrl_inst1/N446 [1];
+db_fan_ctrl_inst1/N460;
+db_fan_ctrl_inst1/N461 [0];
+db_fan_ctrl_inst1/N461 [1];
+db_fan_ctrl_inst1/N475;
+db_fan_ctrl_inst1/N476 [0];
+db_fan_ctrl_inst1/N476 [1];
+db_fan_ctrl_inst1/N550;
+db_fan_ctrl_inst1/N551 [0];
+db_fan_ctrl_inst1/N551 [1];
+db_fan_ctrl_inst1/N565;
+db_fan_ctrl_inst1/N566 [0];
+db_fan_ctrl_inst1/N566 [1];
+db_fan_ctrl_inst1/N580;
+db_fan_ctrl_inst1/N581 [0];
+db_fan_ctrl_inst1/N581 [1];
+db_fan_ctrl_inst1/N586;
+db_fan_ctrl_inst1/N587 [0];
+db_fan_ctrl_inst1/N587 [1];
+db_fan_ctrl_inst1/_N12377;
+db_fan_ctrl_inst1/_N12378;
+db_fan_ctrl_inst1/_N12379;
+db_fan_ctrl_inst1/_N12380;
+db_fan_ctrl_inst1/_N12381;
+db_fan_ctrl_inst1/_N12382;
+db_fan_ctrl_inst1/_N12383;
+db_fan_ctrl_inst1/_N12384;
 db_fan_ctrl_inst1/cnt[0] [0];
 db_fan_ctrl_inst1/cnt[0] [1];
 db_fan_ctrl_inst1/cnt[1] [0];
@@ -48615,14 +49197,30 @@ db_fan_ctrl_inst1/cnt[2] [0];
 db_fan_ctrl_inst1/cnt[2] [1];
 db_fan_ctrl_inst1/cnt[3] [0];
 db_fan_ctrl_inst1/cnt[3] [1];
+db_fan_ctrl_inst1/cnt[8] [0];
+db_fan_ctrl_inst1/cnt[8] [1];
+db_fan_ctrl_inst1/cnt[9] [0];
+db_fan_ctrl_inst1/cnt[9] [1];
+db_fan_ctrl_inst1/cnt[10] [0];
+db_fan_ctrl_inst1/cnt[10] [1];
+db_fan_ctrl_inst1/cnt[11] [0];
+db_fan_ctrl_inst1/cnt[11] [1];
 db_fan_ctrl_inst1/nxt [0];
 db_fan_ctrl_inst1/nxt [1];
 db_fan_ctrl_inst1/nxt [2];
 db_fan_ctrl_inst1/nxt [3];
+db_fan_ctrl_inst1/nxt [8];
+db_fan_ctrl_inst1/nxt [9];
+db_fan_ctrl_inst1/nxt [10];
+db_fan_ctrl_inst1/nxt [11];
 db_fan_ctrl_inst1/nxt_s1 [0];
 db_fan_ctrl_inst1/nxt_s1 [1];
 db_fan_ctrl_inst1/nxt_s1 [2];
 db_fan_ctrl_inst1/nxt_s1 [3];
+db_fan_ctrl_inst1/nxt_s1 [8];
+db_fan_ctrl_inst1/nxt_s1 [9];
+db_fan_ctrl_inst1/nxt_s1 [10];
+db_fan_ctrl_inst1/nxt_s1 [11];
 db_inst_button/N1146;
 db_inst_button/N1147 [0];
 db_inst_button/N1147 [1];
@@ -48638,16 +49236,16 @@ db_inst_button/N1267 [1];
 db_inst_button/N1272;
 db_inst_button/N1273 [0];
 db_inst_button/N1273 [1];
-db_inst_button/_N12272;
-db_inst_button/_N12273;
-db_inst_button/_N12274;
-db_inst_button/_N12275;
-db_inst_button/_N12276;
-db_inst_button/_N12992;
-db_inst_button/_N12994;
-db_inst_button/_N12996;
-db_inst_button/_N13000;
-db_inst_button/_N13002;
+db_inst_button/_N12385;
+db_inst_button/_N12386;
+db_inst_button/_N12387;
+db_inst_button/_N12388;
+db_inst_button/_N12389;
+db_inst_button/_N13140;
+db_inst_button/_N13142;
+db_inst_button/_N13144;
+db_inst_button/_N13146;
+db_inst_button/_N13148;
 db_inst_button/cnt[16] [0];
 db_inst_button/cnt[16] [1];
 db_inst_button/cnt[17] [0];
@@ -48801,38 +49399,38 @@ db_inst_cpu_rail/N2148;
 db_inst_cpu_rail/N2149 [0];
 db_inst_cpu_rail/N2149 [1];
 db_inst_cpu_rail/N2149 [2];
-db_inst_cpu_rail/_N12277;
-db_inst_cpu_rail/_N12278;
-db_inst_cpu_rail/_N12279;
-db_inst_cpu_rail/_N12280;
-db_inst_cpu_rail/_N12281;
-db_inst_cpu_rail/_N12282;
-db_inst_cpu_rail/_N12283;
-db_inst_cpu_rail/_N12284;
-db_inst_cpu_rail/_N12285;
-db_inst_cpu_rail/_N12286;
-db_inst_cpu_rail/_N12287;
-db_inst_cpu_rail/_N12288;
-db_inst_cpu_rail/_N12289;
-db_inst_cpu_rail/_N12290;
-db_inst_cpu_rail/_N12291;
-db_inst_cpu_rail/_N12292;
-db_inst_cpu_rail/_N12293;
-db_inst_cpu_rail/_N12294;
-db_inst_cpu_rail/_N12295;
-db_inst_cpu_rail/_N12296;
-db_inst_cpu_rail/_N12297;
-db_inst_cpu_rail/_N12298;
-db_inst_cpu_rail/_N12299;
-db_inst_cpu_rail/_N12300;
-db_inst_cpu_rail/_N12301;
-db_inst_cpu_rail/_N12302;
-db_inst_cpu_rail/_N12303;
-db_inst_cpu_rail/_N12304;
-db_inst_cpu_rail/_N12305;
-db_inst_cpu_rail/_N12306;
-db_inst_cpu_rail/_N12307;
-db_inst_cpu_rail/_N12308;
+db_inst_cpu_rail/_N12390;
+db_inst_cpu_rail/_N12391;
+db_inst_cpu_rail/_N12392;
+db_inst_cpu_rail/_N12393;
+db_inst_cpu_rail/_N12394;
+db_inst_cpu_rail/_N12395;
+db_inst_cpu_rail/_N12396;
+db_inst_cpu_rail/_N12397;
+db_inst_cpu_rail/_N12398;
+db_inst_cpu_rail/_N12399;
+db_inst_cpu_rail/_N12400;
+db_inst_cpu_rail/_N12401;
+db_inst_cpu_rail/_N12402;
+db_inst_cpu_rail/_N12403;
+db_inst_cpu_rail/_N12404;
+db_inst_cpu_rail/_N12405;
+db_inst_cpu_rail/_N12406;
+db_inst_cpu_rail/_N12407;
+db_inst_cpu_rail/_N12408;
+db_inst_cpu_rail/_N12409;
+db_inst_cpu_rail/_N12410;
+db_inst_cpu_rail/_N12411;
+db_inst_cpu_rail/_N12412;
+db_inst_cpu_rail/_N12413;
+db_inst_cpu_rail/_N12414;
+db_inst_cpu_rail/_N12415;
+db_inst_cpu_rail/_N12416;
+db_inst_cpu_rail/_N12417;
+db_inst_cpu_rail/_N12418;
+db_inst_cpu_rail/_N12419;
+db_inst_cpu_rail/_N12420;
+db_inst_cpu_rail/_N12421;
 db_inst_cpu_rail/cnt[0] [0];
 db_inst_cpu_rail/cnt[0] [1];
 db_inst_cpu_rail/cnt[0] [2];
@@ -49054,7 +49652,6 @@ db_inst_prsnt/N1145 [0];
 db_inst_prsnt/N1145 [1];
 db_inst_prsnt/N1189;
 db_inst_prsnt/N1190 [0];
-db_inst_prsnt/N1190 [1];
 db_inst_prsnt/N1204;
 db_inst_prsnt/N1205 [0];
 db_inst_prsnt/N1205 [1];
@@ -49106,44 +49703,45 @@ db_inst_prsnt/N1430 [1];
 db_inst_prsnt/N1444;
 db_inst_prsnt/N1445 [0];
 db_inst_prsnt/N1445 [1];
-db_inst_prsnt/_N12309;
-db_inst_prsnt/_N12310;
-db_inst_prsnt/_N12311;
-db_inst_prsnt/_N12312;
-db_inst_prsnt/_N12313;
-db_inst_prsnt/_N12314;
-db_inst_prsnt/_N12315;
-db_inst_prsnt/_N12316;
-db_inst_prsnt/_N12317;
-db_inst_prsnt/_N12318;
-db_inst_prsnt/_N12319;
-db_inst_prsnt/_N12320;
-db_inst_prsnt/_N12321;
-db_inst_prsnt/_N12322;
-db_inst_prsnt/_N12323;
-db_inst_prsnt/_N12324;
-db_inst_prsnt/_N12325;
-db_inst_prsnt/_N12326;
-db_inst_prsnt/_N12327;
-db_inst_prsnt/_N12777;
-db_inst_prsnt/_N12779;
-db_inst_prsnt/_N12781;
-db_inst_prsnt/_N12785;
-db_inst_prsnt/_N12801;
-db_inst_prsnt/_N12805;
-db_inst_prsnt/_N12830;
-db_inst_prsnt/_N12832;
-db_inst_prsnt/_N12859;
-db_inst_prsnt/_N12892;
-db_inst_prsnt/_N12894;
-db_inst_prsnt/_N12896;
-db_inst_prsnt/_N12904;
-db_inst_prsnt/_N12933;
-db_inst_prsnt/_N12935;
-db_inst_prsnt/_N12944;
-db_inst_prsnt/_N12957;
-db_inst_prsnt/_N13011;
-db_inst_prsnt/_N13013;
+db_inst_prsnt/_N9416;
+db_inst_prsnt/_N12422;
+db_inst_prsnt/_N12423;
+db_inst_prsnt/_N12424;
+db_inst_prsnt/_N12425;
+db_inst_prsnt/_N12426;
+db_inst_prsnt/_N12427;
+db_inst_prsnt/_N12428;
+db_inst_prsnt/_N12429;
+db_inst_prsnt/_N12430;
+db_inst_prsnt/_N12431;
+db_inst_prsnt/_N12432;
+db_inst_prsnt/_N12433;
+db_inst_prsnt/_N12434;
+db_inst_prsnt/_N12435;
+db_inst_prsnt/_N12436;
+db_inst_prsnt/_N12437;
+db_inst_prsnt/_N12438;
+db_inst_prsnt/_N12439;
+db_inst_prsnt/_N12440;
+db_inst_prsnt/_N12908;
+db_inst_prsnt/_N12910;
+db_inst_prsnt/_N12912;
+db_inst_prsnt/_N12914;
+db_inst_prsnt/_N12916;
+db_inst_prsnt/_N12924;
+db_inst_prsnt/_N12926;
+db_inst_prsnt/_N12959;
+db_inst_prsnt/_N12963;
+db_inst_prsnt/_N12981;
+db_inst_prsnt/_N13000;
+db_inst_prsnt/_N13002;
+db_inst_prsnt/_N13006;
+db_inst_prsnt/_N13024;
+db_inst_prsnt/_N13038;
+db_inst_prsnt/_N13056;
+db_inst_prsnt/_N13072;
+db_inst_prsnt/_N13150;
+db_inst_prsnt/_N13152;
 db_inst_prsnt/cnt[0] [0];
 db_inst_prsnt/cnt[0] [1];
 db_inst_prsnt/cnt[3] [0];
@@ -49239,14 +49837,14 @@ db_inst_prsnt/nxt_s1 [19];
 db_inst_prsnt/nxt_s1 [20];
 db_inst_psu/N90;
 db_inst_psu/N91 [0];
+db_inst_psu/N91 [1];
 db_inst_psu/N96;
 db_inst_psu/N97 [0];
 db_inst_psu/N97 [1];
-db_inst_psu/_N10525;
-db_inst_psu/_N12328;
-db_inst_psu/_N12329;
-db_inst_psu/_N12783;
-db_inst_psu/_N12787;
+db_inst_psu/_N12441;
+db_inst_psu/_N12442;
+db_inst_psu/_N12918;
+db_inst_psu/_N12920;
 db_inst_psu/cnt[0] [0];
 db_inst_psu/cnt[0] [1];
 db_inst_psu/cnt[1] [0];
@@ -49262,7 +49860,7 @@ db_intruder/N44;
 db_intruder/N45 [0];
 db_intruder/N45 [1];
 db_intruder/N45 [2];
-db_intruder/_N12330;
+db_intruder/_N12443;
 db_intruder/cnt[0] [0];
 db_intruder/cnt[0] [1];
 db_intruder/cnt[0] [2];
@@ -49272,7 +49870,7 @@ db_intruder/nxt_s1 [0];
 genblk1[0].fan_pwm_tach_m/Edge_Detect_u2/r_signal_a;
 genblk1[0].fan_pwm_tach_m/Edge_Detect_u2/r_signal_b;
 genblk1[0].fan_pwm_tach_m/N15_inv;
-genblk1[0].fan_pwm_tach_m/_N12506;
+genblk1[0].fan_pwm_tach_m/_N12608;
 genblk1[0].fan_pwm_tach_m/r_clr_pwm_cnt;
 genblk1[0].fan_pwm_tach_m/w_cnt_pwm [0];
 genblk1[0].fan_pwm_tach_m/w_cnt_pwm [1];
@@ -49309,7 +49907,7 @@ genblk1[0].fan_pwm_tach_m/Edge_Detect_u3/r_signal_b;
 genblk1[1].fan_pwm_tach_m/Edge_Detect_u2/r_signal_a;
 genblk1[1].fan_pwm_tach_m/Edge_Detect_u2/r_signal_b;
 genblk1[1].fan_pwm_tach_m/N15_inv;
-genblk1[1].fan_pwm_tach_m/_N12559;
+genblk1[1].fan_pwm_tach_m/_N12719;
 genblk1[1].fan_pwm_tach_m/r_clr_pwm_cnt;
 genblk1[1].fan_pwm_tach_m/w_cnt_pwm [0];
 genblk1[1].fan_pwm_tach_m/w_cnt_pwm [1];
@@ -49343,7 +49941,6 @@ genblk1[1].fan_pwm_tach_m/w_fan_tach1_cnt_pre [9];
 genblk1[1].fan_pwm_tach_m/w_fan_tach1_cnt_pre [10];
 genblk1[1].fan_pwm_tach_m/Edge_Detect_u3/r_signal_a;
 genblk1[1].fan_pwm_tach_m/Edge_Detect_u3/r_signal_b;
-inst_mcpld_to_scpld_p2s/N52;
 inst_mcpld_to_scpld_p2s/N569;
 inst_mcpld_to_scpld_p2s/N570 [1];
 inst_mcpld_to_scpld_p2s/N570 [2];
@@ -49355,63 +49952,66 @@ inst_mcpld_to_scpld_p2s/N570 [7];
 inst_mcpld_to_scpld_p2s/N570 [8];
 inst_mcpld_to_scpld_p2s/N575;
 inst_mcpld_to_scpld_p2s/N576;
-inst_mcpld_to_scpld_p2s/_N1644;
-inst_mcpld_to_scpld_p2s/_N1645;
-inst_mcpld_to_scpld_p2s/_N1646;
-inst_mcpld_to_scpld_p2s/_N1647;
-inst_mcpld_to_scpld_p2s/_N1648;
-inst_mcpld_to_scpld_p2s/_N1649;
-inst_mcpld_to_scpld_p2s/_N1650;
-inst_mcpld_to_scpld_p2s/_N1805;
-inst_mcpld_to_scpld_p2s/_N1809;
-inst_mcpld_to_scpld_p2s/_N1816;
-inst_mcpld_to_scpld_p2s/_N1820;
-inst_mcpld_to_scpld_p2s/_N1826;
-inst_mcpld_to_scpld_p2s/_N1837;
-inst_mcpld_to_scpld_p2s/_N1839;
-inst_mcpld_to_scpld_p2s/_N1840;
-inst_mcpld_to_scpld_p2s/_N1841;
+inst_mcpld_to_scpld_p2s/_N1555;
+inst_mcpld_to_scpld_p2s/_N1556;
+inst_mcpld_to_scpld_p2s/_N1557;
+inst_mcpld_to_scpld_p2s/_N1558;
+inst_mcpld_to_scpld_p2s/_N1559;
+inst_mcpld_to_scpld_p2s/_N1560;
+inst_mcpld_to_scpld_p2s/_N1561;
+inst_mcpld_to_scpld_p2s/_N1829;
+inst_mcpld_to_scpld_p2s/_N1832;
+inst_mcpld_to_scpld_p2s/_N1836;
 inst_mcpld_to_scpld_p2s/_N1843;
-inst_mcpld_to_scpld_p2s/_N1845;
 inst_mcpld_to_scpld_p2s/_N1847;
-inst_mcpld_to_scpld_p2s/_N1850;
-inst_mcpld_to_scpld_p2s/_N1851;
-inst_mcpld_to_scpld_p2s/_N1854;
-inst_mcpld_to_scpld_p2s/_N1857;
-inst_mcpld_to_scpld_p2s/_N1858;
-inst_mcpld_to_scpld_p2s/_N1859;
-inst_mcpld_to_scpld_p2s/_N1862;
-inst_mcpld_to_scpld_p2s/_N1865;
+inst_mcpld_to_scpld_p2s/_N1853;
+inst_mcpld_to_scpld_p2s/_N1864;
 inst_mcpld_to_scpld_p2s/_N1866;
-inst_mcpld_to_scpld_p2s/_N1869;
+inst_mcpld_to_scpld_p2s/_N1867;
+inst_mcpld_to_scpld_p2s/_N1868;
+inst_mcpld_to_scpld_p2s/_N1870;
 inst_mcpld_to_scpld_p2s/_N1872;
-inst_mcpld_to_scpld_p2s/_N1873;
 inst_mcpld_to_scpld_p2s/_N1874;
+inst_mcpld_to_scpld_p2s/_N1877;
 inst_mcpld_to_scpld_p2s/_N1878;
 inst_mcpld_to_scpld_p2s/_N1881;
-inst_mcpld_to_scpld_p2s/_N1882;
+inst_mcpld_to_scpld_p2s/_N1884;
 inst_mcpld_to_scpld_p2s/_N1885;
-inst_mcpld_to_scpld_p2s/_N1888;
+inst_mcpld_to_scpld_p2s/_N1886;
 inst_mcpld_to_scpld_p2s/_N1889;
-inst_mcpld_to_scpld_p2s/_N1890;
-inst_mcpld_to_scpld_p2s/_N1895;
-inst_mcpld_to_scpld_p2s/_N1897;
+inst_mcpld_to_scpld_p2s/_N1892;
+inst_mcpld_to_scpld_p2s/_N1893;
+inst_mcpld_to_scpld_p2s/_N1896;
+inst_mcpld_to_scpld_p2s/_N1899;
 inst_mcpld_to_scpld_p2s/_N1900;
-inst_mcpld_to_scpld_p2s/_N1903;
-inst_mcpld_to_scpld_p2s/_N1904;
-inst_mcpld_to_scpld_p2s/_N1907;
-inst_mcpld_to_scpld_p2s/_N1910;
-inst_mcpld_to_scpld_p2s/_N1911;
+inst_mcpld_to_scpld_p2s/_N1901;
+inst_mcpld_to_scpld_p2s/_N1905;
+inst_mcpld_to_scpld_p2s/_N1908;
+inst_mcpld_to_scpld_p2s/_N1909;
 inst_mcpld_to_scpld_p2s/_N1912;
+inst_mcpld_to_scpld_p2s/_N1915;
 inst_mcpld_to_scpld_p2s/_N1916;
-inst_mcpld_to_scpld_p2s/_N1919;
-inst_mcpld_to_scpld_p2s/_N1920;
+inst_mcpld_to_scpld_p2s/_N1917;
+inst_mcpld_to_scpld_p2s/_N1922;
 inst_mcpld_to_scpld_p2s/_N1924;
 inst_mcpld_to_scpld_p2s/_N1927;
+inst_mcpld_to_scpld_p2s/_N1930;
 inst_mcpld_to_scpld_p2s/_N1931;
-inst_mcpld_to_scpld_p2s/_N1933;
-inst_mcpld_to_scpld_p2s/_N1935;
-inst_mcpld_to_scpld_p2s/_N1936;
+inst_mcpld_to_scpld_p2s/_N1934;
+inst_mcpld_to_scpld_p2s/_N1937;
+inst_mcpld_to_scpld_p2s/_N1938;
+inst_mcpld_to_scpld_p2s/_N1939;
+inst_mcpld_to_scpld_p2s/_N1943;
+inst_mcpld_to_scpld_p2s/_N1946;
+inst_mcpld_to_scpld_p2s/_N1947;
+inst_mcpld_to_scpld_p2s/_N1951;
+inst_mcpld_to_scpld_p2s/_N1954;
+inst_mcpld_to_scpld_p2s/_N1958;
+inst_mcpld_to_scpld_p2s/_N1960;
+inst_mcpld_to_scpld_p2s/_N1962;
+inst_mcpld_to_scpld_p2s/_N1963;
+inst_mcpld_to_scpld_p2s/_N12846;
+inst_mcpld_to_scpld_p2s/_N13017;
 inst_mcpld_to_scpld_p2s/cnt [6];
 inst_mcpld_to_scpld_p2s/cnt [7];
 inst_mcpld_to_scpld_p2s/cnt [8];
@@ -49951,62 +50551,62 @@ inst_scpld_to_mcpld_s2p/N68 [510];
 inst_scpld_to_mcpld_s2p/N68 [511];
 inst_scpld_to_mcpld_s2p/N80;
 inst_scpld_to_mcpld_s2p/N1115_inv;
-inst_scpld_to_mcpld_s2p/_N1523;
-inst_scpld_to_mcpld_s2p/_N1524;
-inst_scpld_to_mcpld_s2p/_N1525;
-inst_scpld_to_mcpld_s2p/_N1526;
-inst_scpld_to_mcpld_s2p/_N1527;
-inst_scpld_to_mcpld_s2p/_N1528;
-inst_scpld_to_mcpld_s2p/_N1529;
-inst_scpld_to_mcpld_s2p/_N1530;
-inst_scpld_to_mcpld_s2p/_N11109;
-inst_scpld_to_mcpld_s2p/_N11110;
-inst_scpld_to_mcpld_s2p/_N11111;
-inst_scpld_to_mcpld_s2p/_N11112;
-inst_scpld_to_mcpld_s2p/_N11113;
-inst_scpld_to_mcpld_s2p/_N11114;
-inst_scpld_to_mcpld_s2p/_N11115;
-inst_scpld_to_mcpld_s2p/_N11116;
-inst_scpld_to_mcpld_s2p/_N11117;
-inst_scpld_to_mcpld_s2p/_N11118;
-inst_scpld_to_mcpld_s2p/_N11119;
-inst_scpld_to_mcpld_s2p/_N11120;
-inst_scpld_to_mcpld_s2p/_N11121;
-inst_scpld_to_mcpld_s2p/_N11122;
-inst_scpld_to_mcpld_s2p/_N11123;
-inst_scpld_to_mcpld_s2p/_N11125;
-inst_scpld_to_mcpld_s2p/_N11126;
-inst_scpld_to_mcpld_s2p/_N11127;
-inst_scpld_to_mcpld_s2p/_N11128;
-inst_scpld_to_mcpld_s2p/_N11129;
-inst_scpld_to_mcpld_s2p/_N11130;
-inst_scpld_to_mcpld_s2p/_N11131;
-inst_scpld_to_mcpld_s2p/_N11132;
-inst_scpld_to_mcpld_s2p/_N11133;
-inst_scpld_to_mcpld_s2p/_N11134;
-inst_scpld_to_mcpld_s2p/_N11135;
-inst_scpld_to_mcpld_s2p/_N11136;
-inst_scpld_to_mcpld_s2p/_N11137;
-inst_scpld_to_mcpld_s2p/_N11138;
-inst_scpld_to_mcpld_s2p/_N11139;
-inst_scpld_to_mcpld_s2p/_N11140;
-inst_scpld_to_mcpld_s2p/_N11141;
-inst_scpld_to_mcpld_s2p/_N11142;
-inst_scpld_to_mcpld_s2p/_N11143;
-inst_scpld_to_mcpld_s2p/_N11144;
-inst_scpld_to_mcpld_s2p/_N11145;
-inst_scpld_to_mcpld_s2p/_N11146;
-inst_scpld_to_mcpld_s2p/_N11147;
-inst_scpld_to_mcpld_s2p/_N11148;
-inst_scpld_to_mcpld_s2p/_N11149;
-inst_scpld_to_mcpld_s2p/_N11150;
-inst_scpld_to_mcpld_s2p/_N11151;
-inst_scpld_to_mcpld_s2p/_N11152;
-inst_scpld_to_mcpld_s2p/_N11153;
-inst_scpld_to_mcpld_s2p/_N11154;
-inst_scpld_to_mcpld_s2p/_N11155;
-inst_scpld_to_mcpld_s2p/_N11466;
-inst_scpld_to_mcpld_s2p/_N11467;
+inst_scpld_to_mcpld_s2p/_N1545;
+inst_scpld_to_mcpld_s2p/_N1546;
+inst_scpld_to_mcpld_s2p/_N1547;
+inst_scpld_to_mcpld_s2p/_N1548;
+inst_scpld_to_mcpld_s2p/_N1549;
+inst_scpld_to_mcpld_s2p/_N1550;
+inst_scpld_to_mcpld_s2p/_N1551;
+inst_scpld_to_mcpld_s2p/_N1552;
+inst_scpld_to_mcpld_s2p/_N11255;
+inst_scpld_to_mcpld_s2p/_N11256;
+inst_scpld_to_mcpld_s2p/_N11257;
+inst_scpld_to_mcpld_s2p/_N11258;
+inst_scpld_to_mcpld_s2p/_N11259;
+inst_scpld_to_mcpld_s2p/_N11260;
+inst_scpld_to_mcpld_s2p/_N11261;
+inst_scpld_to_mcpld_s2p/_N11262;
+inst_scpld_to_mcpld_s2p/_N11263;
+inst_scpld_to_mcpld_s2p/_N11264;
+inst_scpld_to_mcpld_s2p/_N11265;
+inst_scpld_to_mcpld_s2p/_N11266;
+inst_scpld_to_mcpld_s2p/_N11267;
+inst_scpld_to_mcpld_s2p/_N11268;
+inst_scpld_to_mcpld_s2p/_N11269;
+inst_scpld_to_mcpld_s2p/_N11271;
+inst_scpld_to_mcpld_s2p/_N11272;
+inst_scpld_to_mcpld_s2p/_N11273;
+inst_scpld_to_mcpld_s2p/_N11274;
+inst_scpld_to_mcpld_s2p/_N11275;
+inst_scpld_to_mcpld_s2p/_N11276;
+inst_scpld_to_mcpld_s2p/_N11277;
+inst_scpld_to_mcpld_s2p/_N11278;
+inst_scpld_to_mcpld_s2p/_N11279;
+inst_scpld_to_mcpld_s2p/_N11280;
+inst_scpld_to_mcpld_s2p/_N11281;
+inst_scpld_to_mcpld_s2p/_N11282;
+inst_scpld_to_mcpld_s2p/_N11283;
+inst_scpld_to_mcpld_s2p/_N11284;
+inst_scpld_to_mcpld_s2p/_N11285;
+inst_scpld_to_mcpld_s2p/_N11286;
+inst_scpld_to_mcpld_s2p/_N11287;
+inst_scpld_to_mcpld_s2p/_N11288;
+inst_scpld_to_mcpld_s2p/_N11289;
+inst_scpld_to_mcpld_s2p/_N11290;
+inst_scpld_to_mcpld_s2p/_N11291;
+inst_scpld_to_mcpld_s2p/_N11292;
+inst_scpld_to_mcpld_s2p/_N11293;
+inst_scpld_to_mcpld_s2p/_N11294;
+inst_scpld_to_mcpld_s2p/_N11295;
+inst_scpld_to_mcpld_s2p/_N11296;
+inst_scpld_to_mcpld_s2p/_N11297;
+inst_scpld_to_mcpld_s2p/_N11298;
+inst_scpld_to_mcpld_s2p/_N11299;
+inst_scpld_to_mcpld_s2p/_N11300;
+inst_scpld_to_mcpld_s2p/_N11301;
+inst_scpld_to_mcpld_s2p/_N11709;
+inst_scpld_to_mcpld_s2p/_N11710;
 inst_scpld_to_mcpld_s2p/cnt [0];
 inst_scpld_to_mcpld_s2p/cnt[0]_inv;
 inst_scpld_to_mcpld_s2p/cnt [1];
@@ -50549,8 +51149,8 @@ power_button_inst/N25;
 power_button_inst/N42;
 power_button_inst/N43 [0];
 power_button_inst/N43 [1];
-power_button_inst/_N12331;
-power_button_inst/_N12332;
+power_button_inst/_N12448;
+power_button_inst/_N12449;
 power_button_inst/force_off;
 power_button_inst/force_off_count [0];
 power_button_inst/force_off_count [1];
@@ -50561,32 +51161,34 @@ pwrseq_master_inst/N15;
 pwrseq_master_inst/N35;
 pwrseq_master_inst/N35.co [0];
 pwrseq_master_inst/N35.co [2];
-pwrseq_master_inst/N165;
-pwrseq_master_inst/N169;
-pwrseq_master_inst/N257;
-pwrseq_master_inst/N258;
-pwrseq_master_inst/N261;
+pwrseq_master_inst/N173;
+pwrseq_master_inst/N177;
+pwrseq_master_inst/N265;
+pwrseq_master_inst/N266;
 pwrseq_master_inst/N267;
+pwrseq_master_inst/N268;
 pwrseq_master_inst/N269;
-pwrseq_master_inst/N275;
-pwrseq_master_inst/N346;
-pwrseq_master_inst/N667;
-pwrseq_master_inst/N668 [0];
-pwrseq_master_inst/N668 [1];
-pwrseq_master_inst/N668 [2];
-pwrseq_master_inst/N668 [3];
-pwrseq_master_inst/N668 [4];
-pwrseq_master_inst/N668 [5];
-pwrseq_master_inst/N668 [6];
-pwrseq_master_inst/N668 [7];
-pwrseq_master_inst/N668 [8];
-pwrseq_master_inst/N668 [9];
-pwrseq_master_inst/N794;
-pwrseq_master_inst/N795 [0];
-pwrseq_master_inst/N795 [1];
-pwrseq_master_inst/N795 [2];
-pwrseq_master_inst/N980 [14];
-pwrseq_master_inst/_N12;
+pwrseq_master_inst/N277;
+pwrseq_master_inst/N279;
+pwrseq_master_inst/N281;
+pwrseq_master_inst/N283;
+pwrseq_master_inst/N285;
+pwrseq_master_inst/N684;
+pwrseq_master_inst/N685 [0];
+pwrseq_master_inst/N685 [1];
+pwrseq_master_inst/N685 [2];
+pwrseq_master_inst/N685 [3];
+pwrseq_master_inst/N685 [4];
+pwrseq_master_inst/N685 [5];
+pwrseq_master_inst/N685 [6];
+pwrseq_master_inst/N685 [7];
+pwrseq_master_inst/N685 [8];
+pwrseq_master_inst/N685 [9];
+pwrseq_master_inst/N819;
+pwrseq_master_inst/N820 [0];
+pwrseq_master_inst/N820 [1];
+pwrseq_master_inst/N820 [2];
+pwrseq_master_inst/N1009 [16];
 pwrseq_master_inst/_N20;
 pwrseq_master_inst/_N30;
 pwrseq_master_inst/_N35;
@@ -50596,64 +51198,79 @@ pwrseq_master_inst/_N50;
 pwrseq_master_inst/_N55;
 pwrseq_master_inst/_N60;
 pwrseq_master_inst/_N65;
-pwrseq_master_inst/_N66;
 pwrseq_master_inst/_N70;
+pwrseq_master_inst/_N73;
 pwrseq_master_inst/_N75;
+pwrseq_master_inst/_N76;
 pwrseq_master_inst/_N80;
 pwrseq_master_inst/_N85;
 pwrseq_master_inst/_N90;
 pwrseq_master_inst/_N95;
 pwrseq_master_inst/_N99;
 pwrseq_master_inst/_N118;
-pwrseq_master_inst/_N120;
-pwrseq_master_inst/_N123;
-pwrseq_master_inst/_N126;
-pwrseq_master_inst/_N129;
-pwrseq_master_inst/_N132;
-pwrseq_master_inst/_N135;
-pwrseq_master_inst/_N138;
-pwrseq_master_inst/_N141;
-pwrseq_master_inst/_N144;
-pwrseq_master_inst/_N147;
-pwrseq_master_inst/_N1497;
-pwrseq_master_inst/_N1498;
-pwrseq_master_inst/_N1499;
-pwrseq_master_inst/_N1500;
-pwrseq_master_inst/_N1501;
-pwrseq_master_inst/_N1502;
-pwrseq_master_inst/_N1503;
-pwrseq_master_inst/_N1504;
-pwrseq_master_inst/_N1773;
-pwrseq_master_inst/_N11326;
-pwrseq_master_inst/_N11329;
-pwrseq_master_inst/_N11331;
-pwrseq_master_inst/_N11332;
-pwrseq_master_inst/_N11333;
-pwrseq_master_inst/_N11334;
-pwrseq_master_inst/_N12335;
-pwrseq_master_inst/_N12336;
-pwrseq_master_inst/_N12337;
-pwrseq_master_inst/_N12338;
-pwrseq_master_inst/_N12339;
-pwrseq_master_inst/_N12340;
-pwrseq_master_inst/_N12341;
-pwrseq_master_inst/_N12955;
-pwrseq_master_inst/_N13016;
-pwrseq_master_inst/_N13030;
-pwrseq_master_inst/_N13058;
-pwrseq_master_inst/_N13099;
+pwrseq_master_inst/_N121;
+pwrseq_master_inst/_N124;
+pwrseq_master_inst/_N127;
+pwrseq_master_inst/_N130;
+pwrseq_master_inst/_N133;
+pwrseq_master_inst/_N136;
+pwrseq_master_inst/_N139;
+pwrseq_master_inst/_N142;
+pwrseq_master_inst/_N145;
+pwrseq_master_inst/_N148;
+pwrseq_master_inst/_N158;
+pwrseq_master_inst/_N1513;
+pwrseq_master_inst/_N1514;
+pwrseq_master_inst/_N1515;
+pwrseq_master_inst/_N1516;
+pwrseq_master_inst/_N1517;
+pwrseq_master_inst/_N1518;
+pwrseq_master_inst/_N1519;
+pwrseq_master_inst/_N1520;
+pwrseq_master_inst/_N1801;
+pwrseq_master_inst/_N11080;
+pwrseq_master_inst/_N11147;
+pwrseq_master_inst/_N11434;
+pwrseq_master_inst/_N11435;
+pwrseq_master_inst/_N11437;
+pwrseq_master_inst/_N11438;
+pwrseq_master_inst/_N11442;
+pwrseq_master_inst/_N12452;
+pwrseq_master_inst/_N12453;
+pwrseq_master_inst/_N12454;
+pwrseq_master_inst/_N12455;
+pwrseq_master_inst/_N12456;
+pwrseq_master_inst/_N12457;
+pwrseq_master_inst/_N12458;
+pwrseq_master_inst/_N12459;
+pwrseq_master_inst/_N12730;
+pwrseq_master_inst/_N12836;
+pwrseq_master_inst/_N12837;
+pwrseq_master_inst/_N13085;
+pwrseq_master_inst/_N13187;
+pwrseq_master_inst/_N13204;
+pwrseq_master_inst/_N13205;
+pwrseq_master_inst/_N13206;
+pwrseq_master_inst/_N13230;
+pwrseq_master_inst/_N13261;
 pwrseq_master_inst/dc_on_wait_complete;
 pwrseq_master_inst/dsw1_pwrok_timeout;
+pwrseq_master_inst/dsw2_pwrok_timeout;
+pwrseq_master_inst/dsw3_pwrok_timeout;
+pwrseq_master_inst/dsw_pwrok_timeout;
 pwrseq_master_inst/fault_clear_ns;
 pwrseq_master_inst/pch_thermtrip_n_delay;
 pwrseq_master_inst/pchdsw1_critical_fail_en;
 pwrseq_master_inst/pchdsw1_state_trans_en;
+pwrseq_master_inst/pchdsw2_critical_fail_en;
+pwrseq_master_inst/pchdsw2_state_trans_en;
+pwrseq_master_inst/pchdsw3_critical_fail_en;
+pwrseq_master_inst/pchdsw3_state_trans_en;
+pwrseq_master_inst/pchdsw_critical_fail_en;
+pwrseq_master_inst/pchdsw_state_trans_en;
 pwrseq_master_inst/pdn_watchdog_timeout;
 pwrseq_master_inst/po_failure_detected;
-pwrseq_master_inst/po_failure_detected_set_7;
-pwrseq_master_inst/pon_65ms_watchdog_timeout;
-pwrseq_master_inst/pon_rst_65ms_trans_en;
-pwrseq_master_inst/pon_watchdog_timeout;
+pwrseq_master_inst/po_failure_detected_set_12;
 pwrseq_master_inst/power_seq_sm_last [0];
 pwrseq_master_inst/power_seq_sm_last [1];
 pwrseq_master_inst/power_seq_sm_last [2];
@@ -50667,7 +51284,6 @@ pwrseq_master_inst/r_pwrbtn_1s_cnt [0];
 pwrseq_master_inst/r_pwrbtn_1s_cnt [1];
 pwrseq_master_inst/r_pwrbtn_1s_cnt [2];
 pwrseq_master_inst/turn_system_on;
-pwrseq_master_inst/wait_steady_pwrok_fail_en;
 pwrseq_master_inst/wdt_counter [0];
 pwrseq_master_inst/wdt_counter [1];
 pwrseq_master_inst/wdt_counter [2];
@@ -50679,30 +51295,32 @@ pwrseq_master_inst/wdt_counter [7];
 pwrseq_master_inst/wdt_counter [8];
 pwrseq_master_inst/wdt_counter [9];
 pwrseq_master_inst/wdt_tick;
-pwrseq_slave_inst/N842;
-pwrseq_slave_inst/N929;
-pwrseq_slave_inst/N1103;
-pwrseq_slave_inst/N1190;
-pwrseq_slave_inst/N2929;
-pwrseq_slave_inst/N3099;
-pwrseq_slave_inst/N3117;
-pwrseq_slave_inst/N3118 [0];
-pwrseq_slave_inst/N3118 [1];
-pwrseq_slave_inst/N3118 [2];
-pwrseq_slave_inst/N3118 [3];
-pwrseq_slave_inst/N3118 [4];
-pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/chklive_en[0]_;
-pwrseq_slave_inst/_N11344;
-pwrseq_slave_inst/_N11345;
-pwrseq_slave_inst/_N11387;
-pwrseq_slave_inst/_N12343;
-pwrseq_slave_inst/_N12344;
-pwrseq_slave_inst/_N12345;
-pwrseq_slave_inst/_N12346;
-pwrseq_slave_inst/_N12347;
-pwrseq_slave_inst/_N12348;
-pwrseq_slave_inst/_N12349;
-pwrseq_slave_inst/_N12350;
+pwrseq_slave_inst/N860;
+pwrseq_slave_inst/N950;
+pwrseq_slave_inst/N1130;
+pwrseq_slave_inst/N1220;
+pwrseq_slave_inst/N3019;
+pwrseq_slave_inst/N3198;
+pwrseq_slave_inst/N3288;
+pwrseq_slave_inst/N3307;
+pwrseq_slave_inst/N3308 [0];
+pwrseq_slave_inst/N3308 [1];
+pwrseq_slave_inst/N3308 [2];
+pwrseq_slave_inst/N3308 [3];
+pwrseq_slave_inst/N3308 [4];
+pwrseq_slave_inst/_N11489;
+pwrseq_slave_inst/_N11491;
+pwrseq_slave_inst/_N11492;
+pwrseq_slave_inst/_N12460;
+pwrseq_slave_inst/_N12461;
+pwrseq_slave_inst/_N12462;
+pwrseq_slave_inst/_N12463;
+pwrseq_slave_inst/_N12464;
+pwrseq_slave_inst/_N12465;
+pwrseq_slave_inst/_N12466;
+pwrseq_slave_inst/_N12467;
+pwrseq_slave_inst/_N12468;
+pwrseq_slave_inst/_N12671;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_check;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_det;
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_check;
@@ -50734,6 +51352,7 @@ pwrseq_slave_inst/cpupwrok_en_check;
 pwrseq_slave_inst/fault_save_en;
 pwrseq_slave_inst/p1v1_en_r_check;
 pwrseq_slave_inst/p3v3_stby_bp_fault_detect_inst/chklive_en[0]_;
+pwrseq_slave_inst/p5v_stby_en_r;
 pwrseq_slave_inst/p5v_stby_en_r_check;
 pwrseq_slave_inst/p12v_bp_rear_en_check;
 pwrseq_slave_inst/p12v_stby_en_check;
@@ -50787,31 +51406,31 @@ timer_gen_inst/N121;
 timer_gen_inst/N127 [1];
 timer_gen_inst/N127 [4];
 timer_gen_inst/N127 [5];
-timer_gen_inst/_N1361;
-timer_gen_inst/_N1533;
-timer_gen_inst/_N1534;
-timer_gen_inst/_N1535;
-timer_gen_inst/_N1536;
-timer_gen_inst/_N1539;
-timer_gen_inst/_N1540;
-timer_gen_inst/_N1541;
-timer_gen_inst/_N1542;
-timer_gen_inst/_N1543;
-timer_gen_inst/_N1544;
-timer_gen_inst/_N1545;
-timer_gen_inst/_N1546;
-timer_gen_inst/_N1547;
-timer_gen_inst/_N1548;
-timer_gen_inst/_N1549;
-timer_gen_inst/_N1550;
-timer_gen_inst/_N1551;
-timer_gen_inst/_N11405;
-timer_gen_inst/_N12231;
-timer_gen_inst/_N12232;
-timer_gen_inst/_N12233;
-timer_gen_inst/_N12234;
-timer_gen_inst/_N12500;
-timer_gen_inst/_N12839;
+timer_gen_inst/_N431;
+timer_gen_inst/_N1428;
+timer_gen_inst/_N1429;
+timer_gen_inst/_N1430;
+timer_gen_inst/_N1431;
+timer_gen_inst/_N1585;
+timer_gen_inst/_N1586;
+timer_gen_inst/_N1587;
+timer_gen_inst/_N1588;
+timer_gen_inst/_N1589;
+timer_gen_inst/_N1590;
+timer_gen_inst/_N1591;
+timer_gen_inst/_N1592;
+timer_gen_inst/_N1593;
+timer_gen_inst/_N1594;
+timer_gen_inst/_N1595;
+timer_gen_inst/_N1596;
+timer_gen_inst/_N1597;
+timer_gen_inst/_N11358;
+timer_gen_inst/_N12341;
+timer_gen_inst/_N12342;
+timer_gen_inst/_N12343;
+timer_gen_inst/_N12344;
+timer_gen_inst/_N12654;
+timer_gen_inst/_N13090;
 timer_gen_inst/cnt20ns [0];
 timer_gen_inst/cnt20ns [1];
 timer_gen_inst/nsec_tmr [0];
@@ -50888,6 +51507,8 @@ uart_master_u1/N457;
 uart_master_u1/N500 [0];
 uart_master_u1/N500 [1];
 uart_master_u1/N500 [2];
+uart_master_u1/N504 [2];
+uart_master_u1/N504 [4];
 uart_master_u1/_N3;
 uart_master_u1/_N12;
 uart_master_u1/_N15;
@@ -50896,31 +51517,34 @@ uart_master_u1/_N24;
 uart_master_u1/_N28;
 uart_master_u1/_N32;
 uart_master_u1/_N38;
-uart_master_u1/_N631;
-uart_master_u1/_N1490;
-uart_master_u1/_N1491;
-uart_master_u1/_N1492;
-uart_master_u1/_N1493;
-uart_master_u1/_N1494;
-uart_master_u1/_N11354;
-uart_master_u1/_N11355;
-uart_master_u1/_N11356;
-uart_master_u1/_N11357;
-uart_master_u1/_N11358;
-uart_master_u1/_N11359;
-uart_master_u1/_N12237;
-uart_master_u1/_N12401;
-uart_master_u1/_N12402;
-uart_master_u1/_N12403;
-uart_master_u1/_N12414;
-uart_master_u1/_N12614;
-uart_master_u1/_N13084;
+uart_master_u1/_N403;
+uart_master_u1/_N1421;
+uart_master_u1/_N1422;
+uart_master_u1/_N1423;
+uart_master_u1/_N1424;
+uart_master_u1/_N1425;
+uart_master_u1/_N11333;
+uart_master_u1/_N11342;
+uart_master_u1/_N11343;
+uart_master_u1/_N11344;
+uart_master_u1/_N11345;
+uart_master_u1/_N11346;
+uart_master_u1/_N11347;
+uart_master_u1/_N11352;
+uart_master_u1/_N12345;
+uart_master_u1/_N12346;
+uart_master_u1/_N12347;
+uart_master_u1/_N12446;
+uart_master_u1/_N12528;
+uart_master_u1/_N12701;
+uart_master_u1/_N13220;
 uart_master_u1/bps_count_bit [0];
 uart_master_u1/bps_count_bit [1];
 uart_master_u1/bps_count_bit [2];
 uart_master_u1/bps_count_bit [3];
 uart_master_u1/bps_count_bit [4];
 uart_master_u1/bps_count_bit [5];
+uart_master_u1/curr_state_reg [5];
 uart_master_u1/data_count [0];
 uart_master_u1/data_count [1];
 uart_master_u1/data_count [2];
@@ -51011,25 +51635,25 @@ uart_master_u2/_N25;
 uart_master_u2/_N28;
 uart_master_u2/_N32;
 uart_master_u2/_N38;
-uart_master_u2/_N403;
-uart_master_u2/_N1405;
-uart_master_u2/_N1406;
-uart_master_u2/_N1407;
-uart_master_u2/_N1408;
-uart_master_u2/_N1409;
-uart_master_u2/_N11266;
-uart_master_u2/_N11267;
-uart_master_u2/_N11268;
-uart_master_u2/_N11269;
-uart_master_u2/_N11270;
-uart_master_u2/_N11271;
-uart_master_u2/_N12235;
-uart_master_u2/_N12236;
-uart_master_u2/_N12238;
-uart_master_u2/_N12412;
-uart_master_u2/_N12567;
-uart_master_u2/_N13090;
-uart_master_u2/_N13120;
+uart_master_u2/_N1241;
+uart_master_u2/_N1522;
+uart_master_u2/_N1523;
+uart_master_u2/_N1524;
+uart_master_u2/_N1525;
+uart_master_u2/_N1526;
+uart_master_u2/_N11473;
+uart_master_u2/_N11474;
+uart_master_u2/_N11475;
+uart_master_u2/_N11476;
+uart_master_u2/_N11477;
+uart_master_u2/_N11478;
+uart_master_u2/_N12444;
+uart_master_u2/_N12445;
+uart_master_u2/_N12447;
+uart_master_u2/_N12530;
+uart_master_u2/_N12626;
+uart_master_u2/_N13237;
+uart_master_u2/_N13265;
 uart_master_u2/bps_count_bit [0];
 uart_master_u2/bps_count_bit [1];
 uart_master_u2/bps_count_bit [2];
@@ -51070,7 +51694,7 @@ uart_master_u2/reg_par_data_out [21];
 uart_master_u2/ser_data_out_tri_enable;
 uart_master_u2/wait_time [0];
 uart_master_u2/wait_time [1];
-UID_Function_u0/lowpass_filter_U0/_N12241;
+UID_Function_u0/lowpass_filter_U0/_N12350;
 UID_Function_u0/lowpass_filter_U0/r_data [0];
 UID_Function_u0/lowpass_filter_U0/r_data [1];
 UID_Function_u0/lowpass_filter_U0/r_data [2];
@@ -51152,20 +51776,6 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N141 [12];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N141 [13];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N141 [14];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N141 [15];
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1435;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1436;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1437;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1438;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1439;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1440;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1441;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1442;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1443;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1444;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1445;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1446;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1447;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1448;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1457;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1458;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1459;
@@ -51180,13 +51790,6 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1467;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1468;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1469;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1470;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1471;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1473;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1474;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1475;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1476;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1477;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1478;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1479;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1480;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1481;
@@ -51197,24 +51800,47 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1485;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1486;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1487;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1488;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1584;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1585;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1586;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1587;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1588;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1589;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1590;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1591;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1592;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1593;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1594;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1595;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1596;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1597;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12449;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12453;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12457;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12495;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1489;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1490;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1491;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1492;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1493;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1495;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1496;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1497;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1498;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1499;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1500;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1501;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1502;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1503;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1504;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1505;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1506;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1507;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1508;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1509;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1510;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1609;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1610;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1611;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1612;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1613;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1614;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1615;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1616;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1617;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1618;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1619;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1620;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1621;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N1622;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N11389;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12566;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12570;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12574;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/_N12614;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_I2C_state_reg[9]_;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/nb0 [0];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/nb0 [1];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/nb0 [2];
@@ -51323,12 +51949,12 @@ genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [4];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [5];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [6];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [7];
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1507;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1508;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1509;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1510;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1511;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1512;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1529;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1530;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1531;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1532;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1533;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1534;
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N16;
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [0];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [1];
@@ -51341,18 +51967,18 @@ genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [7];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [8];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [9];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [10];
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1222;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1230;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1610;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1611;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1612;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1613;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1614;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1615;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1616;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1617;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1618;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1619;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1256;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1264;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1635;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1636;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1637;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1638;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1639;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1640;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1641;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1642;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1643;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1644;
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N16;
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [0];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [1];
@@ -51365,18 +51991,18 @@ genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [7];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [8];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [9];
 genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [10];
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1164;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1172;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1599;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1600;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1601;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1602;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1603;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1604;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1605;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1606;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1607;
-genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1608;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1182;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1190;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1624;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1625;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1626;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1627;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1628;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1629;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1630;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1631;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1632;
+genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1633;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N16;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [0];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [1];
@@ -51386,12 +52012,12 @@ genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [4];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [5];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [6];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/N17 [7];
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1515;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1516;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1517;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1518;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1519;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1520;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1537;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1538;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1539;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1540;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1541;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u0/_N1542;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N16;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [0];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [1];
@@ -51404,18 +52030,18 @@ genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [7];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [8];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [9];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N17 [10];
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1284;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1292;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1632;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1633;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1634;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1635;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1636;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1637;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1638;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1639;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1640;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1641;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1318;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1326;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1657;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1658;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1659;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1660;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1661;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1662;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1663;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1664;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1665;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/_N1666;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N16;
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [0];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [1];
@@ -51428,18 +52054,18 @@ genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [7];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [8];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [9];
 genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/N17 [10];
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1242;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1250;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1621;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1622;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1623;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1624;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1625;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1626;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1627;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1628;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1629;
-genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1630;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1276;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1284;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1646;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1647;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1648;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1649;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1650;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1651;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1652;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1653;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1654;
+genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u2/_N1655;
 pwrcap_inst/inst[0].ps_ebrake_dct/N9;
 pwrcap_inst/inst[0].ps_ebrake_dct/N11;
 pwrcap_inst/inst[0].ps_ebrake_dct/buffit [0];
@@ -51455,270 +52081,271 @@ pwrcap_inst/inst[1].ps_ebrake_dct/falling_edge;
 pwrseq_master_inst/sb_thermtrip_delay_inst/N21;
 pwrseq_master_inst/sb_thermtrip_delay_inst/N22 [0];
 pwrseq_master_inst/sb_thermtrip_delay_inst/N22 [1];
-pwrseq_master_inst/sb_thermtrip_delay_inst/_N12334;
+pwrseq_master_inst/sb_thermtrip_delay_inst/_N12451;
 pwrseq_master_inst/sb_thermtrip_delay_inst/timer_cnt [0];
 pwrseq_master_inst/sb_thermtrip_delay_inst/timer_cnt [1];
 pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/N29;
-pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/_N12356;
-pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/_N12357;
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/_N12474;
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/_N12475;
 pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/any_vrm_fault;
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[0].inst_cpu_thermtrip_fault_det/chklive_en [0];
 pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[1].inst_cpu_thermtrip_fault_det/N29;
-pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[1].inst_cpu_thermtrip_fault_det/_N12358;
+pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[1].inst_cpu_thermtrip_fault_det/_N12476;
 pwrseq_slave_inst/_CPU_THERMTRIP_DETECT_BLOCK_[1].inst_cpu_thermtrip_fault_det/any_vrm_fault;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/N21;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/_N12359;
+pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/_N12477;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/_N12360;
-pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/_N12697;
+pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/_N12478;
+pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/_N12868;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_d0_vp_p0v9_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/N21;
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/_N12361;
+pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/_N12479;
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/_N12362;
-pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/_N12754;
+pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/_N12480;
+pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/_N12864;
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_d0_vph_p1v8_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/N21;
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/_N12363;
+pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/_N12481;
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/_N12364;
-pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/_N12681;
+pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/_N12482;
+pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/_N12819;
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_d1_vp_p0v9_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/N21;
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/_N12365;
+pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/_N12483;
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/_N12366;
-pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/_N12701;
+pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/_N12484;
+pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/_N12740;
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_d1_vph_p1v8_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/_N12367;
+pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/_N12485;
 pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_ddr_vdd_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/N29;
-pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/_N12368;
-pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/_N12654;
+pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/_N12486;
+pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/_N12744;
 pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_ddr_vdd_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/_N12369;
+pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/_N12487;
 pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_p1v8_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/N29;
-pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/_N12370;
-pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/_N12666;
+pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/_N12488;
+pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/_N12748;
 pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_p1v8_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/_N12371;
+pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/_N12489;
 pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_pll_p1v8_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/N29;
-pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/_N12372;
-pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/_N12670;
+pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/_N12490;
+pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/_N12752;
 pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_pll_p1v8_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/_N12373;
+pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/_N12491;
 pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_vdd_core_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/N29;
-pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/_N12374;
-pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/_N12677;
+pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/_N12492;
+pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/_N12758;
 pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_vdd_core_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/_N12375;
+pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/_N12493;
 pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu0_vddq_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu0_vddq_fault_det_inst/N29;
-pwrseq_slave_inst/cpu0_vddq_fault_det_inst/_N12376;
-pwrseq_slave_inst/cpu0_vddq_fault_det_inst/_N12714;
+pwrseq_slave_inst/cpu0_vddq_fault_det_inst/_N12494;
+pwrseq_slave_inst/cpu0_vddq_fault_det_inst/_N12762;
 pwrseq_slave_inst/cpu0_vddq_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu0_vddq_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/N21;
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/_N12377;
+pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/_N12495;
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/_N12378;
-pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/_N12718;
+pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/_N12496;
+pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/_N12766;
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_d0_vp_p0v9_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/N21;
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/_N12379;
+pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/_N12497;
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/_N12380;
-pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/_N12642;
+pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/_N12498;
+pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/_N12778;
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_d0_vph_p1v8_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/N21;
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/_N12381;
+pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/_N12499;
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/_N12382;
-pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/_N12622;
+pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/_N12500;
+pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/_N12782;
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_d1_vp_p0v9_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/N21;
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/N22 [0];
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/N22 [1];
-pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/_N12383;
+pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/_N12501;
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_en_r_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/N29;
-pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/_N12384;
-pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/_N12626;
+pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/_N12502;
+pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/_N12786;
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_d1_vph_p1v8_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/_N12385;
+pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/_N12503;
 pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_ddr_vdd_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/N29;
-pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/_N12386;
-pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/_N12630;
+pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/_N12504;
+pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/_N12807;
 pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_ddr_vdd_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/_N12387;
+pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/_N12505;
 pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_p1v8_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/N29;
-pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/_N12388;
-pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/_N12634;
+pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/_N12506;
+pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/_N12770;
 pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_p1v8_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/_N12389;
+pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/_N12507;
 pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_pll_p1v8_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/N29;
-pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/_N12390;
-pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/_N12638;
+pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/_N12508;
+pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/_N12774;
 pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_pll_p1v8_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/_N12391;
+pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/_N12509;
 pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_vdd_core_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/N29;
-pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/_N12392;
-pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/_N12646;
+pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/_N12510;
+pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/_N12896;
 pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_vdd_core_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/N21;
 pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/_N12393;
+pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/_N12511;
 pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpu1_vddq_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/cpu1_vddq_fault_det_inst/N29;
-pwrseq_slave_inst/cpu1_vddq_fault_det_inst/_N12394;
-pwrseq_slave_inst/cpu1_vddq_fault_det_inst/_N12658;
+pwrseq_slave_inst/cpu1_vddq_fault_det_inst/_N12512;
+pwrseq_slave_inst/cpu1_vddq_fault_det_inst/_N12903;
 pwrseq_slave_inst/cpu1_vddq_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/cpu1_vddq_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/cpupwrok_en_check_inst/N7 [0];
 pwrseq_slave_inst/cpupwrok_en_check_inst/N7 [1];
 pwrseq_slave_inst/cpupwrok_en_check_inst/N19;
-pwrseq_slave_inst/cpupwrok_en_check_inst/_N12395;
+pwrseq_slave_inst/cpupwrok_en_check_inst/_N12513;
 pwrseq_slave_inst/cpupwrok_en_check_inst/timer_cnt [0];
 pwrseq_slave_inst/cpupwrok_en_check_inst/timer_cnt [1];
 pwrseq_slave_inst/p1v1_en_r_check_inst/N21;
 pwrseq_slave_inst/p1v1_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/p1v1_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/p1v1_en_r_check_inst/_N12396;
+pwrseq_slave_inst/p1v1_en_r_check_inst/_N12514;
 pwrseq_slave_inst/p1v1_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/p1v1_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/p1v1_fault_det_inst/N29;
-pwrseq_slave_inst/p1v1_fault_det_inst/_N12397;
-pwrseq_slave_inst/p1v1_fault_det_inst/_N12662;
+pwrseq_slave_inst/p1v1_fault_det_inst/_N12515;
+pwrseq_slave_inst/p1v1_fault_det_inst/_N12794;
 pwrseq_slave_inst/p1v1_fault_det_inst/any_vrm_fault;
 pwrseq_slave_inst/p1v1_fault_det_inst/chklive_en [0];
 pwrseq_slave_inst/p3v3_stby_bp_fault_detect_inst/N29;
-pwrseq_slave_inst/p3v3_stby_bp_fault_detect_inst/_N12398;
+pwrseq_slave_inst/p3v3_stby_bp_fault_detect_inst/_N12516;
 pwrseq_slave_inst/p3v3_stby_bp_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p3v3_stby_fault_detect_inst/N29;
-pwrseq_slave_inst/p3v3_stby_fault_detect_inst/_N12399;
+pwrseq_slave_inst/p3v3_stby_fault_detect_inst/_N12517;
 pwrseq_slave_inst/p3v3_stby_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/N21;
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/N22 [0];
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/N22 [1];
-pwrseq_slave_inst/p5v_stby_en_r_check_inst/_N12400;
+pwrseq_slave_inst/p5v_stby_en_r_check_inst/_N12518;
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/timer_cnt [0];
 pwrseq_slave_inst/p5v_stby_en_r_check_inst/timer_cnt [1];
 pwrseq_slave_inst/p5v_stby_fault_detect_inst/N29;
-pwrseq_slave_inst/p5v_stby_fault_detect_inst/_N12342;
-pwrseq_slave_inst/p5v_stby_fault_detect_inst/_N12774;
+pwrseq_slave_inst/p5v_stby_fault_detect_inst/_N12519;
+pwrseq_slave_inst/p5v_stby_fault_detect_inst/_N12790;
 pwrseq_slave_inst/p5v_stby_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p5v_stby_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/p12v_bp_rear_en_check_inst/N21;
 pwrseq_slave_inst/p12v_bp_rear_en_check_inst/N22 [0];
 pwrseq_slave_inst/p12v_bp_rear_en_check_inst/N22 [1];
-pwrseq_slave_inst/p12v_bp_rear_en_check_inst/_N12351;
+pwrseq_slave_inst/p12v_bp_rear_en_check_inst/_N12471;
 pwrseq_slave_inst/p12v_bp_rear_en_check_inst/timer_cnt [0];
 pwrseq_slave_inst/p12v_bp_rear_en_check_inst/timer_cnt [1];
 pwrseq_slave_inst/p12v_cpu0_vin_fault_fault_detect_inst/N29;
-pwrseq_slave_inst/p12v_cpu0_vin_fault_fault_detect_inst/_N12352;
+pwrseq_slave_inst/p12v_cpu0_vin_fault_fault_detect_inst/_N12469;
 pwrseq_slave_inst/p12v_cpu0_vin_fault_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p12v_cpu0_vin_fault_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/p12v_cpu1_vin_fault_detect_inst/N29;
-pwrseq_slave_inst/p12v_cpu1_vin_fault_detect_inst/_N12353;
+pwrseq_slave_inst/p12v_cpu1_vin_fault_detect_inst/_N12470;
 pwrseq_slave_inst/p12v_cpu1_vin_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/N29;
-pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/_N12354;
-pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/_N12693;
+pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/_N12472;
+pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/_N12803;
 pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/any_vrm_fault;
 pwrseq_slave_inst/p12v_reat_bp_efuse_fault_detect_inst/chklive_en [0];
 pwrseq_slave_inst/p12v_stby_en_check_inst/N21;
 pwrseq_slave_inst/p12v_stby_en_check_inst/N22 [0];
 pwrseq_slave_inst/p12v_stby_en_check_inst/N22 [1];
-pwrseq_slave_inst/p12v_stby_en_check_inst/_N12355;
+pwrseq_slave_inst/p12v_stby_en_check_inst/_N12473;
 pwrseq_slave_inst/p12v_stby_en_check_inst/timer_cnt [0];
 pwrseq_slave_inst/p12v_stby_en_check_inst/timer_cnt [1];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N30;
@@ -51738,8 +52365,6 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N490;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N492;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N493;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N541;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N581_inv;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N643;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N709;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N710 [0];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/N710 [1];
@@ -51767,44 +52392,44 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N35;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N37;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N39;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N44;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1451;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1452;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1453;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1454;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1776;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1778;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1782;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1785;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11311;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11313;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11319;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11321;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11322;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11563;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12249;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12250;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12251;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12252;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12253;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12254;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12255;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12256;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12257;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12258;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12259;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12260;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12261;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12404;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12405;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12406;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12407;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12408;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12409;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12410;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12544;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12797;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12798;
-bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N13044;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1473;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1474;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1475;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1476;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1804;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1806;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1810;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N1813;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11391;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11394;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11400;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11402;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N11405;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12358;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12359;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12360;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12361;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12362;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12363;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12364;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12365;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12366;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12367;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12368;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12369;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12370;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12520;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12521;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12522;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12523;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12524;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12525;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12526;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N12692;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N13052;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N13157;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N13165;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N13192;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_1ms_clk_0;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_1ms_clk_1;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_I2C_state_reg [0];
@@ -51876,6 +52501,7 @@ bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_timeout_cnt [4];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_timeout_cnt [5];
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_timeout_rst_n;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_rst;
+bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_scl_neg;
 bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_sda_in;
 
 Clock

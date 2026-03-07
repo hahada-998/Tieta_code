@@ -121,7 +121,8 @@ module pwrseq_slave #(
     
     // 复位信号输出 
     output                                      cpu_por_n                       ,                    
-    output  reg                                 usb_ponrst_r_n                  ,                                      
+    output  reg                                 usb_ponrst_r_n                  ,   
+    output                                      pex_reset_r_n                   ,                                   
     
     // 故障检测信号
         
@@ -253,6 +254,7 @@ reg     reg_cpu1_d0_vph_p1v8_en_r              ;
 reg     reg_cpu1_d1_vph_p1v8_en_r              ;
 
 reg     reg_cpu_por_n	                         ;
+reg     reg_pex_reset_r_n                      ;
 
 
 assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_alive_on_fault );
@@ -291,7 +293,7 @@ assign cpu1_d0_vph_p1v8_en_r =  reg_cpu1_d0_vph_p1v8_en_r & (~cpu1_d0_vph_p1v8_f
 assign cpu1_d1_vph_p1v8_en_r =  reg_cpu1_d1_vph_p1v8_en_r & (~cpu1_d1_vph_p1v8_fault_det| keep_alive_on_fault);
 
 assign cpu_por_n	           =  reg_cpu_por_n           ;
-
+assign pex_reset_r_n	       =  reg_pex_reset_r_n       ;
 
 //------------------------------------------------------------------------------
 // Reset and SM states
@@ -358,6 +360,7 @@ always @(posedge clk or posedge reset) begin
         
 	      reg_cpu_por_n              <= 1'b0;      
         usb_ponrst_r_n             <= 1'b0;
+        reg_pex_reset_r_n          <= 1'b0;
 	      
         reached_sm_wait_powerok    <= 1'b0;   
     end
@@ -403,14 +406,18 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
 
 	              usb_ponrst_r_n             <= 1'b0;
-
                 reg_cpu_por_n              <= 1'b0;
+                reg_pex_reset_r_n          <= 1'b0;
 	              
                 reached_sm_wait_powerok    <= 1'b0; 
             end
 
-            `SM_PS_ON : begin
+            `SM_OFF_STANDBY : begin
                 cpu_bios_en                <= 1'b1;
+            end
+
+            `SM_PS_ON : begin
+
             end
 
             `SM_EN_5V_STBY: begin
@@ -432,6 +439,7 @@ always @(posedge clk or posedge reset) begin
 
             `SM_EN_3V3 : begin
                 reg_p3v3_en_r              <= 1'b1;
+                cpu_bios_en                <= 1'b0;
 	          end
 
             `SM_EN_1V1 : begin
@@ -441,6 +449,7 @@ always @(posedge clk or posedge reset) begin
             `SM_EN_CPU_CORE: begin
                 reg_cpu0_vdd_core_en_r     <= 1'b1;
                 reg_cpu1_vdd_core_en_r     <= 1'b1;
+                cpu_bios_en                <= 1'b1;
             end 
 
             `SM_EN_CPU_P1V8 : begin
@@ -468,8 +477,9 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_d1_vph_p1v8_en_r  <= 1'b1;
             end  
          
-            `PEX_RESET : begin  
-                // 此状态实际是等待PUE/PCIE信号复位释放        
+            `PEX_RESET : begin
+                // 此状态实际是等待PUE/PCIE信号复位释放    
+                reg_pex_reset_r_n          <= 1'b1;      
             end 
      
             `SM_CPU_RESET : begin          
@@ -490,6 +500,11 @@ always @(posedge clk or posedge reset) begin
                 reg_cpu1_d1_vp_p0v9_en_r   <= 1'b0;
                 reg_cpu1_d0_vph_p1v8_en_r  <= 1'b0;
                 reg_cpu1_d1_vph_p1v8_en_r  <= 1'b0;
+                reg_cpu_por_n              <= 1'b0;
+                usb_ponrst_r_n             <= 1'b0;
+                reached_sm_wait_powerok    <= 1'b0;  
+                reg_pex_reset_r_n          <= 1'b0;
+                cpu_bios_en                <= 1'b0;
             end  
 
             `SM_DISABLE_CPU_DDR : begin
@@ -533,7 +548,7 @@ always @(posedge clk or posedge reset) begin
             end
 
             `SM_DISABLE_PS_ON : begin
-                cpu_bios_en                 <= 1'b0; 
+                cpu_bios_en                 <= 1'b1;  
             end 
     endcase
   end

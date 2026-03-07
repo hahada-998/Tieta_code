@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1208</data>
+                    <data>1211</data>
                     <data>0</data>
                 </row>
             </table>
@@ -267,7 +267,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1208</data>
+                    <data>1211</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -8827,23 +8827,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>206</data>
+            <data>198</data>
             <data>592</data>
-            <data>35</data>
+            <data>34</data>
             <row>
                 <data>FF</data>
-                <data>504</data>
+                <data>488</data>
                 <data>3552</data>
-                <data>15</data>
+                <data>14</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>503</data>
+                <data>465</data>
                 <data>2368</data>
-                <data>22</data>
+                <data>20</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>503</data>
+                    <data>465</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8863,23 +8863,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>292</data>
+            <data>287</data>
             <data>888</data>
             <data>33</data>
             <row>
                 <data>FF</data>
-                <data>746</data>
+                <data>765</data>
                 <data>5328</data>
                 <data>15</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>689</data>
+                <data>725</data>
                 <data>3552</data>
-                <data>20</data>
+                <data>21</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>689</data>
+                    <data>725</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9116,8 +9116,8 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1192</data>
-            <data>1250</data>
+            <data>1190</data>
+            <data>1253</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
@@ -9483,8 +9483,8 @@
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_s2p(s2p_slave)</data>
-                <data>254</data>
-                <data>411</data>
+                <data>255</data>
+                <data>413</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9820,9 +9820,9 @@
         </column_headers>
         <row>
             <data>0h:0m:7s</data>
-            <data>0h:0m:15s</data>
+            <data>0h:0m:16s</data>
             <data>0h:0m:10s</data>
-            <data>559</data>
+            <data>562</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

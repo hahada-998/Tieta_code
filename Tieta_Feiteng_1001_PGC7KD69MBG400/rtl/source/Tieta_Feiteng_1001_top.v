@@ -689,6 +689,7 @@ wire                                        db_i_cpu1_d0_cru_rst_ok             
 wire                                        db_i_cpu1_d1_cru_rst_ok             ; // 已使用   BMC寄存
 
 wire                                        cpu_por_n                           ; // 已使用   MCPLD_OUT                   CPU上电复位信号输出
+wire                                        pex_reset_n                         ; // 已使用   MCPLD_OUT                   PEX复位信号输出
 
 // 电源模块PG状态输入信号
 wire                                        db_i_pal_cpu1_dimm_pwrgd_f          ; // 已使用   MCPLD_IN                    ?这个信号放efuse信号使用?      
@@ -1997,37 +1998,37 @@ wire                db_i_fan2_prsnt_n             ; // BMC寄存     addr 0x0020
 wire                db_i_fan3_prsnt_n             ; // BMC寄存     addr 0x0020[6]     Fan0是否存在，1：存在；0：不存在
 wire [7:0]          i_fan_tach_db                 ;   
 
-PGM_DEBOUNCE #(.SIGCNT(4), .NBITS(2'b10), .ENABLE(1'b1)) db_fan_ctrl_inst1 (
+PGM_DEBOUNCE #(.SIGCNT(12), .NBITS(2'b10), .ENABLE(1'b1)) db_fan_ctrl_inst1 (
     .clk            (clk_50m),
     .rst            (~pon_reset_n),
     .timer_tick     (1'b1),
     .din            ({
-                    i_FAN0_PRSNT_N  ,
-                    i_FAN1_PRSNT_N  ,
-                    i_FAN2_PRSNT_N  ,
-                    i_FAN3_PRSNT_N  ,
-                    i_FAN_TACH_0_D  ,
-                    i_FAN_TACH_1_D  ,
-                    i_FAN_TACH_2_D  ,
-                    i_FAN_TACH_3_D  ,
-                    i_FAN_TACH_4_D  ,
-                    i_FAN_TACH_5_D  ,
-                    i_FAN_TACH_6_D  ,
-                    i_FAN_TACH_7_D  
+                    i_FAN0_PRSNT_N   , // 12
+                    i_FAN1_PRSNT_N   , // 11
+                    i_FAN2_PRSNT_N   , // 10
+                    i_FAN3_PRSNT_N   , // 09
+                    i_FAN_TACH_0_D   , // 08
+                    i_FAN_TACH_1_D   , // 07
+                    i_FAN_TACH_2_D   , // 06
+                    i_FAN_TACH_3_D   , // 05
+                    i_FAN_TACH_4_D   , // 04 
+                    i_FAN_TACH_5_D   , // 03
+                    i_FAN_TACH_6_D   , // 02 
+                    i_FAN_TACH_7_D     // 01
                     }),   
     .dout           ({                            
-    	            db_i_fan0_prsnt_n,
-             	    db_i_fan1_prsnt_n,
-                    db_i_fan2_prsnt_n,
-                    db_i_fan3_prsnt_n,
-                    i_fan_tach_db[6] ,    //2                                                                
-	    	        i_fan_tach_db[7] ,    //3 
-	    	        i_fan_tach_db[4] ,    //4 
-	    	        i_fan_tach_db[5] ,    //5 
-	    	        i_fan_tach_db[2] ,    //6 
-	    	        i_fan_tach_db[3] ,    //7 
-	    	        i_fan_tach_db[0] ,    //8  
-	    	        i_fan_tach_db[1]      //9 	   
+    	            db_i_fan0_prsnt_n,// 12
+             	    db_i_fan1_prsnt_n,// 11
+                    db_i_fan2_prsnt_n,// 10
+                    db_i_fan3_prsnt_n,// 09
+                    i_fan_tach_db[6] ,// 08                                                                  
+	    	        i_fan_tach_db[7] ,// 07   
+	    	        i_fan_tach_db[4] ,// 06   
+	    	        i_fan_tach_db[5] ,// 05   
+	    	        i_fan_tach_db[2] ,// 04    
+	    	        i_fan_tach_db[3] ,// 03   
+	    	        i_fan_tach_db[0] ,// 02     
+	    	        i_fan_tach_db[1]  // 01   	   
     	              })   
 );
 
@@ -2516,8 +2517,14 @@ assign mcpld_to_scpld_p2s_data[225]     = pgd_p1v8_stby_dly30ms      ;
 assign mcpld_to_scpld_p2s_data[224]     = bios_security_bypass       ;
 assign mcpld_to_scpld_p2s_data[223]     = i_PAL_RTC_INTB             ;
 assign mcpld_to_scpld_p2s_data[222]     = pal_ocp_ncsi_sw_en         ;
+
+// begin: add by z02665 20260307 电源灯换到SCPLD控制
 // assign mcpld_to_scpld_p2s_data[221]     = pal_ocp2_ncsi_en        ; // 预留, 未使用
 // assign mcpld_to_scpld_p2s_data[220]     = pal_ocp1_ncsi_en        ; // 预留, 未使用
+assign mcpld_to_scpld_p2s_data[221]     = led_pwrbtn_gr_r            ;
+assign mcpld_to_scpld_p2s_data[220]     = led_pwrbtn_amb_r           ;
+// end: add by z02665 20260307 电源灯换到SCPLD控制
+
 // assign mcpld_to_scpld_p2s_data[219]     = i_PAL_PE_WAKE_N_R       ; // 预留, 未使用
 assign mcpld_to_scpld_p2s_data[218]     = i_SMB_PEHP_CPU1_3V3_ALERT_N;
 assign mcpld_to_scpld_p2s_data[217:216] = debug_reg_15[1:0]          ;
@@ -2550,12 +2557,10 @@ assign mcpld_to_scpld_p2s_data[17]      =  led_uid                   ;
 assign mcpld_to_scpld_p2s_data[16]      =  power_supply_on           ;
 assign mcpld_to_scpld_p2s_data[15]      =  1'b0/*ocp_main_en*/       ; // 未使用
 
-
 // begin：z02665 上下电调试使用
 // assign mcpld_to_scpld_p2s_data[14]      =  1'b0/*ocp_aux_en*/        ; // 未使用
-// assign mcpld_to_scpld_p2s_data[13]      =  1'b0/*pex_reset_n*/       ; // 未使用
-assign mcpld_to_scpld_p2s_data[14]      = db_i_pal_cpu1_p1v8_pg     ;
-assign mcpld_to_scpld_p2s_data[13]      = db_i_pal_cpu0_p1v8_pg     ;
+assign mcpld_to_scpld_p2s_data[14]      = db_i_pal_cpu1_p1v8_pg & db_i_pal_cpu0_p1v8_pg    ;
+assign mcpld_to_scpld_p2s_data[13]      = pex_reset_n               ; // 已使用
 // end：z02665 上下电调试使用
 
 assign mcpld_to_scpld_p2s_data[12]      =  reached_sm_wait_powerok   ;
@@ -2828,23 +2833,24 @@ pwrseq_master #(
 
     .PON_WATCHDOG_TIMEOUT_VAL               (49                         ), // 其他设备上电时间: 50*128us=3.2ms
 
-    .DSW_PWROK_TIMEOUT_VAL                  (12                         ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
-    .DSW1_PWROK_TIMEOUT_VAL                 (12                         ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
-    .DSW2_PWROK_TIMEOUT_VAL                 (12                         ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    .DSW_PWROK_TIMEOUT_VAL                  (7                          ), // CPU各组电源上电时间间隔: 7*128us=1ms
+    .DSW1_PWROK_TIMEOUT_VAL                 (14                         ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    .DSW2_PWROK_TIMEOUT_VAL                 (16                         ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    .DSW3_PWROK_TIMEOUT_VAL                 (400                        ), // CPU各组电源上电时间间隔: 12*128us=1.5ms
 
     .PON_65MS_WATCHDOG_TIMEOUT_VAL          (100                        ), // CPU上电稳定时间：100*128us=13ms
     
-    .PDN_WATCHDOG_TIMEOUT_VAL               (6                          ), // CPU下电时间：6*128us=0.8ms
-    .PDN_WATCHDOG_TIMEOUT_FAULT_VAL         (6                          ), // CPU下电时间：6*128us=0.8ms
+    .PDN_WATCHDOG_TIMEOUT_VAL               (49                          ), // CPU下电时间：6*128us=0.8ms
+    .PDN_WATCHDOG_TIMEOUT_FAULT_VAL         (49                          ), // CPU下电时间：6*128us=0.8ms
 
-    .PF_ON_WAIT_COMPLETE_VAL                (33                         ),
-    .PO_ON_WAIT_COMPLETE_VAL                (1                          ),
+    .PF_ON_WAIT_COMPLETE_VAL                (33                         ), // 33
+    .PO_ON_WAIT_COMPLETE_VAL                (1                          ), // 1 
 
-    .S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL  (0                          ),
-    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL  (0                          ),
+    .S5_DEVICES_ON_WAIT_COMPLETE_NOFLT_VAL  (0                          ), // 0
+    .S5_DEVICES_ON_WAIT_COMPLETE_FAULT_VAL  (0                          ), // 0
     
-    .DC_ON_WAIT_COMPLETE_NOFLT_VAL          (17                         ),
-    .DC_ON_WAIT_COMPLETE_FAULT_VAL          (2                          )
+    .DC_ON_WAIT_COMPLETE_NOFLT_VAL          (17                         ), // 17
+    .DC_ON_WAIT_COMPLETE_FAULT_VAL          (2                          )  // 2 
 ) pwrseq_master_inst (
     // -----------------------------------------------------------
     // 1. 时钟与复位接口（模块时序基准与初始化）
@@ -3050,7 +3056,7 @@ pwrseq_slave #(
     .pvcc_hpmos_cpu_en_r                    (pvcc_hpmos_cpu_en_r            ), //out
     // 4. SM_EN_MAIN_EFUSE 状态上电使能
     .power_supply_on                        (power_supply_on                ), //out
-    .p12v_bp_rear_en_r                        (p12v_bp_rear_en_r                ), //out
+    .p12v_bp_rear_en_r                      (p12v_bp_rear_en_r              ), //out
     // 5. SM_EN_5V 状态上电使能
     .p5v_en_r                               (p5v_en_r                       ), //out
     // 6. SM_EN_3V3 状态上电使能
@@ -3084,6 +3090,7 @@ pwrseq_slave #(
     
     // 复位信号输出
     .cpu_por_n                              (cpu_por_n                      ),  // out
+    .pex_reset_r_n                          (pex_reset_n                    ),  //out
     .usb_ponrst_r_n                         (usb_ponrst_r_n                 ),  // out      MCPLD->SCPLD           USB复位信号输出
         
     // 故障检测信号
@@ -3185,14 +3192,22 @@ wire [3:0]                                  w_fan_pwm_out             ;
 
 
 // 风扇使能控制：当BMC下发不使能时，强制关闭风扇；当BMC下发使能但风扇不存在时，也强制关闭风扇；只有当BMC下发使能且风扇存在时，才使能风扇
-assign o_PAL_P12V_FAN0_EN_R        = (bmc_pwr_fan[0]    == 0) ? 1'b0 :
-                                     (db_i_fan0_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
-assign o_PAL_P12V_FAN1_EN_R        = (bmc_pwr_fan[1]    == 0) ? 1'b0 :
-                                     (db_i_fan1_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
-assign o_PAL_P12V_FAN2_EN_R        = (bmc_pwr_fan[2]    == 0) ? 1'b0 :
-                                     (db_i_fan2_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
-assign o_PAL_P12V_FAN3_EN_R        = (bmc_pwr_fan[3]    == 0) ? 1'b0 :
-                                     (db_i_fan3_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
+// assign o_PAL_P12V_FAN0_EN_R        = (bmc_pwr_fan[0]    == 0) ? 1'b0 :
+//                                      (db_i_fan0_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
+// assign o_PAL_P12V_FAN1_EN_R        = (bmc_pwr_fan[1]    == 0) ? 1'b0 :
+//                                      (db_i_fan1_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
+// assign o_PAL_P12V_FAN2_EN_R        = (bmc_pwr_fan[2]    == 0) ? 1'b0 :
+//                                      (db_i_fan2_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz; 
+// assign o_PAL_P12V_FAN3_EN_R        = (bmc_pwr_fan[3]    == 0) ? 1'b0 :
+//                                      (db_i_fan3_prsnt_n == 1) ? 1'b0 : 1'b1; // 1'bz;
+
+// begin: begin 02665 by 20260307 风扇调试测试使用
+assign o_PAL_P12V_FAN0_EN_R        = power_supply_on ;
+assign o_PAL_P12V_FAN1_EN_R        = power_supply_on ;                                
+assign o_PAL_P12V_FAN2_EN_R        = power_supply_on ;                      
+assign o_PAL_P12V_FAN3_EN_R        = power_supply_on ;
+// begin: begin 02665 by 20260307 风扇调试测试使用
+                                     
                                         
 assign o_PAL_FAN_FAIL_LED0_R       = (bmc_fan_status[0] == 1) ? 1'b0 : 1'b1; // 1'bz;
 assign o_PAL_FAN_FAIL_LED1_R       = (bmc_fan_status[1] == 1) ? 1'b0 : 1'b1; // 1'bz;
@@ -3469,11 +3484,14 @@ assign o_PAL_PS2_P12V_ON_R    = ~ps_on_n[1]                     ;
 assign o_PAL_P12V_DISCHARGE_R = (&ps_on_n[1:0]) ? 1'bz : 1'b0   ; // 实际未使用
 
 //------------------------------------------------------------------------------
-// 健康灯SYSTEM HEALTHY LED
+// 健康灯 SYSTEM HEALTHY LED
 // CHECKME: Need to validate connections with new top level
 //------------------------------------------------------------------------------
-reg r_pal_led_hel_red_r;
-reg r_pal_led_hel_gr_r ;
+wire    led_pwrbtn_gr_r     ;
+wire    led_pwrbtn_amb_r    ;
+reg     r_pal_led_hel_red_r ;
+reg     r_pal_led_hel_gr_r  ;
+
 
 always@(posedge clk_50m or negedge pon_reset_n)begin
 	if(~pon_reset_n)
@@ -3483,7 +3501,7 @@ always@(posedge clk_50m or negedge pon_reset_n)begin
 	end
 	else 
 	begin
-	case({w_sys_healthy_red,w_sys_healthy_grn}) 		
+	case({w_sys_healthy_red, w_sys_healthy_grn}) 		
         2'b00: begin
 		    r_pal_led_hel_red_r  <= 1'b0;
 		    r_pal_led_hel_gr_r   <= 1'b0;
@@ -3513,9 +3531,10 @@ assign sys_hlth_red_blink_n = r_pal_led_hel_red_r   ;
 assign sys_hlth_grn_blink_n = r_pal_led_hel_gr_r    ;
 
 
-//PANEL logic
-assign o_LED_PWRBTN_GR_R  = (power_seq_sm == `SM_STEADY_PWROK) ? 1'b1 : 1'b0                ;
-assign o_LED_PWRBTN_AMB_R = (power_seq_sm == `SM_STEADY_PWROK) ? 1'b0 : 1'b1                ;
+// PWRBTN灯：上电正常为绿，常亮; 上电异常为橙，常亮；
+
+assign led_pwrbtn_gr_r   = (power_seq_sm == `SM_STEADY_PWROK) ? 1'b1 : 1'b0                ;
+assign led_pwrbtn_amb_r  = (power_seq_sm == `SM_STEADY_PWROK) ? 1'b0 : 1'b1                ;
 
 //------------------------------------------------------------------------------
 // BACKPLANE logic
@@ -3637,8 +3656,8 @@ assign o_BIOS0_RST_N_R            =  cpu_bios_en ? (~rom_bios_ma_rst) : 1'bz; //
 assign o_BIOS1_RST_N_R            =  cpu_bios_en ? (~rom_bios_bk_rst) : 1'bz; // ~rom_bios_bk_rst  BIOS FLASH 复位信号输出，低电平有效 
 
 // 2. SM_EN_5V_STBY 状态上电使能
-assign o_PAL_P5V_STBY_EN_R         = p5v_stby_en_r       ; // 5V 待机电源使能信号
-
+// assign o_PAL_P5V_STBY_EN_R         = p5v_stby_en_r       ; // 5V 待机电源使能信号
+assign o_PAL_P5V_STBY_EN_R         = 1'bz                   ; // 5V 待机电源使能信号
 // 3. SM_EN_TELEM 状态上电使能
 assign o_PAL_PVCC_HPMOS_CPU_EN_R  = pvcc_hpmos_cpu_en_r ; // CPU MOSFET 供电使能信号
 
@@ -4073,7 +4092,7 @@ assign o_CPU0_PE3_RST_N_R      = reached_sm_wait_powerok  ;
 assign o_CPU1_PE1_RST_N_R      = reached_sm_wait_powerok  ;
 assign o_CPU1_PE2_RST_N_R      = reached_sm_wait_powerok  ;
 // 88SE9230 SATA 控制器解复位
-assign o_PAL_88SE9230_RST_N_R  = reached_sm_wait_powerok  ; 
+assign o_PAL_88SE9230_RST_N_R  = pex_reset_n              ; 
 // WX1860 网卡解复位
 assign o_PAL_WX1860_NRST_R     = reached_sm_wait_powerok  ; 
 assign o_PAL_WX1860_PERST_R    = reached_sm_wait_powerok  ; 

@@ -14,16 +14,17 @@ module pwrseq_master #(
     parameter LIM_RECOV_MAX_RETRY_ATTEMPT           = 2                         , // 最大有限回复次数 
     parameter WDT_NBITS                             = 10                        , // 看门狗计数器位宽
 
-    parameter PON_WATCHDOG_TIMEOUT_VAL              = 25                        , // 主电/EFUSE设备电源上电时间
+    parameter PON_WATCHDOG_TIMEOUT_VAL              = 25                        , // 其他设备上电时间: 50*128us=3.2ms
 
-    parameter DSW_PWROK_TIMEOUT_VAL                 = 12                        ,
-    parameter DSW1_PWROK_TIMEOUT_VAL                = 12                        ,
-    parameter DSW2_PWROK_TIMEOUT_VAL                = 12                        ,
+    parameter DSW_PWROK_TIMEOUT_VAL                 = 12                        , // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    parameter DSW1_PWROK_TIMEOUT_VAL                = 12                        , // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    parameter DSW2_PWROK_TIMEOUT_VAL                = 12                        , // CPU各组电源上电时间间隔: 12*128us=1.5ms
+    parameter DSW3_PWROK_TIMEOUT_VAL                = 100                        , // CPU各组电源上电时间间隔: 12*128us=1.5ms
 
-    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 100                       ,
+    parameter PON_65MS_WATCHDOG_TIMEOUT_VAL         = 100                       , // CPU上电稳定时间：100*128us=13ms
     
-    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 12                         ,
-    parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = 12                         ,
+    parameter PDN_WATCHDOG_TIMEOUT_VAL              = 12                        ,
+    parameter PDN_WATCHDOG_TIMEOUT_FAULT_VAL        = 12                        ,
 
     
     parameter PF_ON_WAIT_COMPLETE_VAL               = 33                        ,
@@ -150,6 +151,7 @@ reg                                     pon_watchdog_timeout        ;
 reg                                     dsw_pwrok_timeout           ;
 reg                                     dsw1_pwrok_timeout          ;
 reg                                     dsw2_pwrok_timeout          ;
+reg                                     dsw3_pwrok_timeout          ;
 
 reg                                     pdn_watchdog_timeout        ;
 
@@ -201,9 +203,12 @@ reg                                     pwron_critical_fail_en      ;
 reg                                     pchdsw_state_trans_en       ;
 reg                                     pchdsw1_state_trans_en      ;
 reg                                     pchdsw2_state_trans_en      ;
+reg                                     pchdsw3_state_trans_en      ;
+
 reg                                     pchdsw_critical_fail_en     ;
 reg                                     pchdsw1_critical_fail_en    ;
 reg                                     pchdsw2_critical_fail_en    ;
+reg                                     pchdsw3_critical_fail_en    ;
 
 reg                                     pon_rst_65ms_trans_en       ; 
 reg                                     wait_steady_pwrok_fail_en   ;
@@ -234,7 +239,7 @@ assign wdt_tick = (off_state) ? t256ms        : // S5待机使用 256ms 计时
 always @(posedge clk or posedge reset) begin
     if (reset)
         power_seq_sm_last <= `SM_RESET_STATE;
-    else if (t1us)
+    else if(t1us)
         power_seq_sm_last <= power_seq_sm;
 end
 
@@ -258,6 +263,7 @@ always @(posedge clk or posedge reset) begin
         dsw_pwrok_timeout           <= 1'b0;
         dsw1_pwrok_timeout          <= 1'b0;
         dsw2_pwrok_timeout          <= 1'b0;
+        dsw3_pwrok_timeout          <= 1'b0;
  
         pon_65ms_watchdog_timeout   <= 1'b0;
         pdn_watchdog_timeout        <= 1'b0;
@@ -269,6 +275,7 @@ always @(posedge clk or posedge reset) begin
         dsw_pwrok_timeout           <= 1'b0;
         dsw1_pwrok_timeout          <= 1'b0;
         dsw2_pwrok_timeout          <= 1'b0;
+        dsw3_pwrok_timeout          <= 1'b0;
 
         pon_65ms_watchdog_timeout   <= 1'b0;
         pdn_watchdog_timeout        <= 1'b0;
@@ -283,7 +290,10 @@ always @(posedge clk or posedge reset) begin
         if (wdt_counter == DSW1_PWROK_TIMEOUT_VAL)                                       
             dsw1_pwrok_timeout <= 1'b1;   
         if (wdt_counter == DSW2_PWROK_TIMEOUT_VAL)    
-            dsw2_pwrok_timeout <= 1'b1;                                                      
+            dsw2_pwrok_timeout <= 1'b1;  
+        if (wdt_counter == DSW3_PWROK_TIMEOUT_VAL)    
+            dsw3_pwrok_timeout <= 1'b1;
+                                                                
                                                                                                                                                                                                                    
         if (wdt_counter == PON_65MS_WATCHDOG_TIMEOUT_VAL)                                      
             pon_65ms_watchdog_timeout <= 1'b1;    
@@ -617,6 +627,7 @@ always @(posedge clk or posedge reset) begin
         pchdsw_state_trans_en <= 1'b0; 
         pchdsw1_state_trans_en<= 1'b0; 
         pchdsw2_state_trans_en<= 1'b0; 
+        pchdsw3_state_trans_en<= 1'b0;
         
         pon_rst_65ms_trans_en <= 1'b0; // PON 65ms看门狗超时使能
     end
@@ -625,6 +636,7 @@ always @(posedge clk or posedge reset) begin
         pchdsw_state_trans_en <= dsw_pwrok_timeout         & pgd_so_far;
         pchdsw1_state_trans_en<= dsw1_pwrok_timeout        & pgd_so_far;
         pchdsw2_state_trans_en<= dsw2_pwrok_timeout        & pgd_so_far; 
+        pchdsw3_state_trans_en<= dsw3_pwrok_timeout        & pgd_so_far; 
         
         pon_rst_65ms_trans_en <= pon_65ms_watchdog_timeout & pgd_so_far; // PON 65ms看门狗超时使能
     end
@@ -636,6 +648,7 @@ always @(posedge clk or posedge reset) begin
         pchdsw_critical_fail_en   <= 1'b0;
         pchdsw1_critical_fail_en  <= 1'b0;
         pchdsw2_critical_fail_en  <= 1'b0;
+        pchdsw3_critical_fail_en  <= 1'b0;
 
         pwron_critical_fail_en    <= 1'b0;
 
@@ -645,6 +658,7 @@ always @(posedge clk or posedge reset) begin
         pchdsw_critical_fail_en   <= 1'b0;
         pchdsw1_critical_fail_en  <= 1'b0;
         pchdsw2_critical_fail_en  <= 1'b0;
+        pchdsw3_critical_fail_en  <= 1'b0;
 
         pwron_critical_fail_en    <= 1'b0;
 
@@ -656,6 +670,7 @@ always @(posedge clk or posedge reset) begin
         pchdsw_critical_fail_en   <= (dsw_pwrok_timeout          & ~pgd_so_far) | any_pwr_fault_det;
         pchdsw1_critical_fail_en  <= (dsw1_pwrok_timeout         & ~pgd_so_far) | any_pwr_fault_det;
         pchdsw2_critical_fail_en  <= (dsw2_pwrok_timeout         & ~pgd_so_far) | any_pwr_fault_det;
+        pchdsw3_critical_fail_en  <= (dsw3_pwrok_timeout         & ~pgd_so_far) | any_pwr_fault_det;
         
         wait_steady_pwrok_fail_en <= (pon_65ms_watchdog_timeout  & ~pgd_so_far) | any_pwr_fault_det;
     end
@@ -891,11 +906,11 @@ always @(*) begin
         end                                   
 	
         `SM_EN_CPU_VP : begin                   
-            if (pchdsw2_critical_fail_en) begin    
+            if (pchdsw3_critical_fail_en) begin    
                 state_ns = `SM_CRITICAL_FAIL;       
                 po_failure_detected_set = 1'b1;    
             end                                  
-            else if (pchdsw2_state_trans_en) begin             
+            else if (pchdsw3_state_trans_en) begin             
                 state_ns = `PEX_RESET;            
             end                                  
         end	
@@ -965,10 +980,10 @@ always @(*) begin
         // 下电状态
         // 1. 故障下电开始
         `SM_CRITICAL_FAIL : begin
-            // if (pdn_watchdog_timeout) begin
+            if (pdn_watchdog_timeout) begin
                 state_ns = `SM_DISABLE_CPU_VP;
                 assert_button_clr = 1'b1;
-            // end
+            end
         end
 
         // 2. CPU 主电源组下电序列                                   
@@ -1017,7 +1032,7 @@ always @(*) begin
         `SM_DISABLE_MAIN_EFUSE : begin
             if (pdn_watchdog_timeout) begin
                 state_ns = `SM_DISABLE_TELEM;
-          end
+            end
             off_state = 1'b0;
         end
 
