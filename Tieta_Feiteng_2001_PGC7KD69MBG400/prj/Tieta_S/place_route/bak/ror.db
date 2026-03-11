@@ -185,10 +185,10 @@
                     <data>pll_inst/u_pll_e2/goppll</data>
                     <data>PLL_11_20</data>
                     <data>CLKFB</data>
-                    <data>_GND118</data>
+                    <data>_GND114</data>
                     <data> - </data>
                     <data> - </data>
-                    <data>GND_118</data>
+                    <data>GND_114</data>
                     <data>Z</data>
                     <data>HARD0N1_6_19</data>
                 </row>
@@ -1844,6 +1844,120 @@
             <data>input</data>
             <data>G16</data>
             <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N0_1000M</data>
+            <data>input</data>
+            <data>R13</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N0_100M</data>
+            <data>input</data>
+            <data>U17</data>
+            <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N0_ACT</data>
+            <data>input</data>
+            <data>V13</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N1_1000M</data>
+            <data>input</data>
+            <data>V16</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N1_100M</data>
+            <data>input</data>
+            <data>T12</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_N1_ACT</data>
+            <data>input</data>
+            <data>W17</data>
+            <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
@@ -4142,120 +4256,6 @@
             <data>o_MCIO11_RISER1_PERST2_N</data>
             <data>output</data>
             <data>T13</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N0_1000M</data>
-            <data>output</data>
-            <data>R13</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N0_100M</data>
-            <data>output</data>
-            <data>U17</data>
-            <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N0_ACT</data>
-            <data>output</data>
-            <data>V13</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N1_1000M</data>
-            <data>output</data>
-            <data>V16</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N1_100M</data>
-            <data>output</data>
-            <data>T12</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_N1_ACT</data>
-            <data>output</data>
-            <data>W17</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -7163,8 +7163,8 @@
             <data>IOBS_146_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_41P</data>
-            <data>o_N0_100M</data>
-            <data>output</data>
+            <data>i_N0_100M</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7397,8 +7397,8 @@
             <data>IOBS_156_201</data>
             <data>BANK2</data>
             <data>DIFFI_B2_6N</data>
-            <data>o_N1_1000M</data>
-            <data>output</data>
+            <data>i_N1_1000M</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7415,8 +7415,8 @@
             <data>IOBS_156_189</data>
             <data>BANK2</data>
             <data>DIFFI_B2_8N</data>
-            <data>o_N0_1000M</data>
-            <data>output</data>
+            <data>i_N0_1000M</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7424,8 +7424,8 @@
             <data>IOBS_156_187</data>
             <data>BANK2</data>
             <data>DIFFI_B2_9N</data>
-            <data>o_N1_ACT</data>
-            <data>output</data>
+            <data>i_N1_ACT</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7487,8 +7487,8 @@
             <data>IOBS_156_147</data>
             <data>BANK2</data>
             <data>DIFFI_B2_16N</data>
-            <data>o_N0_ACT</data>
-            <data>output</data>
+            <data>i_N0_ACT</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7712,8 +7712,8 @@
             <data>IOBR_156_182</data>
             <data>BANK2</data>
             <data>DIFFI_B2_10P</data>
-            <data>o_N1_100M</data>
-            <data>output</data>
+            <data>i_N1_100M</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -8779,35 +8779,35 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>250</data>
+            <data>247</data>
             <data>592</data>
-            <data>43</data>
+            <data>42</data>
             <row>
                 <data>FF</data>
-                <data>514</data>
+                <data>480</data>
                 <data>3552</data>
-                <data>15</data>
+                <data>14</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>605</data>
+                <data>601</data>
                 <data>2368</data>
                 <data>26</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>491</data>
+                    <data>473</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>100</data>
+                    <data>108</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>14</data>
+                    <data>20</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8815,14 +8815,14 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>316</data>
+            <data>308</data>
             <data>888</data>
-            <data>36</data>
+            <data>35</data>
             <row>
                 <data>FF</data>
-                <data>742</data>
+                <data>776</data>
                 <data>5328</data>
-                <data>14</data>
+                <data>15</data>
             </row>
             <row>
                 <data>LUT</data>
@@ -8831,7 +8831,7 @@
                 <data>23</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>701</data>
+                    <data>719</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8849,13 +8849,13 @@
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>85</data>
+                    <data>63</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>10</data>
+                    <data>14</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8923,7 +8923,7 @@
         </row>
         <row>
             <data>HARD0N1</data>
-            <data>50</data>
+            <data>54</data>
             <data>936</data>
             <data>6</data>
         </row>
@@ -8947,15 +8947,15 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>131</data>
+            <data>132</data>
             <data>252</data>
-            <data>52</data>
+            <data>53</data>
         </row>
         <row>
             <data>IOLDLY</data>
-            <data>38</data>
+            <data>43</data>
             <data>84</data>
-            <data>46</data>
+            <data>52</data>
         </row>
         <row>
             <data>IOL</data>
@@ -9205,7 +9205,7 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>148</data>
+                <data>140</data>
                 <data>73</data>
                 <data>0</data>
                 <data>0</data>
@@ -9389,7 +9389,7 @@
             </row>
             <row>
                 <data>inst_i2c_inf(I2C_SLAVE_INF)</data>
-                <data>62</data>
+                <data>63</data>
                 <data>45</data>
                 <data>0</data>
                 <data>0</data>
@@ -9481,7 +9481,7 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_p2s(p2s_slave)</data>
-                <data>77</data>
+                <data>85</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9768,10 +9768,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:4s</data>
             <data>0h:0m:5s</data>
             <data>0h:0m:6s</data>
-            <data>338</data>
+            <data>0h:0m:9s</data>
+            <data>340</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

@@ -13410,14 +13410,14 @@
             <data>pll_inst/u_pll_e2</data>
             <data>clkbufg_0</data>
             <data>ntclkbufg_0</data>
-            <data>1651</data>
+            <data>1701</data>
         </row>
         <row>
             <data>CLKOUT1</data>
             <data>pll_inst/u_pll_e2</data>
             <data>clkbufg_1</data>
             <data>ntclkbufg_1</data>
-            <data>2</data>
+            <data>3</data>
         </row>
     </table>
     <table id="device_map_reset_signal" title="Reset Signal" column_number="3">
@@ -13429,7 +13429,7 @@
         <row>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
-            <data>1540</data>
+            <data>1592</data>
         </row>
         <row>
             <data>pon_reset_inst/master_reset_n_inv</data>
@@ -13466,12 +13466,12 @@
         <row>
             <data>ntclkbufg_0</data>
             <data>clkbufg_0/gopclkbufg</data>
-            <data>1651</data>
+            <data>1701</data>
         </row>
         <row>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
             <data>Edge_Detect_u3/i_rst_n_inv_1</data>
-            <data>1540</data>
+            <data>1592</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [0]</data>
@@ -13486,27 +13486,27 @@
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [2]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[2]</data>
-            <data>130</data>
+            <data>129</data>
         </row>
         <row>
             <data>inst_scpld_to_mcpld_s2p/sclk_pp</data>
             <data>inst_scpld_to_mcpld_s2p/N84/gateop</data>
-            <data>100</data>
+            <data>102</data>
         </row>
         <row>
             <data>inst_scpld_to_mcpld_s2p/N80</data>
             <data>inst_scpld_to_mcpld_s2p/N80_3/gateop</data>
-            <data>100</data>
+            <data>102</data>
         </row>
         <row>
             <data>inst_scpld_to_mcpld_s2p/si_r [1]</data>
             <data>inst_scpld_to_mcpld_s2p/si_r[1]</data>
-            <data>100</data>
+            <data>102</data>
         </row>
         <row>
             <data>N524</data>
             <data>N524_8/gateop</data>
-            <data>92</data>
+            <data>94</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_rst</data>
@@ -13516,12 +13516,12 @@
         <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [3]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[3]</data>
-            <data>82</data>
+            <data>81</data>
         </row>
         <row>
             <data>fault_clear</data>
             <data>pwrseq_master_inst/fault_clear</data>
-            <data>61</data>
+            <data>65</data>
         </row>
         <row>
             <data>t64ms_tick</data>
@@ -13544,14 +13544,14 @@
             <data>54</data>
         </row>
         <row>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [5]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[5]</data>
+            <data>50</data>
+        </row>
+        <row>
             <data>genblk1[0].fan_pwm_tach_m/w_clk_1s_pos</data>
             <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/N0/gateop</data>
             <data>49</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_command [5]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[5]</data>
-            <data>47</data>
         </row>
         <row>
             <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/r_signal_a</data>
@@ -13564,13 +13564,13 @@
             <data>42</data>
         </row>
         <row>
-            <data>pwrseq_slave_inst/reg_cpu0_d0_vp_p0v9_en_r</data>
-            <data>pwrseq_slave_inst/reg_cpu0_d0_vp_p0v9_en_r</data>
+            <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/r_signal_b</data>
+            <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/r_signal_b</data>
             <data>41</data>
         </row>
         <row>
-            <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/r_signal_b</data>
-            <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/r_signal_b</data>
+            <data>pwrseq_slave_inst/reg_cpu0_d0_vp_p0v9_en_r</data>
+            <data>pwrseq_slave_inst/reg_cpu0_d0_vp_p0v9_en_r</data>
             <data>41</data>
         </row>
         <row>
@@ -13579,14 +13579,14 @@
             <data>39</data>
         </row>
         <row>
-            <data>inst_mcpld_to_scpld_p2s/cnt [0]</data>
-            <data>inst_mcpld_to_scpld_p2s/cnt[0]</data>
-            <data>37</data>
-        </row>
-        <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_command [6]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/r_i2c_command[6]</data>
             <data>37</data>
+        </row>
+        <row>
+            <data>inst_mcpld_to_scpld_p2s/cnt [0]</data>
+            <data>inst_mcpld_to_scpld_p2s/cnt[0]</data>
+            <data>36</data>
         </row>
         <row>
             <data>inst_mcpld_to_scpld_p2s/cnt [1]</data>
@@ -13596,7 +13596,7 @@
         <row>
             <data>pwrseq_master_inst/st_critical_fail</data>
             <data>pwrseq_master_inst/state_reg[19]</data>
-            <data>33</data>
+            <data>32</data>
         </row>
         <row>
             <data>pwrseq_slave_inst/reg_cpu0_ddr_vdd_en_r</data>
@@ -13604,14 +13604,19 @@
             <data>31</data>
         </row>
         <row>
-            <data>N1546</data>
-            <data>N1546_0/gateop</data>
+            <data>N1577</data>
+            <data>N1577_0/gateop</data>
             <data>29</data>
+        </row>
+        <row>
+            <data>_N11563</data>
+            <data>N1385[21]_0/gateop</data>
+            <data>28</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/w_scl_in</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_glitchlessSignal_scl_q</data>
-            <data>24</data>
+            <data>25</data>
         </row>
         <row>
             <data>inst_scpld_to_mcpld_s2p/cnt [1]</data>
@@ -13619,8 +13624,8 @@
             <data>23</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [9]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[9]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [7]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[7]</data>
             <data>22</data>
         </row>
         <row>
@@ -13629,23 +13634,23 @@
             <data>22</data>
         </row>
         <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [2]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[2]</data>
-            <data>22</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [7]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[7]</data>
-            <data>22</data>
-        </row>
-        <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/w_stop</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_stop</data>
             <data>22</data>
         </row>
         <row>
-            <data>uart_master_u2/data_count [1]</data>
-            <data>uart_master_u2/data_count[1]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [2]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[2]</data>
+            <data>22</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/cnt [9]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[9]</data>
+            <data>22</data>
+        </row>
+        <row>
+            <data>_N2088</data>
+            <data>N1196_2/gateop</data>
             <data>21</data>
         </row>
         <row>
@@ -13654,8 +13659,13 @@
             <data>21</data>
         </row>
         <row>
-            <data>_N1756</data>
-            <data>N1187_2/gateop</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
+            <data>21</data>
+        </row>
+        <row>
+            <data>uart_master_u2/data_count [1]</data>
+            <data>uart_master_u2/data_count[1]</data>
             <data>21</data>
         </row>
         <row>
@@ -13669,18 +13679,18 @@
             <data>21</data>
         </row>
         <row>
-            <data>uart_master_u1/data_count [2]</data>
-            <data>uart_master_u1/data_count[2]</data>
-            <data>20</data>
-        </row>
-        <row>
             <data>uart_master_u2/data_count [2]</data>
             <data>uart_master_u2/data_count[2]</data>
             <data>20</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_scl_0</data>
+            <data>uart_master_u1/data_count [2]</data>
+            <data>uart_master_u1/data_count[2]</data>
+            <data>20</data>
+        </row>
+        <row>
+            <data>pwrseq_slave_inst/st_reset_state</data>
+            <data>pwrseq_master_inst/state_reg[0]</data>
             <data>20</data>
         </row>
         <row>
@@ -13689,28 +13699,13 @@
             <data>20</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [3]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[3]</data>
-            <data>19</data>
-        </row>
-        <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [1]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[1]</data>
             <data>19</data>
         </row>
         <row>
-            <data>inst_mcpld_to_scpld_p2s/cnt [2]</data>
-            <data>inst_mcpld_to_scpld_p2s/cnt[2]</data>
-            <data>19</data>
-        </row>
-        <row>
-            <data>pwrseq_slave_inst/st_reset_state</data>
-            <data>pwrseq_master_inst/state_reg[0]</data>
-            <data>19</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/st_steady_pwrok</data>
-            <data>pwrseq_master_inst/state_reg[18]</data>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [3]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[3]</data>
             <data>19</data>
         </row>
         <row>
@@ -13719,8 +13714,13 @@
             <data>19</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N3</data>
-            <data>bmc_cpld_i2c_ram_u0/N417_79[4]_30_1/gateop</data>
+            <data>inst_mcpld_to_scpld_p2s/cnt [2]</data>
+            <data>inst_mcpld_to_scpld_p2s/cnt[2]</data>
+            <data>19</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly [15]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly[15]</data>
             <data>18</data>
         </row>
         <row>
@@ -13729,73 +13729,28 @@
             <data>18</data>
         </row>
         <row>
+            <data>_N50</data>
+            <data>uart_master_u2.ser_data_tri</data>
+            <data>18</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/_N3</data>
+            <data>bmc_cpld_i2c_ram_u0/N417_52[2]_29_1/gateop</data>
+            <data>18</data>
+        </row>
+        <row>
+            <data>_N49</data>
+            <data>uart_master_u1.ser_data_tri</data>
+            <data>18</data>
+        </row>
+        <row>
             <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [7]</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[7]</data>
             <data>18</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly [15]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/r_r1_sda_dly[15]</data>
-            <data>18</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [6]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[6]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [2]</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[2]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/_N10969</data>
-            <data>bmc_cpld_i2c_ram_u0/N417_79[4]_13/gateop</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [4]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[4]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>_N2</data>
-            <data>uart_master_u2.ser_data_tri</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>_N1</data>
-            <data>uart_master_u1.ser_data_tri</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/st_off_standby</data>
-            <data>pwrseq_master_inst/state_reg[2]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [5]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[5]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/cnt [3]</data>
-            <data>inst_scpld_to_mcpld_s2p/cnt[3]</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>pwrseq_master_inst/N35</data>
-            <data>pwrseq_master_inst/N35.eq_2/gateop</data>
-            <data>17</data>
-        </row>
-        <row>
             <data>pgd_aux_system_sasd</data>
             <data>pon_reset_inst/pgd_aux_system_sasd</data>
-            <data>17</data>
-        </row>
-        <row>
-            <data>timer_gen_inst/t32us_e</data>
-            <data>timer_gen_inst/t32us_e</data>
             <data>17</data>
         </row>
         <row>
@@ -13804,23 +13759,63 @@
             <data>17</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_inv</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_16/gateop</data>
-            <data>16</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [3]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[3]</data>
+            <data>17</data>
         </row>
         <row>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7</data>
-            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7_5/gateop</data>
-            <data>16</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt [4]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[4]</data>
+            <data>17</data>
         </row>
         <row>
-            <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
-            <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
-            <data>16</data>
+            <data>bmc_cpld_i2c_ram_u0/_N11364</data>
+            <data>bmc_cpld_i2c_ram_u0/N417_52[2]_13/gateop</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/cnt [5]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[5]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/cnt [6]</data>
+            <data>inst_scpld_to_mcpld_s2p/cnt[6]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>pwrseq_master_inst/st_steady_pwrok</data>
+            <data>pwrseq_master_inst/state_reg[18]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_data_out [2]</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/i2c_slave_basic0_u0/o_data_out[2]</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>timer_gen_inst/t32us_e</data>
+            <data>timer_gen_inst/t32us_e</data>
+            <data>17</data>
+        </row>
+        <row>
+            <data>pwrseq_master_inst/N35</data>
+            <data>pwrseq_master_inst/N35.eq_2/gateop</data>
+            <data>17</data>
         </row>
         <row>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N16</data>
             <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N16/gateop</data>
+            <data>16</data>
+        </row>
+        <row>
+            <data>uart_master_u1/N504 [4]</data>
+            <data>uart_master_u1/N272_1_1/gateop</data>
+            <data>16</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_inv</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N134_16/gateop</data>
             <data>16</data>
         </row>
         <row>
@@ -13831,11 +13826,16 @@
         <row>
             <data>uart_master_u2/N504 [4]</data>
             <data>uart_master_u2/N272_1_1/gateop</data>
-            <data>15</data>
+            <data>16</data>
         </row>
         <row>
-            <data>uart_master_u1/N504 [4]</data>
-            <data>uart_master_u1/N272_1_1/gateop</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7</data>
+            <data>bmc_cpld_i2c_ram_u0/i2c_slave_bmc_u0/N7_3/gateop</data>
+            <data>16</data>
+        </row>
+        <row>
+            <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
+            <data>pwrseq_master_inst/pdn_watchdog_timeout</data>
             <data>15</data>
         </row>
         <row>
@@ -13844,18 +13844,23 @@
             <data>15</data>
         </row>
         <row>
+            <data>pwrseq_master_inst/st_off_standby</data>
+            <data>pwrseq_master_inst/state_reg[2]</data>
+            <data>15</data>
+        </row>
+        <row>
+            <data>bmc_cpld_i2c_ram_u0/w_i2c_command_1__1</data>
+            <data>bmc_cpld_i2c_ram_u0/N417_146/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
             <data>uart_master_u2/N445</data>
             <data>uart_master_u2/N445_3/gateop</data>
             <data>14</data>
         </row>
         <row>
-            <data>uart_master_u1/N445</data>
-            <data>uart_master_u1/N445_3/gateop</data>
-            <data>14</data>
-        </row>
-        <row>
-            <data>bmc_cpld_i2c_ram_u0/w_i2c_command_1__1</data>
-            <data>bmc_cpld_i2c_ram_u0/N417_146/gateop</data>
+            <data>nt_o_PAL_WX1860_PERST_R</data>
+            <data>pwrseq_slave_inst/reached_sm_wait_powerok</data>
             <data>14</data>
         </row>
         <row>
@@ -13864,9 +13869,19 @@
             <data>14</data>
         </row>
         <row>
+            <data>uart_master_u1/N445</data>
+            <data>uart_master_u1/N445_3/gateop</data>
+            <data>14</data>
+        </row>
+        <row>
             <data>uart_master_u2/data_count [0]</data>
             <data>uart_master_u2/data_count[0]</data>
             <data>14</data>
+        </row>
+        <row>
+            <data>inst_mcpld_to_scpld_p2s/cnt [3]</data>
+            <data>inst_mcpld_to_scpld_p2s/cnt[3]</data>
+            <data>13</data>
         </row>
         <row>
             <data>nt_o_PAL_BMC_SRST_R</data>
@@ -13874,9 +13889,9 @@
             <data>13</data>
         </row>
         <row>
-            <data>inst_mcpld_to_scpld_p2s/cnt [3]</data>
-            <data>inst_mcpld_to_scpld_p2s/cnt[3]</data>
-            <data>13</data>
+            <data>scpld_to_mcpld_data_filter[426]</data>
+            <data>scpld_to_mcpld_data_filter[426]</data>
+            <data>12</data>
         </row>
         <row>
             <data>inst_mcpld_to_scpld_p2s/sld_n_r [1]</data>
@@ -13899,13 +13914,8 @@
             <data>12</data>
         </row>
         <row>
-            <data>scpld_to_mcpld_data_filter[426]</data>
-            <data>scpld_to_mcpld_data_filter[426]</data>
-            <data>12</data>
-        </row>
-        <row>
-            <data>inst_scpld_to_mcpld_s2p/_N11053</data>
-            <data>inst_scpld_to_mcpld_s2p/ND6[72]_28/gateop</data>
+            <data>inst_scpld_to_mcpld_s2p/_N11457</data>
+            <data>inst_scpld_to_mcpld_s2p/ND6[108]_28/gateop</data>
             <data>11</data>
         </row>
         <row>
@@ -13914,8 +13924,8 @@
             <data>11</data>
         </row>
         <row>
-            <data>w_bp_to_mb_aux1_data[2]</data>
-            <data>uart_master_u1/par_data_out[2]</data>
+            <data>uart_master_u1/data_count [3]</data>
+            <data>uart_master_u1/data_count[3]</data>
             <data>11</data>
         </row>
         <row>
@@ -13929,8 +13939,18 @@
             <data>11</data>
         </row>
         <row>
-            <data>uart_master_u1/data_count [3]</data>
-            <data>uart_master_u1/data_count[3]</data>
+            <data>pwrseq_slave_inst/reg_cpu0_vdd_core_en_r</data>
+            <data>pwrseq_slave_inst/reg_cpu0_vdd_core_en_r</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>inst_scpld_to_mcpld_s2p/_N11896</data>
+            <data>inst_scpld_to_mcpld_s2p/N56_2_2/gateop</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N16</data>
+            <data>genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N16/gateop</data>
             <data>11</data>
         </row>
         <row>
@@ -13939,28 +13959,8 @@
             <data>11</data>
         </row>
         <row>
-            <data>nt_i_PAL_PS2_PRSNT</data>
-            <data>i_PAL_PS2_PRSNT_ibuf</data>
-            <data>11</data>
-        </row>
-        <row>
             <data>genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N16</data>
             <data>genblk1[1].fan_pwm_tach_m/fan_pwm_cnt_u1/N16/gateop</data>
-            <data>11</data>
-        </row>
-        <row>
-            <data>pwrseq_slave_inst/reg_cpu0_vdd_core_en_r</data>
-            <data>pwrseq_slave_inst/reg_cpu0_vdd_core_en_r</data>
-            <data>11</data>
-        </row>
-        <row>
-            <data>pwrseq_slave_inst/reg_cpu0_p1v8_en_r</data>
-            <data>pwrseq_slave_inst/reg_cpu0_p1v8_en_r</data>
-            <data>11</data>
-        </row>
-        <row>
-            <data>genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N16</data>
-            <data>genblk1[0].fan_pwm_tach_m/fan_pwm_cnt_u1/N16/gateop</data>
             <data>11</data>
         </row>
     </table>
@@ -13973,15 +13973,15 @@
         </column_headers>
         <row>
             <data>FF</data>
-            <data>1697</data>
+            <data>1748</data>
             <data>8880</data>
             <data>20</data>
         </row>
         <row>
             <data>LUT</data>
-            <data>1952</data>
+            <data>2025</data>
             <data>5920</data>
-            <data>33</data>
+            <data>35</data>
         </row>
         <row>
             <data>Distributed RAM</data>
@@ -14105,8 +14105,8 @@
         <row>
             <data>0h:0m:3s</data>
             <data>0h:0m:4s</data>
-            <data>0h:0m:5s</data>
-            <data>211</data>
+            <data>0h:0m:8s</data>
+            <data>210</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -14142,13 +14142,7 @@
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/p2s_slave.v(line number: 60)] Instance 'inst_mcpld_to_scpld_p2s/sld_n_r[2]' of 'GTP_DFF_P' unit is dangling and will be cleaned.</data>
         </row>
         <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 123)] Instance 'inst_scpld_to_mcpld_s2p/po[4]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 123)] Instance 'inst_scpld_to_mcpld_s2p/po[5]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 123)] Instance 'inst_scpld_to_mcpld_s2p/po[6]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 123)] Instance 'inst_scpld_to_mcpld_s2p/po[7]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
@@ -15378,13 +15372,7 @@
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 123)] Instance 'inst_scpld_to_mcpld_s2p/po[507]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 115)] Instance 'inst_scpld_to_mcpld_s2p/po_r[4]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 115)] Instance 'inst_scpld_to_mcpld_s2p/po_r[5]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
-        </row>
-        <row>
-            <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 115)] Instance 'inst_scpld_to_mcpld_s2p/po_r[6]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 115)] Instance 'inst_scpld_to_mcpld_s2p/po_r[7]' of 'GTP_DFF_CE' unit is dangling and will be cleaned.</data>
@@ -16644,16 +16632,19 @@
             <data message="5">Public-4008: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_sync.v(line number: 55)] Instance 'pwrcap_inst/inst[1].ps_ebrake_dct/signal_out' of 'GTP_DFF_C' unit is dangling and will be cleaned.</data>
         </row>
         <row>
-            <data message="4">The instance clkbufg_0(GTP_CLKBUFG) has been inserted on the net clk_50m in design, driver pin CLKOUT0(instance pll_inst/u_pll_e2) -&gt; load pin CLK(instance countp[0]).</data>
+            <data message="4">The instance clkbufg_0(GTP_CLKBUFG) has been inserted on the net clk_50m in design, driver pin CLKOUT0(instance pll_inst/u_pll_e2) -&gt; load pin CLK(instance count[0]).</data>
         </row>
         <row>
-            <data message="4">The instance clkbufg_1(GTP_CLKBUFG) has been inserted on the net clk_25m in design, driver pin CLKOUT1(instance pll_inst/u_pll_e2) -&gt; load pin CLK(instance r_pwm_D_fan_limit_use[0][4]).</data>
+            <data message="4">The instance clkbufg_1(GTP_CLKBUFG) has been inserted on the net clk_25m in design, driver pin CLKOUT1(instance pll_inst/u_pll_e2) -&gt; load pin CLK(instance r_pwm_D_fan_limit[0][0]).</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1175_0_1/gateop, insts:20.</data>
+            <data message="4">Infer CARRY group, base inst: N1184_0_1/gateop, insts:20.</data>
         </row>
         <row>
-            <data message="4">Infer CARRY group, base inst: N1559_0_1/gateop, insts:28.</data>
+            <data message="4">Infer CARRY group, base inst: N1588_0_1/gateop, insts:28.</data>
+        </row>
+        <row>
+            <data message="4">Infer CARRY group, base inst: N1592_0_1/gateop, insts:28.</data>
         </row>
         <row>
             <data message="4">Infer CARRY group, base inst: UID_Function_u0/N186_1_1/gateop, insts:7.</data>
@@ -16666,6 +16657,12 @@
         </row>
         <row>
             <data message="4">Infer CARRY group, base inst: bmc_cpld_i2c_ram_u0/N853_1_1/gateop, insts:5.</data>
+        </row>
+        <row>
+            <data message="4">Infer CARRY group, base inst: genblk1[0].fan_pwm_tach_m/N11.lt_0/gateop, insts:4.</data>
+        </row>
+        <row>
+            <data message="4">Infer CARRY group, base inst: genblk1[1].fan_pwm_tach_m/N11.lt_0/gateop, insts:4.</data>
         </row>
         <row>
             <data message="4">Infer CARRY group, base inst: inst_mcpld_to_scpld_p2s/N570_4_1/gateop, insts:8.</data>

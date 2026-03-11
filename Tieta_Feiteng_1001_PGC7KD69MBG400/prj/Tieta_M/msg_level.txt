@@ -1,2 +1,0 @@
-STA-3004=2
-******=166cfa6def52b9e41cc2bc3bbf74d5c504eef67fb4350b60114b7fdeb1cfc42a

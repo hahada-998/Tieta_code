@@ -14,13 +14,13 @@
 //=================================================================================================
 
 //`include "wpspo_g5_define.vh"
-`include "rs35m2c16s_g5_define.v"
+`include "top_define.v"
 module thermal(
    input                          clk,
    input                          pgd_p3v3_stby_async,
    input                          pgd_aux_system,
    input                          pgd_p3v3,
-    input                          pch_sys_pwrok,   //��ԶΪ1
+    input                          pch_sys_pwrok,   //��ԶΪ1
    input                          st_steady_pwrok,
    input       [`NUM_CPUVR-1:0]   cpu_vr_hot_n,
    input       [`NUM_MEMVR-1:0]   mem_vr_hot_n,
@@ -29,9 +29,9 @@ module thermal(
    input         [`NUM_CPU-1:0]   cpu_thermtrip_in,
    input                          thermtrip_ena,
    input                          emc_alert_n,
-   input                          lom_temp_dead,  //��ԶΪ0
+   input                          lom_temp_dead,  //��ԶΪ0
    input                          lom_prsnt_n,
-   input                          aroc_temp_dead,//��ԶΪ0
+   input                          aroc_temp_dead,//��ԶΪ0
 //YHY   input                          aroc_inst_n,
 //YHY   input         [`NUM_CPU-1:0]   cpu_hot,
    input         [`NUM_CPU-1:0]   cpu_ab_alert_n,
@@ -106,9 +106,9 @@ end
   //YHY                             ( aroc_temp_dead & ~aroc_inst_n) ) &
   //YHY                                                 pch_sys_pwrok;
         sensor_thermtrip  <= ( (~emc_alert_n    &  pgd_p3v3)    |
-                               ( lom_temp_dead  & ~lom_prsnt_n) |  //��ԶΪ0
-                               ( aroc_temp_dead ) ) &              //��ԶΪ0
-                                                   pch_sys_pwrok;        //��ԶΪ1                                             
+                               ( lom_temp_dead  & ~lom_prsnt_n) |  //��ԶΪ0
+                               ( aroc_temp_dead ) ) &              //��ԶΪ0
+                                                   pch_sys_pwrok;        //��ԶΪ1                                             
                                                    
      end
   end

@@ -316,48 +316,6 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_N0_100M':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_N0_1000M':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_N0_ACT':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_N1_100M':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_N1_1000M':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_N1_ACT':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
 Port 'p:o_P5V_USB2_EN':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -1308,6 +1266,36 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_MB_CB_RISER2_PRSNT0_N':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N0_100M':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N0_1000M':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N0_ACT':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N1_100M':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N1_1000M':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_N1_ACT':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,

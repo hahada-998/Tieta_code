@@ -21,7 +21,7 @@
 //=================================================================================================
 
 //`include "wpspo_g5_define.vh"
-`include "rs35m2c16s_g5_define.v"
+`include "top_define.v"
 module pwrcap
  #(
 `ifdef PSU_CTRL

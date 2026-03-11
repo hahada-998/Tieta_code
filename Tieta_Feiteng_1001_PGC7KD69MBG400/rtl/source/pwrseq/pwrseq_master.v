@@ -349,6 +349,7 @@ end
 // turn_system_on
 // 系统开机控制使能信号, 已经写死
 //------------------------------------------------------------------------------
+/*
 reg  [2:0]              r_pwrbtn_1s_cnt     ; // 计数到 4 秒 （0..4）
 reg                     r_Pwrbtn_long       ; // 长按指示 按下 >=4s 时置1（保留直到被清除）
 reg                     r_Pwrbtn_long_flag  ; // 指示长按大于4s后, 用该信号维持住SM_OFF_STANDBY状态
@@ -387,6 +388,7 @@ end
 always @(posedge clk) begin
     r_Pwrbtn_long_flag <= ~pch_pwrbtn_n & r_Pwrbtn_long;
 end 
+*/
 
 always @(posedge clk or posedge reset) begin
     if (reset)
@@ -783,9 +785,9 @@ always @(*) begin
             else if(s5dev_pwren_request && s5_devices_on_wait_complete) begin
                 state_ns = `SM_ENABLE_S5_DEVICES;
             end
-            else if(turn_system_on && r_Pwrbtn_long_flag && dc_on_wait_complete)begin
-                state_ns = `SM_OFF_STANDBY      ;
-            end
+            // else if(turn_system_on && r_Pwrbtn_long_flag && dc_on_wait_complete)begin
+            //     state_ns = `SM_OFF_STANDBY      ;
+            // end
 	        else if(turn_system_on && (dc_on_wait_complete) && ((~pch_pwrbtn_n) | ( ~pch_pwrbtn_s) | ( ~Power_WAKE_R_N ) | ( ~cpu_reboot)))begin
                 //开启 off_state 信号后等待判断按键信号
                 state_ns = `SM_PS_ON;
@@ -970,9 +972,9 @@ always @(*) begin
                 REBOOT_FLAG_SET = 1'b1;
             end
             // BL平台特殊处理, 长按开机按钮触发关机
-            else if(r_Pwrbtn_long)begin  
-                state_ns = `SM_CRITICAL_FAIL;  	          
-            end
+            // else if(r_Pwrbtn_long)begin  
+            //     state_ns = `SM_CRITICAL_FAIL;  	          
+            // end
             // 有限恢复相关状态flag清除
             lim_recov_retry_clr = 1'b1;
         end

@@ -19,7 +19,7 @@
 //=================================================================================================
 
 //`include "wpspo_g5_define.vh"
-`include "rs35m2c16s_g5_define.v"
+`include "top_define.v"
 module pwrcap_pwrbtn_led (
     input  wire          sys_clk,
     input  wire          reset_n, // p3v3_stby_pgd
@@ -78,7 +78,7 @@ always @(posedge sys_clk or negedge reset_n)
     else
       begin
         pwrbtn_grn <= (pwrcap_wait || pwrseq_wait) ? onehz_clk : vdd3_pgood;
-//YHY        pwrbtn_amb <= (pwrcap_wait || pwrseq_wait) ? 1'b0 : !vdd3_pgood;  //20201212 ºâÔ½ÒªÇó£¬½«STBYÐÞ¸Ä³ÉµÆÃð
+//YHY        pwrbtn_amb <= (pwrcap_wait || pwrseq_wait) ? 1'b0 : !vdd3_pgood;  //20201212 ï¿½ï¿½Ô½Òªï¿½ó£¬½ï¿½STBYï¿½Þ¸Ä³Éµï¿½ï¿½ï¿½
         pwrbtn_amb <= (pwrcap_wait || pwrseq_wait) ? 1'b0 : 1'b0 ; 
       end
   end

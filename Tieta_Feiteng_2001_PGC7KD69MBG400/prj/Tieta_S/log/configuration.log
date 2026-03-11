@@ -1076,3 +1076,237 @@ Cable index 0:USB Cable II/fffffffffffffffe
 [Debug] [2026-3-7 18:54:42] COMMAND[Program CTL] execute successfully, takes 0.2 secs.
 [Debug] [2026-3-7 18:54:42] Log::Print : COMMAND[Program CTL] execute successfully, takes 0.2 secs.
 [Info] [2026-3-7 19:09:28] /***************************End Configration***************************/
+[Info] [2026-3-9 15:44:40] /***************************Start Configuration***************************/
+[Info] [2026-3-9 15:44:40] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-9 15:44:40] Version: 187561
+[Info] [2026-3-9 15:44:41] Current Path: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S
+[Info] [2026-3-9 15:44:41] PDS Dir Path: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S
+[Info] [2026-3-9 15:44:43] Configuration is not connect with server. connect first then scan chain.
+[Debug] [2026-3-9 15:44:43] Client Local host name:z02665mj
+[Debug] [2026-3-9 15:44:43] Client Local Address:10.213.107.142
+[Debug] [2026-3-9 15:44:43] Server Address:127.0.0.1, Port:65420
+[Debug] [2026-3-9 15:44:43] Log::Print : Connecting to server[127.0.0.1 : 65420].
+[Info] [2026-3-9 15:44:43] Connect OK, Server: 127.0.0.1  Port: 65420
+[Debug] [2026-3-9 15:44:43] Finish.
+[Info] [2026-3-9 15:44:43] Connect server succeeded
+[Debug] [2026-3-9 15:44:43] Send RPC:1
+[Debug] [2026-3-9 15:44:43] Send cmd [check version information:40004] OK
+[Debug] [2026-3-9 15:44:43] Log::Print : Connect to server[127.0.0.1 : 65420] successfully.
+[Debug] [2026-3-9 15:44:44] Send RPC:2
+[Debug] [2026-3-9 15:44:44] Send cmd [get_cable_paras:40010] OK
+[Debug] [2026-3-9 15:44:44] Begin to send initialize chain cmd...
+[Debug] [2026-3-9 15:44:44] Send RPC:3
+[Debug] [2026-3-9 15:44:44] Send cmd [Open config cable:20001] OK
+[Debug] [2026-3-9 15:44:44] End to send initialize chain cmd.
+[Debug] [2026-3-9 15:44:44] COMMAND[check version information] execute successfully, takes 1.1 secs.
+[Debug] [2026-3-9 15:44:44] Log::Print : COMMAND[check version information] execute successfully, takes 1.1 secs.
+[Debug] [2026-3-9 15:44:46] Before cable list reserve:1
+[Debug] [2026-3-9 15:44:46] After cable list reserve
+[Debug] [2026-3-9 15:44:46] COMMAND[get_cable_paras] execute successfully, takes 1.4 secs.
+[Debug] [2026-3-9 15:44:46] Log::Print : The cable List : 
+Cable index 0:USB Cable II/fffffffffffffffe 
+
+[Debug] [2026-3-9 15:44:46] Log::Print : COMMAND[get_cable_paras] execute successfully, takes 1.4 secs.
+[Debug] [2026-3-9 15:44:47] begin the exec of open cable cmd...
+[Debug] [2026-3-9 15:44:47] Begin to deal with chain from server...
+[Debug] [2026-3-9 15:44:47] Begin to set user chain...
+[Debug] [2026-3-9 15:44:47] End to set user chain.
+[Debug] [2026-3-9 15:44:47] Begin to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:47] End to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:47] Begin to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:47] End to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:47] End to deal wiht chain from server.
+[Debug] [2026-3-9 15:44:47] end the exec of open cable cmd.
+[Debug] [2026-3-9 15:44:47] COMMAND[Open config cable] execute successfully, takes 2.2 secs.
+[Debug] [2026-3-9 15:44:47] Log::Print : PANGO USB CABLE II cable driver: D2XX DLL
+[Debug] [2026-3-9 15:44:47] Log::Print : PGC7KD
+[Debug] [2026-3-9 15:44:47] Log::Print : This device configure situation (done bit): 1
+[Debug] [2026-3-9 15:44:47] Log::Print : PGC7KD
+[Debug] [2026-3-9 15:44:47] Log::Print : This device configure situation (done bit): 1
+[Debug] [2026-3-9 15:44:47] Log::Print : COMMAND[Open config cable] execute successfully, takes 2.2 secs.
+[Debug] [2026-3-9 15:44:49] Begin to assign configuration file...
+[Info] [2026-3-9 15:44:59] set OpenLastPath: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/generate_bitstream/Tieta_Feiteng_1001_top.sbit
+[Debug] [2026-3-9 15:44:59] begin to get device info from CFG file...
+[Debug] [2026-3-9 15:44:59] end to get device info from CFG file...
+[Debug] [2026-3-9 15:44:59] Begin to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:59] End to update graphic item and tree item ...
+[Debug] [2026-3-9 15:44:59] End to assign configuration file...
+[Debug] [2026-3-9 15:45:00] Begin to assign configuration file...
+[Info] [2026-3-9 15:45:09] set OpenLastPath: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/generate_bitstream/Tieta_Feiteng_2001_top.sbit
+[Debug] [2026-3-9 15:45:09] begin to get device info from CFG file...
+[Debug] [2026-3-9 15:45:09] end to get device info from CFG file...
+[Debug] [2026-3-9 15:45:09] Begin to update graphic item and tree item ...
+[Debug] [2026-3-9 15:45:09] End to update graphic item and tree item ...
+[Debug] [2026-3-9 15:45:09] End to assign configuration file...
+[Debug] [2026-3-9 15:45:13] Send RPC:4
+[Debug] [2026-3-9 15:45:13] Begin to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:13] End to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:13] Send cmd [Program EFlash:20021] OK
+[Debug] [2026-3-9 15:45:14] The value of Progress is 6
+[Debug] [2026-3-9 15:45:15] The value of Progress is 10
+[Debug] [2026-3-9 15:45:16] The value of Progress is 15
+[Debug] [2026-3-9 15:45:17] The value of Progress is 20
+[Debug] [2026-3-9 15:45:18] The value of Progress is 25
+[Debug] [2026-3-9 15:45:19] The value of Progress is 30
+[Debug] [2026-3-9 15:45:20] The value of Progress is 35
+[Debug] [2026-3-9 15:45:21] The value of Progress is 40
+[Debug] [2026-3-9 15:45:22] The value of Progress is 45
+[Debug] [2026-3-9 15:45:23] The value of Progress is 50
+[Debug] [2026-3-9 15:45:24] The value of Progress is 55
+[Debug] [2026-3-9 15:45:25] The value of Progress is 60
+[Debug] [2026-3-9 15:45:26] The value of Progress is 65
+[Debug] [2026-3-9 15:45:27] The value of Progress is 70
+[Debug] [2026-3-9 15:45:28] The value of Progress is 75
+[Debug] [2026-3-9 15:45:29] The value of Progress is 80
+[Debug] [2026-3-9 15:45:30] The value of Progress is 85
+[Debug] [2026-3-9 15:45:31] The value of Progress is 90
+[Debug] [2026-3-9 15:45:32] The value of Progress is 95
+[Debug] [2026-3-9 15:45:33] COMMAND[Program EFlash] execute finish, takes 20.6 secs.
+[Debug] [2026-3-9 15:45:33] Send RPC:5
+[Debug] [2026-3-9 15:45:33] Begin to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:33] End to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:33] Send cmd [Verify EFlash:20024] OK
+[Debug] [2026-3-9 15:45:33] Log::Print : COMMAND[Program EFlash] execute finish, takes 20.6 secs.
+[Debug] [2026-3-9 15:45:34] The value of Progress is 6
+[Debug] [2026-3-9 15:45:34] The value of Progress is 10
+[Debug] [2026-3-9 15:45:34] The value of Progress is 15
+[Debug] [2026-3-9 15:45:34] The value of Progress is 20
+[Debug] [2026-3-9 15:45:34] The value of Progress is 25
+[Debug] [2026-3-9 15:45:34] The value of Progress is 30
+[Debug] [2026-3-9 15:45:34] The value of Progress is 35
+[Debug] [2026-3-9 15:45:34] The value of Progress is 40
+[Debug] [2026-3-9 15:45:34] The value of Progress is 45
+[Debug] [2026-3-9 15:45:35] The value of Progress is 50
+[Debug] [2026-3-9 15:45:35] The value of Progress is 55
+[Debug] [2026-3-9 15:45:35] The value of Progress is 60
+[Debug] [2026-3-9 15:45:35] The value of Progress is 65
+[Debug] [2026-3-9 15:45:35] The value of Progress is 70
+[Debug] [2026-3-9 15:45:35] The value of Progress is 75
+[Debug] [2026-3-9 15:45:35] The value of Progress is 80
+[Debug] [2026-3-9 15:45:35] The value of Progress is 85
+[Debug] [2026-3-9 15:45:35] The value of Progress is 90
+[Debug] [2026-3-9 15:45:35] The value of Progress is 95
+[Debug] [2026-3-9 15:45:36] COMMAND[Verify EFlash] execute successfully, takes 2.1 secs.
+[Debug] [2026-3-9 15:45:36] Send RPC:6
+[Debug] [2026-3-9 15:45:36] Send cmd [Program CTL:20015] OK
+[Debug] [2026-3-9 15:45:36] Log::Print : COMMAND[Verify EFlash] execute successfully, takes 2.1 secs.
+[Debug] [2026-3-9 15:45:36] Show Info: Feature Control value is : 0x00028943
+[Debug] [2026-3-9 15:45:36] Log::Print : Feature Control value is : 0x00028943
+[Debug] [2026-3-9 15:45:36] COMMAND[Program CTL] execute successfully, takes 0.2 secs.
+[Debug] [2026-3-9 15:45:36] Log::Print : COMMAND[Program CTL] execute successfully, takes 0.2 secs.
+[Debug] [2026-3-9 15:45:38] Send RPC:7
+[Debug] [2026-3-9 15:45:38] Begin to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:38] End to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:45:38] Send cmd [Program EFlash:20021] OK
+[Debug] [2026-3-9 15:45:39] The value of Progress is 6
+[Debug] [2026-3-9 15:45:40] The value of Progress is 10
+[Debug] [2026-3-9 15:45:42] The value of Progress is 15
+[Debug] [2026-3-9 15:45:43] The value of Progress is 20
+[Debug] [2026-3-9 15:45:44] The value of Progress is 25
+[Debug] [2026-3-9 15:45:45] The value of Progress is 30
+[Debug] [2026-3-9 15:45:46] The value of Progress is 35
+[Debug] [2026-3-9 15:45:47] The value of Progress is 40
+[Debug] [2026-3-9 15:45:49] The value of Progress is 45
+[Debug] [2026-3-9 15:45:50] The value of Progress is 50
+[Debug] [2026-3-9 15:45:51] The value of Progress is 55
+[Debug] [2026-3-9 15:45:52] The value of Progress is 60
+[Debug] [2026-3-9 15:45:53] The value of Progress is 65
+[Debug] [2026-3-9 15:45:54] The value of Progress is 70
+[Debug] [2026-3-9 15:45:56] The value of Progress is 75
+[Debug] [2026-3-9 15:45:57] The value of Progress is 80
+[Debug] [2026-3-9 15:45:58] The value of Progress is 85
+[Debug] [2026-3-9 15:45:59] The value of Progress is 90
+[Debug] [2026-3-9 15:46:00] The value of Progress is 95
+[Debug] [2026-3-9 15:46:01] COMMAND[Program EFlash] execute finish, takes 23.4 secs.
+[Debug] [2026-3-9 15:46:01] Send RPC:8
+[Debug] [2026-3-9 15:46:01] Begin to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:46:01] End to send operate embedded FPGA flash data.
+[Debug] [2026-3-9 15:46:01] Send cmd [Verify EFlash:20024] OK
+[Debug] [2026-3-9 15:46:01] Log::Print : COMMAND[Program EFlash] execute finish, takes 23.4 secs.
+[Debug] [2026-3-9 15:46:01] The value of Progress is 6
+[Debug] [2026-3-9 15:46:02] The value of Progress is 10
+[Debug] [2026-3-9 15:46:02] The value of Progress is 15
+[Debug] [2026-3-9 15:46:02] The value of Progress is 20
+[Debug] [2026-3-9 15:46:02] The value of Progress is 25
+[Debug] [2026-3-9 15:46:02] The value of Progress is 30
+[Debug] [2026-3-9 15:46:02] The value of Progress is 35
+[Debug] [2026-3-9 15:46:02] The value of Progress is 40
+[Debug] [2026-3-9 15:46:02] The value of Progress is 45
+[Debug] [2026-3-9 15:46:02] The value of Progress is 50
+[Debug] [2026-3-9 15:46:02] The value of Progress is 55
+[Debug] [2026-3-9 15:46:03] The value of Progress is 60
+[Debug] [2026-3-9 15:46:03] The value of Progress is 65
+[Debug] [2026-3-9 15:46:03] The value of Progress is 70
+[Debug] [2026-3-9 15:46:03] The value of Progress is 75
+[Debug] [2026-3-9 15:46:03] The value of Progress is 80
+[Debug] [2026-3-9 15:46:03] The value of Progress is 85
+[Debug] [2026-3-9 15:46:03] The value of Progress is 90
+[Debug] [2026-3-9 15:46:03] The value of Progress is 95
+[Debug] [2026-3-9 15:46:03] COMMAND[Verify EFlash] execute successfully, takes 2.0 secs.
+[Debug] [2026-3-9 15:46:03] Send RPC:9
+[Debug] [2026-3-9 15:46:03] Send cmd [Program CTL:20015] OK
+[Debug] [2026-3-9 15:46:03] Log::Print : COMMAND[Verify EFlash] execute successfully, takes 2.0 secs.
+[Debug] [2026-3-9 15:46:03] Show Info: Feature Control value is : 0x00028943
+[Debug] [2026-3-9 15:46:03] Log::Print : Feature Control value is : 0x00028943
+[Debug] [2026-3-9 15:46:04] COMMAND[Program CTL] execute successfully, takes 0.2 secs.
+[Debug] [2026-3-9 15:46:04] Log::Print : COMMAND[Program CTL] execute successfully, takes 0.2 secs.
+[Info] [2026-3-9 17:12:11] /***************************End Configration***************************/
+[Info] [2026-3-11 14:46:18] /***************************Start Configuration***************************/
+[Info] [2026-3-11 14:46:18] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-11 14:46:18] Version: 187561
+[Info] [2026-3-11 14:46:19] Current Path: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S
+[Info] [2026-3-11 14:46:19] PDS Dir Path: C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S
+[Info] [2026-3-11 14:46:22] Configuration is not connect with server. connect first then scan chain.
+[Debug] [2026-3-11 14:46:22] Client Local host name:z02665mj
+[Debug] [2026-3-11 14:46:22] Client Local Address:10.213.107.142
+[Debug] [2026-3-11 14:46:22] Client Local Address:192.168.1.200
+[Debug] [2026-3-11 14:46:22] Server Address:127.0.0.1, Port:65420
+[Debug] [2026-3-11 14:46:22] Log::Print : Connecting to server[127.0.0.1 : 65420].
+[Info] [2026-3-11 14:46:22] Connect OK, Server: 127.0.0.1  Port: 65420
+[Debug] [2026-3-11 14:46:22] Finish.
+[Info] [2026-3-11 14:46:22] Connect server succeeded
+[Debug] [2026-3-11 14:46:22] Send RPC:1
+[Debug] [2026-3-11 14:46:22] Send cmd [check version information:40004] OK
+[Debug] [2026-3-11 14:46:22] Log::Print : Connect to server[127.0.0.1 : 65420] successfully.
+[Debug] [2026-3-11 14:46:22] Send RPC:2
+[Debug] [2026-3-11 14:46:22] Send cmd [get_cable_paras:40010] OK
+[Debug] [2026-3-11 14:46:22] Begin to send initialize chain cmd...
+[Debug] [2026-3-11 14:46:22] Send RPC:3
+[Debug] [2026-3-11 14:46:22] Send cmd [Open config cable:20001] OK
+[Debug] [2026-3-11 14:46:22] End to send initialize chain cmd.
+[Debug] [2026-3-11 14:46:22] COMMAND[check version information] execute successfully, takes 0.1 secs.
+[Debug] [2026-3-11 14:46:22] Log::Print : COMMAND[check version information] execute successfully, takes 0.1 secs.
+[Debug] [2026-3-11 14:46:23] Before cable list reserve:1
+[Debug] [2026-3-11 14:46:23] After cable list reserve
+[Debug] [2026-3-11 14:46:23] COMMAND[get_cable_paras] execute successfully, takes 1.3 secs.
+[Debug] [2026-3-11 14:46:23] Log::Print : The cable List : 
+Cable index 0:USB Cable S/ffffffffffffff9b 
+
+[Debug] [2026-3-11 14:46:23] Log::Print : COMMAND[get_cable_paras] execute successfully, takes 1.3 secs.
+[Error] [2026-3-11 14:46:24] fail to exec Open config cable cmd...
+[Error] [2026-3-11 14:46:24] MsgOut: JtagServer-0001: No PANGO USB CABLE II cable was found in system.
+[Error] [2026-3-11 14:46:24] MsgOut: JtagServer-0306: No devices detected while scanning the JTAG chain, failed detecting JTAG device chain.
+[Warn] [2026-3-11 14:46:24] MsgOut: Please check the device power, cable connection situation and whether put the chip in the right way or not.
+   If these do not work, try to restart the software.
+[Error] [2026-3-11 14:46:24] MsgOut: Configuration-0008: The command 'Open config cable' execute fail.
+[Debug] [2026-3-11 14:47:21] Begin to send initialize chain cmd...
+[Debug] [2026-3-11 14:47:21] Send RPC:4
+[Debug] [2026-3-11 14:47:21] Send cmd [Open config cable:20001] OK
+[Debug] [2026-3-11 14:47:21] End to send initialize chain cmd.
+[Error] [2026-3-11 14:47:23] fail to exec Open config cable cmd...
+[Error] [2026-3-11 14:47:23] MsgOut: JtagServer-0001: No PANGO USB CABLE II cable was found in system.
+[Error] [2026-3-11 14:47:23] MsgOut: JtagServer-0306: No devices detected while scanning the JTAG chain, failed detecting JTAG device chain.
+[Warn] [2026-3-11 14:47:23] MsgOut: Please check the device power, cable connection situation and whether put the chip in the right way or not.
+   If these do not work, try to restart the software.
+[Error] [2026-3-11 14:47:23] MsgOut: Configuration-0008: The command 'Open config cable' execute fail.
+[Debug] [2026-3-11 14:47:27] Begin to send initialize chain cmd...
+[Debug] [2026-3-11 14:47:27] Send RPC:5
+[Debug] [2026-3-11 14:47:27] Send cmd [Open config cable:20001] OK
+[Debug] [2026-3-11 14:47:27] End to send initialize chain cmd.
+[Error] [2026-3-11 14:47:28] fail to exec Open config cable cmd...
+[Error] [2026-3-11 14:47:28] MsgOut: JtagServer-0001: No PANGO USB CABLE II cable was found in system.
+[Error] [2026-3-11 14:47:28] MsgOut: JtagServer-0306: No devices detected while scanning the JTAG chain, failed detecting JTAG device chain.
+[Warn] [2026-3-11 14:47:28] MsgOut: Please check the device power, cable connection situation and whether put the chip in the right way or not.
+   If these do not work, try to restart the software.
+[Error] [2026-3-11 14:47:28] MsgOut: Configuration-0008: The command 'Open config cable' execute fail.
+[Info] [2026-3-11 14:47:30] /***************************End Configration***************************/
