@@ -1,7 +1,7 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v
-Size: 340529bytes
-Last modified time: 2026/03/11 20:24:40
+Size: 347504bytes
+Last modified time: 2026/03/12 19:06:33
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v
 Size: 1528bytes
 Last modified time: 2026/02/09 19:29:17
@@ -110,6 +110,21 @@ Last modified time: 2022/09/09 17:01:31
 37. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/i2c_slave_basic0.v
 Size: 18773bytes
 Last modified time: 2026/02/11 11:11:20
+38. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/apb_mux.v
+Size: 5786bytes
+Last modified time: 2026/01/12 11:12:04
+39. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/apb_top.v
+Size: 5684bytes
+Last modified time: 2026/01/12 11:12:04
+40. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/bar_top.v
+Size: 10067bytes
+Last modified time: 2026/01/12 11:12:04
+41. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/iic_slave_CPU.v
+Size: 11057bytes
+Last modified time: 2026/01/12 11:12:04
+42. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/iic2apb_ctrl.v
+Size: 25133bytes
+Last modified time: 2026/01/12 11:12:04
 
 IPs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.idf
@@ -118,11 +133,11 @@ Last modified time: 2025/12/30 10:07:31
 
 Constraints:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc
-Size: 105461bytes
-Last modified time: 2026/03/04 15:59:02
+Size: 106089bytes
+Last modified time: 2026/03/12 19:09:08
 
 Physical Constraint Editor (Post-Map):
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/device_map/Tieta_Feiteng_1001_top.pcf
 Size: 24991bytes
-Last modified time: 2026/03/11 13:25:54
+Last modified time: 2026/03/12 19:03:21
 

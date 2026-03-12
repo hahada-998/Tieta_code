@@ -5,18 +5,20 @@ Notes:
   Location/Inst Name: if linefile info exists(no optimization), print the codes location of add/sub in rtl, else print the inst name
   Count: the amount of lutcarry for add/sub
   Number: the numbers of add/sub with the same lutcarry counts and linefile
-  LUT Total Nums from Add and Sub : 113
+  LUT Total Nums from Add and Sub : 121
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Detailed RTL Component Info :
------Add Total Nums : 14
+-----Add Total Nums : 15
 -----Sub Total Nums : 0
------LUT Total Nums from Add and Sub : 113
+-----LUT Total Nums from Add and Sub : 121
 
 Add_Sub: Initial Mapping Report :
 |-------------------------------------|---------|---------|---------|--------------------------------------------------------------------|
 |Module Name                          |Type     |Count    |Number   |Location/Inst Name                                                  |
+|-------------------------------------|---------|---------|---------|--------------------------------------------------------------------|
+|iic_slave_BMC_module                 |Add      |8        |1        |../../../rtl/i2c_updata/iic_slave_CPU.v:382                         |
 |-------------------------------------|---------|---------|---------|--------------------------------------------------------------------|
 |inst_cmu_to_mb_s2p                   |Add      |9        |1        |../../../rtl/communication/s2p_master.v:96                          |
 |-------------------------------------|---------|---------|---------|--------------------------------------------------------------------|

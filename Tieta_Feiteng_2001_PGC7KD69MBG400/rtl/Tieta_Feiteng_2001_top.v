@@ -1,6 +1,7 @@
 `include "top_define.v"
 `include "pwrseq_define.v"
 `include "tpm_define.v"
+`include "global_constant.v"
 module Tieta_Feiteng_2001_top(
     // =============================================================================
     //  系统时钟 
@@ -27,38 +28,37 @@ module Tieta_Feiteng_2001_top(
     /* end: JTAG 接口*/
 
     // =============================================================================
-    //  I2C  
+    //  I2C 接口
     // =============================================================================
     /* begin: I2C 接口*/
     input   i_CPU0_D0_I2C1_PE_STRAP_SCL             /* synthesis LOC = "A4"*/ ,// from  CPU_I2C_LEVEL_TRAN / U97_CA9617MMR           to  CPLD_S                                           default 1  // CPU0 D0 I2C1 PE STRAP SCL 信号
     inout   io_CPU0_D0_I2C1_PE_STRAP_SDA            /* synthesis LOC = "A3"*/ ,// from  CPU_I2C_LEVEL_TRAN / U97_CA9617MMR           to  CPLD_S                                           default 1  // CPU0 D0 I2C1 PE STRAP SDA 信号    
     // 未使用
+    input   i_BMC_I2C3_PAL_S_SCL_R                  /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL 信号
+    inout   io_BMC_I2C3_PAL_S_SDA_R                 /* synthesis LOC = "D11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA 信号
+    input   i_BMC_I2C3_PAL_S_SCL1_R                 /* synthesis LOC = "W8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL1 信号
+    inout   io_BMC_I2C3_PAL_S_SDA1_R                /* synthesis LOC = "V8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA1 信号
     input   i_CPU1_D0_I2C1_PE_STRAP_SCL             /* synthesis LOC = "W10"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C             to  CPLD_S                                           default 1  // CPU1 D0 I2C1 PE STRAP SCL 信号
-    inout   io_CPU1_D0_I2C1_PE_STRAP_SDA            /* synthesis LOC = "V9"*/,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C             to  CPLD_S                                           default 1  // CPU1 D0 I2C1 PE STRAP SDA 信号
+    inout   io_CPU1_D0_I2C1_PE_STRAP_SDA            /* synthesis LOC = "V9"*/ ,// from  CPU1_GPIO1 / U2_S5000C_32_3200_C             to  CPLD_S                                           default 1  // CPU1 D0 I2C1 PE STRAP SDA 信号
     // 未使用
     output  o_RST_I2C1_MUX_N_R                      /* synthesis LOC = "R20"*/,// from  CPLD_S                                       to  BMC_I2C_MUX1 / U69                               default 1  // I2C1 复位 多路复用器 信号
-    output  o_RST_I2C2_MUX_N_R                      /* synthesis LOC = "A6"*/,// from  CPLD_S                                       to  BMC_I2C_MUX1 / U53_CA9545MTR                     default 1  // I2C2 复位 多路复用器 信号
-    output  o_RST_I2C3_MUX_N_R                      /* synthesis LOC = "C8"*/,// from  CPLD_S                                       to  RST_I2C3_MUX1 / U242_CA9545MTR                   default 1  // RST I2C3 MUX N 信号
-    output  o_RST_I2C4_1_MUX_N_R                    /* synthesis LOC = "A9" */,// from  CPLD_S                                      to  BMC_I2C_MUX2 / U179                              default 1  // I2C4_1 复位 多路复用器 信号
-    output  o_RST_I2C4_2_MUX_N_R                    /* synthesis LOC = "R5"*/,// from  CPLD_S                                       to  BMC_I2C_MUX2 / U179                              default 1  // I2C4_2 复位 多路复用器 信号
-    output  o_RST_I2C5_MUX_N_R                      /* synthesis LOC  = "A5" */,// from  CPLD_S                                      to  BMC_I2C_MUX1 / U173                              default 1  // I2C5 复位 多路复用器 信号
-    output  o_RST_I2C12_MUX_N_R                     /* synthesis LOC = "D10" */,// from  CPLD_S                                      to  BMC_I2C_MUX2 / U10_CA9545MTR                     default 1  // I2C12 复位 多路复用器 信号                      
+    output  o_RST_I2C2_MUX_N_R                      /* synthesis LOC = "A6"*/ ,// from  CPLD_S                                       to  BMC_I2C_MUX1 / U53_CA9545MTR                     default 1  // I2C2 复位 多路复用器 信号
+    output  o_RST_I2C3_MUX_N_R                      /* synthesis LOC = "C8"*/ ,// from  CPLD_S                                       to  RST_I2C3_MUX1 / U242_CA9545MTR                   default 1  // RST I2C3 MUX N 信号
+    output  o_RST_I2C4_1_MUX_N_R                    /* synthesis LOC = "A9"*/ ,// from  CPLD_S                                       to  BMC_I2C_MUX2 / U179                              default 1  // I2C4_1 复位 多路复用器 信号
+    output  o_RST_I2C4_2_MUX_N_R                    /* synthesis LOC = "R5"*/ ,// from  CPLD_S                                       to  BMC_I2C_MUX2 / U179                              default 1  // I2C4_2 复位 多路复用器 信号
+    output  o_RST_I2C5_MUX_N_R                      /* synthesis LOC = "A5"*/ ,// from  CPLD_S                                       to  BMC_I2C_MUX1 / U173                              default 1  // I2C5 复位 多路复用器 信号
+    output  o_RST_I2C12_MUX_N_R                     /* synthesis LOC = "D10"*/,// from  CPLD_S                                       to  BMC_I2C_MUX2 / U10_CA9545MTR                     default 1  // I2C12 复位 多路复用器 信号                      
     output  o_RST_I2C13_MUX_N_R                     /* synthesis LOC = "Y11"*/,// from  CPLD_S                                       to  RST_I2C13_MUX2 / U51                             default 1  // RST I2C13 MUX N 信号   
     output  o_RST_I2C_BMC_9548_MUX_N_R              /* synthesis LOC = "Y14"*/,// from  CPLD_S                                       to  BMC_I2C_MUX2 / U258                              default 1  // RST I2C BMC 9548 MUX N 信号                                           
     /* end: I2C 接口*/
 
     // =============================================================================
-    //  I3C  
+    //  I3C 接口
     // =============================================================================
     /* begin: I3C 接口*/
-    // input   i_BMC_I2C3_PAL_S_SCL_R                  /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL 信号
-    // inout   io_BMC_I2C3_PAL_S_SDA_R                 /* synthesis LOC = "D11"*/,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA 信号
-    input   i_BMC_I2C3_PAL_S_SCL1_R                 /* synthesis LOC = "W8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SCL1 信号
-    inout   io_BMC_I2C3_PAL_S_SDA1_R                /* synthesis LOC = "V8"*/ ,// from  BMC_I2C_MUX1 / U69                           to  CPLD_S                                           default 1  // BMC I2C3 PAL S SDA1 信号
-    
     output  o_PAL_CPU0_I3C_SPD_SEL                  /* synthesis LOC = "D7"*/,// from  CPLD_S                                        to  CPU0_I3C_SPD_SEL / J14_G97V22312HR               default 1  // CPU0 I3C SPD 选择 信号
     output  o_PAL_CPU1_I3C_SPD_SEL                  /* synthesis LOC = "B7"*/,// from  CPLD                                           to  CPU0/1_I2C_I3C_SW / U13                          default 1  // PAL CPU1 I3C SPD SEL 信号
-    /* begin: I3C 接口*/
+    /* end: I3C 接口*/
 
     // =============================================================================
     //  CPLD 芯片初始信号接口
@@ -105,13 +105,14 @@ module Tieta_Feiteng_2001_top(
     // 已使用
 
     // 未使用
+    // 串口这里需要梳理一下
     input   i_CPU0_D1_UART1_TX                       /* synthesis LOC = "D1"*/,// from  CPU0_GPIO1 / U1_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU0 D1 UART1 发送 信号
     output  o_CPU0_D1_UART1_RX                       /* synthesis LOC = "D2"*/,// from  CPLD_S                                         to  CPU0_GPIO1 / U1_S5000C_32_3200_C                 default 1  // CPU0 D1 UART1 接收 信号
     input   i_CPU1_D1_UART1_TX                       /* synthesis LOC = "C2"*/,// from  CPU1_GPIO2 / U3_S5000C_32_3200_C               to  CPLD_S                                           default 1  // CPU1 D1 UART1 发送 信号
     output  o_CPU1_D1_UART1_RX                       /* synthesis LOC = "C1"*/,// from  CPLD_S                                         to  CPU1_GPIO1 / U2_S5000C_32_3200_C                 default 1  // CPU1 D1 UART1 接收 信号
 
-    input   i_DB_UART_RX_R	                         /* synthesis LOC  = "Y15 "*/,// from  DB_MODULE / J33_1338_201_8Q_N                to  CPLD_S                                           default 1  // DB UART 接收 信号
-    output  o_DB_UART_TX_R	                         /* synthesis LOC  = "W16 "*/,// from  CPLD_S                                      to  DB_MODULE / J33_1338_201_8Q_N                    default 1  // DB UART 发送 信号       
+    input   i_DB_UART_RX_R	                         /* synthesis LOC = "Y15"*/,// from  DB_MODULE / J33_1338_201_8Q_N                to  CPLD_S                                           default 1  // DB UART 接收 信号
+    output  o_DB_UART_TX_R	                         /* synthesis LOC = "W16"*/,// from  CPLD_S                                      to  DB_MODULE / J33_1338_201_8Q_N                    default 1  // DB UART 发送 信号       
     
     input   i_DBG_CPU0_UART1_RX_CONN_R               /* synthesis LOC = "V19"*/,// from  J29_10317724B001                              to  CPLD_S                                           default 1  // CPU0 DEBUG UART1 接收 信号
     output  o_DBG_CPU0_UART1_TX_CONN_R               /* synthesis LOC = "W19"*/,// from  CPLD_S                                        to  J29_10317724B001                                 default 1  // CPU0 DEBUG UART1 发送 信号
@@ -119,30 +120,28 @@ module Tieta_Feiteng_2001_top(
     input   i_DBG_PAL_BMC_UART1_RX_CONN_R            /* synthesis LOC = "U19"*/,// from  J29_10317724B001                              to  CPLD_S                                           default 1  // BMC DEBUG UART1 接收 信号
     output  o_DBG_PAL_BMC_UART1_TX_CONN_R            /* synthesis LOC = "T19"*/,// from  CPLD_S                                        to  J29_10317724B001                                 default 1  // BMC DEBUG UART1 发送 信号
 
-    input   i_LEAR_CPU0_UART1_RX                      /* synthesis LOC = "J17"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S                                           default 1  // CPU0 LEAR UART1 接收 信号
-    output  o_LEAR_CPU0_UART1_TX                      /* synthesis LOC = "K17"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // CPU0 LEAR UART1 发送 信号
+    input   i_LEAR_CPU0_UART1_RX                     /* synthesis LOC = "J17"*/,// from  GENZ_168PIN/J98_5653E5-001H1020T             to  CPLD_S                                           default 1  // CPU0 LEAR UART1 接收 信号
+    output  o_LEAR_CPU0_UART1_TX                     /* synthesis LOC = "K17"*/,// from  CPLD_S                                       to  GENZ_168PIN/J98_5653E5-001H1020T                 default 1  // CPU0 LEAR UART1 发送 信号
 
-    input   i_Riser1_TOD_UART_RXD_R                   /* synthesis LOC = "V1"*/ ,// from  RISER1/J1_G64V3421MHR                        to  CPLD_S                                           default 1  // Riser1 TOD UART 接收 信号       
-    output  o_Riser1_TOD_UART_TXD_R	                  /* synthesis LOC = "W1"*/ ,// from  CPLD_S                                       to  RISER1/J1_G64V3421MHR                            default 1  // Riser1 TOD UART 发送 信号
+    input   i_Riser1_TOD_UART_RXD_R                  /* synthesis LOC = "V1"*/ ,// from  RISER1/J1_G64V3421MHR                        to  CPLD_S                                           default 1  // Riser1 TOD UART 接收 信号       
+    output  o_Riser1_TOD_UART_TXD_R	                 /* synthesis LOC = "W1"*/ ,// from  CPLD_S                                       to  RISER1/J1_G64V3421MHR                            default 1  // Riser1 TOD UART 发送 信号
     
-    input   i_Riser2_TOD_UART_RXD_R                   /* synthesis LOC = "M19"*/ ,// from  RISER2/J39_G64V3421MHR                       to  CPLD_S                                          default 1  // Riser1 TOD UART 接收 信号
-    output  o_Riser2_TOD_UART_TXD_R	                  /* synthesis LOC = "N20"*/ ,// from  CPLD_S                                       to  RISER2/J39_G64V3421MHR                           default 1  // Riser1 TOD UART 发送 信号
+    input   i_Riser2_TOD_UART_RXD_R                  /* synthesis LOC = "M19"*/,// from  RISER2/J39_G64V3421MHR                       to  CPLD_S                                          default 1  // Riser1 TOD UART 接收 信号
+    output  o_Riser2_TOD_UART_TXD_R	                 /* synthesis LOC = "N20"*/,// from  CPLD_S                                       to  RISER2/J39_G64V3421MHR                           default 1  // Riser1 TOD UART 发送 信号
     
-    input   i_DB9_TOD_UART_RX                         /* synthesis LOC  = "U9"*/,// from  PPS TOD / U88_TPT75176HL1_S01R                to  CPLD_S                                           default 1  // DB9 TOD UART 接收 信号
-    output  o_DB9_TOD_UART_TX                         /* synthesis LOC  = "P12" */,// from  CPLD_S                                      to  PPS TOD / U88_TPT75176HL1_S01R                  default 1  // DB9 TOD UART 发送 信号
+    input   i_DB9_TOD_UART_RX                        /* synthesis LOC  = "U9"*/,// from  PPS TOD / U88_TPT75176HL1_S01R                to  CPLD_S                                           default 1  // DB9 TOD UART 接收 信号
+    output  o_DB9_TOD_UART_TX                        /* synthesis LOC  = "P12"*/,// from  CPLD_S                                      to  PPS TOD / U88_TPT75176HL1_S01R                  default 1  // DB9 TOD UART 发送 信号
 
-    input   i_UART0_CPU_LOG_RX                        /* synthesis LOC = "F16"*/,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 UART 日志 接收 信号
-    output  o_UART0_CPU_LOG_TX                        /* synthesis LOC = "F14"*/,// from  CPLD_S                                      to  CPU0_UART / J614                                 default 1  // CPU0 UART 日志 发送 信号                                                
+    input   i_UART0_CPU_LOG_RX                       /* synthesis LOC = "F16"*/,// from  CPU0_UART / J614                             to  CPLD_S                                           default 1  // CPU0 UART 日志 接收 信号
+    output  o_UART0_CPU_LOG_TX                       /* synthesis LOC = "F14"*/,// from  CPLD_S                                       to  CPU0_UART / J614                                 default 1  // CPU0 UART 日志 发送 信号                                                
 
-    input   i_RISER_AUX_TOD_UART1_RXD                 /* synthesis LOC = "V12"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
-    output  o_RISER_AUX_TOD_UART1_TXD                 /* synthesis LOC = "T11"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
-    input   i_RISER_AUX_TOD_UART2_RXD                 /* synthesis LOC = "U12"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
-    output  o_RISER_AUX_TOD_UART2_TXD                 /* synthesis LOC = "U11"*/ ,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
-    
-    // 未使用
+    input   i_RISER_AUX_TOD_UART1_RXD                /* synthesis LOC = "V12"*/,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
+    output  o_RISER_AUX_TOD_UART1_TXD                /* synthesis LOC = "T11"*/,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
+    input   i_RISER_AUX_TOD_UART2_RXD                /* synthesis LOC = "U12"*/,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
+    output  o_RISER_AUX_TOD_UART2_TXD                /* synthesis LOC = "U11"*/,// from  CPLD_S                                       to  RISER_AUX/J16                                    default 1  // Riser AUX TOD UART2 发送 信号
     // 串口这里需要梳理一下
+    // 未使用
     /* end: UART 接口 */
-
 
     // RISER1 开关 使能 信号
     output  o_RISER1_SWITCH_EN                       /* synthesis LOC  = "P7"*/,// from  CPLD_S                                       to  RISER1/J1_G64V3421MHR                            default 1  // Riser1 开关 使能 信号
@@ -348,12 +347,10 @@ module Tieta_Feiteng_2001_top(
     output  o_PAL_P12V_STBY_EFUSE_EN_R                /* synthesis LOC = "B8"*/,// from  CPLD_S                                        to  CURRENT_DET1 / P12V_STBY                         default 1  // 12V 待机 EFUSE 使能 信号                                            
     input   i_P12V_STBY_SNS_ALERT                     /* synthesis LOC = "T8"*/,// from  PEX_USB_1 / U40_XUSB2104LCGR                  to  CPLD_S                                           default 1  // 12V 待机 传感器 告警 信号
 
-    // 未使用 
     input   i_PAL_P12V_RISER1_VIN_PG                  /* synthesis LOC = "T10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 良好 信号
     input   i_PAL_P12V_RISER1_VIN_FLTB                /* synthesis LOC = "P10"*/,// from  P12V_RISER1_VIN                               to  CPLD_S                                           default 1  // 12V Riser1 输入电压 故障 信号
     input   i_PAL_P12V_RISER2_VIN_PG                  /* synthesis LOC = "L16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 良好 信号
     input   i_PAL_P12V_RISER2_VIN_FLTB                /* synthesis LOC = "N16"*/,// from  P12V_RISER2_VIN                               to  CPLD_S                                           default 1  // 12V Riser2 输入电压 故障 信号
-    // 未使用
 
     // 未使用 
     // !!! 接入主CPLD
@@ -879,6 +876,9 @@ wire [1:0]                      bmcctl_uart_sw                                  
 wire                            bmcctl_uart_sw_en                                   ;
 wire [15:0]                     mb_cpld2_ver                                        ; // SCPLD->MCPLD     BMC寄存     addr 0x00FC-0x00FD[7:0] MB CPLD2版本，16位高8位在0x00FC，低8位在0x00FD
 
+wire                            db_i_pal_p12v_riser2_vin_fltb                       ; // SCPLD->MCPLD     BMC寄存                             12V Riser2 输入电压 过压/欠压故障信号
+wire                            db_i_pal_p12v_riser2_vin_pg                         ; // SCPLD->MCPLD     BMC寄存                             12V Riser2 输入电压 过压/欠压保护信号
+wire                            db_i_pal_p12v_riser1_vin_fltb                       ; // SCPLD->MCPLD     BMC寄存                             12V Riser1 输入电压 过压/欠压故障信号
 wire                            db_i_pal_p12v_riser1_vin_pg                         ; // SCPLD->MCPLD     BMC寄存                             12V Riser1 输入电压 过压/欠压保护信号
 wire                            db_i_pal_p12v_stby_efuse_fltb                       ; // SCPLD->MCPLD     BMC寄存                             12V standby电压  eFuse故障信号
 wire                            db_i_pal_p12v_stby_efuse_pg                         ; // SCPLD->MCPLD     BMC寄存                             12V standby电压  eFuse编程完成信号
@@ -1101,6 +1101,9 @@ PGM_DEBOUNCE_N #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_pwrgood (
     .rst_n		                (pon_reset_n),
     .timer_tick	                (1'b1),
     .din                        ({
+                                i_PAL_P12V_RISER2_VIN_FLTB      , //08
+                                i_PAL_P12V_RISER2_VIN_PG        , //07
+                                i_PAL_P12V_RISER1_VIN_FLTB      , //06
                                 i_PAL_P12V_RISER1_VIN_PG        , //05
                                 i_PAL_P12V_STBY_EFUSE_FLTB      , //04
                                 i_PAL_P12V_STBY_EFUSE_PG        , //03
@@ -1108,6 +1111,9 @@ PGM_DEBOUNCE_N #(.SIGCNT(2), .NBITS(2'b11), .ENABLE(1'b1)) db_inst_pwrgood (
 	                            ~i_P12V_STBY_SNS_ALERT            //01
 	                            }),             
     .dout                       ({
+                                db_i_pal_p12v_riser2_vin_fltb   , //08
+                                db_i_pal_p12v_riser2_vin_pg     , //07
+                                db_i_pal_p12v_riser1_vin_fltb   , //06
                                 db_i_pal_p12v_riser1_vin_pg     , //05
                                 db_i_pal_p12v_stby_efuse_fltb   , //04
                                 db_i_pal_p12v_stby_efuse_pg     , //03
@@ -1459,9 +1465,9 @@ assign scpld_to_mcpld_p2s_data[12]      = db_i_pal_ocp_prsnt_n /*ocp_prsent_b0_n
 // Fan 安装状态信号
 assign scpld_to_mcpld_p2s_data[11]      = 1'b0 /*fan8_install_n*/        ; // 未使用
 assign scpld_to_mcpld_p2s_data[10]      = 1'b0 /*fan7_install_n*/        ; // 未使用
-assign scpld_to_mcpld_p2s_data[9]       = 1'b0 /*fan6_install_n*/        ; // 未使用
-assign scpld_to_mcpld_p2s_data[8]       = 1'b0 /*fan5_install_n*/        ; // 未使用
-assign scpld_to_mcpld_p2s_data[7]       = 1'b0 /*fan4_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[9]       = db_i_pal_p12v_riser2_vin_fltb /*fan6_install_n*/        ; // 未使用
+assign scpld_to_mcpld_p2s_data[8]       = db_i_pal_p12v_riser2_vin_pg   /*fan5_install_n*/       ; // 未使用
+assign scpld_to_mcpld_p2s_data[7]       = db_i_pal_p12v_riser1_vin_fltb /*fan4_install_n*/        ; // 未使用
 assign scpld_to_mcpld_p2s_data[6]       = db_i_pal_p12v_riser1_vin_pg   /*fan3_install_n*/        ; // 未使用
 assign scpld_to_mcpld_p2s_data[5]       = db_i_pal_p12v_stby_efuse_fltb /*fan2_install_n*/        ; // 未使用
 assign scpld_to_mcpld_p2s_data[4]       = db_i_pal_p12v_stby_efuse_pg   /*fan1_install_n*/        ; // 未使用
@@ -1660,8 +1666,10 @@ assign mbcpld_to_bmccpld_p2s_data[0]     = t4hz_clk;
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 // begin: riser1/riser2 sgpio scan chain
 //--------------------------------------------------------------------------------------------------------------------------------------------------
+// EN = 0, SELECT = 0 EN = 0, SELECT = 1,
 assign o_RISER1_SWITCH_EN   = 1'bz ;  
 assign o_RISER1_SELECT      = 1'bz ;
+
 assign o_PAL_RISER1_SS_CLK  = 1'bz ;
 assign o_PAL_RISER1_SS_LD_N = 1'bz ;
 assign o_PAL_RISER2_SS_CLK  = 1'bz ;
@@ -2244,6 +2252,209 @@ assign mb_cpld2_ver            = 16'h01A1;
 
 //assign PAL_I2C_VPP_RISER1_SLOT_R = power_supply_on;
 //assign PAL_I2C_VPP_RISER2_SLOT_R = power_supply_on;
+
+//------------------------------------------------------------------------------
+// 在线升级
+// 用紫光的替换方案, 解析从I2C读写地址和数据, 适配移植的可用代码, 当前从机设备不确定
+//------------------------------------------------------------------------------
+wire 								iic_slave_scl_BMC			;
+wire 								iic_slave_sda_in_BMC		;
+wire 								slave_iic_sda_out_BMC		;
+wire [6:0] 							iic_slave_device_id_BMC 	;
+wire [7:0] 							iic_slave_command_BMC		;
+wire [7:0] 							iic_slave_address_h_BMC		;
+wire [7:0] 							iic_slave_address_l_BMC		;
+wire [7:0] 							iic_slave_wdata_BMC			;
+reg  [7:0] 							iic_slave_rdata_BMC			;
+wire 								iic_slave_write_en_BMC		;
+wire 								iic_slave_read_en_BMC		;
+wire 								iic_slave_busy_BMC			;
+
+
+assign iic_slave_scl_BMC    	= i_BMC_I2C3_PAL_S_SCL_R        				;
+assign iic_slave_sda_in_BMC     = io_BMC_I2C3_PAL_S_SDA_R       				;
+assign io_BMC_I2C3_PAL_S_SDA_R  = (slave_iic_sda_out_BMC == 1'b1) ? 1'bz : 1'b0 ;
+
+// 从机地址： 默认 8bit address 0xE8, 可选；
+assign iic_slave_device_id_BMC  = {7'b1110_100}								    ; 
+
+iic_slave_CPU iic_slave_BMC_module(
+	.reset_n				(pon_reset_n			    ),
+	.clk_25mhz				(clk_50m					),
+
+	.iic_scl				(iic_slave_scl_BMC			),
+	.iic_sda_in				(iic_slave_sda_in_BMC		),
+	.iic_sda_out			(slave_iic_sda_out_BMC		),
+	.DEVICE_ID  			(iic_slave_device_id_BMC	),
+	.address_width			(1'b1						), // 0:8bit  1:16bit
+	.command				(iic_slave_command_BMC		),
+	.address_h				(iic_slave_address_h_BMC	),
+	.address_l				(iic_slave_address_l_BMC	),
+	.wdata					(iic_slave_wdata_BMC		),
+	.rdata					(iic_slave_rdata_BMC		),
+
+	.write_en				(iic_slave_write_en_BMC		),
+	.read_en				(iic_slave_read_en_BMC		),
+	.busy					(iic_slave_busy_BMC			)
+);
+
+//register read and write
+wire [15:0] iic_slave_address_BMC;
+assign 		iic_slave_address_BMC = {iic_slave_address_h_BMC,iic_slave_address_l_BMC};
+
+
+// 紫光APB在线升级模块
+wire 	                    apb_en_wire         ;
+reg                         apb_en_reg          ;
+wire [7:0]	                i2c_tx_data         ;	
+wire                        i2c_tx_req          ;
+wire                        apb_tx_valid        ;
+reg  [7:0]	                i2c_rx_data         ;	
+wire                        i2c_rx_vld          ;
+wire                        i2c_rx_rdy          ;	
+wire 	                    i2c_tx_vld          ;
+reg                         apb_rx_valid        ;
+reg  [7:0]	                apb_tx_data         ;
+reg                         apb_tx_vld_r        ;
+reg  [7:0]                  apb_rx_data_reg     ;
+reg                         apb_start_clr       ;
+reg                         apb_start_flag      ;
+reg  [3:0]                  apb_sel_reg         ;   //CPLD选择寄存器：0001：主控板，0011：交换板A，0110：风扇板，1111：空，禁止使用！
+reg	 [2:0]                  c_state             ;
+
+
+/**************************************************************功能实现************************************************************/
+
+/***************************************************************read***************************************************************/
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        iic_slave_rdata_BMC[7:0] <= 8'hff;
+    else if(iic_slave_read_en_BMC)
+        case(iic_slave_address_BMC[8:0])
+            9'h0E1: iic_slave_rdata_BMC[7:0] <= apb_rx_data_reg[7:0] ;
+		    9'h0E2: iic_slave_rdata_BMC[7:0] <= apb_tx_data[7:0]     ;
+            default: iic_slave_rdata_BMC[7:0] <= 8'hff;
+        endcase
+    else 
+        iic_slave_rdata_BMC[7:0] <= 8'hff;
+end
+
+
+/***************************************************************write**************************************************************/
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n)begin
+        apb_en_reg        <= 1'b0 ;
+        apb_sel_reg[3:0]  <= `NONE; 
+        apb_rx_data_reg   <= 8'h00; 
+    end
+    else if(iic_slave_write_en_BMC)
+        case(iic_slave_address_BMC[8:0])
+            9'h0DA : {apb_en_reg,apb_sel_reg[3:0]} <= {iic_slave_wdata_BMC[7], iic_slave_wdata_BMC[3:0]};  
+		    9'h0E1 : apb_rx_data_reg[7:0]		   <= iic_slave_wdata_BMC[7:0] ;
+            default: ;
+        endcase
+end
+
+
+/*************************************************************在线升级*************************************************************/
+localparam	                IDLE	    = 3'b000;
+localparam	                I2C_S1	    = 3'b001;
+localparam	                I2C_S2	    = 3'b010;
+//APB
+always @(posedge clk_50m or negedge pon_reset_n) begin
+	if(!pon_reset_n)
+		apb_start_flag <= 1'b0;
+	else if(iic_slave_write_en_BMC && (iic_slave_address_BMC[8:0] == 9'h0E1)) 
+		apb_start_flag <= 1'b1;
+	else if(i2c_rx_rdy)
+		apb_start_flag <= 1'b0;
+end
+
+always @ (posedge clk_50m or negedge apb_en_wire) begin
+	if(!apb_en_wire) begin
+		c_state         <= IDLE;
+		apb_rx_valid    <= 1'b0;
+		i2c_rx_data     <= 8'h00;
+    end  
+    else 
+	case(c_state) 
+		IDLE : 
+			begin
+				apb_rx_valid <= 1'b0;
+				if( apb_start_flag)
+					c_state <= I2C_S1;
+			end
+		I2C_S1 :
+			begin
+				apb_rx_valid 		<= 1'b1;
+				i2c_rx_data[7:0]	<= apb_rx_data_reg[7:0];
+				c_state				<= I2C_S2;
+			end
+		I2C_S2 : 
+			begin
+				if(i2c_rx_rdy)
+					begin
+						apb_rx_valid 		<= 1'b0;
+						i2c_rx_data[7:0]	<= 8'h00;
+						c_state				<= IDLE;
+					end  
+			end             				
+		default : ;
+	endcase
+end
+
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        apb_tx_vld_r <= 1'b0;
+    else if(i2c_tx_vld) 
+        apb_tx_vld_r <= 1'b0;
+    else 
+        apb_tx_vld_r <= apb_tx_valid;
+end
+
+assign i2c_tx_req	=  apb_tx_vld_r;
+
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        apb_tx_data[7:0] <= 8'b0;
+    else if(i2c_tx_vld) 
+        apb_tx_data[7:0] <= i2c_tx_data[7:0];
+    else 
+        apb_tx_data[7:0] <= apb_tx_data[7:0];
+end
+
+assign i2c_rx_vld	= apb_rx_valid;
+assign i2c_tx_req	= apb_tx_vld_r;
+assign apb_en_wire =  apb_en_reg ? 1'b1 : 1'b0;
+assign apb_tx_valid = (iic_slave_write_en_BMC && (iic_slave_address_BMC[8:0] == 9'h0E2)) ? 1'b1 : apb_tx_vld_r; //主控板地址，写操作有效
+
+apb_top # (
+    .PG_PDS_VER       ("PDS2024.2"      ),
+    .SIM_DEVICE       ("PGC7KD"         )
+)
+u_apb_top
+(
+	.clk              (clk_50m          ),
+	.rst_n            (pon_reset_n    	),
+
+	.i2c_tx_data      (i2c_tx_data[7:0]	), // output 8bit
+	.i2c_tx_req       (i2c_tx_req		), // input 
+	.i2c_tx_vld       (i2c_tx_vld		), // output 
+	.i2c_rx_data      (i2c_rx_data[7:0]	), // input 8bit
+	.i2c_rx_vld       (i2c_rx_vld		), // input
+	.i2c_rx_rdy       (i2c_rx_rdy		), // output
+	.o_check_done     (					),
+
+	.mux_sel		  (2'b01            ), // 01：APB在线升级，10：ADC读写UFM
+    .APB_PADDR 		  (5'd0             ),
+    .APB_PSEL  		  (1'b0             ),
+    .APB_PENABLE	  (1'b0             ),
+    .APB_PREADY		  (                 ),
+    .APB_PWRITE		  (1'b0             ),
+    .APB_PWDATA		  (8'd0             ),
+    .APB_PRDATA		  (                 )
+);
+
 //------------------------------------------------------------------------------
 //BIOS Xregs Start
 //------------------------------------------------------------------------------

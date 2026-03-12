@@ -51,6 +51,7 @@ module pwrseq_slave #(
     input                                       p12v_cpu0_vin_pg                ,
     input                                       p12v_stby_efuse_pg              ,
     input                                       p12v_riser1_vin_pg              ,
+    input                                       p12v_riser2_vin_pg              ,
     // 5. SM_EN_5V 状态上电使能
     input                                       p5v_pgd                         ,
     // 6. SM_EN_3V3 状态上电使能
@@ -138,6 +139,7 @@ module pwrseq_slave #(
     output                                      p12v_cpu0_vin_fault_det         ,  
     output                                      p12v_stby_efuse_fault_det       ,
     output                                      p12v_riser1_vin_fault_det       ,
+    output                                      p12v_riser2_vin_fault_det       ,
       
 
     output                                      p5v_fault_det		                ,    
@@ -782,6 +784,21 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_riser1_vin_fault_detect_inst (
   .any_vrm_fault    (                         ), //out
   .vrm_fault        (p12v_riser1_vin_fault_det)	 //out
 );
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_riser2_vin_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (p12v_riser2_vin_pg       ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_riser2_vin_fault_det)	 //out
+);
+
 
 //------------------------------------------------------------------------------
 // P12V_BP_REAR Fault detect 
@@ -1497,11 +1514,11 @@ assign fault_vec[0]  = 1'b0; // p3v3_stby_fault_det            ;
 assign fault_vec[1]  = 1'b0; // p3v3_stby_bp_fault_det         ;    
 assign fault_vec[2]  = 1'b0; // p5v_stby_fault_det             ;   
 assign fault_vec[3]  = 1'b0; // p12v_fault_det                 ;    
-
 assign fault_vec[4]  = 1'b0; // p12v_cpu0_vin_fault_det        ;  
 assign fault_vec[5]  = 1'b0; // p12v_cpu1_vin_fault_det        ;
 assign fault_vec[6]  = 1'b0; // p12v_stby_efuse_fault_det      ;
 assign fault_vec[7]  = 1'b0; // p12v_riser1_vin_fault_det      ;
+assign fault_vec[8]  = 1'b0; // p12v_riser2_vin_fault_det      ;
 
 assign fault_vec[7]  = 1'b0; // p5v_fault_det                  ; // 1'b0      ;
 assign fault_vec[8]  = 1'b0; // p12v_cpu1_vin_fault_det        ;

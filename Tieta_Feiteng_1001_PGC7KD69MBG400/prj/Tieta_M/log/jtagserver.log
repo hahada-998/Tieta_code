@@ -29078,3 +29078,891 @@
 [Info] [2026-3-11 20:44:59] Send data to thread 0000000000006CA4
 [Error] [2026-3-11 20:45:00] E:CM Error: Current cable list empty, try to update current available cable list!. In function cdt_cable_manager::CableManager::Obtain at line 1142 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CableManager.cpp compiled at May 20 2025.
 [Error] [2026-3-11 20:45:00] Cable is disonnect.
+[Info] [2026-3-12 09:39:19] /***************************Start jtagserver***************************/
+[Info] [2026-3-12 09:39:19] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-12 09:39:19] Version: 187561
+[Debug] [2026-3-12 09:39:21] Add a new user_thread, thread id is 0000000000007B40
+[Debug] [2026-3-12 09:39:21] Add a new user_thread, thread id is 0000000000007B40Add a new user_thread, thread id is 0000000000000870
+[Debug] [2026-3-12 09:39:21] After adding, map size is : 2
+[Debug] [2026-3-12 09:39:21] After adding, map size is : 2
+[Debug] [2026-3-12 09:39:21] After adding, map size is : 2socket thread id is 0000000000000870 and socket type is 9/r/nsocket thread id is 0000000000007B40 and socket type is 9/r/n
+[Debug] [2026-3-12 09:39:21] 
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870 try initiate it's pack handler and request handler
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870 initiate it's pack handler and request handler which socket type is 57 successfully
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:39:21] Send back reponse of cmd check version information
+[Info] [2026-3-12 09:39:21] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:39:21] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:39:21] connection thread 0000000000000870run cmd, cmd id :40010cmd name : get_cable_paras
+[Debug] [2026-3-12 09:39:22] Send back reponse of cmd get_cable_paras
+[Debug] [2026-3-12 09:39:22] connection thread 0000000000000870send back response, cmd id :40010cmd name : get_cable_paras
+[Info] [2026-3-12 09:39:22] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:22] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:39:22] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:39:22] connection thread 0000000000000870run cmd, cmd id :20001cmd name : Open config cable
+[Error] [2026-3-12 09:39:23] E:CM Error: FT2232H loopback data test failed. In function cdt_cable_manager::PgUsbIIOperator::InitChannel at line 1818 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-12 09:39:23] E:CM Error: Init FTDI2232H channel b error. In function cdt_cable_manager::PgUsbIIOperator::Init at line 196 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-12 09:39:23] E:CM Error: Cable open failed. In function cdt_cable_manager::CablePgUsb::Open at line 2288 in file F:\wf\2024.2\output_files\EDK-2024.2-400-ads\FAB_Develop\branches\pds_2024.2\source\sw\cdt\cablemgr\CablePgUsb.cpp compiled at Jan 23 2025.
+[Error] [2026-3-12 09:39:23] Cable is disonnect.
+[Debug] [2026-3-12 09:39:23] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:39:23] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:39:23] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:23] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:23] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:23] status_value is 1409efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1405efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1409efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1405efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1409efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1405efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1409efd0
+[Debug] [2026-3-12 09:39:23] status_value is 1405efd0
+[Debug] [2026-3-12 09:39:23] Send back reponse of cmd Open config cable
+[Debug] [2026-3-12 09:39:23] connection thread 0000000000000870send back response, cmd id :4e21cmd name : Open config cable
+[Info] [2026-3-12 09:39:23] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:24] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:24] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:24] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:27] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:27] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:27] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:27] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:30] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:30] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:30] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:30] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:33] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:33] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:33] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:33] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:36] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:36] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:36] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:36] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:39] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:39] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:39] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:42] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:42] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:42] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:42] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:45] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:45] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:45] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:45] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:48] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:48] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:48] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:48] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:51] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:51] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:51] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:54] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:54] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:54] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:57] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:39:57] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:39:57] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:39:57] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:39:58] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:39:58] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:39:58] connection thread 0000000000000870run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-12 09:39:58] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:39:58] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:39:58] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:58] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:58] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:39:58] status_value is 1409efd0
+[Debug] [2026-3-12 09:39:59] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:39:59] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:39:59] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:00] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:00] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:00] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:01] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:01] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:01] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:02] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:02] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:02] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:03] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:03] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:03] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:04] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:04] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:04] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:05] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:05] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:05] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:06] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:06] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:06] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:07] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:07] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:08] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:08] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:09] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:09] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:09] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:10] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:10] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:10] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:11] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:11] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:11] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:12] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:12] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:12] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:13] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:13] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:13] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:14] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:14] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:14] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:15] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:15] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:15] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:16] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:16] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:16] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:18] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:18] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:18] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:19] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:19] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:19] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:19] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:40:19] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-12 09:40:19] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:19] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:19] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:19] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:19] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:19] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:19] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:19] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:19] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:20] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:20] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:21] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:21] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:40:21] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-12 09:40:21] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:21] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:21] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:21] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:21] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:21] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:21] Send back reponse of cmd get info message
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 09:40:21] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:21] Feature Control value is 28943
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:21] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:21] Send back reponse of cmd Program CTL
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 09:40:21] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:21] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:21] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:21] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:24] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:24] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:24] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:24] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:25] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:40:25] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:40:25] connection thread 0000000000000870run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-12 09:40:25] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:25] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:25] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:25] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:25] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:25] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:27] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:27] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:27] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:28] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:28] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:28] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:29] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:29] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:29] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:30] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:30] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:30] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:31] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:31] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:31] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:33] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:33] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:33] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:34] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:34] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:34] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:35] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:35] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:35] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:36] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:36] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:37] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:37] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:39] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:39] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:40] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:40] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:41] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:41] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:41] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:42] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:42] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:42] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:44] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:44] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:44] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:45] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:45] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:46] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:46] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:46] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:47] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:47] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:47] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:48] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:48] connection thread 0000000000000870send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:48] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:50] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:50] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:50] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:50] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:40:50] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-12 09:40:50] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:50] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:50] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:50] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:50] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:50] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:50] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:50] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 09:40:51] connection thread 0000000000000870send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:51] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 09:40:52] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:52] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:52] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:52] Socket connection 0000000000000870recvive data
+[Debug] [2026-3-12 09:40:52] Socket connection 0000000000000870 start to handle complete buff
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-12 09:40:52] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:52] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 09:40:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:52] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 09:40:52] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:52] Send back reponse of cmd get info message
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 09:40:52] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:52] Feature Control value is 28943
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1409efd0
+[Debug] [2026-3-12 09:40:52] status_value is 1405efd0
+[Debug] [2026-3-12 09:40:52] Send back reponse of cmd Program CTL
+[Debug] [2026-3-12 09:40:52] connection thread 0000000000000870send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 09:40:52] Send data to thread 0000000000000870
+[Debug] [2026-3-12 09:40:54] connection thread 0000000000000870run observer
+[Debug] [2026-3-12 09:40:54] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 09:40:54] connection thread 0000000000000870run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 09:40:54] Send data to thread 0000000000000870
+[Info] [2026-3-12 10:02:49] /***************************Start jtagserver***************************/
+[Info] [2026-3-12 10:02:49] Path: C:/studyware/pango/PDS_2024.2-SP1.2-ads/bin
+[Info] [2026-3-12 10:02:49] Version: 187561
+[Debug] [2026-3-12 10:02:50] Add a new user_thread, thread id is 0000000000003A5CAdd a new user_thread, thread id is 0000000000000564
+[Debug] [2026-3-12 10:02:50] Add a new user_thread, thread id is 0000000000003A5CAdd a new user_thread, thread id is 0000000000000564
+[Debug] [2026-3-12 10:02:50] After adding, map size is : 2
+[Debug] [2026-3-12 10:02:50] After adding, map size is : 2socket thread id is 0000000000000564 and socket type is 9/r/nsocket thread id is 0000000000003A5C and socket type is 9/r/n
+[Debug] [2026-3-12 10:02:50] After adding, map size is : 2socket thread id is 0000000000000564 and socket type is 9/r/nsocket thread id is 0000000000003A5C and socket type is 9/r/n
+[Debug] [2026-3-12 10:02:50] socket thread id is 0000000000000564 and socket type is 9/r/nsocket thread id is 0000000000003A5C and socket type is 9/r/n
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564 try initiate it's pack handler and request handler
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564 initiate it's pack handler and request handler which socket type is 57 successfully
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:02:50] Send back reponse of cmd check version information
+[Info] [2026-3-12 10:02:50] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:02:50] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:02:50] connection thread 0000000000000564run cmd, cmd id :40010cmd name : get_cable_paras
+[Debug] [2026-3-12 10:02:51] Send back reponse of cmd get_cable_paras
+[Debug] [2026-3-12 10:02:51] connection thread 0000000000000564send back response, cmd id :40010cmd name : get_cable_paras
+[Info] [2026-3-12 10:02:51] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:02:51] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:02:51] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:02:51] connection thread 0000000000000564run cmd, cmd id :20001cmd name : Open config cable
+[Debug] [2026-3-12 10:02:51] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:02:51] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:02:51] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:02:51] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:02:51] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:02:51] status_value is 1409efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1405efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1409efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1405efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1409efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1405efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1409efd0
+[Debug] [2026-3-12 10:02:51] status_value is 1405efd0
+[Debug] [2026-3-12 10:02:51] Send back reponse of cmd Open config cable
+[Debug] [2026-3-12 10:02:51] connection thread 0000000000000564send back response, cmd id :4e21cmd name : Open config cable
+[Info] [2026-3-12 10:02:51] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:02:53] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:02:53] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:02:53] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:02:53] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:02:56] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:02:56] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:02:56] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:02:56] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:02:59] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:02:59] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:02:59] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:02:59] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:02] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:02] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:02] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:02] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:05] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:05] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:05] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:05] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:08] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:08] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:08] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:11] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:11] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:11] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:11] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:14] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:14] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:14] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:14] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:17] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:17] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:17] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:17] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:18] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:03:18] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:03:18] connection thread 0000000000000564run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-12 10:03:18] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:18] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:18] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:18] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:18] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:18] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:20] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:20] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:20] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:20] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:20] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:21] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:21] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:21] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:22] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:22] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:22] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:23] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:23] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:23] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:24] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:24] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:24] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:26] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:26] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:26] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:27] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:27] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:27] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:28] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:28] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:28] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:29] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:29] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:29] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:30] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:30] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:30] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:31] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:31] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:31] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:32] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:32] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:32] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:33] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:33] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:33] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:34] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:34] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:34] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:35] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:35] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:35] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:36] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:36] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:36] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:37] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:37] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:37] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:38] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:38] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:38] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:39] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:39] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:39] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:39] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:03:39] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-12 10:03:39] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:39] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:39] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:39] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:39] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:39] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:39] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:39] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:39] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:40] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:40] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:40] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:03:41] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-12 10:03:41] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:41] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:41] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:41] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:41] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:41] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd get info message
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:41] Feature Control value is 28943
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:41] status_value is 1405efd0
+[Debug] [2026-3-12 10:03:41] Send back reponse of cmd Program CTL
+[Debug] [2026-3-12 10:03:41] connection thread 0000000000000564send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 10:03:41] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:43] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:03:43] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:03:43] connection thread 0000000000000564run cmd, cmd id :4e35cmd name : Program EFlash
+[Debug] [2026-3-12 10:03:43] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:43] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:03:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:43] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:03:43] status_value is 1409efd0
+[Debug] [2026-3-12 10:03:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:45] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:45] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:45] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:45] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:45] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:47] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:47] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:47] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:48] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:48] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:48] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:49] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:49] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:49] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:50] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:50] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:50] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:51] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:51] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:51] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:52] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:52] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:52] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:54] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:54] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:54] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:55] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:55] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:55] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:56] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:56] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:56] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:57] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:57] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:57] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:03:58] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:03:58] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:03:58] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:00] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:00] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:00] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:01] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:01] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:01] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:02] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:02] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:02] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:03] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:03] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:03] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:04] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:04] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:04] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:05] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:05] connection thread 0000000000000564send back progress info, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:05] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:06] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:06] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:06] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:06] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:06] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:06] Send back reponse of cmd Program EFlash
+[Debug] [2026-3-12 10:04:06] connection thread 0000000000000564send back response, cmd id :4e35cmd name : Program EFlash
+[Info] [2026-3-12 10:04:06] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:06] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:04:06] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:04:06] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:04:06] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:06] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:04:06] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:04:06] connection thread 0000000000000564run cmd, cmd id :4e38cmd name : Verify EFlash
+[Debug] [2026-3-12 10:04:07] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:04:07] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:04:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:07] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:07] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:07] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:07] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:07] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd set progress bar
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back progress info, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:08] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:08] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:08] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:08] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd Verify EFlash
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564send back response, cmd id :4e38cmd name : Verify EFlash
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:04:08] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:04:08] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:08] Socket connection 0000000000000564recvive data
+[Debug] [2026-3-12 10:04:08] Socket connection 0000000000000564 start to handle complete buff
+[Debug] [2026-3-12 10:04:08] connection thread 0000000000000564run cmd, cmd id :4e2fcmd name : Program CTL
+[Debug] [2026-3-12 10:04:08] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:04:08] the idcode from the scanning is: 0x3042b899
+[Debug] [2026-3-12 10:04:08] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:08] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:08] the idcode from the scanning is: 0x0
+[Debug] [2026-3-12 10:04:08] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:09] Send back reponse of cmd get info message
+[Debug] [2026-3-12 10:04:09] connection thread 0000000000000564send back operating info, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 10:04:09] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:09] Feature Control value is 28943
+[Debug] [2026-3-12 10:04:09] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:09] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:09] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:09] status_value is 1409efd0
+[Debug] [2026-3-12 10:04:09] status_value is 1405efd0
+[Debug] [2026-3-12 10:04:09] Send back reponse of cmd Program CTL
+[Debug] [2026-3-12 10:04:09] connection thread 0000000000000564send back response, cmd id :4e2fcmd name : Program CTL
+[Info] [2026-3-12 10:04:09] Send data to thread 0000000000000564
+[Debug] [2026-3-12 10:04:11] connection thread 0000000000000564run observer
+[Debug] [2026-3-12 10:04:11] Send back reponse of cmd heart beat
+[Debug] [2026-3-12 10:04:11] connection thread 0000000000000564run observer finish, send back observer result, send back data size is 3c
+[Info] [2026-3-12 10:04:11] Send data to thread 0000000000000564

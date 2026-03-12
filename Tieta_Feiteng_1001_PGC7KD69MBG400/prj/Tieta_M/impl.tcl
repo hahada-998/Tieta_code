@@ -83,3 +83,40 @@ route
 route_optimize 
 report_timing 
 gen_bit_stream -feature_value {28943} 
+add_design "C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/apb_mux.v"
+add_design "C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/apb_top.v"
+add_design "C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/bar_top.v"
+add_design "C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/iic_slave_CPU.v"
+add_design "C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c_updata/iic2apb_ctrl.v"
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+place 
+route 
+route_optimize 
+report_timing 
+gen_bit_stream -feature_value {28943} 
+set_option max_threads 0
+set_arch -family Compact -device PGC7KD -speedgrade -6 -package MBG400
+compile -top_module {work.Tieta_Feiteng_1001_top} -include_path {C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include	C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include} 
+synthesize -ads -selected_syn_tool_opt 2 
+dev_map 
+place 
+route 
+route_optimize 
+report_timing 
+gen_bit_stream -feature_value {28943} 

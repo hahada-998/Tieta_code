@@ -1,6 +1,7 @@
 `include "pwrseq_define.v"
 `include "top_define.v"
 `include "tpm_define.v"
+`include "global_constant.v"
 module Tieta_Feiteng_1001_top(
     // =============================================================================
     //  系统时钟 
@@ -21,8 +22,8 @@ module Tieta_Feiteng_1001_top(
     //  I2C  
     // =============================================================================
     // 专用管脚I2C在线升级使用(当前未例化IP核, 仅仅预留管脚)
-    // input  i_BMC_I2C9_PAL_M_SCL_R              /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
-    // inout  io_BMC_I2C9_PAL_M_SDA_R             /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
+    input  i_BMC_I2C9_PAL_M_SCL_R                 /* synthesis LOC = "C11"*/,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL信号输入（反向）
+    inout  io_BMC_I2C9_PAL_M_SDA_R                /* synthesis LOC = "D11"*/,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA信号输入（反向）
     // BMC的I2C读写调试接口
     input  i_BMC_I2C9_PAL_M_SCL1_R                /* synthesis LOC = "B2"*/ ,// from  BMC_I2C_MUX1/GENZ_168PIN/BMC                   to  CPLD_M                                        default 1  // BMC I2C9 PAL主设备SCL1信号输入              新增
     inout  io_BMC_I2C9_PAL_M_SDA1_R               /* synthesis LOC = "B3"*/ ,// from  CPLD_M                                         to  BMC_I2C_MUX1/GENZ_168PIN/BMC                  default 1  // BMC I2C9 PAL主设备SDA1电源良好信号输入       新增
@@ -619,11 +620,13 @@ wire                                        p5v_stby_en_r                       
 wire                                        pvcc_hpmos_cpu_en_r                 ;
 // 4. SM_EN_MAIN_EFUSE 状态上电使能
 wire                                        power_supply_on                     ;  
-wire                                        p12v_bp_rear_en_r                     ;  
+wire                                        p12v_bp_rear_en_r                   ;  
 // 5. SM_EN_5V 状态上电使能
 wire                                        p5v_en_r                            ;
 // 6. SM_EN_3V3 状态上电使能
 wire                                        p3v3_en_r                           ;
+// 7. SM_EN_1V1 状态上电使能
+wire                                        p1v1_en_r                           ;
 
 // 主电源使能信号
 // 1. SM_EN_VDD 状态上电使能
@@ -756,7 +759,7 @@ wire                                        p12v_cpu0_vin_fault_det             
 wire                                        p12v_cpu1_vin_fault_det             ; // BMC寄存   MCPLD                addr 0x00A2[4]   12V CPU1输入电压故障检测，1：有故障；0：没有故障
 wire                                        p12v_stby_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V standby电压efuse故障检测，1：有故障；0：没有故障
 wire                                        p12v_riser1_vin_fault_det           ; // BMC寄存   MCPLD                                 12V standby电压efuse故障检测，1：有故障；0：没有故障
-
+wire                                        p12v_riser2_vin_fault_det           ; // BMC寄存   MCPLD                                 12V riser2输入电压故障检测，1：有故障；0：没有故障
 
 wire                                        p12v_reat_bp_efuse_fault_det        ;       
 wire                                        p12v_fault_det                      ; // BMC寄存
@@ -2447,9 +2450,15 @@ assign  cpu_nvme0_prsnt_n             = scpld_to_mcpld_data_filter[20];
 
 /* OCP_PRSNT 信号, 当前仅1个OCP */
 assign  ocp_prsent_n                  = scpld_to_mcpld_data_filter[8] ;
-wire    db_i_pal_p12v_stby_efuse_pg  ; 
-wire    db_i_pal_p12v_riser1_vin_pg  ; 
+wire    db_i_pal_p12v_stby_efuse_pg     ; 
+wire    db_i_pal_p12v_riser1_vin_pg     ; 
+wire    db_i_pal_p12v_riser1_vin_fltb   ;
+wire    db_i_pal_p12v_riser2_vin_pg     ;
+wire    db_i_pal_p12v_riser2_vin_fltb   ;
 
+assign  db_i_pal_p12v_riser2_vin_fltb = scpld_to_mcpld_data_filter[5] ;
+assign  db_i_pal_p12v_riser2_vin_pg   = scpld_to_mcpld_data_filter[4] ;
+assign  db_i_pal_p12v_riser1_vin_fltb = scpld_to_mcpld_data_filter[3] ;
 assign  db_i_pal_p12v_riser1_vin_pg   = scpld_to_mcpld_data_filter[2] ;
 assign  db_i_pal_p12v_stby_efuse_fltb = scpld_to_mcpld_data_filter[1] ;
 assign  db_i_pal_p12v_stby_efuse_pg   = scpld_to_mcpld_data_filter[0] ;
@@ -3023,6 +3032,8 @@ pwrseq_slave #(
     .p12v_cpu0_vin_pg                       (db_i_pal_p12v_cpu0_vin_pg   ),
     .p12v_stby_efuse_pg                     (db_i_pal_p12v_stby_efuse_pg ),
     .p12v_riser1_vin_pg                     (db_i_pal_p12v_riser1_vin_pg ),
+    .p12v_riser2_vin_pg                     (db_i_pal_p12v_riser2_vin_pg ),
+    
     // 5. SM_EN_5V 状态上电使能
     .p5v_pgd                                (db_i_pal_p5v0_pgd           ),
     // 6. SM_EN_3V3 状态上电使能
@@ -3110,6 +3121,7 @@ pwrseq_slave #(
     .p12v_cpu0_vin_fault_det                (p12v_cpu0_vin_fault_det        ),
     .p12v_stby_efuse_fault_det              (p12v_stby_efuse_fault_det      ),
     .p12v_riser1_vin_fault_det              (p12v_riser1_vin_fault_det      ),
+    .p12v_riser2_vin_fault_det              (p12v_riser2_vin_fault_det      ),
 
     .p12v_fault_det                         (p12v_fault_det                 ),//out
 
@@ -3973,12 +3985,14 @@ assign debug_mode_led = (~db_debug_sw[7]) ? db_debug_sw[3] : 1'b1;//0:LED For De
 // Power fault reporting
 //------------------------------------------------------------------------------
 wire    db_i_pal_p12v_stby_efuse_fltb; // 12V 待机背板供电故障，1:正常 0:故障
+wire    db_i_pal_p12v_riser1_vin_fltb; // 12V RISER1 输入供电故障，1:正常 0:故障
+wire    db_i_pal_p12v_riser2_vin_fltb; // 12V RISER2 输入供电故障，1:正常 0:故障
 //0xA2
 assign pf_class0_b0  = {p12v_stby_efuse_fault_det,
                         p12v_riser1_vin_fault_det,
                         p12v_cpu0_vin_fault_det  ,
                         p12v_cpu1_vin_fault_det  ,
-                        1'b0,
+                        p12v_riser2_vin_fault_det,
                         p5v_fault_det,
 						1'b0,
 						p12v_reat_bp_efuse_fault_det
@@ -4184,9 +4198,208 @@ assign o_PAL_P3V3_STBY_RST_R     = (aux_pcycle || (st_off_standby && brownout_fa
 
 
 //------------------------------------------------------------------------------
-// !!!I2C Update Start!!!
-// 用紫光的替换方案
+// 在线升级
+// 用紫光的替换方案, 解析从I2C读写地址和数据, 适配移植的可用代码, 当前从机设备不确定
 //------------------------------------------------------------------------------
+wire 								iic_slave_scl_BMC			;
+wire 								iic_slave_sda_in_BMC		;
+wire 								slave_iic_sda_out_BMC		;
+wire [6:0] 							iic_slave_device_id_BMC 	;
+wire [7:0] 							iic_slave_command_BMC		;
+wire [7:0] 							iic_slave_address_h_BMC		;
+wire [7:0] 							iic_slave_address_l_BMC		;
+wire [7:0] 							iic_slave_wdata_BMC			;
+reg  [7:0] 							iic_slave_rdata_BMC			;
+wire 								iic_slave_write_en_BMC		;
+wire 								iic_slave_read_en_BMC		;
+wire 								iic_slave_busy_BMC			;
+
+assign iic_slave_scl_BMC    	= i_BMC_I2C9_PAL_M_SCL_R						;
+assign iic_slave_sda_in_BMC     = io_BMC_I2C9_PAL_M_SDA_R   					;
+assign io_BMC_I2C9_PAL_M_SDA_R  = (slave_iic_sda_out_BMC == 1'b1) ? 1'bz : 1'b0 ;
+
+// 从机地址： 默认 8bit address 0xE8, 可选；
+assign iic_slave_device_id_BMC  = {7'b1110_100}								    ; 
+
+iic_slave_CPU iic_slave_BMC_module(
+	.reset_n				(pon_reset_n			    ),
+	.clk_25mhz				(clk_50m					),
+
+	.iic_scl				(iic_slave_scl_BMC			),
+	.iic_sda_in				(iic_slave_sda_in_BMC		),
+	.iic_sda_out			(slave_iic_sda_out_BMC		),
+	.DEVICE_ID  			(iic_slave_device_id_BMC	),
+	.address_width			(1'b1						), // 0:8bit  1:16bit
+	.command				(iic_slave_command_BMC		),
+	.address_h				(iic_slave_address_h_BMC	),
+	.address_l				(iic_slave_address_l_BMC	),
+	.wdata					(iic_slave_wdata_BMC		),
+	.rdata					(iic_slave_rdata_BMC		),
+
+	.write_en				(iic_slave_write_en_BMC		),
+	.read_en				(iic_slave_read_en_BMC		),
+	.busy					(iic_slave_busy_BMC			)
+);
+
+//register read and write
+wire [15:0] iic_slave_address_BMC;
+assign 		iic_slave_address_BMC = {iic_slave_address_h_BMC,iic_slave_address_l_BMC};
+
+
+// 紫光APB在线升级模块
+wire 	                    apb_en_wire         ;
+reg                         apb_en_reg          ;
+wire [7:0]	                i2c_tx_data         ;	
+wire                        i2c_tx_req          ;
+wire                        apb_tx_valid        ;
+reg  [7:0]	                i2c_rx_data         ;	
+wire                        i2c_rx_vld          ;
+wire                        i2c_rx_rdy          ;	
+wire 	                    i2c_tx_vld          ;
+reg                         apb_rx_valid        ;
+reg  [7:0]	                apb_tx_data         ;
+reg                         apb_tx_vld_r        ;
+reg  [7:0]                  apb_rx_data_reg     ;
+reg                         apb_start_clr       ;
+reg                         apb_start_flag      ;
+reg  [3:0]                  apb_sel_reg         ;   //CPLD选择寄存器：0001：主控板，0011：交换板A，0110：风扇板，1111：空，禁止使用！
+reg	 [2:0]                  c_state             ;
+
+
+/**************************************************************功能实现************************************************************/
+
+/***************************************************************read***************************************************************/
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        iic_slave_rdata_BMC[7:0] <= 8'hff;
+    else if(iic_slave_read_en_BMC)
+        case(iic_slave_address_BMC[8:0])
+            9'h0E1: iic_slave_rdata_BMC[7:0] <= apb_rx_data_reg[7:0] ;
+		    9'h0E2: iic_slave_rdata_BMC[7:0] <= apb_tx_data[7:0]     ;
+            default: iic_slave_rdata_BMC[7:0] <= 8'hff;
+        endcase
+    else 
+        iic_slave_rdata_BMC[7:0] <= 8'hff;
+end
+
+
+/***************************************************************write**************************************************************/
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n)begin
+        apb_en_reg        <= 1'b0 ;
+        apb_sel_reg[3:0]  <= `NONE; 
+        apb_rx_data_reg   <= 8'h00; 
+    end
+    else if(iic_slave_write_en_BMC)
+        case(iic_slave_address_BMC[8:0])
+            9'h0DA : {apb_en_reg,apb_sel_reg[3:0]} <= {iic_slave_wdata_BMC[7], iic_slave_wdata_BMC[3:0]};  
+		    9'h0E1 : apb_rx_data_reg[7:0]		   <= iic_slave_wdata_BMC[7:0] ;
+            default: ;
+        endcase
+end
+
+
+/*************************************************************在线升级*************************************************************/
+localparam	                IDLE	    = 3'b000;
+localparam	                I2C_S1	    = 3'b001;
+localparam	                I2C_S2	    = 3'b010;
+//APB
+always @(posedge clk_50m or negedge pon_reset_n) begin
+	if(!pon_reset_n)
+		apb_start_flag <= 1'b0;
+	else if(iic_slave_write_en_BMC && (iic_slave_address_BMC[8:0] == 9'h0E1)) 
+		apb_start_flag <= 1'b1;
+	else if(i2c_rx_rdy)
+		apb_start_flag <= 1'b0;
+end
+
+always @ (posedge clk_50m or negedge apb_en_wire) begin
+	if(!apb_en_wire) begin
+		c_state         <= IDLE;
+		apb_rx_valid    <= 1'b0;
+		i2c_rx_data     <= 8'h00;
+    end  
+    else 
+	case(c_state) 
+		IDLE : 
+			begin
+				apb_rx_valid <= 1'b0;
+				if( apb_start_flag)
+					c_state <= I2C_S1;
+			end
+		I2C_S1 :
+			begin
+				apb_rx_valid 		<= 1'b1;
+				i2c_rx_data[7:0]	<= apb_rx_data_reg[7:0];
+				c_state				<= I2C_S2;
+			end
+		I2C_S2 : 
+			begin
+				if(i2c_rx_rdy)
+					begin
+						apb_rx_valid 		<= 1'b0;
+						i2c_rx_data[7:0]	<= 8'h00;
+						c_state				<= IDLE;
+					end  
+			end             				
+		default : ;
+	endcase
+end
+
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        apb_tx_vld_r <= 1'b0;
+    else if(i2c_tx_vld) 
+        apb_tx_vld_r <= 1'b0;
+    else 
+        apb_tx_vld_r <= apb_tx_valid;
+end
+
+assign i2c_tx_req	=  apb_tx_vld_r;
+
+always @(posedge clk_50m or negedge pon_reset_n) begin
+    if (!pon_reset_n) 
+        apb_tx_data[7:0] <= 8'b0;
+    else if(i2c_tx_vld) 
+        apb_tx_data[7:0] <= i2c_tx_data[7:0];
+    else 
+        apb_tx_data[7:0] <= apb_tx_data[7:0];
+end
+
+assign i2c_rx_vld	= apb_rx_valid;
+assign i2c_tx_req	= apb_tx_vld_r;
+assign apb_en_wire =  apb_en_reg ? 1'b1 : 1'b0;
+assign apb_tx_valid = (iic_slave_write_en_BMC && (iic_slave_address_BMC[8:0] == 9'h0E2)) ? 1'b1 : apb_tx_vld_r; //主控板地址，写操作有效
+
+apb_top # (
+    .PG_PDS_VER       ("PDS2024.2"      ),
+    .SIM_DEVICE       ("PGC7KD"         )
+)
+u_apb_top
+(
+	.clk              (clk_50m          ),
+	.rst_n            (pon_reset_n    	),
+
+	.i2c_tx_data      (i2c_tx_data[7:0]	), // output 8bit
+	.i2c_tx_req       (i2c_tx_req		), // input 
+	.i2c_tx_vld       (i2c_tx_vld		), // output 
+	.i2c_rx_data      (i2c_rx_data[7:0]	), // input 8bit
+	.i2c_rx_vld       (i2c_rx_vld		), // input
+	.i2c_rx_rdy       (i2c_rx_rdy		), // output
+	.o_check_done     (					),
+
+	.mux_sel		  (2'b01            ), // 01：APB在线升级，10：ADC读写UFM
+    .APB_PADDR 		  (5'd0             ),
+    .APB_PSEL  		  (1'b0             ),
+    .APB_PENABLE	  (1'b0             ),
+    .APB_PREADY		  (                 ),
+    .APB_PWRITE		  (1'b0             ),
+    .APB_PWDATA		  (8'd0             ),
+    .APB_PRDATA		  (                 )
+);
+
+
+
 /*
 wire                                    wb_clk      ;
 defparam inst_osch.NOM_FREQ = "4.29";
@@ -4205,7 +4418,7 @@ I2C_UPDATE inst_i2c_update_flash_config(
     .wb_dat_i	    (		                        ),
     .wb_dat_o	    (		                        ),
     .wb_ack_o	    (		                        ),
-    .i2c1_irqo	  (						                ),
+    .i2c1_irqo	    (						        ),
     .i2c1_scl	    (i_BMC_I2C9_PAL_M_SCL_R     ),
     .i2c1_sda	    (io_BMC_I2C9_PAL_M_SDA_R    )
 );

@@ -1368,3 +1368,12 @@ define_attribute {p:i_N1_ACT} {PAP_IO_LOC} {W17}
 define_attribute {p:i_N1_ACT} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:i_N1_ACT} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:i_N1_ACT} {PAP_IO_BUS_KEEPER} {NONE}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_LOC} {D11}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:io_BMC_I2C3_PAL_S_SDA_R} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_DIRECTION} {INPUT}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_LOC} {C11}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:i_BMC_I2C3_PAL_S_SCL_R} {PAP_IO_BUS_KEEPER} {NONE}

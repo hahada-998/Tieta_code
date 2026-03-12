@@ -7,6 +7,14 @@ OFF_CHIP_TERMINATION is set to default value: N,
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 
+Port 'p:io_BMC_I2C3_PAL_S_SDA_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+
 Port 'p:io_CPU0_D0_I2C1_PE_STRAP_SDA':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -856,6 +864,11 @@ OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
 Port 'p:i_BMC_I2C3_PAL_S_SCL1_R':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_BMC_I2C3_PAL_S_SCL_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
