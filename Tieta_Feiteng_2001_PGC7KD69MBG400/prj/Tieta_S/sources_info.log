@@ -1,7 +1,7 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v
-Size: 236365bytes
-Last modified time: 2026/03/12 19:12:05
+Size: 242470bytes
+Last modified time: 2026/03/14 16:02:02
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/pon_reset.v
 Size: 6186bytes
 Last modified time: 2026/02/10 08:39:59
@@ -93,6 +93,6 @@ Last modified time: 2026/03/12 19:14:26
 
 Physical Constraint Editor (Post-Map):
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/device_map/Tieta_Feiteng_2001_top.pcf
-Size: 22802bytes
-Last modified time: 2026/03/12 19:12:41
+Size: 22965bytes
+Last modified time: 2026/03/14 15:56:33
 

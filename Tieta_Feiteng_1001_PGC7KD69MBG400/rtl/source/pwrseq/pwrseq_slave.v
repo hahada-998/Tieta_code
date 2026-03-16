@@ -52,6 +52,13 @@ module pwrseq_slave #(
     input                                       p12v_stby_efuse_pg              ,
     input                                       p12v_riser1_vin_pg              ,
     input                                       p12v_riser2_vin_pg              ,
+    input                                       gpu1_efuse_pg                   ,
+    input                                       gpu2_efuse_pg                   ,
+    input                                       gpu3_efuse_pg                   ,
+    input                                       gpu4_efuse_pg                   ,
+    input                                       riser4_pwr_pgd                  ,
+    input                                       pgd_usb_upd2_p1v1               ,
+    input                                       pgd_usb_upd1_p1v1               ,
     // 5. SM_EN_5V 状态上电使能
     input                                       p5v_pgd                         ,
     // 6. SM_EN_3V3 状态上电使能
@@ -127,24 +134,28 @@ module pwrseq_slave #(
     output  reg                                 usb_ponrst_r_n                  ,   
     output                                      pex_reset_r_n                   ,                                   
     
-    // 故障检测信号
-        
+    // 故障检测信号 
     output                                      p3v3_stby_bp_fault_det          ,         
     output                                      p3v3_stby_fault_det             , 
     output                                      p5v_stby_fault_det		          , 
+
     output                                      p12v_fault_det                  ,      
-       
     output                                      p12v_reat_bp_efuse_fault_det	  ,        
     output                                      p12v_cpu1_vin_fault_det         ,
     output                                      p12v_cpu0_vin_fault_det         ,  
     output                                      p12v_stby_efuse_fault_det       ,
     output                                      p12v_riser1_vin_fault_det       ,
     output                                      p12v_riser2_vin_fault_det       ,
-      
+    output                                      p12v_gpu1_efuse_fault_det       ,
+    output                                      p12v_gpu2_efuse_fault_det       ,
+    output                                      p12v_gpu3_efuse_fault_det       ,
+    output                                      p12v_gpu4_efuse_fault_det       ,      
 
     output                                      p5v_fault_det		                ,    
     output                                      p3v3_fault_det                  ,
     output                                      vcc_1v1_fault_det               ,
+    output                                      vcc_1v1_usb_upd1_fault_det      ,
+    output                                      vcc_1v1_usb_upd2_fault_det      ,
 
     output                                      cpu0_vdd_core_fault_det	        ,    
     output                                      cpu1_vdd_core_fault_det	        , 
@@ -266,8 +277,8 @@ reg     reg_pex_reset_r_n                      ;
 assign p5v_stby_en_r	       =  reg_p5v_stby_en_r & ( ~p5v_stby_fault_det | keep_alive_on_fault );
 
 assign pvcc_hpmos_cpu_en_r   =  reg_pvcc_hpmos_cpu_en_r ;
+assign power_supply_on	     =  reg_power_supply_on     ;  
 
-assign power_supply_on	     =  reg_power_supply_on ;  
 assign p12v_bp_rear_en_r     =  reg_p12v_en & ( ~p12v_reat_bp_efuse_fault_det   | keep_alive_on_fault);
 
 assign p5v_en_r            	 =  reg_p5v_en_r            & ( ~p5v_fault_det            | keep_alive_on_fault );
@@ -700,12 +711,11 @@ edge_delay #(.CNTR_NBITS(2)) p12v_stby_en_check_inst (
     .delay_output     (p12v_stby_en_check)
 );
 
-
 fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12_fault_detect_inst (
     .clk              (clk),
     .reset            (reset),
     .vrm_enable       (power_supply_on && p12v_stby_en_check),
-    .vrm_pgood        (pgd_p12v && pgd_p12v_stby_droop),
+    .vrm_pgood        (/*pgd_p12v*/pgd_p12v_stby_droop),
     .vrm_chklive_en   (p12v_stby_en_check),
     .vrm_chklive_dis  (~p12v_stby_en_check),   
     .critical_fail    (st_critical_fail),
@@ -797,6 +807,62 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_riser2_vin_fault_detect_inst (
   .lock             (any_pwr_fault_det        ), //in
   .any_vrm_fault    (                         ), //out
   .vrm_fault        (p12v_riser2_vin_fault_det)	 //out
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_gpu1_efuse_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (gpu1_efuse_pg            ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_gpu1_efuse_fault_det)	 //out
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_gpu2_efuse_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (gpu2_efuse_pg            ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_gpu2_efuse_fault_det)	 //out
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_gpu3_efuse_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (gpu3_efuse_pg            ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_gpu3_efuse_fault_det)	 //out
+);
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12v_gpu4_efuse_fault_detect_inst (
+  .clk              (clk                      ), //in
+  .reset            (reset                    ), //in
+  .vrm_enable       (power_supply_on && power_supply_on_check), //in
+  .vrm_pgood        (gpu4_efuse_pg            ), //in
+  .vrm_chklive_en   (power_supply_on_check    ), //in
+  .vrm_chklive_dis  (~power_supply_on_check   ), //in
+  .critical_fail    (st_critical_fail         ), //in
+  .fault_clear      (fault_clear              ), //in
+  .lock             (any_pwr_fault_det        ), //in
+  .any_vrm_fault    (                         ), //out
+  .vrm_fault        (p12v_gpu4_efuse_fault_det)	 //out
 );
 
 
@@ -912,6 +978,33 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p1v1_fault_det_inst (
   .vrm_fault        (vcc_1v1_fault_det)					    //out
 ); 
 
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p1v1_usb_upd1_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (p1v1_en_r & p1v1_en_r_check),	    //in
+  .vrm_pgood        (pgd_usb_upd1_p1v1),							//in
+  .vrm_chklive_en   (p1v1_en_r_check),					//in
+  .vrm_chklive_dis  (~p1v1_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (vcc_1v1_usb_upd1_fault_det)					    //out
+); 
+
+fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p1v1_usb_upd2_fault_det_inst (
+  .clk              (clk),								//in
+  .reset            (reset),							//in
+  .vrm_enable       (p1v1_en_r & p1v1_en_r_check),	    //in
+  .vrm_pgood        (pgd_usb_upd2_p1v1),							//in
+  .vrm_chklive_en   (p1v1_en_r_check),					//in
+  .vrm_chklive_dis  (~p1v1_en_r_check),					//in
+  .critical_fail    (st_critical_fail),					//in
+  .fault_clear      (fault_clear),						//in
+  .lock             (any_pwr_fault_det),				//in
+  .any_vrm_fault    (),									//out
+  .vrm_fault        (vcc_1v1_usb_upd2_fault_det)					    //out
+); 
 
 //------------------------------------------------------------------------------
 // CPU0_VDD_CORE & CPU1_VDD_CORE Fault detect 
@@ -1510,56 +1603,49 @@ wire                                      aux_fault                   ;
 assign any_aux_vrm_fault = aux_fault;
 
 // fault_vec_mapping
-assign fault_vec[0]  = 1'b0; // p3v3_stby_fault_det            ;    
-assign fault_vec[1]  = 1'b0; // p3v3_stby_bp_fault_det         ;    
-assign fault_vec[2]  = 1'b0; // p5v_stby_fault_det             ;   
-assign fault_vec[3]  = 1'b0; // p12v_fault_det                 ;    
-assign fault_vec[4]  = 1'b0; // p12v_cpu0_vin_fault_det        ;  
-assign fault_vec[5]  = 1'b0; // p12v_cpu1_vin_fault_det        ;
-assign fault_vec[6]  = 1'b0; // p12v_stby_efuse_fault_det      ;
-assign fault_vec[7]  = 1'b0; // p12v_riser1_vin_fault_det      ;
-assign fault_vec[8]  = 1'b0; // p12v_riser2_vin_fault_det      ;
+assign fault_vec[0]  = p3v3_stby_fault_det            ;    
+assign fault_vec[1]  = p3v3_stby_bp_fault_det         ;    
+assign fault_vec[2]  = p5v_stby_fault_det             ;   
+assign fault_vec[3]  = 1'b0;//p12v_fault_det                 ;    
+assign fault_vec[4]  = p12v_cpu0_vin_fault_det        ;  
+assign fault_vec[5]  = p12v_cpu1_vin_fault_det        ;
+assign fault_vec[6]  = p12v_stby_efuse_fault_det      ;
+assign fault_vec[7]  = p12v_riser1_vin_fault_det      ;
+assign fault_vec[8]  = p12v_riser2_vin_fault_det      ;
 
-assign fault_vec[7]  = 1'b0; // p5v_fault_det                  ; // 1'b0      ;
-assign fault_vec[8]  = 1'b0; // p12v_cpu1_vin_fault_det        ;
-assign fault_vec[9]  = 1'b0; // p12v_cpu0_vin_fault_det        ;
-assign fault_vec[10] = 1'b0; // p12v_fault_det                 ;  
-assign fault_vec[11] = 1'b0; // 1'b0      ;
+assign fault_vec[9]  = p12v_gpu1_efuse_fault_det      ;
+assign fault_vec[10] = p12v_gpu2_efuse_fault_det      ;
+assign fault_vec[11] = p12v_gpu3_efuse_fault_det      ;
+assign fault_vec[12] = p12v_gpu4_efuse_fault_det      ;
 
-assign fault_vec[12] = 1'b0; // p5v_fault_det                  ;
-assign fault_vec[13] = 1'b0; // p3v3_fault_det                 ;
-assign fault_vec[14] = 1'b0; // vcc_1v1_fault_det              ;
+assign fault_vec[13] = p5v_fault_det                  ;
+assign fault_vec[14] = p3v3_fault_det                 ;
+assign fault_vec[15] = vcc_1v1_fault_det              ;
+assign fault_vec[16] = vcc_1v1_usb_upd1_fault_det     ;
+assign fault_vec[17] = vcc_1v1_usb_upd2_fault_det     ;
+assign fault_vec[18] = cpu0_vdd_core_fault_det        ;  
+assign fault_vec[19] = cpu1_vdd_core_fault_det        ;
 
-assign fault_vec[15] = 1'b0; // cpu0_vdd_core_fault_det        ;  
-assign fault_vec[16] = 1'b0; // cpu1_vdd_core_fault_det        ;
+assign fault_vec[20] = cpu0_p1v8_fault_det            ;  
+assign fault_vec[21] = cpu1_p1v8_fault_det            ;
 
-assign fault_vec[17] = 1'b0; // cpu0_p1v8_fault_det            ;  
-assign fault_vec[18] = 1'b0; // cpu1_p1v8_fault_det            ;
+assign fault_vec[22] = cpu0_vddq_fault_det            ;  
+assign fault_vec[23] = cpu1_vddq_fault_det            ;
+assign fault_vec[24] = cpu0_ddr_vdd_fault_det         ;  
+assign fault_vec[25] = cpu1_ddr_vdd_fault_det         ;
+assign fault_vec[26] = cpu0_pll_p1v8_fault_det        ;  
+assign fault_vec[27] = cpu1_pll_p1v8_fault_det        ;
 
-assign fault_vec[19] = 1'b0; // cpu0_vddq_fault_det            ;  
-assign fault_vec[20] = 1'b0; // cpu1_vddq_fault_det            ;
-assign fault_vec[21] = 1'b0; // cpu0_ddr_vdd_fault_det         ;  
-assign fault_vec[22] = 1'b0; // cpu1_ddr_vdd_fault_det         ;
-assign fault_vec[23] = 1'b0; // cpu0_pll_p1v8_fault_det        ;  
-assign fault_vec[24] = 1'b0; // cpu1_pll_p1v8_fault_det        ;
+assign fault_vec[28] =  cpu0_d0_vp_p0v9_fault_det     ;  
+assign fault_vec[29] =  cpu0_d1_vp_p0v9_fault_det     ;
+assign fault_vec[30] =  cpu0_d0_vph_p1v8_fault_det    ;  
+assign fault_vec[31] =  cpu0_d1_vph_p1v8_fault_det    ;
+assign fault_vec[32] =  cpu1_d0_vp_p0v9_fault_det     ;  
+assign fault_vec[33] =  cpu1_d1_vp_p0v9_fault_det     ;
+assign fault_vec[34] =  cpu1_d0_vph_p1v8_fault_det    ;  
+assign fault_vec[35] =  cpu1_d1_vph_p1v8_fault_det    ;
 
-assign fault_vec[25] =  1'b0 ; /*cpu1_pcie_p1v8_fault_det*/       
-assign fault_vec[26] =  1'b0 ; /*cpu0_pcie_p1v8_fault_det*/     
-assign fault_vec[27] =  1'b0 ; /*cpu1_pcie_p0v9_fault_det*/       
-assign fault_vec[28] =  1'b0 ; /*cpu0_pcie_p0v9_fault_det*/     
-
-assign fault_vec[29] =  1'b0 ;// cpu0_d0_vp_p0v9_fault_det     ;  
-assign fault_vec[30] =  1'b0 ;// cpu0_d1_vp_p0v9_fault_det     ;
-assign fault_vec[31] =  1'b0 ;// cpu0_d0_vph_p1v8_fault_det    ;  
-assign fault_vec[32] =  1'b0 ;// cpu0_d1_vph_p1v8_fault_det    ;
-assign fault_vec[33] =  1'b0 ;// cpu1_d0_vp_p0v9_fault_det     ;  
-assign fault_vec[34] =  1'b0 ;// cpu1_d1_vp_p0v9_fault_det     ;
-assign fault_vec[35] =  1'b0 ;// cpu1_d0_vph_p1v8_fault_det    ;  
-assign fault_vec[36] =  1'b0 ;// cpu1_d1_vph_p1v8_fault_det    ;
-
-assign fault_vec[37] = 1'b0;  // RSVD
-assign fault_vec[38] = 1'b0;  // RSVD
-assign fault_vec[39] = 1'b0;  // RSVD
+assign fault_vec[39:36] = 4'b0; // reserved for future aux rails
 
 
 // Mask each fault with the corresponding bits

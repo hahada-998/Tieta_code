@@ -760,6 +760,10 @@ wire                                        p12v_cpu1_vin_fault_det             
 wire                                        p12v_stby_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V standby电压efuse故障检测，1：有故障；0：没有故障
 wire                                        p12v_riser1_vin_fault_det           ; // BMC寄存   MCPLD                                 12V standby电压efuse故障检测，1：有故障；0：没有故障
 wire                                        p12v_riser2_vin_fault_det           ; // BMC寄存   MCPLD                                 12V riser2输入电压故障检测，1：有故障；0：没有故障
+wire                                        p12v_gpu1_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V GPU1电压efuse故障检测，1：有故障；0：没有故障     
+wire                                        p12v_gpu2_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V GPU2电压efuse故障检测，1：有故障；0：没有故障
+wire                                        p12v_gpu3_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V GPU3电压efuse故障检测，1：有故障；0：没有故障
+wire                                        p12v_gpu4_efuse_fault_det           ; // BMC寄存   MCPLD                                 12V GPU3电压efuse故障检测，1：有故障；0：没有故障
 
 wire                                        p12v_reat_bp_efuse_fault_det        ;       
 wire                                        p12v_fault_det                      ; // BMC寄存
@@ -767,6 +771,8 @@ wire                                        p12v_fault_det                      
 wire                                        p5v_fault_det                       ;
 wire                                        p3v3_fault_det                      ; // 未使用
 wire                                        vcc_1v1_fault_det                   ; // 未使用 
+wire                                        vcc_1v1_usb_upd1_fault_det          ; // 未使用
+wire                                        vcc_1v1_usb_upd2_fault_det          ; // 未使用
 
 wire                                        cpu0_vdd_core_fault_det             ;
 wire                                        cpu1_vdd_core_fault_det             ;
@@ -878,7 +884,7 @@ wire                                        vwire_bmc_shutdown                  
 wire                                        s_bmc_shutdown                      ; //                     BMC下发      addr 0x0003[4]      系统关机信号输出, 低电平有效
 
 wire                                        db_pal_ext_rst_n                    ; // SCPLD -> MCPLD      BMC下发      addr 0x0003[2]      外部复位信号输出, 低电平有效
-wire                                        rst_btn_mask                        ; //                     BMC下发      addr 0x0003[0]      按键屏蔽信号, 低电平有效
+wire                                        rst_btn_mask                        ; // MCPLD               BMC下发      addr 0x0003[0]      按键屏蔽信号, 高电平有效
 wire                                        bmc_ctrl_shutdown                   ; //                     BMC下发      addr 0x0004[6]      系统关机控制信号, 低电平有效
 
 wire                                        aux_pcycle                          ; // BMC下发      addr 0x0004[4]      AUX辅助电源重启
@@ -1016,38 +1022,38 @@ wire                                        rst_i2c_riser2_pca9548_n;
 wire                                        pal_lcd_busy;
 wire                                        pal_lcd_prsnt;
 wire                                        tpm_pp;
-wire                                        tpm_rst                     ; //                    BMC下发       addr 0x001D[7]      不使用
-wire                                        tpm_prsnt_n                 ; // SCPLD -> MCPLD     BMC寄存       addr 0x001D[6]      不使用
-wire                                        db_tpm_prsnt_n              ; // SCPLD -> MCPLD     BMC寄存       addr 0x001D[6]      不使用
-wire                                        db_i_intruder_cable_inst_n  ; //                    BMC寄存        addr 0x001D[4]     入侵线缆是否连接，1：连接；0：未连接
+wire                                        tpm_rst                     ; //                                BMC下发    addr 0x001D[7]           不使用
+wire                                        tpm_prsnt_n                 ; // SCPLD -> MCPLD                 BMC寄存    addr 0x001D[6]           不使用
+wire                                        db_tpm_prsnt_n              ; // SCPLD -> MCPLD                 BMC寄存    addr 0x001D[6]           不使用
+wire                                        db_i_intruder_cable_inst_n  ; //                                BMC寄存    addr 0x001D[4]           入侵线缆是否连接，1：连接；0：未连接
 wire [`NUM_CPU-1:0]                         s_vr_cpu_i2c_alert_n;
 
-wire                                        db_i_pal_bmc_card_prsnt_n     ; // MCPLD_IN                                           BMC_CARD_PRSNT, 未使用
+wire                                        db_i_pal_bmc_card_prsnt_n     ; // MCPLD_IN                                                         BMC_CARD_PRSNT, 未使用
 wire                                        rst_pal_extrst_r_n;
-wire                                        db_i_pal_bmcuid_button_r      ; // MCPLD_IN                                           UID 按键输入信号
-wire                                        bmc_extrst_uid                ; // MCPLD -> BCPLD                                     UID 按键长按控制外部复位信号  
+wire                                        db_i_pal_bmcuid_button_r      ; // MCPLD_IN                                                         UID 按键输入信号
+wire                                        bmc_extrst_uid                ; // MCPLD -> BCPLD                                                   UID 按键长按控制外部复位信号  
 wire                                        test_bat_en;
-wire                                        i_pal_wdt_rst_n_r;
-wire [1:0]                                  bmcctl_uart_sw                ; // MCPLD -> SCPLD    BMC下发    addr 0x0005[1:0]        UART切换信号, 00:保留；01:UART0; 10:UART1; 11:保留
+wire                                        i_pal_wdt_rst_n_r             ; // BCPLD -> SCPLD -> MCPLD                                          BMC状态检测寄存器, 检测BMC是否挂死
+wire [1:0]                                  bmcctl_uart_sw                ; // MCPLD -> SCPLD               BMC下发    addr 0x0005[1:0]         UART切换信号, 00:保留；01:UART0; 10:UART1; 11:保留
 wire                                        fan_dbg_mode;
 wire [15:0]                                 mb_cpld2_ver;
 
-wire [7:0]                                  i2c_ram_1050                  ; // MCPLD             BMC下发    addr 0x1050
-wire [7:0]                                  i2c_ram_1051                  ; // MCPLD             BMC下发    addr 0x1051    
-wire [7:0]                                  i2c_ram_1052                  ; // MCPLD             BMC下发    addr 0x1052    
-wire [7:0]                                  i2c_ram_1053                  ; // MCPLD             BMC下发    addr 0x1053    
-wire [7:0]                                  i2c_ram_1054                  ; // MCPLD             BMC下发    addr 0x1054    
-wire [7:0]                                  i2c_ram_1055                  ; // MCPLD             BMC下发    addr 0x1055    
-wire [7:0]                                  i2c_ram_1056                  ; // MCPLD             BMC下发    addr 0x1056    
-wire [7:0]                                  i2c_ram_1057                  ; // MCPLD             BMC下发    addr 0x1057    
-wire [7:0]                                  i2c_ram_1058                  ; // MCPLD             BMC下发    addr 0x1058    
+wire [7:0]                                  i2c_ram_1050                  ; // MCPLD                        BMC下发    addr 0x1050
+wire [7:0]                                  i2c_ram_1051                  ; // MCPLD                        BMC下发    addr 0x1051    
+wire [7:0]                                  i2c_ram_1052                  ; // MCPLD                        BMC下发    addr 0x1052    
+wire [7:0]                                  i2c_ram_1053                  ; // MCPLD                        BMC下发    addr 0x1053    
+wire [7:0]                                  i2c_ram_1054                  ; // MCPLD                        BMC下发    addr 0x1054    
+wire [7:0]                                  i2c_ram_1055                  ; // MCPLD                        BMC下发    addr 0x1055    
+wire [7:0]                                  i2c_ram_1056                  ; // MCPLD                        BMC下发    addr 0x1056    
+wire [7:0]                                  i2c_ram_1057                  ; // MCPLD                        BMC下发    addr 0x1057    
+wire [7:0]                                  i2c_ram_1058                  ; // MCPLD                        BMC下发    addr 0x1058    
 
-wire                                        pca_revision_0                ; // SCPLD -> MCPLD    BMC寄存           
-wire                                        pca_revision_1                ; // SCPLD -> MCPLD    BMC寄存           
-wire                                        pca_revision_2                ; // SCPLD -> MCPLD    BMC寄存           
-wire                                        pcb_revision_0                ; // SCPLD -> MCPLD    BMC寄存    addr 0xF1[1]            PCB版本，1：A0版本；0：B0版本     
-wire                                        pcb_revision_1                ; // SCPLD -> MCPLD    BMC寄存    addr 0xF1[0]            PCB版本，1：A0版本；0：B0版本
-wire [15:0]                                 bmc_cpld_version              ; // SCPLD -> MCPLD    BMC寄存    addr 0x00FA-0x00FB[7:0] BMC CPLD版本，16位高8位在0x00FA，低8位在0x00FB
+wire                                        pca_revision_0                ; // SCPLD -> MCPLD               BMC寄存           
+wire                                        pca_revision_1                ; // SCPLD -> MCPLD               BMC寄存           
+wire                                        pca_revision_2                ; // SCPLD -> MCPLD               BMC寄存           
+wire                                        pcb_revision_0                ; // SCPLD -> MCPLD               BMC寄存    addr 0xF1[1]            PCB版本，1：A0版本；0：B0版本     
+wire                                        pcb_revision_1                ; // SCPLD -> MCPLD               BMC寄存    addr 0xF1[0]            PCB版本，1：A0版本；0：B0版本
+wire [15:0]                                 bmc_cpld_version              ; // SCPLD -> MCPLD               BMC寄存    addr 0x00FA-0x00FB[7:0] BMC CPLD版本，16位高8位在0x00FA，低8位在0x00FB
 
 wire [2:0]                                  db_chassis_id                 ;
 
@@ -2401,7 +2407,7 @@ assign  pca_revision_2                = scpld_to_mcpld_data_filter[78];
 assign  pca_revision_1                = scpld_to_mcpld_data_filter[77];
 assign  pca_revision_0                = scpld_to_mcpld_data_filter[76];
 assign  mb_cpld2_ver                  = scpld_to_mcpld_data_filter[75:60]   ;
-assign  i_pal_wdt_rst_n_r             = scpld_to_mcpld_data_filter[59]      ; // CMU CPLD传入
+assign  i_pal_wdt_rst_n_r             = scpld_to_mcpld_data_filter[59]      ; // BCPLD -> SCPLD -> MCPLD BMC状态检测寄存器, 检测BMC是否挂死
 assign  tpm_prsnt_n                   = scpld_to_mcpld_data_filter[58]; // 不使用
 assign  tpm_pp                        = scpld_to_mcpld_data_filter[57];
 assign  pal_lcd_prsnt                 = scpld_to_mcpld_data_filter[56];
@@ -2449,13 +2455,35 @@ assign  cpu_nvme0_prsnt_n             = scpld_to_mcpld_data_filter[20];
 // assign  cpu_nvme24_prsnt_n            = scpld_to_mcpld_data_filter[16]; // 不使用
 
 /* OCP_PRSNT 信号, 当前仅1个OCP */
-assign  ocp_prsent_n                  = scpld_to_mcpld_data_filter[8] ;
-wire    db_i_pal_p12v_stby_efuse_pg     ; 
-wire    db_i_pal_p12v_riser1_vin_pg     ; 
-wire    db_i_pal_p12v_riser1_vin_fltb   ;
+wire    riser4_pwr_pgd                  ; // 暂时不进行检测
+wire    db_i_pal_gpu4_efuse_oc          ;
+wire    db_i_pal_gpu4_efuse_pg          ;
+wire    db_i_pal_gpu3_efuse_oc          ;
+wire    db_i_pal_gpu3_efuse_pg          ;
+wire    db_i_pal_gpu2_efuse_oc          ;
+wire    db_i_pal_gpu2_efuse_pg          ;
+wire    db_i_pal_gpu1_efuse_oc          ;
+wire    db_i_pal_gpu1_efuse_pg          ;
 wire    db_i_pal_p12v_riser2_vin_pg     ;
-wire    db_i_pal_p12v_riser2_vin_fltb   ;
+wire    db_i_pal_p12v_riser1_vin_pg     ; 
+wire    db_i_pal_p12v_stby_efuse_pg     ; 
+wire    db_i_pgd_usb_upd2_p1v1          ;
+wire    db_i_pgd_usb_upd1_p1v1          ;
 
+assign  db_i_pgd_usb_upd2_p1v1        = scpld_to_mcpld_data_filter[17];
+assign  db_i_pgd_usb_upd1_p1v1        = scpld_to_mcpld_data_filter[16];
+assign  db_i_riser4_pwr_pgd           = scpld_to_mcpld_data_filter[15];
+assign  db_i_pal_gpu4_efuse_oc        = scpld_to_mcpld_data_filter[14];
+assign  db_i_pal_gpu4_efuse_pg        = scpld_to_mcpld_data_filter[13];
+assign  db_i_pal_gpu3_efuse_oc        = scpld_to_mcpld_data_filter[12];
+assign  db_i_pal_gpu3_efuse_pg        = scpld_to_mcpld_data_filter[11];
+assign  db_i_pal_gpu2_efuse_oc        = scpld_to_mcpld_data_filter[10];
+assign  db_i_pal_gpu2_efuse_pg        = scpld_to_mcpld_data_filter[9] ;
+
+assign  ocp_prsent_n                  = scpld_to_mcpld_data_filter[8] ;
+
+assign  db_i_pal_gpu1_efuse_oc        = scpld_to_mcpld_data_filter[7] ;
+assign  db_i_pal_gpu1_efuse_pg        = scpld_to_mcpld_data_filter[6] ;
 assign  db_i_pal_p12v_riser2_vin_fltb = scpld_to_mcpld_data_filter[5] ;
 assign  db_i_pal_p12v_riser2_vin_pg   = scpld_to_mcpld_data_filter[4] ;
 assign  db_i_pal_p12v_riser1_vin_fltb = scpld_to_mcpld_data_filter[3] ;
@@ -2650,7 +2678,7 @@ assign riser1_pwr_cable_prsnt_n[3]      = riser1_pvti_byte2[6];//4GPU POWER CANL
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 power_button power_button_inst  (                 
     .clk                   (clk_50m                           ),
-    .reset                 (/*~pon_reset_n*/~pgd_aux_system   ),
+    .reset                 (~pgd_aux_system                   ),
     .t1s                   (t1s_tick                          ),
     .gpo_pwr_btn_mask      (1'b1/*pwrbtn_mask*/               ), // in addr 0x0004[1] 暂时排除pwrbtn_mask影响
     .xreg_pwr_btn_passthru (pwrbtn_bl_mask                    ), // in addr 0x0004[3] 不使用
@@ -2886,7 +2914,7 @@ pwrseq_master #(
     // 3. 物理按键信号; 南桥状态和控制信息; 
     // -----------------------------------------------------------
     .sys_sw_in_n                            (db_sys_sw_in_n             ),
-    .pch_pwrbtn_n                           (~pch_pwrbtn               ),
+    .pch_pwrbtn_n                           (~pch_pwrbtn                ),
     .pch_pwrbtn_s                           (pch_pwrbtn_s               ),
     
     .pch_thermtrip_n                        (~pch_thrmtrip              ), // 输入：PCH 热跳闸信号（低电平有效，1=无过热，0=CPU 过热触发下电）
@@ -3033,6 +3061,13 @@ pwrseq_slave #(
     .p12v_stby_efuse_pg                     (db_i_pal_p12v_stby_efuse_pg ),
     .p12v_riser1_vin_pg                     (db_i_pal_p12v_riser1_vin_pg ),
     .p12v_riser2_vin_pg                     (db_i_pal_p12v_riser2_vin_pg ),
+    .gpu1_efuse_pg                          (db_i_pal_gpu1_efuse_pg      ),
+    .gpu2_efuse_pg                          (db_i_pal_gpu2_efuse_pg      ),
+    .gpu3_efuse_pg                          (db_i_pal_gpu3_efuse_pg      ),
+    .gpu4_efuse_pg                          (db_i_pal_gpu4_efuse_pg      ),
+    .riser4_pwr_pgd                         (db_i_riser4_pwr_pgd         ),
+    .pgd_usb_upd2_p1v1                      (db_i_pgd_usb_upd2_p1v1      ),
+    .pgd_usb_upd1_p1v1                      (db_i_pgd_usb_upd1_p1v1      ),
     
     // 5. SM_EN_5V 状态上电使能
     .p5v_pgd                                (db_i_pal_p5v0_pgd           ),
@@ -3122,12 +3157,18 @@ pwrseq_slave #(
     .p12v_stby_efuse_fault_det              (p12v_stby_efuse_fault_det      ),
     .p12v_riser1_vin_fault_det              (p12v_riser1_vin_fault_det      ),
     .p12v_riser2_vin_fault_det              (p12v_riser2_vin_fault_det      ),
+    .p12v_gpu1_efuse_fault_det              (p12v_gpu1_efuse_fault_det      ),
+    .p12v_gpu2_efuse_fault_det              (p12v_gpu2_efuse_fault_det      ),
+    .p12v_gpu3_efuse_fault_det              (p12v_gpu3_efuse_fault_det      ),
+    .p12v_gpu4_efuse_fault_det              (p12v_gpu4_efuse_fault_det      ),
 
     .p12v_fault_det                         (p12v_fault_det                 ),//out
 
     .p5v_fault_det		                    (p5v_fault_det	                ),
     .p3v3_fault_det                         (p3v3_fault_det                 ),
     .vcc_1v1_fault_det                      (vcc_1v1_fault_det              ),
+    .vcc_1v1_usb_upd1_fault_det              (vcc_1v1_usb_upd1_fault_det     ),
+    .vcc_1v1_usb_upd2_fault_det              (vcc_1v1_usb_upd2_fault_det     ),
 
     .cpu0_vdd_core_fault_det	            (cpu0_vdd_core_fault_det	    ),
     .cpu1_vdd_core_fault_det	            (cpu1_vdd_core_fault_det	    ),
@@ -3197,7 +3238,10 @@ wire [3:0]                                  bmc_pwr_fan               ; // BMC�
 wire [7:0]                                  w_BMC_pwe_D_fan[3:0]      ; // BMC下发      addr 0x0022~0x0025    Fan0 pwm控制，占空比，0-255对应0%-100%
 wire [3:0]                                  bmc_fan_status            ; // BMC下发      addr 0x002A[3:0]      Fan 状态，1：正常；0：异常（如转速过低或过高）
 wire [10:0]                                 w_fan_tach_real[3:0]      ; // BMC寄存      addr 0x002B~0x0032    Fan转速实际值，单位RPM，11位二进制表示，范围0-2047RPM
-wire [1:0]                                  cpld_pwm_main_type        ; // 原信号不使用，根据风扇类型自动调整PWM上限
+
+reg  [10:0]                                 r_pwm_D_fan_limit[3:0]    ; // 调试使用
+wire [7:0]                                  w_fan_type [3:0]          ; // 调试使用
+wire [1:0]                                  cpld_pwm_main_type        ; // BMC下发      addr 0x0002[6:5]      Fan风扇的pwm波控制, 仅硬件调试使用
 
 wire [7:0]                                  w_FAN_default_pwm         ; // 根据风扇类型和系统状态自动调整的默认PWM值，单位0-255对应0%-100%，供风扇预限使用
 wire [7:0]                                  w_FAN_max_pwm             ; // 根据风扇类型和系统状态自动调整的最大PWM值，单位0-255对应0%-100%，供风扇限幅使用
@@ -3207,8 +3251,7 @@ wire [7:0]                                  w_FAN_DIE_PWM             ; // 根�
 reg  [7:0]                                  r_pwm_D_fan_pre_limit[3:0]; // 风扇预限寄存器，单位0-255对应0%-100%，根据BMC下发的PWM值和系统状态自动调整后写入PWM输出寄存器
 reg  [7:0]                                  r_pwm_D_fan_limit_use[3:0]; // 风扇限幅寄存器，单位0-255对应0%-100%，根据风扇类型和系统状态自动调整后写入PWM输出寄存器，供限幅使用
 
-reg  [10:0]                                 r_pwm_D_fan_limit[3:0]    ; // 调试使用
-wire [7:0]                                  w_fan_type [3:0]          ; // 调试使用
+
 
 wire [7:0]                                  w_fan_tach_reg [3:0]      ;
 wire [3:0]                                  w_fan_pwm_out             ;
@@ -3276,7 +3319,7 @@ generate
                 // r_pwm_D_fan_pre_limit[k] <= r_pwm_D_fan_limit[k];
                 if(w_BMC_pwe_D_fan[k] == 8'b0) 
            		    r_pwm_D_fan_pre_limit[k] <= w_FAN_default_pwm  ;
-		    	else if(bmc_ready_flag)                         
+		    	else if(~bmc_ready_flag)                         
 		    	    r_pwm_D_fan_pre_limit[k] <= w_FAN_DIE_PWM       ; 
            	    else 
            		    r_pwm_D_fan_pre_limit[k] <= w_BMC_pwe_D_fan[k] ;
@@ -3883,8 +3926,8 @@ system_reset #(
     .reached_sm_pre_wait_powerok (reached_sm_wait_powerok      ),
     .rt_critical_fail_store      (rt_critical_fail_store       ),
     .glp_bootnext_n              (1'b1                         ),
-    .glp_sysrst_n                (s_bmc_sysrst_n /*| rst_btn_mask*/),
-    .sysrst_button_n             (force_reb_in /*| rst_btn_mask*/  ),
+    .glp_sysrst_n                (s_bmc_sysrst_n | rst_btn_mask),
+    .sysrst_button_n             (force_reb_in | rst_btn_mask  ),
     .xdp_cpu_syspwrok            (1'b1                         ),
     .rst_pcie_cpu_n              (s_cpu_rst_pcie_n             ),
     .hsb_en                      (1'b0                         ),
@@ -3987,19 +4030,23 @@ assign debug_mode_led = (~db_debug_sw[7]) ? db_debug_sw[3] : 1'b1;//0:LED For De
 wire    db_i_pal_p12v_stby_efuse_fltb; // 12V 待机背板供电故障，1:正常 0:故障
 wire    db_i_pal_p12v_riser1_vin_fltb; // 12V RISER1 输入供电故障，1:正常 0:故障
 wire    db_i_pal_p12v_riser2_vin_fltb; // 12V RISER2 输入供电故障，1:正常 0:故障
+wire    db_i_pal_gpu1_efuse_oc       ; // GPU1 供电过流故障，1:正常 0:过流
 //0xA2
 assign pf_class0_b0  = {p12v_stby_efuse_fault_det,
                         p12v_riser1_vin_fault_det,
                         p12v_cpu0_vin_fault_det  ,
                         p12v_cpu1_vin_fault_det  ,
                         p12v_riser2_vin_fault_det,
-                        p5v_fault_det,
-						1'b0,
+                        p5v_fault_det            ,
+						p12v_gpu1_efuse_fault_det,
 						p12v_reat_bp_efuse_fault_det
 						};
 //0xA3						
 assign pf_class0_b1  = {any_aux_vrm_fault         ,
-                        4'b0                      ,                         
+                        1'b0                      ,
+                        p12v_gpu2_efuse_fault_det ,
+                        p12v_gpu3_efuse_fault_det ,
+                        p12v_gpu4_efuse_fault_det ,                        
 			            p5v_stby_fault_det        ,
                         p3v3_stby_fault_det       ,
                         p3v3_stby_bp_fault_det
@@ -4121,8 +4168,8 @@ assign o_PAL_OCP_DEBUG_EN_R    = 1'b1;//1 enable sw (U39)
 //------------------------------------------------------------------------------
 // Security Bypass
 //------------------------------------------------------------------------------
-assign bmc_security_bypass  = db_debug_sw[7] ? (~db_debug_sw[0]) : 1'b0 ;//0:HDM use custom account & password 1:HDM use default account & password
-assign bios_security_bypass = db_debug_sw[7] ? (~db_debug_sw[5]) : 1'b0 ;//BIOS normal boot 1:clear BIOS's password boot
+assign bmc_security_bypass  = db_debug_sw[7] ? (~db_debug_sw[0]) : 1'b0 ; //0:HDM use custom account & password 1:HDM use default account & password
+assign bios_security_bypass = db_debug_sw[7] ? (~db_debug_sw[5]) : 1'b0 ; //BIOS normal boot 1:clear BIOS's password boot
 
 
 //------------------------------------------------------------------------------
@@ -4444,15 +4491,15 @@ bmc_cpld_i2c_ram #(
  
     .bmc_security_bypass           (bmc_security_bypass      ),//addr 0x0000[6]      in
 
-    .cpld_pwm_main_type            (cpld_pwm_main_type[1:0]  ),//addr 0x0002[6:5]    in   01:50%  10:90%
-    .fan_wdt_sel 			       (bmc_ready_flag           ),//addr 0x0002[4]      in
-    .fm_bmc_fan_wdt_feed	       (i_pal_wdt_rst_n_r        ),//addr 0x0002[1]      in
+    .cpld_pwm_main_type            (cpld_pwm_main_type[1:0]  ),//addr 0x0002[6:5]    out  BMC下发 硬件调试使用
+    .bmc_ready_flag                (bmc_ready_flag           ),//addr 0x0002[4]      in   BMC寄存 BMC挂死标志, 1：BMC正常；0：BMC挂死
+    .fm_bmc_fan_wdt_feed	       (i_pal_wdt_rst_n_r        ),//addr 0x0002[1]      in   BMC寄存 BMC需要不断反转该寄存器, 间隔不能大于5s, 否则认为BMC挂死
 
     .vwire_bmc_wakeup 	           (vwire_bmc_wakeup         ),//addr 0x0003[6]      out  BMC下发 开机信号
     .vwire_bmc_sysrst              (vwire_bmc_sysrst         ),//addr 0x0003[5]      out  BMC下发 复位信号
     .vwire_bmc_shutdown            (vwire_bmc_shutdown       ),//addr 0x0003[4]      out  BMC下发 关机信号
     .pwr_btn_state                 (~db_sys_sw_in_n          ),//addr 0x0003[3]      in   BMC寄存 物理开关输入，0：按下；1：松开
-    .rst_btn_state                 (~force_reb_in            ),//addr 0x0003[2]      in   BMC寄存 外部复位, SCPLD输入
+    .rst_btn_state                 (~force_reb_in            ),//addr 0x0003[2]      in   BMC寄存 外部复位, SCPLD输入, 0：按下；1：松开
     .rst_btn_mask                  (rst_btn_mask             ),//addr 0x0003[0]      out  BMC下发 物理复位屏蔽，1：屏蔽；0：不屏蔽
 
     .bmc_ctrl_shutdown             (bmc_ctrl_shutdown        ),//addr 0x0004[6]      out  BMC下发 主动关机控制，1：BMC主动关机；0：不控制

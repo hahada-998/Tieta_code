@@ -22,7 +22,7 @@ module bmc_cpld_i2c_ram #(
     input               bmc_security_bypass,      //addr 0x0000[6]
  
     input   [1:0]       cpld_pwm_main_type,       //addr 0x0002[6:5]
-    input               fan_wdt_sel,              //addr 0x0002[4]
+    input               bmc_ready_flag,              //addr 0x0002[4]
     input               fm_bmc_fan_wdt_feed,      //addr 0x0002[1]  
 
     output              vwire_bmc_wakeup,         //addr 0x0003 [6]
@@ -603,7 +603,7 @@ assign i2c_ram_1054         = r_reg_1054[7:0];
 //read byte from cpld
 ////////////////////////////////////////////////////////////////////////
 assign w_ram_0000 = {1'b0,bmc_security_bypass,6'b0};
-assign w_ram_0002 = {1'b0,cpld_pwm_main_type,fan_wdt_sel,1'b0,fan_wdt_timeout,fm_bmc_fan_wdt_feed,fan_wdt_en};
+assign w_ram_0002 = {1'b0,cpld_pwm_main_type,bmc_ready_flag,1'b0,fan_wdt_timeout,fm_bmc_fan_wdt_feed,fan_wdt_en};
 assign w_ram_0003 = {1'b0,vwire_bmc_wakeup,vwire_bmc_sysrst,vwire_bmc_shutdown,pwr_btn_state,rst_btn_state,1'b0,rst_btn_mask};
 assign w_ram_0004 = {1'b0,bmc_ctrl_shutdown,1'b0,aux_pcycle,pwrbtn_bl_mask,vwire_pwrbtn_bl,physical_pwrbtn_mask,st_steady_pwrok};
 assign w_ram_0005 = {bmc_uid_update,7'b0};

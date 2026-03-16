@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1327</data>
+                    <data>1429</data>
                     <data>0</data>
                 </row>
             </table>
@@ -267,7 +267,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1327</data>
+                    <data>1429</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -309,7 +309,7 @@
             </table>
         </table_container>
     </general_container>
-    <table id="pnr_io_report" title="IO Report" column_number="17" abnormal="">
+    <table id="pnr_io_report" title="IO Report" column_number="17">
         <column_headers>
             <data>PORT</data>
             <data>DIRECTION</data>
@@ -348,15 +348,15 @@
             <data>YES</data>
             <data>NA</data>
         </row>
-        <row color="4294901760">
+        <row>
             <data>i_BMC_I2C3_PAL_S_SCL_R</data>
             <data>input</data>
-            <data>G12</data>
+            <data>C11</data>
             <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
-            <data>PULLDW</data>
+            <data>NONE</data>
             <data>NA</data>
             <data>NA</data>
             <data>NOHYS</data>
@@ -364,7 +364,7 @@
             <data>NA</data>
             <data>OFF</data>
             <data>ON</data>
-            <data>NO</data>
+            <data>YES</data>
             <data>NA</data>
         </row>
         <row>
@@ -3521,23 +3521,23 @@
             <data>YES</data>
             <data>NA</data>
         </row>
-        <row color="4294901760">
+        <row>
             <data>io_BMC_I2C3_PAL_S_SDA_R</data>
             <data>inout</data>
-            <data>D14</data>
+            <data>D11</data>
             <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
-            <data>8</data>
-            <data>PULLDW</data>
+            <data>4</data>
+            <data>NONE</data>
             <data>SLOW</data>
-            <data>NA</data>
+            <data>N</data>
             <data>NOHYS</data>
             <data>NA</data>
             <data>NA</data>
             <data>OFF</data>
             <data>NA</data>
-            <data>NO</data>
+            <data>YES</data>
             <data>NA</data>
         </row>
         <row>
@@ -6304,9 +6304,9 @@
             <data>IOBS_0_189</data>
             <data>BANK0</data>
             <data>DIFFI_B0_8N/SPAL_D5</data>
-            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
-            <data>inout</data>
-            <data>NO</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>F12</data>
@@ -6367,9 +6367,9 @@
             <data>IOBS_0_123</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18N/SDA/CLK0N_B0</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
+            <data>inout</data>
+            <data>YES</data>
         </row>
         <row>
             <data>C12</data>
@@ -6412,9 +6412,9 @@
             <data>IOBS_0_122</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18P/SCL/CLK0P_B0</data>
-            <data></data>
-            <data></data>
-            <data></data>
+            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
+            <data>input</data>
+            <data>YES</data>
         </row>
         <row>
             <data>G8</data>
@@ -6502,9 +6502,9 @@
             <data>IOBS_0_182</data>
             <data>BANK0</data>
             <data>DIFFI_B0_10P</data>
-            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
-            <data>input</data>
-            <data>NO</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>G10</data>
@@ -8865,23 +8865,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>206</data>
+            <data>239</data>
             <data>592</data>
-            <data>35</data>
+            <data>41</data>
             <row>
                 <data>FF</data>
-                <data>531</data>
+                <data>596</data>
                 <data>3552</data>
-                <data>15</data>
+                <data>17</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>493</data>
+                <data>582</data>
                 <data>2368</data>
-                <data>21</data>
+                <data>25</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>493</data>
+                    <data>582</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8901,23 +8901,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>317</data>
+            <data>328</data>
             <data>888</data>
-            <data>36</data>
+            <data>37</data>
             <row>
                 <data>FF</data>
-                <data>840</data>
+                <data>877</data>
                 <data>5328</data>
-                <data>16</data>
+                <data>17</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>811</data>
+                <data>827</data>
                 <data>3552</data>
-                <data>23</data>
+                <data>24</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>811</data>
+                    <data>827</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9154,8 +9154,8 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1304</data>
-            <data>1371</data>
+            <data>1409</data>
+            <data>1473</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
@@ -9245,8 +9245,8 @@
             </row>
             <row>
                 <data>db_inst_pwrgood(PGM_DEBOUNCE_N)</data>
-                <data>14</data>
-                <data>12</data>
+                <data>116</data>
+                <data>114</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9314,7 +9314,7 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>148</data>
+                <data>145</data>
                 <data>73</data>
                 <data>0</data>
                 <data>0</data>
@@ -9498,7 +9498,7 @@
             </row>
             <row>
                 <data>inst_i2c_inf(I2C_SLAVE_INF)</data>
-                <data>62</data>
+                <data>61</data>
                 <data>45</data>
                 <data>0</data>
                 <data>0</data>
@@ -9590,7 +9590,7 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_p2s(p2s_slave)</data>
-                <data>77</data>
+                <data>84</data>
                 <data>21</data>
                 <data>0</data>
                 <data>0</data>
@@ -9797,7 +9797,7 @@
             </row>
             <row>
                 <data>uart_master_u10(UART_MASTER)</data>
-                <data>65</data>
+                <data>66</data>
                 <data>47</data>
                 <data>0</data>
                 <data>0</data>
@@ -9882,7 +9882,7 @@
         <row>
             <data>0h:0m:7s</data>
             <data>0h:0m:17s</data>
-            <data>0h:0m:10s</data>
+            <data>0h:0m:11s</data>
             <data>564</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
@@ -9902,6 +9902,15 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C3_PAL_S_SDA1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_CPU0_D0_I2C1_PE_STRAP_SDA' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -10982,12 +10991,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_USB2_SW_SEL_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="6">ConstraintEditor-2019: Port 'i_BMC_I2C3_PAL_S_SCL_R' unspecified I/O constraint.</data>
-        </row>
-        <row>
-            <data message="6">ConstraintEditor-2019: Port 'io_BMC_I2C3_PAL_S_SDA_R' unspecified I/O constraint.</data>
         </row>
         <row>
             <data message="6">ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/place_route/ports_defalut_attribute.txt(line number:0)] to confirm.</data>
