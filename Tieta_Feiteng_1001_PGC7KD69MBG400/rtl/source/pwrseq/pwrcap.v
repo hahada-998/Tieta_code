@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : pwrcap.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module Module create a full powercapping function for hp server and include
 //   the following three functions:
 //   (1) prochot
@@ -15,9 +15,6 @@
 //     could be improved for better readability/linting
 //   one of BL_MODE or PSU_CTRL should be defined in the following include depending on what
 //   platform type is. see below about restrictions on NUMBER_OF_CPUS/NUMBER_OF_CHANNEL.
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 //`include "wpspo_g5_define.vh"

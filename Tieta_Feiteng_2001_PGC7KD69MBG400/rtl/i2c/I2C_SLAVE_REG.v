@@ -37,40 +37,29 @@ module I2C_SLAVE_REG
 	input       [2:0] pca_rev,                  //0xF4[7:3]
 	input 		[1:0] pcb_rev,	                //0xF4[2:0]
 	
-	input             cpu0_mcio0_cable_id0,    //CPU0 DIE2-L--J18
-	input             cpu0_mcio0_cable_id1,
-	input             cpu0_mcio1_cable_id0,    //CPU0 DIE2-H--J17
-	input             cpu0_mcio1_cable_id1,
-	input             cpu0_mcio2_cable_id0,    //CPU0 DIE3-L--J20
-	input             cpu0_mcio2_cable_id1,
-	input             cpu0_mcio3_cable_id0,    //CPU0 DIE3-H--J19
-	input             cpu0_mcio3_cable_id1,
-	input             cpu0_mcio4_cable_id0,    //CPU0 DIE1-H--J16
-	input             cpu0_mcio4_cable_id1,
-	input             cpu0_mcio5_cable_id0,    //CPU0 DIE1-L--J29
-	input             cpu0_mcio5_cable_id1,
-	input             cpu1_mcio0_cable_id0,    //CPU1 DIE2-L--J21 
-	input             cpu1_mcio0_cable_id1,
-	input             cpu1_mcio1_cable_id0,    //CPU1 DIE2-H--J22
-	input             cpu1_mcio1_cable_id1,
-	input             cpu1_mcio2_cable_id0,    //CPU1 DIE3-L--J23
-	input             cpu1_mcio2_cable_id1,
-	input             cpu1_mcio3_cable_id0,    //CPU1 DIE3-H--J24
-	input             cpu1_mcio3_cable_id1,
-	input             cpu1_mcio4_cable_id0,    //CPU1 DIE0-H--J25
-	input             cpu1_mcio4_cable_id1,
-	input             cpu1_mcio6_cable_id0,    //CPU1 DIE0-L--J74
-	input             cpu1_mcio6_cable_id1,
-	
-	input             pal_mcio11_cable_id1,    //CPU0 DIE0-H--J1
-	input             pal_mcio11_cable_id0,
-	input             pal_mcio12_cable_id1,    //CPU0 DIE0-L--J1
-	input             pal_mcio12_cable_id0,
-	input             pal_mcio15_cable_id1,
-	input             pal_mcio15_cable_id0,
-	input             pal_mcio16_cable_id1,
-	input             pal_mcio16_cable_id0,
+    input             pal_mcio11_cable_id1,//CPU0 DIE0-H--J1   
+	input             pal_mcio11_cable_id0,   
+	input             pal_mcio12_cable_id1,//CPU0 DIE0-L--J1   
+	input             pal_mcio12_cable_id0,   
+	input             pal_mcio15_cable_id1,//CPU1 DIE0-H--J39
+	input             pal_mcio15_cable_id0,   
+	input             pal_mcio16_cable_id1,//CPU1 DIE0-L--J39
+	input             pal_mcio16_cable_id0,   
 
+	input             cpu0_mcio0_cable_id0, //CPU0 DIE1 C2C-L--J18
+	input             cpu0_mcio0_cable_id1,
+	input             cpu0_mcio2_cable_id0, //CPU0 DIE1-L--J20 
+	input             cpu0_mcio2_cable_id1,   
+	input             cpu0_mcio3_cable_id0, //CPU0 DIE1-H--J19 
+	input             cpu0_mcio3_cable_id1,
+
+	input             cpu1_mcio0_cable_id0, //CPU1 DIE1 C2C-L--J21 
+	input             cpu1_mcio0_cable_id1,
+	input             cpu1_mcio2_cable_id0, //CPU1 DIE3-L--J23 
+	input             cpu1_mcio2_cable_id1,    
+	input             cpu1_mcio3_cable_id0, //CPU1 DIE3-H--J24 
+	input             cpu1_mcio3_cable_id1,
+	
     input             ocp_prsnt_n         ,
 
     /* 不使用
@@ -119,16 +108,12 @@ wire [7:0] 	xreg_board_id  	= {4'b0, board_id[3:0]};//8'hC6
 wire [7:0] 	xreg_chassis_id	= {6'b0, chassis_id[1:0]};//8'hC7
 wire [7:0] 	pcb_id = {2'b0,pca_rev,1'b0,pcb_rev};//8'hF4
 
-wire [3:0]  cpu0_die0_alloc;
-wire [3:0]  cpu0_die1_alloc_1;
-wire [3:0]  cpu0_die1_alloc_2;
-wire [3:0]  cpu0_die2_alloc;
-wire [3:0]  cpu0_die3_alloc;
-wire [3:0]  cpu1_die0_alloc_1;
-wire [3:0]  cpu1_die0_alloc_2;
-wire [3:0]  cpu1_die1_alloc;
-wire [3:0]  cpu1_die2_alloc;
-wire [3:0]  cpu1_die3_alloc;
+wire [3:0] cpu0_die0_alloc    ;
+wire [3:0] cpu1_die0_alloc    ;
+wire [3:0] cpu0_die1_c2c_alloc;
+wire [3:0] cpu0_die1_alloc    ;
+wire [3:0] cpu1_die1_c2c_alloc;
+wire [3:0] cpu1_die1_alloc    ;
 
 //BIOS Read Register buff
 wire [7:0] w_ram_00;
@@ -416,91 +401,58 @@ pcie_dync_alloc  w_cpu0_die0_alloc
 (
     .i_rst_n             (rc_reset_n            ), 
     .i_clk               (clk                   ),
-    .i_cable_id1_h       (pal_mcio12_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
+    .i_cable_id1_h       (pal_mcio12_cable_id1  ), //2023-5-25 add chg from 1111 to x1x1
     .i_cable_id0_h       (pal_mcio12_cable_id0  ), //1'b1
     .i_cable_id1_l       (pal_mcio11_cable_id1  ),  
-    .i_cable_id0_l       (pal_mcio11_cable_id0  ),//1'b1
+    .i_cable_id0_l       (pal_mcio11_cable_id0  ), //1'b1
     .o_pcie_date         (cpu0_die0_alloc       )
 );
 
-pcie_dync_alloc  w_cpu0_die1_alloc_1
+pcie_dync_alloc  w_cpu1_die0_alloc
 (
     .i_rst_n             (rc_reset_n            ), 
     .i_clk               (clk                   ),
-    .i_cable_id1_h       (cpu0_mcio4_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
-    .i_cable_id0_h       (cpu0_mcio4_cable_id0  ), //1'b1
-    .i_cable_id1_l       (cpu0_mcio5_cable_id1  ),  
-    .i_cable_id0_l       (cpu0_mcio5_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu0_die1_alloc_1     )
+    .i_cable_id1_h       (pal_mcio16_cable_id1  ), //2023-5-25 add chg from 1111 to x1x1
+    .i_cable_id0_h       (pal_mcio16_cable_id0  ), //1'b1
+    .i_cable_id1_l       (pal_mcio15_cable_id1  ),  
+    .i_cable_id0_l       (pal_mcio15_cable_id0  ), //1'b1
+    .o_pcie_date         (cpu1_die0_alloc       )
 );
 
-pcie_dync_alloc  w_cpu0_die1_alloc_2
+pcie_dync_alloc  w_cpu0_die1_c2c_alloc
 (
     .i_rst_n             (rc_reset_n            ), 
     .i_clk               (clk                   ),
-    .i_cable_id1_h       (i_ocp1_x16_or_x8 ? 1'b1:1'b0  ),   //2023-5-25 add chg from 1111 to x1x1
+    .i_cable_id1_h       (1'b1                  ), //2023-5-25 add chg from 1111 to x1x1
     .i_cable_id0_h       (1'b1                  ), //1'b1
-    .i_cable_id1_l       (i_ocp1_x16_or_x8 ? 1'b1:1'b0  ),  
-    .i_cable_id0_l       (1'b1                  ),//1'b1
-    .o_pcie_date         (cpu0_die1_alloc_2     )
-);
-
-pcie_dync_alloc  w_cpu0_die2_alloc
-(
-    .i_rst_n             (rc_reset_n            ), 
-    .i_clk               (clk                   ),
-    .i_cable_id1_h       (cpu0_mcio1_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
-    .i_cable_id0_h       (cpu0_mcio1_cable_id0  ), //1'b1
     .i_cable_id1_l       (cpu0_mcio0_cable_id1  ),  
-    .i_cable_id0_l       (cpu0_mcio0_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu0_die2_alloc       )
+    .i_cable_id0_l       (cpu0_mcio0_cable_id0  ), //1'b1
+    .o_pcie_date         (cpu0_die1_c2c_alloc   )
 );
 
-pcie_dync_alloc  w_cpu0_die3_alloc
+pcie_dync_alloc  w_cpu0_die1_alloc
 (
     .i_rst_n             (rc_reset_n            ), 
     .i_clk               (clk                   ),
-    .i_cable_id1_h       (cpu0_mcio3_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
+    .i_cable_id1_h       (cpu0_mcio3_cable_id1  ), //2023-5-25 add chg from 1111 to x1x1
     .i_cable_id0_h       (cpu0_mcio3_cable_id0  ), //1'b1
     .i_cable_id1_l       (cpu0_mcio2_cable_id1  ),  
-    .i_cable_id0_l       (cpu0_mcio2_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu0_die3_alloc       )
+    .i_cable_id0_l       (cpu0_mcio2_cable_id0  ), //1'b1
+    .o_pcie_date         (cpu0_die1_alloc       )
+);
+
+pcie_dync_alloc  w_cpu1_die1_c2c_alloc
+(
+    .i_rst_n             (rc_reset_n            ), 
+    .i_clk               (clk                   ),
+    .i_cable_id1_h       (1'b1                  ),   //2023-5-25 add chg from 1111 to x1x1
+    .i_cable_id0_h       (1'b1                  ), //1'b1
+    .i_cable_id1_l       (cpu1_mcio0_cable_id1  ),  
+    .i_cable_id0_l       (cpu1_mcio0_cable_id0  ),//1'b1
+    .o_pcie_date         (cpu1_die1_c2c_alloc   )
 );
 
 pcie_dync_alloc  w_cpu1_die1_alloc
-(
-    .i_rst_n             (rc_reset_n            ), 
-    .i_clk               (clk                   ),
-    .i_cable_id1_h       (pal_mcio16_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
-    .i_cable_id0_h       (pal_mcio16_cable_id0  ), //1'b1
-    .i_cable_id1_l       (pal_mcio15_cable_id1  ),  
-    .i_cable_id0_l       (pal_mcio15_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu1_die1_alloc       )
-);
-
-pcie_dync_alloc  w_cpu1_die0_alloc_1
-(
-    .i_rst_n             (rc_reset_n            ), 
-    .i_clk               (clk                   ),
-    .i_cable_id1_h       (cpu1_mcio4_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
-    .i_cable_id0_h       (cpu1_mcio4_cable_id0  ), //1'b1
-    .i_cable_id1_l       (cpu1_mcio6_cable_id1  ),  
-    .i_cable_id0_l       (cpu1_mcio6_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu1_die0_alloc_1     )
-);
-
-pcie_dync_alloc  w_cpu1_die2_alloc
-(
-    .i_rst_n             (rc_reset_n            ), 
-    .i_clk               (clk                   ),
-    .i_cable_id1_h       (cpu1_mcio1_cable_id1  ),   //2023-5-25 add chg from 1111 to x1x1
-    .i_cable_id0_h       (cpu1_mcio1_cable_id0  ), //1'b1
-    .i_cable_id1_l       (cpu1_mcio0_cable_id1  ),  
-    .i_cable_id0_l       (cpu1_mcio0_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu1_die2_alloc       )
-);
-
-pcie_dync_alloc  w_cpu1_die3_alloc
 (
     .i_rst_n             (rc_reset_n            ), 
     .i_clk               (clk                   ),
@@ -508,9 +460,8 @@ pcie_dync_alloc  w_cpu1_die3_alloc
     .i_cable_id0_h       (cpu1_mcio3_cable_id0  ), //1'b1
     .i_cable_id1_l       (cpu1_mcio2_cable_id1  ),  
     .i_cable_id0_l       (cpu1_mcio2_cable_id0  ),//1'b1
-    .o_pcie_date         (cpu1_die3_alloc       )
+    .o_pcie_date         (cpu1_die1_alloc       )
 );
-
 
 //Write Register
 assign o_usb_en [7 :0]      = r_reg_00;
@@ -573,12 +524,20 @@ assign w_ram_76   	 = i_i2c_ram_76;
 assign w_ram_77   	 = i_i2c_ram_77;
 assign w_ram_78   	 = i_i2c_ram_78;
 
-assign w_ram_80[7:0] = {4'b0001,cpu0_die1_alloc_2};
-assign w_ram_81[7:0] = {cpu0_die1_alloc_1,cpu0_die0_alloc};
-assign w_ram_82[7:0] = {cpu0_die3_alloc,cpu0_die2_alloc};
-assign w_ram_83[7:0] = {cpu1_die1_alloc,4'b0};
-assign w_ram_84[7:0] = {4'b0,cpu1_die0_alloc_1};
-assign w_ram_85[7:0] = {cpu1_die3_alloc,cpu1_die2_alloc};
+wire [3:0] cpu0_die0_alloc    ;
+wire [3:0] cpu1_die0_alloc    ;
+wire [3:0] cpu0_die1_c2c_alloc;
+wire [3:0] cpu0_die1_alloc    ;
+wire [3:0] cpu1_die1_c2c_alloc;
+wire [3:0] cpu1_die1_alloc    ;
+
+assign w_ram_80[7:0] = {cpu0_die1_alloc,cpu0_die0_alloc}; // CPU0_D1 ; CPU0_D0;
+assign w_ram_81[7:0] = {cpu1_die1_alloc,cpu1_die0_alloc}; // CPU1_D1 ; CPU1_D0;
+assign w_ram_82[7:0] = {cpu1_die1_c2c_alloc,cpu0_die1_c2c_alloc}; // CPU1_D1_C2C ; CPU0_D1_C2C;
+
+assign w_ram_83[7:0] = {8'b0};
+assign w_ram_84[7:0] = {8'b0};
+assign w_ram_85[7:0] = {8'b0};
 assign w_ram_86[7:0] = {7'b0,ocp_prsnt_n};
 
 assign w_ram_C0   	   = mfr_id		;

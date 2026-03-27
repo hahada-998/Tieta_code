@@ -1,27 +1,11 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // *                   C O P Y R I G H T     N O T I C E                       *
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// *                                                                           *
-// * Inspur Company Confidential                                               *
-// *                                                                           *
-// * (c) Copyright 2020 - 2025 Inspur Electronic Information Industry Co.,Ltd. *
-// * All rights reserved.                                                      *
-// *                                                                           *
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * Engineer:       Abel Ge
-// * Email:          gezh@inspur.com 
-// * Module Name:    i2c_slave_basic0
-// * Project Name:   **
-// * Description:    i2c_slave module
-// * Instances:      Modules included in this file
-// *    <1>  
-// *    <2>  
-// * v1.1: 2021-5-14--line 634,641: change to r_1ms_clk_1
 // *
  
 `timescale 1ns/1ps
 
-module i2c_slave_basic0 #(
+module i2c_slave_basic1 #(
 parameter    TOTAL_STAGES = 3,
 parameter    DLY_LEN = 8            //24.18MHz,330ns
 )(      
@@ -90,7 +74,7 @@ reg  [7:0] r_data_in;
 //===============================
 //timeout reset function   i_1ms_clk
 //===============================
-reg  [7:0] r_timeout_cnt;
+reg  [5:0] r_timeout_cnt;
 reg  r_1ms_clk_0;
 reg  r_1ms_clk_1;
 wire w_1ms_clk_pos;
@@ -138,7 +122,8 @@ begin
     if(w_rst)                                                    
     begin
         r_glitchlessSignal_scl_q <=      0;                           
-        r_sampledData_scl_q     <=      {TOTAL_STAGES{w_scl}};    
+        // r_sampledData_scl_q     <=      {TOTAL_STAGES{w_scl}}; 
+		r_sampledData_scl_q     <= {TOTAL_STAGES{1'b0}};   
     end
     else
     begin
@@ -167,7 +152,8 @@ begin
     if(w_rst)                                                    
     begin
         r_glitchlessSignal_sda_q  <= 0;                           
-        r_sampledData_sda_q      <= {TOTAL_STAGES{w_sda}};    
+        // r_sampledData_sda_q      <= {TOTAL_STAGES{w_sda}};    
+		r_sampledData_sda_q      <= {TOTAL_STAGES{1'b0}}; 
     end
     else
     begin
@@ -644,9 +630,9 @@ end
 always@(posedge i_clk or negedge i_rst_n) //r_sda_1
 begin
     if(~i_rst_n)
-        r_timeout_cnt <= 8'd0;
-    else if(r_timeout_cnt >= 8'd35 || r_sda_1)
-        r_timeout_cnt <= 8'd0;
+        r_timeout_cnt <= 6'd0;
+    else if(r_timeout_cnt >= 6'd35 || r_sda_1)
+        r_timeout_cnt <= 6'd0;
     else if(w_1ms_clk_pos && (~r_sda_1))
         r_timeout_cnt <= r_timeout_cnt + 1'b1;
     else
@@ -657,7 +643,7 @@ always@(posedge i_clk or negedge i_rst_n)
 begin
     if(~i_rst_n)
         r_timeout_rst_n <= 1'b1;
-    else if(r_timeout_cnt == 8'd35)
+    else if(r_timeout_cnt == 6'd35)
         r_timeout_rst_n <= 1'b0;
     else
         r_timeout_rst_n <= 1'b1;

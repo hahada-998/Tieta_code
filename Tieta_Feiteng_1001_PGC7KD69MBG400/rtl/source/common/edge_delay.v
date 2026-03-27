@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : edge_delay.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module generates a delayed version of the input signal. The edge where the
 //   delay should start is selectable through a parameter. The default output is also
 //   configurable by parameter to allow for specific power on default.
@@ -16,9 +16,6 @@
 //    Default: 1'b0
 //   DELAY_MODE : Specify which edge to delay, 0 for rising, 1 for falling.
 //    Default: 1'b0
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module edge_delay #(

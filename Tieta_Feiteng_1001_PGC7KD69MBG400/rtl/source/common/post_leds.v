@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : post_leds.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module implement the following LED function This is mux function which
 //   controlled by mux_led and pgood signal.
 //     pgood mux_led[1]/(SW8) led_n
@@ -13,9 +13,6 @@
 //     0     1                ILO LEDs
 //     1     0                ILO LEDs
 //     1     1                PORT85/ROM debug
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module post_leds
@@ -114,11 +111,11 @@ always @(posedge sys_clk or negedge reset_n)
 	else if (mux_pwrseq)
       led_n <= ~{2'b00, power_seq_sm};
     else
-      case({sys_pgood, mux_led_t2})     //  .sys_pgood   (1'b0),  //Ä¬ÈÏÖ¸Ê¾bmcµÄbmc_led
-        2'b11  : led_n <= ~gpo_leds;    //Õâ¸ö×´Ì¬ÅÜ²»µ½¡£gpo_leds    (port80),     
-        2'b10  : led_n <= ~gmt_leds;    //   Õâ¸ö×´Ì¬ÅÜ²»µ½
-        2'b01  : led_n <= ~gmt_leds;      //¸´Î»µÄÊ±ºò£¬   pal_version_led_n£¬±ðµÄÊ±ºò¶¼ÊÇÖ¸Ê¾bmc 
-        2'b00  : led_n <= ~pal_version_led_n;//¸´Î»µÄÊ±ºò£¬   pal_version_led_n£¬±ðµÄÊ±ºò¶¼ÊÇÖ¸Ê¾bmc     
+      case({sys_pgood, mux_led_t2})     //  .sys_pgood   (1'b0),  //Ä¬ï¿½ï¿½Ö¸Ê¾bmcï¿½ï¿½bmc_led
+        2'b11  : led_n <= ~gpo_leds;    //ï¿½ï¿½ï¿½×´Ì¬ï¿½Ü²ï¿½ï¿½ï¿½ï¿½ï¿½gpo_leds    (port80),     
+        2'b10  : led_n <= ~gmt_leds;    //   ï¿½ï¿½ï¿½×´Ì¬ï¿½Ü²ï¿½ï¿½ï¿½
+        2'b01  : led_n <= ~gmt_leds;      //ï¿½ï¿½Î»ï¿½ï¿½Ê±ï¿½ï¿½   pal_version_led_nï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾bmc 
+        2'b00  : led_n <= ~pal_version_led_n;//ï¿½ï¿½Î»ï¿½ï¿½Ê±ï¿½ï¿½   pal_version_led_nï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾bmc     
         default: led_n <= ~gmt_leds;
       endcase
   end

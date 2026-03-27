@@ -1,19 +1,16 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : pwrseq_slave_dev.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This is a generic module that control and monitors device handles and reports power
 //   faults.
 // Parameter  :
 //   NUM_DEV: Number of devices to support.
 //   Default: 1
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module pwrseq_slave_dev #(parameter NUM_DEV = 1) (

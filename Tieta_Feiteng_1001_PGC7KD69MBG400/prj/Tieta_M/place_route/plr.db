@@ -210,7 +210,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1747</data>
+                    <data>1797</data>
                     <data>0</data>
                 </row>
                 <row>
@@ -223,7 +223,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_1</data>
-                    <data>2</data>
+                    <data>64</data>
                     <data>0</data>
                 </row>
                 <row>
@@ -233,10 +233,10 @@
                     <data>genblk1[0].fan_pwm_tach_m/w_clk_1s_pos</data>
                     <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/N0/gateop</data>
                     <data>Z</data>
-                    <data>CLMA_27_120</data>
+                    <data>CLMS_57_187</data>
                     <data>CLKOUT</data>
                     <data>ntussmbuf_ot_0</data>
-                    <data>44</data>
+                    <data>88</data>
                     <data>0</data>
                 </row>
             </table>
@@ -293,7 +293,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1747</data>
+                    <data>1797</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -304,7 +304,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT1</data>
                     <data>clk_25m</data>
-                    <data>2</data>
+                    <data>64</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -359,25 +359,6 @@
             <data>i_BMC_I2C9_PAL_M_SCL1_R</data>
             <data>input</data>
             <data>B2</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_BMC_I2C9_PAL_M_SCL_R</data>
-            <data>input</data>
-            <data>C11</data>
             <data>BANK0</data>
             <data>1.8</data>
             <data>LVCMOS18</data>
@@ -4026,25 +4007,6 @@
             <data>io_BMC_I2C9_PAL_M_SDA1_R</data>
             <data>inout</data>
             <data>B3</data>
-            <data>BANK0</data>
-            <data>1.8</data>
-            <data>LVCMOS18</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>io_BMC_I2C9_PAL_M_SDA_R</data>
-            <data>inout</data>
-            <data>D11</data>
             <data>BANK0</data>
             <data>1.8</data>
             <data>LVCMOS18</data>
@@ -6792,9 +6754,9 @@
             <data>IOBS_0_123</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18N/SDA/CLK0N_B0</data>
-            <data>io_BMC_I2C9_PAL_M_SDA_R</data>
-            <data>inout</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C12</data>
@@ -6837,9 +6799,9 @@
             <data>IOBS_0_122</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18P/SCL/CLK0P_B0</data>
-            <data>i_BMC_I2C9_PAL_M_SCL_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>G8</data>
@@ -9290,23 +9252,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>323</data>
+            <data>341</data>
             <data>592</data>
-            <data>55</data>
+            <data>58</data>
             <row>
                 <data>FF</data>
-                <data>818</data>
+                <data>807</data>
                 <data>3552</data>
-                <data>24</data>
+                <data>23</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>894</data>
+                <data>933</data>
                 <data>2368</data>
-                <data>38</data>
+                <data>40</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>894</data>
+                    <data>933</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9326,23 +9288,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>460</data>
+            <data>510</data>
             <data>888</data>
-            <data>52</data>
+            <data>58</data>
             <row>
                 <data>FF</data>
-                <data>1080</data>
+                <data>1275</data>
                 <data>5328</data>
-                <data>21</data>
+                <data>24</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1271</data>
+                <data>1410</data>
                 <data>3552</data>
-                <data>36</data>
+                <data>40</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>1271</data>
+                    <data>1410</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9374,9 +9336,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>310</data>
+            <data>308</data>
             <data>336</data>
-            <data>93</data>
+            <data>92</data>
             <row>
                 <data>IOBD</data>
                 <data>21</data>
@@ -9391,9 +9353,9 @@
             </row>
             <row>
                 <data>IOBS</data>
-                <data>249</data>
+                <data>247</data>
                 <data>273</data>
-                <data>92</data>
+                <data>91</data>
             </row>
         </row>
         <row>
@@ -9458,9 +9420,9 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>140</data>
+            <data>138</data>
             <data>252</data>
-            <data>56</data>
+            <data>55</data>
         </row>
         <row>
             <data>IOLDLY</data>
@@ -9470,9 +9432,9 @@
         </row>
         <row>
             <data>IOL</data>
-            <data>310</data>
+            <data>308</data>
             <data>336</data>
-            <data>93</data>
+            <data>92</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -9579,15 +9541,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_1001_top</data>
-            <data>2165</data>
-            <data>1898</data>
+            <data>2343</data>
+            <data>2082</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>310</data>
+            <data>308</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9624,7 +9586,7 @@
             </row>
             <row>
                 <data>UID_Function_u0(UID_Function)</data>
-                <data>53</data>
+                <data>54</data>
                 <data>30</data>
                 <data>0</data>
                 <data>0</data>
@@ -9716,8 +9678,8 @@
             </row>
             <row>
                 <data>bmc_cpld_i2c_ram_u0(bmc_cpld_i2c_ram)</data>
-                <data>479</data>
-                <data>316</data>
+                <data>507</data>
+                <data>360</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9738,7 +9700,7 @@
                 <data>0</data>
                 <row>
                     <data>i2c_slave_bmc_u0(i2c_slave_bmc)</data>
-                    <data>215</data>
+                    <data>214</data>
                     <data>168</data>
                     <data>0</data>
                     <data>0</data>
@@ -9760,7 +9722,7 @@
                     <data>0</data>
                     <row>
                         <data>i2c_slave_basic0_u0(i2c_slave_basic0)</data>
-                        <data>82</data>
+                        <data>81</data>
                         <data>93</data>
                         <data>0</data>
                         <data>0</data>
@@ -9831,8 +9793,8 @@
             </row>
             <row>
                 <data>db_fan_ctrl_inst1(PGM_DEBOUNCE_6)</data>
-                <data>32</data>
-                <data>40</data>
+                <data>48</data>
+                <data>60</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9854,8 +9816,8 @@
             </row>
             <row>
                 <data>db_inst_button(PGM_DEBOUNCE)</data>
+                <data>37</data>
                 <data>30</data>
-                <data>25</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9877,8 +9839,8 @@
             </row>
             <row>
                 <data>db_inst_cpu_rail(PGM_DEBOUNCE_1)</data>
-                <data>196</data>
-                <data>192</data>
+                <data>202</data>
+                <data>198</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9991,6 +9953,29 @@
                 <data>0</data>
             </row>
             <row>
+                <data>db_unused(PGM_DEBOUNCE_7)</data>
+                <data>12</data>
+                <data>12</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
                 <data>edge_delay_cpu_gpio_ok(edge_delay)</data>
                 <data>7</data>
                 <data>5</data>
@@ -10015,7 +10000,7 @@
             </row>
             <row>
                 <data>genblk1[0].fan_pwm_tach_m(fan_pwm_tach)</data>
-                <data>44</data>
+                <data>49</data>
                 <data>61</data>
                 <data>0</data>
                 <data>0</data>
@@ -10199,7 +10184,7 @@
             </row>
             <row>
                 <data>genblk1[1].fan_pwm_tach_m(fan_pwm_tach)</data>
-                <data>42</data>
+                <data>47</data>
                 <data>57</data>
                 <data>0</data>
                 <data>0</data>
@@ -10336,9 +10321,9 @@
                 </row>
             </row>
             <row>
-                <data>iic_slave_BMC_module(iic_slave_CPU)</data>
-                <data>102</data>
-                <data>99</data>
+                <data>genblk1[2].fan_pwm_tach_m(fan_pwm_tach)</data>
+                <data>36</data>
+                <data>48</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -10357,6 +10342,213 @@
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
+                <row>
+                    <data>Edge_Detect_u2(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u3(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u1(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u2(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+            </row>
+            <row>
+                <data>genblk1[3].fan_pwm_tach_m(fan_pwm_tach)</data>
+                <data>36</data>
+                <data>48</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <row>
+                    <data>Edge_Detect_u2(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>Edge_Detect_u3(Edge_Detect)</data>
+                    <data>0</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u1(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>fan_pwm_cnt_u2(fan_counter_1)</data>
+                    <data>15</data>
+                    <data>11</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_p2s(p2s_slave)</data>
@@ -10383,8 +10575,8 @@
             </row>
             <row>
                 <data>inst_scpld_to_mcpld_s2p(s2p_master)</data>
-                <data>162</data>
-                <data>237</data>
+                <data>163</data>
+                <data>239</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -10452,7 +10644,7 @@
             </row>
             <row>
                 <data>power_button_inst(power_button)</data>
-                <data>7</data>
+                <data>10</data>
                 <data>7</data>
                 <data>0</data>
                 <data>0</data>
@@ -10475,8 +10667,8 @@
             </row>
             <row>
                 <data>pwrseq_master_inst(pwrseq_master)</data>
-                <data>97</data>
-                <data>69</data>
+                <data>129</data>
+                <data>87</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -10495,6 +10687,52 @@
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
+                <row>
+                    <data>edge_detect_button_ne_inst(edge_detect)</data>
+                    <data>1</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>edge_detect_ne_inst(edge_detect)</data>
+                    <data>1</data>
+                    <data>2</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
                 <row>
                     <data>sb_thermtrip_delay_inst(edge_delay_1)</data>
                     <data>4</data>
@@ -10521,8 +10759,8 @@
             </row>
             <row>
                 <data>pwrseq_slave_inst(pwrseq_slave)</data>
-                <data>241</data>
-                <data>186</data>
+                <data>265</data>
+                <data>189</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -10612,7 +10850,7 @@
                 </row>
                 <row>
                     <data>cpu0_d0_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10658,7 +10896,7 @@
                 </row>
                 <row>
                     <data>cpu0_d0_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10704,7 +10942,7 @@
                 </row>
                 <row>
                     <data>cpu0_d1_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10750,7 +10988,7 @@
                 </row>
                 <row>
                     <data>cpu0_d1_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10796,7 +11034,7 @@
                 </row>
                 <row>
                     <data>cpu0_ddr_vdd_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10842,7 +11080,7 @@
                 </row>
                 <row>
                     <data>cpu0_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10888,7 +11126,7 @@
                 </row>
                 <row>
                     <data>cpu0_pll_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10934,7 +11172,7 @@
                 </row>
                 <row>
                     <data>cpu0_vdd_core_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -10980,7 +11218,7 @@
                 </row>
                 <row>
                     <data>cpu0_vddq_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11026,7 +11264,7 @@
                 </row>
                 <row>
                     <data>cpu1_d0_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11072,7 +11310,7 @@
                 </row>
                 <row>
                     <data>cpu1_d0_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11118,7 +11356,7 @@
                 </row>
                 <row>
                     <data>cpu1_d1_vp_p0v9_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11164,7 +11402,7 @@
                 </row>
                 <row>
                     <data>cpu1_d1_vph_p1v8_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11210,7 +11448,7 @@
                 </row>
                 <row>
                     <data>cpu1_ddr_vdd_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11256,7 +11494,7 @@
                 </row>
                 <row>
                     <data>cpu1_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11302,7 +11540,7 @@
                 </row>
                 <row>
                     <data>cpu1_pll_p1v8_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11348,7 +11586,7 @@
                 </row>
                 <row>
                     <data>cpu1_vdd_core_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11394,7 +11632,7 @@
                 </row>
                 <row>
                     <data>cpu1_vddq_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11601,7 +11839,30 @@
                 </row>
                 <row>
                     <data>p5v_stby_fault_detect_inst(fault_detectB_chklive)</data>
+                    <data>4</data>
                     <data>3</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>p12_fault_detect_inst(fault_detectB_chklive)</data>
+                    <data>2</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -11648,7 +11909,7 @@
                 <row>
                     <data>p12v_cpu0_vin_fault_fault_detect_inst(fault_detectB_chklive)</data>
                     <data>2</data>
-                    <data>3</data>
+                    <data>2</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -11785,7 +12046,7 @@
                 </row>
                 <row>
                     <data>p12v_reat_bp_efuse_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>3</data>
+                    <data>4</data>
                     <data>3</data>
                     <data>0</data>
                     <data>0</data>
@@ -12053,10 +12314,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:9s</data>
-            <data>0h:0m:22s</data>
-            <data>0h:0m:12s</data>
-            <data>601</data>
+            <data>0h:0m:10s</data>
+            <data>0h:0m:23s</data>
+            <data>0h:0m:13s</data>
+            <data>599</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -12075,15 +12336,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'io_PAL_BP1_PWR_ON_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>

@@ -171,7 +171,7 @@
                     </column_headers>
                     <row>
                         <data>Hexadecimal Value Of Feature Control Settings</data>
-                        <data>28943</data>
+                        <data>1028943</data>
                     </row>
                 </table>
             </table_container>
@@ -201,10 +201,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:6s</data>
-            <data>0h:0m:6s</data>
-            <data>0h:0m:7s</data>
-            <data>402</data>
+            <data>0h:0m:9s</data>
+            <data>0h:0m:10s</data>
+            <data>0h:0m:13s</data>
+            <data>403</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -217,12 +217,6 @@
         <column_headers/>
         <row>
             <data message="4">Multithreading enabled for Timing using a maximum of 4 processes.</data>
-        </row>
-        <row>
-            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'io_BMC_I2C3_PAL_S_SDA_R' to package pin 'D11' due to the conflict between the state of 'D11' and the configuration mode.</data>
-        </row>
-        <row>
-            <data message="6">ConstraintEditor-2008: It is not valid to assign port 'i_BMC_I2C3_PAL_S_SCL_R' to package pin 'C11' due to the conflict between the state of 'C11' and the configuration mode.</data>
         </row>
     </table>
 </tables>

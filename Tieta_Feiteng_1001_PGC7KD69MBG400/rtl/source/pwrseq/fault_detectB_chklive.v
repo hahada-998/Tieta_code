@@ -1,20 +1,17 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : fault_detectB_chklive.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module detects faults by monitoring the vrm_pgood signal. vrm_enable must be
 //   enabled first before any monitoring is done. In addition, a high on vrm_chklive_en is
 //   required to enable monitoring. This is an indication that vrm_pgood must be monitored now.
 //   A high on vrm_chklive_dis causes the monitoring to be turned off. These two signals provide
 //   a window for checking vrm_pgood as opposed to only checking the the signal at certain point
 //   in power sequencer.
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module fault_detectB_chklive #(parameter NUMBER_OF_VRM = 1) (

@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : edge_detect.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: Generate 1-clk wide pulse on signal edges. A pe, ne and any output are available
 //   for the desired edge. Separate output is provided to allow single instance of this module to
 //   provide the different edge detection instead of having different instances for different
@@ -20,9 +20,6 @@
 //   DEF_INIT: Default initializer for internal reg. Set this to 1'b1 for active low signal to
 //    avoid errant output on pe and any output on reset release.
 //    Default: {SIGCNT{1'b0}}
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module edge_detect #(

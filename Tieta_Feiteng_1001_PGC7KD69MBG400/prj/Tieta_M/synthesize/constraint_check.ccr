@@ -1,4 +1,4 @@
-##### Written on 2026/03/14 16:21:29 ################################################
+##### Written on 2026/03/27 20:07:10 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,7 +13,7 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 2 critical warning(s), 352 warning(s), out of 1437 constraint(s)
+Found 0 error(s), 0 critical warning(s), 349 warning(s), out of 1428 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
@@ -23,9 +23,6 @@ define_attribute {p:o_CPU0_D1_SE_RECOVERY_R} {PAP_IO_STANDARD} {LVCMOS33}
 
 Other Issues(infos):
 ********************************************
-
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:io_BMC_I2C9_PAL_M_SDA_R' to package pin 'D11' due to the conflict between the state of 'D11' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_BMC_I2C9_PAL_M_SCL_R' to package pin 'C11' due to the conflict between the state of 'C11' and the configuration mode.
 
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA1_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
@@ -375,7 +372,4 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_RISER2_SELECT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C9_PAL_M_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
 

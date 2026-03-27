@@ -1,4 +1,4 @@
-##### Written on 2026/03/14 16:03:49 ################################################
+##### Written on 2026/03/27 19:59:48 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,16 +13,40 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 2 critical warning(s), 366 warning(s), out of 1326 constraint(s)
+Found 0 error(s), 0 critical warning(s), 372 warning(s), out of 1326 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
 
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_BUS_KEEPER} {NONE}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1387)] Parse file warning: PAP_IO_BUS_KEEPER is already defined in p:i_UART0_CPU_LOG_RX, new value NONE will overwrite the current value.
+
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_DIRECTION} {INPUT}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1383)] Parse file warning: PAP_IO_DIRECTION is already defined in p:i_UART0_CPU_LOG_RX, new value INPUT will overwrite the current value.
+
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_LOC} {F16}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1384)] Parse file warning: PAP_IO_LOC is already defined in p:i_UART0_CPU_LOG_RX, new value F16 will overwrite the current value.
+
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_STANDARD} {LVCMOS33}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1386)] Parse file warning: PAP_IO_STANDARD is already defined in p:i_UART0_CPU_LOG_RX, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:i_UART0_CPU_LOG_RX} {PAP_IO_VCCIO} {3.3}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1385)] Parse file warning: PAP_IO_VCCIO is already defined in p:i_UART0_CPU_LOG_RX, new value 3.3 will overwrite the current value.
+
+define_attribute {p:o_UART0_CPU_LOG_TX} {PAP_IO_DIRECTION} {OUTPUT}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1379)] Parse file warning: PAP_IO_DIRECTION is already defined in p:o_UART0_CPU_LOG_TX, new value OUTPUT will overwrite the current value.
+
+define_attribute {p:o_UART0_CPU_LOG_TX} {PAP_IO_LOC} {F14}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1380)] Parse file warning: PAP_IO_LOC is already defined in p:o_UART0_CPU_LOG_TX, new value F14 will overwrite the current value.
+
+define_attribute {p:o_UART0_CPU_LOG_TX} {PAP_IO_STANDARD} {LVCMOS33}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1382)] Parse file warning: PAP_IO_STANDARD is already defined in p:o_UART0_CPU_LOG_TX, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:o_UART0_CPU_LOG_TX} {PAP_IO_VCCIO} {3.3}
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc(line number: 1381)] Parse file warning: PAP_IO_VCCIO is already defined in p:o_UART0_CPU_LOG_TX, new value 3.3 will overwrite the current value.
+
 Other Issues(infos):
 ********************************************
-
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:io_BMC_I2C3_PAL_S_SDA_R' to package pin 'D11' due to the conflict between the state of 'D11' and the configuration mode.
-    C: ConstraintEditor-2008: It is not valid to assign port 'p:i_BMC_I2C3_PAL_S_SCL_R' to package pin 'C11' due to the conflict between the state of 'C11' and the configuration mode.
 
     W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_BMC_SS_CLK' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
@@ -75,9 +99,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_UART_SIN' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_UART_SIN' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_RISER1_9548_RST_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_RISER1_9548_RST_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_RISER1_9548_RST_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -87,9 +108,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_UART_SIN' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_UART_SIN' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_D0_UART_SIN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_RISER2_9548_RST_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_RISER2_9548_RST_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU1_RISER2_9548_RST_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -111,18 +129,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_CPU_MCIO8_GPU_THROTTLE_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU_MCIO8_GPU_THROTTLE_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU_MCIO8_GPU_THROTTLE_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_TX_CONN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_TX_CONN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_TX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU0_D0_UART_SOUT' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU0_D0_UART_SOUT' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU0_D0_UART_SOUT' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -135,9 +141,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU1_UART1_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU1_UART1_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_JACK_CPU1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_LED1_N' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_LED1_N' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_LED1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -336,12 +339,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_RISER1_SWITCH_EN' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RISER1_SWITCH_EN' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RISER1_SWITCH_EN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C1_MUX_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C1_MUX_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C1_MUX_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -369,15 +366,6 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C_BMC_9548_MUX_N_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C_BMC_9548_MUX_N_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_RST_I2C_BMC_9548_MUX_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_UART2_PAL_OCP_TX_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_UART2_PAL_OCP_TX_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_UART2_PAL_OCP_TX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
@@ -387,7 +375,40 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PAL_TPM_DRQ1_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
-    W: ConstraintEditor-4042: Port 'p:io_BMC_I2C3_PAL_S_SDA_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_D1_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB_UART_TX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_LEAR_CPU0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser1_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_Riser2_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DB9_TOD_UART_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_UART0_CPU_LOG_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_RISER_AUX_TOD_UART2_TXD' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
 

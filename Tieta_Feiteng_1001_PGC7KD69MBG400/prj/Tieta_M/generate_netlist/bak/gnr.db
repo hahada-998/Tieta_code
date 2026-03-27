@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <general_container id="generate_netlist_settings">
+        <table_container>
+            <table id="generate_netlist_settings" title="Generate Netlist Settings" column_number="2">
+                <column_headers>
+                    <data>Name</data>
+                    <data>Value</data>
+                </column_headers>
+                <row>
+                    <data>Part</data>
+                    <data>PGC7KD-6MBG400</data>
+                </row>
+                <row>
+                    <data>Top Module</data>
+                    <data>Tieta_Feiteng_1001_top</data>
+                </row>
+            </table>
+        </table_container>
+        <general_container align="3">
+            <table_container>
+                <data>Simulation Model</data>
+                <table id="" title="" column_number="2">
+                    <column_headers>
+                        <data>Name</data>
+                        <data>Value</data>
+                    </column_headers>
+                    <row>
+                        <data>Enable Sdf Annotate</data>
+                        <data></data>
+                    </row>
+                    <row>
+                        <data>Process Corner</data>
+                        <data>slow</data>
+                    </row>
+                </table>
+            </table_container>
+        </general_container>
+    </general_container>
+    <table id="generate_netlist_runtime" title="Generate Netlist Runtime &amp; Memory" column_number="7">
+        <column_headers>
+            <data>Cpu Time</data>
+            <data>Process Cpu Time</data>
+            <data>Real Time</data>
+            <data>Peak Memory (MB)</data>
+            <data>Operation System</data>
+            <data>CPU</data>
+            <data>RAM(GB)</data>
+        </column_headers>
+        <row>
+            <data>0h:0m:5s</data>
+            <data>0h:0m:6s</data>
+            <data>0h:0m:14s</data>
+            <data>308</data>
+            <data>WINDOWS 10 x86_64</data>
+            <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
+            <data>8</data>
+        </row>
+    </table>
+    <table id="report_end" title="Report Ended" column_number="0">
+        <column_headers/>
+    </table>
+    <table id="generate_netlist_messages" title="Generate Netlist Messages" column_number="1">
+        <column_headers/>
+        <row>
+            <data message="4">Multithreading enabled for Timing using a maximum of 4 processes.</data>
+        </row>
+    </table>
+</tables>

@@ -71,6 +71,7 @@ module bmc_cpld_i2c_ram #(
 
     input   [7:0]       lpc_io_data_port85,       //addr 0x000f [7:0]          
 
+    input               spd_bios_bmc_sel,         //addr 0x0010 [6]
     output              rtc_select_n,             //addr 0x0010 [4]         
     output              vga2_dis,                 //addr 0x0010 [3]                 
     input               cpu0_d0_bios_over,        //addr 0x0010 [0]        
@@ -124,12 +125,22 @@ module bmc_cpld_i2c_ram #(
 
     input       [7:0]   i_fan0_tach0_real_h,      //addr 0x002B[7:0]
     input       [7:0]   i_fan0_tach0_real_l,      //addr 0x002C[7:0]
-    input       [7:0]   i_fan1_tach1_real_h,      //addr 0x002D[7:0]
-    input       [7:0]   i_fan1_tach1_real_l,      //addr 0x002E[7:0]
-    input       [7:0]   i_fan2_tach2_real_h,      //addr 0x002F[7:0]
-    input       [7:0]   i_fan2_tach2_real_l,      //addr 0x0030[7:0]
-    input       [7:0]   i_fan3_tach3_real_h,      //addr 0x0031[7:0]
-    input       [7:0]   i_fan3_tach3_real_l,      //addr 0x0032[7:0]
+    input       [7:0]   i_fan0_tach1_real_h,      //addr 0x002D[7:0]
+    input       [7:0]   i_fan0_tach1_real_l,      //addr 0x002E[7:0]
+    input       [7:0]   i_fan1_tach0_real_h,      //addr 0x002F[7:0]
+    input       [7:0]   i_fan1_tach0_real_l,      //addr 0x0030[7:0]
+    input       [7:0]   i_fan1_tach1_real_h,      //addr 0x0031[7:0]
+    input       [7:0]   i_fan1_tach1_real_l,      //addr 0x0032[7:0]
+
+    input       [7:0]   i_fan2_tach0_real_h,      //addr 0x0033[7:0]
+    input       [7:0]   i_fan2_tach0_real_l,      //addr 0x0034[7:0]
+    input       [7:0]   i_fan2_tach1_real_h,      //addr 0x0035[7:0]
+    input       [7:0]   i_fan2_tach1_real_l,      //addr 0x0036[7:0]
+    input       [7:0]   i_fan3_tach0_real_h,      //addr 0x0037[7:0]
+    input       [7:0]   i_fan3_tach0_real_l,      //addr 0x0038[7:0]
+    input       [7:0]   i_fan3_tach1_real_h,      //addr 0x0039[7:0]
+    input       [7:0]   i_fan3_tach1_real_l,      //addr 0x003a[7:0]
+
 
     input       [1:0]   ps_prsnt,                 //addr 0x0050 [1:0]
     input       [1:0]   psu_smb_alert_n,          //addr 0x0052 [1:0]
@@ -293,8 +304,6 @@ wire [7:0] w_ram_002F;
 wire [7:0] w_ram_0030;
 wire [7:0] w_ram_0031;
 wire [7:0] w_ram_0032;
-
-/* w_ran_0033~w_ram_003F 预留风扇转速寄存器
 wire [7:0] w_ram_0033;
 wire [7:0] w_ram_0034;  
 wire [7:0] w_ram_0035;
@@ -303,6 +312,8 @@ wire [7:0] w_ram_0037;
 wire [7:0] w_ram_0038;
 wire [7:0] w_ram_0039;  
 wire [7:0] w_ram_003A;
+
+/* w_ran_0033~w_ram_003F 预留风扇转速寄存器
 wire [7:0] w_ram_003B;
 wire [7:0] w_ram_003C;
 wire [7:0] w_ram_003D;
@@ -574,10 +585,10 @@ assign o_fan1_p12v_en           = r_reg_0021[1];
 assign o_fan2_p12v_en           = r_reg_0021[2];
 assign o_fan3_p12v_en           = r_reg_0021[3];
 
-assign o_pwn_bmc_fan0           = r_reg_0022   ;
-assign o_pwn_bmc_fan1           = r_reg_0023   ;
-assign o_pwn_bmc_fan2           = r_reg_0024   ;
-assign o_pwn_bmc_fan3           = r_reg_0025   ;
+assign o_pwm_bmc_fan0           = r_reg_0022   ;
+assign o_pwm_bmc_fan1           = r_reg_0023   ;
+assign o_pwm_bmc_fan2           = r_reg_0024   ;
+assign o_pwm_bmc_fan3           = r_reg_0025   ;
 
 assign o_bmc_ctr_fan_led_status = r_reg_002A    ;
 
@@ -624,28 +635,29 @@ assign w_ram_001D = {tpm_rst,tpm_prsnt,intruder,intruder_cable_prsnt,dsd_prsnt,3
 // begin: mod by z02665 20260225 风扇转速相关寄存器修改
 assign w_ram_0020 = {i_fan3_p12v_gok, i_fan3_prsnt_n, i_fan2_p12v_gok, i_fan2_prsnt_n, i_fan1_p12v_gok, i_fan1_prsnt_n, i_fan0_p12v_gok, i_fan0_prsnt_n};
 assign w_ram_0026 = i_fan0_type;
-assign w_ram_0027 = i_fan0_type;
-assign w_ram_0028 = i_fan0_type;
-assign w_ram_0029 = i_fan0_type;
+assign w_ram_0027 = i_fan1_type;
+assign w_ram_0028 = i_fan2_type;
+assign w_ram_0029 = i_fan3_type;
 
 assign w_ram_002B = i_fan0_tach0_real_h ;
 assign w_ram_002C = i_fan0_tach0_real_l ;
-assign w_ram_002D = i_fan1_tach1_real_h ;
-assign w_ram_002E = i_fan1_tach1_real_l ;
-assign w_ram_002F = i_fan2_tach2_real_h ;
-assign w_ram_0030 = i_fan2_tach2_real_l ;
-assign w_ram_0031 = i_fan3_tach3_real_h ;
-assign w_ram_0032 = i_fan3_tach3_real_l ;
+assign w_ram_002D = i_fan0_tach1_real_h ;
+assign w_ram_002E = i_fan0_tach1_real_l ;
+assign w_ram_002F = i_fan1_tach0_real_h ;
+assign w_ram_0030 = i_fan1_tach0_real_l ;
+assign w_ram_0031 = i_fan1_tach1_real_h ;
+assign w_ram_0032 = i_fan1_tach1_real_l ;
+assign w_ram_0033 = i_fan2_tach0_real_h;
+assign w_ram_0034 = i_fan2_tach0_real_l;
+assign w_ram_0035 = i_fan2_tach1_real_h;
+assign w_ram_0036 = i_fan2_tach1_real_l;
+assign w_ram_0037 = i_fan3_tach0_real_h;
+assign w_ram_0038 = i_fan3_tach0_real_l;
+assign w_ram_0039 = i_fan3_tach1_real_h;
+assign w_ram_003A = i_fan3_tach1_real_l;
 
-/* w_ran_0033~w_ram_003F 预留风扇转速寄存器
-// assign w_ram_0033 = fan_tach10_byte1;
-// assign w_ram_0034 = fan_tach11_byte2;
-// assign w_ram_0035 = fan_tach11_byte1;
-// assign w_ram_0036 = fan_tach12_byte2;
-// assign w_ram_0037 = fan_tach12_byte1;
-// assign w_ram_0038 = fan_tach13_byte2;
-// assign w_ram_0039 = fan_tach13_byte1;
-// assign w_ram_003A = fan_tach14_byte2;
+/* w_ran_003B~w_ram_003F 预留风扇转速寄存器
+
 // assign w_ram_003B = fan_tach14_byte1;
 // assign w_ram_003C = fan_tach15_byte2;
 // assign w_ram_003D = fan_tach15_byte1;
@@ -747,16 +759,17 @@ begin
 	16'h001B: r_i2c_data_in  <= r_reg_001B;
 	16'h001D: r_i2c_data_in  <= w_ram_001D;
 	16'h0020: r_i2c_data_in  <= w_ram_0020;
-	16'h0021: r_i2c_data_in  <= w_ram_0021;
-	16'h0022: r_i2c_data_in  <= w_ram_0022;
-	16'h0023: r_i2c_data_in  <= w_ram_0023;
-	16'h0024: r_i2c_data_in  <= w_ram_0024;
-	16'h0025: r_i2c_data_in  <= w_ram_0025;
+	16'h0021: r_i2c_data_in  <= r_reg_0021/*w_ram_0021*/;
+	16'h0022: r_i2c_data_in  <= r_reg_0022/*w_ram_0022*/;
+	16'h0023: r_i2c_data_in  <= r_reg_0023/*w_ram_0023*/;
+	16'h0024: r_i2c_data_in  <= r_reg_0024/*w_ram_0024*/;
+	16'h0025: r_i2c_data_in  <= r_reg_0025/*w_ram_0025*/;
 	16'h0026: r_i2c_data_in  <= w_ram_0026;
 	16'h0027: r_i2c_data_in  <= w_ram_0027;
 	16'h0028: r_i2c_data_in  <= w_ram_0028;
 	16'h0029: r_i2c_data_in  <= w_ram_0029;
-	16'h002A: r_i2c_data_in  <= w_ram_002A;
+	16'h002A: r_i2c_data_in  <= r_reg_002A/*w_ram_002A*/;
+
 	16'h002B: r_i2c_data_in  <= w_ram_002B;
 	16'h002C: r_i2c_data_in  <= w_ram_002C;
 	16'h002D: r_i2c_data_in  <= w_ram_002D;
@@ -765,9 +778,7 @@ begin
 	16'h0030: r_i2c_data_in  <= w_ram_0030;
 	16'h0031: r_i2c_data_in  <= w_ram_0031;
 	16'h0032: r_i2c_data_in  <= w_ram_0032;
-
-    /* w_ran_0033~w_ram_003F 预留风扇转速寄存器
-	16'h0033: r_i2c_data_in  <= w_ram_0033;
+    16'h0033: r_i2c_data_in  <= w_ram_0033;
 	16'h0034: r_i2c_data_in  <= w_ram_0034;
 	16'h0035: r_i2c_data_in  <= w_ram_0035;
 	16'h0036: r_i2c_data_in  <= w_ram_0036;
@@ -775,6 +786,8 @@ begin
 	16'h0038: r_i2c_data_in  <= w_ram_0038;
 	16'h0039: r_i2c_data_in  <= w_ram_0039;
 	16'h003A: r_i2c_data_in  <= w_ram_003A;
+
+    /* w_ran_003B~w_ram_003F 预留风扇转速寄存器
 	16'h003B: r_i2c_data_in  <= w_ram_003B;
 	16'h003C: r_i2c_data_in  <= w_ram_003C;
 	16'h003D: r_i2c_data_in  <= w_ram_003D;	

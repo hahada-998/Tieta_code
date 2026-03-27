@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
+// Copyright(c) 2017, China Tower Corporation Limited. All right reserved
 // Filename   : delay_timer.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited.
 // Description: This module creates a delayed version of signal_in by (cnt_size*cnt_step). It is
 //   asserted while signal_in = 1. When signal_in de-asserts low or reset asserts, delay_output
 //   will de-assert LOW asynchronously.
@@ -18,9 +18,6 @@
 //     timer_cntr:                    0          I       1
 //                     --------------------------^-----------------------------------------------
 //     delay_output:   _____________________________________|------------------------------------
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module delay_timer #(parameter CNT_SIZE = 8) (

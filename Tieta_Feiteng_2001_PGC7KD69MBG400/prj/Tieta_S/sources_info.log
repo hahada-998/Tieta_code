@@ -1,16 +1,16 @@
 Designs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/Tieta_Feiteng_2001_top.v
-Size: 242470bytes
-Last modified time: 2026/03/14 16:02:02
+Size: 227186bytes
+Last modified time: 2026/03/27 19:59:18
 2. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/pon_reset.v
 Size: 6186bytes
 Last modified time: 2026/02/10 08:39:59
 3. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/timer_gen_50mhz.v
-Size: 6077bytes
-Last modified time: 2026/02/10 08:39:59
+Size: 5903bytes
+Last modified time: 2026/03/25 14:36:24
 4. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/synclib.v
-Size: 21657bytes
-Last modified time: 2026/02/10 08:39:59
+Size: 21485bytes
+Last modified time: 2026/03/25 14:36:16
 5. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/communication/p2s_slave.v
 Size: 2897bytes
 Last modified time: 2026/02/10 08:39:59
@@ -39,8 +39,8 @@ Last modified time: 2026/02/10 08:39:59
 Size: 10427bytes
 Last modified time: 2026/02/24 09:03:59
 14. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/edge_delay.v
-Size: 2758bytes
-Last modified time: 2026/02/10 08:39:59
+Size: 2583bytes
+Last modified time: 2026/03/25 14:35:57
 15. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/common/edge_detect.v
 Size: 2216bytes
 Last modified time: 2026/02/10 08:39:59
@@ -63,8 +63,8 @@ Last modified time: 2022/10/14 15:02:50
 Size: 10008bytes
 Last modified time: 2026/02/10 08:39:59
 22. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/I2C_SLAVE_REG.v
-Size: 28101bytes
-Last modified time: 2026/03/09 09:48:31
+Size: 26263bytes
+Last modified time: 2026/03/26 11:24:53
 23. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c_updata/apb_mux.v
 Size: 5786bytes
 Last modified time: 2026/01/12 11:12:04
@@ -80,6 +80,18 @@ Last modified time: 2026/01/12 11:12:04
 27. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c_updata/iic2apb_ctrl.v
 Size: 25133bytes
 Last modified time: 2026/01/12 11:12:04
+28. C:/CPLD/pango/4_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/i2c_slave_basic0.v
+Size: 20207bytes
+Last modified time: 2026/02/10 08:39:59
+29. C:/CPLD/pango/4_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/i2c_slave_bmc.v
+Size: 5855bytes
+Last modified time: 2026/02/10 08:39:59
+30. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/bmc_cpld_i2c_ram.v
+Size: 2667bytes
+Last modified time: 2026/03/24 17:16:12
+31. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/rtl/i2c/i2c_slave_basic0.v
+Size: 18773bytes
+Last modified time: 2026/03/24 17:17:21
 
 IPs:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.idf
@@ -88,11 +100,11 @@ Last modified time: 2026/02/10 08:52:31
 
 Constraints:
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/Tieta_S.fdc
-Size: 91839bytes
-Last modified time: 2026/03/12 19:14:26
+Size: 91048bytes
+Last modified time: 2026/03/27 19:32:25
 
 Physical Constraint Editor (Post-Map):
 1. C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_2001_PGC7KD69MBG400/prj/Tieta_S/device_map/Tieta_Feiteng_2001_top.pcf
-Size: 22965bytes
-Last modified time: 2026/03/14 15:56:33
+Size: 22802bytes
+Last modified time: 2026/03/27 19:45:50
 

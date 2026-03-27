@@ -1,15 +1,12 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : system_reset.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description:
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module system_reset #(
@@ -29,7 +26,7 @@ module system_reset #(
   input       rt_critical_fail_store,       // power sequencer detected power fault
 
   // Reset stimulus - these nets should have been debounced and synchronized
-  input       glp_bootnext_n,               // GLP BOOTNEXT_N signal  ÓÀÔ¶ÊÇ1
+  input       glp_bootnext_n,               // GLP BOOTNEXT_N signal  ï¿½ï¿½Ô¶ï¿½ï¿½1
   input       glp_sysrst_n,                 // GLP SYSRST_N signal
   input       sysrst_button_n,              // External reset button
 //YHY  input       pch_cpupwrok,                 // PCH CPUPWROK signal
@@ -114,7 +111,7 @@ begin
     bootnext_n_reg <= glp_bootnext_n;
 end
 
-assign bootnext_n_ne = ~glp_bootnext_n & bootnext_n_reg;  //glp_bootnext_nÓÀÔ¶ÊÇ1
+assign bootnext_n_ne = ~glp_bootnext_n & bootnext_n_reg;  //glp_bootnext_nï¿½ï¿½Ô¶ï¿½ï¿½1
 
 // Count the number of bootnext_n negedge assertion detected. If it reaches
 // MAX_HSB_EVENTS_PER_RESET, force a system reset.
@@ -216,7 +213,7 @@ end
        pal_sys_reset <= 1'b0;
      else if (st_steady_pwrok)
    //YHY    pal_sys_reset <= ~glp_sysrst_n | ~sysrst_button_n | hsb_reset | ~xdp_cpu_syspwrok | caterr_sysrst;
-       pal_sys_reset <= ~glp_sysrst_n | ~sysrst_button_n | hsb_reset  ;//hsb_resetÊµ¼ÊÓÀÔ¶ÊÇ0
+       pal_sys_reset <= ~glp_sysrst_n | ~sysrst_button_n | hsb_reset  ;//hsb_resetÊµï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½0
        
      else
        pal_sys_reset <= 1'b0;

@@ -1,22 +1,6 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // *                   C O P Y R I G H T     N O T I C E                       *
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// *                                                                           *
-// * Inspur Company Confidential                                               *
-// *                                                                           *
-// * (c) Copyright 2020 - 2025 Inspur Electronic Information Industry Co.,Ltd. *
-// * All rights reserved.                                                      *
-// *                                                                           *
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-// * Engineer:        Lambert
-// * Email:           chenzhanliang@inspur.com 
-// * Module Name:     i2c_slave_bmc
-// * Project Name:    qingtian
-// * Description:     Module Function
-// *    i2c slave ram register
-// * Instances:       Modules included in this file
-// *    <1> i2c_slave_basic0 
-// * Modification:    The content been modified
 // *    2021-02-26: New Created
 
 
@@ -86,7 +70,7 @@ end
 i2c_slave_basic0 #(
 .TOTAL_STAGES       (3),
 .DLY_LEN            (DLY_LEN)            //24.18MHz,330ns
-)i2c_slave_basic0_u0(      
+)i2c_slave_basic0_u1(      
 // generic ports
 .i_rst_n            (i_rst_n & i_rst_i2c_n), 		
 .i_clk              (i_clk),                    // System Reset

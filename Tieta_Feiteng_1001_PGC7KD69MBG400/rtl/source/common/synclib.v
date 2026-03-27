@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : synclib.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: Library of synchronizing cells to fix common metastability issues
 //   SYNCLIB CELL'S INTERFACE
 //            Module Name        Clock      Reset             Input(s)   Output(s)
@@ -33,9 +33,6 @@
 //                  in downstream logic.
 //     module PGM_DEBOUNCE_GPO_N #(parameter SIGCNT=5, NBITS=3, DEFAULT_OUT=5'b00000)
 //               (clk, rst_n, din, ndelay0, ndelay1, ndelay2, ndelay3, select_delay, timer_tick, disable_db, dout);
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 // *****************************************************************************

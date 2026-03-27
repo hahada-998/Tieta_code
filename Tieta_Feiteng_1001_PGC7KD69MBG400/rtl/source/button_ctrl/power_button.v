@@ -1,16 +1,13 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : power_button.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module generates the proper logic for driving the PCH's power button and
-//   THERMTRIP input. It takes various stimulus from the system generates the proper response.                                                      *
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
+//   THERMTRIP input. It takes various stimulus from the system generates the proper response.                                              
 //=================================================================================================
 
 module power_button #(parameter BL_MODE = 1'b0) ( // Enable BL support

@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : led_blink_code.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module is the LED Blink_code sequence for G9 based the Power fault XREG_rev7
 //   it generates a sequence on a output going off for 2 seconds and then blink the red health
 //   LED sequentially at 4Hz to represent a particular failure as follows.
@@ -25,9 +25,6 @@
 //   to a limitation from Quartus to support real datatype in static function in this case
 //   f_blink = 2.5Hz -> T_blink = 400ms
 //   OFF_SECS = 1, CLK_CYCLES_OFF = 2.5Hz * 1 => 2.5 = 3 CLK CYCLES = 1.2s
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 `define CLK_CYCLES_OFF 1

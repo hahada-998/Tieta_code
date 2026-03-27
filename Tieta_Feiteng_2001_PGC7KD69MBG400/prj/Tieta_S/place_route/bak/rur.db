@@ -178,7 +178,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1429</data>
+                    <data>1467</data>
                     <data>0</data>
                 </row>
             </table>
@@ -201,10 +201,10 @@
                     <data>pll_inst/u_pll_e2/goppll</data>
                     <data>PLL_11_20</data>
                     <data>CLKFB</data>
-                    <data>_GND130</data>
+                    <data>_GND145</data>
                     <data> - </data>
                     <data> - </data>
-                    <data>GND_130</data>
+                    <data>GND_145</data>
                     <data>Z</data>
                     <data>HARD0N1_6_19</data>
                 </row>
@@ -235,7 +235,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1429</data>
+                    <data>1467</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -302,25 +302,6 @@
             <data>input</data>
             <data>W8</data>
             <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
-            <data>input</data>
-            <data>C11</data>
-            <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
@@ -1685,10 +1666,10 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_DBG_CPU0_UART1_RX_CONN_R</data>
+            <data>i_DBG_CPU0_UART1_TX_CONN_R</data>
             <data>input</data>
-            <data>V19</data>
-            <data>BANK1</data>
+            <data>W19</data>
+            <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
@@ -1704,9 +1685,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_DBG_PAL_BMC_UART1_RX_CONN_R</data>
+            <data>i_DBG_PAL_BMC_UART1_TX_CONN_R</data>
             <data>input</data>
-            <data>U19</data>
+            <data>T19</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -3490,25 +3471,6 @@
             <data>NA</data>
         </row>
         <row>
-            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
-            <data>inout</data>
-            <data>D11</data>
-            <data>BANK0</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
             <data>io_CPU0_D0_I2C1_PE_STRAP_SDA</data>
             <data>inout</data>
             <data>A3</data>
@@ -4003,10 +3965,10 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_DBG_CPU0_UART1_TX_CONN_R</data>
+            <data>o_DBG_CPU0_UART1_RX_CONN_R</data>
             <data>output</data>
-            <data>W19</data>
-            <data>BANK2</data>
+            <data>V19</data>
+            <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>4</data>
@@ -4022,9 +3984,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_DBG_PAL_BMC_UART1_TX_CONN_R</data>
+            <data>o_DBG_PAL_BMC_UART1_RX_CONN_R</data>
             <data>output</data>
-            <data>T19</data>
+            <data>U19</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -6335,9 +6297,9 @@
             <data>IOBS_0_123</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18N/SDA/CLK0N_B0</data>
-            <data>io_BMC_I2C3_PAL_S_SDA_R</data>
-            <data>inout</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>C12</data>
@@ -6380,9 +6342,9 @@
             <data>IOBS_0_122</data>
             <data>BANK0</data>
             <data>DIFFI_B0_18P/SCL/CLK0P_B0</data>
-            <data>i_BMC_I2C3_PAL_S_SCL_R</data>
-            <data>input</data>
-            <data>YES</data>
+            <data></data>
+            <data></data>
+            <data></data>
         </row>
         <row>
             <data>G8</data>
@@ -6767,8 +6729,8 @@
             <data>IOBS_117_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_33N</data>
-            <data>o_DBG_PAL_BMC_UART1_TX_CONN_R</data>
-            <data>output</data>
+            <data>i_DBG_PAL_BMC_UART1_TX_CONN_R</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -6785,8 +6747,8 @@
             <data>IOBS_129_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_35N</data>
-            <data>i_DBG_PAL_BMC_UART1_RX_CONN_R</data>
-            <data>input</data>
+            <data>o_DBG_PAL_BMC_UART1_RX_CONN_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7208,8 +7170,8 @@
             <data>IOBS_144_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_40P</data>
-            <data>i_DBG_CPU0_UART1_RX_CONN_R</data>
-            <data>input</data>
+            <data>o_DBG_CPU0_UART1_RX_CONN_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7424,8 +7386,8 @@
             <data>IOBS_156_211</data>
             <data>BANK2</data>
             <data>DIFFI_B2_3N</data>
-            <data>o_DBG_CPU0_UART1_TX_CONN_R</data>
-            <data>output</data>
+            <data>i_DBG_CPU0_UART1_TX_CONN_R</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -8833,35 +8795,35 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>284</data>
+            <data>283</data>
             <data>592</data>
             <data>48</data>
             <row>
                 <data>FF</data>
-                <data>596</data>
+                <data>565</data>
                 <data>3552</data>
-                <data>17</data>
+                <data>16</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>713</data>
+                <data>741</data>
                 <data>2368</data>
-                <data>31</data>
+                <data>32</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>582</data>
+                    <data>592</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>115</data>
+                    <data>129</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>16</data>
+                    <data>20</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8869,23 +8831,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>361</data>
+            <data>388</data>
             <data>888</data>
-            <data>41</data>
+            <data>44</data>
             <row>
                 <data>FF</data>
-                <data>877</data>
+                <data>960</data>
                 <data>5328</data>
-                <data>17</data>
+                <data>19</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>927</data>
+                <data>1025</data>
                 <data>3552</data>
-                <data>27</data>
+                <data>29</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>827</data>
+                    <data>919</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8903,7 +8865,7 @@
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>84</data>
+                    <data>90</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8917,9 +8879,9 @@
         </row>
         <row>
             <data>IO</data>
-            <data>289</data>
+            <data>287</data>
             <data>336</data>
-            <data>87</data>
+            <data>86</data>
             <row>
                 <data>IOBD</data>
                 <data>19</data>
@@ -8934,9 +8896,9 @@
             </row>
             <row>
                 <data>IOBS</data>
-                <data>233</data>
+                <data>231</data>
                 <data>273</data>
-                <data>86</data>
+                <data>85</data>
             </row>
         </row>
         <row>
@@ -8977,9 +8939,9 @@
         </row>
         <row>
             <data>HARD0N1</data>
-            <data>63</data>
+            <data>87</data>
             <data>936</data>
-            <data>7</data>
+            <data>10</data>
         </row>
         <row>
             <data>IOCKBRG</data>
@@ -9001,21 +8963,21 @@
         </row>
         <row>
             <data>IOLDLYS</data>
-            <data>134</data>
+            <data>131</data>
             <data>252</data>
-            <data>54</data>
-        </row>
-        <row>
-            <data>IOLDLY</data>
-            <data>43</data>
-            <data>84</data>
             <data>52</data>
         </row>
         <row>
+            <data>IOLDLY</data>
+            <data>44</data>
+            <data>84</data>
+            <data>53</data>
+        </row>
+        <row>
             <data>IOL</data>
-            <data>289</data>
+            <data>287</data>
             <data>336</data>
-            <data>87</data>
+            <data>86</data>
         </row>
         <row>
             <data>ISERDES</data>
@@ -9122,15 +9084,15 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1409</data>
-            <data>1473</data>
+            <data>1511</data>
+            <data>1525</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
-            <data>289</data>
+            <data>287</data>
             <data>0</data>
             <data>0</data>
             <data>0</data>
@@ -9189,6 +9151,75 @@
                 </row>
             </row>
             <row>
+                <data>bmc_cpld_i2c_ram_u1(bmc_cpld_i2c_ram)</data>
+                <data>219</data>
+                <data>157</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <row>
+                    <data>i2c_slave_bmc_u1(i2c_slave_bmc)</data>
+                    <data>215</data>
+                    <data>156</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <row>
+                        <data>i2c_slave_basic0_u0(i2c_slave_basic0)</data>
+                        <data>88</data>
+                        <data>89</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                        <data>0</data>
+                    </row>
+                </row>
+            </row>
+            <row>
                 <data>db_inst_button(PGM_DEBOUNCE)</data>
                 <data>6</data>
                 <data>5</data>
@@ -9235,29 +9266,6 @@
                 <data>0</data>
             </row>
             <row>
-                <data>iic_slave_BMC_module(iic_slave_CPU)</data>
-                <data>102</data>
-                <data>99</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
                 <data>inst_cmu_to_mb_s2p(s2p_master)</data>
                 <data>67</data>
                 <data>78</data>
@@ -9282,8 +9290,8 @@
             </row>
             <row>
                 <data>inst_i2c_bios_reg(I2C_SLAVE_REG)</data>
-                <data>145</data>
-                <data>73</data>
+                <data>131</data>
+                <data>70</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9303,78 +9311,32 @@
                 <data>0</data>
                 <data>0</data>
                 <row>
-                    <data>w_cpu0_die0_alloc(pcie_dync_alloc)</data>
-                    <data>2</data>
-                    <data>2</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>w_cpu0_die1_alloc_1(pcie_dync_alloc)</data>
-                    <data>0</data>
-                    <data>1</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>w_cpu0_die2_alloc(pcie_dync_alloc)</data>
-                    <data>2</data>
-                    <data>2</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>w_cpu0_die3_alloc(pcie_dync_alloc)</data>
+                    <data>w_cpu0_die1_alloc(pcie_dync_alloc)</data>
                     <data>4</data>
                     <data>4</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>w_cpu0_die1_c2c_alloc(pcie_dync_alloc)</data>
+                    <data>2</data>
+                    <data>3</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9396,8 +9358,8 @@
                 </row>
                 <row>
                     <data>w_cpu1_die1_alloc(pcie_dync_alloc)</data>
-                    <data>2</data>
-                    <data>2</data>
+                    <data>4</data>
+                    <data>4</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9418,32 +9380,9 @@
                     <data>0</data>
                 </row>
                 <row>
-                    <data>w_cpu1_die2_alloc(pcie_dync_alloc)</data>
+                    <data>w_cpu1_die1_c2c_alloc(pcie_dync_alloc)</data>
                     <data>2</data>
-                    <data>2</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                    <data>0</data>
-                </row>
-                <row>
-                    <data>w_cpu1_die3_alloc(pcie_dync_alloc)</data>
-                    <data>4</data>
-                    <data>4</data>
+                    <data>3</data>
                     <data>0</data>
                     <data>0</data>
                     <data>0</data>
@@ -9466,7 +9405,7 @@
             </row>
             <row>
                 <data>inst_i2c_inf(I2C_SLAVE_INF)</data>
-                <data>61</data>
+                <data>62</data>
                 <data>45</data>
                 <data>0</data>
                 <data>0</data>
@@ -9512,8 +9451,8 @@
             </row>
             <row>
                 <data>inst_mcpld_to_scpld_s2p(s2p_slave)</data>
-                <data>256</data>
-                <data>415</data>
+                <data>260</data>
+                <data>423</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -9695,76 +9634,76 @@
                 <data>0</data>
             </row>
             <row>
+                <data>uart_master_u0(UART_MASTER)</data>
+                <data>66</data>
+                <data>47</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
+                <data>uart_master_u1(UART_MASTER)</data>
+                <data>66</data>
+                <data>47</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
+                <data>uart_master_u2(UART_MASTER)</data>
+                <data>66</data>
+                <data>47</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+                <data>0</data>
+            </row>
+            <row>
                 <data>uart_master_u3(UART_MASTER)</data>
-                <data>66</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u5(UART_MASTER)</data>
-                <data>66</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u6(UART_MASTER)</data>
-                <data>66</data>
-                <data>47</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-                <data>0</data>
-            </row>
-            <row>
-                <data>uart_master_u10(UART_MASTER)</data>
                 <data>66</data>
                 <data>47</data>
                 <data>0</data>
@@ -9848,10 +9787,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:7s</data>
-            <data>0h:0m:9s</data>
-            <data>0h:0m:9s</data>
-            <data>386</data>
+            <data>0h:0m:8s</data>
+            <data>0h:0m:10s</data>
+            <data>0h:0m:11s</data>
+            <data>392</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

@@ -1,19 +1,16 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : edge_sync.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: The minimum BUFFER_WIDTH for implementing this module must be 1. Synchonizes
 //   signal_in to the CLK domain and drives as signal_out. Delays signal_in by (BUFFER_WIDTH * 2)
 //   CLK cycles, resulting in a (period(CLK) * BUFFER_WIDTH * 2) second delay, and drives as
 //   signal_out. Detects the rising and falling edges of signal_in, which are deglitched for
 //   (period(CLK) * BUFFER_WIDTH * 2) seconds.
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 module edge_sync

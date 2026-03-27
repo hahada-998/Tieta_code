@@ -7,14 +7,6 @@ OFF_CHIP_TERMINATION is set to default value: N,
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:io_BMC_I2C3_PAL_S_SDA_R':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-
 Port 'p:io_CPU0_D0_I2C1_PE_STRAP_SDA':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -205,14 +197,14 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_DBG_CPU0_UART1_TX_CONN_R':
+Port 'p:o_DBG_CPU0_UART1_RX_CONN_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R':
+Port 'p:o_DBG_PAL_BMC_UART1_RX_CONN_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -868,11 +860,6 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_BMC_I2C3_PAL_S_SCL_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
 Port 'p:i_BOARD_ID0':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1228,12 +1215,12 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_DBG_CPU0_UART1_RX_CONN_R':
+Port 'p:i_DBG_CPU0_UART1_TX_CONN_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_DBG_PAL_BMC_UART1_RX_CONN_R':
+Port 'p:i_DBG_PAL_BMC_UART1_TX_CONN_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,

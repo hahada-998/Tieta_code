@@ -1,11 +1,11 @@
 //=================================================================================================
-// Copyright(c) 2017, New H3C Technologies Co., Ltd, All right reserved
-// Filename   : pwrcap_pwrbtn_led.v
-// Project    : H3C common code
-// Author     : QIURONGLIN
-// Date       : 2017-07-18
-// Email      : qiu.ronglin@h3c.com
-// Company    : New H3C Technologies Co., Ltd
+// Copyright(c) 2017, China Tower Corporation Limited., Ltd, All right reserved
+// Filename   : 
+// Project    : 
+// Author     : 
+// Date       : 
+// Email      : 
+// Company    : China Tower Corporation Limited., Ltd
 // Description: This module Module comtrol the power capping and power LED status.
 //   |vdd3_psnt_  |pwrcap_en  |pwr***_wait  |pwrcap_denied |pwrcap_LED   |pwrbtn_LED
 //   |0           |X          |X            |X             |off          |Amber
@@ -13,9 +13,6 @@
 //   |0           |X          |0            |1             |Amber blink  |Amber
 //   |1           |1          |0            |0             |solid green  |solid green
 //   |1           |0          |0            |0             |off          |solid green
-// History    :
-//   Date      By          Revision  Change Description
-//   20170718  QIURONGLIN  1.0       file created
 //=================================================================================================
 
 //`include "wpspo_g5_define.vh"

@@ -715,7 +715,7 @@ fault_detectB_chklive #(.NUMBER_OF_VRM(1)) p12_fault_detect_inst (
     .clk              (clk),
     .reset            (reset),
     .vrm_enable       (power_supply_on && p12v_stby_en_check),
-    .vrm_pgood        (/*pgd_p12v*/pgd_p12v_stby_droop),
+    .vrm_pgood        (pgd_p12v/*pgd_p12v_stby_droop*/),
     .vrm_chklive_en   (p12v_stby_en_check),
     .vrm_chklive_dis  (~p12v_stby_en_check),   
     .critical_fail    (st_critical_fail),
@@ -1606,7 +1606,7 @@ assign any_aux_vrm_fault = aux_fault;
 assign fault_vec[0]  = p3v3_stby_fault_det            ;    
 assign fault_vec[1]  = p3v3_stby_bp_fault_det         ;    
 assign fault_vec[2]  = p5v_stby_fault_det             ;   
-assign fault_vec[3]  = 1'b0;//p12v_fault_det                 ;    
+assign fault_vec[3]  = p12v_fault_det                 ;    
 assign fault_vec[4]  = p12v_cpu0_vin_fault_det        ;  
 assign fault_vec[5]  = p12v_cpu1_vin_fault_det        ;
 assign fault_vec[6]  = p12v_stby_efuse_fault_det      ;
