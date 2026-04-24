@@ -97,6 +97,9 @@ module bmc_cpld_i2c_ram #(
     input               intruder_cable_prsnt,     //addr 0x001D [4]
     input               dsd_prsnt,                //addr 0x001D [3]
 
+    input    [3:0]      ocp_fault_det2  ,         //addr 0x001F[7:4]
+    input    [3:0]      ocp_fault_det1  ,         //addr 0x001F[3:0]
+
     input               i_fan0_prsnt_n  ,         //addr 0x0020[0]
     input               i_fan0_p12v_gok ,         //addr 0x0020[1]
     input               i_fan1_prsnt_n  ,         //addr 0x0020[2]
@@ -250,7 +253,7 @@ reg  [2:0] fan_wdt_feed_r     ;//change by x14162 20220222
 wire       fan_wdt_feed_p     ;
 wire       fan_wdt_timeout_p  ;
 
-wire [31:0] mb_cpld1_date = 32'h20240813;//`CPLD_DATE_YYYYMMDD;
+wire [31:0] mb_cpld1_date = 32'h20260409;//`CPLD_DATE_YYYYMMDD;
 wire [31:0] mb_cpld1_time = 32'h11200000;//`CPLD_TIME_HHMMSSXX;
 
 ////////////////////////////////////////////////////////////////////////
@@ -285,6 +288,7 @@ wire [7:0] w_ram_0013;
 wire [7:0] w_ram_0015;
 wire [7:0] w_ram_0016;
 wire [7:0] w_ram_001D;
+wire [7:0] w_ram_001F;
 wire [7:0] w_ram_0020;
 wire [7:0] w_ram_0021;
 wire [7:0] w_ram_0022;
@@ -626,11 +630,13 @@ assign w_ram_000A = {6'b0,i_uid_btn_evt,i_uid_rstbmc_evt};
 assign w_ram_000d = port_80;
 assign w_ram_000e = port_84;
 assign w_ram_000f = lpc_io_data_port85;
-assign w_ram_0010 = {3'b0,rtc_select_n,vga2_dis,2'b0,cpu0_d0_bios_over};
+assign w_ram_0010 = {1'b0, spd_bios_bmc_sel, 1'b0,rtc_select_n,vga2_dis,2'b0,cpu0_d0_bios_over};
 assign w_ram_0013 = {bios_read_flag,bmc_read_flag,6'b0};
 assign w_ram_0015 = {3'b0,m2_slot2_type,m2_slot1_type,m2_slot2_prsnt,m2_slot1_prsnt,m2_card_prsnt};
 assign w_ram_0016 = {bmcctl_uart_sw,6'b0};
 assign w_ram_001D = {tpm_rst,tpm_prsnt,intruder,intruder_cable_prsnt,dsd_prsnt,3'b0};
+assign w_ram_001F = {ocp_fault_det2, ocp_fault_det1};
+
 
 // begin: mod by z02665 20260225 风扇转速相关寄存器修改
 assign w_ram_0020 = {i_fan3_p12v_gok, i_fan3_prsnt_n, i_fan2_p12v_gok, i_fan2_prsnt_n, i_fan1_p12v_gok, i_fan1_prsnt_n, i_fan0_p12v_gok, i_fan0_prsnt_n};
@@ -758,6 +764,7 @@ begin
 	16'h001A: r_i2c_data_in  <= r_reg_001A;
 	16'h001B: r_i2c_data_in  <= r_reg_001B;
 	16'h001D: r_i2c_data_in  <= w_ram_001D;
+    16'h001F: r_i2c_data_in  <= w_ram_001F; 
 	16'h0020: r_i2c_data_in  <= w_ram_0020;
 	16'h0021: r_i2c_data_in  <= r_reg_0021/*w_ram_0021*/;
 	16'h0022: r_i2c_data_in  <= r_reg_0022/*w_ram_0022*/;

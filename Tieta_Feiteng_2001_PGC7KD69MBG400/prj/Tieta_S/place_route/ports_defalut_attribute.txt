@@ -204,7 +204,7 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_DBG_PAL_BMC_UART1_RX_CONN_R':
+Port 'p:o_DBG_PAL_BMC_UART1_TX_CONN_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -246,7 +246,7 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_LEAR_CPU0_UART1_TX':
+Port 'p:o_LEAR_CPU0_UART1_RX':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -338,13 +338,6 @@ OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
 Port 'p:o_PAL_BMC_SS_LOAD_N':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_PAL_BMC_UART1_RX':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -743,6 +736,20 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
+Port 'p:o_RISER1_TOD_UART_TXD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
+Port 'p:o_RISER2_TOD_UART_TXD_R':
+DRIVE is set to default value: 4,
+BUS_KEEPER is set to default value: NONE,
+SLEW is set to default value: SLOW,
+OFF_CHIP_TERMINATION is set to default value: N,
+OPEN_DRAIN is set to default value: OFF,
+
 Port 'p:o_RISER_AUX_TOD_UART1_TXD':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
@@ -820,28 +827,21 @@ SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_Riser1_TOD_UART_TXD_R':
+Port 'p:o_UART2_PAL_OCP_RX_R':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_Riser2_TOD_UART_TXD_R':
+Port 'p:o_UART_BMC_LOG_RX':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
 OFF_CHIP_TERMINATION is set to default value: N,
 OPEN_DRAIN is set to default value: OFF,
 
-Port 'p:o_UART0_CPU_LOG_TX':
-DRIVE is set to default value: 4,
-BUS_KEEPER is set to default value: NONE,
-SLEW is set to default value: SLOW,
-OFF_CHIP_TERMINATION is set to default value: N,
-OPEN_DRAIN is set to default value: OFF,
-
-Port 'p:o_UART2_PAL_OCP_TX_R':
+Port 'p:o_UART_CPU_LOG_RX':
 DRIVE is set to default value: 4,
 BUS_KEEPER is set to default value: NONE,
 SLEW is set to default value: SLOW,
@@ -1220,7 +1220,7 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_DBG_PAL_BMC_UART1_TX_CONN_R':
+Port 'p:i_DBG_PAL_BMC_UART1_RX_CONN_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1255,7 +1255,7 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_LEAR_CPU0_UART1_RX':
+Port 'p:i_LEAR_CPU0_UART1_TX':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1326,11 +1326,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_PAL_BMC_SS_DATA_IN':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_PAL_BMC_UART1_TX':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1610,6 +1605,16 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
+Port 'p:i_RISER1_TOD_UART_RXD_R':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_RISER2_TOD_UART_RXD_R':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
 Port 'p:i_RISER_AUX_TOD_UART1_RXD':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
@@ -1621,16 +1626,6 @@ OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
 Port 'p:i_RISER_MB_PRSNT_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_Riser1_TOD_UART_RXD_R':
-HYS_DRIVE_MODE is set to default value: NOHYS,
-OPEN_DRAIN is set to default value: OFF,
-CLAMP is set to default value: ON,
-
-Port 'p:i_Riser2_TOD_UART_RXD_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
@@ -1675,12 +1670,17 @@ HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_UART0_CPU_LOG_RX':
+Port 'p:i_UART2_PAL_OCP_TX_R':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,
 
-Port 'p:i_UART2_PAL_OCP_RX_R':
+Port 'p:i_UART_BMC_LOG_TX':
+HYS_DRIVE_MODE is set to default value: NOHYS,
+OPEN_DRAIN is set to default value: OFF,
+CLAMP is set to default value: ON,
+
+Port 'p:i_UART_CPU_LOG_TX':
 HYS_DRIVE_MODE is set to default value: NOHYS,
 OPEN_DRAIN is set to default value: OFF,
 CLAMP is set to default value: ON,

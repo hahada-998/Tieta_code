@@ -178,7 +178,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT</data>
                     <data>ntclkbufg_0</data>
-                    <data>1797</data>
+                    <data>1811</data>
                     <data>0</data>
                 </row>
                 <row>
@@ -201,7 +201,7 @@
                     <data>genblk1[0].fan_pwm_tach_m/w_clk_1s_pos</data>
                     <data>genblk1[0].fan_pwm_tach_m/Edge_Detect_u1/N0/gateop_perm</data>
                     <data>Z</data>
-                    <data>CLMS_57_187</data>
+                    <data>CLMA_93_162</data>
                     <data>CLKOUT</data>
                     <data>ntussmbuf_ot_0</data>
                     <data>88</data>
@@ -227,10 +227,10 @@
                     <data>pll_inst/u_pll_e2/goppll</data>
                     <data>PLL_11_20</data>
                     <data>CLKFB</data>
-                    <data>_GND257</data>
+                    <data>_GND267</data>
                     <data> - </data>
                     <data> - </data>
-                    <data>GND_257</data>
+                    <data>GND_267</data>
                     <data>Z</data>
                     <data>HARD0N1_6_19</data>
                 </row>
@@ -261,7 +261,7 @@
                     <data>PLL_11_20</data>
                     <data>CLKOUT0</data>
                     <data>clk_50m</data>
-                    <data>1797</data>
+                    <data>1811</data>
                     <data>0</data>
                     <data> ... </data>
                     <data> ... </data>
@@ -821,25 +821,6 @@
             <data>i_CPU01_TIMER_FORCE_START</data>
             <data>input</data>
             <data>P13</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU0_BOARD_TEMP_OVER_R</data>
-            <data>input</data>
-            <data>U15</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1468,25 +1449,6 @@
             <data>input</data>
             <data>G17</data>
             <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_CPU1_BOARD_TEMP_OVER_R</data>
-            <data>input</data>
-            <data>V10</data>
-            <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
@@ -4276,6 +4238,25 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_CPU0_BOARD_TEMP_OVER_R</data>
+            <data>output</data>
+            <data>U15</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_CPU0_D0123_SOCKET_ID_R</data>
             <data>output</data>
             <data>Y11</data>
@@ -4488,6 +4469,25 @@
             <data>o_CPU0_SB_EN_R</data>
             <data>output</data>
             <data>V16</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_CPU1_BOARD_TEMP_OVER_R</data>
+            <data>output</data>
+            <data>V10</data>
             <data>BANK2</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -7712,8 +7712,8 @@
             <data>IOBS_156_111</data>
             <data>BANK2</data>
             <data>DIFFI_B2_22N</data>
-            <data>i_CPU1_BOARD_TEMP_OVER_R</data>
-            <data>input</data>
+            <data>o_CPU1_BOARD_TEMP_OVER_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7820,8 +7820,8 @@
             <data>IOBS_156_207</data>
             <data>BANK2</data>
             <data>DIFFI_B2_4N</data>
-            <data>i_CPU0_BOARD_TEMP_OVER_R</data>
-            <data>input</data>
+            <data>o_CPU0_BOARD_TEMP_OVER_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -9220,35 +9220,35 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>393</data>
+            <data>394</data>
             <data>592</data>
             <data>67</data>
             <row>
                 <data>FF</data>
-                <data>807</data>
+                <data>815</data>
                 <data>3552</data>
                 <data>23</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1146</data>
+                <data>1137</data>
                 <data>2368</data>
                 <data>49</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>933</data>
+                    <data>948</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>197</data>
+                    <data>177</data>
                     <data></data>
                     <data></data>
                 </row>
                 <row>
                     <data>LUT as Bypass</data>
-                    <data>16</data>
+                    <data>12</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9256,23 +9256,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>551</data>
+            <data>544</data>
             <data>888</data>
-            <data>63</data>
+            <data>62</data>
             <row>
                 <data>FF</data>
-                <data>1275</data>
+                <data>1280</data>
                 <data>5328</data>
-                <data>24</data>
+                <data>25</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>1574</data>
+                <data>1604</data>
                 <data>3552</data>
-                <data>45</data>
+                <data>46</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>1410</data>
+                    <data>1408</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9290,7 +9290,7 @@
                 </row>
                 <row>
                     <data>LUT as Const</data>
-                    <data>150</data>
+                    <data>182</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9394,9 +9394,9 @@
         </row>
         <row>
             <data>IOLDLY</data>
-            <data>57</data>
+            <data>55</data>
             <data>84</data>
-            <data>68</data>
+            <data>66</data>
         </row>
         <row>
             <data>IOL</data>
@@ -9509,8 +9509,8 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_1001_top</data>
-            <data>2343</data>
-            <data>2082</data>
+            <data>2356</data>
+            <data>2095</data>
             <data>0</data>
             <data>0</data>
             <data>1</data>
@@ -9554,7 +9554,7 @@
             </row>
             <row>
                 <data>UID_Function_u0(UID_Function)</data>
-                <data>54</data>
+                <data>52</data>
                 <data>30</data>
                 <data>0</data>
                 <data>0</data>
@@ -9646,7 +9646,7 @@
             </row>
             <row>
                 <data>bmc_cpld_i2c_ram_u0(bmc_cpld_i2c_ram)</data>
-                <data>507</data>
+                <data>513</data>
                 <data>360</data>
                 <data>0</data>
                 <data>0</data>
@@ -9690,7 +9690,7 @@
                     <data>0</data>
                     <row>
                         <data>i2c_slave_basic0_u0(i2c_slave_basic0)</data>
-                        <data>81</data>
+                        <data>82</data>
                         <data>93</data>
                         <data>0</data>
                         <data>0</data>
@@ -9830,8 +9830,8 @@
             </row>
             <row>
                 <data>db_inst_cpu_rst_rail(PGM_DEBOUNCE_5)</data>
-                <data>10</data>
-                <data>12</data>
+                <data>22</data>
+                <data>24</data>
                 <data>0</data>
                 <data>0</data>
                 <data>0</data>
@@ -10635,7 +10635,7 @@
             </row>
             <row>
                 <data>pwrseq_master_inst(pwrseq_master)</data>
-                <data>129</data>
+                <data>130</data>
                 <data>87</data>
                 <data>0</data>
                 <data>0</data>
@@ -11715,7 +11715,7 @@
                 </row>
                 <row>
                     <data>p1v1_usb_upd2_fault_det_inst(fault_detectB_chklive)</data>
-                    <data>6</data>
+                    <data>2</data>
                     <data>2</data>
                     <data>0</data>
                     <data>0</data>
@@ -11991,7 +11991,7 @@
                 </row>
                 <row>
                     <data>p12v_gpu4_efuse_fault_detect_inst(fault_detectB_chklive)</data>
-                    <data>2</data>
+                    <data>6</data>
                     <data>2</data>
                     <data>0</data>
                     <data>0</data>
@@ -12282,10 +12282,10 @@
             <data>RAM(GB)</data>
         </column_headers>
         <row>
-            <data>0h:0m:10s</data>
-            <data>0h:0m:12s</data>
-            <data>0h:0m:13s</data>
-            <data>437</data>
+            <data>0h:0m:14s</data>
+            <data>0h:0m:17s</data>
+            <data>0h:0m:19s</data>
+            <data>436</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>

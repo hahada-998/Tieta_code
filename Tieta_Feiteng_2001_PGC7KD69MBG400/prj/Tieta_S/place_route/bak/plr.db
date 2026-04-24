@@ -1717,9 +1717,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_DBG_PAL_BMC_UART1_TX_CONN_R</data>
+            <data>i_DBG_PAL_BMC_UART1_RX_CONN_R</data>
             <data>input</data>
-            <data>T19</data>
+            <data>U19</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -1850,9 +1850,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_LEAR_CPU0_UART1_RX</data>
+            <data>i_LEAR_CPU0_UART1_TX</data>
             <data>input</data>
-            <data>J17</data>
+            <data>K17</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -2120,25 +2120,6 @@
             <data>input</data>
             <data>N17</data>
             <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_PAL_BMC_UART1_TX</data>
-            <data>input</data>
-            <data>D16</data>
-            <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
             <data>NA</data>
@@ -3199,6 +3180,44 @@
             <data>NA</data>
         </row>
         <row>
+            <data>i_RISER1_TOD_UART_RXD_R</data>
+            <data>input</data>
+            <data>V1</data>
+            <data>BANK3</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_RISER2_TOD_UART_RXD_R</data>
+            <data>input</data>
+            <data>M19</data>
+            <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>i_RISER_AUX_TOD_UART1_RXD</data>
             <data>input</data>
             <data>V12</data>
@@ -3240,44 +3259,6 @@
             <data>i_RISER_MB_PRSNT_R</data>
             <data>input</data>
             <data>M17</data>
-            <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_Riser1_TOD_UART_RXD_R</data>
-            <data>input</data>
-            <data>V1</data>
-            <data>BANK3</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>NA</data>
-            <data>NONE</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NOHYS</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>ON</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>i_Riser2_TOD_UART_RXD_R</data>
-            <data>input</data>
-            <data>M19</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -3446,9 +3427,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_UART0_CPU_LOG_RX</data>
+            <data>i_UART2_PAL_OCP_TX_R</data>
             <data>input</data>
-            <data>F16</data>
+            <data>D18</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -3465,9 +3446,28 @@
             <data>NA</data>
         </row>
         <row>
-            <data>i_UART2_PAL_OCP_RX_R</data>
+            <data>i_UART_BMC_LOG_TX</data>
             <data>input</data>
-            <data>E14</data>
+            <data>D16</data>
+            <data>BANK0</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>NA</data>
+            <data>NONE</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NOHYS</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>ON</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>i_UART_CPU_LOG_TX</data>
+            <data>input</data>
+            <data>F14</data>
             <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4016,9 +4016,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_DBG_PAL_BMC_UART1_RX_CONN_R</data>
+            <data>o_DBG_PAL_BMC_UART1_TX_CONN_R</data>
             <data>output</data>
-            <data>U19</data>
+            <data>T19</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4130,9 +4130,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_LEAR_CPU0_UART1_TX</data>
+            <data>o_LEAR_CPU0_UART1_RX</data>
             <data>output</data>
-            <data>K17</data>
+            <data>J17</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -4380,25 +4380,6 @@
             <data>o_PAL_BMC_SS_LOAD_N</data>
             <data>output</data>
             <data>M16</data>
-            <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_PAL_BMC_UART1_RX</data>
-            <data>output</data>
-            <data>E17</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -5479,6 +5460,44 @@
             <data>NA</data>
         </row>
         <row>
+            <data>o_RISER1_TOD_UART_TXD_R</data>
+            <data>output</data>
+            <data>W1</data>
+            <data>BANK2</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_RISER2_TOD_UART_TXD_R</data>
+            <data>output</data>
+            <data>N20</data>
+            <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
             <data>o_RISER_AUX_TOD_UART1_TXD</data>
             <data>output</data>
             <data>T11</data>
@@ -5688,47 +5707,9 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_Riser1_TOD_UART_TXD_R</data>
+            <data>o_UART2_PAL_OCP_RX_R</data>
             <data>output</data>
-            <data>W1</data>
-            <data>BANK2</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_Riser2_TOD_UART_TXD_R</data>
-            <data>output</data>
-            <data>N20</data>
-            <data>BANK1</data>
-            <data>3.3</data>
-            <data>LVCMOS33</data>
-            <data>4</data>
-            <data>NONE</data>
-            <data>SLOW</data>
-            <data>N</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>NA</data>
-            <data>OFF</data>
-            <data>NA</data>
-            <data>YES</data>
-            <data>NA</data>
-        </row>
-        <row>
-            <data>o_UART0_CPU_LOG_TX</data>
-            <data>output</data>
-            <data>F14</data>
+            <data>E14</data>
             <data>BANK0</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -5745,9 +5726,28 @@
             <data>NA</data>
         </row>
         <row>
-            <data>o_UART2_PAL_OCP_TX_R</data>
+            <data>o_UART_BMC_LOG_RX</data>
             <data>output</data>
-            <data>D18</data>
+            <data>E17</data>
+            <data>BANK1</data>
+            <data>3.3</data>
+            <data>LVCMOS33</data>
+            <data>4</data>
+            <data>NONE</data>
+            <data>SLOW</data>
+            <data>N</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>NA</data>
+            <data>OFF</data>
+            <data>NA</data>
+            <data>YES</data>
+            <data>NA</data>
+        </row>
+        <row>
+            <data>o_UART_CPU_LOG_RX</data>
+            <data>output</data>
+            <data>F16</data>
             <data>BANK1</data>
             <data>3.3</data>
             <data>LVCMOS33</data>
@@ -5843,7 +5843,7 @@
             <data>IOBS_0_211</data>
             <data>BANK0</data>
             <data>DIFFIO_B0_3N/SPAL_D15</data>
-            <data>i_PAL_BMC_UART1_TX</data>
+            <data>i_UART_BMC_LOG_TX</data>
             <data>input</data>
             <data>YES</data>
         </row>
@@ -6239,8 +6239,8 @@
             <data>IOBS_0_213</data>
             <data>BANK0</data>
             <data>DIFFI_B0_2N/SPAL_RDWR_N</data>
-            <data>o_UART0_CPU_LOG_TX</data>
-            <data>output</data>
+            <data>i_UART_CPU_LOG_TX</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -6437,8 +6437,8 @@
             <data>IOBS_0_206</data>
             <data>BANK0</data>
             <data>DIFFI_B0_4P/SPAL_D12</data>
-            <data>i_UART2_PAL_OCP_RX_R</data>
-            <data>input</data>
+            <data>o_UART2_PAL_OCP_RX_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -6680,7 +6680,7 @@
             <data>IOBS_91_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_24N</data>
-            <data>i_Riser2_TOD_UART_RXD_R</data>
+            <data>i_RISER2_TOD_UART_RXD_R</data>
             <data>input</data>
             <data>YES</data>
         </row>
@@ -6698,7 +6698,7 @@
             <data>IOBS_97_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_26N</data>
-            <data>o_Riser2_TOD_UART_TXD_R</data>
+            <data>o_RISER2_TOD_UART_TXD_R</data>
             <data>output</data>
             <data>YES</data>
         </row>
@@ -6761,8 +6761,8 @@
             <data>IOBS_117_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_33N</data>
-            <data>i_DBG_PAL_BMC_UART1_TX_CONN_R</data>
-            <data>input</data>
+            <data>o_DBG_PAL_BMC_UART1_TX_CONN_R</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -6779,8 +6779,8 @@
             <data>IOBS_129_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_35N</data>
-            <data>o_DBG_PAL_BMC_UART1_RX_CONN_R</data>
-            <data>output</data>
+            <data>i_DBG_PAL_BMC_UART1_RX_CONN_R</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -6869,8 +6869,8 @@
             <data>IOBS_14_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_3P</data>
-            <data>i_UART0_CPU_LOG_RX</data>
-            <data>input</data>
+            <data>o_UART_CPU_LOG_RX</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -6977,8 +6977,8 @@
             <data>IOBS_50_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_15P</data>
-            <data>i_LEAR_CPU0_UART1_RX</data>
-            <data>input</data>
+            <data>o_LEAR_CPU0_UART1_RX</data>
+            <data>output</data>
             <data>YES</data>
         </row>
         <row>
@@ -7013,8 +7013,8 @@
             <data>IOBS_62_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_19P</data>
-            <data>o_LEAR_CPU0_UART1_TX</data>
-            <data>output</data>
+            <data>i_LEAR_CPU0_UART1_TX</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7238,7 +7238,7 @@
             <data>IOBS_13_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_2N/PLL1_CLKIN_N</data>
-            <data>o_PAL_BMC_UART1_RX</data>
+            <data>o_UART_BMC_LOG_RX</data>
             <data>output</data>
             <data>YES</data>
         </row>
@@ -7247,8 +7247,8 @@
             <data>IOBS_15_246</data>
             <data>BANK1</data>
             <data>DIFFI_B1_3N/MFG_TEST_OUT</data>
-            <data>o_UART2_PAL_OCP_TX_R</data>
-            <data>output</data>
+            <data>i_UART2_PAL_OCP_TX_R</data>
+            <data>input</data>
             <data>YES</data>
         </row>
         <row>
@@ -7976,7 +7976,7 @@
             <data>IOBR_156_24</data>
             <data>BANK2</data>
             <data>DIFFI_B2_41P</data>
-            <data>o_Riser1_TOD_UART_TXD_R</data>
+            <data>o_RISER1_TOD_UART_TXD_R</data>
             <data>output</data>
             <data>YES</data>
         </row>
@@ -8273,7 +8273,7 @@
             <data>IOBS_134_0</data>
             <data>BANK3</data>
             <data>DIFFI_B3_9P</data>
-            <data>i_Riser1_TOD_UART_RXD_R</data>
+            <data>i_RISER1_TOD_UART_RXD_R</data>
             <data>input</data>
             <data>YES</data>
         </row>
@@ -8827,23 +8827,23 @@
         </column_headers>
         <row>
             <data>CLMA</data>
-            <data>238</data>
+            <data>236</data>
             <data>592</data>
-            <data>41</data>
+            <data>40</data>
             <row>
                 <data>FF</data>
-                <data>565</data>
+                <data>578</data>
                 <data>3552</data>
-                <data>16</data>
+                <data>17</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>592</data>
+                <data>574</data>
                 <data>2368</data>
                 <data>25</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>592</data>
+                    <data>574</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -8863,23 +8863,23 @@
         </row>
         <row>
             <data>CLMS</data>
-            <data>363</data>
+            <data>367</data>
             <data>888</data>
-            <data>41</data>
+            <data>42</data>
             <row>
                 <data>FF</data>
-                <data>960</data>
+                <data>947</data>
                 <data>5328</data>
-                <data>19</data>
+                <data>18</data>
             </row>
             <row>
                 <data>LUT</data>
-                <data>919</data>
+                <data>938</data>
                 <data>3552</data>
-                <data>26</data>
+                <data>27</data>
                 <row>
                     <data>LUT as Logic</data>
-                    <data>919</data>
+                    <data>938</data>
                     <data></data>
                     <data></data>
                 </row>
@@ -9116,7 +9116,7 @@
         </column_headers>
         <row>
             <data>Tieta_Feiteng_2001_top</data>
-            <data>1511</data>
+            <data>1512</data>
             <data>1525</data>
             <data>0</data>
             <data>0</data>
@@ -9820,9 +9820,9 @@
         </column_headers>
         <row>
             <data>0h:0m:9s</data>
-            <data>0h:0m:19s</data>
+            <data>0h:0m:21s</data>
             <data>0h:0m:13s</data>
-            <data>567</data>
+            <data>572</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -10086,13 +10086,13 @@
             <data message="5">ConstraintEditor-4042: Port 'o_DBG_CPU0_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_RX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_DBG_PAL_BMC_UART1_TX_CONN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_DB_UART_TX_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -10140,13 +10140,13 @@
             <data message="5">ConstraintEditor-4042: Port 'o_JACK_CPU1_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_TX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_RX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_TX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_RX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_LEAR_CPU0_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_LED1_N' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -10264,15 +10264,6 @@
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_BMC_SS_LOAD_N' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_BMC_UART1_RX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_BMC_UART1_RX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_PAL_BMC_UART1_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_PAL_BMC_UART4_RX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
@@ -10779,6 +10770,24 @@
             <data message="5">ConstraintEditor-4042: Port 'o_RISER1_SWITCH_EN' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER1_TOD_UART_TXD_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER1_TOD_UART_TXD_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER1_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER2_TOD_UART_TXD_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER2_TOD_UART_TXD_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+        </row>
+        <row>
+            <data message="5">ConstraintEditor-4042: Port 'o_RISER2_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+        </row>
+        <row>
             <data message="5">ConstraintEditor-4042: Port 'o_RISER_AUX_TOD_UART1_TXD' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
@@ -10878,40 +10887,31 @@
             <data message="5">ConstraintEditor-4042: Port 'o_RST_I2C_BMC_9548_MUX_N_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser1_TOD_UART_TXD_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_RX_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser1_TOD_UART_TXD_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_RX_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser1_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_RX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser2_TOD_UART_TXD_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_BMC_LOG_RX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser2_TOD_UART_TXD_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_BMC_LOG_RX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_Riser2_TOD_UART_TXD_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_BMC_LOG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART0_CPU_LOG_TX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_CPU_LOG_RX' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART0_CPU_LOG_TX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_CPU_LOG_RX' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART0_CPU_LOG_TX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_TX_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_TX_R' lacks attribute 'DRIVE', it's better to set the attribute for port.</data>
-        </row>
-        <row>
-            <data message="5">ConstraintEditor-4042: Port 'o_UART2_PAL_OCP_TX_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
+            <data message="5">ConstraintEditor-4042: Port 'o_UART_CPU_LOG_RX' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.</data>
         </row>
         <row>
             <data message="5">ConstraintEditor-4042: Port 'o_USB2_SW_SEL_R' lacks attribute 'SLEW', it's better to set the attribute for port.</data>

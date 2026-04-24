@@ -311,8 +311,8 @@
         <row>
             <data>0h:0m:13s</data>
             <data>0h:0m:13s</data>
-            <data>0h:0m:27s</data>
-            <data>179</data>
+            <data>0h:0m:31s</data>
+            <data>178</data>
             <data>WINDOWS 10 x86_64</data>
             <data>Intel(R) Core(TM) i5-9500 CPU @ 3.00GHz</data>
             <data>8</data>
@@ -1302,175 +1302,181 @@
             <data message="4">Verilog-0002: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Analyzing module Tieta_Feiteng_1001_top (library work).</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1718)] i_PAL_OCP1_FAN_PRSNT_N is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1720)] i_PAL_OCP1_FAN_PRSNT_N is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1767)] db_i_pal_ocp1_fan_prsnt_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1769)] db_i_pal_ocp1_fan_prsnt_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1814)] i_PAL_CPU0_VR_PMALT_UPD is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1816)] i_PAL_CPU0_VR_PMALT_UPD is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1815)] i_PAL_CPU1_VR_PMALT_UPD is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1817)] i_PAL_CPU1_VR_PMALT_UPD is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1832)] ocp_pvt_act_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1834)] ocp_pvt_act_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1833)] ocp_pvt_act_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1835)] ocp_pvt_act_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1834)] ocp_pvt_act_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1836)] ocp_pvt_act_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1835)] ocp_pvt_act_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1837)] ocp_pvt_act_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1836)] ocp_pvt_act_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1838)] ocp_pvt_act_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1837)] ocp_pvt_act_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1839)] ocp_pvt_act_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1838)] ocp_pvt_act_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] ocp_pvt_act_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1839)] ocp_pvt_act_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] ocp_pvt_act_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] ocp_pvt_link_spda_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] ocp_pvt_link_spda_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] ocp_pvt_link_spdb_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] ocp_pvt_link_spdb_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] ocp_pvt_link_spda_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] ocp_pvt_link_spda_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] ocp_pvt_link_spdb_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] ocp_pvt_link_spdb_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] ocp_pvt_link_spda_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] ocp_pvt_link_spda_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] ocp_pvt_link_spdb_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] ocp_pvt_link_spdb_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] ocp_pvt_link_spda_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] ocp_pvt_link_spda_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] ocp_pvt_link_spdb_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] ocp_pvt_link_spdb_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] ocp_pvt_link_spda_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] ocp_pvt_link_spda_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] ocp_pvt_link_spdb_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] ocp_pvt_link_spdb_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] ocp_pvt_link_spda_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] ocp_pvt_link_spda_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] ocp_pvt_link_spdb_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] ocp_pvt_link_spdb_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] ocp_pvt_link_spda_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] ocp_pvt_link_spda_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] ocp_pvt_link_spdb_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] ocp_pvt_link_spdb_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] ocp_pvt_link_spda_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] ocp_pvt_link_spda_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] ocp_pvt_link_spdb_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] ocp_pvt_link_spdb_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] ocp2_pvt_act_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1850)] ocp2_pvt_act_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] ocp2_pvt_act_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1851)] ocp2_pvt_act_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1850)] ocp2_pvt_act_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1852)] ocp2_pvt_act_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1851)] ocp2_pvt_act_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1853)] ocp2_pvt_act_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1852)] ocp2_pvt_act_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1854)] ocp2_pvt_act_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1853)] ocp2_pvt_act_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1855)] ocp2_pvt_act_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1854)] ocp2_pvt_act_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] ocp2_pvt_act_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1855)] ocp2_pvt_act_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] ocp2_pvt_act_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] ocp2_pvt_link_spda_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] ocp2_pvt_link_spda_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] ocp2_pvt_link_spdb_p0_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] ocp2_pvt_link_spdb_p0_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] ocp2_pvt_link_spda_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] ocp2_pvt_link_spda_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] ocp2_pvt_link_spdb_p1_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] ocp2_pvt_link_spdb_p1_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] ocp2_pvt_link_spda_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] ocp2_pvt_link_spda_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] ocp2_pvt_link_spdb_p2_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] ocp2_pvt_link_spdb_p2_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] ocp2_pvt_link_spda_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] ocp2_pvt_link_spda_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] ocp2_pvt_link_spdb_p3_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] ocp2_pvt_link_spdb_p3_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] ocp2_pvt_link_spda_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] ocp2_pvt_link_spda_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] ocp2_pvt_link_spdb_p4_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] ocp2_pvt_link_spdb_p4_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] ocp2_pvt_link_spda_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] ocp2_pvt_link_spda_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] ocp2_pvt_link_spdb_p5_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] ocp2_pvt_link_spdb_p5_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] ocp2_pvt_link_spda_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1864)] ocp2_pvt_link_spda_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] ocp2_pvt_link_spdb_p6_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1864)] ocp2_pvt_link_spdb_p6_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] ocp2_pvt_link_spda_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1865)] ocp2_pvt_link_spda_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] ocp2_pvt_link_spdb_p7_n is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1865)] ocp2_pvt_link_spdb_p7_n is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2987)] stby_failure_detected is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1973)] db_i_cpu0_d0_bios_over is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2989)] dc_failure_detected is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1974)] db_i_cpu1_d0_bios_over is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2991)] rt_failure_detected is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2988)] stby_failure_detected is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2993)] cpld_latch_sys_off is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2990)] dc_failure_detected is declared implicitly.</data>
         </row>
         <row>
-            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4536)] bmc_uid_update is declared implicitly.</data>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2992)] rt_failure_detected is declared implicitly.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2994)] cpld_latch_sys_off is declared implicitly.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2057: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4579)] bmc_uid_update is declared implicitly.</data>
         </row>
         <row>
             <data message="5">Public-4030: File 'C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/include/pwrseq_define.v' has been added. It is skipped.</data>
@@ -4065,10 +4071,10 @@
             <data message="4">Verilog-0002: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.v(line number: 17)] Analyzing module pll_i25M_o50M_o25M (library pll_i25M_o50M_o25M).</data>
         </row>
         <row>
-            <data message="5">Verilog-2084: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2565)] Identifier 'led_pwrbtn_gr_r' is used before its declaration.</data>
+            <data message="5">Verilog-2084: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2566)] Identifier 'led_pwrbtn_gr_r' is used before its declaration.</data>
         </row>
         <row>
-            <data message="5">Verilog-2084: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2566)] Identifier 'led_pwrbtn_amb_r' is used before its declaration.</data>
+            <data message="5">Verilog-2084: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2567)] Identifier 'led_pwrbtn_amb_r' is used before its declaration.</data>
         </row>
         <row>
             <data message="4">Module &quot;Tieta_Feiteng_1001_top&quot; is set as top module</data>
@@ -6853,7 +6859,7 @@
             <data message="5">Sdm-2008: The attribute named LOC is not legal, then it has no effect, ignore its value.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1378)] Elaborating instance pll_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1380)] Elaborating instance pll_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.v(line number: 17)] Elaborating module pll_i25M_o50M_o25M.</data>
@@ -6862,19 +6868,19 @@
             <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/ipcore/pll_i25M_o50M_o25M/pll_i25M_o50M_o25M.v(line number: 254)] Elaborating instance u_pll_e2.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1390)] Elaborating instance pon_reset_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1392)] Elaborating instance pon_reset_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/pon_reset.v(line number: 19)] Elaborating module pon_reset.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1407)] Elaborating instance timer_gen_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1409)] Elaborating instance timer_gen_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/timer_gen_50mhz.v(line number: 12)] Elaborating module timer_gen.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1441)] Elaborating instance db_inst_button.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1443)] Elaborating instance db_inst_button.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -6887,7 +6893,7 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1517)] Elaborating instance db_inst_cpu_rail.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1519)] Elaborating instance db_inst_cpu_rail.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -6900,7 +6906,7 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1625)] Elaborating instance db_bp_pgood_fault.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1627)] Elaborating instance db_bp_pgood_fault.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 266)] Elaborating module PGM_DEBOUNCE_N.</data>
@@ -6913,10 +6919,10 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1635)] Width mismatch between port 'dout' (12 bits) and port connection (4 bits) in module instance 'PGM_DEBOUNCE_N'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1637)] Width mismatch between port 'dout' (12 bits) and port connection (4 bits) in module instance 'PGM_DEBOUNCE_N'.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1645)] Elaborating instance db_intruder.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1647)] Elaborating instance db_intruder.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 266)] Elaborating module PGM_DEBOUNCE_N.</data>
@@ -6929,7 +6935,7 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1658)] Elaborating instance db_inst_psu.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1660)] Elaborating instance db_inst_psu.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -6942,7 +6948,7 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1673)] Elaborating instance db_inst_prsnt.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1675)] Elaborating instance db_inst_prsnt.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -6955,10 +6961,10 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1726)] Width mismatch between port 'dout' (33 bits) and port connection (21 bits) in module instance 'PGM_DEBOUNCE'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1728)] Width mismatch between port 'dout' (33 bits) and port connection (21 bits) in module instance 'PGM_DEBOUNCE'.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1778)] Elaborating instance db_pgood_fault2_n.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1780)] Elaborating instance db_pgood_fault2_n.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -6971,10 +6977,10 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1785)] Width mismatch between port 'dout' (2 bits) and port connection (1 bits) in module instance 'PGM_DEBOUNCE'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1787)] Width mismatch between port 'dout' (2 bits) and port connection (1 bits) in module instance 'PGM_DEBOUNCE'.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1791)] Elaborating instance sync_data_low.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1793)] Elaborating instance sync_data_low.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 103)] Elaborating module SYNC_DATA_N.</data>
@@ -6984,7 +6990,7 @@
     SIGCNT = 32'h1 | 32'd1 | 32'b00000000000000000000000000000001</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1807)] Elaborating instance sync_data_high1.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1809)] Elaborating instance sync_data_high1.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 127)] Elaborating module SYNC_DATA.</data>
@@ -6994,7 +7000,7 @@
     SIGCNT = 32'h5 | 32'd5 | 32'b00000000000000000000000000000101</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1827)] Elaborating instance sync_data_ocp.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1829)] Elaborating instance sync_data_ocp.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 127)] Elaborating module SYNC_DATA.</data>
@@ -7004,7 +7010,7 @@
     SIGCNT = 32'h20 | 32'd32 | 32'b00000000000000000000000000100000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1903)] Elaborating instance db_inst_alert.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1905)] Elaborating instance db_inst_alert.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -7017,7 +7023,7 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1918)] Elaborating instance db_alert_inst1.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1920)] Elaborating instance db_alert_inst1.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -7030,20 +7036,20 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1933)] Elaborating instance db_inst_cpu_rst_rail.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1935)] Elaborating instance db_inst_cpu_rst_rail.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
         </row>
         <row>
             <data message="4">Module instance {Tieta_Feiteng_1001_top/db_inst_cpu_rst_rail} parameter value:
-    SIGCNT = 32'h1A | 32'd26 | 32'b00000000000000000000000000011010
+    SIGCNT = 32'h1C | 32'd28 | 32'b00000000000000000000000000011100
     NBITS = 2'h3 | 2'd3 | 2'b11
     NDELAY = 32'h8 | 32'd8 | 32'b00000000000000000000000000001000
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2006)] Elaborating instance db_fan_ctrl_inst1.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2012)] Elaborating instance db_fan_ctrl_inst1.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
@@ -7056,20 +7062,20 @@
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2085)] Elaborating instance db_unused.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2089)] Elaborating instance db_unused.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/synclib.v(line number: 351)] Elaborating module PGM_DEBOUNCE.</data>
         </row>
         <row>
             <data message="4">Module instance {Tieta_Feiteng_1001_top/db_unused} parameter value:
-    SIGCNT = 32'h2B | 32'd43 | 32'b00000000000000000000000000101011
+    SIGCNT = 32'h29 | 32'd41 | 32'b00000000000000000000000000101001
     NBITS = 2'h3 | 2'd3 | 2'b11
     NDELAY = 32'h8 | 32'd8 | 32'b00000000000000000000000000001000
     ENABLE = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2132)] Width mismatch between port 'dout' (43 bits) and port connection (41 bits) in module instance 'PGM_DEBOUNCE'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2134)] Width mismatch between port 'dout' (41 bits) and port connection (39 bits) in module instance 'PGM_DEBOUNCE'.</data>
         </row>
         <row>
             <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2211)] Elaborating instance inst_scpld_to_mcpld_s2p.</data>
@@ -7092,7 +7098,7 @@
     NBIT = 32'h200 | 32'd512 | 32'b00000000000000000000001000000000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2678)] Elaborating instance power_button_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2679)] Elaborating instance power_button_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/button_ctrl/power_button.v(line number: 13)] Elaborating module power_button.</data>
@@ -7102,7 +7108,7 @@
     BL_MODE = 1'h0 | 1'd0 | 1'b0</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2716)] Elaborating instance edge_delay_cpu_gpio_ok.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2717)] Elaborating instance edge_delay_cpu_gpio_ok.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_delay.v(line number: 21)] Elaborating module edge_delay.</data>
@@ -7114,7 +7120,7 @@
     DELAY_MODE = 1'h0 | 1'd0 | 1'b0</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2895)] Elaborating instance pwrseq_master_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2896)] Elaborating instance pwrseq_master_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_master.v(line number: 13)] Elaborating module pwrseq_master.</data>
@@ -7173,7 +7179,7 @@
     DELAY_MODE = 1'h0 | 1'd0 | 1'b0</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3038)] Elaborating instance pwrseq_slave_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3039)] Elaborating instance pwrseq_slave_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave.v(line number: 12)] Elaborating module pwrseq_slave.</data>
@@ -7963,10 +7969,10 @@
             <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrseq_slave.v(line number: 1601)] Net aux_fault in pwrseq_slave(original module pwrseq_slave) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3211)] Width mismatch between port 'hd_bp_fault_det' (2 bits) and port connection (8 bits) in module instance 'pwrseq_slave'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3212)] Width mismatch between port 'hd_bp_fault_det' (2 bits) and port connection (8 bits) in module instance 'pwrseq_slave'.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3435)] Elaborating instance UID_Function_u0.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3436)] Elaborating instance UID_Function_u0.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/UID_Function.v(line number: 27)] Elaborating module UID_Function.</data>
@@ -8016,7 +8022,7 @@
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_detect.v(line number: 4)] Elaborating module Edge_Detect.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3520)] Elaborating instance psu_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3521)] Elaborating instance psu_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/psu.v(line number: 13)] Elaborating module psu.</data>
@@ -8027,7 +8033,7 @@
     BROWNOUT_WARN_VAL = 32'h5 | 32'd5 | 32'b00000000000000000000000000000101</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3549)] Elaborating instance edge_delay_ps0_on_n.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3550)] Elaborating instance edge_delay_ps0_on_n.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_delay.v(line number: 21)] Elaborating module edge_delay.</data>
@@ -8039,7 +8045,7 @@
     DELAY_MODE = 1'h0 | 1'd0 | 1'b0</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3558)] Elaborating instance edge_delay_ps1_on_n.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3559)] Elaborating instance edge_delay_ps1_on_n.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/edge_delay.v(line number: 21)] Elaborating module edge_delay.</data>
@@ -8051,7 +8057,7 @@
     DELAY_MODE = 1'h0 | 1'd0 | 1'b0</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3846)] Elaborating instance pwrcap_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3849)] Elaborating instance pwrcap_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/pwrseq/pwrcap.v(line number: 22)] Elaborating module pwrcap.</data>
@@ -8089,7 +8095,7 @@
     BUFFER_WIDTH = 1'h1 | 1'd1 | 1'b1</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3882)] Elaborating instance thermal_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3885)] Elaborating instance thermal_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/thermal.v(line number: 15)] Elaborating module thermal.</data>
@@ -8115,7 +8121,7 @@
     CNT_SIZE = 32'h5 | 32'd5 | 32'b00000000000000000000000000000101</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3923)] Elaborating instance system_reset_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3926)] Elaborating instance system_reset_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/system_reset.v(line number: 12)] Elaborating module system_reset.</data>
@@ -8129,7 +8135,7 @@
     NUM_IO = 32'h1 | 32'd1 | 32'b00000000000000000000000000000001</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3988)] Elaborating instance led_blink_code_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3991)] Elaborating instance led_blink_code_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/led_blink_code.v(line number: 32)] Elaborating module led_blink_code.</data>
@@ -8141,7 +8147,7 @@
     CLASS_SIZE = 32'h8 | 32'd8 | 32'b00000000000000000000000000001000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4012)] Elaborating instance post_leds_inst.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4015)] Elaborating instance post_leds_inst.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/post_leds.v(line number: 18)] Elaborating module post_leds.</data>
@@ -8152,16 +8158,16 @@
     PAL_VER_BITS = 32'h30 | 32'd48 | 32'b00000000000000000000000000110000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4756)] Elaborating instance Edge_Detect_u3.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4799)] Elaborating instance Edge_Detect_u3.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/common/Edge_Detect1.v(line number: 4)] Elaborating module Edge_Detect1.</data>
         </row>
         <row>
-            <data message="5">Verilog-2015: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4035)] db_i_pal_gpu1_efuse_oc is already declared in this scope, the latest declaration is used.</data>
+            <data message="5">Verilog-2015: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4038)] db_i_pal_gpu1_efuse_oc is already declared in this scope, the latest declaration is used.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3346)] Elaborating instance fan_pwm_tach_m.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3347)] Elaborating instance fan_pwm_tach_m.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_pwm_tach.v(line number: 11)] Elaborating module fan_pwm_tach.</data>
@@ -8224,25 +8230,25 @@
     MAX_VALUE = 32'h3B6 | 32'd950 | 32'b00000000000000000000001110110110</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3346)] Elaborating instance fan_pwm_tach_m.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3347)] Elaborating instance fan_pwm_tach_m.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_pwm_tach.v(line number: 11)] Elaborating module fan_pwm_tach.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3346)] Elaborating instance fan_pwm_tach_m.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3347)] Elaborating instance fan_pwm_tach_m.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_pwm_tach.v(line number: 11)] Elaborating module fan_pwm_tach.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3346)] Elaborating instance fan_pwm_tach_m.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3347)] Elaborating instance fan_pwm_tach_m.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/fan_ctrl/fan_pwm_tach.v(line number: 11)] Elaborating module fan_pwm_tach.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3709)] Elaborating instance uart_master_u1.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3712)] Elaborating instance uart_master_u1.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/uart_master.v(line number: 25)] Elaborating module UART_MASTER.</data>
@@ -8256,7 +8262,7 @@
     START_COUNT_NUM = 32'h18 | 32'd24 | 32'b00000000000000000000000000011000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3727)] Elaborating instance uart_master_u2.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3730)] Elaborating instance uart_master_u2.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/uart_master.v(line number: 25)] Elaborating module UART_MASTER.</data>
@@ -8270,7 +8276,7 @@
     START_COUNT_NUM = 32'h18 | 32'd24 | 32'b00000000000000000000000000011000</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Elaborating instance bmc_cpld_i2c_ram_u0.</data>
+            <data message="4">Verilog-0004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Elaborating instance bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/bmc_cpld_i2c_ram.v(line number: 3)] Elaborating module bmc_cpld_i2c_ram.</data>
@@ -8529,7 +8535,16 @@
             <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/i2c/bmc_cpld_i2c_ram.v(line number: 526)] Net r_reg_0800 in bmc_cpld_i2c_ram(original module bmc_cpld_i2c_ram) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4618)] Width mismatch between port 'o_bmc_ctr_fan_led_status' (8 bits) and port connection (4 bits) in module instance 'bmc_cpld_i2c_ram'.</data>
+            <data message="5">Verilog-2019: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4661)] Width mismatch between port 'o_bmc_ctr_fan_led_status' (8 bits) and port connection (4 bits) in module instance 'bmc_cpld_i2c_ram'.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Assign a tri-state buf to drive the floating output port o_CPU0_D1_SPI0_SCK in module Tieta_Feiteng_1001_top.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Assign a tri-state buf to drive the floating output port o_CPU0_D1_SPI0_CS in module Tieta_Feiteng_1001_top.</data>
+        </row>
+        <row>
+            <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Assign a tri-state buf to drive the floating output port o_CPU0_D1_SPI0_MOSI in module Tieta_Feiteng_1001_top.</data>
         </row>
         <row>
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Assign a tri-state buf to drive the floating output port o_PAL_DPLL_INIT_R in module Tieta_Feiteng_1001_top.</data>
@@ -8550,118 +8565,115 @@
             <data message="5">Verilog-2024: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 5)] Assign a tri-state buf to drive the floating output port o_CPU1_D0123_SOCKET_ID_R in module Tieta_Feiteng_1001_top.</data>
         </row>
         <row>
-            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3520)] The net xr_ps_enable that drives an input pin of module instance Tieta_Feiteng_1001_top.psu_inst has no driver, tie the net to 0.</data>
+            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3521)] The net xr_ps_enable that drives an input pin of module instance Tieta_Feiteng_1001_top.psu_inst has no driver, tie the net to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] The net cpld_pwm_main_type that drives an input pin of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0 has no driver, tie the net to 0.</data>
+            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] The net cpld_pwm_main_type that drives an input pin of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0 has no driver, tie the net to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin spd_bios_bmc_sel of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Assign 0 to drive the floating input pin ocp2_fan_foo of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin ocp2_fan_foo of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Assign 0 to drive the floating input pin ocp2_fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin ocp2_fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Assign 0 to drive the floating input pin ocp1_fan_foo of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin ocp1_fan_foo of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Assign 0 to drive the floating input pin ocp1_fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin ocp1_fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] Assign 0 to drive the floating input pin fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2023: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] Assign 0 to drive the floating input pin fan_prsnt of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0.</data>
+            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4546)] The net i2c_ram_1058 that drives an input pin of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0 has no driver, tie the net to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2036: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 4503)] The net i2c_ram_1058 that drives an input pin of module instance Tieta_Feiteng_1001_top.bmc_cpld_i2c_ram_u0 has no driver, tie the net to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 815)] Net emc_alert_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 813)] Net emc_alert_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 960)] Net vwire_cpu_rst_pcie in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 958)] Net vwire_cpu_rst_pcie in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 980)] Net emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 978)] Net emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 983)] Net riser1_emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 981)] Net riser1_emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 984)] Net riser2_emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 982)] Net riser2_emc_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 993)] Net ocp_temp_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 991)] Net ocp_temp_alert_mask in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1041)] Net i2c_ram_1055[3] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1039)] Net i2c_ram_1055[3] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1041)] Net i2c_ram_1055[4] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1039)] Net i2c_ram_1055[4] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1041)] Net i2c_ram_1055[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1039)] Net i2c_ram_1055[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1042)] Net i2c_ram_1056[6] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1040)] Net i2c_ram_1056[6] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1042)] Net i2c_ram_1056[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1040)] Net i2c_ram_1056[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1043)] Net i2c_ram_1057[0] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1041)] Net i2c_ram_1057[0] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1083)] Net pfr_to_led in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1081)] Net pfr_to_led in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1235)] Net db_i_pal_usb_upd1_oci4b in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1233)] Net db_i_pal_usb_upd1_oci4b in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1255)] Net pgd_p1v8_stby_dly32ms in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1253)] Net pgd_p1v8_stby_dly32ms in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1256)] Net pgd_p1v8_stby_dly30ms in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1254)] Net pgd_p1v8_stby_dly30ms in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1363)] Net AUX_BP_type in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1361)] Net AUX_BP_type in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1364)] Net pcie_detect in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1362)] Net pcie_detect in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1367)] Net o_mb_cb_prsnt_bmc in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1365)] Net o_mb_cb_prsnt_bmc in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[0] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[0] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[1] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[1] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[2] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[2] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[3] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[3] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[4] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[4] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[5] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[5] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[6] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[6] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1368)] Net debug_reg_15[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1366)] Net debug_reg_15[7] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1373)] Net cpu_debug_sel in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1371)] Net cpu_debug_sel in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
-        </row>
-        <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1372)] Net bmc_log_sel in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1374)] Net bmc_log_sel in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
             <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2183)] Net mcpld_to_scpld_p2s_data[15] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
@@ -8673,172 +8685,175 @@
             <data message="5">Verilog-2020: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 2183)] Net mcpld_to_scpld_p2s_data[219] in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1718)] Net i_PAL_OCP1_FAN_PRSNT_N in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1720)] Net i_PAL_OCP1_FAN_PRSNT_N in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1814)] Net i_PAL_CPU0_VR_PMALT_UPD in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1816)] Net i_PAL_CPU0_VR_PMALT_UPD in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1815)] Net i_PAL_CPU1_VR_PMALT_UPD in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1817)] Net i_PAL_CPU1_VR_PMALT_UPD in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1832)] Net ocp_pvt_act_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1834)] Net ocp_pvt_act_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1833)] Net ocp_pvt_act_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1835)] Net ocp_pvt_act_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1834)] Net ocp_pvt_act_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1836)] Net ocp_pvt_act_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1835)] Net ocp_pvt_act_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1837)] Net ocp_pvt_act_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1836)] Net ocp_pvt_act_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1838)] Net ocp_pvt_act_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1837)] Net ocp_pvt_act_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1839)] Net ocp_pvt_act_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1838)] Net ocp_pvt_act_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] Net ocp_pvt_act_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1839)] Net ocp_pvt_act_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] Net ocp_pvt_act_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] Net ocp_pvt_link_spda_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] Net ocp_pvt_link_spda_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1840)] Net ocp_pvt_link_spdb_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] Net ocp_pvt_link_spdb_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] Net ocp_pvt_link_spda_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] Net ocp_pvt_link_spda_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1841)] Net ocp_pvt_link_spdb_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] Net ocp_pvt_link_spdb_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] Net ocp_pvt_link_spda_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] Net ocp_pvt_link_spda_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1842)] Net ocp_pvt_link_spdb_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] Net ocp_pvt_link_spdb_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] Net ocp_pvt_link_spda_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] Net ocp_pvt_link_spda_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1843)] Net ocp_pvt_link_spdb_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] Net ocp_pvt_link_spdb_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] Net ocp_pvt_link_spda_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] Net ocp_pvt_link_spda_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1844)] Net ocp_pvt_link_spdb_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] Net ocp_pvt_link_spdb_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] Net ocp_pvt_link_spda_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] Net ocp_pvt_link_spda_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1845)] Net ocp_pvt_link_spdb_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] Net ocp_pvt_link_spdb_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] Net ocp_pvt_link_spda_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] Net ocp_pvt_link_spda_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1846)] Net ocp_pvt_link_spdb_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] Net ocp_pvt_link_spdb_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] Net ocp_pvt_link_spda_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] Net ocp_pvt_link_spda_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1847)] Net ocp_pvt_link_spdb_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] Net ocp_pvt_link_spdb_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1848)] Net ocp2_pvt_act_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1850)] Net ocp2_pvt_act_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1849)] Net ocp2_pvt_act_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1851)] Net ocp2_pvt_act_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1850)] Net ocp2_pvt_act_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1852)] Net ocp2_pvt_act_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1851)] Net ocp2_pvt_act_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1853)] Net ocp2_pvt_act_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1852)] Net ocp2_pvt_act_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1854)] Net ocp2_pvt_act_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1853)] Net ocp2_pvt_act_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1855)] Net ocp2_pvt_act_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1854)] Net ocp2_pvt_act_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] Net ocp2_pvt_act_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1855)] Net ocp2_pvt_act_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] Net ocp2_pvt_act_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] Net ocp2_pvt_link_spda_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] Net ocp2_pvt_link_spda_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1856)] Net ocp2_pvt_link_spdb_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] Net ocp2_pvt_link_spdb_p0_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] Net ocp2_pvt_link_spda_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] Net ocp2_pvt_link_spda_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1857)] Net ocp2_pvt_link_spdb_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] Net ocp2_pvt_link_spdb_p1_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] Net ocp2_pvt_link_spda_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] Net ocp2_pvt_link_spda_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1858)] Net ocp2_pvt_link_spdb_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] Net ocp2_pvt_link_spdb_p2_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] Net ocp2_pvt_link_spda_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] Net ocp2_pvt_link_spda_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1859)] Net ocp2_pvt_link_spdb_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] Net ocp2_pvt_link_spdb_p3_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] Net ocp2_pvt_link_spda_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] Net ocp2_pvt_link_spda_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1860)] Net ocp2_pvt_link_spdb_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] Net ocp2_pvt_link_spdb_p4_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] Net ocp2_pvt_link_spda_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] Net ocp2_pvt_link_spda_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1861)] Net ocp2_pvt_link_spdb_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] Net ocp2_pvt_link_spdb_p5_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] Net ocp2_pvt_link_spda_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1864)] Net ocp2_pvt_link_spda_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1862)] Net ocp2_pvt_link_spdb_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1864)] Net ocp2_pvt_link_spdb_p6_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] Net ocp2_pvt_link_spda_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1865)] Net ocp2_pvt_link_spda_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1863)] Net ocp2_pvt_link_spdb_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
+            <data message="5">Verilog-2021: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1865)] Net ocp2_pvt_link_spdb_p7_n in Tieta_Feiteng_1001_top(original module Tieta_Feiteng_1001_top) does not have a driver, tie it to 0.</data>
         </row>
         <row>
-            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3244)] The net 'w_fan_type[0]' in Tieta_Feiteng_1001_top is un-driven.</data>
+            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3245)] The net 'w_fan_type[0]' in Tieta_Feiteng_1001_top is un-driven.</data>
         </row>
         <row>
-            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3244)] The net 'w_fan_type[1]' in Tieta_Feiteng_1001_top is un-driven.</data>
+            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3245)] The net 'w_fan_type[1]' in Tieta_Feiteng_1001_top is un-driven.</data>
         </row>
         <row>
-            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3244)] The net 'w_fan_type[2]' in Tieta_Feiteng_1001_top is un-driven.</data>
+            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3245)] The net 'w_fan_type[2]' in Tieta_Feiteng_1001_top is un-driven.</data>
         </row>
         <row>
-            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3244)] The net 'w_fan_type[3]' in Tieta_Feiteng_1001_top is un-driven.</data>
+            <data message="5">Sdm-2003: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 3245)] The net 'w_fan_type[3]' in Tieta_Feiteng_1001_top is un-driven.</data>
         </row>
         <row>
-            <data message="5">Sdm-2004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1060)] Latch is generated for signal power_on_off, possible missing assignment in an if or case statement.</data>
+            <data message="5">Sdm-2004: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/Tieta_Feiteng_1001_top.v(line number: 1062)] Latch is generated for signal power_on_off, possible missing assignment in an if or case statement.</data>
+        </row>
+        <row>
+            <data message="4">Removed inst o_PAL_CPU1_VR_SELECT_N_R that is redundant to o_PAL_CPU0_VR_SELECT_N_R.</data>
         </row>
         <row>
             <data message="5">Sdm-2014: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/rtl/source/communication/s2p_master.v(line number: 34)] Feedback mux created for signal 'sclk'. It is possible a async set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.</data>

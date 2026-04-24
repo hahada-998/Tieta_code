@@ -1,4 +1,4 @@
-##### Written on 2026/03/27 20:07:10 ################################################
+##### Written on 2026/04/20 10:49:47 ################################################
 
 ##### INFO ##########################################################################
 
@@ -13,13 +13,13 @@ Constraint File(s):
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 0 critical warning(s), 349 warning(s), out of 1428 constraint(s)
+Found 0 error(s), 0 critical warning(s), 355 warning(s), out of 1426 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
 
 define_attribute {p:o_CPU0_D1_SE_RECOVERY_R} {PAP_IO_STANDARD} {LVCMOS33}
-    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc(line number: 623)] Parse file warning: PAP_IO_STANDARD is already defined in p:o_CPU0_D1_SE_RECOVERY_R, new value LVCMOS33 will overwrite the current value.
+    W: ConstraintEditor-4026: [C:/CPLD/pango/2_Tieta_Feiteng/Tieta_Feiteng_1001_PGC7KD69MBG400/prj/Tieta_M/Tieta_M.fdc(line number: 619)] Parse file warning: PAP_IO_STANDARD is already defined in p:o_CPU0_D1_SE_RECOVERY_R, new value LVCMOS33 will overwrite the current value.
 
 Other Issues(infos):
 ********************************************
@@ -348,6 +348,12 @@ Other Issues(infos):
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_PWR_88SE9230_P1V8_EN_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_BOARD_TEMP_OVER_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_BOARD_TEMP_OVER_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU1_BOARD_TEMP_OVER_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_BOARD_TEMP_OVER_R' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_BOARD_TEMP_OVER_R' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:o_CPU0_BOARD_TEMP_OVER_R' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
     W: ConstraintEditor-4042: Port 'p:o_CPU0_D1_SPI0_CS' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.

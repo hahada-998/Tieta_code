@@ -59,7 +59,7 @@ wire       shutdown_events_pe;
    always @(posedge clk or posedge reset)
    begin
      if (reset)
-       pch_pwrbtn <= 1'b0;
+       []] <= 1'b0;
      else if (interlock_broken)
        pch_pwrbtn <= 1'b0;
      else
